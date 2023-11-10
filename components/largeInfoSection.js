@@ -18,18 +18,22 @@ export default function LargeInfoSection() {
             alleviating financial burdens.
           </p>
         </div>
-        <img
-          className="flex-1 order-1 lg:order-2 rounded-xl bg-transparent lg:pl-16 sm:w-full lg:max-w-[57rem]"
-          src="/img/info1.png"
-          alt=""
-        />
+        <div className="order-1 lg:order-2 w-full lg:flex-1">
+          <img
+            className="rounded-xl bg-transparent w-full h-auto"
+            src="/img/info1.png"
+            alt=""
+          />
+        </div>
       </div>
       <div className="my-12 lg:my-0 lg:mt-32 lg:max-w-screen-2xl mx-auto flex flex-col lg:flex-row items-center">
-        <img
-          className="flex-1 rounded-xl bg-transparent sm:w-full lg:max-w-[57rem]"
-          src="/img/info2.gif"
-          alt=""
-        />
+        <div className="w-full lg:flex-1">
+          <img
+            className="rounded-xl bg-transparent w-full h-auto"
+            src="/img/info2.gif"
+            alt=""
+          />
+        </div>
         <div className="px-8 lg:px-0 flex-1 lg:mt-16 lg:ml-8">
           <h1 className="mt-12 lg:mt-2 text-3xl lg:text-6xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Simplifying Real Estate Investment
@@ -61,11 +65,13 @@ export default function LargeInfoSection() {
             you!
           </p>
         </div>
-        <img
-          className="flex-1 order-1 lg:order-2 rounded-xl bg-transparent sm:w-full lg:max-w-4xl"
-          src="/img/token1.png"
-          alt=""
-        />
+        <div className="order-1 lg:order-2 w-full lg:flex-1">
+          <img
+            className="rounded-xl bg-transparent w-full h-auto"
+            src="/img/token1.png"
+            alt=""
+          />
+        </div>
       </div>
     </>
   );
