@@ -1,26 +1,52 @@
-import Link from "next/link";
-import Background from "../components/background";
-import ICONavbar from "../components/icoNavbar";
-import Head from "next/head";
-import { useEffect, useState } from "react";
-import Navbar from "../components/navbar";
+import Link from 'next/link';
+import Background from '../components/background';
+import ICONavbar from '../components/icoNavbar';
+import Head from 'next/head';
+import { useEffect, useState } from 'react';
+import Navbar from '../components/navbar';
+import { getCurrentSaleStage } from '../utils/smartContracts/pLBM/getCurrentSaleStage';
+import { getRemainingTokens } from '../utils/smartContracts/pLBM/getRemainingTokens';
+import { buyTokens } from '../utils/smartContracts/pLBM/buyTokens';
 
 const ICO = () => {
+  const [currentStage, setCurrentStage] = useState(null);
+  const [remainingTokens, setRemainingTokens] = useState({
+    seedTokensRemaining: null,
+    whitelistTokensRemaining: null,
+    publicTokensRemaining: null,
+  });
+
   const [provider, setProvider] = useState(null);
   const [isUserConnected, setIsUserConnected] = useState(false);
-  const usdcTokenCount = "$1340 USDC";
+  const usdcTokenCount = '$1340 USDC';
   const [usdcSelectedValue, setUsdcSelectedValue] = useState(100);
   const [lbmReceivedValue, setLbmReceivedValue] = useState(1000);
-  const lbmTokenCount = "48000 LBM";
-  const currentStageSale = "Seed";
+  const lbmTokenCount = '48000 LBM';
+  const currentStageSale = 'Seed';
   const seedProgress = 45;
-  const remainingTokenCount = "10,000";
+  const remainingTokenCount = '10,000';
+
+  useEffect(() => {
+    async function fetchData() {
+      const stage = await getCurrentSaleStage();
+      setCurrentStage(stage);
+
+      const tokens = await getRemainingTokens();
+      setRemainingTokens(tokens);
+    }
+
+    fetchData();
+  }, []);
 
   useEffect(() => {
     // For every 1 USDC, you get 100 LBM.
     const newLbmValue = usdcSelectedValue * 100;
     setLbmReceivedValue(newLbmValue);
   }, [usdcSelectedValue]); // Only re-run the effect if usdcSelectedValue changes
+
+  const handleBuyTokens = () =>{
+    buyTokens(lbmReceivedValue)
+  }
 
   return (
     <>
@@ -33,7 +59,12 @@ const ICO = () => {
       <ICONavbar provider={provider} setProvider={setProvider} />
       <div className="mx-auto max-w-screen-2xl">
         <h2 className="pt-8 lg:pt-8 text-2xl px-8 lg:text-6xl mx-auto text-center font-bold text-black">
-          Current Stage Sale: {currentStageSale}
+          Current Stage Sale:{' '}
+          {currentStage !== null ? (
+            <span>{currentStage}</span>
+          ) : (
+            <p>Loading...</p>
+          )}
         </h2>
         <div className="mx-8 lg:mx-16 py-12 lg:py-24 ">
           <div className="flex justify-between mb-1"></div>
@@ -46,7 +77,24 @@ const ICO = () => {
             </div>
           </div>
           <div className="mx-auto text-center text-xl py-4 text-gray-800 lg:text-2xl">
-            Remaining Tokens: ${remainingTokenCount}
+            <h2>Remaining Tokens:</h2>
+            {remainingTokens.seedTokensRemaining !== null ? (
+              <p>Seed Round: {remainingTokens.seedTokensRemaining} pLBM</p>
+            ) : (
+              <p>Loading...</p>
+            )}
+            {remainingTokens.whitelistTokensRemaining !== null ? (
+              <p>
+                Whitelist Round: {remainingTokens.whitelistTokensRemaining} pLBM
+              </p>
+            ) : (
+              <p>Loading...</p>
+            )}
+            {remainingTokens.publicTokensRemaining !== null ? (
+              <p>Public Round: {remainingTokens.publicTokensRemaining} pLBM</p>
+            ) : (
+              <p>Loading...</p>
+            )}
           </div>
 
           <div className="pt-8 lg:pt-16 grid grid-cols-1 lg:grid-cols-2">
@@ -86,7 +134,7 @@ const ICO = () => {
                       onBlur={(e) => {
                         const value = Math.min(
                           Math.max(e.target.value, 0),
-                          2000
+                          2000,
                         );
                         setUsdcSelectedValue(value);
                       }}
@@ -114,7 +162,7 @@ const ICO = () => {
             </div>
           </div>
           <div className="lg:mt-16 mt-4  lg:px-16 relative flex w-full">
-            <button className="p-5 rounded-xl text-2xl font-bold text-white hover:opacity-80 bg-gray-700 mx-auto">
+            <button className="p-5 rounded-xl text-2xl font-bold text-white hover:opacity-80 bg-gray-700 mx-auto" onClick={handleBuyTokens}>
               Purchase
             </button>
           </div>
