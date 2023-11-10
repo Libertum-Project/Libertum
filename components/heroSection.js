@@ -3,15 +3,15 @@ import Link from "next/link";
 export default function HeroSection() {
   return (
     <section>
-      <div className="animate-slide-right pt-12 px-8 lg:px-0 lg:pr-8 lg:pt-6 rounded-3xl drop-shadow-xl flex justify-center lg:justify-end m-auto align-middle lg:max-w-screen-2xl">
-        <div className="max-w-4xl text-center lg:text-right">
-          <p className="hidden lg:block text-sm lg:text-xl font-light mb-4 tracking-tight text-black capitalize">
+      <div className="h-screen animate-slide-right pt-12 px-8 lg:px-0 lg:pr-8 lg:pt-6 rounded-3xl drop-shadow-xl flex justify-center lg:justify-end m-auto align-middle lg:max-w-screen-2xl">
+        <div className="max-w-4xl text-center md:text-right">
+          <p className="hidden md:block text-sm lg:text-xl font-light mb-4 tracking-tight text-black capitalize">
             Fractionalized Rental Income Tokenisation
           </p>
           <p className="text-5xl md:text-7xl lg:text-9xl font-extrabold tracking-tight text-black">
             Real Estate Accessible To Everyone
           </p>
-          <p className="pt-4 lg:pt-8 md:pt-0 md:px-24 lg:pr-0 mt-8 text-sm lg:text-2xl tracking-tight text-gray-600">
+          <p className="pt-4 md:pt-8 md:px-24 md:pr-0 mt-8 text-sm lg:text-2xl tracking-tight text-gray-600">
             Participants in the Fractionalized rental income ecosystem benefit
             from a reliable source of monthly passive income generated through
             secure property rental yield.

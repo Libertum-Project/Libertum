@@ -8,7 +8,6 @@ import { useEffect } from "react";
 import BrandCarousel from "../components/brandCarousel";
 import PropertyCarousel from "../components/propertyCarousel";
 import MarketplaceGraph from "../components/marketplaceGraph";
-import TokenSection from "../components/tokenSection";
 import FAQ from "../components/faq";
 import Footer from "../components/footer";
 import Background from "../components/background";
@@ -28,27 +27,25 @@ const Home = () => {
     <>
       <Head>
         <title>Libertum</title>
-        <meta name="description" content="Libertum.io" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Background></Background>
-      <div>
-        <Navbar web3Enabled={false} />
+      <Navbar web3Enabled={false} />
 
-        <div className="items-center w-full lg:py-16 md:px-12">
-          <HeroSection></HeroSection>
-          <BrandCarousel></BrandCarousel>
-          <GridInfoSection></GridInfoSection>
-        </div>
+      <div className="items-center w-full lg:py-16 md:px-12">
+        <HeroSection></HeroSection>
+        <BrandCarousel></BrandCarousel>
+        <GridInfoSection></GridInfoSection>
+      </div>
 
-        <div className="bg-gradient-to-b from-transparent lg:mx-auto to-[#cfdde8df] min-w-screen-2xl to-10%">
-          <LargeInfoSection></LargeInfoSection>
-          <PropertyCarousel></PropertyCarousel>
-          <MarketplaceGraph></MarketplaceGraph>
-          {/* <TokenSection></TokenSection> */}
-          <FAQ></FAQ>
-          <Footer></Footer>
-        </div>
+      <div className="bg-gradient-to-b from-transparent lg:mx-auto to-[#cfdde8df] min-w-screen-2xl to-10%">
+        <LargeInfoSection></LargeInfoSection>
+        <PropertyCarousel></PropertyCarousel>
+        <MarketplaceGraph></MarketplaceGraph>
+        {/* <TokenSection></TokenSection> */}
+        <FAQ></FAQ>
+        <Footer></Footer>
       </div>
     </>
   );

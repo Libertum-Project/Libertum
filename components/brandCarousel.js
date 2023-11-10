@@ -1,7 +1,7 @@
 import Image from "next/image";
 export default function BrandCarousel() {
   return (
-    <div className="mt-96 backdrop:flex flex-col justify-center max-w-7xl lg:mx-auto">
+    <div className="flex-col justify-center max-w-7xl lg:mx-auto">
       <div className="text-xl text-center capitalize text-gray-700">
         Partnered with technology and traditional businesses worldwide
       </div>

@@ -106,12 +106,12 @@ const ICONavbar = ({ provider, setProvider }) => {
   }
 
   return (
-    <div className="min-w-full top-0 z-10 lg:py-4">
+    <div className="min-w-full top-0 z-10 md:py-4">
       <div className="bg-transparent py-2">
         <nav className="container relative flex flex-wrap items-center justify-between p-4 py-2 mx-auto xl:px-0">
           <Link
             href="/"
-            className="flex items-center space-x-2 text-4xl text-bg-200 tracking-wide hover:scale-105 duration-500 focus:outline-none"
+            className="md:px-12 flex items-center space-x-2 text-4xl text-bg-200 tracking-wide hover:scale-105 duration-500 focus:outline-none"
           >
             <Image
               src="/img/logo.svg"
@@ -158,7 +158,10 @@ const ICONavbar = ({ provider, setProvider }) => {
                 </div>
               )}
             </div>
-            <Menu as="div" className="lg:pr-4 relative inline-block text-left">
+            <Menu
+              as="div"
+              className="md:px-8 lg:pr-4 relative inline-block text-left"
+            >
               <div>
                 <Menu.Button className="inline-flex w-full mt-2 justify-center rounded-md shadow-sm text-black hover:text-white ">
                   <Bars3Icon className="h-8 w-8" aria-hidden="true" />

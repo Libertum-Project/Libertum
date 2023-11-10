@@ -1,8 +1,8 @@
 export default function FAQ() {
   return (
-    <section className="lg:py-16 bg-transparent ">
-      <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
-        <h2 className="mb-16 text-6xl capitalize text-center tracking-tight font-extrabold text-gray-900 ">
+    <section className="lg:py-16 bg-transparent max-w-screen-2xl mx-auto ">
+      <div className="py-8 mx-auto sm:py-16 ">
+        <h2 className="mb-16 text-4xl px-4 md:px-0 md:text-6xl capitalize text-center tracking-tight font-extrabold text-gray-900 ">
           Frequently asked questions
         </h2>
         <div className="grid lg:px-0 px-8 pt-8 text-left border-t border-gray-800 md:gap-16  md:grid-cols-2">
