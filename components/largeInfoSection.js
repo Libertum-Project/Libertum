@@ -16,7 +16,7 @@ export default function LargeInfoSection() {
                   Discover the ease of accessing real estate yields
                 </h1>
                 <p className="lg:mt-10 lg:text-3xl lg:py-10 mt-6 text-xl lg:leading-10 text-gray-700">
-                  We provide a cutting-edge platform for fractionalized rental
+                  We provide a cutting-edge platform to fractionalize rental
                   income. Our system streamlines peer-to-peer borrowing and
                   investing, alleviating financial burdens.
                 </p>
@@ -41,10 +41,10 @@ export default function LargeInfoSection() {
                   Simplifying Real Estate Investment
                 </h1>
                 <p className="lg:mt-10 lg:text-3xl lg:py-10 mt-6 text-xl lg:leading-10 text-gray-700">
-                  Bid farewell to the hassles of ownership and the burden of
-                  unforeseen expenses such as insurance, repairs, and leaks.
+                  Bid farewell to the complexities of ownership transfers and the burden of
+                  unforeseen expenses including insurance, repairs, and leaks.
                   Instead, seize the opportunity to earn the right to rental
-                  income from a diverse range of properties worldwide.
+                  income from a diverse range of premium properties across the globe.
                 </p>
               </div>
             </div>
