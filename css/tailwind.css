@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "agencyfb";
+  src: url("../public/fonts/AgencyFB.woff2");
+}
+@font-face {
+  font-family: "montserrat";
+  src: url("../public/fonts/Montserrat.ttf");
+}
+
+@layer base {
+  html,
+  body {
+  }
+}
