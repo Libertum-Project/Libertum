@@ -7,7 +7,7 @@ import {
 export default function LargeInfoSection() {
   return (
     <>
-      <div className="my-12 lg:my-0 lg:max-w-screen-2xl mx-auto flex flex-col lg:flex-row items-center">
+      <div className="my-12 lg:my-0 lg:px-12 lg:max-w-screen-2xl mx-auto flex flex-col lg:flex-row items-center sm:max-w-xs">
         <div className="px-8 lg:px-0 flex-1 order-2 lg:order-1">
           <h1 className="mt-2 text-3xl lg:text-6xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Discover the ease of accessing real estate yields
@@ -34,7 +34,7 @@ export default function LargeInfoSection() {
             alt=""
           />
         </div>
-        <div className="px-8 lg:px-0 flex-1 lg:mt-16 lg:ml-8">
+        <div className="px-8 lg:px-12 flex-1 lg:mt-16 lg:ml-8">
           <h1 className="mt-12 lg:mt-2 text-3xl lg:text-6xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Simplifying Real Estate Investment
           </h1>
@@ -46,7 +46,7 @@ export default function LargeInfoSection() {
           </p>
         </div>
       </div>
-      <div className="my-16 lg:my-64 lg:max-w-screen-2xl mx-auto flex flex-col lg:flex-row items-center">
+      <div className="my-16 lg:my-64 lg:px-12 lg:max-w-screen-2xl mx-auto flex flex-col lg:flex-row items-center">
         <div className="mt-8 lg:mt-0 px-8 lg:px-0 flex-1 order-2 lg:order-1 ">
           <h1 className="mt-2 text-3xl lg:text-5xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Staking Pool
