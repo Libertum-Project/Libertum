@@ -7,6 +7,13 @@ import Navbar from '../components/navbar';
 import { getCurrentSaleStage } from '../utils/smartContracts/pLBM/getCurrentSaleStage';
 import { getRemainingTokens } from '../utils/smartContracts/pLBM/getRemainingTokens';
 import { buyTokens } from '../utils/smartContracts/pLBM/buyTokens';
+import PresaleGrid from '../components/IcoPage/PresaleGrid';
+import Join from '../components/IcoPage/Join';
+import HowToBuy from '../components/IcoPage/HowToBuy';
+import HowToClaim from '../components/IcoPage/HowToClaim';
+import Roadmap from '../components/IcoPage/Roadmap';
+import Faq from '../components/IcoPage/Faq';
+
 
 const ICO = () => {
   const [currentStage, setCurrentStage] = useState(null);
@@ -168,6 +175,29 @@ const ICO = () => {
           </div>
         </div>
       </div>
+
+      <h2 className="text-4xl text-center font-bold text-gray-800">
+        Upcoming Events
+      </h2>
+      <PresaleGrid />
+      <Join />
+      <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-10">
+        How To Buy
+      </h2>
+      <div className='mb-10'>
+      <HowToBuy />
+      </div>
+      <HowToClaim />
+
+      <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-10">
+       FAQs
+      </h2>
+      <Faq />
+
+      <Roadmap />
+
+
+
     </>
   );
 };
