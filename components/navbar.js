@@ -78,7 +78,8 @@ const Navbar = () => {
                     <Menu.Item>
                       {({ active }) => (
                         <a
-                          href="#"
+                        href="http://marketplace.libertum.io"
+                        rel="noopener noreferrer"
                           className={classNames(
                             active
                               ? "bg-gray-100 text-gray-900"
@@ -90,7 +91,23 @@ const Navbar = () => {
                         </a>
                       )}
                     </Menu.Item>
-                    <form method="POST" action="#">
+                    <Menu.Item>
+                      {({ active }) => (
+                        <a
+                        href="http://marketplace.libertum.io/mydashboard"
+                        rel="noopener noreferrer"
+                          className={classNames(
+                            active
+                              ? "bg-gray-100 text-gray-900"
+                              : "text-gray-700",
+                            "block px-4 py-2 text-md text-right"
+                          )}
+                        >
+                          Enter app
+                        </a>
+                      )}
+                    </Menu.Item>
+                    {/* <form method="POST" action="marketplace.libertum.io/mydashboard">
                       <Menu.Item>
                         {({ active }) => (
                           <button
@@ -106,7 +123,7 @@ const Navbar = () => {
                           </button>
                         )}
                       </Menu.Item>
-                    </form>
+                    </form> */}
                   </div>
                 </Menu.Items>
               </Transition>

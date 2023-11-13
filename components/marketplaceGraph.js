@@ -1,3 +1,5 @@
+import { marketplaceGraph } from '../public/img/marketplaceGraph.svg';
+
 export default function MarketplaceGraph() {
   return (
     <div className="lg:pt-16 pt-8">
@@ -5,8 +7,9 @@ export default function MarketplaceGraph() {
         Invest in Your Future
       </h2>
       <img
-        className="mix-blend- px-8 pt-4 pb-8 lg:py-16 lg:mx-auto lg:max-w-screen-2xl w-full"
-        src="/img/marketplace.png"
+        className="mix-blend-normal px-1 pt-0 pb-4 lg:py-16 lg:mx-auto lg:max-w-screen-2xl w-full"
+        // src="/img/marketplace.png"
+        src="/img/marketplaceGraph.svg"
       ></img>
     </div>
   );
