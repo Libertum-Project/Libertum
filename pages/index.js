@@ -33,7 +33,7 @@ const Home = () => {
       <Background></Background>
       <Navbar web3Enabled={false} />
 
-      <div className="items-center w-full lg:py-16 md:px-12">
+      <div className="items-center w-full lg:py-4 md:px-12">
         <HeroSection></HeroSection>
         <BrandCarousel></BrandCarousel>
         <GridInfoSection></GridInfoSection>
