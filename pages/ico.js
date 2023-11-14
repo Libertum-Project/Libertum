@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react';
 import Navbar from '../components/navbar';
 import { getCurrentSaleStage } from '../utils/smartContracts/pLBM/getCurrentSaleStage';
 import { getRemainingTokens } from '../utils/smartContracts/pLBM/getRemainingTokens';
-import { buyTokens } from '../utils/smartContracts/pLBM/buyTokens';
 import PresaleGrid from '../components/IcoPage/PresaleGrid';
 import Join from '../components/IcoPage/Join';
 import HowToBuy from '../components/IcoPage/HowToBuy';
@@ -14,6 +13,7 @@ import HowToClaim from '../components/IcoPage/HowToClaim';
 import Roadmap from '../components/IcoPage/Roadmap';
 import Faq from '../components/IcoPage/Faq';
 import WhyLBM from '../components/IcoPage/WhyLBM';
+import BuyBtn from '../components/pLBM/BuyBtn';
 
 const ICO = () => {
   const [currentStage, setCurrentStage] = useState(null);
@@ -54,10 +54,6 @@ const ICO = () => {
     const newLbmValue = usdcSelectedValue * 100;
     setLbmReceivedValue(newLbmValue);
   }, [usdcSelectedValue]); // Only re-run the effect if usdcSelectedValue changes
-
-  const handleBuyTokens = () => {
-    buyTokens(lbmReceivedValue);
-  };
 
   return (
     <>
@@ -174,14 +170,7 @@ const ICO = () => {
             </div>
           </div>
           <div className="lg:mt-16 mt-4  lg:px-16 relative flex w-full">
-            <button
-              className="p-5 rounded-xl text-2xl font-bold text-white hover:opacity-80 bg-gray-700 mx-auto"
-              onClick={handleBuyTokens}
-              disabled={!isValidStage}
-              style={{ cursor: isValidStage ? 'pointer' : 'not-allowed' }}
-            >
-              Purchase
-            </button>
+            <BuyBtn isValidStage={isValidStage} amount={lbmReceivedValue} />
           </div>
         </div>
       </div>
