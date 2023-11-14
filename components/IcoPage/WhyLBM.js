@@ -1,7 +1,5 @@
-import './WhyLBM.scss'
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 import iconarrow from './assets/iconarrow.svg';
 import iconhouse from './assets/iconhouse.svg';
 import iconbag from './assets/iconbolsa.svg'

@@ -1,5 +1,4 @@
 import React from 'react';
-import './AllocationChart.scss';
 import { Doughnut } from 'react-chartjs-2';
 
 const AllocationChart = () => {

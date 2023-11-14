@@ -13,6 +13,7 @@ import HowToBuy from '../components/IcoPage/HowToBuy';
 import HowToClaim from '../components/IcoPage/HowToClaim';
 import Roadmap from '../components/IcoPage/Roadmap';
 import Faq from '../components/IcoPage/Faq';
+import WhyLBM from '../components/IcoPage/WhyLBM';
 
 
 const ICO = () => {
@@ -57,7 +58,7 @@ const ICO = () => {
 
   return (
     <>
-      <Head>
+<Head>
         <title>Libertum</title>
         <meta name="description" content="Libertum.io" />
         <link rel="icon" href="/favicon.ico" />
@@ -85,7 +86,8 @@ const ICO = () => {
           </div>
           <div className="mx-auto text-center text-xl py-4 text-gray-800 lg:text-2xl">
             <h2>Remaining Tokens:</h2>
-            {remainingTokens.seedTokensRemaining !== null ? (
+            <h3>{remainingTokenCount}</h3>
+            {/* {remainingTokens.seedTokensRemaining !== null ? (
               <p>Seed Round: {remainingTokens.seedTokensRemaining} pLBM</p>
             ) : (
               <p>Loading...</p>
@@ -101,7 +103,7 @@ const ICO = () => {
               <p>Public Round: {remainingTokens.publicTokensRemaining} pLBM</p>
             ) : (
               <p>Loading...</p>
-            )}
+            )} */}
           </div>
 
           <div className="pt-8 lg:pt-16 grid grid-cols-1 lg:grid-cols-2">
@@ -133,7 +135,7 @@ const ICO = () => {
                       max="2000"
                       step="50"
                       value={usdcSelectedValue}
-                      className="input px-4 py-2 rounded-xl bg-gray-700 "
+                      className="px-4 py-2 rounded-xl bg-gray-700 "
                       onChange={(e) => {
                         // Update the usdcSelectedValue with the input value, but also ensure it doesn't exceed the max range value
                         setUsdcSelectedValue(e.target.value);
@@ -188,6 +190,12 @@ const ICO = () => {
       <HowToBuy />
       </div>
       <HowToClaim />
+
+      <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-10">
+        Why LBM?
+      </h2>
+      <WhyLBM />
+
 
       <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-10">
        FAQs
