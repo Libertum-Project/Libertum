@@ -16,7 +16,7 @@ export default function GridInfoSection() {
             <div>
               <div>
                 <Image
-                  className="mt-8 lg:mt-0 p-2 rounded-2xl drop-shadow-2xl hover:scale-105 duration-500"
+                  className="mt-8 md:mx-auto lg:mt-0 p-2 rounded-2xl drop-shadow-2xl hover:scale-105 duration-500"
                   src="/img/no_transfer_of_ownership.png"
                   alt="No Transfer of Ownership"
                   width={400}
@@ -34,7 +34,7 @@ export default function GridInfoSection() {
             <div>
               <div>
                 <Image
-                  className="mt-8 lg:mt-0 p-2 rounded-2xl drop-shadow-2xl hover:scale-105 duration-500"
+                  className="mt-8 md:mx-auto lg:mt-0 p-2 rounded-2xl drop-shadow-2xl hover:scale-105 duration-500"
                   src="/img/No_hidden_fee_Icon.png"
                   alt="No Hidden Fees"
                   width={400}
@@ -52,7 +52,7 @@ export default function GridInfoSection() {
             <div>
               <div>
                 <Image
-                  className="mt-8 lg:mt-0 p-2 rounded-2xl drop-shadow-2xl hover:scale-105 duration-500"
+                  className="mt-8 md:mx-auto lg:mt-0 p-2 rounded-2xl drop-shadow-2xl hover:scale-105 duration-500"
                   src="/img/Secure_icon.png"
                   alt="Secure Platform"
                   width={400}
@@ -70,7 +70,7 @@ export default function GridInfoSection() {
             <div>
               <div>
                 <Image
-                  className="mt-8 lg:mt-0 p-2 rounded-2xl drop-shadow-2xl hover:scale-105 duration-500"
+                  className="mt-8 md:mx-auto lg:mt-0 p-2 rounded-2xl drop-shadow-2xl hover:scale-105 duration-500"
                   src="/img/high_rental_yield.png"
                   alt="High Rental Yield"
                   width={400}
