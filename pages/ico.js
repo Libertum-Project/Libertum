@@ -15,7 +15,6 @@ import Roadmap from '../components/IcoPage/Roadmap';
 import Faq from '../components/IcoPage/Faq';
 import WhyLBM from '../components/IcoPage/WhyLBM';
 
-
 const ICO = () => {
   const [currentStage, setCurrentStage] = useState(null);
   const [remainingTokens, setRemainingTokens] = useState({
@@ -33,9 +32,13 @@ const ICO = () => {
   const currentStageSale = 'Seed';
   const seedProgress = 45;
   const remainingTokenCount = '10,000';
+  const isValidStage =
+    currentStage === 'seed' ||
+    currentStage === 'whitelist' ||
+    currentStage === 'public';
 
   useEffect(() => {
-    async function fetchData() {
+    async function fetchContractData() {
       const stage = await getCurrentSaleStage();
       setCurrentStage(stage);
 
@@ -43,7 +46,7 @@ const ICO = () => {
       setRemainingTokens(tokens);
     }
 
-    fetchData();
+    fetchContractData();
   }, []);
 
   useEffect(() => {
@@ -52,13 +55,13 @@ const ICO = () => {
     setLbmReceivedValue(newLbmValue);
   }, [usdcSelectedValue]); // Only re-run the effect if usdcSelectedValue changes
 
-  const handleBuyTokens = () =>{
-    buyTokens(lbmReceivedValue)
-  }
+  const handleBuyTokens = () => {
+    buyTokens(lbmReceivedValue);
+  };
 
   return (
     <>
-<Head>
+      <Head>
         <title>Libertum</title>
         <meta name="description" content="Libertum.io" />
         <link rel="icon" href="/favicon.ico" />
@@ -171,7 +174,12 @@ const ICO = () => {
             </div>
           </div>
           <div className="lg:mt-16 mt-4  lg:px-16 relative flex w-full">
-            <button className="p-5 rounded-xl text-2xl font-bold text-white hover:opacity-80 bg-gray-700 mx-auto" onClick={handleBuyTokens}>
+            <button
+              className="p-5 rounded-xl text-2xl font-bold text-white hover:opacity-80 bg-gray-700 mx-auto"
+              onClick={handleBuyTokens}
+              disabled={!isValidStage}
+              style={{ cursor: isValidStage ? 'pointer' : 'not-allowed' }}
+            >
               Purchase
             </button>
           </div>
@@ -186,8 +194,8 @@ const ICO = () => {
       <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-10">
         How To Buy
       </h2>
-      <div className='mb-10'>
-      <HowToBuy />
+      <div className="mb-10">
+        <HowToBuy />
       </div>
       <HowToClaim />
 
@@ -196,16 +204,12 @@ const ICO = () => {
       </h2>
       <WhyLBM />
 
-
       <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-10">
-       FAQs
+        FAQs
       </h2>
       <Faq />
 
       <Roadmap />
-
-
-
     </>
   );
 };
