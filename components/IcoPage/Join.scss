@@ -1,6 +1,6 @@
 .join-container{
   border-radius: 2rem;
-  background: #00222eda;
+  background:  rgb(55 65 81);
   margin-top: 2rem;
   display: grid;
   grid-template-columns: 1fr 2fr; 
@@ -19,9 +19,9 @@
       color: #FFF;
       text-align: center;
       font-family: Montserrat;
-      font-size: 2.75rem;
+      font-size: 1.85rem;
       font-style: normal;
-      font-weight: 600;
+      font-weight: 700;
       line-height: normal;
       letter-spacing: 0.275rem;
     }
@@ -29,13 +29,13 @@
     button{
       border-radius: 1rem;
       width: 100%;
-      background: #F7931A;
-      color: whitesmoke;
+      background: rgb(175 201 250);
+      color:  rgb(55 65 81);
       margin-top: 2rem;
     }
 
     button:hover {
-      background-color:#c46e05;
+      background: rgb(140, 161, 201);
     }
 
     p{
@@ -58,4 +58,13 @@
     margin: 1rem;
     padding: 1rem;
   }
+}
+
+@media screen and (min-width: 1800px) {
+  .join-container{
+    max-width: 1536px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4rem; 
+    }
 }

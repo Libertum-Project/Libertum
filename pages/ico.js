@@ -9,12 +9,9 @@ import { getRemainingTokens } from '../utils/smartContracts/pLBM/getRemainingTok
 import { buyTokens } from '../utils/smartContracts/pLBM/buyTokens';
 import PresaleGrid from '../components/IcoPage/PresaleGrid';
 import Join from '../components/IcoPage/Join';
-import HowToBuy from '../components/IcoPage/HowToBuy';
-import HowToClaim from '../components/IcoPage/HowToClaim';
 import Roadmap from '../components/IcoPage/Roadmap';
 import Faq from '../components/IcoPage/Faq';
-import WhyLBM from '../components/IcoPage/WhyLBM';
-
+import GridInfoSection from '../components/gridInfoSection'
 
 const ICO = () => {
   const [currentStage, setCurrentStage] = useState(null);
@@ -55,6 +52,13 @@ const ICO = () => {
   const handleBuyTokens = () =>{
     buyTokens(lbmReceivedValue)
   }
+
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', 
+    });
+  };
 
   return (
     <>
@@ -181,20 +185,30 @@ const ICO = () => {
       <h2 className="text-4xl text-center font-bold text-gray-800">
         Upcoming Events
       </h2>
-      <PresaleGrid />
-      <Join />
-      <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-10">
+      <PresaleGrid 
+      />
+
+      {/* <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-10">
         How To Buy
       </h2>
       <div className='mb-10'>
       <HowToBuy />
       </div>
-      <HowToClaim />
+      <HowToClaim /> */}
 
-      <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-10">
+      {/* <AllocationChart /> */}
+
+      {/* <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-10">
         Why LBM?
       </h2>
-      <WhyLBM />
+      <WhyLBM /> */}
+      <div className='px-[1rem] lg:px-[6rem]'>
+        <GridInfoSection />
+      </div>
+
+      <Join 
+      onScrollToTop={handleScrollToTop} 
+      />
 
 
       <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-10">

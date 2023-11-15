@@ -104,6 +104,35 @@ const Faq = () => {
               </ul>
           ),
       },
+      {
+        pregunta: "How to buy?",
+        answer: (
+            <ul>
+                <li>1. REQUIREMENTS: You will need to have a web3 compatible wallet such as Metamask connected to your browser, alternatively you can also use other wallets supported by Wallet Connect, such as Trust Wallet.
+                To ensure a smooth process for participating in the presale, we suggest using a desktop browser and Metamask. For mobile devices we suggest using Trust Wallet for the smoothest user experience. </li>
+                <br />
+                <li>2. WALLET CONNECTION: Enter the amount you wish to purchase and click "Connect Wallet" to choose your preferred payment option for acquiring $LBM tokens. Ensure your wallet has sufficient balance in the desired currency to display available options or alternatively use pay by card or bank transfer for FIAT payment.
+                After selecting your desired currency in our widget, you'll be redirected to your wallet or card payment gateway for completing the transaction.
+                        <br /> There will be 2 options to buy LBM:
+
+                        <br />🔹 with TRANSFER / CARD (Fiat Currency)
+
+                        <br />🔹 with CRYPTO </li>
+
+                <br />
+                <li>3. CLAIM: You can claim your $LBM tokens at the end of the presale. Details will be released closer to the time. Once the presale period has concluded, you must visit our website and click the ‘Claim’ button. </li>
+
+            </ul>
+        ),
+      },
+      {
+        pregunta: "How to claim? ",
+        answer: (
+            <ul>
+                <li>As we complete all funding rounds, you'll gain the opportunity to claim your $LBM tokens effortlessly! Stay tuned for comprehensive instructions on how to claim, which will be revealed closer to the scheduled time. When the claiming process is ready, simply visit our main page at libertum.io and click on the 'Claim' button. We've got you covered, and claiming your $LBM tokens will be as seamless as our investing in out fractionalised rental income model </li>
+            </ul>
+        ),
+      },
 
   ];
 
