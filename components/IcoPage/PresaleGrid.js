@@ -13,10 +13,12 @@ const Card = (
   title, 
   features, 
   note,
-  date
+  date,
+  onScrollToTop
 }
 ) => {
-    
+
+     
   return (
     <div className="card">
       {/* <div className="icon">{icon}</div> */}
@@ -31,12 +33,12 @@ const Card = (
           <li key={index}>{feature}</li>
         ))}
       </ul>
-      <button className='buybutton'>BUY</button>
+      <button className='buybutton' onClick={onScrollToTop}>BUY</button>
     </div>
   );
 };
 
-const PresaleGrid = () => {
+const PresaleGrid = ({onScrollToTop}) => {
 
   const cardData = [
     {
@@ -82,9 +84,7 @@ const PresaleGrid = () => {
       date: "1st Feb 2024",
       title: 'Launch Day',
       features: [
-        'Tokens for sale: 46,000,000', 
         'Price start at: $0.08', 
-        'Per Stage min: $300.000'
       ],
     },
     
@@ -93,7 +93,7 @@ const PresaleGrid = () => {
   return (
     <div className="card-grid">
       {cardData.map((card, index) => (
-        <Card key={index} {...card} />
+        <Card key={index} {...card} onScrollToTop={onScrollToTop} />
       ))}
     </div>
   );
