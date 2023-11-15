@@ -1,6 +1,6 @@
 .allocation-chart-container {
   border-radius: 2rem;
-  background: #00222E;
+  background: #ffffff;
   margin-top: 2rem;
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -11,27 +11,28 @@
 
   justify-content: center;
   align-items: center;
-
+   
   section {
+    gap: 1rem;
     h2 {
-      color: #FFF;
-      text-align: center;
+      color: #272727;
+      text-align: left;
       font-family: Montserrat;
-      font-size: 2.75rem;
+      font-size: 1.85rem;
       font-style: normal;
-      font-weight: 600;
+      font-weight: 700;
       line-height: normal;
-      letter-spacing: 0.275rem;
     }
 
     p {
-      color: #D2D6DB;
+      color: #383838;
       font-family: Montserrat;
-      font-size: 1.2rem;
+      font-size: 1rem;
       font-style: normal;
-      font-weight: 200;
-      line-height: normal;
-      letter-spacing: 0.175rem;
+      font-weight: 400;
+      line-height: 1.5rem;
+      margin-top: 1rem;
+  
     }
 
     .legend-container {
@@ -45,7 +46,7 @@
         align-items: center;
         margin-right: 20px;
         margin-bottom: 10px;
-        color: antiquewhite;
+        color: rgb(114, 114, 113);
         line-height: 1.5rem;
 
         .legend-color {
@@ -60,7 +61,11 @@
       
   }
 }
-}
+
+  }
+
+
+  // Añadir estilos adicionales según sea necesario
 
 
   @media screen and (max-width: 780px) {
@@ -77,7 +82,16 @@
       align-items: center;
     }
     section:nth-child(1) {
-      order: 2; // Cambia el orden en la vista responsive!!!!!!
+      order: 2; 
     }
   }
+}
+
+@media screen and (min-width: 1800px) {
+  .allocation-chart-container{
+    max-width: 1536px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4rem; 
+    }
 }

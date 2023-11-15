@@ -12,6 +12,7 @@ import Join from '../components/IcoPage/Join';
 import Roadmap from '../components/IcoPage/Roadmap';
 import Faq from '../components/IcoPage/Faq';
 import GridInfoSection from '../components/gridInfoSection'
+import AllocationChart from '../components/IcoPage/AllocationChart';
 
 const ICO = () => {
   const [currentStage, setCurrentStage] = useState(null);
@@ -210,6 +211,7 @@ const ICO = () => {
       onScrollToTop={handleScrollToTop} 
       />
 
+      <AllocationChart />
 
       <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-10">
        FAQs
