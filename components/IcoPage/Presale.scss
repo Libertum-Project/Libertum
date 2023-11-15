@@ -5,9 +5,20 @@
   padding-left: 6rem;
   padding-right: 6rem;
   margin-top: 3rem;
-}
+  margin-right: auto;
+  margin-left: auto;
 
+}
+.card-grid .card:last-child {
+  background: linear-gradient(to right, #3498dba7, #e2e8eb);
+  color: #000; 
+  text-emphasis-color: black;
+
+}
 .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border: 1px solid #ccc;
   padding: 25px;
   border-radius: 2.5rem;
@@ -15,7 +26,10 @@
   position: relative;
   transition: transform 0.3s ease-in-out; 
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.695)cfc;
+  background-color: rgba(255, 255, 255, 0.735);
+  width: 100%;
+  max-width: 25rem;
+
 
   &:hover {
     transform: scale(1.1) translate(0%, -5%); 
@@ -112,13 +126,24 @@
 }
 
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 980px) {
   .card-grid{
     grid-template-columns: repeat(1, 1fr);
     gap: 35px;
-    padding: 1rem;
+    padding: 1rem;    
   }
+
 }
+
+
+// @media screen and (max-width: 980px) {
+//   .card-grid{
+//     grid-template-columns: repeat(2, 1fr);
+//     gap: 35px;
+//     padding: 0 6rem;    
+    
+//   }
+// }
 
 @media screen and (min-width: 1800px) {
   .card-grid{

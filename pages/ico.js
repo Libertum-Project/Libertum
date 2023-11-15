@@ -1,20 +1,17 @@
-import Background from '../components/background';
-import ICONavbar from '../components/icoNavbar';
-import Head from 'next/head';
-import SuccessMessage from '../components/MessageBox/SuccessMessage';
-import { useEffect, useState } from 'react';
-import { getCurrentSaleStage } from '../utils/smartContracts/pLBM/getCurrentSaleStage';
-import { getRemainingTokens } from '../utils/smartContracts/pLBM/getRemainingTokens';
-import PresaleGrid from '../components/IcoPage/PresaleGrid';
-import Join from '../components/IcoPage/Join';
-import HowToBuy from '../components/IcoPage/HowToBuy';
-import HowToClaim from '../components/IcoPage/HowToClaim';
-import AllocationChart from '../components/IcoPage/AllocationChart';
-import GridInfoSection from '../components/gridInfoSection';
-import Roadmap from '../components/IcoPage/Roadmap';
-import Faq from '../components/IcoPage/Faq';
-import WhyLBM from '../components/IcoPage/WhyLBM';
-import BuyBtn from '../components/pLBM/BuyBtn';
+import Background from "../components/background";
+import ICONavbar from "../components/icoNavbar";
+import Head from "next/head";
+import { useEffect, useState } from "react";
+import { getCurrentSaleStage } from "../utils/smartContracts/pLBM/getCurrentSaleStage";
+import { getRemainingTokens } from "../utils/smartContracts/pLBM/getRemainingTokens";
+import PresaleGrid from "../components/IcoPage/PresaleGrid";
+import Join from "../components/IcoPage/Join";
+import AllocationChart from "../components/IcoPage/AllocationChart";
+import GridInfoSection from "../components/gridInfoSection";
+import Roadmap from "../components/IcoPage/Roadmap";
+import Faq from "../components/IcoPage/Faq";
+import BuyBtn from "../components/pLBM/BuyBtn";
+import Footer from "../components/footer";
 
 const ICO = () => {
   const [currentStage, setCurrentStage] = useState(null);
@@ -215,13 +212,15 @@ const ICO = () => {
         </div>
       </div>
 
-      <div className="bg-gradient-to-b from-transparent lg:mx-auto to-[#cfdde8f1] min-w-screen-2xl to-10%">
+      <div className="pb-10 bg-gradient-to-b from-transparent lg:mx-auto to-[#cfdde8f1] min-w-screen-2xl to-10%">
         <div className="max-w-screen-2xl mx-auto">
           <h2 className=" pt-32 text-4xl text-center font-bold text-gray-800">
             Upcoming Events
           </h2>
           <div className="">
-            <PresaleGrid />
+            <PresaleGrid
+            onScrollToTop={handleScrollToTop}
+            />
           </div>
           {/* <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-10">
         How To Buy
@@ -237,8 +236,10 @@ const ICO = () => {
         Why LBM?
       </h2>
       <WhyLBM /> */}
-          <GridInfoSection />
-          <Join onScrollToTop={handleScrollToTop} />
+          <div className='px-[1rem] md:px-[6rem] lg:px-[6rem] xl:px-0'>
+            <GridInfoSection />
+          </div>
+
 
           <AllocationChart />
 
@@ -248,8 +249,13 @@ const ICO = () => {
           <Faq />
 
           <Roadmap />
+
+          <Join onScrollToTop={handleScrollToTop} />
         </div>
       </div>
+
+      <Footer />
+
     </>
   );
 };
