@@ -62,6 +62,36 @@ export default function BrandCarousel() {
           <Image src="/img/brands/googlestartup.png" width={100} height={100} />
         </div>
       </div>
+
+      <div className="mt-16 text-xl text-center capitalize text-gray-700">
+        As Seen On:
+      </div>
+      <div className="px-16 md:px-8 lg:px-0 flex-wrap flex flex-row md:flex-nowrap justify-center gap-4 md:gap-8 space-y-4 lg:gap-16 mt-8 lg:max-w-screen-2xl">
+        <div className="text-gray-400 dark:text-gray-400 flex items-center">
+          <img
+            className="h-12 w-auto mix-blend-multiply"
+            src="/img/brands/ap.svg"
+          />
+        </div>
+        <div className="text-gray-400 dark:text-gray-400 flex items-center">
+          <img className="h-12 w-auto" src="/img/brands/yahoofinance.png" />
+        </div>
+        <div className="text-gray-400 dark:text-gray-400 flex items-center">
+          <img className="h-12 w-auto" src="/img/brands/benzinga.png" />
+        </div>
+        <div className="text-gray-400 dark:text-gray-400 flex items-center">
+          <img className="h-10 w-auto" src="/img/brands/bloomberg.svg" />
+        </div>
+        <div className="text-gray-400 dark:text-gray-400 flex mix-blend-multiply items-center">
+          <img className="h-12 w-auto" src="/img/brands/marketwatch.png" />
+        </div>
+        <div className="text-gray-400 dark:text-gray-400 flex items-center">
+          <img
+            className="h-12 w-auto mix-blend-multiply"
+            src="/img/brands/coinmarketcap.png"
+          />
+        </div>
+      </div>
     </div>
   );
 }

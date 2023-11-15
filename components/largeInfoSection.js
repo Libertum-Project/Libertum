@@ -7,7 +7,7 @@ import {
 export default function LargeInfoSection() {
   return (
     <>
-      <div className="my-12 lg:my-0 lg:px-12 lg:max-w-screen-2xl mx-auto flex flex-col lg:flex-row items-center sm:max-w-xs">
+      <div className="my-12 lg:my-0 lg:px-12 lg:max-w-screen-2xl mx-auto flex flex-col lg:flex-row items-center sm:max-w-xs md:max-w-full">
         <div className="px-8 lg:px-0 flex-1 order-2 lg:order-1">
           <h1 className="mt-2 text-3xl lg:text-6xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Discover the ease of accessing real estate yields
@@ -20,7 +20,7 @@ export default function LargeInfoSection() {
         </div>
         <div className="order-1 lg:order-2 w-full lg:flex-1">
           <img
-            className="rounded-xl bg-transparent w-full h-auto"
+            className="rounded-xl bg-transparent w-full h-auto md:ml-8 lg:ml-0"
             src="/img/info1.png"
             alt=""
           />
