@@ -41,24 +41,24 @@ const PresaleGrid = () => {
   const cardData = [
     {
       // icon: <img src={coinIcon} alt="" />,
-      // image: <img src={tagIcon1} alt="" />,
+      image: <img src={tagIcon1} alt="" />,
       dateIcon: <img src={calendarIcon} alt="" />,
       date: "Until 11-25-2023",
       title: 'Private Round',
       features: [
-        'Tokens for sale: 12.500.000', 
+        'Tokens for sale: 6,000,000', 
         'Price start at: $0.06', 
         'Per Stage min: $22.550',
       ],
     },
     {
       // icon: <img src={coinIcon} alt="" />,
-      // image: <img src={tagIcon2} alt="" />,
+      image: <img src={tagIcon2} alt="" />,
       dateIcon: <img src={calendarIcon} alt="" />,
       date: "15 to 20 Jan 2024",
       title: 'Whitelist Presale',
       features: [
-        'Tokens for sale: 87.500.000', 
+        'Tokens for sale: 10,000,000', 
         'Price start at: $0.072', 
         'Per Stage min: $175.000'
       ],
@@ -70,7 +70,7 @@ const PresaleGrid = () => {
       date: "25 to 30 Jan 2024",
       title: 'Public Presale',
       features: [
-        'Tokens for sale: 120.000.000', 
+        'Tokens for sale: 46,000,000', 
         'Price start at: $0.08', 
         'Per Stage min: $300.000'
       ],
@@ -82,7 +82,7 @@ const PresaleGrid = () => {
       date: "1st Feb 2024",
       title: 'Launch Day',
       features: [
-        'Tokens for sale: 120.000.000', 
+        'Tokens for sale: 46,000,000', 
         'Price start at: $0.08', 
         'Per Stage min: $300.000'
       ],

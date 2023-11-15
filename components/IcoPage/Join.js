@@ -1,10 +1,10 @@
-const Join = () => {
+const Join = ({onScrollToTop}) => {
 
   return(
     <div className="join-container">
       <section>
-        <h2>JOIN THE $LBM COIN PRE SALE</h2>
-        <button className="p-5 rounded-xl text-2xl font-bold text-white hover:opacity-80 bg-gray-700 mx-auto">
+        <h2>Join the $LBM presale</h2>
+        <button className="p-5 rounded-xl text-2xl font-bold text-white hover:opacity-80 bg-gray-700 mx-auto" onClick={onScrollToTop}>
               Buy
         </button>
       </section>

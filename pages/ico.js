@@ -8,10 +8,10 @@ import { getCurrentSaleStage } from '../utils/smartContracts/pLBM/getCurrentSale
 import { getRemainingTokens } from '../utils/smartContracts/pLBM/getRemainingTokens';
 import PresaleGrid from '../components/IcoPage/PresaleGrid';
 import Join from '../components/IcoPage/Join';
-import HowToBuy from '../components/IcoPage/HowToBuy';
-import HowToClaim from '../components/IcoPage/HowToClaim';
 import Roadmap from '../components/IcoPage/Roadmap';
 import Faq from '../components/IcoPage/Faq';
+import GridInfoSection from '../components/gridInfoSection'
+import AllocationChart from '../components/IcoPage/AllocationChart';
 import WhyLBM from '../components/IcoPage/WhyLBM';
 import BuyBtn from '../components/pLBM/BuyBtn';
 
@@ -54,6 +54,19 @@ const ICO = () => {
     const newLbmValue = usdcSelectedValue * 100;
     setLbmReceivedValue(newLbmValue);
   }, [usdcSelectedValue]); // Only re-run the effect if usdcSelectedValue changes
+
+
+  const handleBuyTokens = () =>{
+    buyTokens(lbmReceivedValue)
+  }
+
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', 
+    });
+  };
+
 
   return (
     <>
@@ -178,20 +191,33 @@ const ICO = () => {
       <h2 className="text-4xl text-center font-bold text-gray-800">
         Upcoming Events
       </h2>
-      <PresaleGrid />
-      <Join />
-      <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-10">
+      <PresaleGrid 
+      />
+
+      {/* <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-10">
         How To Buy
       </h2>
       <div className="mb-10">
         <HowToBuy />
       </div>
-      <HowToClaim />
+      <HowToClaim /> */}
 
-      <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-10">
+      {/* <AllocationChart /> */}
+
+      {/* <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-10">
         Why LBM?
       </h2>
-      <WhyLBM />
+      <WhyLBM /> */}
+      <div className='px-[1rem] lg:px-[6rem]'>
+        <GridInfoSection />
+      </div>
+
+      <Join 
+      onScrollToTop={handleScrollToTop} 
+      />
+
+
+      <AllocationChart />
 
       <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-10">
         FAQs

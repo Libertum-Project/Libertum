@@ -27,7 +27,7 @@
       font-size: 1.2em;
       font-weight: bold;
       margin-bottom: 10px;
-      color: var(--Libertum-color);
+      // color: #AFC9FA;
       text-transform: uppercase;
     }
 
@@ -54,6 +54,14 @@
   }
   .arrow-icon {
     transform: rotate(90deg);
-  }
-  
+  }  
+}
+
+@media screen and (min-width: 1800px) {
+  .roadmap-grid{
+    max-width: 1536px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    }
 }
