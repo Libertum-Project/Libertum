@@ -142,18 +142,18 @@ const ICONavbar = ({ provider, setProvider }) => {
                 <div className="lg:flex">
                   <button
                     onClick={disconnectWallet}
-                    className="px-3 py-2 text-lg font-logo uppercase text-bg-100 tracking-wide bg-[#f6f9fb] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.4)] hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.4)] border hover:bg-gray-500 hover:text-white"
+                    className="px-3 py-2 rounded-xl text-lg font-logo font-bold  uppercase text-bg-100 tracking-wide bg-[#f6f9fb] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.4)] hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.4)] border hover:bg-gray-500 hover:text-white"
                   >
-                    Disconnect Wallet
+                    Disconnect
                   </button>
                 </div>
               ) : (
                 <div className="lg:flex">
                   <button
                     onClick={connectWallet}
-                    className="px-3 py-2 text-lg font-logo uppercase text-bg-100 tracking-wide bg-[#f6f9fb] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.4)] hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.4)] border hover:bg-gray-500 hover:text-white"
+                    className="px-3 py-2 rounded-xl text-lg font-logo font-bold uppercase text-bg-100 tracking-wide bg-[#f6f9fb] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.4)] hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.4)] border hover:bg-gray-500 hover:text-white"
                   >
-                    Connect Wallet
+                    Connect
                   </button>
                 </div>
               )}
