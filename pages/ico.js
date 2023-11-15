@@ -23,17 +23,17 @@ const ICO = () => {
 
   const [provider, setProvider] = useState(null);
   const [isUserConnected, setIsUserConnected] = useState(false);
-  const usdcTokenCount = '$1340 USDC';
+  const usdcTokenCount = "$1340 USDC";
   const [usdcSelectedValue, setUsdcSelectedValue] = useState(100);
   const [lbmReceivedValue, setLbmReceivedValue] = useState(1000);
-  const lbmTokenCount = '48000 LBM';
-  const currentStageSale = 'Seed';
+  const lbmTokenCount = "48000 LBM";
+  const currentStageSale = "Seed";
   const seedProgress = 45;
   const remainingTokenCount = 10000;
   const isValidStage =
-    currentStage === 'seed' ||
-    currentStage === 'whitelist' ||
-    currentStage === 'public';
+    currentStage === "seed" ||
+    currentStage === "whitelist" ||
+    currentStage === "public";
 
   useEffect(() => {
     async function fetchContractData() {
@@ -58,7 +58,7 @@ const ICO = () => {
   const handleScrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
@@ -74,35 +74,32 @@ const ICO = () => {
       <div className="min-h-screen">
         <div className="container mx-auto justify-between lg:mt-16 flex flex-nowrap flex-col lg:flex-row ">
           <div className="lg:ml-24 py-8 md:mx-auto md:max-w-5xl lg:max-w-7xl">
-            <h2 className="tracking-wide text-gray-800 text-center lg:text-left font-bold px-4 md:px-16 lg:px-0 text-4xl md:text-5xl lg:text-7xl">
-              Transforming an{' '}
+            <h2 className="tracking-wide text-gray-800 text-center lg:text-left font-bold px-4 md:px-16 lg:px-0 text-4xl md:text-5xl xl:text-7xl">
+              Transforming an{" "}
               <span className="md:hidden px-1 text-white bg-gradient-to-r from-[#2128f2cc] via-[#4092e9cc] to-[#6ec6dccc] extrabold drop-shadow-[0_2px_2px_rgba(0,0,0,1)] ">
                 exclusive
-              </span>{' '}
+              </span>{" "}
               <div className="hidden md:block my-4">
                 <span className="px-5 text-white bg-gradient-to-r from-[#2128f2cc] via-[#4092e9cc] to-[#6ec6dccc] extrabold drop-shadow-[0_2px_2px_rgba(0,0,0,1)] ">
                   exclusive
-                </span>{' '}
+                </span>{" "}
               </div>
-              market into an{' '}
+              market into an{" "}
               <span className="md:hidden px-1 text-white bg-gradient-to-r from-[#c88648cc] via-[#e9c440cc] to-[#ffed4bcc] extrabold drop-shadow-[0_2px_2px_rgba(0,0,0,1)] ">
                 inclusive
-              </span>{' '}
+              </span>{" "}
               <div className="hidden md:block my-4">
                 <span className="px-4 text-white bg-gradient-to-r from-[#c88648cc] via-[#e9c440cc] to-[#ffed4bcc] extrabold drop-shadow-[0_2px_2px_rgba(0,0,0,1)] ">
                   inclusive
-                </span>{' '}
+                </span>{" "}
               </div>
               opportunity for everyone
             </h2>
-            <h3 className="hidden lg:block lg:mt-16 mt-4 text-left text-gray-500 uppercase font-logo  font-light lg:text-4xl">
-              Get your LBM tokens now!
-            </h3>
           </div>
 
-          <div className="my-auto py-12 md:py-8 w-full md:w-auto md:mx-32 md:px-16 lg:px-16 lg:mx-0 bg-gradient-to-r from-indigo-400 to-cyan-300 mx-auto md:rounded-2xl drop-shadow-[0_8px_4px_rgba(0,0,0,.4)]">
+          <div className="my-auto py-12 md:py-8 w-full md:w-auto md:mx-32 md:px-16 lg:px-8 lg:mx-0 bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-[#2128f2cc] to-[#4092e9cc]  mx-auto md:rounded-2xl drop-shadow-[0_8px_4px_rgba(0,0,0,.4)]">
             <h2 className="pt-4 text-4xl px-8 lg:text-5xl mx-auto text-center font-logo uppercase font-bold tracking-wide text-gray-800">
-              Current Stage:{' '}
+              Current Stage:{" "}
               {currentStage !== null ? (
                 <span>{currentStage}</span>
               ) : (
@@ -141,7 +138,7 @@ const ICO = () => {
                           max="2000"
                           step="50"
                           value={usdcSelectedValue}
-                          className="px-4 py-2 rounded-xl text-gray-800 font-semibold bg-slate-100 "
+                          className="px-3 py-2 rounded-xl text-gray-800 font-semibold bg-slate-100 "
                           onChange={(e) => {
                             // Update the usdcSelectedValue with the input value, but also ensure it doesn't exceed the max range value
                             setUsdcSelectedValue(e.target.value);
@@ -150,7 +147,7 @@ const ICO = () => {
                           onBlur={(e) => {
                             const value = Math.min(
                               Math.max(e.target.value, 0),
-                              2000,
+                              2000
                             );
                             setUsdcSelectedValue(value);
                             setLbmReceivedValue(value * 100);
@@ -163,7 +160,7 @@ const ICO = () => {
                     </div>
                   </div>
                 </div>
-                <div className="lg:mt-0 mt-8 col-span-1">
+                <div className="lg:mt-0 col-span-1">
                   <div className="flex px-4 py-4">
                     <div className="flex items-center mx-auto">
                       <img
@@ -186,7 +183,7 @@ const ICO = () => {
                           onBlur={(e) => {
                             const value = Math.min(
                               Math.max(e.target.value, 0),
-                              remainingTokenCount,
+                              remainingTokenCount
                             );
                             setLbmReceivedValue(value);
                             setUsdcSelectedValue(value / 100);
@@ -210,6 +207,9 @@ const ICO = () => {
             </div>
           </div>
         </div>
+        <h3 className="hidden lg:block lg:mt-16 mt-4 mx-auto text-center text-gray-500 uppercase font-logo  font-light lg:text-4xl">
+          Get your LBM tokens now!
+        </h3>
       </div>
 
       <div className="pb-10 bg-gradient-to-b from-transparent lg:mx-auto to-[#cfdde8f1] min-w-screen-2xl to-10%">
@@ -218,9 +218,7 @@ const ICO = () => {
             Upcoming Events
           </h2>
           <div className="">
-            <PresaleGrid
-            onScrollToTop={handleScrollToTop}
-            />
+            <PresaleGrid onScrollToTop={handleScrollToTop} />
           </div>
           {/* <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-10">
         How To Buy
@@ -236,10 +234,9 @@ const ICO = () => {
         Why LBM?
       </h2>
       <WhyLBM /> */}
-          <div className='px-[1rem] md:px-[6rem] lg:px-[6rem] xl:px-0'>
+          <div className="px-[1rem] md:px-[6rem] lg:px-[6rem] xl:px-0">
             <GridInfoSection />
           </div>
-
 
           <AllocationChart />
 
@@ -255,7 +252,6 @@ const ICO = () => {
       </div>
 
       <Footer />
-
     </>
   );
 };
