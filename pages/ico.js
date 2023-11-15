@@ -98,28 +98,30 @@ const ICO = () => {
           </div>
 
           <div className="my-auto py-12 md:py-8 w-full md:w-auto md:mx-32 md:px-16 lg:px-8 lg:mx-0 bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-[#2128f2cc] to-[#4092e9cc]  mx-auto md:rounded-2xl drop-shadow-[0_8px_4px_rgba(0,0,0,.4)]">
-            <h2 className="pt-4 text-4xl px-8 lg:text-5xl mx-auto text-center font-logo uppercase font-bold tracking-wide text-gray-800">
+            <h2 className="pt-4 text-4xl px-8 text-center font-logo uppercase font-bold tracking-wide text-gray-800">
               Current Stage:{" "}
-              {currentStage !== null ? (
-                <span>{currentStage}</span>
-              ) : (
-                <p>Loading...</p>
-              )}
+              <span style={{ display: "inline" }}>
+                {currentStage !== null ? currentStage : "Loading..."}
+              </span>
             </h2>
             <div className="px-4 md:px-0 py-8 lg:py-8">
               <div className="flex justify-between mb-1"></div>
 
-              <div className="mb-5 h-8 rounded-3xl w-full  bg-gray-300 drop-shadow-[0_2px_2px_rgba(0,0,0,.4)]">
+              <div className="flex mb-5 h-8 rounded-3xl w-full  bg-gray-300 drop-shadow-[0_2px_2px_rgba(0,0,0,.4)]">
                 <div
                   className="h-8 rounded-3xl bg-gradient-to-r from-[#c88648cc] via-[#e9c440cc] to-[#ffed4bcc]"
                   style={{ width: `${seedProgress}%` }}
                 ></div>
+                <span className="text-red-800 font-semibold py-1 px-2">
+                  {seedProgress}%
+                </span>
               </div>
-              <div className="mx-auto text-center text-xl py-4 text-gray-800 lg:text-2xl">
+              <div className="mx-auto text-center text-xl py-2 text-gray-800 lg:text-2xl">
                 <h2>
                   Remaining Tokens:
                   <span> {remainingTokenCount.toLocaleString()}</span>
                 </h2>
+                <span className="text-">1 USD = 100 LBM</span>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2">
@@ -196,6 +198,19 @@ const ICO = () => {
                     </div>
                   </div>
                 </div>
+              </div>
+              <div className="px-4 pt-2">
+                <input
+                  type="range"
+                  min={0}
+                  max={5000}
+                  step={50}
+                  className="w-full"
+                  onChange={(e) => {
+                    setUsdcSelectedValue(e.target.value);
+                    setLbmReceivedValue(e.target.value * 100);
+                  }}
+                ></input>
               </div>
             </div>
             <div className="lg:mx-auto relative flex w-full">
