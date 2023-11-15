@@ -12,12 +12,14 @@ async function buyTokens(
   setErrorMessage,
   setPolyScanURL,
   setShowSuccessMessage,
+  provider,
 ) {
   let transactionHash;
+  setErrorMessage(null);
+  setPolyScanURL(null);
   try {
     if (window.ethereum) {
       setIsLoading(true);
-      const provider = new ethers.BrowserProvider(window.ethereum);
       const signer = await provider.getSigner();
       const pLBM_contract = new ethers.Contract(
         pLBM_address,
@@ -49,23 +51,31 @@ async function buyTokens(
 
       setIsLoading(false);
       setShowPendingMessage(true);
-      await tx.wait();
-      setShowPendingMessage(false)
-      setShowSuccessMessage(true)
+
+      const transaction = await provider.getTransaction(transactionHash);
+      await transaction.wait();
+      setShowPendingMessage(false);
+      setShowSuccessMessage(true);
     } else {
       console.error(
         'Please connect your wallet using MetaMask or a similar provider.',
       );
     }
   } catch (error) {
-    if (error.message.includes('user rejected action')) {
+    if (
+      error.message.includes('user rejected action') ||
+      error.message.includes('user rejected transaction')
+    ) {
       setErrorMessage(
         "It looks like you rejected this transaction. Don't miss out on the opportunity to buy pLBM!",
       );
-      setPolyScanURL('')
+      setPolyScanURL('');
     } else if (transactionHash) {
       setPolyScanURL(`https://mumbai.polygonscan.com/tx/${transactionHash}`);
       setErrorMessage('An error occurred while processing your request.');
+      transactionHash = null;
+    } else {
+      setErrorMessage('Please Connect Your Wallet.');
     }
 
     console.error('Error buying tokens:', error);

@@ -11,12 +11,8 @@ const stageTextMap = {
   6: 'ended',
 };
 
-export async function getCurrentSaleStage() {
+export async function getCurrentSaleStage(provider) {
   try {
-    const provider = new ethers.JsonRpcProvider(
-      'https://polygon-mumbai.g.alchemy.com/v2/1MGoef4uSxJ3hjS0wszW_hmrScMeLq6B',
-    );
-
     const contract = new ethers.Contract(pLBM_address, pLBM_ABI.abi, provider);
 
     const currentStageNumber = await contract.currentStage();
