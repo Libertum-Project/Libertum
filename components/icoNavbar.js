@@ -1,12 +1,13 @@
-import Link from "next/link";
-import Image from "next/image";
-import { useState, Fragment, useEffect } from "react";
-import { Web3Provider } from "@ethersproject/providers";
-import { Menu, Transition } from "@headlessui/react";
-import { Bars3Icon } from "@heroicons/react/20/solid";
+import Link from 'next/link';
+import Image from 'next/image';
+import { useState, Fragment, useEffect } from 'react';
+import { Web3Provider } from '@ethersproject/providers';
+import { Menu, Transition } from '@headlessui/react';
+import { Bars3Icon } from '@heroicons/react/20/solid';
+import { getUserBalance } from '../utils/smartContracts/pLBM/getUserBalance';
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
+  return classes.filter(Boolean).join(' ');
 }
 
 const ICONavbar = ({ provider, setProvider }) => {
@@ -15,19 +16,20 @@ const ICONavbar = ({ provider, setProvider }) => {
   const usdcTokenCount = 1340;
   const lbmTokenCount = 48000;
   const navigation = [
-    ["Whitepaper", "/whitepaper"],
-    ["Marketplace", "/marketplace"],
-    ["Enter App", "/login"],
+    ['Whitepaper', '/whitepaper'],
+    ['Marketplace', '/marketplace'],
+    ['Enter App', '/login'],
   ];
+  const [userBalance, setUserBalance] = useState(null);
 
   useEffect(() => {
     // This will be executed only on the client side
     setIsClient(true);
 
     // Dynamically import the Web3Modal when on the client-side
-    const Web3Modal = require("web3modal").default;
+    const Web3Modal = require('web3modal').default;
     const newWeb3Modal = new Web3Modal({
-      network: "localhost",
+      network: 'localhost',
       cacheProvider: true,
     });
     setWeb3Modal(newWeb3Modal);
@@ -40,15 +42,27 @@ const ICONavbar = ({ provider, setProvider }) => {
     }
   }, [web3Modal]); // Dependency array ensures this effect runs when web3Modal changes
 
+  useEffect(() => {
+    async function fetchContractData() {
+      if (provider) {
+        const balance = await getUserBalance(provider);
+        setUserBalance(balance);
+      }
+    }
+    fetchContractData();
+  }, [provider]);
+
   const switchToHardhat = async (provider) => {
     try {
-      await provider.send("wallet_addEthereumChain", [
+      await provider.send('wallet_addEthereumChain', [
         {
-          chainId: "0x7A69",
-          chainName: "Hardhat",
-          nativeCurrency: { name: "ETH", symbol: "ETH", decimals: 18 },
-          rpcUrls: ["http://localhost:8545"],
-          blockExplorerUrls: ["https://explorer.hardhat.org/"],
+          chainId: '80001',
+          chainName: 'Polygon Mumbai',
+          nativeCurrency: { name: 'Matic', symbol: 'MATIC', decimals: 18 },
+          rpcUrls: [
+            'https://polygon-mumbai.g.alchemy.com/v2/ePeu2ooFujhSUo_Pqf5NS2uVDnz6ZiOO',
+          ],
+          blockExplorerUrls: ['https://mumbai.polygonscan.com'],
         },
       ]);
       return true;
@@ -64,41 +78,34 @@ const ICONavbar = ({ provider, setProvider }) => {
       const ethersProvider = new Web3Provider(newProvider);
       const network = await ethersProvider.getNetwork();
 
-      if (network.chainId !== 31337) {
-        const switched = await switchToHardhat(newProvider);
-        if (!switched) {
-          alert("Please manually switch to the Hardhat network");
-          return;
-        }
-      }
-
       setProvider(ethersProvider);
 
       // Listen for account changes
-      newProvider.on("accountsChanged", (accounts) => {
+      newProvider.on('accountsChanged', (accounts) => {
         setProvider(new Web3Provider(newProvider));
       });
 
       // Listen for chain changes
-      newProvider.on("chainChanged", async (chainIdHex) => {
+      newProvider.on('chainChanged', async (chainIdHex) => {
         const newChainId = parseInt(chainIdHex, 16);
         if (newChainId !== 31337) {
           const switched = await switchToHardhat(newProvider);
           if (!switched) {
-            alert("Please manually switch to the Hardhat network");
+            alert('Please manually switch to the Hardhat network');
           }
         } else {
           setProvider(new Web3Provider(newProvider));
         }
       });
     } catch (error) {
-      console.error("Failed to connect", error);
+      console.error('Failed to connect', error);
     }
   };
 
   const disconnectWallet = () => {
     web3Modal.clearCachedProvider();
     setProvider(null);
+    setUserBalance(null);
   };
 
   if (!isClient) {
@@ -124,18 +131,22 @@ const ICONavbar = ({ provider, setProvider }) => {
           </Link>
           <div className="flex relative flex-wrap space-x-4 justify-end">
             <div className="hidden md:grid lg:grid grid-rows-1">
-              <div className="col-span-1 grid grid-rows-1 ">
-                <div className="row-span-1 lg:text-md my-auto font-medium text-gray-800">
-                  {usdcTokenCount.toLocaleString(undefined, {
-                    minimumFractionDigits: 2,
-                    maximumFractionDigits: 2,
-                  })}{" "}
-                  USDC
+              {userBalance ? (
+                <div className="col-span-1 grid grid-rows-1 ">
+                  {/*
+                  <div className="row-span-1 lg:text-md my-auto font-medium text-gray-800">
+                    {usdcTokenCount.toLocaleString(undefined, {
+                      minimumFractionDigits: 2,
+                      maximumFractionDigits: 2,
+                    })}{' '}
+                    USDC
+                  </div>
+                  */}
+                  <div className="row-span-1 text-center lg:text-md my-auto font-medium text-gray-800">
+                    {userBalance} LBM
+                  </div>
                 </div>
-                <div className="row-span-1 text-center lg:text-md my-auto font-medium text-gray-800">
-                  {lbmTokenCount.toLocaleString(undefined, {})} LBM
-                </div>
-              </div>
+              ) : null}
             </div>
             <div>
               {provider ? (
@@ -185,9 +196,9 @@ const ICONavbar = ({ provider, setProvider }) => {
                           href="/whitepaper"
                           className={classNames(
                             active
-                              ? "bg-gray-100 text-gray-900"
-                              : "text-gray-700",
-                            "block px-4 py-2 text-md text-right"
+                              ? 'bg-gray-100 text-gray-900'
+                              : 'text-gray-700',
+                            'block px-4 py-2 text-md text-right',
                           )}
                         >
                           Whitepaper
@@ -200,9 +211,9 @@ const ICONavbar = ({ provider, setProvider }) => {
                           href="#"
                           className={classNames(
                             active
-                              ? "bg-gray-100 text-gray-900"
-                              : "text-gray-700",
-                            "block px-4 py-2 text-md text-right"
+                              ? 'bg-gray-100 text-gray-900'
+                              : 'text-gray-700',
+                            'block px-4 py-2 text-md text-right',
                           )}
                         >
                           Marketplace
@@ -216,9 +227,9 @@ const ICONavbar = ({ provider, setProvider }) => {
                             type="submit"
                             className={classNames(
                               active
-                                ? "bg-gray-100 text-gray-900"
-                                : "text-gray-700",
-                              "block w-full px-4 py-2 text-md text-right"
+                                ? 'bg-gray-100 text-gray-900'
+                                : 'text-gray-700',
+                              'block w-full px-4 py-2 text-md text-right',
                             )}
                           >
                             Enter App

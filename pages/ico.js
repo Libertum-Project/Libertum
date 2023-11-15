@@ -4,7 +4,6 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 import { getCurrentSaleStage } from "../utils/smartContracts/pLBM/getCurrentSaleStage";
 import { getRemainingTokens } from "../utils/smartContracts/pLBM/getRemainingTokens";
-import { buyTokens } from "../utils/smartContracts/pLBM/buyTokens";
 import PresaleGrid from "../components/IcoPage/PresaleGrid";
 import Join from "../components/IcoPage/Join";
 import AllocationChart from "../components/IcoPage/AllocationChart";
@@ -24,29 +23,31 @@ const ICO = () => {
 
   const [provider, setProvider] = useState(null);
   const [isUserConnected, setIsUserConnected] = useState(false);
-  const usdcTokenCount = "$1340 USDC";
+  const usdcTokenCount = '$1340 USDC';
   const [usdcSelectedValue, setUsdcSelectedValue] = useState(100);
   const [lbmReceivedValue, setLbmReceivedValue] = useState(1000);
-  const lbmTokenCount = "48000 LBM";
-  const currentStageSale = "Seed";
+  const lbmTokenCount = '48000 LBM';
+  const currentStageSale = 'Seed';
   const seedProgress = 45;
   const remainingTokenCount = 10000;
   const isValidStage =
-    currentStage === "seed" ||
-    currentStage === "whitelist" ||
-    currentStage === "public";
+    currentStage === 'seed' ||
+    currentStage === 'whitelist' ||
+    currentStage === 'public';
 
   useEffect(() => {
     async function fetchContractData() {
-      const stage = await getCurrentSaleStage();
-      setCurrentStage(stage);
+      if (provider) {
+        const stage = await getCurrentSaleStage(provider);
+        setCurrentStage(stage);
 
-      const tokens = await getRemainingTokens();
-      setRemainingTokens(tokens);
+        const tokens = await getRemainingTokens(provider);
+        setRemainingTokens(tokens);
+      }
     }
 
     fetchContractData();
-  }, []);
+  }, [provider]);
 
   useEffect(() => {
     // For every 1 USDC, you get 100 LBM.
@@ -54,14 +55,10 @@ const ICO = () => {
     setLbmReceivedValue(newLbmValue);
   }, [usdcSelectedValue]); // Only re-run the effect if usdcSelectedValue changes
 
-  const handleBuyTokens = () => {
-    buyTokens(lbmReceivedValue);
-  };
-
   const handleScrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   };
 
@@ -78,23 +75,23 @@ const ICO = () => {
         <div className="container mx-auto justify-between lg:mt-16 flex flex-nowrap flex-col lg:flex-row ">
           <div className="lg:ml-24 py-8 md:mx-auto md:max-w-5xl lg:max-w-7xl">
             <h2 className="tracking-wide text-gray-800 text-center lg:text-left font-bold px-4 md:px-16 lg:px-0 text-4xl md:text-5xl lg:text-7xl">
-              Transforming an{" "}
+              Transforming an{' '}
               <span className="md:hidden px-1 text-white bg-gradient-to-r from-[#2128f2cc] via-[#4092e9cc] to-[#6ec6dccc] extrabold drop-shadow-[0_2px_2px_rgba(0,0,0,1)] ">
                 exclusive
-              </span>{" "}
+              </span>{' '}
               <div className="hidden md:block my-4">
                 <span className="px-5 text-white bg-gradient-to-r from-[#2128f2cc] via-[#4092e9cc] to-[#6ec6dccc] extrabold drop-shadow-[0_2px_2px_rgba(0,0,0,1)] ">
                   exclusive
-                </span>{" "}
+                </span>{' '}
               </div>
-              market into an{" "}
+              market into an{' '}
               <span className="md:hidden px-1 text-white bg-gradient-to-r from-[#c88648cc] via-[#e9c440cc] to-[#ffed4bcc] extrabold drop-shadow-[0_2px_2px_rgba(0,0,0,1)] ">
                 inclusive
-              </span>{" "}
+              </span>{' '}
               <div className="hidden md:block my-4">
                 <span className="px-4 text-white bg-gradient-to-r from-[#c88648cc] via-[#e9c440cc] to-[#ffed4bcc] extrabold drop-shadow-[0_2px_2px_rgba(0,0,0,1)] ">
                   inclusive
-                </span>{" "}
+                </span>{' '}
               </div>
               opportunity for everyone
             </h2>
@@ -105,7 +102,7 @@ const ICO = () => {
 
           <div className="my-auto py-12 md:py-8 w-full md:w-auto md:mx-32 md:px-16 lg:px-16 lg:mx-0 bg-gradient-to-r from-indigo-400 to-cyan-300 mx-auto md:rounded-2xl drop-shadow-[0_8px_4px_rgba(0,0,0,.4)]">
             <h2 className="pt-4 text-4xl px-8 lg:text-5xl mx-auto text-center font-logo uppercase font-bold tracking-wide text-gray-800">
-              Current Stage:{" "}
+              Current Stage:{' '}
               {currentStage !== null ? (
                 <span>{currentStage}</span>
               ) : (
@@ -115,9 +112,9 @@ const ICO = () => {
             <div className="px-4 md:px-0 py-8 lg:py-8">
               <div className="flex justify-between mb-1"></div>
 
-              <div class="mb-5 h-8 rounded-3xl w-full  bg-gray-300 drop-shadow-[0_2px_2px_rgba(0,0,0,.4)]">
+              <div className="mb-5 h-8 rounded-3xl w-full  bg-gray-300 drop-shadow-[0_2px_2px_rgba(0,0,0,.4)]">
                 <div
-                  class="h-8 rounded-3xl bg-gradient-to-r from-[#c88648cc] via-[#e9c440cc] to-[#ffed4bcc]"
+                  className="h-8 rounded-3xl bg-gradient-to-r from-[#c88648cc] via-[#e9c440cc] to-[#ffed4bcc]"
                   style={{ width: `${seedProgress}%` }}
                 ></div>
               </div>
@@ -153,7 +150,7 @@ const ICO = () => {
                           onBlur={(e) => {
                             const value = Math.min(
                               Math.max(e.target.value, 0),
-                              2000
+                              2000,
                             );
                             setUsdcSelectedValue(value);
                             setLbmReceivedValue(value * 100);
@@ -189,7 +186,7 @@ const ICO = () => {
                           onBlur={(e) => {
                             const value = Math.min(
                               Math.max(e.target.value, 0),
-                              remainingTokenCount
+                              remainingTokenCount,
                             );
                             setLbmReceivedValue(value);
                             setUsdcSelectedValue(value / 100);
@@ -205,7 +202,11 @@ const ICO = () => {
               </div>
             </div>
             <div className="lg:mx-auto relative flex w-full">
-              <BuyBtn isValidStage={isValidStage} amount={lbmReceivedValue} />
+              <BuyBtn
+                isValidStage={isValidStage}
+                amount={lbmReceivedValue}
+                provider={provider}
+              />
             </div>
           </div>
         </div>

@@ -2,12 +2,8 @@ import { ethers } from 'ethers';
 import pLBM_ABI from '../ABI/pLBM.json';
 const pLBM_address = process.env.NEXT_PUBLIC_pLBM_address;
 
-export async function getRemainingTokens() {
+export async function getRemainingTokens(provider) {
   try {
-    const provider = new ethers.JsonRpcProvider(
-      'https://polygon-mumbai.g.alchemy.com/v2/1MGoef4uSxJ3hjS0wszW_hmrScMeLq6B',
-    );
-
     const contract = new ethers.Contract(pLBM_address, pLBM_ABI.abi, provider);
 
     const seedTokensRemaining = await contract.seedTokensRemaining();

@@ -5,7 +5,7 @@ import SuccessMessage from "../MessageBox/SuccessMessage.jsx";
 import Loading from "./Loading";
 import { useState } from "react";
 
-const BuyBtn = ({ isValidStage, amount }) => {
+const BuyBtn = ({ isValidStage, amount, provider }) => {
   const [showFailMessage, setShowFailMessage] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [polyScanURL, setPolyScanURL] = useState("");
@@ -21,7 +21,8 @@ const BuyBtn = ({ isValidStage, amount }) => {
       setShowFailMessage,
       setErrorMessage,
       setPolyScanURL,
-      setShowSuccessMessage
+      setShowSuccessMessage,
+      provider
     );
   };
 
