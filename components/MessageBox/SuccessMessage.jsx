@@ -9,7 +9,7 @@ const SuccessMessage = ({
 }) => {
   const handleContinue = (event) => {
     event.preventDefault();
-    setShowSuccessMessage(true);
+    setShowSuccessMessage(false);
   };
   return (
     <div
@@ -18,10 +18,7 @@ const SuccessMessage = ({
         handleContinue(event);
       }}
     >
-      <div
-        className={css.successBox}
-        onClick={(event) => event.stopPropagation()}
-      >
+      <div className={css.successBox}>
         <div className={css.header}>
           <img src={success} alt="success" />
           <h2>Success!</h2>
@@ -30,7 +27,9 @@ const SuccessMessage = ({
           <p>{messagge}</p>
         </div>
         <a href={redirectURL}>
-          <button>{textBtn}</button>
+          <button onClick={(event) => event.stopPropagation()}>
+            {textBtn}
+          </button>
         </a>
       </div>
     </div>
