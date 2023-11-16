@@ -16,6 +16,8 @@ import Loading from '../components/pLBM/Loading';
 import PendingMessage from '../components/MessageBox/PendingMessage';
 import FailMessage from '../components/MessageBox/FailMessage';
 import SuccessMessage from '../components/MessageBox/SuccessMessage';
+import { Web3ModalProvider } from '../context/Web3Modal';
+
 
 const ICO = () => {
   const [currentStage, setCurrentStage] = useState(null);
@@ -78,6 +80,7 @@ const ICO = () => {
   };
 
   return (
+    <Web3ModalProvider>
     <>
       {isLoading ? <Loading /> : null}
       {showFailMessage ? (
@@ -314,6 +317,7 @@ const ICO = () => {
 
       <Footer />
     </>
+    </Web3ModalProvider>
   );
 };
 
