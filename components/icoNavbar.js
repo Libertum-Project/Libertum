@@ -4,7 +4,8 @@ import { useState, Fragment, useEffect } from 'react';
 import { Web3Provider } from '@ethersproject/providers';
 import { Menu, Transition } from '@headlessui/react';
 import { Bars3Icon } from '@heroicons/react/20/solid';
-import { getUserBalance } from '../utils/smartContracts/pLBM/getUserBalance';
+import { getUserPlbmBalance } from '../utils/smartContracts/pLBM/getUserPlbmBalance';
+import { getUserUSDCBalance } from '../utils/smartContracts/pLBM/getUserUsdcBalance';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -20,7 +21,8 @@ const ICONavbar = ({ provider, setProvider }) => {
     ['Marketplace', '/marketplace'],
     ['Enter App', '/login'],
   ];
-  const [userBalance, setUserBalance] = useState(null);
+  const [userPLBM, setUserPLBM] = useState(null);
+  const [userUSDC, setUserUSDC] = useState(null);
 
   useEffect(() => {
     // This will be executed only on the client side
@@ -45,14 +47,16 @@ const ICONavbar = ({ provider, setProvider }) => {
   useEffect(() => {
     async function fetchContractData() {
       if (provider) {
-        const balance = await getUserBalance(provider);
-        setUserBalance(balance);
+        const plbmBalance = await getUserPlbmBalance(provider);
+        setUserPLBM(plbmBalance);
+        const usdcBalance = await getUserUSDCBalance(provider);
+        setUserUSDC(usdcBalance)
       }
     }
     fetchContractData();
   }, [provider]);
 
-  const switchToHardhat = async (provider) => {
+  const switchNetwork = async (provider) => {
     try {
       await provider.send('wallet_addEthereumChain', [
         {
@@ -89,7 +93,7 @@ const ICONavbar = ({ provider, setProvider }) => {
       newProvider.on('chainChanged', async (chainIdHex) => {
         const newChainId = parseInt(chainIdHex, 16);
         if (newChainId !== 31337) {
-          const switched = await switchToHardhat(newProvider);
+          const switched = await switchNetwork(newProvider);
           if (!switched) {
             alert('Please manually switch to the Hardhat network');
           }
@@ -105,7 +109,8 @@ const ICONavbar = ({ provider, setProvider }) => {
   const disconnectWallet = () => {
     web3Modal.clearCachedProvider();
     setProvider(null);
-    setUserBalance(null);
+    setUserPLBM(null);
+    setUserUSDC(null)
   };
 
   if (!isClient) {
@@ -131,19 +136,13 @@ const ICONavbar = ({ provider, setProvider }) => {
           </Link>
           <div className="flex relative flex-wrap space-x-4 justify-end">
             <div className="hidden md:grid lg:grid grid-rows-1">
-              {userBalance ? (
+              {userPLBM !== null ? (
                 <div className="col-span-1 grid grid-rows-1 ">
-                  {/*
                   <div className="row-span-1 lg:text-md my-auto font-medium text-gray-800">
-                    {usdcTokenCount.toLocaleString(undefined, {
-                      minimumFractionDigits: 2,
-                      maximumFractionDigits: 2,
-                    })}{' '}
-                    USDC
+                    {userUSDC} USDC
                   </div>
-                  */}
                   <div className="row-span-1 text-center lg:text-md my-auto font-medium text-gray-800">
-                    {userBalance} LBM
+                    {userPLBM} LBM
                   </div>
                 </div>
               ) : null}
