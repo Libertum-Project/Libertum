@@ -13,6 +13,7 @@ const Navbar = () => {
     ["Whitepaper", "/whitepaper"],
     ["Marketplace", "/marketplace"],
     ["Enter App", "/login"],
+    ["Buy $LBM", "/ico"]
   ];
 
   // State to handle dropdown visibility
@@ -104,6 +105,22 @@ const Navbar = () => {
                           )}
                         >
                           Enter app
+                        </a>
+                      )}
+                    </Menu.Item>
+                    <Menu.Item>
+                      {({ active }) => (
+                        <a
+                        href="http://libertum.io/ico"
+                        rel="noopener noreferrer"
+                          className={classNames(
+                            active
+                              ? "bg-gray-200 text-gray-900"
+                              : "text-gray-700",
+                            "block px-4 py-2 text-md text-right"
+                          )}
+                        >
+                          Buy $LBM
                         </a>
                       )}
                     </Menu.Item>
