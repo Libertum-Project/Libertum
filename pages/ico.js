@@ -34,18 +34,14 @@ const ICO = () => {
 
   const [provider, setProvider] = useState(null);
   const [isUserConnected, setIsUserConnected] = useState(false);
-  const usdcTokenCount = '$1340 USDC';
   const [usdcSelectedValue, setUsdcSelectedValue] = useState(100);
   const [lbmReceivedValue, setLbmReceivedValue] = useState(1000);
-  const lbmTokenCount = '48000 LBM';
-  const currentStageSale = 'Seed';
   const seedProgress = 45;
   const remainingTokenCount = 10000;
   const isValidStage =
     currentStage === 'seed' ||
     currentStage === 'whitelist' ||
     currentStage === 'public';
-
   useEffect(() => {
     async function fetchContractData() {
       if (provider) {
@@ -148,10 +144,12 @@ const ICO = () => {
                 </span>
               </div>
               <div className="mx-auto text-center text-xl py-2 text-gray-800 lg:text-2xl">
-                <h2>
-                  Remaining Tokens:
-                  <span> {remainingTokenCount.toLocaleString()}</span>
-                </h2>
+                {isValidStage && (
+                  <h2>
+                    Remaining Tokens:
+                    <span> {remainingTokens[`${currentStage}TokensRemaining`] }</span>
+                  </h2>
+                )}
                 <span className="text-">1 USD = 100 LBM</span>
               </div>
 
