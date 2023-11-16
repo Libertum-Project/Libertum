@@ -207,7 +207,7 @@ const ICONavbar = ({ provider, setProvider }) => {
                     <Menu.Item>
                       {({ active }) => (
                         <a
-                          href="#"
+                          href="https://www.marketplace.libertum.io/"
                           className={classNames(
                             active
                               ? 'bg-gray-100 text-gray-900'
@@ -222,8 +222,8 @@ const ICONavbar = ({ provider, setProvider }) => {
                     <form method="POST" action="#">
                       <Menu.Item>
                         {({ active }) => (
-                          <button
-                            type="submit"
+                          <a
+                            href='https://www.marketplace.libertum.io/mydashboard/'
                             className={classNames(
                               active
                                 ? 'bg-gray-100 text-gray-900'
@@ -232,7 +232,7 @@ const ICONavbar = ({ provider, setProvider }) => {
                             )}
                           >
                             Enter App
-                          </button>
+                          </a>
                         )}
                       </Menu.Item>
                     </form>
