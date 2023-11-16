@@ -6,6 +6,7 @@ import { Menu, Transition } from '@headlessui/react';
 import { Bars3Icon } from '@heroicons/react/20/solid';
 import { getUserPlbmBalance } from '../utils/smartContracts/pLBM/getUserPlbmBalance';
 import { getUserUSDCBalance } from '../utils/smartContracts/pLBM/getUserUsdcBalance';
+import { useWeb3ModalSigner } from '@web3modal/ethers5/react';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -23,6 +24,9 @@ const ICONavbar = ({ provider, setProvider }) => {
   ];
   const [userPLBM, setUserPLBM] = useState(null);
   const [userUSDC, setUserUSDC] = useState(null);
+  const signer = useWeb3ModalSigner();
+  console.log(signer);
+
 
   useEffect(() => {
     // This will be executed only on the client side
@@ -148,6 +152,7 @@ const ICONavbar = ({ provider, setProvider }) => {
               ) : null}
             </div>
             <div>
+              <w3m-button />
               {provider ? (
                 <div className="lg:flex">
                   <button
