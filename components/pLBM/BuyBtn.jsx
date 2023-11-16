@@ -13,7 +13,7 @@ const BuyBtn = ({
 }) => {
   const handleBuyTokens = async () => {
     await buyTokens(
-      amount,
+      parseInt(amount),
       setIsLoading,
       setShowPendingMessage,
       setShowFailMessage,

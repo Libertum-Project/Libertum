@@ -31,7 +31,7 @@ const ICO = () => {
   const [showPendingMessage, setShowPendingMessage] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
+  const [conversionRate, setConversionRate] = useState(0.06);
   const [provider, setProvider] = useState(null);
   const [isUserConnected, setIsUserConnected] = useState(false);
   const [usdcSelectedValue, setUsdcSelectedValue] = useState(100);
@@ -57,10 +57,18 @@ const ICO = () => {
   }, [provider]);
 
   useEffect(() => {
-    // For every 1 USDC, you get 100 LBM.
-    const newLbmValue = usdcSelectedValue * 100;
+    if (currentStage === 'seed') {
+      setConversionRate(0.06);
+    } else if (currentStage === 'whitelist') {
+      setConversionRate(0.072);
+    } else if (currentStage === 'public') {
+      setConversionRate(0.08);
+    }
+
+    const newLbmValue = usdcSelectedValue / conversionRate;
+
     setLbmReceivedValue(newLbmValue);
-  }, [usdcSelectedValue]); // Only re-run the effect if usdcSelectedValue changes
+  }, [usdcSelectedValue, currentStage]);
 
   const handleScrollToTop = () => {
     window.scrollTo({
@@ -147,10 +155,13 @@ const ICO = () => {
                 {isValidStage && (
                   <h2>
                     Remaining Tokens:
-                    <span> {remainingTokens[`${currentStage}TokensRemaining`] }</span>
+                    <span>
+                      {' '}
+                      {remainingTokens[`${currentStage}TokensRemaining`]}
+                    </span>
                   </h2>
                 )}
-                <span className="text-">1 USD = 100 LBM</span>
+                <span className="text-">1 USDC = {conversionRate} LBM</span>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2">
@@ -205,7 +216,7 @@ const ICO = () => {
                           min="0"
                           max="2000"
                           step="50"
-                          value={lbmReceivedValue}
+                          value={parseInt(lbmReceivedValue)}
                           className="px-4 py-2 rounded-xl text-gray-800 font-semibold bg-slate-100 "
                           onChange={(e) => {
                             setLbmReceivedValue(e.target.value);
