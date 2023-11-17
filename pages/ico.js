@@ -12,13 +12,14 @@ import Roadmap from "../components/IcoPage/Roadmap";
 import Faq from "../components/IcoPage/Faq";
 import BuyBtn from "../components/pLBM/BuyBtn";
 import Footer from "../components/footer";
-import Timer from "../components/Timer";
+import Timer from "../components/timer";
 import Loading from "../components/pLBM/Loading";
 import PendingMessage from "../components/MessageBox/PendingMessage";
 import FailMessage from "../components/MessageBox/FailMessage";
 import SuccessMessage from "../components/MessageBox/SuccessMessage";
 import Navbar from "../components/navbar";
 import Contact from "../components/IcoPage/Contact";
+import SaleProgressBar from "../components/SaleProgressBar";
 
 const ICO = () => {
   const [currentStage, setCurrentStage] = useState(null);
@@ -39,12 +40,12 @@ const ICO = () => {
   const [isUserConnected, setIsUserConnected] = useState(false);
   const [usdcSelectedValue, setUsdcSelectedValue] = useState(100);
   const [lbmReceivedValue, setLbmReceivedValue] = useState(1000);
-  const seedProgress = 45;
   const remainingTokenCount = 10000;
   const isValidStage =
     currentStage === "seed" ||
     currentStage === "whitelist" ||
     currentStage === "public";
+
   useEffect(() => {
     async function fetchContractData() {
       if (provider) {
@@ -147,15 +148,11 @@ const ICO = () => {
               <div className="pb-8 lg:pb-8">
                 <Timer></Timer>
               </div>
-              <div className="flex mb-5 h-8 rounded-3xl w-full  bg-gray-300 drop-shadow-[0_2px_2px_rgba(0,0,0,.4)]">
-                <div
-                  className="h-8 rounded-3xl bg-gradient-to-r from-[#c88648cc] via-[#e9c440cc] to-[#ffed4bcc]"
-                  style={{ width: `${seedProgress}%` }}
-                ></div>
-                <span className="text-red-800 font-semibold py-1 px-2">
-                  {seedProgress}%
-                </span>
-              </div>
+              <SaleProgressBar
+                currentStage={currentStage}
+                remainingTokens={remainingTokens}
+                isValidStage={isValidStage}
+              />
               <div className="mx-auto text-center text-xl py-2 text-gray-800 lg:text-2xl">
                 {isValidStage && (
                   <h2>
@@ -194,7 +191,7 @@ const ICO = () => {
                           onBlur={(e) => {
                             const value = Math.min(
                               Math.max(e.target.value, 0),
-                              2000
+                              2000,
                             );
                             setUsdcSelectedValue(value);
                             setLbmReceivedValue(value * 100);
@@ -231,7 +228,7 @@ const ICO = () => {
                           onBlur={(e) => {
                             const value = Math.min(
                               Math.max(e.target.value, 0),
-                              remainingTokenCount
+                              remainingTokenCount,
                             );
                             setLbmReceivedValue(value);
                             setUsdcSelectedValue(value / 100);
@@ -304,9 +301,8 @@ const ICO = () => {
           {/* <Join onScrollToTop={handleScrollToTop} /> */}
 
           <div className="mx-[8rem] lg:mx-24 2xl:mx-auto 2xl:max-w-[1536px]">
-          <Contact />
+            <Contact />
           </div>
-
         </div>
       </div>
 
