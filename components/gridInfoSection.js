@@ -81,7 +81,7 @@ export default function GridInfoSection() {
                 </p>
               </div>
               <div className="mt-2 text-center text-base text-gray-600">
-                Invest in prime real estate within London's bustling commercial
+                Invest in prime real estate within London&apos;s bustling commercial
                 district and enjoy substantial monthly income.
               </div>
             </div>

@@ -60,7 +60,7 @@ export default function LargeInfoSection() {
             Rental Income Token (RIT)
           </h1>
           <p className="mt-6 lg:mt-0 lg:text-3xl lg:py-5 text-xl lg:leading-10 text-gray-700">
-            $LBM can be used to participate in Libertum's fractionalised rental
+            $LBM can be used to participate in Libertum fractionalised rental
             income ecosystem. Use $LBM to purchase RITs and sit back and enjoy
             rental income from premium properties. Let the future invest in you!
           </p>

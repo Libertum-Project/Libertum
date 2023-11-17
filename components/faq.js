@@ -51,10 +51,10 @@ export default function FAQ() {
               <p className="text-gray-500 ">
                 Before tokenization, a property is typically valued using
                 traditional real estate appraisal methods. This involves
-                assessing factors such as the property's location, size,
+                assessing factors such as the property&apos;s location, size,
                 condition, comparable sales in the area, and other relevant
                 market data. Appraisers use these factors to determine the
-                property's market value.
+                property&apos;s market value.
               </p>
             </div>
             <div className="mb-5">
@@ -73,7 +73,7 @@ export default function FAQ() {
                 </svg>
                 What are the benefits of using the Libertum platform?
               </h3>
-              <p className="text-gray-500 ">
+              <p className="text-gray-500">
                 By dividing real estate assets into tradable tokens, investors
                 can now buy, sell, and trade ownership stakes in properties.
                 Investors benefit from:
