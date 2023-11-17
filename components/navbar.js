@@ -130,7 +130,7 @@ const Navbar = () => {
                     <Menu.Item>
                       {({ active }) => (
                         <a
-                          href="/ico"
+                          href="https://www.libertum.io/ico"
                           rel="noopener noreferrer"
                           className={classNames(
                             active

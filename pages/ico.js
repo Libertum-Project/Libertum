@@ -146,7 +146,7 @@ const ICO = () => {
             </h2>
             <div className="px-4 md:px-0 py-8 lg:py-8">
               <div className="pb-8 lg:pb-8">
-                <Timer></Timer>
+                <Timer />
               </div>
               <SaleProgressBar
                 currentStage={currentStage}

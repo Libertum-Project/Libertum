@@ -22,7 +22,7 @@ export default function Footer() {
   return (
     <div className="relative">
       <section>
-        <div className="grid max-w-screen-xl grid-cols-1 gap-10 pt-10 lg:mx-auto lg:px-0 px-8 mt-5 border-t border-gray-800 lg:grid-cols-5">
+        <div className="grid max-w-screen-xl grid-cols-1 gap-4 pt-10 lg:mx-auto lg:px-0 px-8 mt-5 border-t border-gray-800 lg:grid-cols-5">
           <div className="lg:text-left lg:col-span-2">
             <div>
               <Link
@@ -61,7 +61,6 @@ export default function Footer() {
               ))}
             </div>
           </div>
-          <div>
             <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
               {legal.map((item, index) => (
                 <Link
@@ -73,8 +72,8 @@ export default function Footer() {
                 </Link>
               ))}
             </div>
-          </div>
-          <div className="text-black">
+
+          <div className="text-black w-fit">
             <div>Follow us</div>
             <div className="flex mt-5 space-x-5  text-gray-400 ">
               <a
