@@ -17,9 +17,12 @@ import PendingMessage from '../components/MessageBox/PendingMessage';
 import FailMessage from '../components/MessageBox/FailMessage';
 import SuccessMessage from '../components/MessageBox/SuccessMessage';
 import { Web3ModalProvider } from '../context/Web3Modal';
+import { useWeb3ModalSigner } from '@web3modal/ethers5/react';
 
 
 const ICO = () => {
+  const web3signer = useWeb3ModalSigner().signer;
+  console.log("WEB3signer", web3signer);
   const [currentStage, setCurrentStage] = useState(null);
   const [remainingTokens, setRemainingTokens] = useState({
     seedTokensRemaining: null,
@@ -35,6 +38,7 @@ const ICO = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [conversionRate, setConversionRate] = useState(0.06);
   const [provider, setProvider] = useState(null);
+  const [signer, setSigner] = useState(null);
   const [isUserConnected, setIsUserConnected] = useState(false);
   const [usdcSelectedValue, setUsdcSelectedValue] = useState(100);
   const [lbmReceivedValue, setLbmReceivedValue] = useState(1000);
@@ -108,7 +112,7 @@ const ICO = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Background></Background>
-      <ICONavbar provider={provider} setProvider={setProvider} />
+      <ICONavbar signer={signer} setSigner={setSigner} />
       <div className="min-h-screen">
         <div className="container mx-auto justify-between lg:mt-16 flex flex-nowrap flex-col lg:flex-row ">
           <div className="lg:ml-24 py-8 md:mx-auto md:max-w-5xl lg:max-w-7xl">

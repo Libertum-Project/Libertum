@@ -12,9 +12,9 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-const ICONavbar = ({ provider, setProvider }) => {
-  const [web3Modal, setWeb3Modal] = useState(null);
-  const [isClient, setIsClient] = useState(false);
+const ICONavbar = ({ signer, setSigner }) => {
+  // const [web3Modal, setWeb3Modal] = useState(null);
+  // const [isClient, setIsClient] = useState(false);
   const usdcTokenCount = 1340;
   const lbmTokenCount = 48000;
   const navigation = [
@@ -24,102 +24,101 @@ const ICONavbar = ({ provider, setProvider }) => {
   ];
   const [userPLBM, setUserPLBM] = useState(null);
   const [userUSDC, setUserUSDC] = useState(null);
-  const signer = useWeb3ModalSigner();
-  console.log(signer);
+  const web3signer = useWeb3ModalSigner().signer;
+  console.log("WEB3signer", web3signer);
 
+  // useEffect(() => {
+  //   // This will be executed only on the client side
+  //   setIsClient(true);
 
-  useEffect(() => {
-    // This will be executed only on the client side
-    setIsClient(true);
+  //   // Dynamically import the Web3Modal when on the client-side
+  //   const Web3Modal = require('web3modal').default;
+  //   const newWeb3Modal = new Web3Modal({
+  //     network: 'localhost',
+  //     cacheProvider: true,
+  //   });
+  //   setWeb3Modal(newWeb3Modal);
+  // }, []);
 
-    // Dynamically import the Web3Modal when on the client-side
-    const Web3Modal = require('web3modal').default;
-    const newWeb3Modal = new Web3Modal({
-      network: 'localhost',
-      cacheProvider: true,
-    });
-    setWeb3Modal(newWeb3Modal);
-  }, []);
+  // // useEffect to connect wallet after web3Modal is set
+  // useEffect(() => {
+  //   if (web3Modal && web3Modal.cachedProvider) {
+  //     connectWallet();
+  //   }
+  // }, [web3Modal]); // Dependency array ensures this effect runs when web3Modal changes
 
-  // useEffect to connect wallet after web3Modal is set
-  useEffect(() => {
-    if (web3Modal && web3Modal.cachedProvider) {
-      connectWallet();
-    }
-  }, [web3Modal]); // Dependency array ensures this effect runs when web3Modal changes
+  // useEffect(() => {
+  //   async function fetchContractData() {
+  //     if (provider) {
+  //       const plbmBalance = await getUserPlbmBalance(provider);
+  //       setUserPLBM(plbmBalance);
+  //       const usdcBalance = await getUserUSDCBalance(provider);
+  //       setUserUSDC(usdcBalance)
+  //     }
+  //   }
+  //   fetchContractData();
+  // }, [provider]);
 
-  useEffect(() => {
-    async function fetchContractData() {
-      if (provider) {
-        const plbmBalance = await getUserPlbmBalance(provider);
-        setUserPLBM(plbmBalance);
-        const usdcBalance = await getUserUSDCBalance(provider);
-        setUserUSDC(usdcBalance)
-      }
-    }
-    fetchContractData();
-  }, [provider]);
+  // const switchNetwork = async (provider) => {
+  //   try {
+  //     await provider.send('wallet_addEthereumChain', [
+  //       {
+  //         chainId: '80001',
+  //         chainName: 'Polygon Mumbai',
+  //         nativeCurrency: { name: 'Matic', symbol: 'MATIC', decimals: 18 },
+  //         rpcUrls: [
+  //           'https://polygon-mumbai.g.alchemy.com/v2/ePeu2ooFujhSUo_Pqf5NS2uVDnz6ZiOO',
+  //         ],
+  //         blockExplorerUrls: ['https://mumbai.polygonscan.com'],
+  //       },
+  //     ]);
+  //     return true;
+  //   } catch (switchError) {
+  //     console.error(switchError);
+  //     return false;
+  //   }
+  // };
 
-  const switchNetwork = async (provider) => {
-    try {
-      await provider.send('wallet_addEthereumChain', [
-        {
-          chainId: '80001',
-          chainName: 'Polygon Mumbai',
-          nativeCurrency: { name: 'Matic', symbol: 'MATIC', decimals: 18 },
-          rpcUrls: [
-            'https://polygon-mumbai.g.alchemy.com/v2/ePeu2ooFujhSUo_Pqf5NS2uVDnz6ZiOO',
-          ],
-          blockExplorerUrls: ['https://mumbai.polygonscan.com'],
-        },
-      ]);
-      return true;
-    } catch (switchError) {
-      console.error(switchError);
-      return false;
-    }
-  };
+  // const connectWallet = async () => {
+  //   try {
+  //     const newProvider = await web3Modal.connect();
+  //     const ethersProvider = new Web3Provider(newProvider);
+  //     const network = await ethersProvider.getNetwork();
 
-  const connectWallet = async () => {
-    try {
-      const newProvider = await web3Modal.connect();
-      const ethersProvider = new Web3Provider(newProvider);
-      const network = await ethersProvider.getNetwork();
+  //     setProvider(ethersProvider);
 
-      setProvider(ethersProvider);
+  //     // Listen for account changes
+  //     newProvider.on('accountsChanged', (accounts) => {
+  //       setProvider(new Web3Provider(newProvider));
+  //     });
 
-      // Listen for account changes
-      newProvider.on('accountsChanged', (accounts) => {
-        setProvider(new Web3Provider(newProvider));
-      });
+  //     // Listen for chain changes
+  //     newProvider.on('chainChanged', async (chainIdHex) => {
+  //       const newChainId = parseInt(chainIdHex, 16);
+  //       if (newChainId !== 31337) {
+  //         const switched = await switchNetwork(newProvider);
+  //         if (!switched) {
+  //           alert('Please manually switch to the Hardhat network');
+  //         }
+  //       } else {
+  //         setProvider(new Web3Provider(newProvider));
+  //       }
+  //     });
+  //   } catch (error) {
+  //     console.error('Failed to connect', error);
+  //   }
+  // };
 
-      // Listen for chain changes
-      newProvider.on('chainChanged', async (chainIdHex) => {
-        const newChainId = parseInt(chainIdHex, 16);
-        if (newChainId !== 31337) {
-          const switched = await switchNetwork(newProvider);
-          if (!switched) {
-            alert('Please manually switch to the Hardhat network');
-          }
-        } else {
-          setProvider(new Web3Provider(newProvider));
-        }
-      });
-    } catch (error) {
-      console.error('Failed to connect', error);
-    }
-  };
+  // const disconnectWallet = () => {
+  //   web3Modal.clearCachedProvider();
+  //   setProvider(null);
+  //   setUserPLBM(null);
+  //   setUserUSDC(null)
+  // };
 
-  const disconnectWallet = () => {
-    web3Modal.clearCachedProvider();
-    setProvider(null);
-    setUserPLBM(null);
-    setUserUSDC(null)
-  };
-
-  if (!isClient) {
-    return null; // or a placeholder/skeleton component
-  }
+  // if (!isClient) {
+  //   return null; // or a placeholder/skeleton component
+  // }
 
   return (
     <div className="min-w-full top-0 z-10 md:py-4">
@@ -153,7 +152,7 @@ const ICONavbar = ({ provider, setProvider }) => {
             </div>
             <div>
               <w3m-button />
-              {provider ? (
+              {/* {provider ? (
                 <div className="lg:flex">
                   <button
                     onClick={disconnectWallet}
@@ -171,7 +170,7 @@ const ICONavbar = ({ provider, setProvider }) => {
                     Connect
                   </button>
                 </div>
-              )}
+              )} */}
             </div>
             <Menu
               as="div"
