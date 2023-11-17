@@ -12,7 +12,7 @@ import Roadmap from "../components/IcoPage/Roadmap";
 import Faq from "../components/IcoPage/Faq";
 import BuyBtn from "../components/pLBM/BuyBtn";
 import Footer from "../components/footer";
-import Timer from "../components/Timer";
+import Timer from "../components/timer";
 import Loading from "../components/pLBM/Loading";
 import PendingMessage from "../components/MessageBox/PendingMessage";
 import FailMessage from "../components/MessageBox/FailMessage";
@@ -145,7 +145,7 @@ const ICO = () => {
             </h2>
             <div className="px-4 md:px-0 py-8 lg:py-8">
               <div className="pb-8 lg:pb-8">
-                <Timer></Timer>
+                <Timer />
               </div>
               <div className="flex mb-5 h-8 rounded-3xl w-full  bg-gray-300 drop-shadow-[0_2px_2px_rgba(0,0,0,.4)]">
                 <div
