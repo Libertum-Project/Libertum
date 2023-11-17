@@ -189,6 +189,21 @@ const ICONavbar = ({ provider, setProvider }) => {
               >
                 <Menu.Items className="absolute right-0 z-10 mt-2 w-auto origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                   <div className="py-1">
+                  <Menu.Item>
+                      {({ active }) => (
+                        <a
+                          href="/"
+                          className={classNames(
+                            active
+                              ? 'bg-gray-100 text-gray-900'
+                              : 'text-gray-700',
+                            'block px-4 py-2 text-md text-right',
+                          )}
+                        >
+                          Home
+                        </a>
+                      )}
+                    </Menu.Item>
                     <Menu.Item>
                       {({ active }) => (
                         <a
@@ -201,6 +216,21 @@ const ICONavbar = ({ provider, setProvider }) => {
                           )}
                         >
                           Whitepaper
+                        </a>
+                      )}
+                    </Menu.Item>
+                    <Menu.Item>
+                      {({ active }) => (
+                        <a
+                          href="https://www.marketplace.libertum.io/support"
+                          className={classNames(
+                            active
+                              ? 'bg-gray-100 text-gray-900'
+                              : 'text-gray-700',
+                            'block px-4 py-2 text-md text-right',
+                          )}
+                        >
+                          Support
                         </a>
                       )}
                     </Menu.Item>

@@ -7,7 +7,16 @@ export default function Footer() {
     [
       "Whitepaper",
       "https://www.libertum.io/assets/LBM-whitepaper-6b01302f.pdf",
+      
     ],
+    [
+      "FAQs & Support",
+      "https://www.marketplace.libertum.io/support"
+    ],
+    [
+      "Contact Us",
+      "https://www.marketplace.libertum.io/contact"
+    ]
   ];
   const legal = [];
   return (
