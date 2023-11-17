@@ -122,7 +122,7 @@ const ICONavbar = ({ provider, setProvider }) => {
       <div className="bg-transparent py-2">
         <nav className="container relative flex flex-wrap items-center justify-between p-4 py-2 mx-auto xl:px-0">
           <Link
-            href="/"
+            href="https://www.libertum.io/"
             className="md:px-12 flex items-center space-x-2 text-4xl text-bg-200 tracking-wide hover:scale-105 duration-500 focus:outline-none"
           >
             <Image
@@ -192,7 +192,7 @@ const ICONavbar = ({ provider, setProvider }) => {
                   <Menu.Item>
                       {({ active }) => (
                         <a
-                          href="/"
+                          href="https://www.libertum.io"
                           className={classNames(
                             active
                               ? 'bg-gray-100 text-gray-900'
