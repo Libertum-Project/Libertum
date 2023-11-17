@@ -30,6 +30,9 @@ module.exports = {
       animation: {
         "slide-right": "rslide 1.2s ease-out 1",
       },
+      screens:{
+        '2xl': '1800px'
+      }
     },
     fontFamily: {
       sans: ["montserrat", ...defaultTheme.fontFamily.sans],

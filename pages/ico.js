@@ -1,21 +1,24 @@
-import Background from '../components/background';
-import ICONavbar from '../components/icoNavbar';
-import Head from 'next/head';
-import { useEffect, useState } from 'react';
-import { getCurrentSaleStage } from '../utils/smartContracts/pLBM/getCurrentSaleStage';
-import { getRemainingTokens } from '../utils/smartContracts/pLBM/getRemainingTokens';
-import PresaleGrid from '../components/IcoPage/PresaleGrid';
-import Join from '../components/IcoPage/Join';
-import AllocationChart from '../components/IcoPage/AllocationChart';
-import GridInfoSection from '../components/gridInfoSection';
-import Roadmap from '../components/IcoPage/Roadmap';
-import Faq from '../components/IcoPage/Faq';
-import BuyBtn from '../components/pLBM/BuyBtn';
-import Footer from '../components/footer';
-import Loading from '../components/pLBM/Loading';
-import PendingMessage from '../components/MessageBox/PendingMessage';
-import FailMessage from '../components/MessageBox/FailMessage';
-import SuccessMessage from '../components/MessageBox/SuccessMessage';
+import Background from "../components/background";
+import ICONavbar from "../components/icoNavbar";
+import Head from "next/head";
+import { useEffect, useState } from "react";
+import { getCurrentSaleStage } from "../utils/smartContracts/pLBM/getCurrentSaleStage";
+import { getRemainingTokens } from "../utils/smartContracts/pLBM/getRemainingTokens";
+import PresaleGrid from "../components/IcoPage/PresaleGrid";
+import Join from "../components/IcoPage/Join";
+import AllocationChart from "../components/IcoPage/AllocationChart";
+import GridInfoSection from "../components/gridInfoSection";
+import Roadmap from "../components/IcoPage/Roadmap";
+import Faq from "../components/IcoPage/Faq";
+import BuyBtn from "../components/pLBM/BuyBtn";
+import Footer from "../components/footer";
+import Timer from "../components/Timer";
+import Loading from "../components/pLBM/Loading";
+import PendingMessage from "../components/MessageBox/PendingMessage";
+import FailMessage from "../components/MessageBox/FailMessage";
+import SuccessMessage from "../components/MessageBox/SuccessMessage";
+import Navbar from "../components/navbar";
+import Contact from "../components/IcoPage/Contact";
 
 const ICO = () => {
   const [currentStage, setCurrentStage] = useState(null);
@@ -26,8 +29,8 @@ const ICO = () => {
   });
 
   const [showFailMessage, setShowFailMessage] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
-  const [polyScanURL, setPolyScanURL] = useState('');
+  const [errorMessage, setErrorMessage] = useState("");
+  const [polyScanURL, setPolyScanURL] = useState("");
   const [showPendingMessage, setShowPendingMessage] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -39,9 +42,9 @@ const ICO = () => {
   const seedProgress = 45;
   const remainingTokenCount = 10000;
   const isValidStage =
-    currentStage === 'seed' ||
-    currentStage === 'whitelist' ||
-    currentStage === 'public';
+    currentStage === "seed" ||
+    currentStage === "whitelist" ||
+    currentStage === "public";
   useEffect(() => {
     async function fetchContractData() {
       if (provider) {
@@ -57,11 +60,11 @@ const ICO = () => {
   }, [provider]);
 
   useEffect(() => {
-    if (currentStage === 'seed') {
+    if (currentStage === "seed") {
       setConversionRate(0.06);
-    } else if (currentStage === 'whitelist') {
+    } else if (currentStage === "whitelist") {
       setConversionRate(0.072);
-    } else if (currentStage === 'public') {
+    } else if (currentStage === "public") {
       setConversionRate(0.08);
     }
 
@@ -73,7 +76,7 @@ const ICO = () => {
   const handleScrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
@@ -105,28 +108,29 @@ const ICO = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Background></Background>
+
       <ICONavbar provider={provider} setProvider={setProvider} />
-      <div className="min-h-screen">
+      <div className="h-screen-80">
         <div className="container mx-auto justify-between lg:mt-16 flex flex-nowrap flex-col lg:flex-row ">
-          <div className="lg:ml-24 py-8 md:mx-auto md:max-w-5xl lg:max-w-7xl">
+          <div className="lg:ml-10 py-8 md:mx-auto md:max-w-5xl lg:max-w-7xl">
             <h2 className="tracking-wide text-gray-800 text-center lg:text-left font-bold px-4 md:px-16 lg:px-0 text-4xl md:text-5xl xl:text-7xl">
-              Transforming an{' '}
+              Transforming an{" "}
               <span className="md:hidden px-1 text-white bg-gradient-to-r from-[#2128f2cc] via-[#4092e9cc] to-[#6ec6dccc] extrabold drop-shadow-[0_2px_2px_rgba(0,0,0,1)] ">
                 exclusive
-              </span>{' '}
+              </span>{" "}
               <div className="hidden md:block my-4">
                 <span className="px-5 text-white bg-gradient-to-r from-[#2128f2cc] via-[#4092e9cc] to-[#6ec6dccc] extrabold drop-shadow-[0_2px_2px_rgba(0,0,0,1)] ">
                   exclusive
-                </span>{' '}
+                </span>{" "}
               </div>
-              market into an{' '}
+              market into an{" "}
               <span className="md:hidden px-1 text-white bg-gradient-to-r from-[#c88648cc] via-[#e9c440cc] to-[#ffed4bcc] extrabold drop-shadow-[0_2px_2px_rgba(0,0,0,1)] ">
                 inclusive
-              </span>{' '}
+              </span>{" "}
               <div className="hidden md:block my-4">
                 <span className="px-4 text-white bg-gradient-to-r from-[#c88648cc] via-[#e9c440cc] to-[#ffed4bcc] extrabold drop-shadow-[0_2px_2px_rgba(0,0,0,1)] ">
                   inclusive
-                </span>{' '}
+                </span>{" "}
               </div>
               opportunity for everyone
             </h2>
@@ -134,14 +138,15 @@ const ICO = () => {
 
           <div className="my-auto py-12 md:py-8 w-full md:w-auto md:mx-32 md:px-16 lg:px-8 lg:mx-0 bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-[#2128f2cc] to-[#4092e9cc]  mx-auto md:rounded-2xl drop-shadow-[0_8px_4px_rgba(0,0,0,.4)]">
             <h2 className="pt-4 text-4xl px-8 text-center font-logo uppercase font-bold tracking-wide text-gray-800">
-              Current Stage:{' '}
-              <span style={{ display: 'inline' }}>
-                {currentStage !== null ? currentStage : 'Loading...'}
+              Current Stage:{" "}
+              <span style={{ display: "inline" }}>
+                {currentStage !== null ? currentStage : "Loading..."}
               </span>
             </h2>
             <div className="px-4 md:px-0 py-8 lg:py-8">
-              <div className="flex justify-between mb-1"></div>
-
+              <div className="pb-8 lg:pb-8">
+                <Timer></Timer>
+              </div>
               <div className="flex mb-5 h-8 rounded-3xl w-full  bg-gray-300 drop-shadow-[0_2px_2px_rgba(0,0,0,.4)]">
                 <div
                   className="h-8 rounded-3xl bg-gradient-to-r from-[#c88648cc] via-[#e9c440cc] to-[#ffed4bcc]"
@@ -156,7 +161,7 @@ const ICO = () => {
                   <h2>
                     Remaining Tokens:
                     <span>
-                      {' '}
+                      {" "}
                       {remainingTokens[`${currentStage}TokensRemaining`]}
                     </span>
                   </h2>
@@ -189,7 +194,7 @@ const ICO = () => {
                           onBlur={(e) => {
                             const value = Math.min(
                               Math.max(e.target.value, 0),
-                              2000,
+                              2000
                             );
                             setUsdcSelectedValue(value);
                             setLbmReceivedValue(value * 100);
@@ -202,6 +207,7 @@ const ICO = () => {
                     </div>
                   </div>
                 </div>
+
                 <div className="lg:mt-0 col-span-1">
                   <div className="flex px-4 py-4">
                     <div className="flex items-center mx-auto">
@@ -225,7 +231,7 @@ const ICO = () => {
                           onBlur={(e) => {
                             const value = Math.min(
                               Math.max(e.target.value, 0),
-                              remainingTokenCount,
+                              remainingTokenCount
                             );
                             setLbmReceivedValue(value);
                             setUsdcSelectedValue(value / 100);
@@ -268,7 +274,7 @@ const ICO = () => {
             </div>
           </div>
         </div>
-        <h3 className="hidden lg:block lg:mt-16 mt-4 mx-auto text-center text-gray-500 uppercase font-logo  font-light lg:text-4xl">
+        <h3 className="hidden lg:block lg:mt-16 mt-3 mx-auto text-center text-gray-500 uppercase font-logo  font-light lg:text-4xl">
           Get your LBM tokens now!
         </h3>
       </div>
@@ -281,21 +287,8 @@ const ICO = () => {
           <div className="">
             <PresaleGrid onScrollToTop={handleScrollToTop} />
           </div>
-          {/* <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-10">
-        How To Buy
-      </h2>
-      <div className="mb-10">
-        <HowToBuy />
-      </div>
-      <HowToClaim /> */}
 
-          {/* <AllocationChart /> */}
-
-          {/* <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-10">
-        Why LBM?
-      </h2>
-      <WhyLBM /> */}
-          <div className="px-[1rem] md:px-[6rem] lg:px-[6rem] xl:px-0">
+          <div className="mx-[8rem] lg:mx-24 2xl:mx-auto 2xl:max-w-[1536px]">
             <GridInfoSection />
           </div>
 
@@ -308,7 +301,12 @@ const ICO = () => {
 
           <Roadmap />
 
-          <Join onScrollToTop={handleScrollToTop} />
+          {/* <Join onScrollToTop={handleScrollToTop} /> */}
+
+          <div className="mx-[8rem] lg:mx-24 2xl:mx-auto 2xl:max-w-[1536px]">
+          <Contact />
+          </div>
+
         </div>
       </div>
 
