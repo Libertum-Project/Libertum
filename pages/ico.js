@@ -109,9 +109,9 @@ const ICO = () => {
       <Background></Background>
 
       <ICONavbar provider={provider} setProvider={setProvider} />
-      <div className="min-h-screen">
+      <div className="h-screen-80">
         <div className="container mx-auto justify-between lg:mt-16 flex flex-nowrap flex-col lg:flex-row ">
-          <div className="lg:ml-24 py-8 md:mx-auto md:max-w-5xl lg:max-w-7xl">
+          <div className="lg:ml-10 py-8 md:mx-auto md:max-w-5xl lg:max-w-7xl">
             <h2 className="tracking-wide text-gray-800 text-center lg:text-left font-bold px-4 md:px-16 lg:px-0 text-4xl md:text-5xl xl:text-7xl">
               Transforming an{" "}
               <span className="md:hidden px-1 text-white bg-gradient-to-r from-[#2128f2cc] via-[#4092e9cc] to-[#6ec6dccc] extrabold drop-shadow-[0_2px_2px_rgba(0,0,0,1)] ">
@@ -273,7 +273,7 @@ const ICO = () => {
             </div>
           </div>
         </div>
-        <h3 className="hidden lg:block lg:mt-16 mt-4 mx-auto text-center text-gray-500 uppercase font-logo  font-light lg:text-4xl">
+        <h3 className="hidden lg:block lg:mt-16 mt-3 mx-auto text-center text-gray-500 uppercase font-logo  font-light lg:text-4xl">
           Get your LBM tokens now!
         </h3>
       </div>
@@ -286,21 +286,8 @@ const ICO = () => {
           <div className="">
             <PresaleGrid onScrollToTop={handleScrollToTop} />
           </div>
-          {/* <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-10">
-        How To Buy
-      </h2>
-      <div className="mb-10">
-        <HowToBuy />
-      </div>
-      <HowToClaim /> */}
 
-          {/* <AllocationChart /> */}
-
-          {/* <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-10">
-        Why LBM?
-      </h2>
-      <WhyLBM /> */}
-          <div className="px-[1rem] md:px-[6rem] lg:px-[6rem] xl:px-0">
+          <div className="mx-[8rem] lg:mx-24 2xl:mx-auto 2xl:max-w-[1536px]">
             <GridInfoSection />
           </div>
 
