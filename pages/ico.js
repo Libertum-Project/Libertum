@@ -12,7 +12,7 @@ import Roadmap from "../components/IcoPage/Roadmap";
 import Faq from "../components/IcoPage/Faq";
 import BuyBtn from "../components/pLBM/BuyBtn";
 import Footer from "../components/footer";
-import Timer from "../components/timer";
+import Timer from "../components/timer"
 import Loading from "../components/pLBM/Loading";
 import PendingMessage from "../components/MessageBox/PendingMessage";
 import FailMessage from "../components/MessageBox/FailMessage";
