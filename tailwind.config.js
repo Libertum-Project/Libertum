@@ -31,7 +31,7 @@ module.exports = {
         "slide-right": "rslide 1.2s ease-out 1",
       },
       screens:{
-        '2xl': '1600px'
+        '2xl': '1800px'
       }
     },
     fontFamily: {
