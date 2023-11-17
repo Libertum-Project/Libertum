@@ -13,7 +13,7 @@ const Navbar = () => {
     ["Whitepaper", "/whitepaper"],
     ["Marketplace", "/marketplace"],
     ["Enter App", "/login"],
-    ["Buy $LBM", "/ico"]
+    ["Buy $LBM", "/ico"],
   ];
 
   // State to handle dropdown visibility
@@ -79,8 +79,8 @@ const Navbar = () => {
                     <Menu.Item>
                       {({ active }) => (
                         <a
-                        href="http://marketplace.libertum.io"
-                        rel="noopener noreferrer"
+                          href="http://marketplace.libertum.io"
+                          rel="noopener noreferrer"
                           className={classNames(
                             active
                               ? "bg-gray-100 text-gray-900"
@@ -95,8 +95,8 @@ const Navbar = () => {
                     <Menu.Item>
                       {({ active }) => (
                         <a
-                        href="http://marketplace.libertum.io/mydashboard"
-                        rel="noopener noreferrer"
+                          href="http://marketplace.libertum.io/mydashboard"
+                          rel="noopener noreferrer"
                           className={classNames(
                             active
                               ? "bg-gray-100 text-gray-900"
@@ -111,8 +111,8 @@ const Navbar = () => {
                     <Menu.Item>
                       {({ active }) => (
                         <a
-                        href="http://libertum.io/ico"
-                        rel="noopener noreferrer"
+                          href="/ico"
+                          rel="noopener noreferrer"
                           className={classNames(
                             active
                               ? "bg-gray-200 text-gray-900"

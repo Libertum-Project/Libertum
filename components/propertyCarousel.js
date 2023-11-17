@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -33,36 +34,38 @@ export default function PropertyCarousel() {
         See Our Properties
       </h2>
       <div className="min-w-screen">
-        <Carousel
-          className=""
-          swipeable={true}
-          draggable={false}
-          showDots={true}
-          responsive={responsive}
-          ssr={true} // means to render carousel on server-side.
-          infinite={true}
-          autoPlay={false}
-          autoPlaySpeed={1000}
-          keyBoardControl={true}
-          customTransition="all .5"
-          transitionDuration={500}
-          containerClass="carousel-container"
-          removeArrowOnDeviceType={["tablet", "mobile"]}
-          dotListClass="custom-dot-list-style"
-          itemClass="carousel-item-padding-40-px"
-        >
-          <img className="h-570" src="/img/property/img1.png"></img>
-          <img className="h-570" src="/img/property/img2.png"></img>
-          <img className="h-570" src="/img/property/img3.png"></img>
-          <img className="h-570" src="/img/property/img4.png"></img>
-          <img className="h-570" src="/img/property/img5.png"></img>
-          <img className="h-570" src="/img/property/img6.png"></img>
-          <img className="h-570" src="/img/property/img8.png"></img>
-          <img className="h-570" src="/img/property/img9.png"></img>
-          <img className="h-570" src="/img/property/img10.png"></img>
-          <img className="h-570" src="/img/property/img11.png"></img>
-          <img className="h-570" src="/img/property/img13.png"></img>
-        </Carousel>
+        <Link href="https://www.marketplace.libertum.io/">
+          <Carousel
+            className=""
+            swipeable={true}
+            draggable={false}
+            showDots={true}
+            responsive={responsive}
+            ssr={true} // means to render carousel on server-side.
+            infinite={true}
+            autoPlay={false}
+            autoPlaySpeed={1000}
+            keyBoardControl={true}
+            customTransition="all .5"
+            transitionDuration={500}
+            containerClass="carousel-container"
+            removeArrowOnDeviceType={["tablet", "mobile"]}
+            dotListClass="custom-dot-list-style"
+            itemClass="carousel-item-padding-40-px"
+          >
+            <img className="h-570" src="/img/property/img1.png"></img>
+            <img className="h-570" src="/img/property/img2.png"></img>
+            <img className="h-570" src="/img/property/img3.png"></img>
+            <img className="h-570" src="/img/property/img4.png"></img>
+            <img className="h-570" src="/img/property/img5.png"></img>
+            <img className="h-570" src="/img/property/img6.png"></img>
+            <img className="h-570" src="/img/property/img8.png"></img>
+            <img className="h-570" src="/img/property/img9.png"></img>
+            <img className="h-570" src="/img/property/img10.png"></img>
+            <img className="h-570" src="/img/property/img11.png"></img>
+            <img className="h-570" src="/img/property/img13.png"></img>
+          </Carousel>
+        </Link>
 
         <div className="py-8 lg:py-16">
           <div className="mx-auto max-w-screen-2xl px-6 lg:px-8">

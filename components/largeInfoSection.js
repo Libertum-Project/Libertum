@@ -52,21 +52,22 @@ export default function LargeInfoSection() {
             Staking Pool
           </h1>
           <p className="mt-6 lg:mt-0 lg:text-3xl lg:py-5 text-xl lg:leading-10 text-gray-700">
-            We are different. 5% of our investment returns will be dedicated to an ongoing buyback
-            and burn strategy, aimed at increasing the value of our tokens and benefiting early stakeholders.
+            We are different. 5% of our investment returns will be dedicated to
+            an ongoing buyback and burn strategy, aimed at increasing the value
+            of our tokens and benefiting early stakeholders.
           </p>
           <h1 className="mt-8 text-3xl lg:text-5xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Rental Income Token (RIT)
           </h1>
           <p className="mt-6 lg:mt-0 lg:text-3xl lg:py-5 text-xl lg:leading-10 text-gray-700">
-            $LBM can be used to participate in Libertum's fractionalised rental income ecosystem.
-            Use $LBM to purchase RITs and sit back and enjoy rental income from premium properties. 
-            Let the future invest in you!
+            $LBM can be used to participate in Libertum's fractionalised rental
+            income ecosystem. Use $LBM to purchase RITs and sit back and enjoy
+            rental income from premium properties. Let the future invest in you!
           </p>
         </div>
         <div className="order-1 lg:order-2 w-full lg:flex-1">
           <img
-            className="rounded-xl bg-transparent w-full h-auto"
+            className="rounded-xl bg-transparent w-full px-8 md:px-32 lg:px-16 xl:px-16 h-auto"
             src="/img/token1.png"
             alt=""
           />
