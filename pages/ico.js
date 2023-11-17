@@ -17,6 +17,7 @@ import Loading from "../components/pLBM/Loading";
 import PendingMessage from "../components/MessageBox/PendingMessage";
 import FailMessage from "../components/MessageBox/FailMessage";
 import SuccessMessage from "../components/MessageBox/SuccessMessage";
+import Navbar from "../components/navbar";
 
 const ICO = () => {
   const [currentStage, setCurrentStage] = useState(null);
@@ -106,6 +107,7 @@ const ICO = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Background></Background>
+
       <ICONavbar provider={provider} setProvider={setProvider} />
       <div className="min-h-screen">
         <div className="container mx-auto justify-between lg:mt-16 flex flex-nowrap flex-col lg:flex-row ">
