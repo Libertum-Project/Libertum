@@ -18,6 +18,7 @@ import PendingMessage from "../components/MessageBox/PendingMessage";
 import FailMessage from "../components/MessageBox/FailMessage";
 import SuccessMessage from "../components/MessageBox/SuccessMessage";
 import Navbar from "../components/navbar";
+import Contact from "../components/IcoPage/Contact";
 
 const ICO = () => {
   const [currentStage, setCurrentStage] = useState(null);
@@ -301,6 +302,11 @@ const ICO = () => {
           <Roadmap />
 
           <Join onScrollToTop={handleScrollToTop} />
+
+          <div className="mx-[8rem] lg:mx-24 2xl:mx-auto 2xl:max-w-[1536px]">
+          <Contact />
+          </div>
+
         </div>
       </div>
 
