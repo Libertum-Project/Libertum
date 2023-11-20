@@ -1,9 +1,3 @@
-import {
-  CloudArrowUpIcon,
-  LockClosedIcon,
-  ServerIcon,
-} from "@heroicons/react/20/solid";
-
 export default function LargeInfoSection() {
   return (
     <>
@@ -28,10 +22,13 @@ export default function LargeInfoSection() {
       </div>
       <div className="my-12 lg:my-0 lg:mt-32 lg:max-w-screen-2xl mx-auto flex flex-col lg:flex-row items-center">
         <div className="w-full lg:flex-1">
-          <img
+          <video
             className="rounded-xl bg-transparent w-full h-auto"
-            src="/img/info2.gif"
-            alt=""
+            src="/video/info2.webm"
+            type="video/webm"
+            autoPlay
+            loop
+            muted
           />
         </div>
         <div className="px-8 lg:px-12 flex-1 lg:mt-16 lg:ml-8">
