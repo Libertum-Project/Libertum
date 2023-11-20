@@ -13,13 +13,10 @@ import Faq from "../components/IcoPage/Faq";
 import BuyBtn from "../components/pLBM/BuyBtn";
 import Footer from "../components/footer";
 import Timer from "../components/timer";
-import Loading from "../components/pLBM/Loading";
-import PendingMessage from "../components/MessageBox/PendingMessage";
-import FailMessage from "../components/MessageBox/FailMessage";
-import SuccessMessage from "../components/MessageBox/SuccessMessage";
 import Navbar from "../components/navbar";
 import Contact from "../components/IcoPage/Contact";
 import SaleProgressBar from "../components/SaleProgressBar";
+import MessageBox from "../components/MessageBox/MessageBox";
 
 const ICO = () => {
   const [currentStage, setCurrentStage] = useState(null);
@@ -29,12 +26,6 @@ const ICO = () => {
     publicTokensRemaining: null,
   });
 
-  const [showFailMessage, setShowFailMessage] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
-  const [polyScanURL, setPolyScanURL] = useState("");
-  const [showPendingMessage, setShowPendingMessage] = useState(false);
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
   const [conversionRate, setConversionRate] = useState(0.06);
   const [provider, setProvider] = useState(null);
   const [isUserConnected, setIsUserConnected] = useState(false);
@@ -83,26 +74,7 @@ const ICO = () => {
 
   return (
     <>
-      {isLoading ? <Loading /> : null}
-      {showFailMessage ? (
-        <FailMessage
-          setShowFailMessage={setShowFailMessage}
-          message={errorMessage}
-          url={polyScanURL}
-        />
-      ) : null}
-
-      {showPendingMessage ? (
-        <PendingMessage messagge="Processing your investment..." />
-      ) : null}
-      {showSuccessMessage ? (
-        <SuccessMessage
-          setShowSuccessMessage={setShowSuccessMessage}
-          messagge="Success! Your investment has been processed. Exciting times ahead!"
-          textBtn="Go to Dashboard"
-          redirectURL="https://www.marketplace.libertum.io/mydashboard"
-        />
-      ) : null}
+      <MessageBox />
       <Head>
         <title>Libertum</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -261,12 +233,6 @@ const ICO = () => {
                 isValidStage={isValidStage}
                 amount={lbmReceivedValue}
                 provider={provider}
-                setShowPendingMessage={setShowPendingMessage}
-                setShowFailMessage={setShowFailMessage}
-                setShowSuccessMessage={setShowSuccessMessage}
-                setIsLoading={setIsLoading}
-                setErrorMessage={setErrorMessage}
-                setPolyScanURL={setPolyScanURL}
               />
             </div>
           </div>
@@ -305,7 +271,6 @@ const ICO = () => {
           </div>
         </div>
       </div>
-
       <Footer />
     </>
   );
