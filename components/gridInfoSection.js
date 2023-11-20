@@ -73,16 +73,16 @@ export default function GridInfoSection() {
                   className="mt-8 md:mx-auto lg:mt-0 p-2 rounded-2xl drop-shadow-2xl hover:scale-105 duration-500"
                   src="/img/high_rental_yield.png"
                   alt="High Rental Yield"
-                  width={400}
-                  height={400}
+                  width={272}
+                  height={272}
                 ></Image>
                 <p className="mt-5 text-lg text-center font-semibold leading-6 text-black">
                   High Rental Yield
                 </p>
               </div>
               <div className="mt-2 text-center text-base text-gray-600">
-                Invest in prime real estate within London&apos;s bustling commercial
-                district and enjoy substantial monthly income.
+                Invest in prime real estate within London&apos;s bustling
+                commercial district and enjoy substantial monthly income.
               </div>
             </div>
           </dl>

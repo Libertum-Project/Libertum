@@ -1,8 +1,4 @@
-import {
-  CloudArrowUpIcon,
-  LockClosedIcon,
-  ServerIcon,
-} from "@heroicons/react/20/solid";
+import Image from "next/image";
 
 export default function LargeInfoSection() {
   return (
@@ -19,19 +15,24 @@ export default function LargeInfoSection() {
           </p>
         </div>
         <div className="order-1 lg:order-2 w-full lg:flex-1">
-          <img
+          <Image
             className="rounded-xl bg-transparent w-full h-auto md:ml-8 lg:ml-0"
             src="/img/info1.png"
             alt=""
+            width={100}
+            height={100}
           />
         </div>
       </div>
       <div className="my-12 lg:my-0 lg:mt-32 lg:max-w-screen-2xl mx-auto flex flex-col lg:flex-row items-center">
         <div className="w-full lg:flex-1">
-          <img
+          <video
             className="rounded-xl bg-transparent w-full h-auto"
-            src="/img/info2.gif"
-            alt=""
+            src="/video/info2.webm"
+            type="video/webm"
+            autoPlay
+            loop
+            muted
           />
         </div>
         <div className="px-8 lg:px-12 flex-1 lg:mt-16 lg:ml-8">
@@ -66,10 +67,12 @@ export default function LargeInfoSection() {
           </p>
         </div>
         <div className="order-1 lg:order-2 w-full lg:flex-1">
-          <img
+          <Image
             className="rounded-xl bg-transparent w-full px-8 md:px-32 lg:px-16 xl:px-16 h-auto"
             src="/img/token1.png"
             alt=""
+            width={100}
+            height={100}
           />
         </div>
       </div>

@@ -43,7 +43,6 @@ const Home = () => {
         <LargeInfoSection></LargeInfoSection>
         <PropertyCarousel></PropertyCarousel>
         <MarketplaceGraph></MarketplaceGraph>
-        {/* <TokenSection></TokenSection> */}
         <FAQ></FAQ>
         <Footer></Footer>
       </div>
