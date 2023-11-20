@@ -5,6 +5,7 @@ const USDC_address = process.env.NEXT_PUBLIC_USDC_address;
 const pLBM_address = process.env.NEXT_PUBLIC_pLBM_address;
 
 async function buyTokens(
+  provider,
   amount,
   setIsLoading,
   setShowPendingMessage,
@@ -12,7 +13,6 @@ async function buyTokens(
   setErrorMessage,
   setPolyScanURL,
   setShowSuccessMessage,
-  provider,
 ) {
   let transactionHash;
   setErrorMessage(null);
