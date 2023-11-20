@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -53,17 +54,83 @@ export default function PropertyCarousel() {
             dotListClass="custom-dot-list-style"
             itemClass="carousel-item-padding-40-px"
           >
-            <img className="h-570" src="/img/property/img1.png"></img>
-            <img className="h-570" src="/img/property/img2.png"></img>
-            <img className="h-570" src="/img/property/img3.png"></img>
-            <img className="h-570" src="/img/property/img4.png"></img>
-            <img className="h-570" src="/img/property/img5.png"></img>
-            <img className="h-570" src="/img/property/img6.png"></img>
-            <img className="h-570" src="/img/property/img8.png"></img>
-            <img className="h-570" src="/img/property/img9.png"></img>
-            <img className="h-570" src="/img/property/img10.png"></img>
-            <img className="h-570" src="/img/property/img11.png"></img>
-            <img className="h-570" src="/img/property/img13.png"></img>
+            <Image
+              className="h-570 w-full"
+              src="/img/property/img1.png"
+              alt="property image"
+              width={570}
+              height={570}
+            />
+            <Image
+              className="h-570 w-full"
+              src="/img/property/img2.png"
+              alt="property image"
+              width={570}
+              height={570}
+            />
+            <Image
+              className="h-570 w-full"
+              src="/img/property/img3.png"
+              alt="property image"
+              width={570}
+              height={570}
+            />
+            <Image
+              className="h-570 w-full"
+              src="/img/property/img4.png"
+              alt="property image"
+              width={570}
+              height={570}
+            />
+            <Image
+              className="h-570 w-full"
+              src="/img/property/img5.png"
+              alt="property image"
+              width={570}
+              height={570}
+            />
+            <Image
+              className="h-570 w-full"
+              src="/img/property/img6.png"
+              alt="property image"
+              width={570}
+              height={570}
+            />
+            <Image
+              className="h-570 w-full"
+              src="/img/property/img8.png"
+              alt="property image"
+              width={570}
+              height={570}
+            />
+            <Image
+              className="h-570 w-full"
+              src="/img/property/img9.png"
+              alt="property image"
+              width={570}
+              height={570}
+            />
+            <Image
+              className="h-570 w-full"
+              src="/img/property/img10.png"
+              alt="property image"
+              width={570}
+              height={570}
+            />
+            <Image
+              className="h-570 w-full"
+              src="/img/property/img11.png"
+              alt="property image"
+              width={570}
+              height={570}
+            />
+            <Image
+              className="h-570 w-full"
+              src="/img/property/img13.png"
+              alt="property image"
+              width={570}
+              height={570}
+            />
           </Carousel>
         </Link>
 

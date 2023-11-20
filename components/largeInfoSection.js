@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function LargeInfoSection() {
   return (
     <>
@@ -13,10 +15,12 @@ export default function LargeInfoSection() {
           </p>
         </div>
         <div className="order-1 lg:order-2 w-full lg:flex-1">
-          <img
+          <Image
             className="rounded-xl bg-transparent w-full h-auto md:ml-8 lg:ml-0"
             src="/img/info1.png"
             alt=""
+            width={100}
+            height={100}
           />
         </div>
       </div>
@@ -63,10 +67,12 @@ export default function LargeInfoSection() {
           </p>
         </div>
         <div className="order-1 lg:order-2 w-full lg:flex-1">
-          <img
+          <Image
             className="rounded-xl bg-transparent w-full px-8 md:px-32 lg:px-16 xl:px-16 h-auto"
             src="/img/token1.png"
             alt=""
+            width={100}
+            height={100}
           />
         </div>
       </div>
