@@ -6,17 +6,13 @@ import { Menu, Transition } from '@headlessui/react';
 import { Bars3Icon } from '@heroicons/react/20/solid';
 import { getUserPlbmBalance } from '../utils/smartContracts/pLBM/getUserPlbmBalance';
 import { getUserUSDCBalance } from '../utils/smartContracts/pLBM/getUserUsdcBalance';
-import { useWeb3ModalSigner } from '@web3modal/ethers5/react';
+import { useWeb3ModalSigner, useWeb3ModalAccount } from '@web3modal/ethers5/react';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
 const ICONavbar = ({ signer, setSigner }) => {
-  // const [web3Modal, setWeb3Modal] = useState(null);
-  // const [isClient, setIsClient] = useState(false);
-  const usdcTokenCount = 1340;
-  const lbmTokenCount = 48000;
   const navigation = [
     ['Whitepaper', '/whitepaper'],
     ['Marketplace', '/marketplace'],
@@ -25,100 +21,20 @@ const ICONavbar = ({ signer, setSigner }) => {
   const [userPLBM, setUserPLBM] = useState(null);
   const [userUSDC, setUserUSDC] = useState(null);
   const web3signer = useWeb3ModalSigner().signer;
-  console.log("WEB3signer", web3signer);
+  const { address, chainId, isConnected } = useWeb3ModalAccount();
+  console.log("Is connected", isConnected);
 
-  // useEffect(() => {
-  //   // This will be executed only on the client side
-  //   setIsClient(true);
+  useEffect(() => {
+    if (isConnected) {
+      console.log("Fetching user balances");
+      fetchBalances(web3signer, address);
+    }
+  }, [isConnected]);
 
-  //   // Dynamically import the Web3Modal when on the client-side
-  //   const Web3Modal = require('web3modal').default;
-  //   const newWeb3Modal = new Web3Modal({
-  //     network: 'localhost',
-  //     cacheProvider: true,
-  //   });
-  //   setWeb3Modal(newWeb3Modal);
-  // }, []);
-
-  // // useEffect to connect wallet after web3Modal is set
-  // useEffect(() => {
-  //   if (web3Modal && web3Modal.cachedProvider) {
-  //     connectWallet();
-  //   }
-  // }, [web3Modal]); // Dependency array ensures this effect runs when web3Modal changes
-
-  // useEffect(() => {
-  //   async function fetchContractData() {
-  //     if (provider) {
-  //       const plbmBalance = await getUserPlbmBalance(provider);
-  //       setUserPLBM(plbmBalance);
-  //       const usdcBalance = await getUserUSDCBalance(provider);
-  //       setUserUSDC(usdcBalance)
-  //     }
-  //   }
-  //   fetchContractData();
-  // }, [provider]);
-
-  // const switchNetwork = async (provider) => {
-  //   try {
-  //     await provider.send('wallet_addEthereumChain', [
-  //       {
-  //         chainId: '80001',
-  //         chainName: 'Polygon Mumbai',
-  //         nativeCurrency: { name: 'Matic', symbol: 'MATIC', decimals: 18 },
-  //         rpcUrls: [
-  //           'https://polygon-mumbai.g.alchemy.com/v2/ePeu2ooFujhSUo_Pqf5NS2uVDnz6ZiOO',
-  //         ],
-  //         blockExplorerUrls: ['https://mumbai.polygonscan.com'],
-  //       },
-  //     ]);
-  //     return true;
-  //   } catch (switchError) {
-  //     console.error(switchError);
-  //     return false;
-  //   }
-  // };
-
-  // const connectWallet = async () => {
-  //   try {
-  //     const newProvider = await web3Modal.connect();
-  //     const ethersProvider = new Web3Provider(newProvider);
-  //     const network = await ethersProvider.getNetwork();
-
-  //     setProvider(ethersProvider);
-
-  //     // Listen for account changes
-  //     newProvider.on('accountsChanged', (accounts) => {
-  //       setProvider(new Web3Provider(newProvider));
-  //     });
-
-  //     // Listen for chain changes
-  //     newProvider.on('chainChanged', async (chainIdHex) => {
-  //       const newChainId = parseInt(chainIdHex, 16);
-  //       if (newChainId !== 31337) {
-  //         const switched = await switchNetwork(newProvider);
-  //         if (!switched) {
-  //           alert('Please manually switch to the Hardhat network');
-  //         }
-  //       } else {
-  //         setProvider(new Web3Provider(newProvider));
-  //       }
-  //     });
-  //   } catch (error) {
-  //     console.error('Failed to connect', error);
-  //   }
-  // };
-
-  // const disconnectWallet = () => {
-  //   web3Modal.clearCachedProvider();
-  //   setProvider(null);
-  //   setUserPLBM(null);
-  //   setUserUSDC(null)
-  // };
-
-  // if (!isClient) {
-  //   return null; // or a placeholder/skeleton component
-  // }
+  const fetchBalances = async (signer, address) => {
+    const userUSDCBalance = await getUserUSDCBalance(signer.provider, address);
+    setUserUSDC(userUSDCBalance);
+  }
 
   return (
     <div className="min-w-full top-0 z-10 md:py-4">
@@ -152,25 +68,12 @@ const ICONavbar = ({ signer, setSigner }) => {
             </div>
             <div>
               <w3m-button />
-              {/* {provider ? (
-                <div className="lg:flex">
-                  <button
-                    onClick={disconnectWallet}
-                    className="px-3 py-2 rounded-xl text-lg font-logo font-bold  uppercase text-bg-100 tracking-wide bg-[#f6f9fb] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.4)] hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.4)] border hover:bg-gray-500 hover:text-white"
-                  >
-                    Disconnect
-                  </button>
+              {userUSDC !== null && (
+                <div className="text-sm mt-2">
+                  <div>{userUSDC} USDC</div>
+                  <div>{userPLBM} pLBM</div>
                 </div>
-              ) : (
-                <div className="lg:flex">
-                  <button
-                    onClick={connectWallet}
-                    className="px-3 py-2 rounded-xl text-lg font-logo font-bold uppercase text-bg-100 tracking-wide bg-[#f6f9fb] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.4)] hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.4)] border hover:bg-gray-500 hover:text-white"
-                  >
-                    Connect
-                  </button>
-                </div>
-              )} */}
+              )}
             </div>
             <Menu
               as="div"
