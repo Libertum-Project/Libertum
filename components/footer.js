@@ -6,7 +6,7 @@ export default function Footer() {
   const navigation = [
     [
       "Whitepaper",
-      "https://www.libertum.io/assets/LBM-whitepaper-6b01302f.pdf",
+      "/whitepaperLibertum.pdf",
       
     ],
     [

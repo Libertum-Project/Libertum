@@ -65,8 +65,10 @@ const Navbar = () => {
 
                     <Menu.Item>
                       {({ active }) => (
-                        <a
-                          href="/whitepaper"
+                        <Link
+                          href="/whitepaperLibertum.pdf"
+                          download
+                          target="_blank"
                           className={classNames(
                             active
                               ? "bg-gray-100 text-gray-900"
@@ -75,7 +77,7 @@ const Navbar = () => {
                           )}
                         >
                           Whitepaper
-                        </a>
+                        </Link>
                       )}
                     </Menu.Item>
 
@@ -127,7 +129,7 @@ const Navbar = () => {
                         </a>
                       )}
                     </Menu.Item>
-                    <Menu.Item>
+                    <Menu.Item className="bg-gray-300 font-semibold">
                       {({ active }) => (
                         <a
                           href="https://www.libertum.io/ico"
