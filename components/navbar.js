@@ -66,8 +66,7 @@ const Navbar = () => {
                     <Menu.Item>
                       {({ active }) => (
                         <Link
-                          href="/whitepaperLibertum.pdf"
-                          download
+                          href="/whitepaperLibertum.pdf"                          
                           target="_blank"
                           className={classNames(
                             active
