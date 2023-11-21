@@ -20,7 +20,6 @@ import MessageBox from "../components/MessageBox/MessageBox";
 
 const ICO = () => {
   const web3signer = useWeb3ModalSigner().signer;
-  console.log("WEB3signer", web3signer);
   const [currentStage, setCurrentStage] = useState(null);
   const [remainingTokens, setRemainingTokens] = useState({
     seedTokensRemaining: null,
@@ -41,13 +40,21 @@ const ICO = () => {
     currentStage === "public";
 
   useEffect(() => {
+    if (web3signer?.provider) {
+      setProvider(web3signer.provider)
+    }
+
+  },[web3signer])
+
+  useEffect(() => {
     async function fetchContractData() {
       if (provider) {
-        const stage = await getCurrentSaleStage(provider);
+        const stage = await getCurrentSaleStage();
         setCurrentStage(stage);
 
-        const tokens = await getRemainingTokens(provider);
+        const tokens = await getRemainingTokens();
         setRemainingTokens(tokens);
+        console.log(tokens)
       }
     }
 
