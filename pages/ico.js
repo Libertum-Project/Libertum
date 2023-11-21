@@ -41,25 +41,21 @@ const ICO = () => {
 
   useEffect(() => {
     if (web3signer?.provider) {
-      setProvider(web3signer.provider)
+      setProvider(web3signer.provider);
     }
-
-  },[web3signer])
+  }, [web3signer]);
 
   useEffect(() => {
     async function fetchContractData() {
-      if (provider) {
-        const stage = await getCurrentSaleStage();
-        setCurrentStage(stage);
+      const stage = await getCurrentSaleStage();
+      setCurrentStage(stage);
 
-        const tokens = await getRemainingTokens();
-        setRemainingTokens(tokens);
-        console.log(tokens)
-      }
+      const tokens = await getRemainingTokens();
+      setRemainingTokens(tokens);
     }
 
     fetchContractData();
-  }, [provider]);
+  }, []);
 
   useEffect(() => {
     if (currentStage === "seed") {
