@@ -33,7 +33,11 @@ const metadata = {
 createWeb3Modal({
   ethersConfig: defaultConfig({ metadata }),
   chains: [polygon, polygonMumbai],
-  projectId
+  projectId,
+  themeVariables: {
+    '--w3m-color-mix': '#112A46',
+    '--w3m-color-mix-strength': 50
+  }
 });
 
 export function Web3ModalProvider({ children }) {
