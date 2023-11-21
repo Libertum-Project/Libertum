@@ -37,6 +37,8 @@ const ICONavbar = ({ signer, setSigner }) => {
   const fetchBalances = async (signer, address) => {
     const userUSDCBalance = await getUserUSDCBalance(signer.provider, address);
     setUserUSDC(userUSDCBalance);
+    const userPLBMBalance = await getUserPlbmBalance(signer.provider, address);
+    setUserPLBM(userPLBMBalance);
   }
 
   return (
@@ -57,29 +59,17 @@ const ICONavbar = ({ signer, setSigner }) => {
             <span className="hidden md:block font-logo">LIBERTUM</span>
           </Link>
           <div className="flex relative flex-wrap space-x-4 justify-end">
-            <div className="hidden md:grid lg:grid grid-rows-1">
-              {userPLBM !== null ? (
-                <div className="col-span-1 grid grid-rows-1 ">
-                  <div className="row-span-1 lg:text-md my-auto font-medium text-gray-800">
-                    {userUSDC} USDC
-                  </div>
-                  <div className="row-span-1 text-center lg:text-md my-auto font-medium text-gray-800">
-                    {userPLBM} LBM
-                  </div>
-                </div>
-              ) : null}
-            </div>
             <div>
               <w3m-button />
               {userUSDC !== null && userPLBM !== null && (
                 <div className="flex justify-center mt-2 space-x-4 items-center">
                   <div className="flex items-center space-x-2">
                     <Image src="/img/ico/usdc.png" alt="USDC" width={20} height={20} />
-                    <span className="text-md font-bold text-custom-blue">{userUSDC} USDC</span>
+                    <span className="text-md font-semibold text-custom-blue">{userUSDC} USDC</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Image src="/img/logo.svg" alt="Libertum" width={20} height={20} />
-                    <span className="text-md font-bold text-custom-blue">{userPLBM} pLBM</span>
+                    <span className="text-md font-semibold text-custom-blue">{userPLBM} pLBM</span>
                   </div>
                 </div>
               )}
