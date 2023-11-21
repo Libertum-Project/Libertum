@@ -14,6 +14,22 @@ const mainnet = {
   rpcUrl: 'https://cloudflare-eth.com'
 };
 
+const polygon = {
+  chainId: 137,
+  name: 'Polygon',
+  currency: 'MATIC',
+  explorerUrl: 'https://polygonscan.com',
+  rpcUrl: 'https://polygon-rpc.com'
+}
+
+const polygonMumbai = {
+  chainId: 80001,
+  name: 'Mumbai',
+  currency: 'MATIC',
+  explorerUrl: 'https://mumbai.polygonscan.com',
+  rpcUrl: 'https://matic-mumbai.chainstacklabs.com'
+}
+
 // 3. Create modal
 const metadata = {
   name: 'Libertum',
@@ -24,7 +40,7 @@ const metadata = {
 
 createWeb3Modal({
   ethersConfig: defaultConfig({ metadata }),
-  chains: [mainnet],
+  chains: [mainnet, polygon, polygonMumbai],
   projectId
 });
 
