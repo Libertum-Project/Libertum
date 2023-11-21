@@ -27,6 +27,10 @@ const ICONavbar = ({ signer, setSigner }) => {
   useEffect(() => {
     if (isConnected) {
       fetchBalances(web3signer, address);
+    } else {
+      // Clear balances if user is disconnected
+      setUserPLBM(null);
+      setUserUSDC(null);
     }
   }, [isConnected]);
 
