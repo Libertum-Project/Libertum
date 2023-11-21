@@ -20,6 +20,7 @@ module.exports = {
         "accent-100": "#ffed8f",
         "accent-200": "#e0c638",
         "info-100": "#a3bbce",
+        "custom-blue": "#6B859A",
       },
       keyframes: {
         rslide: {

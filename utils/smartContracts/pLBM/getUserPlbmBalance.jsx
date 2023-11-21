@@ -2,17 +2,18 @@ import { ethers } from 'ethers';
 import pLBM_ABI from '../ABI/pLBM.json';
 const pLBM_address = process.env.NEXT_PUBLIC_pLBM_address;
 
-export async function getUserPlbmBalance(provider) {
+export async function getUserPlbmBalance(provider, address) {
   try {
-    const [userAddress] = await window.ethereum.request({
-      method: 'eth_requestAccounts',
-    });
+    const plbmContract = new ethers.Contract(
+      pLBM_address,
+      pLBM_ABI.abi,
+      provider
+    );
 
-    const contract = new ethers.Contract(pLBM_address, pLBM_ABI.abi, provider);
+    const balanceInWei = await plbmContract.balanceOf(address);
+    const userFriendlyBalance = ethers.utils.formatUnits(balanceInWei, 18);
 
-    const balanceWei = await contract.balanceOf(userAddress);
-    const balanceUserFriendly = parseInt(balanceWei / BigInt(10 ** 18));
-    return balanceUserFriendly;
+    return userFriendlyBalance;
   } catch (error) {
     console.error('Error fetching user balance:', error);
     return null;
