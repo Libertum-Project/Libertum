@@ -22,11 +22,10 @@ const ICONavbar = ({ signer, setSigner }) => {
   const [userUSDC, setUserUSDC] = useState(null);
   const web3signer = useWeb3ModalSigner().signer;
   const { address, chainId, isConnected } = useWeb3ModalAccount();
-  console.log("Is connected", isConnected);
 
+  // Whenever the web3modal account changes, fetch balances for current user
   useEffect(() => {
     if (isConnected) {
-      console.log("Fetching user balances");
       fetchBalances(web3signer, address);
     }
   }, [isConnected]);
@@ -69,9 +68,13 @@ const ICONavbar = ({ signer, setSigner }) => {
             <div>
               <w3m-button />
               {userUSDC !== null && (
-                <div className="text-sm mt-2">
-                  <div>{userUSDC} USDC</div>
-                  <div>{userPLBM} pLBM</div>
+                <div className="flex justify-center mt-2 space-x-4 text-custom-blue font-bold"> {/* Flex container */}
+                  <div className="text-md">
+                    {userUSDC} USDC
+                  </div>
+                  <div className="text-md">
+                    {userPLBM} pLBM
+                  </div>
                 </div>
               )}
             </div>
