@@ -71,13 +71,15 @@ const ICONavbar = ({ signer, setSigner }) => {
             </div>
             <div>
               <w3m-button />
-              {userUSDC !== null && (
-                <div className="flex justify-center mt-2 space-x-4 text-custom-blue font-bold"> {/* Flex container */}
-                  <div className="text-md">
-                    {userUSDC} USDC
+              {userUSDC !== null && userPLBM !== null && (
+                <div className="flex justify-center mt-2 space-x-4 items-center">
+                  <div className="flex items-center space-x-2">
+                    <Image src="/img/ico/usdc.png" alt="USDC" width={20} height={20} />
+                    <span className="text-md font-bold text-custom-blue">{userUSDC} USDC</span>
                   </div>
-                  <div className="text-md">
-                    {userPLBM} pLBM
+                  <div className="flex items-center space-x-2">
+                    <Image src="/img/logo.svg" alt="Libertum" width={20} height={20} />
+                    <span className="text-md font-bold text-custom-blue">{userPLBM} pLBM</span>
                   </div>
                 </div>
               )}
