@@ -19,7 +19,8 @@ const polygonMumbai = {
   name: 'Mumbai',
   currency: 'MATIC',
   explorerUrl: 'https://mumbai.polygonscan.com',
-  rpcUrl: 'https://matic-mumbai.chainstacklabs.com'
+  rpcUrl: 'https://polygon-mumbai.g.alchemy.com/v2/ugPxxVQsX7KIXCYSUDFa2g4HxSjVFkIa',
+
 }
 
 // 3. Create modal
