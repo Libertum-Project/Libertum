@@ -10,7 +10,7 @@ export async function getUserPlbmBalance(provider, address) {
       provider
     );
 
-    const balanceInWei = await contract.balanceOf(userAddress);
+    const balanceInWei = await plbmContract.balanceOf(address);
     const userFriendlyBalance = ethers.utils.formatUnits(balanceInWei, 6);
 
     return userFriendlyBalance;
