@@ -224,6 +224,7 @@ const ICO = () => {
                     min={0}
                     max={5000}
                     step={50}
+                    value={usdcSelectedValue}
                     className="w-full"
                     onChange={(e) => {
                       setUsdcSelectedValue(e.target.value);
