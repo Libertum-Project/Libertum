@@ -7,7 +7,7 @@ import "../components/IcoPage/AllocationChart.scss";
 import "../components/IcoPage/Faq.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import MessageBoxProvider from "../contexts/MessageBoxProvider";
+import MessageBoxProvider from "../context/MessageBoxProvider";
 
 function MyApp({ Component, pageProps }) {
   return (

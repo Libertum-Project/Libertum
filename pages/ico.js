@@ -30,7 +30,6 @@ const ICO = () => {
   const [conversionRate, setConversionRate] = useState(0.06);
   const [provider, setProvider] = useState(null);
   const [signer, setSigner] = useState(null);
-  const [isUserConnected, setIsUserConnected] = useState(false);
   const [usdcSelectedValue, setUsdcSelectedValue] = useState(100);
   const [lbmReceivedValue, setLbmReceivedValue] = useState(1000);
   const remainingTokenCount = 10000;

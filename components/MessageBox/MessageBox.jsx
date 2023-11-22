@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import MessageBoxContext from "../../contexts/MessageBoxContext";
+import MessageBoxContext from "../../context/MessageBoxContext";
 import Loading from "./Loading";
 import PendingMessage from "./PendingMessage";
 import FailMessage from "./FailMessage";
