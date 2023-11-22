@@ -140,7 +140,7 @@ const ICO = () => {
                       </span>
                     </h2>
                   )}
-                  <span className="text-">1 USDC = {conversionRate} LBM</span>
+                  <span className="text-">1 LBM = {conversionRate} USDC</span>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2">
@@ -161,7 +161,6 @@ const ICO = () => {
                             value={usdcSelectedValue}
                             className="px-3 py-2 rounded-xl text-gray-800 font-semibold bg-slate-100 "
                             onChange={(e) => {
-                              // Update the usdcSelectedValue with the input value, but also ensure it doesn't exceed the max range value
                               setUsdcSelectedValue(e.target.value);
                               setLbmReceivedValue(e.target.value * 100);
                             }}
