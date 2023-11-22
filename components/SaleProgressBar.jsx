@@ -39,15 +39,17 @@ const SaleProgressBar = ({ currentStage, remainingTokens, isValidStage }) => {
   }, [currentStage, total, remainingTokens, isValidStage]);
 
   return (
-    <div className="flex mb-5 h-8 rounded-3xl w-full  bg-gray-300 drop-shadow-[0_2px_2px_rgba(0,0,0,.4)]">
-      <div
-        className="h-8 rounded-3xl bg-gradient-to-r from-[#c88648cc] via-[#e9c440cc] to-[#ffed4bcc]"
-        style={{ width: `${progress}%` }}
-      ></div>
-      <span className="text-red-800 font-semibold py-1 px-2">
-        {progress.toFixed(2)}%
-      </span>
-    </div>
+    isValidStage && (
+      <div className="flex mb-5 h-8 rounded-3xl w-full  bg-gray-300 drop-shadow-[0_2px_2px_rgba(0,0,0,.4)]">
+        <div
+          className="h-8 rounded-3xl bg-gradient-to-r from-[#c88648cc] via-[#e9c440cc] to-[#ffed4bcc]"
+          style={{ width: `${progress}%` }}
+        ></div>
+        <span className="text-red-800 font-semibold py-1 px-2">
+          {progress.toFixed(2)}%
+        </span>
+      </div>
+    )
   );
 };
 
