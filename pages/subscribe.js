@@ -2,7 +2,7 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import Background from "../components/background";
 import Link from "next/link";
-import Subscribe from "../components/subscribe";
+import Subscribe from "../components/Subscribe";
 
 
 const Contact = () => {
