@@ -48,6 +48,6 @@ return(
   </div>
 )};
 
-Subscribe.displayName = 'Subscribe';
+// Subscribe.displayName = 'Subscribe';
 
 export default Subscribe;

@@ -17,7 +17,6 @@ import Timer from "../components/timer";
 import Contact from "../components/IcoPage/Contact";
 import SaleProgressBar from "../components/SaleProgressBar";
 import MessageBox from "../components/MessageBox/MessageBox";
-import Subscribe from "../components/subscribe";
 
 const ICO = () => {
   const web3signer = useWeb3ModalSigner().signer;
