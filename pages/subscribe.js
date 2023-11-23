@@ -18,7 +18,7 @@ const Contact = () => {
                 Waitlist
               </p>
               <p className="text-5xl  font-extrabold tracking-tight text-black">
-              Secure your VIP pass to the pre-launch excitement!
+              Secure your VIP pass to the pre-launch excitement.
               </p>
               <p className="text-5xl mt-6  font-extrabold tracking-tight text-black">
               Join now our waitlist!
