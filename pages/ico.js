@@ -271,9 +271,9 @@ const ICO = () => {
 
             {/* <Join onScrollToTop={handleScrollToTop} /> */}
 
-            <div className="mx-[8rem] lg:mx-24 2xl:mx-auto 2xl:max-w-[1536px]">
-              <Contact />
-            </div>
+            {/* <div className="mx-[8rem] lg:mx-24 2xl:mx-auto 2xl:max-w-[1536px]">
+              <Subscribe />
+            </div> */}
           </div>
         </div>
         <Footer />

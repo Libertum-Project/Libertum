@@ -82,7 +82,7 @@ const Navbar = () => {
 
                     <Menu.Item>
                       {({ active }) => (
-                        <a
+                        <Link
                           href="https://www.marketplace.libertum.io/support"
                           className={classNames(
                             active
@@ -92,14 +92,15 @@ const Navbar = () => {
                           )}
                         >
                           Support
-                        </a>
+                        </Link>
                       )}
                     </Menu.Item>
 
                     <Menu.Item>
                       {({ active }) => (
-                        <a
-                          href="http://marketplace.libertum.io"
+                        <Link
+                          // href="http://marketplace.libertum.io"
+                          href="/subscribe"
                           rel="noopener noreferrer"
                           className={classNames(
                             active
@@ -109,13 +110,14 @@ const Navbar = () => {
                           )}
                         >
                           Marketplace
-                        </a>
+                        </Link>
                       )}
                     </Menu.Item>
                     <Menu.Item>
                       {({ active }) => (
-                        <a
-                          href="http://marketplace.libertum.io/mydashboard"
+                        <Link
+                          // href="http://marketplace.libertum.io/mydashboard"
+                          href="/subscribe"
                           rel="noopener noreferrer"
                           className={classNames(
                             active
@@ -124,8 +126,8 @@ const Navbar = () => {
                             "block px-4 py-2 text-md text-right"
                           )}
                         >
-                          Enter app
-                        </a>
+                          Waitlist
+                        </Link>
                       )}
                     </Menu.Item>
                     <Menu.Item className="bg-gray-300 font-semibold">
