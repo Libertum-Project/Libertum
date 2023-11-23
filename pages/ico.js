@@ -17,6 +17,7 @@ import Timer from "../components/timer";
 import Contact from "../components/IcoPage/Contact";
 import SaleProgressBar from "../components/SaleProgressBar";
 import MessageBox from "../components/MessageBox/MessageBox";
+import Subscribe from "../components/subscribe";
 
 const ICO = () => {
   const web3signer = useWeb3ModalSigner().signer;
@@ -271,9 +272,9 @@ const ICO = () => {
 
             {/* <Join onScrollToTop={handleScrollToTop} /> */}
 
-            <div className="mx-[8rem] lg:mx-24 2xl:mx-auto 2xl:max-w-[1536px]">
-              <Contact />
-            </div>
+            {/* <div className="mx-[8rem] lg:mx-24 2xl:mx-auto 2xl:max-w-[1536px]">
+              <Subscribe />
+            </div> */}
           </div>
         </div>
         <Footer />

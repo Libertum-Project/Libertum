@@ -99,7 +99,8 @@ const Navbar = () => {
                     <Menu.Item>
                       {({ active }) => (
                         <a
-                          href="http://marketplace.libertum.io"
+                          // href="http://marketplace.libertum.io"
+                          href="/subscribe"
                           rel="noopener noreferrer"
                           className={classNames(
                             active
@@ -115,7 +116,8 @@ const Navbar = () => {
                     <Menu.Item>
                       {({ active }) => (
                         <a
-                          href="http://marketplace.libertum.io/mydashboard"
+                          // href="http://marketplace.libertum.io/mydashboard"
+                          href="/subscribe"
                           rel="noopener noreferrer"
                           className={classNames(
                             active
@@ -124,7 +126,7 @@ const Navbar = () => {
                             "block px-4 py-2 text-md text-right"
                           )}
                         >
-                          Enter app
+                          Waitlist
                         </a>
                       )}
                     </Menu.Item>
