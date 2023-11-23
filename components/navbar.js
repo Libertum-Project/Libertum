@@ -82,7 +82,7 @@ const Navbar = () => {
 
                     <Menu.Item>
                       {({ active }) => (
-                        <a
+                        <Link
                           href="https://www.marketplace.libertum.io/support"
                           className={classNames(
                             active
@@ -92,13 +92,13 @@ const Navbar = () => {
                           )}
                         >
                           Support
-                        </a>
+                        </Link>
                       )}
                     </Menu.Item>
 
                     <Menu.Item>
                       {({ active }) => (
-                        <a
+                        <Link
                           // href="http://marketplace.libertum.io"
                           href="/subscribe"
                           rel="noopener noreferrer"
@@ -110,12 +110,12 @@ const Navbar = () => {
                           )}
                         >
                           Marketplace
-                        </a>
+                        </Link>
                       )}
                     </Menu.Item>
                     <Menu.Item>
                       {({ active }) => (
-                        <a
+                        <Link
                           // href="http://marketplace.libertum.io/mydashboard"
                           href="/subscribe"
                           rel="noopener noreferrer"
@@ -127,7 +127,7 @@ const Navbar = () => {
                           )}
                         >
                           Waitlist
-                        </a>
+                        </Link>
                       )}
                     </Menu.Item>
                     <Menu.Item className="bg-gray-300 font-semibold">

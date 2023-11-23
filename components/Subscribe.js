@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-export default () => {
+const Subscribe = () => {
 
   const [email, setEmail] = useState("");
   const [state, setState] = useState("IDLE");
@@ -47,3 +47,7 @@ return(
       )}
   </div>
 )};
+
+Subscribe.displayName = 'Subscribe';
+
+export default Subscribe;

@@ -24,7 +24,7 @@ const Contact = () => {
               Join now our waitlist!
               </p>
               <p className="mt-10 text-sm lg:text-2xl tracking-tight text-gray-600">
-              Reserve your spot on the waitlist for exclusive early access to the complete platform launch. Just drop your email, and we'll make sure you're among the first in line to dive into the full platform experience when it's unveiled!
+              Reserve your spot on the waitlist for exclusive early access to the complete platform launch. Just drop your email, and we&aposll make sure you&aposre among the first in line to dive into the full platform experience when it&aposs unveiled!
               </p>
               <div className="pt-8 lg:pr-0 lg:pt-16">
 
