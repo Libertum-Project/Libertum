@@ -5,7 +5,6 @@ import Link from "next/link";
 import Subscribe from "../components/subscribe";
 
 
-
 const Contact = () => {
   return(
     <div>
