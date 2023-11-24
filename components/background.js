@@ -5,13 +5,13 @@ export default function Background() {
     <>
       <Image
         className="md:hidden blur-sm -z-10 fixed object-cover w-full h-full overflow-clip"
-        src="/img/bg.png"
+        src="/img/bg.webp"
         width={100} height={100} 
       />
       <video
         className="hidden md:block -z-10 fixed object-cover w-full h-full overflow-clip"
-        src="/video/bg.mp4"
-        type="video/mp4"
+        src="/video/bg.webm"
+        type="video/webm"
         autoPlay
         loop
         muted

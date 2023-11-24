@@ -17,7 +17,7 @@ export default function LargeInfoSection() {
         <div className="order-1 lg:order-2 w-full lg:flex-1">
           <Image
             className="rounded-xl bg-transparent w-full h-auto md:ml-8 lg:ml-0"
-            src="/img/info1.png"
+            src="/img/info1.webp"
             alt=""
             width={100}
             height={100}
@@ -69,7 +69,7 @@ export default function LargeInfoSection() {
         <div className="order-1 lg:order-2 w-full lg:flex-1">
           <Image
             className="rounded-xl bg-transparent w-full px-8 md:px-32 lg:px-16 xl:px-16 h-auto"
-            src="/img/token1.png"
+            src="/img/token1.webp"
             alt=""
             width={100}
             height={100}

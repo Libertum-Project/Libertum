@@ -5,10 +5,12 @@
 @font-face {
   font-family: "agencyfb";
   src: url("../public/fonts/AgencyFB.woff2");
+  font-display: swap;
 }
 @font-face {
   font-family: "montserrat";
   src: url("../public/fonts/Montserrat.ttf");
+  font-display: swap;
 }
 
 @layer base {

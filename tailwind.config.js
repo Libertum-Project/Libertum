@@ -37,7 +37,7 @@ module.exports = {
     },
     fontFamily: {
       sans: ["montserrat", ...defaultTheme.fontFamily.sans],
-      body: ["Inter", ...defaultTheme.fontFamily.sans],
+      body: [...defaultTheme.fontFamily.sans],
       logo: ["agencyfb", "sans-serif", ...defaultTheme.fontFamily.sans],
     },
   },
