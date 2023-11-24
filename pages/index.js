@@ -1,16 +1,18 @@
-import Head from "next/head";
-import Navbar from "../components/navbar";
-import HeroSection from "../components/heroSection";
-import LargeInfoSection from "../components/largeInfoSection";
-import GridInfoSection from "../components/gridInfoSection";
-import Lenis from "@studio-freight/lenis";
 import { useEffect } from "react";
-import BrandCarousel from "../components/brandCarousel";
-import PropertyCarousel from "../components/propertyCarousel";
-import MarketplaceGraph from "../components/marketplaceGraph";
-import FAQ from "../components/faq";
-import Footer from "../components/footer";
-import Background from "../components/background";
+import dynamic from 'next/dynamic';
+import Head from "next/head";
+import Lenis from "@studio-freight/lenis";
+
+const Navbar = dynamic(() => import('../components/navbar'));
+const HeroSection = dynamic(() => import('../components/heroSection'));
+const Background = dynamic(() => import('../components/background'));
+const BrandCarousel = dynamic(() => import('../components/brandCarousel'));
+const GridInfoSection = dynamic(() => import('../components/gridInfoSection'));
+const LargeInfoSection = dynamic(() => import('../components/largeInfoSection'));
+const PropertyCarousel = dynamic(() => import('../components/propertyCarousel'));
+const MarketplaceGraph = dynamic(() => import('../components/marketplaceGraph'));
+const FAQ = dynamic(() => import('../components/faq'));
+const Footer = dynamic(() => import('../components/footer'));
 
 const Home = () => {
   useEffect(() => {

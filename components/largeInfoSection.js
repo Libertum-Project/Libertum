@@ -16,7 +16,7 @@ export default function LargeInfoSection() {
         </div>
         <div className="order-1 lg:order-2 w-full lg:flex-1">
           <Image
-            className="rounded-xl bg-transparent w-full h-auto md:ml-8 lg:ml-0"
+            className="rounded-xl bg-transparent w-full h-auto lg:ml-0"
             src="/img/info1.webp"
             alt=""
             width={100}
