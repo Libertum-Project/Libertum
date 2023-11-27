@@ -112,19 +112,22 @@ const ICONavbar = ({ signer, setSigner }) => {
                     </Menu.Item>
                     <Menu.Item>
                       {({ active }) => (
-                        <a
-                          href="/whitepaper"
+                        <Link
+                          prefetch={false}
+                          href="/whitepaperLibertum.pdf"
+                          target="_blank"
                           className={classNames(
                             active
-                              ? 'bg-gray-100 text-gray-900'
-                              : 'text-gray-700',
-                            'block px-4 py-2 text-md text-right',
+                              ? "bg-gray-100 text-gray-900"
+                              : "text-gray-700",
+                            "block px-4 py-2 text-md text-right",
                           )}
                         >
                           Whitepaper
-                        </a>
+                        </Link>
                       )}
                     </Menu.Item>
+
                     <Menu.Item>
                       {({ active }) => (
                         <a
