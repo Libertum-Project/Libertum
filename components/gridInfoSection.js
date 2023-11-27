@@ -77,8 +77,8 @@ export default function GridInfoSection() {
                   style={{ margin: "0 auto" }}
                   src="/img/high_rental_yield.webp"
                   alt="High Rental Yield"
-                  width={272}
-                  height={272}
+                  width={400}
+                  height={400}
                 ></Image>
                 <p className="mt-5 text-lg text-center font-semibold leading-6 text-black">
                   High Rental Yield
