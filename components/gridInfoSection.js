@@ -12,7 +12,7 @@ export default function GridInfoSection() {
             Libertum distinguishes itself from other real estate projects in the
             crypto space through several key characteristics:
           </div>
-          <dl className="grid place-items-center grid-cols-1 gap-4 space-y-0 text-center lg:gap-8 lg:grid-cols-4 lg:text-left">
+          <div className="grid place-items-center grid-cols-1 gap-4 space-y-0 text-center lg:gap-8 lg:grid-cols-4 lg:text-left">
             <div>
               <div>
                 <Image
@@ -85,7 +85,7 @@ export default function GridInfoSection() {
                 commercial district and enjoy substantial monthly income.
               </div>
             </div>
-          </dl>
+          </div>
         </div>
       </div>
     </>
