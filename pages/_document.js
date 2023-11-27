@@ -15,6 +15,8 @@ class MyDocument extends Document {
               `,
             }}
           />
+              <meta name="description" content="Libertum is a decentralised real estate marketplace that allows users to buy, sell, and rent properties using cryptocurrency." />
+
         </Head>
         <body>
           <Main />

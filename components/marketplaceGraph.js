@@ -11,6 +11,7 @@ export default function MarketplaceGraph() {
         src="/img/marketplaceGraph.svg"
         width={100}
         height={100}
+        alt="Graph"
       />
     </div>
   );
