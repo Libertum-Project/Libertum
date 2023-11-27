@@ -18,6 +18,7 @@ export default function GridInfoSection() {
                 <Image
                   className="mt-8 md:mx-auto lg:mt-0 p-2 rounded-2xl drop-shadow-2xl hover:scale-105 duration-500"
                   src="/img/no_transfer_of_ownership.webp"
+                  style={{ margin: "0 auto" }}
                   alt="No Transfer of Ownership"
                   width={400}
                   height={400}
@@ -36,6 +37,7 @@ export default function GridInfoSection() {
                 <Image
                   className="mt-8 md:mx-auto lg:mt-0 p-2 rounded-2xl drop-shadow-2xl hover:scale-105 duration-500"
                   src="/img/No_hidden_fee_Icon.webp"
+                  style={{ margin: "0 auto" }}
                   alt="No Hidden Fees"
                   width={400}
                   height={400}
@@ -54,6 +56,7 @@ export default function GridInfoSection() {
                 <Image
                   className="mt-8 md:mx-auto lg:mt-0 p-2 rounded-2xl drop-shadow-2xl hover:scale-105 duration-500"
                   src="/img/Secure_icon.webp"
+                  style={{ margin: "0 auto" }}
                   alt="Secure Platform"
                   width={400}
                   height={400}
@@ -71,6 +74,7 @@ export default function GridInfoSection() {
               <div>
                 <Image
                   className="mt-8 md:mx-auto lg:mt-0 p-2 rounded-2xl drop-shadow-2xl hover:scale-105 duration-500"
+                  style={{ margin: "0 auto" }}
                   src="/img/high_rental_yield.webp"
                   alt="High Rental Yield"
                   width={272}

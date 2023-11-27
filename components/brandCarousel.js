@@ -164,7 +164,7 @@ export default function BrandCarousel() {
         <div className="text-gray-400 dark:text-gray-400 flex items-center">
           <Image
             className="h-12 w-auto"
-            src="/img/brands/benzinga.png"
+            src="/img/brands/benzinga.webp"
             width={100}
             height={100}
             alt="Brand"
