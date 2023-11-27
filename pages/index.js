@@ -3,8 +3,8 @@ import dynamic from 'next/dynamic';
 import Head from "next/head";
 import Lenis from "@studio-freight/lenis";
 
-const Navbar = dynamic(() => import('../components/navbar'));
-const HeroSection = dynamic(() => import('../components/heroSection'));
+import Navbar from '../components/navbar'
+import HeroSection from "../components/heroSection";
 const Background = dynamic(() => import('../components/background'));
 const BrandCarousel = dynamic(() => import('../components/brandCarousel'));
 const GridInfoSection = dynamic(() => import('../components/gridInfoSection'));

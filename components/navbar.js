@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useState, Fragment, useEffect } from "react";
+import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { Bars3Icon } from "@heroicons/react/20/solid";
 
@@ -9,25 +9,13 @@ function classNames(...classes) {
 }
 
 const Navbar = () => {
-  const navigation = [
-    ["Whitepaper", "/whitepaper"],
-    ["Marketplace", "/marketplace"],
-    ["Enter App", "/login"],
-    ["Buy $LBM", "/ico"],
-  ];
-
-  // State to handle dropdown visibility
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-  // Function to toggle dropdown visibility
-  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
-
   return (
     <div className="min-w-full top-0 z-10 md:py-4">
       <div className="bg-transparent py-2">
         <nav className="container relative flex flex-wrap items-center justify-between p-4 py-2 mx-auto xl:px-0">
           <Link
             href="/"
+            prefetch={false}
             className="md:px-12 flex items-center space-x-2 text-4xl text-bg-200 tracking-wide hover:scale-105 duration-500 focus:outline-none"
           >
             <Image
@@ -59,20 +47,19 @@ const Navbar = () => {
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
               >
-                
                 <Menu.Items className="absolute right-0 z-10 mt-2 w-auto origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                  <div className="py-1">                    
-
+                  <div className="py-1">
                     <Menu.Item>
                       {({ active }) => (
                         <Link
-                          href="/whitepaperLibertum.pdf"                          
+                          prefetch={false}
+                          href="/whitepaperLibertum.pdf"
                           target="_blank"
                           className={classNames(
                             active
                               ? "bg-gray-100 text-gray-900"
                               : "text-gray-700",
-                            "block px-4 py-2 text-md text-right"
+                            "block px-4 py-2 text-md text-right",
                           )}
                         >
                           Whitepaper
@@ -83,12 +70,13 @@ const Navbar = () => {
                     <Menu.Item>
                       {({ active }) => (
                         <Link
+                          prefetch={false}
                           href="https://www.marketplace.libertum.io/support"
                           className={classNames(
                             active
-                              ? 'bg-gray-100 text-gray-900'
-                              : 'text-gray-700',
-                            'block px-4 py-2 text-md text-right',
+                              ? "bg-gray-100 text-gray-900"
+                              : "text-gray-700",
+                            "block px-4 py-2 text-md text-right",
                           )}
                         >
                           Support
@@ -99,14 +87,13 @@ const Navbar = () => {
                     <Menu.Item>
                       {({ active }) => (
                         <Link
-                          // href="http://marketplace.libertum.io"
+                          prefetch={false}
                           href="/subscribe"
-                          rel="noopener noreferrer"
                           className={classNames(
                             active
                               ? "bg-gray-100 text-gray-900"
                               : "text-gray-700",
-                            "block px-4 py-2 text-md text-right"
+                            "block px-4 py-2 text-md text-right",
                           )}
                         >
                           Marketplace
@@ -116,14 +103,13 @@ const Navbar = () => {
                     <Menu.Item>
                       {({ active }) => (
                         <Link
-                          // href="http://marketplace.libertum.io/mydashboard"
+                          prefetch={false}
                           href="/subscribe"
-                          rel="noopener noreferrer"
                           className={classNames(
                             active
                               ? "bg-gray-100 text-gray-900"
                               : "text-gray-700",
-                            "block px-4 py-2 text-md text-right"
+                            "block px-4 py-2 text-md text-right",
                           )}
                         >
                           Waitlist
@@ -132,37 +118,19 @@ const Navbar = () => {
                     </Menu.Item>
                     <Menu.Item className="bg-gray-300 font-semibold">
                       {({ active }) => (
-                        <a
-                          href="https://www.libertum.io/ico"
-                          rel="noopener noreferrer"
+                        <Link
+                          href="/ico"
                           className={classNames(
                             active
                               ? "bg-gray-200 text-gray-900"
                               : "text-gray-700",
-                            "block px-4 py-2 text-md text-right"
+                            "block px-4 py-2 text-md text-right",
                           )}
                         >
                           Buy $LBM
-                        </a>
+                        </Link>
                       )}
                     </Menu.Item>
-                    {/* <form method="POST" action="marketplace.libertum.io/mydashboard">
-                      <Menu.Item>
-                        {({ active }) => (
-                          <button
-                            type="submit"
-                            className={classNames(
-                              active
-                                ? "bg-gray-100 text-gray-900"
-                                : "text-gray-700",
-                              "block w-full px-4 py-2 text-md text-right"
-                            )}
-                          >
-                            Enter App
-                          </button>
-                        )}
-                      </Menu.Item>
-                    </form> */}
                   </div>
                 </Menu.Items>
               </Transition>
