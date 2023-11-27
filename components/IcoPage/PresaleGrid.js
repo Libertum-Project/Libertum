@@ -45,7 +45,7 @@ const PresaleGrid = ({onScrollToTop}) => {
       // icon: <img src={coinIcon} alt="" />,
       image: <img src={tagIcon1} alt="" />,
       dateIcon: <img src={calendarIcon} alt="" />,
-      date: "Until 1 Dec 2023",
+      date: "Starts 1 Dec 2023",
       title: 'Private Round',
       features: [
         'Tokens for sale: 6,000,000', 
