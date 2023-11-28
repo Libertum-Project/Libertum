@@ -133,7 +133,7 @@ const ICO = () => {
                       {remainingTokens.seedTokensRemaining !== null ? (
                         <span>
                           {" "}
-                          {remainingTokens[`${currentStage}TokensRemaining`].toFixed(2)}
+                          {+remainingTokens[`${currentStage}TokensRemaining`].toFixed(2)}
                         </span>
                       ) : (
                         <span> Loading</span>

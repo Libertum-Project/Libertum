@@ -40,9 +40,13 @@ const ICONavbar = ({ updateUserBalance }) => {
 
   const fetchBalances = async (signer, address) => {
     const userUSDCBalance = await getUserUSDCBalance(signer.provider, address);
-    setUserUSDC(userUSDCBalance.toFixed(2));
+    if (userUSDCBalance) {
+      setUserUSDC(userUSDCBalance.toFixed(2));
+    }
     const userPLBMBalance = await getUserPlbmBalance(signer.provider, address);
-    setUserPLBM(userPLBMBalance.toFixed(2));
+    if (userPLBMBalance) {
+      setUserPLBM(userPLBMBalance.toFixed(2));
+    }
   };
 
   const switchToPolygonMumbai = async () => {
