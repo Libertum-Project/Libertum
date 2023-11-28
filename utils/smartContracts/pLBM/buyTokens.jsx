@@ -37,11 +37,25 @@ async function buyTokens(
         method: "eth_requestAccounts",
       });
 
-      await window.ethereum.enable();
-      await USDC_contract.mint(userAddress, BigInt(amount * 10 ** 6));
+      // await window.ethereum.enable();
+      // await USDC_contract.mint(userAddress, BigInt(amount * 10 ** 6));
+
+      const currentStage = await pLBM_contract.currentStage();
+      let price = null;
+
+      if (currentStage == 1) {
+        price = 60_000;
+      } else if (currentStage == 3) {
+        price = 72_000;
+      } else if (currentStage == 5) {
+        price = 80_000;
+      } else {
+        console.error("Invalid current stage");
+      }
+
       await USDC_contract.connect(signer).approve(
         pLBM_address,
-        BigInt(amount * 10 ** 6),
+        BigInt(amount * price),
       );
 
       const tx = await pLBM_contract
