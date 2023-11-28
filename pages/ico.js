@@ -131,10 +131,14 @@ const ICO = () => {
                   {isValidStage && (
                     <h2>
                       Remaining Tokens:
-                      <span>
-                        {" "}
-                        {remainingTokens[`${currentStage}TokensRemaining`]}
-                      </span>
+                      {remainingTokens.seedTokensRemaining !== null ? (
+                        <span>
+                          {" "}
+                          {remainingTokens[`${currentStage}TokensRemaining`]}
+                        </span>
+                      ) : (
+                        <span> Loading</span>
+                      )}
                     </h2>
                   )}
                   <span className="text-">1 LBM = {conversionRate} USDC</span>
@@ -160,13 +164,13 @@ const ICO = () => {
                             onChange={(e) => {
                               setUsdcSelectedValue(e.target.value);
                               setLbmReceivedValue(
-                                e.target.value / conversionRate
+                                e.target.value / conversionRate,
                               );
                             }}
                             onBlur={(e) => {
                               const value = Math.min(
                                 Math.max(e.target.value, 0),
-                                maxUSDCValue
+                                maxUSDCValue,
                               );
                               setUsdcSelectedValue(value);
                               setLbmReceivedValue(value / conversionRate);
@@ -199,13 +203,13 @@ const ICO = () => {
                             onChange={(e) => {
                               setLbmReceivedValue(e.target.value);
                               setUsdcSelectedValue(
-                                e.target.value * conversionRate
+                                e.target.value * conversionRate,
                               );
                             }}
                             onBlur={(e) => {
                               const value = Math.min(
                                 Math.max(e.target.value, 0),
-                                remainingTokenCount
+                                remainingTokenCount,
                               );
                               setLbmReceivedValue(value);
                               setUsdcSelectedValue(value * conversionRate);
