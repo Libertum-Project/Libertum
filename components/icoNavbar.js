@@ -1,22 +1,25 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { useState, Fragment, useEffect } from 'react';
-import { Web3Provider } from '@ethersproject/providers';
-import { Menu, Transition } from '@headlessui/react';
-import { Bars3Icon } from '@heroicons/react/20/solid';
-import { getUserPlbmBalance } from '../utils/smartContracts/pLBM/getUserPlbmBalance';
-import { getUserUSDCBalance } from '../utils/smartContracts/pLBM/getUserUsdcBalance';
-import { useWeb3ModalSigner, useWeb3ModalAccount } from '@web3modal/ethers5/react';
+import Link from "next/link";
+import Image from "next/image";
+import { useState, Fragment, useEffect } from "react";
+import { Web3Provider } from "@ethersproject/providers";
+import { Menu, Transition } from "@headlessui/react";
+import { Bars3Icon } from "@heroicons/react/20/solid";
+import { getUserPlbmBalance } from "../utils/smartContracts/pLBM/getUserPlbmBalance";
+import { getUserUSDCBalance } from "../utils/smartContracts/pLBM/getUserUsdcBalance";
+import {
+  useWeb3ModalSigner,
+  useWeb3ModalAccount,
+} from "@web3modal/ethers5/react";
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ');
+  return classes.filter(Boolean).join(" ");
 }
 
 const ICONavbar = ({ signer, setSigner }) => {
   const navigation = [
-    ['Whitepaper', '/whitepaper'],
-    ['Marketplace', '/marketplace'],
-    ['Enter App', '/login'],
+    ["Whitepaper", "/whitepaper"],
+    ["Marketplace", "/marketplace"],
+    ["Enter App", "/login"],
   ];
   const [userPLBM, setUserPLBM] = useState(null);
   const [userUSDC, setUserUSDC] = useState(null);
@@ -40,7 +43,7 @@ const ICONavbar = ({ signer, setSigner }) => {
     setUserUSDC(userUSDCBalance);
     const userPLBMBalance = await getUserPlbmBalance(signer.provider, address);
     setUserPLBM(userPLBMBalance);
-  }
+  };
 
   const switchToPolygonMumbai = async () => {
     const polygonMumbaiData = {
@@ -99,12 +102,26 @@ const ICONavbar = ({ signer, setSigner }) => {
               {userUSDC !== null && userPLBM !== null && (
                 <div className="flex justify-center mt-2 space-x-4 items-center">
                   <div className="flex items-center space-x-2">
-                    <Image src="/img/ico/usdc.png" alt="USDC" width={20} height={20} />
-                    <span className="text-md font-semibold text-custom-blue">{userUSDC} USDC</span>
+                    <Image
+                      src="/img/ico/usdc.png"
+                      alt="USDC"
+                      width={20}
+                      height={20}
+                    />
+                    <span className="text-md font-semibold text-custom-blue">
+                      {userUSDC} USDC
+                    </span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Image src="/img/logo.svg" alt="Libertum" width={20} height={20} />
-                    <span className="text-md font-semibold text-custom-blue">{userPLBM} pLBM</span>
+                    <Image
+                      src="/img/logo.svg"
+                      alt="Libertum"
+                      width={20}
+                      height={20}
+                    />
+                    <span className="text-md font-semibold text-custom-blue">
+                      {userPLBM} pLBM
+                    </span>
                   </div>
                 </div>
               )}
@@ -130,15 +147,15 @@ const ICONavbar = ({ signer, setSigner }) => {
               >
                 <Menu.Items className="absolute right-0 z-10 mt-2 w-auto origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                   <div className="py-1">
-                  <Menu.Item>
+                    <Menu.Item>
                       {({ active }) => (
                         <a
                           href="https://www.libertum.io"
                           className={classNames(
                             active
-                              ? 'bg-gray-100 text-gray-900'
-                              : 'text-gray-700',
-                            'block px-4 py-2 text-md text-right',
+                              ? "bg-gray-100 text-gray-900"
+                              : "text-gray-700",
+                            "block px-4 py-2 text-md text-right"
                           )}
                         >
                           Home
@@ -155,7 +172,7 @@ const ICONavbar = ({ signer, setSigner }) => {
                             active
                               ? "bg-gray-100 text-gray-900"
                               : "text-gray-700",
-                            "block px-4 py-2 text-md text-right",
+                            "block px-4 py-2 text-md text-right"
                           )}
                         >
                           Whitepaper
@@ -169,9 +186,9 @@ const ICONavbar = ({ signer, setSigner }) => {
                           href="https://www.marketplace.libertum.io/support"
                           className={classNames(
                             active
-                              ? 'bg-gray-100 text-gray-900'
-                              : 'text-gray-700',
-                            'block px-4 py-2 text-md text-right',
+                              ? "bg-gray-100 text-gray-900"
+                              : "text-gray-700",
+                            "block px-4 py-2 text-md text-right"
                           )}
                         >
                           Support
@@ -184,9 +201,9 @@ const ICONavbar = ({ signer, setSigner }) => {
                           href="https://www.marketplace.libertum.io/"
                           className={classNames(
                             active
-                              ? 'bg-gray-100 text-gray-900'
-                              : 'text-gray-700',
-                            'block px-4 py-2 text-md text-right',
+                              ? "bg-gray-100 text-gray-900"
+                              : "text-gray-700",
+                            "block px-4 py-2 text-md text-right"
                           )}
                         >
                           Marketplace
@@ -197,12 +214,12 @@ const ICONavbar = ({ signer, setSigner }) => {
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            href='https://www.marketplace.libertum.io/mydashboard/'
+                            href="https://www.marketplace.libertum.io/mydashboard/"
                             className={classNames(
                               active
-                                ? 'bg-gray-100 text-gray-900'
-                                : 'text-gray-700',
-                              'block w-full px-4 py-2 text-md text-right',
+                                ? "bg-gray-100 text-gray-900"
+                                : "text-gray-700",
+                              "block w-full px-4 py-2 text-md text-right"
                             )}
                           >
                             Enter App

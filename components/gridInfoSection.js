@@ -3,12 +3,12 @@ import Image from "next/image";
 export default function GridInfoSection() {
   return (
     <>
-      <div className="pt-32">
-        <div className=" bg-white lg:bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] bg-opacity-70 from-transparent via-slate-100 rounded-3xl to-gray-200 border-gray-200  p-16 shadow-3xl lg:mx-auto lg:max-w-screen-2xl">
-          <div className="text-center lg:text-left text-black text-3xl font-bold">
+      <div className="pt-16 lg:pt-32 min-w-screen">
+        <div className="bg-white lg:bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] bg-opacity-70 from-transparent via-slate-100 rounded-3xl to-gray-200 border-gray-200 p-8 lg:p-16 shadow-3xl lg:mx-auto lg:max-w-screen-2xl">
+          <div className="text-center lg:text-left text-2xl lg:text-3xl text-black font-bold">
             Why Libertum?
           </div>
-          <div className="text-center lg:text-left pt-5 text-gray-600 text-xl font-medium">
+          <div className="text-center whitespace-wrap lg:text-left pt-5 text-gray-600 text-xl font-medium">
             Libertum distinguishes itself from other real estate projects in the
             crypto space through several key characteristics:
           </div>
@@ -23,7 +23,7 @@ export default function GridInfoSection() {
                   width={400}
                   height={400}
                 ></Image>
-                <p className="mt-5 text-center text-lg font-semibold leading-6 text-black">
+                <p className="mt-5 text-center text-lg font-semibold leading-6a text-black">
                   No Transfer of Ownership
                 </p>
               </div>
