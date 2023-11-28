@@ -27,6 +27,7 @@ const ICO = () => {
     publicTokensRemaining: null,
   });
 
+  const [maxUSDCValue, setMaxUSDCValue] = useState(5000);
   const [conversionRate, setConversionRate] = useState(0.06);
   const [provider, setProvider] = useState(null);
   const [signer, setSigner] = useState(null);
@@ -64,10 +65,6 @@ const ICO = () => {
     } else if (currentStage === "public") {
       setConversionRate(0.08);
     }
-
-    const newLbmValue = usdcSelectedValue / conversionRate;
-
-    setLbmReceivedValue(newLbmValue);
   }, [usdcSelectedValue, currentStage]);
 
   const handleScrollToTop = () => {
@@ -156,21 +153,23 @@ const ICO = () => {
                           <input
                             type="number"
                             min="0"
-                            max="2000"
+                            max={maxUSDCValue}
                             step="50"
                             value={usdcSelectedValue}
                             className="px-3 py-2 rounded-xl text-gray-800 font-semibold bg-slate-100 "
                             onChange={(e) => {
                               setUsdcSelectedValue(e.target.value);
-                              setLbmReceivedValue(e.target.value * 100);
+                              setLbmReceivedValue(
+                                e.target.value / conversionRate
+                              );
                             }}
                             onBlur={(e) => {
                               const value = Math.min(
                                 Math.max(e.target.value, 0),
-                                2000,
+                                maxUSDCValue
                               );
                               setUsdcSelectedValue(value);
-                              setLbmReceivedValue(value * 100);
+                              setLbmReceivedValue(value / conversionRate);
                             }}
                           />
                           <span className="pl-2 text-gray-800 text-xl font-semibold ">
@@ -193,21 +192,23 @@ const ICO = () => {
                           <input
                             type="number"
                             min="0"
-                            max="2000"
-                            step="50"
+                            max={Math.round(maxUSDCValue / conversionRate)}
+                            step={50 * 2}
                             value={parseInt(lbmReceivedValue)}
                             className="px-4 py-2 rounded-xl text-gray-800 font-semibold bg-slate-100 "
                             onChange={(e) => {
                               setLbmReceivedValue(e.target.value);
-                              setUsdcSelectedValue(e.target.value / 100);
+                              setUsdcSelectedValue(
+                                e.target.value * conversionRate
+                              );
                             }}
                             onBlur={(e) => {
                               const value = Math.min(
                                 Math.max(e.target.value, 0),
-                                remainingTokenCount,
+                                remainingTokenCount
                               );
                               setLbmReceivedValue(value);
-                              setUsdcSelectedValue(value / 100);
+                              setUsdcSelectedValue(value * conversionRate);
                             }}
                           />
                           <span className="pl-2 text-gray-800 text-xl font-semibold ">
@@ -222,13 +223,13 @@ const ICO = () => {
                   <input
                     type="range"
                     min={0}
-                    max={5000}
+                    max={maxUSDCValue}
                     step={50}
                     value={usdcSelectedValue}
                     className="w-full"
                     onChange={(e) => {
                       setUsdcSelectedValue(e.target.value);
-                      setLbmReceivedValue(e.target.value * 100);
+                      setLbmReceivedValue(e.target.value / conversionRate);
                     }}
                   ></input>
                 </div>
@@ -247,7 +248,7 @@ const ICO = () => {
           </h3>
         </div>
 
-        <div className="pb-10 bg-gradient-to-b from-transparent lg:mx-auto to-[#cfdde8f1] min-w-screen-2xl to-10%">
+        <div className="pb-10 bg-gradient-to-b from-transparent lg:mx-auto to-[#cfdde8f1] to-10%">
           <div className="max-w-screen-2xl mx-auto">
             <h2 className=" pt-32 text-4xl text-center font-bold text-gray-800">
               Upcoming Events
@@ -256,11 +257,13 @@ const ICO = () => {
               <PresaleGrid onScrollToTop={handleScrollToTop} />
             </div>
 
-            <div className="mx-[8rem] lg:mx-24 2xl:mx-auto 2xl:max-w-[1536px]">
+            <div className="min-w-screen-2xl">
               <GridInfoSection />
             </div>
 
-            <AllocationChart />
+            <div className="hidden md:block min-w-screen-2xl">
+              <AllocationChart />
+            </div>
 
             <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-10">
               FAQs
