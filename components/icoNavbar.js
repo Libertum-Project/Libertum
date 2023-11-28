@@ -12,7 +12,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-const ICONavbar = ({ signer, setSigner }) => {
+const ICONavbar = ({ updateUserBalance }) => {
   const navigation = [
     ['Whitepaper', '/whitepaper'],
     ['Marketplace', '/marketplace'],
@@ -21,7 +21,7 @@ const ICONavbar = ({ signer, setSigner }) => {
   const [userPLBM, setUserPLBM] = useState(null);
   const [userUSDC, setUserUSDC] = useState(null);
   const web3signer = useWeb3ModalSigner().signer;
-  const { address, chainId, isConnected } = useWeb3ModalAccount();
+  const { address, isConnected } = useWeb3ModalAccount();
 
   // Whenever the web3modal account changes, fetch balances for current user
   useEffect(() => {
@@ -33,7 +33,7 @@ const ICONavbar = ({ signer, setSigner }) => {
       setUserPLBM(null);
       setUserUSDC(null);
     }
-  }, [isConnected]);
+  }, [isConnected, address, updateUserBalance]);
 
   const fetchBalances = async (signer, address) => {
     const userUSDCBalance = await getUserUSDCBalance(signer.provider, address);
