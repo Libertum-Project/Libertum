@@ -35,7 +35,7 @@ const MessageBox = () => {
         <SuccessMessage
           setShowSuccessMessage={setShowSuccessMessage}
           messagge="Success! Your investment has been processed. Exciting times ahead!"
-          textBtn="Go to Dashboard"
+          textBtn="Continue"
           redirectURL="https://www.marketplace.libertum.io/mydashboard"
         />
       ) : null}

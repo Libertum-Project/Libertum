@@ -1,12 +1,7 @@
-import css from './MessageBox.module.css';
-import success from '../../public/icons/checkIcon.svg';
+import css from "./MessageBox.module.css";
+import success from "../../public/icons/checkIcon.svg";
 
-const SuccessMessage = ({
-  setShowSuccessMessage,
-  messagge,
-  textBtn,
-  redirectURL,
-}) => {
+const SuccessMessage = ({ setShowSuccessMessage, messagge, textBtn }) => {
   const handleContinue = (event) => {
     event.preventDefault();
     setShowSuccessMessage(false);
@@ -26,11 +21,7 @@ const SuccessMessage = ({
         <div>
           <p>{messagge}</p>
         </div>
-        <a href={redirectURL}>
-          <button onClick={(event) => event.stopPropagation()}>
-            {textBtn}
-          </button>
-        </a>
+        <button>{textBtn}</button>
       </div>
     </div>
   );
