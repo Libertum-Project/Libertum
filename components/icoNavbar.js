@@ -15,7 +15,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const ICONavbar = ({ signer, setSigner }) => {
+const ICONavbar = ({ updateUserBalance }) => {
   const navigation = [
     ["Whitepaper", "/whitepaper"],
     ["Marketplace", "/marketplace"],
@@ -36,7 +36,7 @@ const ICONavbar = ({ signer, setSigner }) => {
       setUserPLBM(null);
       setUserUSDC(null);
     }
-  }, [isConnected]);
+  }, [isConnected, address, updateUserBalance]);
 
   const fetchBalances = async (signer, address) => {
     const userUSDCBalance = await getUserUSDCBalance(signer.provider, address);

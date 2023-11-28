@@ -14,7 +14,6 @@ import Footer from "../components/footer";
 import { Web3ModalProvider } from "../context/Web3Modal";
 import { useWeb3ModalSigner } from "@web3modal/ethers5/react";
 import Timer from "../components/timer";
-import Contact from "../components/IcoPage/Contact";
 import SaleProgressBar from "../components/SaleProgressBar";
 import MessageBox from "../components/MessageBox/MessageBox";
 
@@ -27,10 +26,10 @@ const ICO = () => {
     publicTokensRemaining: null,
   });
 
+  const [updateUserBalance, setUpdateUserBalance] = useState(false)
   const [maxUSDCValue, setMaxUSDCValue] = useState(5000);
   const [conversionRate, setConversionRate] = useState(0.06);
   const [provider, setProvider] = useState(null);
-  const [signer, setSigner] = useState(null);
   const [usdcSelectedValue, setUsdcSelectedValue] = useState(100);
   const [lbmReceivedValue, setLbmReceivedValue] = useState(1000);
   const remainingTokenCount = 10000;
@@ -84,7 +83,7 @@ const ICO = () => {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <Background></Background>
-        <ICONavbar signer={signer} setSigner={setSigner} />
+        <ICONavbar updateUserBalance={updateUserBalance} />
         <div className="min-h-screen">
           <div className="container mx-auto justify-between lg:mt-16 flex flex-nowrap flex-col lg:flex-row ">
             <div className="lg:ml-10 py-8 md:mx-auto md:max-w-5xl lg:max-w-7xl">
@@ -243,6 +242,7 @@ const ICO = () => {
                   isValidStage={isValidStage}
                   amount={lbmReceivedValue}
                   provider={provider}
+                  setUpdateUserBalance={setUpdateUserBalance}
                 />
               </div>
             </div>

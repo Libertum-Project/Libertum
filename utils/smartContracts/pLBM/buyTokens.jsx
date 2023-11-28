@@ -1,6 +1,6 @@
-import { ethers } from 'ethers';
-import pLBM_ABI from '../ABI/pLBM.json';
-import USDC_ABI from '../ABI/USDC.json';
+import { ethers } from "ethers";
+import pLBM_ABI from "../ABI/pLBM.json";
+import USDC_ABI from "../ABI/USDC.json";
 const USDC_address = process.env.NEXT_PUBLIC_USDC_address;
 const pLBM_address = process.env.NEXT_PUBLIC_pLBM_address;
 
@@ -13,6 +13,7 @@ async function buyTokens(
   setErrorMessage,
   setPolyScanURL,
   setShowSuccessMessage,
+  setUpdateUserBalance,
 ) {
   let transactionHash;
   setErrorMessage(null);
@@ -33,7 +34,7 @@ async function buyTokens(
       );
 
       const [userAddress] = await window.ethereum.request({
-        method: 'eth_requestAccounts',
+        method: "eth_requestAccounts",
       });
 
       await window.ethereum.enable();
@@ -56,29 +57,30 @@ async function buyTokens(
       await transaction.wait();
       setShowPendingMessage(false);
       setShowSuccessMessage(true);
+      setUpdateUserBalance(true);
     } else {
       console.error(
-        'Please connect your wallet using MetaMask or a similar provider.',
+        "Please connect your wallet using MetaMask or a similar provider.",
       );
     }
   } catch (error) {
     if (
-      error.message.includes('user rejected action') ||
-      error.message.includes('user rejected transaction')
+      error.message.includes("user rejected action") ||
+      error.message.includes("user rejected transaction")
     ) {
       setErrorMessage(
         "It looks like you rejected this transaction. Don't miss out on the opportunity to buy pLBM!",
       );
-      setPolyScanURL('');
+      setPolyScanURL("");
     } else if (transactionHash) {
       setPolyScanURL(`https://mumbai.polygonscan.com/tx/${transactionHash}`);
-      setErrorMessage('An error occurred while processing your request.');
+      setErrorMessage("An error occurred while processing your request.");
       transactionHash = null;
     } else {
-      setErrorMessage('Please Connect Your Wallet.');
+      setErrorMessage("Please Connect Your Wallet.");
     }
 
-    console.error('Error buying tokens:', error);
+    console.error("Error buying tokens:", error);
     setIsLoading(false);
     setShowPendingMessage(false);
     setShowFailMessage(true);
