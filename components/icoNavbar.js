@@ -26,6 +26,7 @@ const ICONavbar = ({ signer, setSigner }) => {
   // Whenever the web3modal account changes, fetch balances for current user
   useEffect(() => {
     if (isConnected) {
+      switchToPolygonMumbai();
       fetchBalances(web3signer, address);
     } else {
       // Clear balances if user is disconnected
@@ -40,6 +41,40 @@ const ICONavbar = ({ signer, setSigner }) => {
     const userPLBMBalance = await getUserPlbmBalance(signer.provider, address);
     setUserPLBM(userPLBMBalance);
   }
+
+  const switchToPolygonMumbai = async () => {
+    const polygonMumbaiData = {
+      chainId: '0x13881',
+      chainName: 'Polygon Mumbai Testnet',
+      nativeCurrency: {
+        name: 'Mumbai Matic',
+        symbol: 'MATIC',
+        decimals: 18,
+      },
+      rpcUrls: ['https://rpc-mumbai.maticvigil.com/'],
+      blockExplorerUrls: ['https://mumbai.polygonscan.com/'],
+    };
+  
+    try {
+      await window.ethereum.request({
+        method: 'wallet_switchEthereumChain',
+        params: [{ chainId: polygonMumbaiData.chainId }],
+      });
+    } catch (error) {
+      if (error.code === 4902) {
+        try {
+          await window.ethereum.request({
+            method: 'wallet_addEthereumChain',
+            params: [polygonMumbaiData],
+          });
+        } catch (addError) {
+          console.error('Error adding Polygon Mumbai:', addError);
+        }
+      } else {
+        console.error('Error switching to Polygon Mumbai:', error);
+      }
+    }
+  };
 
   return (
     <div className="min-w-full top-0 z-10 md:py-4">
