@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import dynamic from 'next/dynamic';
 import Head from "next/head";
 import Lenis from "@studio-freight/lenis";
-
+import AnimatedDrawer from "../components/Header";
 import Navbar from '../components/navbar'
 import HeroSection from "../components/heroSection";
 const Background = dynamic(() => import('../components/background'));
@@ -33,19 +33,28 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Background></Background>
-      <Navbar web3Enabled={false} />
+      {/* <Navbar web3Enabled={false} /> */}
+      <div className="h-screen">
+      <AnimatedDrawer />
+      <HeroSection></HeroSection>
+      </div>
 
-      <div className="items-center w-full lg:py-4 md:px-12">
-        <HeroSection></HeroSection>
+
+      <div className="items-center w-full lg:py-4 md:px-12">        
         <BrandCarousel></BrandCarousel>
+      </div>
+
+      <div className="items-center w-full lg:py-4 md:px-12 bg-gradient-to-b from-transparent lg:mx-auto to-[#cfdde8df] min-w-screen-2xl to-10%">
         <GridInfoSection></GridInfoSection>
+        <LargeInfoSection></LargeInfoSection>
+
       </div>
 
       <div className="bg-gradient-to-b from-transparent lg:mx-auto to-[#cfdde8df] min-w-screen-2xl to-10%">
-        <LargeInfoSection></LargeInfoSection>
+       
         <PropertyCarousel></PropertyCarousel>
         <MarketplaceGraph></MarketplaceGraph>
-        <FAQ></FAQ>
+        {/* <FAQ></FAQ> */}
         <Footer></Footer>
       </div>
     </>
