@@ -8,10 +8,13 @@ module.exports = {
   images: {
     unoptimized: true,
   },
+  productionBrowserSourceMaps: true,
+  devtool: 'source-map',
+
   webpack(config, options) {
     config.module.rules.push({
       test: /\.svg$/,
-      use: ['@svgr/webpack', 'url-loader'],
+      use: ["@svgr/webpack", "url-loader"],
     });
 
     return config;

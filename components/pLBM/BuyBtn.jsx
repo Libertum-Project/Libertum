@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { buyTokens } from "../../utils/smartContracts/pLBM/buyTokens";
 import MessageBoxContext from "../../context/MessageBoxContext";
 
-const BuyBtn = ({ isValidStage, amount, provider }) => {
+const BuyBtn = ({ isValidStage, amount, provider, setUpdateUserBalance }) => {
   const {
     setShowPendingMessage,
     setShowFailMessage,
@@ -22,6 +22,7 @@ const BuyBtn = ({ isValidStage, amount, provider }) => {
       setErrorMessage,
       setPolyScanURL,
       setShowSuccessMessage,
+      setUpdateUserBalance
     );
   };
 

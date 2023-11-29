@@ -42,7 +42,10 @@ const Navbar = () => {
               className="md:px-8 lg:pr-4 relative inline-block text-left"
             >
               <div>
-                <Menu.Button className="inline-flex w-full justify-center rounded-md shadow-sm text-black hover:text-white ">
+                <Menu.Button
+                  className="inline-flex w-full justify-center rounded-md shadow-sm text-black hover:text-white "
+                  aria-label="Toggle navigation menu"
+                >
                   <Bars3Icon className="h-8 w-8" aria-hidden="true" />
                 </Menu.Button>
               </div>
@@ -68,7 +71,7 @@ const Navbar = () => {
                             active
                               ? "bg-gray-100 text-gray-900"
                               : "text-gray-700",
-                            "block px-4 py-2 text-md text-right",
+                            "block px-4 py-2 text-md text-right"
                           )}
                         >
                           Whitepaper
@@ -85,7 +88,7 @@ const Navbar = () => {
                             active
                               ? "bg-gray-100 text-gray-900"
                               : "text-gray-700",
-                            "block px-4 py-2 text-md text-right",
+                            "block px-4 py-2 text-md text-right"
                           )}
                         >
                           Support
@@ -102,7 +105,7 @@ const Navbar = () => {
                             active
                               ? "bg-gray-100 text-gray-900"
                               : "text-gray-700",
-                            "block px-4 py-2 text-md text-right",
+                            "block px-4 py-2 text-md text-right"
                           )}
                         >
                           Marketplace
@@ -118,7 +121,7 @@ const Navbar = () => {
                             active
                               ? "bg-gray-100 text-gray-900"
                               : "text-gray-700",
-                            "block px-4 py-2 text-md text-right",
+                            "block px-4 py-2 text-md text-right"
                           )}
                         >
                           Waitlist
@@ -133,7 +136,7 @@ const Navbar = () => {
                             active
                               ? "bg-gray-200 text-gray-900"
                               : "text-gray-700",
-                            "block px-4 py-2 text-md text-right",
+                            "block px-4 py-2 text-md text-right"
                           )}
                         >
                           Buy $LBM
