@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Slide } from "react-awesome-reveal";
 
 export default function LargeInfoSection() {
+  
   return (
     <>
   <div className="relative overflow-hidden bg-gray-100 bg-opacity-20 rounded-xl pt-16 pb-32 space-y-24 mt-6">

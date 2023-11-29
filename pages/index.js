@@ -45,6 +45,7 @@ const Home = () => {
       <div className="items-center w-full lg:py-4 md:px-12">        
         <BrandCarousel></BrandCarousel>
       </div>
+      
       </Slide>
 
       <div className="items-center w-full lg:py-4 md:px-12 bg-gradient-to-b from-transparent lg:mx-auto to-[#cfdde8df] min-w-screen-2xl to-10%">
