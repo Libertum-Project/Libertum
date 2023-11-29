@@ -1,10 +1,12 @@
 import Image from "next/image";
+import { Slide } from "react-awesome-reveal";
 
 export default function LargeInfoSection() {
   return (
     <>
   <div className="relative overflow-hidden bg-gray-100 bg-opacity-20 rounded-xl pt-16 pb-32 space-y-24 mt-6">
       {/* Primera Sección */}
+      <Slide direction={"left"} triggerOnce={false}>
       <div className="relative">
         <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
           <div className="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0">
@@ -37,9 +39,11 @@ export default function LargeInfoSection() {
           </div>
         </div>
       </div>
+      </Slide>
      
      
       {/* Segunda Sección */}
+      <Slide direction={"right"} triggerOnce={false}>
       <div className="relative">
         <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
           <div className="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0 lg:col-start-2">
@@ -72,7 +76,9 @@ export default function LargeInfoSection() {
           </div>
         </div>
       </div>
+      </Slide>
       {/* Tercera Sección */}
+      <Slide direction={"left"} triggerOnce={false}>
       <div className="relative">
         <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
           <div className="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0 ">
@@ -116,6 +122,7 @@ export default function LargeInfoSection() {
           </div>
         </div>
       </div>
+      </Slide>
     </div>
 
     </>

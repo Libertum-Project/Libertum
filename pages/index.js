@@ -13,6 +13,8 @@ const PropertyCarousel = dynamic(() => import('../components/propertyCarousel'))
 const MarketplaceGraph = dynamic(() => import('../components/marketplaceGraph'));
 const FAQ = dynamic(() => import('../components/faq'));
 const Footer = dynamic(() => import('../components/footer'));
+import { Slide } from "react-awesome-reveal";
+
 
 const Home = () => {
   useEffect(() => {
@@ -39,10 +41,11 @@ const Home = () => {
       <HeroSection></HeroSection>
       </div>
 
-
+      <Slide direction={"up"} triggerOnce={false}>
       <div className="items-center w-full lg:py-4 md:px-12">        
         <BrandCarousel></BrandCarousel>
       </div>
+      </Slide>
 
       <div className="items-center w-full lg:py-4 md:px-12 bg-gradient-to-b from-transparent lg:mx-auto to-[#cfdde8df] min-w-screen-2xl to-10%">
         <GridInfoSection></GridInfoSection>
@@ -51,8 +54,9 @@ const Home = () => {
       </div>
 
       <div className="bg-gradient-to-b from-transparent lg:mx-auto to-[#cfdde8df] min-w-screen-2xl to-10%">
-       
+      <Slide direction={"up"} triggerOnce={false}>
         <PropertyCarousel></PropertyCarousel>
+      </Slide>
         <MarketplaceGraph></MarketplaceGraph>
         {/* <FAQ></FAQ> */}
         <Footer></Footer>
