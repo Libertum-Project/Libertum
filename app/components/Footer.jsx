@@ -4,139 +4,175 @@ import React from "react";
 
 export default function Footer() {
   const navigation = [
-    [
-      "Whitepaper",
-      "/whitepaperLibertum.pdf",
-      
-    ],
-    [
-      "FAQs & Support",
-      "https://www.marketplace.libertum.io/support"
-    ],
-    [
-      "Contact Us",
-      "https://www.marketplace.libertum.io/contact"
-    ]
+    {
+      name: "Home",
+      href: "/",
+      section: "Navigation",
+    },
+    {
+      name: "Whitepaper",
+      href: "/whitepaperLibertum.pdf",
+      section: "Navigation",
+    },
+    {
+      name: "Buy Libertum",
+      href: "/ico",
+      section: "Navigation",
+    },
+    {
+      name: "Waitlist",
+      href: "/subscribe",
+      section: "Navigation",
+    },
+    {
+      name: "About Us",
+      href: "/",
+      section: "Navigation",
+    },
+    {
+      name: "FAQs",
+      href: "https://www.marketplace.libertum.io/support",
+      section: "Support",
+    },
+    {
+      name: "Support",
+      href: "https://www.marketplace.libertum.io/support",
+      section: "Support",
+    },
+    {
+      name: "hello@libertum.io",
+      href: "mailto:hello@libertum.io",
+      section: "Contact",
+    },
+    {
+      name: "Contact Us Form",
+      href: "https://www.marketplace.libertum.io/contact",
+      section: "Contact",
+    },
   ];
-  const legal = [];
+
+  const sections = {};
+  navigation.forEach((item) => {
+    if (!sections[item.section]) {
+      sections[item.section] = [];
+    }
+    sections[item.section].push(item);
+  });
+
+  const socialLinks = [
+    {
+      href: "https://discord.gg/AyGNmQx3KB",
+      icon: <Discord />,
+      label: "Discord",
+    },
+    {
+      href: "https://twitter.com/libertum_token",
+      icon: <Twitter />,
+      label: "Twitter",
+    },
+    {
+      href: "https://facebook.com/libertum1",
+      icon: <Facebook />,
+      label: "Facebook",
+    },
+    {
+      href: "https://www.instagram.com/libertum.io/",
+      icon: <Instagram />,
+      label: "Instagram",
+    },
+    {
+      href: "https://www.linkedin.com/company/libertum1",
+      icon: <Linkedin />,
+      label: "Linkedin",
+    },
+    {
+      href: "https://t.me/libertum1",
+      icon: <Telegram />,
+      label: "Telegram",
+    },
+  ];
+
   return (
-    <div className="relative">
-      <section>
-        <div className="grid max-w-screen-xl grid-cols-1 gap-4 pt-10 lg:mx-auto lg:px-0 px-8 mt-5 border-t border-gray-800 lg:grid-cols-5">
-          <div className="lg:text-left lg:col-span-2">
-            <div>
-              <Link
-                href="/"
-                className="hover:scale-105 duration-500 flex items-center space-x-2 text-2xl font-medium text-bg-100 "
-              >
-                <Image
-                  src="/img/logo.svg"
-                  alt="N"
-                  width="32"
-                  height="32"
-                  className="w-8"
-                />
-                <span className="font-logo">L I B E R T U M</span>
-              </Link>
-            </div>
-
-            <div className="max-w-md mt-8 text-gray-500 ">
-              Our mission is to make real estate investment accessible to
-              everyone.
-            </div>
-          </div>
-
-          <div>
-            <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
-              {navigation.map((item, index) => (
+    <>
+      <footer>
+        <div className="bg-slate-100 bg-opacity-30 py-4 text-gray-700">
+          <div className="container mx-auto px-4">
+            <div className="-mx-4 flex flex-wrap justify-between">
+              <div className="px-4 my-4 w-full xl:w-2/6">
+                {/* Utiliza NextImage para la imagen de Next */}
                 <Link
-                  key={index}
-                  href={`${item[1]}`}
-                  target="_blank"
-                  rel="noopener"
-                  className="w-full px-4 py-2 text-gray-500 rounded-md  hover:text-gray-100 focus:text-indigo-500 focus:outline-none "
-                >
-                  {item[0]}
-                </Link>
-              ))}
-            </div>
-          </div>
-            <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
-              {legal.map((item, index) => (
-                <Link
-                  key={index}
                   href="/"
-                  className="w-full px-4 py-2 text-gray-500 rounded-md  hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none "
+                  className="hover:scale-105 duration-500 flex items-center space-x-2 text-2xl font-medium text-bg-100 "
                 >
-                  item
+                  <Image
+                    src="/img/logo.svg"
+                    alt="N"
+                    width="32"
+                    height="32"
+                    className="w-8"
+                  />
+                  <span className="font-logo">L I B E R T U M</span>
                 </Link>
-              ))}
-            </div>
+                <p className="text-left mt-6 text-gray-800">
+                  Our mission is to make real estate investment accessible to
+                  everyone.
+                </p>
 
-          <div className="text-black w-fit">
-            <div>Follow us</div>
-            <div className="flex mt-5 space-x-5  text-gray-400 ">
-              <a
-                href="https://discord.gg/AyGNmQx3KB"
-                target="_blank"
-                rel="noopener"
-                className="hover:scale-105 duration-200"
-              >
-                <span className="sr-only">Twitter</span>
-                <Discord />
-              </a>
-              <a
-                href="https://twitter.com/libertum_token"
-                target="_blank"
-                rel="noopener"
-                className="hover:scale-105 duration-200"
-              >
-                <span className="sr-only">Twitter</span>
-                <Twitter />
-              </a>
-              <a
-                href="https://facebook.com/libertum1"
-                target="_blank"
-                rel="noopener"
-                className="hover:scale-105 duration-200"
-              >
-                <span className="sr-only">Facebook</span>
-                <Facebook />
-              </a>
-              <a
-                href="https://www.instagram.com/libertum.io/"
-                target="_blank"
-                rel="noopener"
-                className="hover:scale-105 duration-200"
-              >
-                <span className="sr-only">Instagram</span>
-                <Instagram />
-              </a>
-              <a
-                href="https://www.linkedin.com/company/libertum1"
-                target="_blank"
-                rel="noopener"
-                className="hover:scale-105 duration-200"
-              >
-                <span className="sr-only">Linkedin</span>
-                <Linkedin />
-              </a>
-              <a
-                href="https://t.me/libertum1"
-                target="_blank"
-                rel="noopener"
-                className="hover:scale-105 duration-200"
-              >
-                <span className="sr-only">Telegram</span>
-                <Telegram />
-              </a>
+                <div className="text-gray-800 w-fit mt-12">
+                  <div>Follow us</div>
+                  <div className="flex mt-5 space-x-5 text-gray-400">
+                    {socialLinks.map((link, index) => (
+                      <Link href={link.href} key={index}>
+                        <p
+                          target="_blank"
+                          rel="noopener"
+                          className="hover:scale-105 duration-200"
+                          aria-label={link.label}
+                        >
+                          {link.icon}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {Object.entries(sections).map(([section, items], index) => (
+                <div key={index} className="px-4 my-4 w-full sm:w-auto">
+                  <div>
+                    <h2 className="inline-block text-2xl pb-4 mb-4 border-b-4 border-blue-600">
+                      {section}
+                    </h2>
+                  </div>
+                  <ul className="leading-8">
+                    {items.map((item, itemIndex) => (
+                      <li key={itemIndex}>
+                        <Link href={item.href}>
+                          <p className="hover:text-blue-400">{item.name}</p>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-
-        <div className="py-10 text-sm text-center text-gray-600 "></div>
-      </section>
+        {/* <div className="bg-indigo-700 py-4 text-gray-100">
+    <div className="container mx-auto px-4">
+      <div className="-mx-4 flex flex-wrap justify-between">
+        <div className="px-4 w-full text-center sm:w-auto sm:text-left">
+          Copyright © 2023          
+          Libertum - All Rights Reserved.
+        </div>
+        <div className="px-4 w-full text-center sm:w-auto sm:text-left">
+          -
+        </div>
+      </div>
     </div>
+  </div> */}
+      </footer>
+    </>
   );
 }
 
