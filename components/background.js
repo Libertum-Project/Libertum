@@ -6,7 +6,8 @@ export default function Background() {
       <Image
         className="md:hidden blur-sm -z-10 fixed object-cover w-full h-full overflow-clip"
         src="/img/bg.webp"
-        width={100} height={100} 
+        width={100}
+        height={100}
         alt="Background"
       />
       <video
