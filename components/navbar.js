@@ -4,11 +4,20 @@ import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { Bars3Icon } from "@heroicons/react/20/solid";
 
+import * as React from "react";
+import { useState } from "react"; 
+import { motion } from "framer-motion";
+
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
+
+
 const Navbar = () => {
+
+
   return (
     <div className="min-w-full top-0 z-10 md:py-4">
       <div className="bg-transparent py-2">
