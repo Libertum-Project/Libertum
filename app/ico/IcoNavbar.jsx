@@ -1,11 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, Fragment, useEffect } from 'react';
-import { Web3Provider } from '@ethersproject/providers';
 import { Menu, Transition } from '@headlessui/react';
 import { Bars3Icon } from '@heroicons/react/20/solid';
-import { getUserPlbmBalance } from '../utils/smartContracts/pLBM/getUserPlbmBalance';
-import { getUserUSDCBalance } from '../utils/smartContracts/pLBM/getUserUsdcBalance';
+import { getUserPlbmBalance } from 'utils/smartContracts/pLBM/getUserPlbmBalance';
+import { getUserUSDCBalance } from 'utils/smartContracts/pLBM/getUserUsdcBalance';
 import { useWeb3ModalSigner, useWeb3ModalAccount } from '@web3modal/ethers5/react';
 
 function classNames(...classes) {

@@ -139,7 +139,6 @@ export default function BrandCarousel() {
           />
         </div>
       </div>
-
     </div>
   );
 }

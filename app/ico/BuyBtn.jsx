@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { buyTokens } from "../../utils/smartContracts/pLBM/buyTokens";
-import MessageBoxContext from "../../context/MessageBoxContext";
+import { buyTokens } from "utils/smartContracts/pLBM/buyTokens";
+import MessageBoxContext from "app/context/MessageBoxContext";
 
 const BuyBtn = ({ isValidStage, amount, provider, setUpdateUserBalance }) => {
   const {

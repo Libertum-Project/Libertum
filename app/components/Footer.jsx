@@ -5,61 +5,54 @@ import React from "react";
 export default function Footer() {
   const navigation = [
     {
-      name:"Home",
+      name: "Home",
       href: "/",
-      section:"Navigation"
-      
-  },
-  {
-    name:"Whitepaper",
-    href: "/whitepaperLibertum.pdf",
-    section:"Navigation"
-    
-  },
-  {
-    name:"Buy Libertum",
-    href: "/ico",
-    section:"Navigation"
-    
-  },
-  {
-    name:"Waitlist",
-    href: "/subscribe",
-    section:"Navigation"
-    
-  },
-  {
-    name:"About Us",
-    href: "/",
-    section:"Navigation"
-    
-  },
-  {
-    name:"FAQs",
-    href: "https://www.marketplace.libertum.io/support",
-    section:"Support"
-    
-  },
-  {
-    name:"Support",
-    href: "https://www.marketplace.libertum.io/support",
-    section:"Support"
-    
-  },
-  {
-    name:"hello@libertum.io",
-    href: "mailto:hello@libertum.io",
-    section:"Contact"    
-  },
-  {
-    name:"Contact Us Form",
-    href: "https://www.marketplace.libertum.io/contact",
-    section:"Contact"    
-  },
+      section: "Navigation",
+    },
+    {
+      name: "Whitepaper",
+      href: "/whitepaperLibertum.pdf",
+      section: "Navigation",
+    },
+    {
+      name: "Buy Libertum",
+      href: "/ico",
+      section: "Navigation",
+    },
+    {
+      name: "Waitlist",
+      href: "/subscribe",
+      section: "Navigation",
+    },
+    {
+      name: "About Us",
+      href: "/",
+      section: "Navigation",
+    },
+    {
+      name: "FAQs",
+      href: "https://www.marketplace.libertum.io/support",
+      section: "Support",
+    },
+    {
+      name: "Support",
+      href: "https://www.marketplace.libertum.io/support",
+      section: "Support",
+    },
+    {
+      name: "hello@libertum.io",
+      href: "mailto:hello@libertum.io",
+      section: "Contact",
+    },
+    {
+      name: "Contact Us Form",
+      href: "https://www.marketplace.libertum.io/contact",
+      section: "Contact",
+    },
   ];
 
   const sections = {};
-  navigation.forEach(item => {
+  navigation.forEach((item) => {
     if (!sections[item.section]) {
       sections[item.section] = [];
     }
@@ -68,104 +61,104 @@ export default function Footer() {
 
   const socialLinks = [
     {
-      href: 'https://discord.gg/AyGNmQx3KB',
+      href: "https://discord.gg/AyGNmQx3KB",
       icon: <Discord />,
-      label: 'Discord',
+      label: "Discord",
     },
     {
-      href: 'https://twitter.com/libertum_token',
+      href: "https://twitter.com/libertum_token",
       icon: <Twitter />,
-      label: 'Twitter',
+      label: "Twitter",
     },
     {
-      href: 'https://facebook.com/libertum1',
+      href: "https://facebook.com/libertum1",
       icon: <Facebook />,
-      label: 'Facebook',
+      label: "Facebook",
     },
     {
-      href: 'https://www.instagram.com/libertum.io/',
+      href: "https://www.instagram.com/libertum.io/",
       icon: <Instagram />,
-      label: 'Instagram',
+      label: "Instagram",
     },
     {
-      href: 'https://www.linkedin.com/company/libertum1',
+      href: "https://www.linkedin.com/company/libertum1",
       icon: <Linkedin />,
-      label: 'Linkedin',
+      label: "Linkedin",
     },
     {
-      href: 'https://t.me/libertum1',
+      href: "https://t.me/libertum1",
       icon: <Telegram />,
-      label: 'Telegram',
+      label: "Telegram",
     },
   ];
 
-return(
-<>
-<footer>
-  <div className="bg-slate-100 bg-opacity-30 py-4 text-gray-700">
-    <div className="container mx-auto px-4">
-      <div className="-mx-4 flex flex-wrap justify-between">
-        <div className="px-4 my-4 w-full xl:w-2/6">
-          {/* Utiliza NextImage para la imagen de Next */}
-          <Link
-                href="/"
-                className="hover:scale-105 duration-500 flex items-center space-x-2 text-2xl font-medium text-bg-100 "
-              >
-                <Image
-                  src="/img/logo.svg"
-                  alt="N"
-                  width="32"
-                  height="32"
-                  className="w-8"
-                />
-                <span className="font-logo">L I B E R T U M</span>
-          </Link>
-          <p className="text-left mt-6 text-gray-800">
-          Our mission is to make real estate investment accessible to everyone.          
-          </p>
-
-          <div className="text-gray-800 w-fit mt-12">
-         <div>Follow us</div>
-         <div className="flex mt-5 space-x-5 text-gray-400">
-            {socialLinks.map((link, index) => (
-              <Link href={link.href} key={index}>
-                <p
-                  target="_blank"
-                  rel="noopener"
-                  className="hover:scale-105 duration-200"
-                  aria-label={link.label}
+  return (
+    <>
+      <footer>
+        <div className="bg-slate-100 bg-opacity-30 py-4 text-gray-700">
+          <div className="container mx-auto px-4">
+            <div className="-mx-4 flex flex-wrap justify-between">
+              <div className="px-4 my-4 w-full xl:w-2/6">
+                {/* Utiliza NextImage para la imagen de Next */}
+                <Link
+                  href="/"
+                  className="hover:scale-105 duration-500 flex items-center space-x-2 text-2xl font-medium text-bg-100 "
                 >
-                  {link.icon}
+                  <Image
+                    src="/img/logo.svg"
+                    alt="N"
+                    width="32"
+                    height="32"
+                    className="w-8"
+                  />
+                  <span className="font-logo">L I B E R T U M</span>
+                </Link>
+                <p className="text-left mt-6 text-gray-800">
+                  Our mission is to make real estate investment accessible to
+                  everyone.
                 </p>
-              </Link>
-            ))}
+
+                <div className="text-gray-800 w-fit mt-12">
+                  <div>Follow us</div>
+                  <div className="flex mt-5 space-x-5 text-gray-400">
+                    {socialLinks.map((link, index) => (
+                      <Link href={link.href} key={index}>
+                        <p
+                          target="_blank"
+                          rel="noopener"
+                          className="hover:scale-105 duration-200"
+                          aria-label={link.label}
+                        >
+                          {link.icon}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {Object.entries(sections).map(([section, items], index) => (
+                <div key={index} className="px-4 my-4 w-full sm:w-auto">
+                  <div>
+                    <h2 className="inline-block text-2xl pb-4 mb-4 border-b-4 border-blue-600">
+                      {section}
+                    </h2>
+                  </div>
+                  <ul className="leading-8">
+                    {items.map((item, itemIndex) => (
+                      <li key={itemIndex}>
+                        <Link href={item.href}>
+                          <p className="hover:text-blue-400">{item.name}</p>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-
-        </div>
-
-
-          {Object.entries(sections).map(([section, items], index) => (
-              <div key={index} className="px-4 my-4 w-full sm:w-auto">
-                <div>
-                  <h2 className="inline-block text-2xl pb-4 mb-4 border-b-4 border-blue-600">{section}</h2>
-                </div>
-                <ul className="leading-8">
-                  {items.map((item, itemIndex) => (
-                    <li key={itemIndex}>
-                      <Link href={item.href}>
-                        <p className="hover:text-blue-400">{item.name}</p>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-
-      </div>
-    </div>
-  </div>
-  {/* <div className="bg-indigo-700 py-4 text-gray-100">
+        {/* <div className="bg-indigo-700 py-4 text-gray-100">
     <div className="container mx-auto px-4">
       <div className="-mx-4 flex flex-wrap justify-between">
         <div className="px-4 w-full text-center sm:w-auto sm:text-left">
@@ -178,10 +171,10 @@ return(
       </div>
     </div>
   </div> */}
-</footer>
-
-</>
-)}
+      </footer>
+    </>
+  );
+}
 
 const Twitter = ({ size = 24 }) => (
   <svg
