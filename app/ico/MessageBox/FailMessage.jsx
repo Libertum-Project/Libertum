@@ -1,5 +1,5 @@
 import css from './MessageBox.module.css';
-import error from '../../public/icons/alertIcon.svg';
+import error from 'public/icons/alertIcon.svg';
 
 const FailMessage = ({ setShowFailMessage, message, url }) => {
   const handleContinue = (event) => {

@@ -1,112 +1,101 @@
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
-import Background from "../components/background";
-import Link from "next/link";
-import Subscribe from "../components/Subscribe";
-
+'use client'
+import Navbar from "../components/Navbar.jsx";
+import Subscribe from "./Subscribe.jsx";
 
 const Contact = () => {
-  return(
+  return (
     <div>
-      <Background />
       <Navbar />
       <section>
-          <div className="min-w-full top-0 z-10 md:py-4 h-screen mb-32 md:h-[80vh] lg:h-[80vh] animate-slide-right pt-12 px-8  lg:px-32 lg:py-6 rounded-3xl drop-shadow-xl flex justify-start  m-auto align-middle lg:max-w-screen-2xl">
-            <div className="max-w-4xl text-center md:text-left">
-              <p className="hidden md:block text-sm lg:text-xl font-light mb-4 tracking-tight text-black capitalize">
-                Waitlist
-              </p>
-              <p className="text-5xl  font-extrabold tracking-tight text-black">
+        <div className="min-w-full top-0 z-10 md:py-4 h-screen mb-32 md:h-[80vh] lg:h-[80vh] animate-slide-right pt-12 px-8  lg:px-32 lg:py-6 rounded-3xl drop-shadow-xl flex justify-start  m-auto align-middle lg:max-w-screen-2xl">
+          <div className="max-w-4xl text-center md:text-left">
+            <p className="hidden md:block text-sm lg:text-xl font-light mb-4 tracking-tight text-black capitalize">
+              Waitlist
+            </p>
+            <p className="text-5xl  font-extrabold tracking-tight text-black">
               Secure your VIP pass to the pre-launch excitement.
-              </p>
-              <p className="text-5xl mt-6  font-extrabold tracking-tight text-black">
+            </p>
+            <p className="text-5xl mt-6  font-extrabold tracking-tight text-black">
               Join now our waitlist!
-              </p>
-              <p className="mt-10 text-sm lg:text-2xl tracking-tight text-gray-600">
-              Reserve your spot on the waitlist for exclusive early access to the complete platform launch. Just drop your email, and we&aposll make sure you&aposre among the first in line to dive into the full platform experience when it&aposs unveiled!
-              </p>
-              <div className="pt-8 lg:pr-0 lg:pt-16">
+            </p>
+            <p className="mt-10 text-sm lg:text-2xl tracking-tight text-gray-600">
+              Reserve your spot on the waitlist for exclusive early access to
+              the complete platform launch. Just drop your email, and we&aposll
+              make sure you&aposre among the first in line to dive into the full
+              platform experience when it&aposs unveiled!
+            </p>
+            <div className="pt-8 lg:pr-0 lg:pt-16">
+              {/* -------------------------- FORM -------------------------------*/}
+              <Subscribe />
 
-    {/* -------------------------- FORM -------------------------------*/}
-      <Subscribe />
-
-
-        <div>
-        <div className="text-black w-fit">
-                <div className="flex mt-5 space-x-5  text-gray-400 ">
-                  <a
-                    href="https://discord.gg/AyGNmQx3KB"
-                    target="_blank"
-                    rel="noopener"
-                    className="hover:scale-105 duration-200"
-                  >
-                    <span className="sr-only">Twitter</span>
-                    <Discord />
-                  </a>
-                  <a
-                    href="https://twitter.com/libertum_token"
-                    target="_blank"
-                    rel="noopener"
-                    className="hover:scale-105 duration-200"
-                  >
-                    <span className="sr-only">Twitter</span>
-                    <Twitter />
-                  </a>
-                  <a
-                    href="https://facebook.com/libertum1"
-                    target="_blank"
-                    rel="noopener"
-                    className="hover:scale-105 duration-200"
-                  >
-                    <span className="sr-only">Facebook</span>
-                    <Facebook />
-                  </a>
-                  <a
-                    href="https://www.instagram.com/libertum.io/"
-                    target="_blank"
-                    rel="noopener"
-                    className="hover:scale-105 duration-200"
-                  >
-                    <span className="sr-only">Instagram</span>
-                    <Instagram />
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/company/libertum1"
-                    target="_blank"
-                    rel="noopener"
-                    className="hover:scale-105 duration-200"
-                  >
-                    <span className="sr-only">Linkedin</span>
-                    <Linkedin />
-                  </a>
-                  <a
-                    href="https://t.me/libertum1"
-                    target="_blank"
-                    rel="noopener"
-                    className="hover:scale-105 duration-200"
-                  >
-                    <span className="sr-only">Telegram</span>
-                    <Telegram />
-                  </a>
+              <div>
+                <div className="text-black w-fit">
+                  <div className="flex mt-5 space-x-5  text-gray-400 ">
+                    <a
+                      href="https://discord.gg/AyGNmQx3KB"
+                      target="_blank"
+                      rel="noopener"
+                      className="hover:scale-105 duration-200"
+                    >
+                      <span className="sr-only">Twitter</span>
+                      <Discord />
+                    </a>
+                    <a
+                      href="https://twitter.com/libertum_token"
+                      target="_blank"
+                      rel="noopener"
+                      className="hover:scale-105 duration-200"
+                    >
+                      <span className="sr-only">Twitter</span>
+                      <Twitter />
+                    </a>
+                    <a
+                      href="https://facebook.com/libertum1"
+                      target="_blank"
+                      rel="noopener"
+                      className="hover:scale-105 duration-200"
+                    >
+                      <span className="sr-only">Facebook</span>
+                      <Facebook />
+                    </a>
+                    <a
+                      href="https://www.instagram.com/libertum.io/"
+                      target="_blank"
+                      rel="noopener"
+                      className="hover:scale-105 duration-200"
+                    >
+                      <span className="sr-only">Instagram</span>
+                      <Instagram />
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/company/libertum1"
+                      target="_blank"
+                      rel="noopener"
+                      className="hover:scale-105 duration-200"
+                    >
+                      <span className="sr-only">Linkedin</span>
+                      <Linkedin />
+                    </a>
+                    <a
+                      href="https://t.me/libertum1"
+                      target="_blank"
+                      rel="noopener"
+                      className="hover:scale-105 duration-200"
+                    >
+                      <span className="sr-only">Telegram</span>
+                      <Telegram />
+                    </a>
+                  </div>
                 </div>
-              </div>
-        </div>
-
               </div>
             </div>
           </div>
-        </section>
-
-    <Footer />
+        </div>
+      </section>
     </div>
-
-
-
-
-  )
-  
-}; 
-export default Contact; 
+  );
+};
+export default Contact;
 
 const Twitter = ({ size = 24 }) => (
   <svg

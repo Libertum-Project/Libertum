@@ -1,24 +1,10 @@
-import coinIcon from './assets/coinIcon.svg';
-import calendarIcon from './assets/calendar.svg';
-import tagIcon1 from './assets/tag.svg'
-import tagIcon2 from './assets/tag2.svg'
-import tagIcon3 from './assets/tag3.svg'
-import tagIcon4 from './assets/tag3.svg'
+import "./Presale.scss";
+import coinIcon from "../assets/coinIcon.svg";
+import calendarIcon from "../assets/calendar.svg";
+import tagIcon1 from "../assets/tag.svg";
+import tagIcon2 from "../assets/tag2.svg";
 
-const Card = (
-  { 
-  icon, 
-  image, 
-  dateIcon, 
-  title, 
-  features, 
-  note,
-  date,
-  onScrollToTop
-}
-) => {
-
-     
+const Card = ({ image, dateIcon, title, features, date, onScrollToTop }) => {
   return (
     <div className="card">
       {/* <div className="icon">{icon}</div> */}
@@ -33,24 +19,25 @@ const Card = (
           <li key={index}>{feature}</li>
         ))}
       </ul>
-      <button className='buybutton' onClick={onScrollToTop}>BUY</button>
+      <button className="buybutton" onClick={onScrollToTop}>
+        BUY
+      </button>
     </div>
   );
 };
 
-const PresaleGrid = ({onScrollToTop}) => {
-
+const PresaleGrid = ({ onScrollToTop }) => {
   const cardData = [
     {
       // icon: <img src={coinIcon} alt="" />,
       image: <img src={tagIcon1} alt="" />,
       dateIcon: <img src={calendarIcon} alt="" />,
       date: "Starts 1 Dec 2023",
-      title: 'Private Round',
+      title: "Private Round",
       features: [
-        'Tokens for sale: 6,000,000', 
-        'Price start at: $0.06', 
-        'Per Stage min: $22.550',
+        "Tokens for sale: 6,000,000",
+        "Price start at: $0.06",
+        "Per Stage min: $22.550",
       ],
     },
     {
@@ -58,11 +45,11 @@ const PresaleGrid = ({onScrollToTop}) => {
       image: <img src={tagIcon2} alt="" />,
       dateIcon: <img src={calendarIcon} alt="" />,
       date: "15 to 20 Jan 2024",
-      title: 'Whitelist Presale',
+      title: "Whitelist Presale",
       features: [
-        'Tokens for sale: 10,000,000', 
-        'Price start at: $0.072', 
-        'Per Stage min: $175.000'
+        "Tokens for sale: 10,000,000",
+        "Price start at: $0.072",
+        "Per Stage min: $175.000",
       ],
     },
     {
@@ -70,11 +57,11 @@ const PresaleGrid = ({onScrollToTop}) => {
       // image: <img src={tagIcon3} alt="" />,
       dateIcon: <img src={calendarIcon} alt="" />,
       date: "25 to 30 Jan 2024",
-      title: 'Public Presale',
+      title: "Public Presale",
       features: [
-        'Tokens for sale: 46,000,000', 
-        'Price start at: $0.08', 
-        'Per Stage min: $300.000'
+        "Tokens for sale: 46,000,000",
+        "Price start at: $0.08",
+        "Per Stage min: $300.000",
       ],
     },
     {
@@ -82,12 +69,9 @@ const PresaleGrid = ({onScrollToTop}) => {
       // image: <img src={tagIcon4} alt="" />,
       dateIcon: <img src={calendarIcon} alt="" />,
       date: "1st Feb 2024",
-      title: 'Launch Day',
-      features: [
-        'Price start at: $0.08', 
-      ],
+      title: "Launch Day",
+      features: ["Price start at: $0.08"],
     },
-    
   ];
 
   return (
