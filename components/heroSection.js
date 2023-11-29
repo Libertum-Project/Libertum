@@ -16,8 +16,7 @@ export default function HeroSection() {
             from a reliable source of monthly passive income generated through
             secure property rental yield.
           </p>
-          <div className="pt-8 lg:pr-0 lg:pt-16">
-            
+          <div className="pt-8 lg:pr-0 lg:pt-16">            
             {/* <Link
               href="/ico"
               className="font-logo font-bold text-2xl lg:text-4xl uppercase text-red-400 tracking-wide hover:text-white"
