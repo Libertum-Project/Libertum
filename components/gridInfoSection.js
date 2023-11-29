@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Slide } from "react-awesome-reveal";
 
 export default function GridInfoSection() {
 
@@ -29,7 +30,6 @@ export default function GridInfoSection() {
   return (
     <>
 
-
       <div className= "mt-32 bg-white lg:bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] bg-opacity-20  rounded-3xl border-gray-200  p-16 shadow-3xl lg:mx-auto lg:max-w-screen-2xl">
 
       
@@ -51,6 +51,7 @@ export default function GridInfoSection() {
         <div className="grid max-w-4xl lg:max-w-6xl grid-cols-1 mx-auto mt-2 text-center gap-y-4 sm:gap-x-8 sm:grid-cols-2 lg:grid-cols-4 sm:mt-12 lg:mt-20 sm:text-left">
           
         {cardsData.map((card, index) => (
+           <Slide direction={"left"} triggerOnce={false}>
           <div key={index} className="group relative bg-gray-200 rounded-xl after:transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
             <div className="relative space-y-8 py-12 p-8 hover:scale-110">
               <Image src={card.imageSrc} alt={card.title} width={200} height={200} className="w-12 h-12" style={{ color: 'transparent' }} />
@@ -58,8 +59,9 @@ export default function GridInfoSection() {
                 <h5 className="text-xl font-semibold text-gray-500 transition group-hover:text-secondary">{card.title}</h5>
                 <p className="text-gray-500">{card.description}</p>
               </div>
-            </div>
+            </div>            
           </div>
+          </Slide>
         ))}
 
         </div>
@@ -74,12 +76,6 @@ export default function GridInfoSection() {
 
 
       </div>
-
-
-
-
-
-
 
 
       
