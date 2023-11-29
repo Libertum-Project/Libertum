@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Image from "next/image";
 import { Slide } from "react-awesome-reveal";
 
@@ -52,11 +52,13 @@ export default function GridInfoSection() {
 
             <div className="grid max-w-4xl lg:max-w-6xl grid-cols-1 mx-auto mt-2 text-center gap-y-4 sm:gap-x-8 sm:grid-cols-2 lg:grid-cols-4 sm:mt-12 lg:mt-20 sm:text-left">
               {cardsData.map((card, index) => (
-                <Slide direction={"left"} triggerOnce={false}>
-                  <div
-                    key={index}
-                    className="group relative bg-gray-200 rounded-xl after:transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10"
-                  >
+                <Slide
+                  key={index}
+                  direction="left"
+                  cascade="true"
+                  triggerOnce={false}
+                >
+                  <div className="group relative bg-gray-200 rounded-xl after:transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
                     <div className="relative space-y-8 py-12 p-8 hover:scale-110">
                       <Image
                         src={card.imageSrc}
