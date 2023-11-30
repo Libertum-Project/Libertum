@@ -17,18 +17,11 @@ export default function HeroSection() {
             secure property rental yield.
           </p>
 
-          <div className="flex justify-center sm:justify-end gap-4 items-center pt-8 lg:pr-0 lg:pt-16">
+          <div className="flex h-full justify-center sm:justify-end gap-4 pt-8 lg:pr-0 lg:pt-16">
             
-            {/* <Link
-              href="/ico"
-              className="font-logo font-bold text-2xl lg:text-4xl uppercase text-red-400 tracking-wide hover:text-white"
-            >
-              B U Y <span className="whitespace-pre"> </span> L I B E R T U M
-            </Link> */}
-
-          <Link
+            <Link
               href="/subscribe"
-              className="uppercase py-4 px-6 rounded-lg bg-transparent border-2 border-blue-500 text-blue-500 dark:text-blue hover:bg-blue-500 hover:text-white text-md"
+              className= "flex items-center uppercase py-4 px-6 rounded-lg bg-transparent border-2 border-blue-500 text-blue-500 dark:text-blue hover:bg-blue-500 hover:text-white text-md"
             >
             WAITLIST
             </Link>
@@ -38,12 +31,7 @@ export default function HeroSection() {
              className="uppercase py-4 px-6 rounded-lg bg-blue-500 border-2 border-transparent text-white text-md  hover:bg-blue-400"
             >
               BUY LIBERTUM            
-            </Link>
-
-
-
-
-          
+            </Link>          
           </div>
         </div>
       </div>
