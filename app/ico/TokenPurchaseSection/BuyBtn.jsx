@@ -42,12 +42,14 @@ const BuyBtn = ({ isValidStage, amount, provider }) => {
         Purchase
       </button>
 
-      <Link 
-      href="https://app.uniswap.org/#/swap?chain=polygon&inputCurrency=0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0&outputCurrency=0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"
-      className="underline decoration-white-500 text-white underline-offset-4 cursor-pointer mt-4"
+      <a 
+        href="https://quickswap.exchange/#/swap?inputCurrency=ETH&outputCurrency=0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174&swapIndex=0"
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="underline decoration-white-500 text-white underline-offset-4 cursor-pointer mt-4"
       >
-      I need to buy UDSC
-      </Link>
+        Buy UDSC.e
+      </a>
     </div>
   );
 };
