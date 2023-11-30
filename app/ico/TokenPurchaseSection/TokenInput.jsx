@@ -1,9 +1,12 @@
 import { useState } from "react";
-const TokenInput = ({ conversionRate, lbmReceivedValue, setLbmReceivedValue }) => {
+const TokenInput = ({
+  conversionRate,
+  lbmReceivedValue,
+  setLbmReceivedValue,
+}) => {
   const [maxUSDCValue, setMaxUSDCValue] = useState(10000);
   const [minUSDCValue, setMinUSDCValue] = useState(50);
   const [usdcSelectedValue, setUsdcSelectedValue] = useState(100);
-  const remainingTokenCount = 10000;
 
   return (
     <div>
@@ -25,12 +28,16 @@ const TokenInput = ({ conversionRate, lbmReceivedValue, setLbmReceivedValue }) =
                   value={usdcSelectedValue}
                   className="px-3 py-2 rounded-xl text-gray-800 font-semibold bg-slate-100 "
                   onChange={(e) => {
-                    setUsdcSelectedValue(e.target.value);
-                    setLbmReceivedValue(e.target.value / conversionRate);
+                    const value = Math.min(
+                      Math.max(e.target.value, 50),
+                      maxUSDCValue,
+                    );
+                    setUsdcSelectedValue(value);
+                    setLbmReceivedValue(value / conversionRate);
                   }}
                   onBlur={(e) => {
                     const value = Math.min(
-                      Math.max(e.target.value, 0),
+                      Math.max(e.target.value, 50),
                       maxUSDCValue,
                     );
                     setUsdcSelectedValue(value);
@@ -62,13 +69,9 @@ const TokenInput = ({ conversionRate, lbmReceivedValue, setLbmReceivedValue }) =
                   value={parseInt(lbmReceivedValue)}
                   className="px-4 py-2 rounded-xl text-gray-800 font-semibold bg-slate-100 "
                   onChange={(e) => {
-                    setLbmReceivedValue(e.target.value);
-                    setUsdcSelectedValue(e.target.value * conversionRate);
-                  }}
-                  onBlur={(e) => {
                     const value = Math.min(
-                      Math.max(e.target.value, 0),
-                      remainingTokenCount,
+                      Math.max(e.target.value, minUSDCValue / conversionRate),
+                      maxUSDCValue / conversionRate,
                     );
                     setLbmReceivedValue(value);
                     setUsdcSelectedValue(value * conversionRate);
