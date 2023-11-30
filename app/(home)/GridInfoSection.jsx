@@ -50,15 +50,11 @@ export default function GridInfoSection() {
          <Image src="/assetsLanding/macbook.svg" alt="notebook" width={200} height={200} className="w-[120rem]"  />
         </div> */}
 
-            <div className="grid max-w-4xl lg:max-w-6xl grid-cols-1 mx-auto mt-2 text-center gap-y-4 sm:gap-x-8 sm:grid-cols-2 lg:grid-cols-4 sm:mt-12 lg:mt-20 sm:text-left">
+            <div className="grid max-w-4xl lg:max-w-7xl grid-cols-1 mx-auto mt-2 text-center gap-y-4 sm:gap-x-8 sm:grid-cols-2 lg:grid-cols-4 sm:mt-12 lg:mt-20 sm:text-left">
               {cardsData.map((card, index) => (
-                <Slide
+                  <div 
                   key={index}
-                  direction="left"
-                  cascade="true"
-                  triggerOnce={false}
-                >
-                  <div className="group relative bg-gray-200 rounded-xl after:transition hover:z-[1] hover:scale-110 hover:shadow-2xl hover:shadow-gray-600/10">
+                  className="group relative bg-gray-200 rounded-xl after:transition hover:z-[1] hover:scale-110 hover:shadow-2xl hover:shadow-gray-600/10 animate-slide-right">
                     <div className="relative space-y-8 py-12 p-8 ">
                       <Image
                         src={card.imageSrc}
@@ -76,7 +72,6 @@ export default function GridInfoSection() {
                       </div>
                     </div>
                   </div>
-                </Slide>
               ))}
             </div>
           </div>
