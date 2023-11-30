@@ -4,7 +4,7 @@ const cardsData = [
   {
     imageUrl: '/assetsIco/tokenization.svg',
     title: 'RWA Tokenization',
-    description: 'Tokenization is projected to wxpirience tremendous growth, and we are determined to capitalize on our early start.',
+    description: 'Tokenization is projected to expirience tremendous growth, and we are determined to capitalize on our early start.',
   },
   {
     imageUrl: '/assetsIco/market.svg',
@@ -31,7 +31,7 @@ const WhyNow = () => {
             Why Now?
             </h2>
           <p className="text-gray-600 text-xl">
-            Hard work always chatches up with perfect timing
+            Hard work always catches up with perfect timing
             </p>
           <p className="text-gray-600 text-xl mt-6">
           <span className='text-orange-400'>Libertum </span>
