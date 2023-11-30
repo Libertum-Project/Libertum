@@ -33,11 +33,11 @@ const PresaleGrid = ({ onScrollToTop }) => {
       image: <img src={tagIcon1} alt="" />,
       dateIcon: <img src={calendarIcon} alt="" />,
       date: "Starts 1 Dec 2023",
-      title: "Private Round",
+      title: "PreSale",
       features: [
         "Tokens for sale: 6,000,000",
         "Price start at: $0.06",
-        "Per Stage min: $22.550",
+        "Raise: $360.000",
       ],
     },
     {
@@ -45,11 +45,11 @@ const PresaleGrid = ({ onScrollToTop }) => {
       image: <img src={tagIcon2} alt="" />,
       dateIcon: <img src={calendarIcon} alt="" />,
       date: "15 to 20 Jan 2024",
-      title: "Whitelist Presale",
+      title: "Whitelist",
       features: [
         "Tokens for sale: 10,000,000",
         "Price start at: $0.072",
-        "Per Stage min: $175.000",
+        "Raise: $720.000",
       ],
     },
     {
@@ -57,11 +57,11 @@ const PresaleGrid = ({ onScrollToTop }) => {
       // image: <img src={tagIcon3} alt="" />,
       dateIcon: <img src={calendarIcon} alt="" />,
       date: "25 to 30 Jan 2024",
-      title: "Public Presale",
+      title: "Public",
       features: [
         "Tokens for sale: 46,000,000",
         "Price start at: $0.08",
-        "Per Stage min: $300.000",
+        "Raise: $3.680.000",
       ],
     },
     {

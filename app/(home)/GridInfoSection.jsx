@@ -58,8 +58,8 @@ export default function GridInfoSection() {
                   cascade="true"
                   triggerOnce={false}
                 >
-                  <div className="group relative bg-gray-200 rounded-xl after:transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
-                    <div className="relative space-y-8 py-12 p-8 hover:scale-110">
+                  <div className="group relative bg-gray-200 rounded-xl after:transition hover:z-[1] hover:scale-110 hover:shadow-2xl hover:shadow-gray-600/10">
+                    <div className="relative space-y-8 py-12 p-8 ">
                       <Image
                         src={card.imageSrc}
                         alt={card.title}
