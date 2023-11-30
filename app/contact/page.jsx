@@ -3,6 +3,7 @@ import React, { useState, useRef } from 'react';
 // import { useNavigate } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import './ContactPage.scss';
+import Header from '../(home)/Header';
 
 const ContactPage = () => {
     const form = useRef()
@@ -23,7 +24,8 @@ const ContactPage = () => {
     };
 
     return (
-        <div className='md:mt-36 md:-mb-96 lg:mt-0 lg:mb-0'>
+        <div className='lg:mt-0 lg:mb-0'>
+            <Header /> 
             <div className="contact-form md:block lg:flex md:w-[80%] md:text-center ">
                 <div className="text-center">
                     <h2>GET IN TOUCH</h2>
@@ -63,7 +65,7 @@ const ContactPage = () => {
                                 name="message"
                                 placeholder="Write your message here"
                                 required
-                                className="w-full px-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-orange-500"
+                                className="w-full h-32 px-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-orange-500"
                             ></textarea>
                         </div>
 
