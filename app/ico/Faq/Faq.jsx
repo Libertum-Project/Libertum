@@ -208,6 +208,26 @@ const Faq = () => {
         </ul>
       ),
     },
+    {
+      pregunta: "What is the maximum investment allowed? ",
+      answer: (
+        <ul>
+          <li>
+          Right now is 10.000 USDC. Feel free to contact us for a major investment.
+          </li>
+        </ul>
+      ),
+    },
+    {
+      pregunta: "What's the minumum investment allowed? ",
+      answer: (
+        <ul>
+          <li>
+          Right now minimum investment allowed is 50 USDC
+          </li>
+        </ul>
+      ),
+    },
   ];
 
   return (
