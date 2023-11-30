@@ -9,6 +9,7 @@ import RemainingTokens from "./RemainingTokens.jsx";
 import TokenInput from "./TokenInput.jsx";
 import BuyBtn from "./BuyBtn.jsx";
 import ContractContext from "../../context/ContractContext.js";
+import Link from "next/link.js";
 
 const TokenPurchaseSection = ({ setUpdateUserBalance }) => {
   const { updateContractInfo } = useContext(ContractContext);
@@ -90,12 +91,16 @@ const TokenPurchaseSection = ({ setUpdateUserBalance }) => {
           setLbmReceivedValue={setLbmReceivedValue}
         />
       </div>
+
+
       <BuyBtn
         isValidStage={isValidStage}
         amount={lbmReceivedValue}
         provider={provider}
         setUpdateUserBalance={setUpdateUserBalance}
       />
+
+      
     </div>
   );
 };

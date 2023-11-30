@@ -31,12 +31,12 @@ export default function Footer() {
     },
     {
       name: "FAQs",
-      href: "https://www.marketplace.libertum.io/support",
+      href: "/support",
       section: "Support",
     },
     {
       name: "Support",
-      href: "https://www.marketplace.libertum.io/support",
+      href: "/support",
       section: "Support",
     },
     {
@@ -46,7 +46,7 @@ export default function Footer() {
     },
     {
       name: "Contact Us Form",
-      href: "https://www.marketplace.libertum.io/contact",
+      href: "/contact",
       section: "Contact",
     },
   ];

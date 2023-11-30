@@ -49,7 +49,7 @@ const Header = () => {
     },
     {
       name: "Support",
-      href: "https://www.marketplace.libertum.io/support",
+      href: "/support",
       target: "",
       icon: ChatBubbleLeftIcon,
     },
