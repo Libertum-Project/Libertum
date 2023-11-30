@@ -96,9 +96,9 @@ export default function Footer() {
     <>
       <footer>
         <div className="bg-slate-100 bg-opacity-30 py-4 text-gray-700">
-          <div className="container mx-auto px-4">
+          <div className="mx-auto px-10 sm:px-24">
             <div className="-mx-4 flex flex-wrap justify-between">
-              <div className="px-4 my-4 w-full xl:w-2/6">
+              <div className="px-4 my-4 w-full xl:w-2/6 2xl:w-full">
                 {/* Utiliza NextImage para la imagen de Next */}
                 <Link
                   href="/"

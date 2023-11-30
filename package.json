@@ -20,6 +20,7 @@
   "author": "Surjith S M",
   "license": "ISC",
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@emotion/css": "^11.10.6",
     "@emotion/react": "^11.11.1",
     "@emotion/server": "^11.10.0",
@@ -43,6 +44,7 @@
     "next-themes": "^0.2.1",
     "pino-pretty": "^10.2.3",
     "react": "^18.2.0",
+    "react-autosuggest": "^10.1.0",
     "react-awesome-reveal": "^4.2.7",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
