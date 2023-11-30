@@ -97,7 +97,7 @@ const ICONavbar = ({ updateUserBalance }) => {
             <span className="hidden md:block font-logo">LIBERTUM</span>
           </Link>
           <div className="flex relative flex-wrap space-x-4 justify-end">
-            <div>
+            <div suppressHydrationWarning>
               <w3m-button />
               {userUSDC !== null && userPLBM !== null && (
                 <div className="flex justify-center mt-2 space-x-4 items-center">
