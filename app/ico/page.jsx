@@ -115,13 +115,13 @@ const ICO = () => {
                   <div className="pb-8 lg:pb-8">
                     <Timer />
                   </div>
-                  <SaleProgressBar
+                  {/* <SaleProgressBar
                     currentStage={currentStage}
                     remainingTokens={remainingTokens}
                     isValidStage={isValidStage}
-                  />
+                  /> */}
                   <div className="mx-auto text-center text-xl py-2 text-gray-800 lg:text-2xl">
-                    {isValidStage && (
+                    {/* {isValidStage && (
                       <h2>
                         Remaining Tokens:
                         {remainingTokens.seedTokensRemaining !== null ? (
@@ -135,7 +135,7 @@ const ICO = () => {
                           <span> Loading</span>
                         )}
                       </h2>
-                    )}
+                    )} */}
                     <span className="text-">1 LBM = {conversionRate} USDC</span>
                   </div>
 
