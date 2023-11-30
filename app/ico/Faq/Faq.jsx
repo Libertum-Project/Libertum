@@ -55,7 +55,7 @@ const Faq = () => {
           <br />
           <li>
             The token contract address
-            is 0x7C5f61351339B7a516ba1e7fC0d9052042CC4875. Please do not send
+            is 0x8f097819978afacb8438350bf36bc0c29e5a8b10. Please do not send
             any funds to this token contract address, as they cannot be
             recovered. $LBM can currently only be purchased through the official
             presale at buy.libertum.io
