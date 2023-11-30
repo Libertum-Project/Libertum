@@ -1,5 +1,4 @@
 const RemainingTokens = ({ currentStage, remainingTokens, isValidStage }) => {
-
   return (
     <>
       {isValidStage && (
@@ -10,7 +9,10 @@ const RemainingTokens = ({ currentStage, remainingTokens, isValidStage }) => {
               {" "}
               {parseFloat(
                 remainingTokens[`${currentStage}TokensRemaining`],
-              ).toFixed(2)}
+              ).toLocaleString(undefined, {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+              })}
             </span>
           ) : (
             <span> Loading</span>
