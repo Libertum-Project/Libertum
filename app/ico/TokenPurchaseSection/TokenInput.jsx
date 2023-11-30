@@ -25,7 +25,7 @@ const TokenInput = ({
                   style={{width:"7rem"}}
                   max={10000}
                   min={50}
-                  step="50"
+                  step={1}
                   value={usdcSelectedValue}
                   className="px-3 py-2 rounded-xl text-gray-800 font-semibold bg-slate-100 "
                   onChange={(e) => {
@@ -67,7 +67,7 @@ const TokenInput = ({
                   style={{width:"7rem"}}
                   min="0"
                   max={Math.round(maxUSDCValue / conversionRate)}
-                  step={50 * 2}
+                  step={1}
                   value={parseInt(lbmReceivedValue)}
                   className="px-4 py-2 rounded-xl text-gray-800 font-semibold bg-slate-100 "
                   onChange={(e) => {

@@ -23,7 +23,7 @@ const TokenPurchaseSection = ({ setUpdateUserBalance }) => {
     publicTokensRemaining: null,
   });
 
-  const [lbmReceivedValue, setLbmReceivedValue] = useState(1000);
+  const [lbmReceivedValue, setLbmReceivedValue] = useState(1666);
   const isValidStage =
     currentStage === "seed" ||
     currentStage === "whitelist" ||
