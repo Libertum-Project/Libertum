@@ -1,15 +1,17 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useWeb3ModalSigner } from "@web3modal/ethers5/react";
 import { getCurrentSaleStage } from "utils/smartContracts/pLBM/getCurrentSaleStage";
 import { getRemainingTokens } from "utils/smartContracts/pLBM/getRemainingTokens";
 import Timer from "./Timer.jsx";
-//import SaleProgressBar from "./SaleProgressBar.jsx";
-//import RemainingTokens from "./RemainingTokens.jsx";
+import SaleProgressBar from "./SaleProgressBar.jsx";
+import RemainingTokens from "./RemainingTokens.jsx";
 import TokenInput from "./TokenInput.jsx";
 import BuyBtn from "./BuyBtn.jsx";
+import ContractContext from "../../context/ContractContext.js";
 
 const TokenPurchaseSection = ({ setUpdateUserBalance }) => {
+  const { updateContractInfo } = useContext(ContractContext);
   const web3signer = useWeb3ModalSigner().signer;
   const [provider, setProvider] = useState(null);
   const [currentStage, setCurrentStage] = useState(null);
@@ -56,7 +58,7 @@ const TokenPurchaseSection = ({ setUpdateUserBalance }) => {
     }
 
     fetchContractData();
-  }, []);
+  }, [updateContractInfo]);
 
   return (
     <div className="my-auto py-12 md:py-8 w-full md:w-auto md:mx-32 md:px-16 lg:px-8 lg:mx-0 bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-[#2128f2cc] to-[#4092e9cc]  mx-auto md:rounded-2xl drop-shadow-[0_8px_4px_rgba(0,0,0,.4)]">
@@ -69,21 +71,17 @@ const TokenPurchaseSection = ({ setUpdateUserBalance }) => {
 
       <div className="px-4 md:px-0 py-8 lg:py-8">
         <Timer />
-        {/*
         <SaleProgressBar
           currentStage={currentStage}
           remainingTokens={remainingTokens}
           isValidStage={isValidStage}
         />
-        */}
         <div className="mx-auto text-center text-xl py-2 text-gray-800 lg:text-2xl">
-          {/*
           <RemainingTokens
             currentStage={currentStage}
             remainingTokens={remainingTokens}
             isValidStage={isValidStage}
           />
-        */}
           <span className="text-">1 LBM = {conversionRate} USDC</span>
         </div>
         <TokenInput

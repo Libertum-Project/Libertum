@@ -1,3 +1,4 @@
+'use client'
 import "./Faq.scss";
 import React, { useState, useEffect, useRef } from "react";
 import { HiOutlineChevronDown, HiOutlineChevronUp } from "react-icons/hi";
