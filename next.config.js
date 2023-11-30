@@ -17,6 +17,12 @@ module.exports = {
       use: ["@svgr/webpack", "url-loader"],
     });
 
+    // Add Web3Modal specific externals
+    config.externals = config.externals || [];
+    config.externals.push('pino-pretty', 'lokijs', 'encoding');
+
     return config;
   },
+  // Optional: Add this if using SWCMinify
+  // swcMinify: false,
 };
