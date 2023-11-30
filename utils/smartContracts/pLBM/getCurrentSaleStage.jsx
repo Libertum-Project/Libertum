@@ -14,7 +14,7 @@ const stageTextMap = {
 export async function getCurrentSaleStage() {
   try {
     const provider = new ethers.providers.JsonRpcProvider(
-      "https://polygon-mumbai.g.alchemy.com/v2/1MGoef4uSxJ3hjS0wszW_hmrScMeLq6B",
+      "https://polygon-mainnet.g.alchemy.com/v2/eYoj2pyMsQV15pjd0WADpjpY5TRJmucG"
     );
     const contract = new ethers.Contract(pLBM_address, pLBM_ABI.abi, provider);
 
