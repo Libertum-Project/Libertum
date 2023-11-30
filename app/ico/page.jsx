@@ -15,6 +15,7 @@ import Timer from "./Timer.jsx";
 import SaleProgressBar from "./SaleProgressBar.jsx";
 import MessageBox from "./MessageBox/MessageBox.jsx";
 import MessageBoxProvider from "../context/MessageBoxProvider.js";
+import Header from "../(home)/Header.jsx"
 
 const ICO = () => {
   const web3signer = useWeb3ModalSigner().signer;
@@ -26,7 +27,8 @@ const ICO = () => {
   });
 
   const [updateUserBalance, setUpdateUserBalance] = useState(false);
-  const [maxUSDCValue, setMaxUSDCValue] = useState(5000);
+  const [maxUSDCValue, setMaxUSDCValue] = useState(10000);
+  const [minUSDCValue, setMinUSDCValue] = useState(50)
   const [conversionRate, setConversionRate] = useState(0.06);
   const [provider, setProvider] = useState(null);
   const [usdcSelectedValue, setUsdcSelectedValue] = useState(100);
@@ -77,31 +79,32 @@ const ICO = () => {
       <MessageBoxProvider>
         <>
           <MessageBox />
+          <Header />
           <ICONavbar updateUserBalance={updateUserBalance} />
-          <div className="min-h-screen">
+          <div className="min-h-screen mt-10 sm:mt-0">
             <div className="container mx-auto justify-between lg:mt-16 flex flex-nowrap flex-col lg:flex-row ">
               <div className="lg:ml-10 py-8 md:mx-auto md:max-w-5xl lg:max-w-7xl">
-                <h2 className="tracking-wide text-gray-800 text-center lg:text-left font-bold px-4 md:px-16 lg:px-0 text-4xl md:text-5xl xl:text-7xl">
-                  Transforming an{" "}
-                  <span className="md:hidden px-1 text-white bg-gradient-to-r from-[#2128f2cc] via-[#4092e9cc] to-[#6ec6dccc] extrabold drop-shadow-[0_2px_2px_rgba(0,0,0,1)] ">
+              <h2 className="tracking-wide text-center lg:text-left font-bold px-4 md:px-16 lg:px-0 text-4xl md:text-5xl xl:text-7xl">
+                Transforming an{" "}
+                <span className="md:hidden px-1 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500 extrabold ">
+                  exclusive
+                </span>{" "}
+                <div className="hidden md:block my-4">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500 ">
                     exclusive
                   </span>{" "}
-                  <div className="hidden md:block my-4">
-                    <span className="px-5 text-white bg-gradient-to-r from-[#2128f2cc] via-[#4092e9cc] to-[#6ec6dccc] extrabold drop-shadow-[0_2px_2px_rgba(0,0,0,1)] ">
-                      exclusive
-                    </span>{" "}
-                  </div>
-                  market into an{" "}
-                  <span className="md:hidden px-1 text-white bg-gradient-to-r from-[#c88648cc] via-[#e9c440cc] to-[#ffed4bcc] extrabold drop-shadow-[0_2px_2px_rgba(0,0,0,1)] ">
+                </div>
+                market into an{" "}
+                <span className="md:hidden px-1 text-transparent bg-clip-text bg-gradient-to-r from-rose-600 via-red-400 to-orange-500 extrabold ">
+                  inclusive
+                </span>{" "}
+                <div className="hidden md:block my-4">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-600 via-red-400 to-orange-500 extrabold">
                     inclusive
                   </span>{" "}
-                  <div className="hidden md:block my-4">
-                    <span className="px-4 text-white bg-gradient-to-r from-[#c88648cc] via-[#e9c440cc] to-[#ffed4bcc] extrabold drop-shadow-[0_2px_2px_rgba(0,0,0,1)] ">
-                      inclusive
-                    </span>{" "}
-                  </div>
-                  opportunity for everyone
-                </h2>
+                </div>
+                opportunity for everyone
+              </h2>
               </div>
 
               <div className="my-auto py-12 md:py-8 w-full md:w-auto md:mx-32 md:px-16 lg:px-8 lg:mx-0 bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-[#2128f2cc] to-[#4092e9cc]  mx-auto md:rounded-2xl drop-shadow-[0_8px_4px_rgba(0,0,0,.4)]">
@@ -151,8 +154,8 @@ const ICO = () => {
                           <div className="w-48">
                             <input
                               type="number"
-                              min="0"
                               max={maxUSDCValue}
+                              min={minUSDCValue}
                               step="50"
                               value={usdcSelectedValue}
                               className="px-3 py-2 rounded-xl text-gray-800 font-semibold bg-slate-100 "
@@ -243,9 +246,6 @@ const ICO = () => {
                 </div>
               </div>
             </div>
-            <h3 className="hidden lg:block lg:mt-16 mt-3 mx-auto text-center text-gray-500 uppercase font-logo  font-light lg:text-4xl">
-              Get your LBM tokens now!
-            </h3>
           </div>
 
           <div className="pb-10 bg-gradient-to-b from-transparent lg:mx-auto to-[#cfdde8f1] to-10%">
@@ -257,9 +257,9 @@ const ICO = () => {
                 <Presale onScrollToTop={handleScrollToTop} />
               </div>
 
-              <div className="min-w-screen-2xl">
+              {/* <div className="min-w-screen-2xl">
                 <GridInfoSection />
-              </div>
+              </div> */}
 
               <div className="hidden md:block min-w-screen-2xl">
                 <AllocationChart />

@@ -124,22 +124,6 @@ const Header = () => {
                 </Link>
 
                 <div className="flex items-center gap-2 text-gray-500">
-                  {/* <Link
-            href="/"
-            prefetch={false}
-            className='text-slate-800 font-semibold'
-          >
-          <h2>CONTACT</h2>
-          </Link>
-
-          <Link
-            href="/"
-            prefetch={false}
-            className='bg-blue-500 text-white px-4 py-2 rounded-full transition duration-200 ease-in-out hover:bg-indigo-700 active:bg-indigo-900 focus:outline-none'
-          >
-          <h2>WAITLIST</h2>
-          </Link> */}
-
                   <button
                     onClick={handleSidebarToggle}
                     className="text-gray-500 hover:rotate-180 duration-300 transformtext-gray-600"

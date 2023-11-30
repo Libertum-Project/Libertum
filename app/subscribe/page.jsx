@@ -1,11 +1,12 @@
 'use client'
 import Navbar from "../components/Navbar.jsx";
 import Subscribe from "./Subscribe.jsx";
+import Header from "../(home)/Header.jsx";
 
 const Contact = () => {
   return (
     <div>
-      <Navbar />
+      <Header />
       <section>
         <div className="min-w-full top-0 z-10 md:py-4 h-screen mb-32 md:h-[80vh] lg:h-[80vh] animate-slide-right pt-12 px-8  lg:px-32 lg:py-6 rounded-3xl drop-shadow-xl flex justify-start  m-auto align-middle lg:max-w-screen-2xl">
           <div className="max-w-4xl text-center md:text-left">
