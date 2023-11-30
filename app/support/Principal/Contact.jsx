@@ -1,9 +1,10 @@
-// import ContactPage from "../../Contact/ContactPage";
+// import ContactPage from "../../Contact/ContactPage"
+import ContactPage from "../../contact/page"
 
 const Contact = () => {
   return(
     <div>
-      {/* <ContactPage /> */}
+      <ContactPage />
     </div>
     )
 }; 
