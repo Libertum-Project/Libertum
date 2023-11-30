@@ -21,7 +21,7 @@ const ICONavbar = () => {
   // Whenever the web3modal account changes, fetch balances for current user
   useEffect(() => {
     if (isConnected) {
-      switchToPolygonMumbai();
+      switchToPolygonMainnet();
       fetchBalances(web3signer, address);
     } else {
       // Clear balances if user is disconnected
@@ -41,36 +41,36 @@ const ICONavbar = () => {
     }
   }
 
-  const switchToPolygonMumbai = async () => {
-    const polygonMumbaiData = {
-      chainId: '0x13881',
-      chainName: 'Polygon Mumbai Testnet',
+  const switchToPolygonMainnet = async () => {
+    const polygonMainnetData = {
+      chainId: '0x89', // 137
+      chainName: 'Polygon Mainnet',
       nativeCurrency: {
-        name: 'Mumbai Matic',
+        name: 'Matic',
         symbol: 'MATIC',
         decimals: 18,
       },
-      rpcUrls: ['https://rpc-mumbai.maticvigil.com/'],
-      blockExplorerUrls: ['https://mumbai.polygonscan.com/'],
+      rpcUrls: ['https://rpc-mainnet.maticvigil.com/'],
+      blockExplorerUrls: ['https://polygonscan.com/'],
     };
   
     try {
       await window.ethereum.request({
         method: 'wallet_switchEthereumChain',
-        params: [{ chainId: polygonMumbaiData.chainId }],
+        params: [{ chainId: polygonMainnetData.chainId }],
       });
     } catch (error) {
       if (error.code === 4902) {
         try {
           await window.ethereum.request({
             method: 'wallet_addEthereumChain',
-            params: [polygonMumbaiData],
+            params: [polygonMainnetData],
           });
         } catch (addError) {
-          console.error('Error adding Polygon Mumbai:', addError);
+          console.error('Error adding Polygon Mainnet:', addError);
         }
       } else {
-        console.error('Error switching to Polygon Mumbai:', error);
+        console.error('Error switching to Polygon Mainnet:', error);
       }
     }
   };
@@ -84,7 +84,7 @@ const ICONavbar = () => {
                 <div className="flex justify-center mt-2 space-x-4 items-center">
                   <div className="flex items-center space-x-2">
                     <Image src="/img/ico/usdc.png" alt="USDC" width={20} height={20} />
-                    <span className="text-md font-semibold text-custom-blue">{userUSDC} USDC</span>
+                    <span className="text-md font-semibold text-custom-blue">{userUSDC} USDC.e</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Image src="/img/logo.svg" alt="Libertum" width={20} height={20} />
