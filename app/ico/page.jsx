@@ -267,8 +267,11 @@ const ICO = () => {
                 <AllocationChart />
               </div>
 
+              <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-10">
+                Roadmap
+              </h2>
               <Roadmap />
-              
+
               <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-10">
                 FAQs
               </h2>
