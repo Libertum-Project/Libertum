@@ -26,7 +26,7 @@ const Investing = () => {
         </div>
         <div className='text'>
           <h3>BROWSE YOUR DREAM PROPERTY</h3>
-          <p >Enjoy the exciting part of the process! Explore our <a href="/marketplace">Marketplace</a> and choose your ideal property to invest in. Decide how many tokens you'd like to purchase, and proceed to checkout. Decide how many tokens you'd like to buy, then proceed to checkout. You can pay with FIAT using your debit/credit card or through a bank transfer. Alternatively, you can connect your wallet to pay with cryptocurrencies.</p>
+          <p >Enjoy the exciting part of the process! Explore our <a href="/marketplace">Marketplace</a> and choose your ideal property to invest in. Decide how many tokens you&rsquo;d like to purchase, and proceed to checkout. Decide how many tokens you&rsquo;d like to buy, then proceed to checkout. You can pay with FIAT using your debit/credit card or through a bank transfer. Alternatively, you can connect your wallet to pay with cryptocurrencies.</p>
         </div>
       </div>
 
@@ -36,7 +36,7 @@ const Investing = () => {
         </div>
         <div className='text'>
           <h3>FINALIZE THE PURCHASE AGREEMENT</h3>
-          <p >After completing steps 1 and 2, it's time to sign the purchase smart contract at the checkout. This document legally binds all parties involved, linking the tokens to the property and rental income</p>
+          <p >After completing steps 1 and 2, it&rsquo;s time to sign the purchase smart contract at the checkout. This document legally binds all parties involved, linking the tokens to the property and rental income</p>
         </div>
       </div>
 

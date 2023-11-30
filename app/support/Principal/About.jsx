@@ -59,10 +59,10 @@ const About = () => {
             Libertum, headquartered in London, England, is poised to revolutionise the real estate industry with an innovative equity ecosystem. The Libertum Platform will tackle the shortcomings of traditional real estate investment models, addressing scalability and accessibility issues. Powered by blockchain technology, Libertum will unite small and large investors with property owners on our global peer to peer platform, granting local property investment opportunities global exposure and opening doors for retail investors worldwide.
           </p>
           <p>
-            The next stage in the evolution of real estate investment is here. Libertum will reduce the need for intermediaries, making real estate investment cost-effective and efficient, benefiting both investors and property professionals. This transformation won't eliminate agencies and middlemen; it will transform them, enabling them to leverage the Libertum platform.
+            The next stage in the evolution of real estate investment is here. Libertum will reduce the need for intermediaries, making real estate investment cost-effective and efficient, benefiting both investors and property professionals. This transformation won&rsquo;t eliminate agencies and middlemen; it will transform them, enabling them to leverage the Libertum platform.
           </p>
           <p>
-            Libertum's mission is to simplify real estate investment by making it accessible to a global investor community. Our platform will offer trustless, compliant, and borderless connectivity, addressing the rising demand for more accessible and efficient investment opportunities in real estate.
+            Libertum&rsquo;s mission is to simplify real estate investment by making it accessible to a global investor community. Our platform will offer trustless, compliant, and borderless connectivity, addressing the rising demand for more accessible and efficient investment opportunities in real estate.
           </p>
         </section>
       </Slide>
@@ -71,8 +71,8 @@ const About = () => {
       <Slide direction={"down"} triggerOnce={false}>
       <div className="phrase">
         <p>
-        "Transforming an Exclusive Market into an Inclusive Opportunity for Everyone
-        Democratising investment in real estate by breaking barriers, creating opportunities and making it accessible to everyone."
+        &rsquo;Transforming an Exclusive Market into an Inclusive Opportunity for Everyone
+        Democratising investment in real estate by breaking barriers, creating opportunities and making it accessible to everyone.&rsquo;
         </p>
       </div>
     </Slide>

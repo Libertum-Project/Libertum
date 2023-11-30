@@ -128,7 +128,7 @@ const Faq = () => {
           <li>1. Log in to your account.</li>
           <li>2. Explore the marketplace to discover various investment opportunities.</li>
           <li>3. Take your time to research and understand the options available.</li>
-          <li>4. When you're ready, select the investment that aligns with your goals and risk tolerance.</li>
+          <li>4. When you&rsquo;re ready, select the investment that aligns with your goals and risk tolerance.</li>
         </ul>
       ),
     },
@@ -136,18 +136,18 @@ const Faq = () => {
       pregunta: "I don’t have an account yet",
       answer: (
         <ul>
-          <li>No worries, creating an account with us is a straightforward process. Here's how you can do it:</li>
+          <li>No worries, creating an account with us is a straightforward process. Her&rsquo;s how you can do it:</li>
           <li>1. Visit our website.</li>
-          <li>2. Click on the 'Sign Up' or 'Create Account' button.</li>
+          <li>2. Click on the &rsquo;Sign Up&rsquo; or &rsquo;Create Account&rsquo; button.</li>
           <li>3. Fill in the required information, such as your name, email address, and password.</li>
           <li>4. Alternatively, you can also choose to log in using your Google credentials for added convenience.</li>
-          <li>5. Once your account is created, you'll be able to explore our marketplace and start your investment journey.</li>
+          <li>5. Once your account is created, you&rsquo;ll be able to explore our marketplace and start your investment journey.</li>
         </ul>
       ),
     },
     {
       pregunta: "I forgot my credentials",
-      answer: "If you've forgotten your credentials, you can click on the 'Forgot Password' link on the login page. Follow the instructions provided to reset your password. If you're still having trouble, please contact our support team for further assistance."
+      answer: "If youve forgotten your credentials, you can click on the 'Forgot Password' link on the login page. Follow the instructions provided to reset your password. If you're still having trouble, please contact our support team for further assistance."
     },
     {
       pregunta: "Can I use my account on multiple devices?",
@@ -209,13 +209,13 @@ const Faq = () => {
           <li>
             With Libertum, you can invest as little as $50 and start earning monthly income
             on your investment, while also watching your capital grow. The best part? You
-            won't have to worry about unexpected maintenance costs like insurance or
-            repairs. It's a win-win situation for all!
+            won&rsquo;t have to worry about unexpected maintenance costs like insurance or
+            repairs. It&rsquo;s a win-win situation for all!
           </li>
           <br />
           <li>
             Our peer-to-peer marketplace is the only platform in the blockchain where you
-            can easily sell your shares of digital property. We're shaping the future of
+            can easily sell your shares of digital property. We&rsquo;re shaping the future of
             fractional real estate trading and investment.
           </li>
           <br />
