@@ -14,14 +14,14 @@ const polygon = {
   rpcUrl: 'https://polygon-rpc.com'
 }
 
-const polygonMumbai = {
-  chainId: 80001,
-  name: 'Mumbai',
-  currency: 'MATIC',
-  explorerUrl: 'https://mumbai.polygonscan.com',
-  rpcUrl: 'https://polygon-mumbai.g.alchemy.com/v2/ugPxxVQsX7KIXCYSUDFa2g4HxSjVFkIa',
+// const polygonMumbai = {
+//   chainId: 80001,
+//   name: 'Mumbai',
+//   currency: 'MATIC',
+//   explorerUrl: 'https://mumbai.polygonscan.com',
+//   rpcUrl: 'https://polygon-mumbai.g.alchemy.com/v2/ugPxxVQsX7KIXCYSUDFa2g4HxSjVFkIa',
 
-}
+// }
 
 // 3. Create modal
 const metadata = {
@@ -33,7 +33,7 @@ const metadata = {
 
 createWeb3Modal({
   ethersConfig: defaultConfig({ metadata }),
-  chains: [polygon, polygonMumbai],
+  chains: [polygon],
   projectId,
   themeVariables: {
     '--w3m-color-mix': '#112A46',
