@@ -8,6 +8,7 @@ import ICONavbar from "./IcoNavbar.jsx";
 import Presale from "./Presale/Presale.jsx";
 import AllocationChart from "./AllocationChart/AllocationChart.jsx";
 import GridInfoSection from "../(home)/GridInfoSection.jsx";
+import WhyNow from "./WhyNow.jsx"
 import Roadmap from "./Roadmap/Roadmap.jsx";
 import Faq from "./Faq/Faq.jsx";
 import BuyBtn from "./BuyBtn.jsx";
@@ -250,7 +251,7 @@ const ICO = () => {
 
           <div className="pb-10 bg-gradient-to-b from-transparent lg:mx-auto to-[#cfdde8f1] to-10%">
             <div className="max-w-screen-2xl mx-auto">
-              <h2 className=" pt-32 text-4xl text-center font-bold text-gray-800">
+              <h2 className="mx-auto px-6 md:px-24  first-line:mt-12 marker:my-8 text-2xl font-bold text-gray-800 md:text-4xl">
                 Upcoming Events
               </h2>
               <div className="">
@@ -260,6 +261,7 @@ const ICO = () => {
               {/* <div className="min-w-screen-2xl">
                 <GridInfoSection />
               </div> */}
+              <WhyNow />
 
               <div className="hidden md:block min-w-screen-2xl">
                 <AllocationChart />
