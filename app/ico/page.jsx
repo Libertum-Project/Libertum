@@ -82,7 +82,7 @@ const ICO = () => {
           <MessageBox />
           <Header />
           <ICONavbar updateUserBalance={updateUserBalance} />
-          <div className="min-h-screen mt-10 sm:mt-0">
+          <div className="min-h-screen mt-20 sm:mt-0">
             <div className="container mx-auto justify-between lg:mt-16 flex flex-nowrap flex-col lg:flex-row ">
               <div className="lg:ml-10 py-8 md:mx-auto md:max-w-5xl lg:max-w-7xl">
               <h2 className="tracking-wide text-center lg:text-left font-bold px-4 md:px-16 lg:px-0 text-4xl md:text-5xl xl:text-7xl">
@@ -249,7 +249,7 @@ const ICO = () => {
             </div>
           </div>
 
-          <div className="pb-10 bg-gradient-to-b from-transparent lg:mx-auto to-[#cfdde8f1] to-10%">
+          <div className="py-10 bg-gradient-to-b from-transparent lg:mx-auto to-[#cfdde8f1] to-10%">
             <div className="max-w-screen-2xl mx-auto">
               <h2 className="mx-auto px-6 md:px-24  first-line:mt-12 marker:my-8 text-2xl font-bold text-gray-800 md:text-4xl">
                 Upcoming Events

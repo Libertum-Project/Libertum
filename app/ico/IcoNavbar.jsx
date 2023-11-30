@@ -10,11 +10,7 @@ function classNames(...classes) {
 }
 
 const ICONavbar = ({ updateUserBalance }) => {
-  const navigation = [
-    ['Whitepaper', '/whitepaper'],
-    ['Marketplace', '/marketplace'],
-    ['Enter App', '/login'],
-  ];
+
   const [userPLBM, setUserPLBM] = useState(null);
   const [userUSDC, setUserUSDC] = useState(null);
   const web3signer = useWeb3ModalSigner().signer;
@@ -78,8 +74,8 @@ const ICONavbar = ({ updateUserBalance }) => {
   };
  
   return (
-    <div className="absolute top-22 right-4 sm:top-7 sm:right-52 z-10 md:py-4 2xl:right-64">
-          <div className="flex relative flex-wrap space-x-4 justify-end">
+    <div className="absolute w-full top-22 sm:top-7 sm:right-52 z-10 md:py-4 2xl:right-64">
+          <div className="flex  relative flex-wrap space-x-4  justify-center sm:justify-end">
             <div suppressHydrationWarning>
               <w3m-button />
               {userUSDC !== null && userPLBM !== null && (
