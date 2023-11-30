@@ -22,6 +22,7 @@ const TokenInput = ({
               <div className="w-48">
                 <input
                   type="number"
+                  style={{width:"7rem"}}
                   max={10000}
                   min={50}
                   step="50"
@@ -63,6 +64,7 @@ const TokenInput = ({
               <div className="ml-2 w-48">
                 <input
                   type="number"
+                  style={{width:"7rem"}}
                   min="0"
                   max={Math.round(maxUSDCValue / conversionRate)}
                   step={50 * 2}
