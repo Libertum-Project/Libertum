@@ -11,7 +11,7 @@ import Faq from "./Faq/Faq.jsx";
 import MessageBox from "./MessageBox/MessageBox.jsx";
 import MessageBoxProvider from "../context/MessageBoxProvider.js";
 import Header from "../(home)/Header.jsx";
-import TokenPurchaseSection from "./TokenPurchaseSection.jsx";
+import TokenPurchaseSection from "./TokenPurchaseSection/TokenPurchaseSection.jsx";
 
 const ICO = () => {
   const [updateUserBalance, setUpdateUserBalance] = useState(false);
