@@ -9,7 +9,6 @@ module.exports = {
     unoptimized: true,
   },
   productionBrowserSourceMaps: true,
-  devtool: 'source-map',
 
   webpack(config, options) {
     config.module.rules.push({
