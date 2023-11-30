@@ -1,3 +1,4 @@
+'use client'
 import { useContext } from "react";
 import MessageBoxContext from "../../context/MessageBoxContext";
 import Loading from "./Loading";

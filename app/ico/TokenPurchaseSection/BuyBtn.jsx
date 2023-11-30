@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { buyTokens } from "utils/smartContracts/pLBM/buyTokens";
 import MessageBoxContext from "app/context/MessageBoxContext";
+import ContractContext from "../../context/ContractContext";
 
-const BuyBtn = ({ isValidStage, amount, provider, setUpdateUserBalance }) => {
+const BuyBtn = ({ isValidStage, amount, provider }) => {
   const {
     setShowPendingMessage,
     setShowFailMessage,
@@ -11,6 +12,8 @@ const BuyBtn = ({ isValidStage, amount, provider, setUpdateUserBalance }) => {
     setErrorMessage,
     setPolyScanURL,
   } = useContext(MessageBoxContext);
+
+  const { setUpdateContractInfo } = useContext(ContractContext);
 
   const handleBuyTokens = async () => {
     await buyTokens(
@@ -22,7 +25,7 @@ const BuyBtn = ({ isValidStage, amount, provider, setUpdateUserBalance }) => {
       setErrorMessage,
       setPolyScanURL,
       setShowSuccessMessage,
-      setUpdateUserBalance,
+      setUpdateContractInfo,
     );
   };
 

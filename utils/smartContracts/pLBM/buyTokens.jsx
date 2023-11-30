@@ -13,7 +13,7 @@ async function buyTokens(
   setErrorMessage,
   setPolyScanURL,
   setShowSuccessMessage,
-  setUpdateUserBalance,
+  setUpdateContractInfo,
 ) {
   let transactionHash;
   setErrorMessage(null);
@@ -71,7 +71,7 @@ async function buyTokens(
       await transaction.wait();
       setShowPendingMessage(false);
       setShowSuccessMessage(true);
-      setUpdateUserBalance(true);
+      setUpdateContractInfo(true);
     } else {
       console.error(
         "Please connect your wallet using MetaMask or a similar provider.",

@@ -1,16 +1,18 @@
+'use client'
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState, Fragment, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { getUserPlbmBalance } from 'utils/smartContracts/pLBM/getUserPlbmBalance';
 import { getUserUSDCBalance } from 'utils/smartContracts/pLBM/getUserUsdcBalance';
 import { useWeb3ModalSigner, useWeb3ModalAccount } from '@web3modal/ethers5/react';
+import ContractContext from '../context/ContractContext';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-const ICONavbar = ({ updateUserBalance }) => {
-
+const ICONavbar = () => {
+  const { updateContractInfo } = useContext(ContractContext);
   const [userPLBM, setUserPLBM] = useState(null);
   const [userUSDC, setUserUSDC] = useState(null);
   const web3signer = useWeb3ModalSigner().signer;
@@ -26,7 +28,7 @@ const ICONavbar = ({ updateUserBalance }) => {
       setUserPLBM(null);
       setUserUSDC(null);
     }
-  }, [isConnected, address, updateUserBalance]);
+  }, [isConnected, address, updateContractInfo]);
 
   const fetchBalances = async (signer, address) => {
     const userUSDCBalance = await getUserUSDCBalance(signer.provider, address);
