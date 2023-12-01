@@ -48,7 +48,7 @@ const ICO = () => {
 
         <div className="py-10 bg-gradient-to-b from-transparent lg:mx-auto to-[#cfdde8f1] to-10%">
           <div className="max-w-screen-2xl mx-auto">
-            <h2 className="mx-auto px-6 md:px-24  first-line:mt-12 marker:my-8 text-2xl font-bold text-gray-800 md:text-4xl">
+            <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-10">
               Upcoming Events
             </h2>
             <div className="">
@@ -58,18 +58,21 @@ const ICO = () => {
             {/* <div className="min-w-screen-2xl">
                 <GridInfoSection />
               </div> */}
+            <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-24">
+              Why Now?
+            </h2>
             <WhyNow />
 
             <div className="hidden md:block min-w-screen-2xl">
               <AllocationChart />
             </div>
 
-            <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-10">
+            <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-20">
               Roadmap
             </h2>
             <Roadmap />
 
-            <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-10">
+            <h2 className="text-4xl text-center font-bold text-gray-800 pb-8 pt-12">
               FAQs
             </h2>
             <Faq />

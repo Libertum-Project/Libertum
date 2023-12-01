@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function HeroSection() {
   return (
     <section>
-      <div className="h-[80vh] items-center animate-slide-right pt-12 px-8 lg:px-0 lg:pr-12  rounded-3xl drop-shadow-xl flex justify-center lg:justify-end m-auto align-middle lg:max-w-screen-2xl">
+      <div className="h-[80vh] items-center animate-slide-right pt-12 px-8 lg:px-0 lg:pr-24 2xl:pr-10 rounded-3xl drop-shadow-xl flex justify-center lg:justify-end m-auto align-middle lg:max-w-screen-2xl">
         <div className="max-w-4xl text-center md:text-right">
           <p className="hidden md:block text-sm lg:text-xl font-light mb-4 tracking-tight text-stone-900 capitalize ">
             Fractionalized Rental Income Tokenisation
