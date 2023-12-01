@@ -25,11 +25,8 @@ const cardsData = [
 
 const WhyNow = () => {
   return (
-      <div className="max-w-8xl mt-32 mx-auto px-6 sm:px-0 sm:mx-24 2xl:px-12">
+      <div className="max-w-8xl mt-6 mx-auto px-6 sm:px-0 sm:mx-24 2xl:px-12">
         <div className="md:w-2/3 first-line:mt-12 text-gray-800">
-          <h2 className="my-8 text-2xl font-bold text-gray-800 md:text-4xl">
-            Why Now?
-            </h2>
           <p className="text-gray-600 text-xl">
             Hard work always catches up with perfect timing
             </p>
