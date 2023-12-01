@@ -42,7 +42,7 @@ const Timer = () => {
   };
 
   const startCountDown = useCallback(() => {
-    const customDate = new Date(Date.UTC(2023, 11, 1, 10, 0, 0)); // December 1, 2023 at 10:00:00 UTC
+    const customDate = new Date(Date.UTC(2023, 11, 15, 10, 0, 0)); // December 15, 2023 at 10:00:00 UTC
     const interval = setInterval(() => {
       getTimeDifference(customDate.getTime());
     }, 1000);
