@@ -1,7 +1,6 @@
 import ICONavbar from "./IcoNavbar.jsx";
 import Presale from "./Presale/Presale.jsx";
 import AllocationChart from "./AllocationChart/AllocationChart.jsx";
-//import GridInfoSection from "../(home)/GridInfoSection.jsx";
 import WhyNow from "./WhyNow.jsx";
 import Roadmap from "./Roadmap/Roadmap.jsx";
 import Faq from "./Faq/Faq.jsx";
@@ -51,13 +50,8 @@ const ICO = () => {
             <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-10">
               Upcoming Events
             </h2>
-            <div className="">
-              <Presale />
-            </div>
+            <Presale />
 
-            {/* <div className="min-w-screen-2xl">
-                <GridInfoSection />
-              </div> */}
             <h2 className="text-4xl text-center font-bold text-gray-800 pb-2 pt-24">
               Why Now?
             </h2>

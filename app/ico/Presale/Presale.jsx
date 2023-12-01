@@ -1,10 +1,19 @@
+'use client'
 import "./Presale.scss";
 import coinIcon from "../assets/coinIcon.svg";
 import calendarIcon from "../assets/calendar.svg";
 import tagIcon1 from "../assets/tag.svg";
 import tagIcon2 from "../assets/tag2.svg";
 
-const Card = ({ image, dateIcon, title, features, date, onScrollToTop }) => {
+const Card = ({ image, dateIcon, title, features, date }) => {
+
+  const onScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="card">
       {/* <div className="icon">{icon}</div> */}
