@@ -7,6 +7,9 @@ const ConnectToPolygonMessage = ({ setShowConnectToPolygonMessage }) => {
     event.preventDefault();
     setShowConnectToPolygonMessage(false);
   };
+  const message =
+    "Looks like you're not connected to Polygon yet! To buy $LBM, just connect your wallet to the Polygon network.";
+
   return (
     <div
       className={css.messageBoxContainer}
@@ -20,10 +23,7 @@ const ConnectToPolygonMessage = ({ setShowConnectToPolygonMessage }) => {
           <h2>Connect To Polygon.</h2>
         </div>
         <div>
-          <p>
-            Looks like you're not connected to Polygon yet! To buy $LBM, just
-            connect your wallet to the Polygon network.
-          </p>
+          <p>{message}</p>
         </div>
         <button>Continue</button>
       </div>
