@@ -9,6 +9,7 @@ const MessageBoxProvider = ({ children }) => {
   const [showPendingMessage, setShowPendingMessage] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [showConnectToPolygonMessage, setShowConnectToPolygonMessage] = useState(false);
 
   const value = {
     showFailMessage,
@@ -23,6 +24,8 @@ const MessageBoxProvider = ({ children }) => {
     setShowSuccessMessage,
     isLoading,
     setIsLoading,
+    showConnectToPolygonMessage,
+    setShowConnectToPolygonMessage,
   };
 
   return (
