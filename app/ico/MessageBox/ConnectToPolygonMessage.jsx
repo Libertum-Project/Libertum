@@ -1,5 +1,6 @@
 import css from "./MessageBox.module.css";
 import polygon from "public/icons/polygon.svg";
+import Image from "next/image";
 
 const ConnectToPolygonMessage = ({ setShowConnectToPolygonMessage }) => {
   const handleContinue = (event) => {
@@ -15,7 +16,7 @@ const ConnectToPolygonMessage = ({ setShowConnectToPolygonMessage }) => {
     >
       <div className={css.messageBox}>
         <div className={css.header}>
-          <img src={polygon} alt="polygon network" />
+          <Image src={polygon} alt="polygon network" width={50} height={50} />
           <h2>Connect To Polygon.</h2>
         </div>
         <div>
