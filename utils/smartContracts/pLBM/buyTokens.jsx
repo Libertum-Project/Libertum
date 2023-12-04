@@ -14,12 +14,21 @@ async function buyTokens(
   setPolyScanURL,
   setShowSuccessMessage,
   setUpdateContractInfo,
+  setShowConnectToPolygonMessage,
+  isConnected,
+  chainId,
 ) {
   let transactionHash;
   setErrorMessage(null);
   setPolyScanURL(null);
   try {
+    if (isConnected && chainId !== 137) {
+      setShowConnectToPolygonMessage(true)
+      return
+    }
+
     setIsLoading(true);
+
     const signer = await provider.getSigner();
     const pLBM_contract = new ethers.Contract(
       pLBM_address,

@@ -1,10 +1,11 @@
-'use client'
+"use client";
 import { useContext } from "react";
 import MessageBoxContext from "../../context/MessageBoxContext";
 import Loading from "./Loading";
 import PendingMessage from "./PendingMessage";
 import FailMessage from "./FailMessage";
 import SuccessMessage from "./SuccessMessage";
+import ConnectToPolygonMessage from "./ConnectToPolygonMessage.jsx";
 
 const MessageBox = () => {
   const {
@@ -16,6 +17,8 @@ const MessageBox = () => {
     showPendingMessage,
     showSuccessMessage,
     setShowSuccessMessage,
+    showConnectToPolygonMessage,
+    setShowConnectToPolygonMessage,
   } = useContext(MessageBoxContext);
 
   return (
@@ -26,6 +29,12 @@ const MessageBox = () => {
           setShowFailMessage={setShowFailMessage}
           message={errorMessage}
           url={polyScanURL}
+        />
+      ) : null}
+
+      {showConnectToPolygonMessage ? (
+        <ConnectToPolygonMessage
+          setShowConnectToPolygonMessage={setShowConnectToPolygonMessage}
         />
       ) : null}
 

@@ -1,6 +1,7 @@
 .errorBoxContainer,
 .pendingBoxContainer,
-.successBoxContainer {
+.successBoxContainer,
+.messageBoxContainer {
   align-items: center;
   display: flex;
   justify-content: center;
@@ -15,7 +16,8 @@
 
 .errorBox,
 .pendingBox,
-.successBox {
+.successBox,
+.messageBox {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,11 +61,11 @@
 
 .errorBox p,
 .pendingBox p,
-.successBox p {
+.successBox p,
+.messageBox p {
   color: #4a4a4a;
   width: 18rem;
   text-align: center;
-  font-family: Roboto;
   font-size: 1.1305rem;
   font-style: normal;
   font-weight: 500;
@@ -73,7 +75,8 @@
 }
 
 .errorBox button,
-.successBox button {
+.successBox button,
+.messageBox button {
   border-radius: 0.31rem;
   background: #374151 !important;
   color: white;
@@ -82,20 +85,22 @@
 }
 
 .errorBox button:hover,
-.successBox button:hover {
-  transition: all ease-in .3s;
-  opacity: .8;
+.successBox button:hover,
+.messageBox button:hover {
+  transition: all ease-in 0.3s;
+  opacity: 0.8;
 }
 
 .successBox h2 {
-  color: #009ED4;
+  color: #009ed4;
 }
 
 .successBox button {
-  background: #009ED4;
+  background: #009ed4;
 }
 
-.pendingBox h2 {
+.pendingBox h2,
+.messageBox h2 {
   color: #374151;
 }
 
@@ -115,17 +120,25 @@
 .polyScanURL a {
   font-size: 1rem;
   color: #374151;
-  opacity: .8;
+  opacity: 0.8;
   text-decoration: underline;
-  transition: all ease-in-out .4s;
+  transition: all ease-in-out 0.4s;
 }
 
 .polyScanURL a:hover {
   opacity: 1;
 }
 
-@media (min-width: 750px) {
+.messageBox {
+  gap: 1.5rem;
+}
 
+.messageBox p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+@media (min-width: 750px) {
   .errorBox p,
   .successBox p {
     width: 31rem;

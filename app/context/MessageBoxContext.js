@@ -14,6 +14,8 @@ const MessageBoxContext = createContext({
   setShowSuccessMessage: () => {},
   isLoading: false,
   setIsLoading: () => {},
+  showConnectToPolygonMessage: false,
+  setShowConnectToPolygonMessage: () => {},
 });
 
 export default MessageBoxContext;
