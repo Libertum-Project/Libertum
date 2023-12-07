@@ -111,7 +111,7 @@ const Header = () => {
                 <Link
                   href="/"
                   prefetch={false}
-                  className="md:px-12 flex items-center space-x-2 text-4xl text-bg-200 tracking-wide hover:scale-105 duration-500 focus:outline-none"
+                  className="z-20 md:px-12 flex items-center space-x-2 text-4xl text-bg-200 tracking-wide hover:scale-105 duration-500 focus:outline-none"
                 >
                   <Image
                     src="/img/logo.svg"
@@ -171,4 +171,3 @@ const Header = () => {
 };
 
 export default Header;
-
