@@ -40,7 +40,7 @@ const Roadmap = () => {
         "Licencing",
         "Smart Contract Audit",
         "Geo Growth",
-        "Commersialize Marketplace",
+        "Commercialize Marketplace",
         "Tokenise First Real Estate",
         "Community Events Launch",
         "Giveaway & Airdrops Launch",
@@ -61,7 +61,7 @@ const Roadmap = () => {
       icon: <img src={icon4} alt="" />,
       title: "Phase 4",
       features: [
-        "Adquisition of the first Real Estate",
+        "Acquisition of the first Real Estate",
         "Consider CEX Listing",
         "Targeted to tokenise 20 Real Estates",
         "Expansion & Geo Growth",
