@@ -4,7 +4,7 @@ const cardsData = [
   {
     imageUrl: '/assetsIco/tokenization.svg',
     title: 'RWA Tokenization',
-    description: 'Tokenization is projected to expirience tremendous growth, and we are determined to capitalize on our early start.',
+    description: 'Tokenization is projected to experience tremendous growth, and we are determined to capitalize on our early start.',
   },
   {
     imageUrl: '/assetsIco/market.svg',
