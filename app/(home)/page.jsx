@@ -7,6 +7,7 @@ const LargeInfoSection = dynamic(() => import("./LargeInfoSection.jsx"));
 const PropertyCarousel = dynamic(() => import("./PropertyCarousel.jsx"));
 const MarketplaceGraph = dynamic(() => import("./MarketplaceGraph.jsx"));
 const AsSeenOn = dynamic(() => import("./AsSeenOn"));
+const HowToBuy = dynamic(() => import("./HowToBuy"));
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <LargeInfoSection />
         <PropertyCarousel />
         <AsSeenOn />
+        <HowToBuy />
         <MarketplaceGraph />
       </div>
     </main>
