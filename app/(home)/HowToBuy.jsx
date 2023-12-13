@@ -4,8 +4,8 @@ import styles from './HowToBuy.module.css';
 
 const HowToBuy = () => {
   return (
-    <>
-    </>
+    <div>
+    </div>
     // <div className={styles.container}>
     //   <div className={styles.cardContainer}>
 
