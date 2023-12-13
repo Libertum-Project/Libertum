@@ -9,10 +9,17 @@ export default function LargeInfoSection() {
         {/* Primera Sección */}
         <Slide direction={"left"} triggerOnce={true}>
           <div className="relative">
-            <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
-              <div className="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-6 lg:px-0">
+            <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-12">
+              <div className="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none  lg:px-0">
                 <div>
-                  <div>
+
+                  <div className="">
+                    <h2 className="text-3xl font-bold tracking-tight text-gray-700">
+                      The next stage in the evolution of real estate investment
+                      is here.
+                    </h2>
+
+                    <div className="my-6">
                     <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -31,11 +38,7 @@ export default function LargeInfoSection() {
                       </svg>
                     </span>
                   </div>
-                  <div className="mt-6">
-                    <h2 className="text-3xl font-bold tracking-tight text-gray-700">
-                      The next stage in the evolution of real estate investment
-                      is here.
-                    </h2>
+
                     <p className="mt-4 text-base text-gray-600">
                       Libertum eliminates the need for intermediaries, making
                       real estate investment cost-effective and efficient,
@@ -70,10 +73,16 @@ export default function LargeInfoSection() {
         {/* Segunda Sección */}
         <Slide direction={"right"} triggerOnce={true}>
           <div className="relative">
-            <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
-              <div className="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-6 lg:px-0 lg:col-start-2">
+            <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-12">
+              <div className="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:px-0 lg:col-start-2">
                 <div>
-                  <div>
+
+                  <div className="">
+                    <h2 className="text-3xl font-bold tracking-tight text-gray-600">
+                      Simplifying Real Estate Investment
+                    </h2>
+
+                    <div className="my-6">
                     <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -92,10 +101,7 @@ export default function LargeInfoSection() {
                       </svg>
                     </span>
                   </div>
-                  <div className="mt-6">
-                    <h2 className="text-3xl font-bold tracking-tight text-gray-600">
-                      Simplifying Real Estate Investment
-                    </h2>
+
                     <p className="mt-4 text-base text-gray-500">
                       Goodbye to the complexities of ownership transfers and the
                       burden of unforeseen expenses.
@@ -131,10 +137,22 @@ export default function LargeInfoSection() {
         {/* Tercera Sección */}
         <Slide direction={"left"} triggerOnce={true}>
           <div className="relative">
-            <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
-              <div className="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-6 lg:px-0 ">
+            <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-12">
+              <div className="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:px-0 ">
                 <div>
-                  <div>
+
+                  <div className="">
+                    <h2 className="text-3xl font-bold tracking-tight text-gray-700">
+                      Staking Pool
+                    </h2>
+                    <p className="mt-4 text-base text-gray-600">
+                      We are different. 5% of our investment returns will be
+                      dedicated to an ongoing buyback and burn strategy, aimed
+                      at increasing the value of our tokens and benefiting early
+                      stakeholders.
+                    </p>
+
+                    <div className="my-6">
                     <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -153,16 +171,6 @@ export default function LargeInfoSection() {
                       </svg>
                     </span>
                   </div>
-                  <div className="mt-6">
-                    <h2 className="text-3xl font-bold tracking-tight text-gray-700">
-                      Staking Pool
-                    </h2>
-                    <p className="mt-4 text-base text-gray-600">
-                      We are different. 5% of our investment returns will be
-                      dedicated to an ongoing buyback and burn strategy, aimed
-                      at increasing the value of our tokens and benefiting early
-                      stakeholders.
-                    </p>
 
                     <h2 className="text-3xl mt-6 font-bold tracking-tight text-gray-700">
                       Rental Income Token (RIT)

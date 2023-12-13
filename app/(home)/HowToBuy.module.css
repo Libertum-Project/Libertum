@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  padding-top: 3rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+}
+
+.cardContainer{
+  display: flex;
+  flex-direction: column;
+}
+.card {
+  background-color: #f4f4f4;
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+}
+
+.mockup {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.mockup img {
+  width: 100%;
+  border-radius: 8px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.mockup img.opaque {
+  opacity: 0.5;
+}
