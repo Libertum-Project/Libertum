@@ -4,6 +4,7 @@ import coinIcon from "../assets/coinIcon.svg";
 import calendarIcon from "../assets/calendar.svg";
 import tagIcon1 from "../assets/tag.svg";
 import tagIcon2 from "../assets/tag2.svg";
+import tagIcon3 from "../assets/tag3.svg"
 
 const Card = ({ image, dateIcon, title, features, date, completed }) => {
 
@@ -55,7 +56,7 @@ const PresaleGrid = ({ onScrollToTop }) => {
     },
     {
       // icon: <img src={coinIcon} alt="" />,
-      image: <img src={tagIcon1} alt="" />,
+      image: <img src={tagIcon3} alt="" />,
       dateIcon: <img src={calendarIcon} alt="" />,
       date: "1 to 14 Feb 2024",
       title: "Public Round 1",
