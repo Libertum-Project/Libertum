@@ -56,9 +56,9 @@ const Navbar = () => {
                     <Menu.Item>
                       {({ active }) => (
                         <Link
-                          prefetch={false}
                           href="/whitepaperLibertum.pdf"
                           target="_blank"
+                          rel="noopener noreferrer"
                           className={classNames(
                             active
                               ? "bg-gray-100 text-gray-900"
