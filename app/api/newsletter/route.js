@@ -63,10 +63,24 @@ export async function POST(req) {
     }
   } catch (error) {
     console.error("Error in catch block:", error);
-
+  
+    let errorMessage;
+  
+    if (error.response && error.response.status === 400) {
+      if (error.response.data.title === 'Member Exists') {
+        errorMessage = 'This email is already registered.';
+      } else if (error.response.data.title === 'Invalid Resource') {
+        errorMessage = 'The email address appears to be fake or invalid. Please enter a real email address or contact us at hello@libertum.io.';
+      } else {
+        errorMessage = 'Oops, something went wrong... Please send an email at hello@libertum.io and you\'ll be added to the list.';
+      }
+    } else {
+      errorMessage = 'Oops, something went wrong... Please send an email at hello@libertum.io and you\'ll be added to the list.';
+    }
+  
     return new Response(JSON.stringify({
-      error: `Oops, something went wrong... Please send an email at hello@libertum.io and you'll be added to the list.`,
-      errorMessage: error.message, // Agregamos el mensaje de error al objeto de respuesta
+      error: errorMessage,
+      errorMessage: error.message,
     }), { status: 400, headers: { 'Content-Type': 'application/json' } });
   }
 }
