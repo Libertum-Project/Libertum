@@ -20,10 +20,7 @@ const Contact = () => {
               Join now our waitlist!
             </p>
             <p className="mt-10 text-sm lg:text-2xl tracking-tight text-gray-600">
-              Reserve your spot on the waitlist for exclusive early access to
-              the complete platform launch. Just drop your email, and we&aposll
-              make sure you&aposre among the first in line to dive into the full
-              platform experience when it&aposs unveiled!
+            Reserve your spot on the waitlist for exclusive early access to the Libertum platform. Simply enter your email, and we make sure you will be among the first in line to experience and earn passive rental income platform when it is unveiled!
             </p>
             <div className="pt-8 lg:pr-0 lg:pt-16">
               {/* -------------------------- FORM -------------------------------*/}
