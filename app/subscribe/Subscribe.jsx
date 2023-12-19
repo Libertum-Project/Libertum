@@ -24,7 +24,7 @@ return(
   <div>
       <div className="flex gap-4">
         <input 
-        className="bg-slate-900 w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-gray-800" 
+        className="bg-slate-900 w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-gray-800 text-slate-100" 
         placeholder="Email" 
         value={email}
         onChange={(e) => setEmail(e.target.value)}
@@ -40,7 +40,7 @@ return(
         </button>
       </div>
       {state === "ERROR" && (
-        <p className="w-1/2 mt-2 text-red-600">{errorMessage.message}</p>
+        <p className="w-1/2 mt-2 text-red-600">{errorMessage}</p>
       )}
       {state === "SUCCESS" && (
         <p className="w-1/2 mt-2 text-green-600">Success!</p>
