@@ -58,7 +58,7 @@ const PresaleGrid = ({ onScrollToTop }) => {
       // icon: <img src={coinIcon} alt="" />,
       image: <img src={tagIcon3} alt="" />,
       dateIcon: <img src={calendarIcon} alt="" />,
-      date: "1 to 14 Feb 2024",
+      date: "Midnight 18 Feb 2024",
       title: "Public Round 1",
       features: [
         "Tokens for sale: 4.000.000",
@@ -70,7 +70,7 @@ const PresaleGrid = ({ onScrollToTop }) => {
       icon: <img src={coinIcon} alt="" />,
       image: <img src={tagIcon2} alt="" />,
       dateIcon: <img src={calendarIcon} alt="" />,
-      date: "14 to 29 Feb 2024",
+      date: "11 to 29 March 2024",
       title: "Public Round 2",
       features: [
         "Tokens for sale: 6,000,000",
@@ -82,7 +82,7 @@ const PresaleGrid = ({ onScrollToTop }) => {
       icon: <img src={coinIcon} alt="" />,
       // image: <img src={tagIcon4} alt="" />,
       dateIcon: <img src={calendarIcon} alt="" />,
-      date: "March 2024",
+      date: "April 2024",
       title: "Launch Day",
       features: ["Price start at: $0.08"],
     },
