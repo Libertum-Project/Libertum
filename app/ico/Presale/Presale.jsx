@@ -58,7 +58,7 @@ const PresaleGrid = ({ onScrollToTop }) => {
       // icon: <img src={coinIcon} alt="" />,
       image: <img src={tagIcon3} alt="" />,
       dateIcon: <img src={calendarIcon} alt="" />,
-      date: "Midnight 18 Feb 2024",
+      date: "Midnight 19 Feb 2024",
       title: "Public Round 1",
       features: [
         "Tokens for sale: 4.000.000",
