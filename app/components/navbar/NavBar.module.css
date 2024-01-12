@@ -1,0 +1,71 @@
+.desktopNavBar {
+  display: none;
+}
+
+.navBar {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.75rem 1rem;
+  border-bottom: 1px solid;
+  border-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 51.04%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  border-image-slice: 1;
+  box-sizing: border-box;
+  max-width: 1512px;
+  margin: 0 auto;
+}
+
+.menuBtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+@media (min-width: 900px) {
+  .menuBtn {
+    display: none;
+  }
+
+  .desktopNavBar {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .desktopNavBar a {
+    color: #fff;
+    font-family: Space Grotesk;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration: none;
+    padding: .5rem 1rem;
+  }
+
+  .desktopNavBar button {
+    display: flex;
+    width: 182px;
+    padding: 8px 16px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #00b3b5;
+    background: rgba(0, 179, 181, 0.3);
+    backdrop-filter: blur(5px);
+    color: #fff;
+    text-align: center;
+    font-family: Space Grotesk;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    cursor: pointer;
+  }
+}
