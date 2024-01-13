@@ -18,6 +18,10 @@
   box-sizing: border-box;
   max-width: 1512px;
   margin: 0 auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
 }
 
 .menuBtn {
@@ -46,7 +50,7 @@
     font-weight: 700;
     line-height: normal;
     text-decoration: none;
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
   }
 
   .desktopNavBar button {
