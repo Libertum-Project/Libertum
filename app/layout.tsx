@@ -1,9 +1,6 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import { NavBar } from "./components/navbar/NavBar";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Libertum",
@@ -22,7 +19,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://cdn.ad360.media" />
       </head>
 
-      <body className={inter.className}>
+      <body>
         <NavBar />
         {children}
       </body>
