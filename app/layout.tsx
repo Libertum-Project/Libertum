@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Space_Grotesk, } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import Footer from "./components/Footer"; 
 
 const inter = Inter({ subsets: ["latin"] });
+const spaceGrotest = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Libertum",
@@ -23,6 +25,9 @@ export default function RootLayout({
       </head>
 
       <body className={inter.className}>{children}</body>
+      <footer className={spaceGrotest.className}>
+        <Footer />
+      </footer>
 
       <Script
         defer
