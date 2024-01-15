@@ -1,0 +1,10 @@
+.ico {
+  background: radial-gradient(
+    80.5% 80.5% at 50% 103.87%,
+    #000041 0%,
+    #0e0e1e 100%
+  );
+  display: flex;
+  flex-direction: column;
+  padding-top: 5rem;
+}
