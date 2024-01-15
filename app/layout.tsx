@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
+import { Inter, Space_Grotesk, } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import Footer from "./components/Footer";
 import { NavBar } from "./components/navbar/NavBar";
+
+
+const inter = Inter({ subsets: ["latin"] });
+const spaceGrotest = Space_Grotesk({ subsets: ["latin"] });
+
 
 export const metadata = {
   title: "Libertum",
@@ -19,10 +27,16 @@ export default function RootLayout({
         <link rel="preconnect" href="https://cdn.ad360.media" />
       </head>
 
+
       <body>
         <NavBar />
         {children}
+        
+       <footer className={spaceGrotest.className}>
+        <Footer />
+      </footer>
       </body>
+
 
       <Script
         defer
