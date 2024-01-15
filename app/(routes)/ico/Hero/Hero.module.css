@@ -1,7 +1,13 @@
 .hero {
-  padding: 5rem 0;
+  padding: 5rem 1rem;
   max-width: 1202px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 0 1rem;
 }
 
 .hero .text {

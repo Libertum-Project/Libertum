@@ -32,9 +32,6 @@ export default function RootLayout({
         <NavBar />
         {children}
         
-       <footer className={spaceGrotest.className}>
-        <Footer />
-      </footer>
       </body>
 
 
