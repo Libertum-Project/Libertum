@@ -1,0 +1,132 @@
+.upcomingEvents {
+  background-color: #fff;
+  padding: 4rem 0rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.upcomingEvents img {
+  width: 100%;
+  aspect-ratio: 1;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.eventContainer h2 {
+  color: #080915;
+  font-family: Space Grotesk;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.72px;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 1rem;
+  margin-inline: 1rem;
+}
+
+.eventDetails {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-inline: 1rem;
+}
+
+.eventItem {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  align-self: stretch;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.01);
+  box-shadow: 0px 4px 32px 0px rgba(30, 93, 93, 0.25);
+  backdrop-filter: blur(3px);
+}
+
+.eventItem p {
+  margin: 0;
+}
+
+.eventTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.eventTitle h4 {
+  color: #080915;
+  font-family: Space Grotesk;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  margin: 0;
+}
+
+.eventTitle span {
+  color: #c7c7c7;
+  font-family: Space Grotesk;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.4px;
+}
+
+.eventInfo {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content:center; 
+  gap: .5rem;
+}
+
+.infoItem {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+}
+
+.infoItem p {
+  color: rgba(0, 0, 0, 0.50);
+  font-family: Souliyo Unicode;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+  letter-spacing: -0.32px;
+  margin: 0;
+}
+
+.infoItem span {
+  color: rgba(0, 0, 0, 0.80);
+  font-family: Helvetica;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 24px */
+  letter-spacing: -0.32px;
+}
+
+.buyButton {
+  border-radius: 5px;
+  background: #00b3b5;
+  border: none;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  color: #fff;
+  font-family: Space Grotesk;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
