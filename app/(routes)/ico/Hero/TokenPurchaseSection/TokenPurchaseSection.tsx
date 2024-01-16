@@ -19,29 +19,31 @@ export function TokenPurchaseSection(): ReactElement {
         </p>
       </div>
       <div className={css.conversionSection}>
-        <div className={css.conversionInfo}>
-          <p>
-            1 Libertum (LBM) <b>= 0.06</b> <span>USD</span>
-          </p>
-        </div>
-        <div className={css.moreInfoSection}>
-          <Image src={info} alt="info" width={16} height={16} />
-          <span>View instructions</span>
+        <div className={css.conversionInfoContainer}>
+          <div className={css.conversionInfo}>
+            <p>
+              1 Libertum (LBM) <b>= 0.06</b> <span>USD</span>
+            </p>
+          </div>
+          <div className={css.moreInfoSection}>
+            <Image src={info} alt="info" width={16} height={16} />
+            <span>View instructions</span>
+          </div>
         </div>
         <input className={css.inputRange} type="range" name="" id="" />
       </div>
       <div className={css.inputSection}>
         <div className={css.inputContainer}>
-          <input type="number" />
+          <input type="number" placeholder="833" />
           <div>
-            <Image src={libertum} alt="Libertum" width={30} height={30} />{" "}
+            <Image src={libertum} alt="Libertum" width={25} height={25} />
             <p>Libertum (LBM)</p>
           </div>
         </div>
         <div className={css.inputContainer}>
-          <input type="number" />
+          <input type="number" placeholder="50"/>
           <div>
-            <Image src={usd} alt="USD" width={30} height={30} />
+            <Image src={usd} alt="USD" width={25} height={25} />
             <p>$ USD</p>
           </div>
         </div>
