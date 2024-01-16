@@ -86,7 +86,7 @@
 .auditInfo {
   align-items: center;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 1rem;
   width: 100%;
 }
