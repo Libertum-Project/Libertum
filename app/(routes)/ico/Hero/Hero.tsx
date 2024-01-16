@@ -1,4 +1,5 @@
 import { type ReactElement } from "react";
+import { TokenPurchaseSection } from "./TokenPurchaseSection/TokenPurchaseSection";
 import Image from "next/image";
 import css from "./Hero.module.css";
 import checkbox from "./checkbox.svg";
@@ -43,7 +44,7 @@ export function Hero(): ReactElement {
           <Image src={shield} alt="shield" width={124} height={31} />
         </div>
       </article>
-      <article className={css.tokenPurchaseSection}></article>
+      <TokenPurchaseSection />
     </section>
   );
 }
