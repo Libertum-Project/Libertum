@@ -152,7 +152,7 @@
     padding: 49px 44px;
     flex-direction: row;
     justify-content: center;
-    background-image: url("./Grid\ Background\ Pattern.svg");
+    background-image: url("../../../../public/assets/Grid\ Background\ Pattern.svg");
     background-clip: padding-box;
     background-size: auto;
     background-position: center;
