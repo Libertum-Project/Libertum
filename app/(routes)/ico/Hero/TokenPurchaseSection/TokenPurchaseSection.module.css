@@ -7,6 +7,9 @@
   flex-direction: column;
   gap: 2rem;
   padding: 2.5rem 1rem;
+  width: 100%;
+  max-width: 710px;
+  box-sizing: border-box;
 }
 
 .purchaseInfo {
