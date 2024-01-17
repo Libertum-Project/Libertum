@@ -16,12 +16,13 @@
   );
   border-image-slice: 1;
   box-sizing: border-box;
-  max-width: 1512px;
+  max-width: 75.125rem;
   margin: 0 auto;
   position: absolute;
   top: 0;
   right: 0;
   left: 0;
+  z-index: 99999;
 }
 
 .menuBtn {
@@ -40,6 +41,8 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
+    position: relative;
+    z-index: 99999;
   }
 
   .desktopNavBar a {
@@ -71,5 +74,11 @@
     font-weight: 700;
     line-height: 150%;
     cursor: pointer;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navBar {
+    padding-inline: 0;
   }
 }
