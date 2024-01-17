@@ -20,7 +20,7 @@
   justify-content: center;
 }
 
-.purchaseInfo h3 {
+.purchaseInfo .tittle {
   color: #080915;
   font-family: Space Grotesk;
   font-size: 20px;

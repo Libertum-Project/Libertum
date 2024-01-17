@@ -21,7 +21,7 @@
   border-radius: 5px;
 }
 
-.eventContainer h2 {
+.eventContainer .h2 {
   color: #080915;
   font-family: Space Grotesk;
   font-size: 36px;
@@ -65,7 +65,7 @@
   gap: 0.4rem;
 }
 
-.eventTitle h4 {
+.eventTitle .tittle {
   color: #080915;
   font-family: Space Grotesk;
   font-size: 20px;
@@ -152,7 +152,7 @@
     padding: 49px 44px;
     flex-direction: row;
     justify-content: center;
-    background-image: url("./Grid\ Background\ Pattern.svg");
+    background-image: url("../../../../public/assets/Grid\ Background\ Pattern.svg");
     background-clip: padding-box;
     background-size: auto;
     background-position: center;

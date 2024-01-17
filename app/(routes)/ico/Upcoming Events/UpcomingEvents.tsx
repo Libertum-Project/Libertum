@@ -1,18 +1,18 @@
 import { type ReactElement } from "react";
-import Image from "next/image";
 import css from "./UpcomingEvents.module.css";
-import video from "./video.png";
+import { Video } from "./Video";
 
 export function UpcomingEvents(): ReactElement {
+
   return (
     <div className={css.upcomingEventsContainer}>
       <section className={css.upcomingEvents}>
         <div className={css.eventContainer}>
-          <h2>Upcoming Events</h2>
+          <p className={css.h2}>Upcoming Events</p>
           <div className={css.eventDetails}>
             <div className={css.eventItem}>
               <div className={css.eventTitle}>
-                <h4>Public Round 1</h4>
+                <p className={css.tittle}>Public Round 1</p>
                 <span>MIDNIGHT 19 FEB 2024</span>
               </div>
               <div className={css.eventInfo}>
@@ -33,7 +33,7 @@ export function UpcomingEvents(): ReactElement {
             </div>
             <div className={css.eventItem}>
               <div className={css.eventTitle}>
-                <h4>Public Round 2</h4>
+                <p className={css.tittle}>Public Round 2</p>
                 <span>11 - 29 MARCH 2024</span>
               </div>
               <div className={css.eventInfo}>
@@ -54,13 +54,7 @@ export function UpcomingEvents(): ReactElement {
             </div>
           </div>
         </div>
-        <Image
-          src={video}
-          alt="video"
-          width={300}
-          height={206}
-          loading="lazy"
-        />
+        <Video /> 
       </section>
     </div>
   );
