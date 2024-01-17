@@ -203,6 +203,7 @@
 @media (min-width: 1250px) {
   .tokenPurchaseSection {
     padding: 2.5rem;
+    max-width: 518px;
   }
   .purchaseInfo div {
     align-items: center;

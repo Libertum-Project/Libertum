@@ -6,7 +6,7 @@
   padding: 4rem 1rem;
   width: 100%;
   box-sizing: border-box;
-  max-width: 710px;
+  max-width: 44.375rem;
   margin: 0 auto;
 }
 
@@ -137,6 +137,12 @@
   cursor: pointer;
 }
 
+@media (min-width: 750px) {
+  .upcomingEvents {
+    padding-inline: 0;
+  }
+}
+
 @media (min-width: 1250px) {
   .upcomingEvents {
     align-items: center;
@@ -147,10 +153,9 @@
     flex-direction: row;
     justify-content: center;
     background-image: url("./Grid\ Background\ Pattern.svg");
-    background-clip:padding-box;
-    background-size:auto;
+    background-clip: padding-box;
+    background-size: auto;
     background-position: center;
-
   }
 
   .eventContainer {
