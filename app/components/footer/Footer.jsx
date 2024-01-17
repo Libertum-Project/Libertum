@@ -52,7 +52,7 @@ const Footer = () => {
   const navigationSection2 = navigation.filter(item => item.section === "Support" || item.section === "Contact").slice(0, 4);
 
   return(
-    <footer>
+    <footer className={css.footer}>
       <div className={css.footerContainer}>
         <div className={css.footerFirstCol}>
           <Link  href="/" >
