@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Space_Grotesk, } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
-import Footer from "./components/Footer";
+import Footer from "./components/footer/Footer";
 import { NavBar } from "./components/navbar/NavBar";
 
 
@@ -31,7 +31,7 @@ export default function RootLayout({
       <body>
         <NavBar />
         {children}
-        
+        <Footer />
       </body>
 
 
