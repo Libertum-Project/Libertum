@@ -21,7 +21,7 @@
   border-radius: 5px;
 }
 
-.eventContainer h2 {
+.eventContainer .h2 {
   color: #080915;
   font-family: Space Grotesk;
   font-size: 36px;
@@ -65,7 +65,7 @@
   gap: 0.4rem;
 }
 
-.eventTitle h4 {
+.eventTitle .tittle {
   color: #080915;
   font-family: Space Grotesk;
   font-size: 20px;

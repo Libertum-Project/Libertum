@@ -10,7 +10,7 @@ export function TokenPurchaseSection(): ReactElement {
     <article className={css.tokenPurchaseSection}>
       <div className={css.purchaseInfo}>
         <div>
-          <h3>Upcoming Public Round 1</h3>
+          <p className={css.tittle}>Upcoming Public Round 1</p>
           <span>MIDNIGHT 19 FEB 2024</span>
         </div>
         <p>
