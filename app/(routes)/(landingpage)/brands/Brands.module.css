@@ -1,0 +1,17 @@
+
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    max-width: 75.125rem;
+    margin: 0 auto;
+}
+.brandContainer{
+    display: flex;
+    width: 1199px;
+    padding: 64px 0px 96px 0px;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0.5;
+
+}
