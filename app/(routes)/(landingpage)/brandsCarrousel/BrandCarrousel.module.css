@@ -46,7 +46,7 @@
 
     .slide{
       display: inline-block;
-      animation: 15s slide infinite linear;
+      animation: 30s slide infinite linear;
     }
 }
 
