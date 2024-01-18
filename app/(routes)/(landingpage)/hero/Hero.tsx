@@ -11,6 +11,7 @@ export function Hero(): ReactElement {
       <section className={css.hero}>
         <article className={css.text}>
           <h1>Real Estate Accessible
+
             <br />
              To Everyone</h1>
           <div className={css.paragraphs}>
@@ -24,7 +25,8 @@ export function Hero(): ReactElement {
         <div className={css.buttons}>
 
 <button className={css.button}>
-    <Image 
+  <div className={css.buttonFrame}>
+  <Image 
     src="/assets/rocket.svg"
     alt="N"
     width="13"
@@ -34,6 +36,8 @@ export function Hero(): ReactElement {
     <p>
         Start Tokenizing
     </p>
+  </div>
+    
     <Image
     alt="left arrow"
     src="/assets/leftArrow.svg"
@@ -43,16 +47,19 @@ export function Hero(): ReactElement {
 </button>
 
 <button className={css.button}>
-  <Image 
-    src="/assets/marketIcon.svg"
-    alt="N"
-    width="13"
-    height="13"
-    className={css.logo}          
-    />
-    <p>
-        Explore Properties
-    </p>
+  <div className={css.buttonFrame}>
+    <Image 
+      src="/assets/marketIcon.svg"
+      alt="N"
+      width="13"
+      height="13"
+      className={css.logo}          
+      />
+      <p>
+          Explore Properties
+      </p>
+  </div>
+
     <Image
     alt="left arrow"
     src="/assets/leftArrow.svg"
@@ -62,16 +69,19 @@ export function Hero(): ReactElement {
 </button>
 
 <button className={css.button}>
-  <Image 
-    src="/assets/coin.svg"
-    alt="N"
-    width="13"
-    height="13"
-    className={css.logo}          
-    />
-    <p>
-        Buy LBM
-    </p>
+  <div className={css.buttonFrame}>
+    <Image 
+      src="/assets/coin.svg"
+      alt="N"
+      width="13"
+      height="13"
+      className={css.logo}          
+      />
+      <p>
+          Buy LBM
+      </p>
+  </div>
+  
     <Image
     alt="left arrow"
     src="/assets/leftArrow.svg"
