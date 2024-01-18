@@ -158,6 +158,9 @@
 
 
 @media screen and (max-width: 780px) {
+  .footer{
+    overflow-x: hidden;
+  }
   .footer img{
     width: 300%;
   }
