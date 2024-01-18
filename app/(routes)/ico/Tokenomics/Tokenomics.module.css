@@ -1,5 +1,4 @@
 .tokenomicsContainer {
-
   background-color: #fff;
 }
 
@@ -25,7 +24,7 @@
 }
 
 .bodyText {
-  color: rgba(0, 0, 0, 0.80);
+  color: rgba(0, 0, 0, 0.8);
   font-family: "Souliyo Unicode";
   font-size: 16px;
   font-style: normal;
@@ -35,13 +34,13 @@
   margin: 0;
 }
 
-.graphContainer {
+.graphDescription {
   align-items: center;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1rem;
+  gap: .6rem;
 }
 
 .tokenomicsItem {
@@ -53,7 +52,7 @@
 }
 
 .tokenomicsItem p {
-  color: rgba(0, 0, 0, 0.80);
+  color: rgba(0, 0, 0, 0.8);
   font-family: "Souliyo Unicode";
   font-size: 16px;
   font-style: normal;
@@ -65,7 +64,7 @@
 }
 
 .tokenomicsItem span {
-  color: rgba(0, 0, 0, 0.80);
+  color: rgba(0, 0, 0, 0.8);
   font-family: Helvetica;
   font-size: 16px;
   font-style: normal;
@@ -75,7 +74,36 @@
 }
 
 .tokenomics img {
+  margin-top: 2rem;
   width: 100%;
   height: auto;
   box-sizing: border-box;
+}
+
+@media (min-width: 1250px) {
+  .tokenomics {
+    max-width: 1200px;
+    padding-inline: 0;
+  }
+
+  .bodyText {
+    max-width: 586px;
+  }
+
+  .graphContainer {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 39px;
+  }
+
+  .graphDescription {
+    flex: 1;
+    max-width: 239px;
+  }
+
+  .tokenomics img {
+    flex: 2;
+    margin: 0;
+  }
 }
