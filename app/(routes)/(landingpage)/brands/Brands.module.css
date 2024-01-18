@@ -15,3 +15,21 @@
     opacity: 0.5;
 
 }
+
+@media screen and (max-width: 790px) {
+    .container {
+        flex-wrap: wrap;
+        max-width: 100%;
+      }
+    
+      .brandContainer {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    
+      .slide {
+        width: 33.33%; /* Ajusta el ancho para mostrar 3 en una fila */
+        box-sizing: border-box;
+        padding: 8px; /* Espacio entre las marcas */
+      }
+    }

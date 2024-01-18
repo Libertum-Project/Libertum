@@ -20,7 +20,6 @@
 
 .information{
   display: flex;
-  width: 522px;
   padding: 24px;
   flex-direction: column;
   justify-content: space-between;
@@ -89,4 +88,16 @@
   font-style: normal;
   font-weight: 700;
   line-height: 150%; 
+}
+
+@media screen and (max-width: 790px) {
+  .cardContainer{
+    flex-direction: column-reverse;
+  }
+}
+
+@media screen and (min-width: 790px){
+  .information{
+    width: 522px;
+  }
 }

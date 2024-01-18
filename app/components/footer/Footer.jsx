@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import SocialMedia from "./SocialMedia";
-import css from  "./Footer.module.css"
+import css from  "./Footer.module.css";
+import background from "./background.svg"
 
 const Footer = () => {
 
@@ -53,6 +54,14 @@ const Footer = () => {
 
   return(
     <footer className={css.footer}>
+            <Image 
+              src={background}
+              alt="N"
+              width="1812"
+              height="460"
+              // className={css.logo}          
+            /> 
+      <div className={css.background}>
       <div className={css.footerContainer}>
         <div className={css.footerFirstCol}>
           <Link  href="/" >
@@ -110,6 +119,8 @@ const Footer = () => {
         Libertum.io 2024. Copyright. All rights reserved.
        </p>
       </div>
+      </div> 
+      
     </footer>
   )
 }; 
