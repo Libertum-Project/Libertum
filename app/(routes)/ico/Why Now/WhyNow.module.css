@@ -1,6 +1,5 @@
 .whyNowContainer {
   position: relative;
-  padding-top: 5rem;
   overflow: hidden;
   padding: 0 1rem;
   box-sizing: border-box;
@@ -27,7 +26,6 @@
   z-index: 99;
   max-width: 710px;
   margin: 0 auto;
-
   box-sizing: border-box;
 }
 
@@ -100,4 +98,26 @@
   line-height: 150%; /* 24px */
   letter-spacing: -0.32px;
   margin: 0;
+}
+
+@media (min-width: 950px) {
+  .video {
+    right: 0;
+  }
+}
+
+@media (min-width: 1250px) {
+  .whyNow {
+    max-width: 1202px;
+  }
+
+  .keyPointsContainer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .keyPoints {
+    width: 45%;
+  }
 }
