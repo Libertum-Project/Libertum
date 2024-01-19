@@ -93,11 +93,44 @@
 @media screen and (max-width: 790px) {
   .cardContainer{
     flex-direction: column-reverse;
+
   }
+  .secondCard {
+    flex-direction: column; 
+  }
+  .imageContainer{
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .imageContainer img{
+    height: 252.687px;
+  }
+
 }
 
 @media screen and (min-width: 790px){
   .information{
     width: 522px;
+  }
+
+  .container {
+    position: relative;
+  }
+  
+  .container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("../../../../public/assets/Grid Background Pattern.svg");
+    background-clip: padding-box;
+    background-size: auto;
+    background-position: center;
+    opacity: 0.5; 
+    z-index: -1;
   }
 }
