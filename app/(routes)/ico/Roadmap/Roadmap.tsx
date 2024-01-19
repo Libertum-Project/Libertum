@@ -88,6 +88,10 @@ export function Roadmap(): ReactElement {
 
   return (
     <section className={css.roadmapContainer}>
+      <video autoPlay muted loop className={css.video}>
+        <source src="./bg-video-1.mp4" type="video/mp4" />
+      </video>
+
       <div className={css.roadmap}>
         <h3 style={padding}>Roadmap</h3>
         <div className={css.cardContainer} style={padding} ref={sliderRef}>
