@@ -1,7 +1,7 @@
 import { Hero } from "./hero/Hero";
 import { BrandCarrousel } from "./brandsCarrousel/BrandCarrousel";
 import { Cards } from "./cards/Cards";
-import { Tags } from "./tags/Tags";
+import { TagComponent } from "./tags/tag";
 import { Brands } from "./brands/Brands";
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
       <Hero />
       <BrandCarrousel />
       <Cards />
-      <Tags />
+      <TagComponent />
       <Brands />
     </main>
   )
