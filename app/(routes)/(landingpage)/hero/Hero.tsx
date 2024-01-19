@@ -1,6 +1,7 @@
 import { type ReactElement } from "react";
 import Image from "next/image";
 import css from "./Hero.module.css";
+import Link from "next/link";
 
 export function Hero(): ReactElement {
   return (
@@ -24,7 +25,7 @@ export function Hero(): ReactElement {
         </article>
         <div className={css.buttons}>
 
-<button className={css.button}>
+  <Link href="/" className={css.button}>
   <div className={css.buttonFrame}>
   <Image 
     src="/assets/rocket.svg"
@@ -44,9 +45,9 @@ export function Hero(): ReactElement {
     width={13.207}
     height={8.708}
 />          
-</button>
+</Link>
 
-<button className={css.button}>
+<Link href="/" className={css.button}>
   <div className={css.buttonFrame}>
     <Image 
       src="/assets/marketIcon.svg"
@@ -66,29 +67,34 @@ export function Hero(): ReactElement {
     width={13.207}
     height={8.708}
 />          
-</button>
+</Link>
 
-<button className={css.button}>
-  <div className={css.buttonFrame}>
-    <Image 
-      src="/assets/coin.svg"
-      alt="N"
-      width="13"
-      height="13"
-      className={css.logo}          
-      />
-      <p>
-          Buy LBM
-      </p>
-  </div>
-  
-    <Image
-    alt="left arrow"
-    src="/assets/leftArrow.svg"
-    width={13.207}
-    height={8.708}
-/>          
-</button>
+
+    {/* <button className={css.button}> */}
+    <Link href="/ico" className={css.button}>
+      <div className={css.buttonFrame}>
+        <Image 
+          src="/assets/coin.svg"
+          alt="N"
+          width="13"
+          height="13"
+          className={css.logo}          
+          />
+          <p>
+              Buy LBM
+          </p>
+      </div>
+      
+        <Image
+        alt="left arrow"
+        src="/assets/leftArrow.svg"
+        width={13.207}
+        height={8.708}
+    />      
+      </Link>    
+    {/* </button> */}
+
+
 
 </div>
       </section>

@@ -47,23 +47,27 @@ export function Cards(): ReactElement {
             />          
           </button>
         </div>
-        <Image 
-        src={firstImage}
-        width="394"
-        height="437"
-        alt="buildings"        
-        />
+        <div className={css.imageContainer}>
+          <Image 
+          src={firstImage}
+          width="394"
+          height="437"
+          alt="buildings"        
+          />
+        </div>
+
       </div> 
 
-
     {/* second card */}
-    <div className={css.cardContainer}>
+    <div className={`${css.cardContainer} ${css.secondCard}`}>
+      <div className={css.imageContainer}>
         <Image 
           src={secondImage}
           width="394"
           height="437"
           alt="buildings"        
           />
+      </div>
         <div className={css.information}>
           <div className={css.informationTitle}>
             <h3>Property Owners </h3>
@@ -134,13 +138,16 @@ export function Cards(): ReactElement {
             />          
           </button>
         </div>
-        <Image 
-        src={thirdImage}
-        width="394"
-        height="437"
-        alt="buildings"        
-        />
-      </div> 
+
+        <div className={css.imageContainer}>
+          <Image 
+          src={thirdImage}
+          width="394"
+          height="437"
+          alt="buildings"        
+          />
+        </div>
+    </div> 
 
 
     </div>
