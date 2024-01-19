@@ -98,7 +98,10 @@
   cursor: pointer;    
   flex: 1 0 0;
 }
+.buttons a{
+  text-decoration: none;
 
+}
 .buttonFrame{
   display: flex;
   justify-content: center;
@@ -127,5 +130,6 @@
 
   .buttons a{
     width: fill;
+    text-decoration: none;
   }
 }
