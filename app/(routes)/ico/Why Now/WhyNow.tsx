@@ -7,7 +7,7 @@ export function WhyNow(): ReactElement {
       <video autoPlay muted loop className={css.video}>
         <source src="./bg-video-2.mp4" type="video/mp4" />
       </video>
-      <div className={css.whyNow}>
+      <div className={css.whyNow} id="getPadding">
         <h2 className={css.whyNowHeading}>Why Now?</h2>
         <div className={css.bodyTextContainer}>
           <p className={css.whyNowBodyText}>

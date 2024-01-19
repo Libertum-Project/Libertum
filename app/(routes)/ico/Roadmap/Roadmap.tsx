@@ -1,14 +1,96 @@
+"use client";
 import { type ReactElement } from "react";
+import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import css from "./Roadmap.module.css";
 import leftArrow from "@/public/assets/vector.svg";
 
 export function Roadmap(): ReactElement {
+  // Add Padding Inline
+  const [paddingValue, setPaddingValue] = useState<number | null>(null);
+
+  useEffect(() => {
+    const myDiv: HTMLElement | null = document.getElementById("getPadding");
+
+    const updatePaddingLeft = () => {
+      if (myDiv) {
+        const offsetLeftValue = myDiv.offsetLeft;
+        setPaddingValue(offsetLeftValue);
+      }
+    };
+
+    updatePaddingLeft();
+
+    window.addEventListener("resize", updatePaddingLeft);
+
+    return () => {
+      window.removeEventListener("resize", updatePaddingLeft);
+    };
+  }, []);
+
+  const padding = {
+    paddingInline:
+      paddingValue && window.innerWidth >= 1250
+        ? `${paddingValue}px`
+        : undefined,
+  };
+
+  // Add Slider Functionality
+
+  const sliderRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const slider = sliderRef.current;
+
+    if (!slider) return;
+
+    let isDown = false;
+    let startX: number;
+    let scrollLeft: number;
+
+    const handleMouseDown = (e: any) => {
+      isDown = true;
+      slider.classList.add("active");
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    };
+
+    const handleMouseLeave = () => {
+      isDown = false;
+      slider.classList.remove("active");
+    };
+
+    const handleMouseUp = () => {
+      isDown = false;
+      slider.classList.remove("active");
+    };
+
+    const handleMouseMove = (e: any) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 1;
+      slider.scrollLeft = scrollLeft - walk;
+    };
+
+    slider.addEventListener("mousedown", handleMouseDown);
+    slider.addEventListener("mouseleave", handleMouseLeave);
+    slider.addEventListener("mouseup", handleMouseUp);
+    slider.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      slider.removeEventListener("mousedown", handleMouseDown);
+      slider.removeEventListener("mouseleave", handleMouseLeave);
+      slider.removeEventListener("mouseup", handleMouseUp);
+      slider.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
   return (
     <section className={css.roadmapContainer}>
       <div className={css.roadmap}>
-        <h3>Roadmap</h3>
-        <div className={css.cardContainer}>
+        <h3 style={padding}>Roadmap</h3>
+        <div className={css.cardContainer} style={padding} ref={sliderRef}>
           <div className={css.card}>
             <div className={css.header}>
               <p>Phase 01</p>
