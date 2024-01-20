@@ -10,7 +10,7 @@ export function FaqSection(): ReactElement {
         <h3>Frequently Asked Questions</h3>
         <div className={css.faqContainer}>
           {faqData.map((faqItem) => (
-            <FAQ question={faqItem.question} answer={faqItem.answer} />
+            <FAQ question={faqItem.question} answer={faqItem.answer} key={faqItem.id}/>
           ))}
         </div>
       </div>
