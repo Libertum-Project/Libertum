@@ -4,7 +4,7 @@ import { UpcomingEvents } from "./Upcoming Events/UpcomingEvents";
 import { WhyNow } from "./Why Now/WhyNow";
 import { Tokenomics } from "./Tokenomics/Tokenomics";
 import { Roadmap } from "./Roadmap/Roadmap";
-import { Faq } from "./FAQ/Faq";
+import { FaqSection } from "./FaqSection/FaqSection";
 
 export default function page() {
   return (
@@ -14,7 +14,7 @@ export default function page() {
       <WhyNow />
       <Tokenomics />
       <Roadmap />
-      <Faq />
+      <FaqSection />
     </div>
   );
 }
