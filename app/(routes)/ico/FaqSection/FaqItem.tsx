@@ -3,6 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import css from "./FaqSection.module.css";
 import leftArrow from "@/public/assets/vector.svg";
+import questionIcon from "@/public/assets/question.svg";
 
 interface FAQProps {
   question: string;
@@ -18,6 +19,10 @@ const FAQ = ({ question, answer }: FAQProps) => {
   return (
     <div className={css.faqItem}>
       <div className={css.question} onClick={handleToggle}>
+        <div className={css.questionIconContainer}>
+          <Image src={questionIcon} alt="question" width={24} height={24} />
+        </div>
+
         <h4>{question}</h4>
 
         <div className={css.arrowContainer}>
@@ -27,10 +32,8 @@ const FAQ = ({ question, answer }: FAQProps) => {
       <div
         className={css.answer}
         style={{ display: isExpanded ? "block" : "none" }}
-                dangerouslySetInnerHTML={{ __html: answer }}
-
-      >
-      </div>
+        dangerouslySetInnerHTML={{ __html: answer }}
+      ></div>
     </div>
   );
 };
