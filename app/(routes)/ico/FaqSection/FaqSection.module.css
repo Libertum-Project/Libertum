@@ -71,21 +71,47 @@
   height: 40px;
   justify-content: space-between;
   align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 32px 0px rgba(30, 93, 93, 0.2);
+  transition: transform 0.3s ease;
+  box-sizing: border-box;
 }
 
 .arrowContainer img {
   width: 100%;
   user-select: none;
+  width: 20px;
+  height: 13px;
+  flex-shrink: 0;
+}
+
+.rotateArrow {
+  transform: rotate(-90deg);
+  transition: transform 0.4s ease;
+}
+
+.answerContainer {
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  max-height: 0;
+  opacity: 0;
+}
+
+.open {
+  opacity: 1;
+  max-height: 1000px;
 }
 
 .answer {
   border-radius: 0px 0px 5px 5px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
   background: #fff;
   padding: 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
-.answer p, .answer span {
+.answer p,
+.answer span {
   color: rgba(0, 0, 0, 0.8);
   font-family: "Souliyo Unicode";
   font-size: 16px;
@@ -97,18 +123,18 @@
 }
 
 .answer span {
-margin-bottom: 1rem;
-display: block;
+  margin-bottom: 1rem;
+  display: block;
 }
 
 .answer li::after {
-  content: "\00a0"; 
+  content: "\00a0";
   display: block;
-  height: 1rem; 
+  height: 1rem;
 }
 
 @media (min-width: 1250px) {
-  .faqSection{
+  .faqSection {
     max-width: 1202px;
   }
 
@@ -119,11 +145,12 @@ display: block;
   .questionIconContainer {
     display: block;
     border-radius: 5px 0px 0px 5px;
-    border: 1px solid rgba(0, 0, 0, 0.10);
-    background: #F6F8FA;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: #f6f8fa;
     display: flex;
     width: 100px;
-    height: 79px;
+    height: 81px;
+    box-sizing: border-box;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -139,5 +166,4 @@ display: block;
   .question h4 {
     flex: 2;
   }
-
 }
