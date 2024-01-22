@@ -93,8 +93,9 @@
   .graphContainer {
     align-items: center;
     display: flex;
-    justify-content: center;
-    gap: 39px;
+    justify-content: space-between;
+    gap: 2.5rem;
+    width: 100%;
   }
 
   .graphDescription {
