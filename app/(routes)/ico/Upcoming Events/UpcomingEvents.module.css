@@ -144,12 +144,16 @@
 }
 
 @media (min-width: 1250px) {
+  .upcomingEventsContainer {
+    padding: 1.3rem;
+  }
+
   .upcomingEvents {
     align-items: center;
     max-width: 1292px;
     margin: 2rem auto;
     display: flex;
-    padding: 49px 44px;
+    padding: 1.5rem 44px;
     flex-direction: row;
     justify-content: center;
     background-image: url("../../../../public/assets/Grid\ Background\ Pattern.svg");
