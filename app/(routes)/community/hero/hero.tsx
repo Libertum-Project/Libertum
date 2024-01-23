@@ -1,6 +1,6 @@
 import { type ReactElement } from "react";
 import Image from "next/image";
-import css from "./Hero.module.css";
+import css from "./hero.module.css";
 import Link from "next/link";
 import SocialMedia from "./socials/SocialMedia";
 import { ContactForm } from "./contactForm/contactFrom";
