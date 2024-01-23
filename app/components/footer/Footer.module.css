@@ -10,7 +10,7 @@
   flex-direction: column;
 
   .background {
-    background: #080915;
+    background: var(--color-primary);
   }
 
   .footerContainer {
@@ -19,8 +19,8 @@
     padding: 4rem 1rem;
     justify-content: space-between;
     align-items: flex-start;
-    background: #080915;
-    font-family: "Space Grotesk";
+    background: var(--color-primary);
+    font-family: var(--font-primary);
     max-width: 75.125rem;
     margin: 0 auto;
     width: 100%;
@@ -52,7 +52,7 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 0.625rem;
-        color: #fff;
+        color: var(--color-quaternary);
         /* font-family: Space Grotesk; */
         font-size: 0.75rem;
         font-style: normal;
@@ -62,7 +62,7 @@
         cursor: pointer;
       }
       .firstColContact:hover {
-        color: #00b3b5;
+        color: var(--color-secondary);
       }
     }
 
@@ -76,7 +76,7 @@
         display: flex;
         align-items: flex-start;
         gap: 2rem;
-        color: #fff;
+        color: var(--color-quaternary);
 
         .links {
           display: flex;
@@ -91,7 +91,7 @@
             flex-direction: column;
             align-items: flex-start;
             gap: 0.625rem;
-            color: #fff;
+            color: var(--color-quaternary);
             font-size: 0.75rem;
             font-style: normal;
             font-weight: 700;
@@ -101,7 +101,7 @@
             cursor: pointer;
           }
           .link:hover {
-            color: #00b3b5;
+            color: var(--color-secondary);
           }
         }
       }
@@ -120,8 +120,8 @@
         align-self: stretch; */
 
         border-radius: 0.3125rem;
-        border: 1px solid #00b3b5;
-        color: #fff;
+        border: 1px solid var(--color-secondary);
+        color: var(--color-quaternary);
         font-size: 0.75rem;
         font-style: normal;
         font-weight: 700;
@@ -131,7 +131,7 @@
         cursor: pointer;
       }
       .footerButton:hover {
-        color: #00b3b5;
+        color: var(--color-secondary);
       }
     }
   }
@@ -142,7 +142,7 @@
   }
   .footerCopyright p {
     color: rgba(255, 255, 255, 0.5);
-    font-family: "Space Grotesk";
+    font-family: var(--font-primary);
     font-size: 0.75rem;
     font-style: normal;
     font-weight: 400;
