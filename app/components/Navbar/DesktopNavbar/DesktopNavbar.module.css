@@ -1,42 +1,30 @@
-.desktopNavBar {
+.desktopNavbar {
   display: none;
 }
 
-.navBar {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  padding: 1.75rem 1rem;
-  border-bottom: 1px solid;
-  border-image: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.5) 51.04%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  border-image-slice: 1;
-  box-sizing: border-box;
-  max-width: 75.125rem;
-  margin: 0 auto;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 99999;
-}
-
-.menuBtn {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-@media (min-width: 900px) {
-  .menuBtn {
-    display: none;
+@media (min-width: 950px) {
+  .desktopNavbar {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.75rem 1rem;
+    border-bottom: 1px solid;
+    border-image: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.5) 51.04%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    border-image-slice: 1;
+    box-sizing: border-box;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 99999;
   }
-
-  .desktopNavBar {
+  .links {
     align-items: center;
     display: flex;
     justify-content: center;
@@ -45,7 +33,7 @@
     z-index: 99999;
   }
 
-  .desktopNavBar a {
+  .links a {
     color: #fff;
     font-family: Space Grotesk;
     font-size: 12px;
@@ -54,9 +42,14 @@
     line-height: normal;
     text-decoration: none;
     padding: 0.5rem 1rem;
+    transition: all 0.2s linear;
   }
 
-  .desktopNavBar button {
+  .links a:hover {
+    color: #00b3b5;
+  }
+
+  .desktopNavbar button {
     display: flex;
     width: 182px;
     padding: 8px 16px;
@@ -75,10 +68,14 @@
     line-height: 150%;
     cursor: pointer;
   }
+
+
+ 
 }
 
 @media (min-width: 1200px) {
-  .navBar {
+  .desktopNavbar {
     padding-inline: 0;
+    max-width: 1202px;
   }
 }
