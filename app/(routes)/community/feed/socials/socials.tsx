@@ -14,25 +14,25 @@ export function Socials(): ReactElement {
       name: "X (Twitter)",
       icon: twitter,
       info: "Keep up to date with our latest Libertum announcements.",
-      buttonLink: "/twitter"
+      buttonLink: "https://twitter.com/libertum_token"
     },
     {
       name: "Discord",
       icon: discord,
       info: "Watch all of our live updates in a growth-minded community.",
-      buttonLink: "/twitter"
+      buttonLink: "https://discord.gg/AyGNmQx3KB"
     },
     {
       name: "LinkedIn",
       icon: linkedin,
       info: "Network with Libertum and our trusted partners.",
-      buttonLink: "/twitter"
+      buttonLink: "https://www.linkedin.com/company/libertum1"
     },
     {
       name: "Telegram",
       icon: telegram,
       info: "Join our community of likeminded investors.",
-      buttonLink: "/twitter"
+      buttonLink: "https://t.me/libertum1"
     },
   ]
 
