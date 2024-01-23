@@ -7,10 +7,10 @@
 }
 
 @font-face {
-  font-family: "Souliyo Regular";
-  src: url("../public/Souliyo_Regular/Souliyo-Regular.ttf");
-  /* font-weight: 400; */
-  /* font-style: normal; */
+  font-family: var(--font-secondary);
+  src: url("../public/Helvetica/Helvetica.ttf");
+  font-weight: 400;
+  font-style: normal;
   font-display: swap; 
 }
 
@@ -18,6 +18,21 @@
 
 /* Document
    ========================================================================== */
+
+   :root {
+  --font-primary: "Space Grotesk";
+  --font-secondary: "Helvetica";
+  --color-primary: #080915;      /* Dark blue */
+  --color-secondary: #00B3B5;    /* Light blue */
+  --color-tertiary: #FFA143;     /* Orange */
+  --color-quaternary: #fff;    /* White */
+  --color-quinary: #F6F8FA;       /* gray - for backgrounds */
+
+
+}
+
+/* Puedes agregar más variables según sea necesario */
+
 
 /**
  * 1. Correct the line height in all browsers.
@@ -241,6 +256,10 @@ button:-moz-focusring,
 [type="reset"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
+}
+
+button:hover{
+  cursor: pointer;
 }
 
 /**
