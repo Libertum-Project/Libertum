@@ -46,7 +46,7 @@
   }
 
   .links a:hover {
-    color: #00b3b5;
+    color: var(--color-secondary);
   }
 
   .desktopNavbar button {
@@ -68,9 +68,6 @@
     line-height: 150%;
     cursor: pointer;
   }
-
-
- 
 }
 
 @media (min-width: 1200px) {
