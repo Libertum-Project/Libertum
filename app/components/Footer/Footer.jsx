@@ -43,7 +43,7 @@ const Footer = () => {
     },
     {
       name: "Community",
-      href: "/",
+      href: "/community",
       section: "Support",
     },
   ];
