@@ -24,20 +24,18 @@ export function Hero(): ReactElement {
           <div className={css.tokenOptions}>
             <div>
               <Image src={checkbox} alt="checkbox" width={24} height={24} />{" "}
-              <span>01</span> <p>Staking Pool – Additional $LBM Reward </p>
+              <p>Staking Pool – Additional $LBM Reward </p>
             </div>
             <div>
               <Image src={checkbox} alt="checkbox" width={24} height={24} />{" "}
-              <span>02</span>{" "}
               <p>Reinvest in Fractionalized Rental Income Token (RIT)</p>
             </div>
             <div>
               <Image src={checkbox} alt="checkbox" width={24} height={24} />{" "}
-              <span>03</span> <p>Enjoy 20% Reduction in Buying Fees</p>
+              <p>Enjoy 20% Reduction in Buying Fees</p>
             </div>
             <div>
               <Image src={checkbox} alt="checkbox" width={24} height={24} />{" "}
-              <span>04</span>{" "}
               <p>Voting on Corporate Social Responsibility Projects</p>
             </div>
           </div>
