@@ -26,3 +26,14 @@
     font-weight: 700;
     line-height: normal;
 }
+
+@media screen and (max-width: 790px){
+    .twitterContainer section{
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .twitterTitle{
+        margin: 0;
+      }
+    }

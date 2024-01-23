@@ -63,3 +63,18 @@
     line-height: 150%; /* 24px */
 
 }
+
+@media screen and (max-width:790px) {
+  .socialContainer{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .frameTitle{
+    display: flex;
+    align-items: center;  
+    gap: 24px;  
+  }
+  .socialCard{
+    width: auto;
+  }
+}
+  

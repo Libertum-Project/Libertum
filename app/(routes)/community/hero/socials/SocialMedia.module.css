@@ -13,3 +13,10 @@ justify-content: space-between;
   transition-duration: 200ms;
   color: blue;
 }
+
+@media screen and (max-width:790px) {
+  .socialMediaContainer{
+    align-items: center;
+    justify-content: space-between;
+  }
+  }
