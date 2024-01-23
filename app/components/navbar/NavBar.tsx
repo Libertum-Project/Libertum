@@ -21,7 +21,7 @@ export function NavBar(): ReactElement {
         <Link href="./ico">Buy LBM</Link>
         <a href="#">Explore Properties</a>
         <a href="#">Learn</a>
-        <a href="#">Community</a>
+        <a href="/community">Community</a>
         <a href="#">Docs</a>
         <button>
           <Image alt="Wallet" src={wallet} width={16} height={16} />
