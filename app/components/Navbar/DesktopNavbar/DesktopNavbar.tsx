@@ -47,7 +47,7 @@ export function DesktopNavbar(): ReactElement {
           >
             Learn ↓
           </a>
-          <a href="#">Community</a>
+          <a href="/community">Community</a>
           <a
             href="#"
             onMouseEnter={handleShowDocsModal}

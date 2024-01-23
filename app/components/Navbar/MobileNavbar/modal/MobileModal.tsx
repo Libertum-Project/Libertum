@@ -21,7 +21,7 @@ export function MobileModal(): ReactElement {
           <Link href="#">→ Property Owners</Link>
           <Link href="#">→ RWA Tokenisation</Link>
         </div>
-        <Link href="#" className={css.border}>
+        <Link href="/community" className={css.border}>
           Community
         </Link>
         <div>
