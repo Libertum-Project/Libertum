@@ -3,6 +3,7 @@ import "./globals.css";
 import Script from "next/script";
 import Footer from "./components/Footer/Footer";
 import { NavBar } from "./components/Navbar/NavBar";
+import { Web3ModalProvider } from "../context/Web3Modal";
 
 export const metadata = {
   title: "Libertum",
@@ -21,11 +22,13 @@ export default function RootLayout({
         <link rel="preconnect" href="https://cdn.ad360.media" />
       </head>
 
-      <body id="body">
-        <NavBar />
-        {children}
-        <Footer />
-      </body>
+      <Web3ModalProvider>
+        <body id="body">
+          <NavBar />
+          {children}
+          <Footer />
+        </body>
+      </Web3ModalProvider>
 
       <Script
         defer
