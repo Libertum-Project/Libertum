@@ -24,6 +24,7 @@
     left: 0;
     z-index: 99999;
   }
+
   .links {
     align-items: center;
     display: flex;
@@ -47,26 +48,6 @@
 
   .links a:hover {
     color: var(--color-secondary);
-  }
-
-  .desktopNavbar button {
-    display: flex;
-    width: 182px;
-    padding: 8px 16px;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 5px;
-    border: 1px solid #00b3b5;
-    background: rgba(0, 179, 181, 0.3);
-    backdrop-filter: blur(5px);
-    color: #fff;
-    text-align: center;
-    font-family: Space Grotesk;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 150%;
-    cursor: pointer;
   }
 }
 
