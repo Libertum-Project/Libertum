@@ -11,19 +11,15 @@ import leftArrow from "./leftArrow.svg";
 import wallet from "./wallet.svg";
 import css from "./WalletComponents.module.css";
 
-interface Prop {
-  handleToggleOpenMenu: () => void;
-}
-
 export function ConnectWalletButton({
   handleToggleOpenMenu,
-}: Prop): ReactElement {
+}: any): ReactElement {
   const { open, close } = useWeb3Modal();
   const { isConnected, address, chainId } = useWeb3ModalAccount();
   const { selectedNetworkId } = useWeb3ModalState();
 
   const handleConnectWallet = () => {
-    handleToggleOpenMenu()
+    handleToggleOpenMenu();
     if (isConnected && chainId !== 137) {
       close();
       switchToPolygonMainnet();
