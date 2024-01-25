@@ -162,3 +162,31 @@
 .table tr:nth-child(even){
     background: #F6F8FA;
 }
+
+
+@media screen and (max-width: 1100px) {
+
+    .calculator .calculatorInputs label {
+        width: fit-content;
+      }
+
+    .calculatorInputsSelect {
+        width: 100%;
+    }
+
+    .inputFrameInvestment{
+        width: 100%;
+    }
+
+    .inputFrame{
+        flex-direction: column;
+        width: 100%;
+        align-items: start;
+        justify-content: flex-start;
+        gap:.5rem
+    }
+
+    .table th{
+        font-size: 12px;
+    }
+}

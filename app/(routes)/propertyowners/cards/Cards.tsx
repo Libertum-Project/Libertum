@@ -77,7 +77,7 @@ export function Cards(): ReactElement {
           <h2>{card.title}</h2>
           <div className={css.tokenOptions}>
             {card.items.map((item, itemIndex) => (
-              <div key={itemIndex}>
+              <div key={itemIndex} >
                 <Image src={checkbox} alt="checkbox" width={24} height={24} />{" "}
                 <p>{item}</p>
               </div>

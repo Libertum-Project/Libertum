@@ -115,9 +115,15 @@
   } */
   
   
-  @media screen and (max-width:790px) {
+  @media screen and (max-width:1100px) {
   .heroOwners{
     flex-direction: column;
+    width: 100%;
+    padding: 1rem; 
   }
+  .frameButton{
+    flex-direction: column; 
+    align-self: flex-start;   
   }
 
+  }
