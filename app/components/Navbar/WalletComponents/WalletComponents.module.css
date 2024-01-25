@@ -1,3 +1,7 @@
+.connectWalletButtonContainer {
+  width: 100%;
+}
+
 .connectWalletButton {
   display: flex;
   width: calc(100% - 2rem);
@@ -33,6 +37,10 @@
 }
 
 @media (min-width: 950px) {
+  .connectWalletButtonContainer {
+    width: auto;
+  }
+
   .connectWalletButton div p {
     margin: 0;
   }
@@ -56,11 +64,10 @@
     line-height: 150%;
     cursor: pointer;
     margin: 0;
-  gap: 1rem;
+    gap: 1rem;
   }
   .connectWalletButton div {
     flex: 2;
     justify-content: space-between;
   }
- 
 }

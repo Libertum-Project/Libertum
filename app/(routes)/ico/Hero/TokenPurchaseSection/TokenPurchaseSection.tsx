@@ -15,14 +15,14 @@ export function TokenPurchaseSection(): ReactElement {
   const [tooltipVisible, setTooltipVisible] = useState<boolean>(false);
 
   const handleLbmInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const inputLbmValue = parseFloat(event.target.value) || 0;
+    const inputLbmValue = parseFloat(event.target.value);
     setLbmAmount(inputLbmValue);
     setUsdAmount(parseFloat((inputLbmValue * LBM_PRICE).toFixed(3)));
     setTooltipVisible(false);
   };
 
   const handleUsdInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const inputUsdValue = parseFloat(event.target.value) || 0;
+    const inputUsdValue = parseFloat(event.target.value);
     setUsdAmount(inputUsdValue);
     setLbmAmount(parseFloat((inputUsdValue / LBM_PRICE).toFixed(1)));
     setTooltipVisible(false);
@@ -47,6 +47,13 @@ export function TokenPurchaseSection(): ReactElement {
       setLbmAmount(parseFloat((10000 / LBM_PRICE).toFixed(1)));
     }
   }, [usdAmount]);
+
+  const handleBlur = () => {
+    if (isNaN(usdAmount)) {
+      setUsdAmount(50);
+      setLbmAmount(parseFloat((50 / LBM_PRICE).toFixed(1)));
+    }
+  };
 
   return (
     <article className={css.tokenPurchaseSection}>
@@ -89,6 +96,7 @@ export function TokenPurchaseSection(): ReactElement {
             type="number"
             value={lbmAmount}
             onChange={handleLbmInputChange}
+            onBlur={handleBlur}
           />
           <div>
             <Image src={libertum} alt="Libertum" width={25} height={25} />
@@ -100,6 +108,7 @@ export function TokenPurchaseSection(): ReactElement {
             type="number"
             value={usdAmount}
             onChange={handleUsdInputChange}
+            onBlur={handleBlur}
           />
           <div>
             <Image src={usd} alt="USD" width={25} height={25} />
