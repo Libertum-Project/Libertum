@@ -11,12 +11,19 @@ import leftArrow from "./leftArrow.svg";
 import wallet from "./wallet.svg";
 import css from "./WalletComponents.module.css";
 
-export function ConnectWalletButton(): ReactElement {
+interface Prop {
+  handleToggleOpenMenu: () => void;
+}
+
+export function ConnectWalletButton({
+  handleToggleOpenMenu,
+}: Prop): ReactElement {
   const { open, close } = useWeb3Modal();
   const { isConnected, address, chainId } = useWeb3ModalAccount();
   const { selectedNetworkId } = useWeb3ModalState();
 
   const handleConnectWallet = () => {
+    handleToggleOpenMenu()
     if (isConnected && chainId !== 137) {
       close();
       switchToPolygonMainnet();
@@ -32,9 +39,7 @@ export function ConnectWalletButton(): ReactElement {
     }
   }, [isConnected, address, selectedNetworkId]);
 
-  function isEthereumWithRequest(
-    obj: any,
-  ): obj is {
+  function isEthereumWithRequest(obj: any): obj is {
     request: (args: { method: string; params?: any[] }) => Promise<any>;
   } {
     return obj && typeof obj.request === "function";
@@ -83,7 +88,7 @@ export function ConnectWalletButton(): ReactElement {
   }
 
   return (
-    <div suppressHydrationWarning>
+    <div className={css.connectWalletButtonContainer} suppressHydrationWarning>
       {!isConnected || (isConnected && chainId !== 137) ? (
         <button
           className={css.connectWalletButton}

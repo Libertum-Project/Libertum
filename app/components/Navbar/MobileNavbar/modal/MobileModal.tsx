@@ -3,7 +3,13 @@ import Link from "next/link";
 import css from "./MobileModal.module.css";
 import { ConnectWalletButton } from "../../WalletComponents/ConnectWalletButton";
 
-export function MobileModal(): ReactElement {
+interface MobileModalProp {
+  handleToggleOpenMenu: () => void;
+}
+
+export function MobileModal({
+  handleToggleOpenMenu,
+}: MobileModalProp): ReactElement {
   return (
     <div className={css.mobileModalContainer}>
       <div className={css.mobileModal}>
@@ -28,7 +34,7 @@ export function MobileModal(): ReactElement {
           <Link href="#">→ White Paper</Link>
           <Link href="#">→ Pitch Deck</Link>
         </div>
-        <ConnectWalletButton />
+        <ConnectWalletButton handleToggleOpenMenu={handleToggleOpenMenu} />
       </div>
     </div>
   );
