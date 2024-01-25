@@ -2,7 +2,6 @@ import { type ReactElement } from "react";
 import Image from "next/image";
 import css from "./hero.module.css";
 import Link from "next/link";
-import { ContactForm } from "./contactForm/contactFrom";
 import { Calculator } from "./calculator/calculator";
 
 
@@ -12,7 +11,7 @@ export function Hero(): ReactElement {
       <video autoPlay muted loop className={css.video}>
         <source src="./bg-video-1.mp4" type="video/mp4" />
       </video>
-      <div className={css.heroOwners}>
+      <div className={css.heroOwners} id="getPadding">
         <div className={css.textOwners}>
           <h1>Property Tokenization</h1>
           <div className={css.paragraphsOwners}>
