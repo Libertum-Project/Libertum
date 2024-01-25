@@ -9,10 +9,10 @@ export function TagComponent() {
     console.log("isMobile:", isMobile);
 
     useEffect(() => {
-        const mediaQuery = window.matchMedia("(max-width: 768px)");
+        const mediaQuery = window.matchMedia("(max-width: 1100px)");
         const handleResize = () => {
             console.log("Window width:", window.innerWidth);
-            setIsMobile(window.innerWidth <= 768);
+            setIsMobile(window.innerWidth <= 1100);
             setIsMobile(mediaQuery.matches)
         };
         if (typeof window !== 'undefined') {
