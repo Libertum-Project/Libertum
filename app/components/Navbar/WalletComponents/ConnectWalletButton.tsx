@@ -19,7 +19,7 @@ export function ConnectWalletButton({
   const { selectedNetworkId } = useWeb3ModalState();
 
   const handleConnectWallet = () => {
-    handleToggleOpenMenu();
+    handleToggleOpenMenu && handleToggleOpenMenu();
     if (isConnected && chainId !== 137) {
       close();
       switchToPolygonMainnet();

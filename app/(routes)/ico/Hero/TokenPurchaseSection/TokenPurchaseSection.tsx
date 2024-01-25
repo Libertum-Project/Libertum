@@ -9,9 +9,11 @@ import usd from "./USD_input.svg";
 
 export function TokenPurchaseSection(): ReactElement {
   const LBM_PRICE: number = 0.066;
+  const MIN_USD: number = 50;
+  const MIN_LBM: number = parseFloat((MIN_USD / LBM_PRICE).toFixed(1));
 
-  const [lbmAmount, setLbmAmount] = useState<number>(758.6);
-  const [usdAmount, setUsdAmount] = useState<number>(50);
+  const [lbmAmount, setLbmAmount] = useState<number>(MIN_LBM);
+  const [usdAmount, setUsdAmount] = useState<number>(MIN_USD);
   const [tooltipVisible, setTooltipVisible] = useState<boolean>(false);
 
   const handleLbmInputChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -112,7 +114,7 @@ export function TokenPurchaseSection(): ReactElement {
           />
           <div>
             <Image src={usd} alt="USD" width={25} height={25} />
-            <p>$ USD</p>
+            <p>USDC.e</p>
           </div>
         </div>
       </div>
