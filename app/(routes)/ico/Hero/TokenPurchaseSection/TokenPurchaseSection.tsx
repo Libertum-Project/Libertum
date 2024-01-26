@@ -6,10 +6,10 @@ import Image from "next/image";
 import css from "./TokenPurchaseSection.module.css";
 import info from "./info.svg";
 import libertum from "./libertum_input.svg";
-import usd from "./USD_input.svg";
+import usd from "./USDC.svg";
 
 export function TokenPurchaseSection(): ReactElement {
-  const LBM_PRICE: number = 0.066;
+  const LBM_PRICE: number = 0.06;
   const MIN_USD: number = 50;
   const MIN_LBM: number = parseFloat((MIN_USD / LBM_PRICE).toFixed(1));
 
