@@ -25,8 +25,8 @@
 
 .bodyText {
   color: rgba(0, 0, 0, 0.8);
-  font-family: "Souliyo Unicode";
   font-size: 16px;
+  font-family: var(--font-secondary);
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
@@ -53,8 +53,8 @@
 
 .tokenomicsItem p {
   color: rgba(0, 0, 0, 0.8);
-  font-family: "Souliyo Unicode";
   font-size: 16px;
+  font-family: var(--font-secondary);
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 24px */

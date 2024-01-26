@@ -51,12 +51,11 @@
 .header h2 {
   color: rgba(242, 30, 30, 0.93);
   text-align: center;
-  font-family: Roboto;
   font-size: 1.39513rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  font-family: montserrat;
+  font-family: var(--font-secondary);
 }
 
 .errorBox p,
@@ -70,8 +69,8 @@
   font-style: normal;
   font-weight: 500;
   line-height: 1.7rem;
-  font-family: montserrat;
   cursor: auto;
+  font-family: var(--font-secondary);
 }
 
 .errorBox button,

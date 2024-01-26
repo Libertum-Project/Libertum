@@ -44,7 +44,7 @@
         font-weight: 200;
         line-height: 150%; /* 1.5rem */
         width: 16rem;
-        font-family: sans-serif !important;
+          font-family: var(--font-secondary) !important;
       }
 
       .firstColContact {
