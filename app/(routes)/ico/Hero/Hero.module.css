@@ -60,8 +60,8 @@
 
 .hero .paragraphs p {
   color: #fff;
-  font-family: Souliyo Unicode;
   font-size: 16px;
+  font-family: var(--font-secondary);
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 24px */
@@ -86,8 +86,8 @@
 
 .tokenOptions div span {
   color: #00b3b5;
-  font-family: Souliyo Unicode;
   font-size: 16px;
+  font-family: var(--font-secondary);
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
@@ -95,8 +95,8 @@
 
 .tokenOptions div p {
   color: #fff;
-  font-family: Souliyo Unicode;
   font-size: 16px;
+  font-family: var(--font-secondary);
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
@@ -113,8 +113,8 @@
 
 .auditInfo span {
   color: #00b3b5;
-  font-family: Souliyo Unicode;
   font-size: 16px;
+  font-family: var(--font-secondary);
   font-style: normal;
   font-weight: 400;
   line-height: 150%; 
@@ -123,8 +123,8 @@
 
 .auditInfo p {
   color: #fff;
-  font-family: Souliyo Unicode;
   font-size: 16px;
+  font-family: var(--font-secondary);
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
