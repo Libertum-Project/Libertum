@@ -22,7 +22,7 @@ export function UpcomingEvents(): ReactElement {
                 </div>
                 <div className={css.infoItem}>
                   <p className={css.infoLabel}>Starting price:</p>
-                  <span className={css.infoValue}>$0.066</span>
+                  <span className={css.infoValue}>$0.06</span>
                 </div>
                 <div className={css.infoItem}>
                   <p className={css.infoLabel}>Raise:</p>
