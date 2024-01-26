@@ -38,9 +38,9 @@ export function DesktopNavbar(): ReactElement {
 
         <div className={css.links}>
           <Link href="./ico">Buy LBM</Link>
-          <a href="#">Explore Properties</a>
+          <a href="/comingsoon">Explore Properties</a>
           <a
-            href="#"
+            href="/comingsoon"
             onMouseEnter={handleShowLearnModal}
             onTouchStart={handleShowLearnModal}
           >
@@ -48,7 +48,7 @@ export function DesktopNavbar(): ReactElement {
           </a>
           <a href="/community">Community</a>
           <a
-            href="#"
+            href="/comingsoon"
             onMouseEnter={handleShowDocsModal}
             onTouchStart={handleShowDocsModal}
           >
