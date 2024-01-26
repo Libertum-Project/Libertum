@@ -1,0 +1,41 @@
+.twitterContainer{
+
+}
+.twitterContainer section{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+.twitterTitle{
+    color: var(--color-primary);
+    font-family: var(--font-primary);
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.96px;
+    margin-top: 0;
+}
+
+.hashtag{
+    color: #C7C7C7;
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+@media screen and (max-width: 1100px){
+    .twitterContainer section{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .twitterTitle{
+        margin: 0;
+      }
+    }

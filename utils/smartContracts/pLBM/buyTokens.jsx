@@ -6,7 +6,7 @@ const pLBM_address = process.env.NEXT_PUBLIC_pLBM_address;
 
 async function buyTokens(
   provider,
-  amount,
+  lbmAmount,
   setIsLoading,
   setShowPendingMessage,
   setShowFailMessage,
@@ -56,12 +56,12 @@ async function buyTokens(
 
     await USDC_contract.connect(signer).approve(
       pLBM_address,
-      BigInt(amount * price),
+      BigInt(lbmAmount * price),
     );
 
     const tx = await pLBM_contract
       .connect(signer)
-      .buy(BigInt(amount * 10 ** 18), { gasLimit: 2000000 });
+      .buy(BigInt(lbmAmount * 10 ** 18), { gasLimit: 2000000 });
 
     transactionHash = tx.hash;
 

@@ -1,0 +1,124 @@
+.whyNowContainer {
+  position: relative;
+  overflow: hidden;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.video {
+  position: absolute;
+  right: -60rem;
+  top: 0;
+  z-index: 9;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.whyNow {
+  display: flex;
+  width: 100%;
+  padding: 4rem 0rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 99;
+  max-width: 710px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.whyNowHeading {
+  color: #fff;
+  font-family: "Space Grotesk";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.72px;
+  margin: 0;
+}
+
+.bodyTextContainer {
+  align-items: flex-start;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.whyNowBodyText {
+  color: #fff;
+  font-family: "Souliyo Unicode";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+  letter-spacing: -0.32px;
+  margin: 0;
+}
+
+.keyPointsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.keyPoints {
+  display: flex;
+  padding: 1.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  align-self: stretch;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(3px);
+}
+
+.keyPointHeading {
+  color: #00b3b5;
+  font-family: "Space Grotesk";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  margin: 0;
+}
+
+.keyPoints p {
+  color: #fff;
+  font-family: "Souliyo Unicode";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+  letter-spacing: -0.32px;
+  margin: 0;
+}
+
+@media (min-width: 950px) {
+  .video {
+    right: 0;
+  }
+}
+
+@media (min-width: 1250px) {
+  .whyNow {
+    max-width: 1202px;
+  }
+
+  .keyPointsContainer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .keyPoints {
+    width: 45%;
+  }
+}
