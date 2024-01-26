@@ -16,23 +16,23 @@ export function MobileModal({
         <Link href="./ico" className={css.border}>
           Buy LBM
         </Link>
-        <Link href="#" className={css.border}>
+        <Link href="/comingsoon" className={css.border}>
           Explore Properties
         </Link>
         <div className={css.border}>
           <p>Learn</p>
-          <Link href="#">→ Investors</Link>
-          <Link href="#">→ Property Owners</Link>
-          <Link href="#">→ RWA Tokenisation</Link>
+          <Link href="/comingsoon">→ Investors</Link>
+          <Link href="/comingsoon">→ Property Owners</Link>
+          <Link href="/comingsoon">→ RWA Tokenisation</Link>
         </div>
         <Link href="/community" className={css.border}>
           Community
         </Link>
         <div>
           <p>Docs</p>
-          <Link href="#">→ Token Utility</Link>
-          <Link href="#">→ White Paper</Link>
-          <Link href="#">→ Pitch Deck</Link>
+          <Link href="/comingsoon">→ Token Utility</Link>
+          <Link href="/comingsoon">→ White Paper</Link>
+          <Link href="/comingsoon">→ Pitch Deck</Link>
         </div>
         <ConnectWalletButton handleToggleOpenMenu={handleToggleOpenMenu} />
       </div>
