@@ -2,6 +2,7 @@
 import { type ReactElement, useState } from "react";
 import Image from "next/image";
 import css from "./TagsMobile.module.css";
+import Link from "next/link";
 
 interface Option {
   id: string;
@@ -11,6 +12,7 @@ interface Option {
     paragraphs: string[];
     buttonLabel: string;
   };
+  href: string
 }
 
 export function TagsMobile() {
@@ -28,6 +30,7 @@ export function TagsMobile() {
         ],
         buttonLabel: "Learn More",
       },
+      href: "/comingsoon"
     },
     {
       id: "ambassadors",
@@ -41,6 +44,7 @@ export function TagsMobile() {
         ],
         buttonLabel: "Contact Us",
       },
+      href: "/community"
     },
     {
       id: "investors",
@@ -54,6 +58,7 @@ export function TagsMobile() {
         ],
         buttonLabel: "Reach Out",
       },      
+      href: "/comingsoon"
     },
     {
       id: "partners",
@@ -66,7 +71,8 @@ export function TagsMobile() {
           "If you are a technology provider that knows RWA tokenisation is the future evolution of investment contact us about how our community can benefit from integrating with your technology. ",
         ],
         buttonLabel: "Contact Us",
-      },      
+      },   
+      href: "/community"   
     },
   ];
 
@@ -110,10 +116,10 @@ export function TagsMobile() {
                     ))}
                   </div>
 
-                  <button className={css.buttonInformation}>
-                    {option.information.buttonLabel}
-                    <Image alt="left arrow" src="/assets/leftArrowBLACK.svg" width={13.207} height={8.708} />
-                  </button>
+                  <Link href={option.href} className={css.buttonInformation}>                   
+                      {option.information.buttonLabel}
+                      <Image alt="left arrow" src="/assets/leftArrowBLACK.svg" width={13.207} height={8.708} />
+                  </Link>                  
                 </div>
               )}
             </div>

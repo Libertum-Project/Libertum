@@ -8,17 +8,17 @@ const Footer = () => {
   const navigation = [
     {
       name: "Property Owners",
-      href: "/",
+      href: "/comingsoon",
       section: "Navigation",
     },
     {
       name: "Investors",
-      href: "/",
+      href: "/comingsoon",
       section: "Navigation",
     },
     {
       name: "Explore Properties",
-      href: "/",
+      href: "/comingsoon",
       section: "Navigation",
     },
     {
@@ -28,17 +28,17 @@ const Footer = () => {
     },
     {
       name: "Privacy Policy",
-      href: "/",
+      href: "/comingsoon",
       section: "Support",
     },
     {
       name: "Terms & Conditions",
-      href: "/",
+      href: "/comingsoon",
       section: "Support",
     },
     {
       name: "Docs",
-      href: "/",
+      href: "/comingsoon",
       section: "Support",
     },
     {
