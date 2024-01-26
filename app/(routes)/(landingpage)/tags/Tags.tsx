@@ -12,6 +12,8 @@ import investingINACTIVE from "./assets/investingInactive.svg";
 import investingACTIVE from "./assets/investingActive.svg";
 import partnersACTIVE from "./assets/partnersActive.svg"
 import partnersINACTIVE from "./assets/partnersInactive.svg";
+import Link from "next/link";
+
 
 
 interface Option {
@@ -23,6 +25,7 @@ interface Option {
     paragraphs: string[];
     buttonLabel: string;
   };
+  href: string
 }
 
 export function Tags() {
@@ -52,6 +55,7 @@ export function Tags() {
         ],
         buttonLabel: "Learn More",
       },
+      href: "/comingsoon"
     },
     {
       id: "ambassadors",
@@ -66,6 +70,7 @@ export function Tags() {
         ],
         buttonLabel: "Contact Us",
       },
+      href: "/community"
     },
     {
       id: "investors",
@@ -79,7 +84,8 @@ export function Tags() {
           "Our to goal in collaborating is ensure to ensure mutual success - help us scale faster and leverage the cross network platform we have been building.",
         ],
         buttonLabel: "Reach Out",
-      },      
+      },
+      href: "/comingsoon"      
     },
     {
       id: "partners",
@@ -94,6 +100,7 @@ export function Tags() {
         ],
         buttonLabel: "Contact Us",
       },      
+      href: "/community"
     },
 
 
@@ -143,10 +150,10 @@ export function Tags() {
             ))}
           </div>
 
-          <button className={css.buttonInformation}>
+          <Link href={options.find((opt) => opt.id === activeOption)?.href || "/"} className={css.buttonInformation}>
             {options.find((opt) => opt.id === activeOption)?.information.buttonLabel}
             <Image alt="left arrow" src="/assets/leftArrowBLACK.svg" width={13.207} height={8.708} />
-          </button>
+          </Link>
         </section>
       </div>
     </div>

@@ -25,7 +25,7 @@ export function Hero(): ReactElement {
         </article>
         <div className={css.buttons}>
 
-  <Link href="/" className={css.button1}>
+  <Link href="/comingsoon" className={css.button1}>
   <div className={css.buttonFrame}>
   <Image 
     src="/assets/rocket.svg"
@@ -47,7 +47,7 @@ export function Hero(): ReactElement {
 />          
 </Link>
 
-<Link href="/" className={css.button1}>
+<Link href="/comingsoon" className={css.button1}>
   <div className={css.buttonFrame}>
     <Image 
       src="/assets/marketIcon.svg"
