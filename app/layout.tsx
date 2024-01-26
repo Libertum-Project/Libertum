@@ -1,9 +1,8 @@
-import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import Footer from "./components/Footer/Footer";
 import { NavBar } from "./components/Navbar/NavBar";
-import { Web3ModalProvider } from "../context/Web3Modal";
+import ContractProvider from "../context/ContractProvider.js";
 
 export const metadata = {
   title: "Libertum",
@@ -22,13 +21,13 @@ export default function RootLayout({
         <link rel="preconnect" href="https://cdn.ad360.media" />
       </head>
 
-      <Web3ModalProvider>
+    <ContractProvider>
         <body id="body">
           <NavBar />
           {children}
           <Footer />
         </body>
-      </Web3ModalProvider>
+    </ContractProvider>
 
       <Script
         defer

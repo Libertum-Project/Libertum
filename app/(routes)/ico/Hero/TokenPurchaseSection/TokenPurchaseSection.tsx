@@ -1,6 +1,7 @@
 "use client";
 import { type ReactElement } from "react";
 import { useState, useEffect, ChangeEvent } from "react";
+import { BuyButton } from "./BuyButton";
 import Image from "next/image";
 import css from "./TokenPurchaseSection.module.css";
 import info from "./info.svg";
@@ -9,35 +10,31 @@ import usd from "./USD_input.svg";
 
 export function TokenPurchaseSection(): ReactElement {
   const LBM_PRICE: number = 0.066;
+  const MIN_USD: number = 50;
+  const MIN_LBM: number = parseFloat((MIN_USD / LBM_PRICE).toFixed(1));
 
-  const [lbmAmount, setLbmAmount] = useState<number>(758.6);
-  const [usdAmount, setUsdAmount] = useState<number>(50);
-  const [tooltipVisible, setTooltipVisible] = useState<boolean>(false);
+  const [lbmAmount, setLbmAmount] = useState<number>(MIN_LBM);
+  const [usdAmount, setUsdAmount] = useState<number>(MIN_USD);
 
   const handleLbmInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const inputLbmValue = parseFloat(event.target.value);
     setLbmAmount(inputLbmValue);
     setUsdAmount(parseFloat((inputLbmValue * LBM_PRICE).toFixed(3)));
-    setTooltipVisible(false);
   };
 
   const handleUsdInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const inputUsdValue = parseFloat(event.target.value);
     setUsdAmount(inputUsdValue);
     setLbmAmount(parseFloat((inputUsdValue / LBM_PRICE).toFixed(1)));
-    setTooltipVisible(false);
   };
 
   const handleRangeChange = (event: ChangeEvent<HTMLInputElement>) => {
     const inputUsdValue = parseFloat(event.target.value) || 0;
     setUsdAmount(inputUsdValue);
     setLbmAmount(parseFloat((inputUsdValue / LBM_PRICE).toFixed(1)));
-    setTooltipVisible(false);
   };
 
   useEffect(() => {
-    setTooltipVisible(usdAmount < 50);
-
     if (usdAmount <= 0) {
       setUsdAmount(50);
       setLbmAmount(parseFloat((50 / LBM_PRICE).toFixed(1)));
@@ -112,21 +109,13 @@ export function TokenPurchaseSection(): ReactElement {
           />
           <div>
             <Image src={usd} alt="USD" width={25} height={25} />
-            <p>$ USD</p>
+            <p>USDC.e</p>
           </div>
         </div>
       </div>
       <div className={css.purchaseButtons}>
-        <button
-          disabled={usdAmount < 50}
-          title={
-            tooltipVisible
-              ? "To participate, the USDC Amount must be at least $50. Please enter a valid amount."
-              : undefined
-          }
-        >
-          Buy Now
-        </button>
+        <BuyButton  lbmAmount={lbmAmount} usdAmount={usdAmount}/>
+
         <a href="#">Buy USDC.e</a>
       </div>
     </article>
