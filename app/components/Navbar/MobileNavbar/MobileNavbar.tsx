@@ -43,7 +43,9 @@ export function MobileNavbar(): ReactElement {
           )}
         </div>
       </nav>
-      {isMenuOpen && <MobileModal />}
+      {isMenuOpen && (
+        <MobileModal handleToggleOpenMenu={handleToggleOpenMenu} />
+      )}
     </>
   );
 }

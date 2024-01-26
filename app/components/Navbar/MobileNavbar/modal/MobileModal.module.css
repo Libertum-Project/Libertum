@@ -6,7 +6,7 @@
   left: 0;
   z-index: 99999;
   background: rgba(8, 9, 21, 0.99);
-  height: calc(100vh - 89.7px );
+  height: calc(100vh - 89.7px);
   min-height: 710px;
 }
 
@@ -33,7 +33,7 @@
   margin: 0;
   width: 100%;
   display: block;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   box-sizing: border-box;
 }
 
@@ -43,44 +43,16 @@
 }
 
 .border {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.20);
-  border-top: 1px solid rgba(255, 255, 255, 0.20);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.mobileModal div a{
+.mobileModal div a {
   padding-left: 2rem;
 }
 
-.mobileModal button {
-  display: flex;
-  width: calc(100% - 2rem);
-  padding: 8px 16px;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 5px;
-  border: 1px solid #00b3b5;
-  background: rgba(0, 179, 181, 0.3);
-  backdrop-filter: blur(5px);
-  color: #fff;
-  text-align: center;
-  font-family: Space Grotesk;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 150%;
-  cursor: pointer;
-  margin: 2rem 1rem;
-  box-sizing: border-box;
-  text-align: left;
-}
-
-.mobileModal button div {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  gap: .5rem;
-}
-
-.mobileModal button div p {
-  padding: 0;
+@media (min-width: 950px) {
+  .mobileModalContainer {
+    display: none;
+  }
 }

@@ -1,11 +1,15 @@
 import { type ReactElement } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import css from "./MobileModal.module.css";
-import leftArrow from "../../leftArrow.svg";
-import wallet from "../../wallet.svg";
+import { ConnectWalletButton } from "../../WalletComponents/ConnectWalletButton";
 
-export function MobileModal(): ReactElement {
+interface MobileModalProp {
+  handleToggleOpenMenu: () => void;
+}
+
+export function MobileModal({
+  handleToggleOpenMenu,
+}: MobileModalProp): ReactElement {
   return (
     <div className={css.mobileModalContainer}>
       <div className={css.mobileModal}>
@@ -30,18 +34,7 @@ export function MobileModal(): ReactElement {
           <Link href="#">→ White Paper</Link>
           <Link href="#">→ Pitch Deck</Link>
         </div>
-        <button>
-          <div>
-            <Image alt="Wallet" src={wallet} width={16} height={16} />
-            <p>Connect Wallet</p>
-          </div>
-          <Image
-            alt="left arrow"
-            src={leftArrow}
-            width={13.207}
-            height={8.708}
-          />
-        </button>
+        <ConnectWalletButton handleToggleOpenMenu={handleToggleOpenMenu} />
       </div>
     </div>
   );

@@ -5,10 +5,9 @@ import Link from "next/link";
 import Image from "next/image";
 import css from "./DesktopNavbar.module.css";
 import logo from "@/public/horizontal-logo.svg";
-import leftArrow from "../leftArrow.svg";
-import wallet from "../wallet.svg";
 import { LearnModal } from "./modals/LearnModal";
 import { DocsModal } from "./modals/DocsModal";
+import { ConnectWalletButton } from "../WalletComponents/ConnectWalletButton";
 
 export function DesktopNavbar(): ReactElement {
   const [isLearnModalVisible, setIsLearnModalVisible] = useState(false);
@@ -55,16 +54,7 @@ export function DesktopNavbar(): ReactElement {
           >
             Docs ↓
           </a>
-          <button>
-            <Image alt="Wallet" src={wallet} width={16} height={16} />
-            Connect Wallet{" "}
-            <Image
-              alt="left arrow"
-              src={leftArrow}
-              width={13.207}
-              height={8.708}
-            />
-          </button>
+          <ConnectWalletButton />
         </div>
       </nav>
       {isLearnModalVisible && (
