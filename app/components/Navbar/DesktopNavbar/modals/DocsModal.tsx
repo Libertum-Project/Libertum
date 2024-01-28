@@ -49,7 +49,7 @@ export function DocsModal({
             </Link>
           </div>
           <div>
-            <Link href="#">
+            <Link href= "/whitepaperLibertum.pdf" target="_blank">            
               <Image
                 src={whitePaper}
                 alt="Property Owner"

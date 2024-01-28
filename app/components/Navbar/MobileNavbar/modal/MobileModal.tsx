@@ -31,7 +31,7 @@ export function MobileModal({
         <div>
           <p>Docs</p>
           <Link href="/comingsoon">→ Token Utility</Link>
-          <Link href="/comingsoon">→ White Paper</Link>
+          <Link href="/whitepaperLibertum.pdf" target="_blank">→ White Paper</Link>
           <Link href="/comingsoon">→ Pitch Deck</Link>
         </div>
         <ConnectWalletButton handleToggleOpenMenu={handleToggleOpenMenu} />
