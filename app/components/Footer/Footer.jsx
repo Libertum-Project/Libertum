@@ -39,7 +39,7 @@ const Footer = () => {
     },
     {
       name: "Docs",
-      href: "/comingsoon",
+      href: "/",
       section: "Support",
     },
     {
