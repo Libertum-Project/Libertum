@@ -15,6 +15,7 @@ export function DesktopNavbar(): ReactElement {
 
   const handleShowLearnModal = () => {
     setIsLearnModalVisible(true);
+    setIsDocsModalVisible(false);
   };
 
   const handleHideLearnModal = () => {
@@ -23,6 +24,7 @@ export function DesktopNavbar(): ReactElement {
 
   const handleShowDocsModal = () => {
     setIsDocsModalVisible(true);
+    setIsLearnModalVisible(false);
   };
 
   const handleHideDocsModal = () => {
