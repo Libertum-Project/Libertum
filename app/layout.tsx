@@ -3,6 +3,7 @@ import Script from "next/script";
 import Footer from "./components/Footer/Footer";
 import { NavBar } from "./components/Navbar/NavBar";
 import ContractProvider from "../context/ContractProvider.js";
+import MessageBox from "./components/MessageBox/MessageBox";
 
 export const metadata = {
   title: "Libertum",
@@ -23,6 +24,7 @@ export default function RootLayout({
 
     <ContractProvider>
         <body id="body">
+          <MessageBox />
           <NavBar />
           {children}
           <Footer />
