@@ -7,17 +7,17 @@ import whitePaper from "./whitePaper.svg";
 import pitchDeck from "./pitchDeck.svg";
 
 interface DocsModalProps {
-  handleHideDocsModal: () => void;
+  handleHideModals: () => void;
 }
 
 export function DocsModal({
-  handleHideDocsModal,
+  handleHideModals,
 }: DocsModalProps): ReactElement {
   return (
     <div
       className={css.navModalContainer}
-      onMouseLeave={handleHideDocsModal}
-      onTouchEnd={handleHideDocsModal}
+      onMouseLeave={handleHideModals}
+      onTouchEnd={handleHideModals}
     >
       <div className={css.navModal}>
         <div className={css.modalHeader}>
