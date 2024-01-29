@@ -57,3 +57,10 @@
     max-width: 1202px;
   }
 }
+
+@media (min-width: 1300px) {
+  .desktopNavbar a img {
+    transform: scale(1.3);
+    margin-left: 1.4rem;
+  }
+}
