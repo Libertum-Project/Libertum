@@ -3,6 +3,7 @@ import Image from "next/image";
 import SocialMedia from "./SocialMedia";
 import css from "./Footer.module.css";
 import background from "./background.svg";
+import Subscribe from "./Subscribe";
 
 const Footer = () => {
   const navigation = [
@@ -106,10 +107,16 @@ const Footer = () => {
                 ))}
               </div>
             </section>
-
+            <Link href="/subscribe">
             <div className={css.footerButton}>
+              
               Explore More Investment Opportunities Now
             </div>
+            </Link>
+
+            {/* <div>
+              <Subscribe />
+            </div> */}
           </div>
         </div>
         <div className={css.footerCopyright}>
