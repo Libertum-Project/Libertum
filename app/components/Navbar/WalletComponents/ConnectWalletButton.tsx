@@ -15,23 +15,18 @@ import ContractContext from "@/context/ContractContext";
 export function ConnectWalletButton({
   handleToggleOpenMenu,
 }: any): ReactElement {
-  const { open, close } = useWeb3Modal();
+  const { open } = useWeb3Modal();
   const { isConnected, address, chainId } = useWeb3ModalAccount();
-  const { open: openState, selectedNetworkId } = useWeb3ModalState();
+  const { selectedNetworkId } = useWeb3ModalState();
   const { switchToPolygonMainnet } = useContext(ContractContext);
 
   const handleCloseModal = () => {
     handleToggleOpenMenu && handleToggleOpenMenu();
   };
 
-  const handleConnectWallet = async () => {
+  const handleConnectWallet = () => {
     if (isConnected && chainId !== 137) {
-      close();
       switchToPolygonMainnet();
-     
-        if (!openState) {
-        await open({ view: "Networks" });
-        }
     } else {
       open();
     }
@@ -49,7 +44,7 @@ export function ConnectWalletButton({
       suppressHydrationWarning
       onClick={handleCloseModal}
     >
-      {!isConnected || (isConnected && chainId !== 137) ? (
+      {!isConnected ? (
         <button
           className={css.connectWalletButton}
           onClick={handleConnectWallet}
@@ -66,8 +61,9 @@ export function ConnectWalletButton({
           />
         </button>
       ) : (
-        <div className={css.w3mBtn}>
+        <div className={css.w3mBtn} onClick={handleConnectWallet}>
           <w3m-account-button balance="hide" />
+          <w3m-network-button />
         </div>
       )}
     </div>
