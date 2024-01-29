@@ -79,4 +79,8 @@
     flex: 2;
     justify-content: space-between;
   }
+
+  .w3mBtn {
+    position: unset;
+  }
 }

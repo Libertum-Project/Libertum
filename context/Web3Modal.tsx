@@ -4,7 +4,7 @@ import { createWeb3Modal, defaultConfig } from "@web3modal/ethers/react";
 
 const projectId = process.env.NEXT_PUBLIC_PROJECT_ID || "";
 
-const mainnet = {
+const polygon = {
   chainId: 137,
   name: "Polygon",
   currency: "MATIC",
@@ -12,16 +12,25 @@ const mainnet = {
   rpcUrl: "https://polygon-rpc.com",
 };
 
+const ethereum = {
+  chainId: 1,
+  name: 'Ethereum',
+  currency: 'ETH',
+  explorerUrl: 'https://etherscan.io',
+  rpcUrl: 'https://cloudflare-eth.com'
+}
+
 const metadata = {
-  name: "My Website",
-  description: "My Website description",
-  url: "https://mywebsite.com",
-  icons: ["https://avatars.mywebsite.com/"],
+  name: "Libertum",
+  description: "Libertum",
+  url: "https://libertum.io",
+  icons: [""],
 };
 
 createWeb3Modal({
   ethersConfig: defaultConfig({ metadata }),
-  chains: [mainnet],
+  chains: [polygon, ethereum],
+  defaultChain: polygon,
   projectId,
 });
 
