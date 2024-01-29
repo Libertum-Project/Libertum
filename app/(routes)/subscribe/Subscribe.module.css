@@ -1,0 +1,84 @@
+.inputGroup {
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
+    font-family: var(--font-primary);
+  }
+  
+  .input {
+    min-height: 50px;
+    max-height: 50px;
+    /* max-width: 150px; */
+    width: 500px;
+    height: 100%;
+    padding: 0 1rem;
+    color: #fff;
+    font-size: 15px;
+    border: 1px solid var(--color-secondary);
+    border-radius: 6px 0 0 6px;
+    background-color: transparent;
+  }
+  
+  .buttonSubmit {
+    min-height: 52px;
+    max-height: 52px;
+    height: 100%;
+    padding: .5em 1em;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    background-color: var(--color-secondary);
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+  }
+  
+  .buttonSubmit:hover {
+    background-color: var(--color-secondary);
+  }
+  
+  .input:focus, .input:focus-visible {
+    border-color: var(--color-secondary);
+    outline: none;
+  }
+  
+.errorMessage{
+    margin-top: 1rem;
+    color: red !important;
+    font-size: 7px;
+}
+
+.successMessage{
+    margin-top: 1rem;
+    color: green;
+    font-size: 7px;
+}
+
+
+.button{
+    display: flex;
+    padding: 8px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+    border-radius: 5px;
+    background: var(--color-secondary);
+    border: 1px solid transparent;
+}
+
+.button p {
+    color: #000000;
+    font-family: var(--font-primary);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+
+@media screen and (max-width: 780px) {
+    .input{
+        width: 100%;
+    }
+}

@@ -69,4 +69,4 @@ export function DocsModal({
       </div>
     </div>
   );
-}
+};

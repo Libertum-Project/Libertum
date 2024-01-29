@@ -77,13 +77,13 @@ const Footer = () => {
               />
             </Link>
             <p className={css.firstColInformation}>
-              15 CRAMMAVILL STREET <br />
-              GRAYS <br />
-              ENGLAND <br />
+              15 Crammavill Street<br />
+              Grays <br />
+              England <br />
               RM16 2AP
             </p>
-            <p className={css.firstColContact}>contact@libertum.io</p>
-            <p className={css.firstColContact}>0000 000 0000</p>
+            <p className={css.firstColContact}>hello@libertum.io</p>
+            <p className={css.firstColContact}>14638562</p>
             <div>
               <SocialMedia />
             </div>
