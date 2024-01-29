@@ -7,15 +7,15 @@ import propertyOwner from "./propertyOwner.svg";
 import tokenization from "./tokenization.svg";
 
 interface LearnModalProps {
-  handleHideModal: () => void;
+  handleHideModals: () => void;
 }
 
-export function LearnModal({ handleHideModal }: LearnModalProps): ReactElement {
+export function LearnModal({ handleHideModals }: LearnModalProps): ReactElement {
   return (
     <div
       className={css.navModalContainer}
-      onMouseLeave={handleHideModal}
-      onTouchEnd={handleHideModal}
+      onMouseLeave={handleHideModals}
+      onTouchEnd={handleHideModals}
     >
       <div className={css.navModal}>
         <div className={css.modalHeader}>

@@ -15,6 +15,7 @@ export function DesktopNavbar(): ReactElement {
 
   const handleShowLearnModal = () => {
     setIsLearnModalVisible(true);
+    setIsDocsModalVisible(false);
   };
 
   const handleHideLearnModal = () => {
@@ -23,22 +24,40 @@ export function DesktopNavbar(): ReactElement {
 
   const handleShowDocsModal = () => {
     setIsDocsModalVisible(true);
+    setIsLearnModalVisible(false);
   };
 
-  const handleHideDocsModal = () => {
+  const handleHideModals = () => {
     setIsDocsModalVisible(false);
+    setIsLearnModalVisible(false);
   };
 
   return (
     <>
       <nav className={css.desktopNavbar}>
-        <Link href={"./"}>
+        <Link
+          href={"./"}
+          onMouseEnter={handleHideModals}
+          onTouchStart={handleHideModals}
+        >
           <Image src={logo} alt="libertum logo" width="140.727" height="18" />
         </Link>
 
         <div className={css.links}>
-          <Link href="./ico">Buy LBM</Link>
-          <a href="/comingsoon">Explore Properties</a>
+          <Link
+            href="./ico"
+            onMouseEnter={handleHideModals}
+            onTouchStart={handleHideModals}
+          >
+            Buy LBM
+          </Link>
+          <a
+            href="/comingsoon"
+            onMouseEnter={handleHideModals}
+            onTouchStart={handleHideModals}
+          >
+            Explore Properties
+          </a>
           <a
             href="/comingsoon"
             onMouseEnter={handleShowLearnModal}
@@ -46,7 +65,13 @@ export function DesktopNavbar(): ReactElement {
           >
             Learn ↓
           </a>
-          <a href="/community">Community</a>
+          <a
+            href="/community"
+            onMouseEnter={handleHideModals}
+            onTouchStart={handleHideModals}
+          >
+            Community
+          </a>
           <a
             href="/comingsoon"
             onMouseEnter={handleShowDocsModal}
@@ -54,16 +79,16 @@ export function DesktopNavbar(): ReactElement {
           >
             Docs ↓
           </a>
-          <ConnectWalletButton />
+          <div onMouseEnter={handleHideModals} onTouchStart={handleHideModals}>
+            <ConnectWalletButton />
+          </div>
         </div>
       </nav>
       {isLearnModalVisible && (
-        <LearnModal handleHideModal={handleHideLearnModal} />
+        <LearnModal handleHideModals={handleHideModals} />
       )}
 
-      {isDocsModalVisible && (
-        <DocsModal handleHideDocsModal={handleHideDocsModal} />
-      )}
+      {isDocsModalVisible && <DocsModal handleHideModals={handleHideModals} />}
     </>
   );
 }
