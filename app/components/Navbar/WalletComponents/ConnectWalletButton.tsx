@@ -1,5 +1,5 @@
 "use client";
-import { type ReactElement } from "react";
+import { useContext, type ReactElement } from "react";
 import { useEffect } from "react";
 import {
   useWeb3Modal,
@@ -10,19 +10,28 @@ import Image from "next/image";
 import leftArrow from "./leftArrow.svg";
 import wallet from "./wallet.svg";
 import css from "./WalletComponents.module.css";
+import ContractContext from "@/context/ContractContext";
 
 export function ConnectWalletButton({
   handleToggleOpenMenu,
 }: any): ReactElement {
   const { open, close } = useWeb3Modal();
   const { isConnected, address, chainId } = useWeb3ModalAccount();
-  const { selectedNetworkId } = useWeb3ModalState();
+  const { open: openState, selectedNetworkId } = useWeb3ModalState();
+  const { switchToPolygonMainnet } = useContext(ContractContext);
 
-  const handleConnectWallet = () => {
+  const handleCloseModal = () => {
     handleToggleOpenMenu && handleToggleOpenMenu();
+  };
+
+  const handleConnectWallet = async () => {
     if (isConnected && chainId !== 137) {
       close();
       switchToPolygonMainnet();
+     
+        if (!openState) {
+        await open({ view: "Networks" });
+        }
     } else {
       open();
     }
@@ -31,60 +40,15 @@ export function ConnectWalletButton({
   useEffect(() => {
     if (isConnected) {
       switchToPolygonMainnet();
-    } else {
     }
   }, [isConnected, address, selectedNetworkId]);
 
-  function isEthereumWithRequest(obj: any): obj is {
-    request: (args: { method: string; params?: any[] }) => Promise<any>;
-  } {
-    return obj && typeof obj.request === "function";
-  }
-
-  const switchToPolygonMainnet = async () => {
-    const polygonMainnetData = {
-      chainId: "0x89", // 137
-      chainName: "Polygon Mainnet",
-      nativeCurrency: {
-        name: "Matic",
-        symbol: "MATIC",
-        decimals: 18,
-      },
-      rpcUrls: ["https://rpc-mainnet.maticvigil.com/"],
-      blockExplorerUrls: ["https://polygonscan.com/"],
-    };
-
-    if (isEthereumWithRequest(window.ethereum)) {
-      try {
-        await window.ethereum.request({
-          method: "wallet_switchEthereumChain",
-          params: [{ chainId: polygonMainnetData.chainId }],
-        });
-      } catch (error) {
-        if ((error as any).code === 4902) {
-          try {
-            await window.ethereum.request({
-              method: "wallet_addEthereumChain",
-              params: [polygonMainnetData],
-            });
-          } catch (addError) {
-            console.error("Error adding Polygon Mainnet:", addError);
-          }
-        } else {
-          console.error("Error switching to Polygon Mainnet:", error);
-        }
-      }
-    }
-  };
-
-  //<w3m-account-button />
-
-  if (isConnected && chainId !== 137) {
-    switchToPolygonMainnet();
-  }
-
   return (
-    <div className={css.connectWalletButtonContainer} suppressHydrationWarning>
+    <div
+      className={css.connectWalletButtonContainer}
+      suppressHydrationWarning
+      onClick={handleCloseModal}
+    >
       {!isConnected || (isConnected && chainId !== 137) ? (
         <button
           className={css.connectWalletButton}
@@ -102,7 +66,9 @@ export function ConnectWalletButton({
           />
         </button>
       ) : (
-        <w3m-account-button balance="hide" />
+        <div className={css.w3mBtn}>
+          <w3m-account-button balance="hide" />
+        </div>
       )}
     </div>
   );
