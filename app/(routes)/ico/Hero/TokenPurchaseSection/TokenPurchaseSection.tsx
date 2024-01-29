@@ -9,7 +9,7 @@ import libertum from "./libertum_input.svg";
 import usd from "./USDC.svg";
 
 export function TokenPurchaseSection(): ReactElement {
-  const LBM_PRICE: number = 0.06;
+  const LBM_PRICE: number = 0.066;
   const MIN_USD: number = 50;
   const MIN_LBM: number = parseFloat((MIN_USD / LBM_PRICE).toFixed(1));
 
@@ -57,7 +57,7 @@ export function TokenPurchaseSection(): ReactElement {
       <div className={css.purchaseInfo}>
         <div>
           <p className={css.tittle}>Upcoming Public Round 1</p>
-          <span>MIDNIGHT 19 FEB 2024</span>
+          <span>MONDAY 19 FEB 2024</span>
         </div>
         <p>
           We do the math in real-time, simply input your amount in your desired

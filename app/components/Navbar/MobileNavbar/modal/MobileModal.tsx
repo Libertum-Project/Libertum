@@ -30,9 +30,9 @@ export function MobileModal({
         </Link>
         <div>
           <p>Docs</p>
-          <Link href="/comingsoon">→ Token Utility</Link>
+          <Link  href= "/Libertum_Tokenomics.pdf" target="_blank">→ Token Utility</Link>
           <Link href="/whitepaperLibertum.pdf" target="_blank">→ White Paper</Link>
-          <Link href="/comingsoon">→ Pitch Deck</Link>
+          <Link href= "/Libertum_Pitch.pdf" target="_blank">→ Pitch Deck</Link>
         </div>
         <ConnectWalletButton handleToggleOpenMenu={handleToggleOpenMenu} />
       </div>
