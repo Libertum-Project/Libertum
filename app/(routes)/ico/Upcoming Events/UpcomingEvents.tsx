@@ -13,7 +13,7 @@ export function UpcomingEvents(): ReactElement {
             <div className={css.eventItem}>
               <div className={css.eventTitle}>
                 <p className={css.tittle}>Public Round 1</p>
-                <span>MIDNIGHT 19 FEB 2024</span>
+                <span>MONDAY 19 FEB 2024</span>
               </div>
               <div className={css.eventInfo}>
                 <div className={css.infoItem}>
@@ -22,11 +22,11 @@ export function UpcomingEvents(): ReactElement {
                 </div>
                 <div className={css.infoItem}>
                   <p className={css.infoLabel}>Starting price:</p>
-                  <span className={css.infoValue}>$0.06</span>
+                  <span className={css.infoValue}>$0.066</span>
                 </div>
                 <div className={css.infoItem}>
                   <p className={css.infoLabel}>Raise:</p>
-                  <span className={css.infoValue}>$432.000</span>
+                  <span className={css.infoValue}>$264,000</span>
                 </div>
               </div>
               <button className={css.buyButton}>Buy Now</button>

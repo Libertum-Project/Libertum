@@ -18,7 +18,7 @@ import realestateAgency from "./brands/realstateagency.svg";
 
 export function BrandCarrousel(): ReactElement {
   const brands = useMemo(
-    () => [aptos, aws, coinFluence, coinweb, googleForStartups, hotelCollection, hubspot, leonmisk, microsoft, plume, polygon, realestateAgency],
+    () => [aptos, aws, coinFluence, googleForStartups, hotelCollection, hubspot, leonmisk, microsoft, plume, polygon, realestateAgency],
     []
   );
 
