@@ -137,7 +137,7 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.inputContainer div {
+.inputContainer label {
   align-items: center;
   display: flex;
   justify-content: flex-start;
@@ -150,7 +150,7 @@
   box-sizing: border-box;
 }
 
-.inputContainer div p {
+.inputContainer label p {
   color: rgba(0, 0, 0, 0.8);
   font-size: 16px;
   font-family: var(--font-secondary);
@@ -233,7 +233,7 @@
     width: 50%;
   }
 
-  .inputContainer div {
+  .inputContainer label {
     width: 50%;
   }
 

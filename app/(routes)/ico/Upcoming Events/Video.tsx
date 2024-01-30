@@ -18,6 +18,7 @@ export function Video(): ReactElement {
       <Image
         src={isLoaded ? heavyImage : lightImage} 
         alt="video"
+        id="video"
         width={300}
         height={206}
         priority
