@@ -2,9 +2,7 @@
   position: relative;
   padding-top: 5rem;
   overflow: hidden;
-
 }
-
 .video {
   position: absolute;
   /* right: -65rem; */
@@ -13,7 +11,6 @@
   min-width: 100%;
   min-height: 100%;
 }
-
 .hero {
   padding: 5rem 1rem;
   max-width: 75.125rem;
@@ -27,7 +24,6 @@
   z-index: 99;
   box-sizing: border-box;
 }
-
 .hero .text {
   align-items: flex-start;
   display: flex;
@@ -39,7 +35,6 @@
   box-sizing: border-box;
   /* margin: 0 auto; */
 }
-
 .hero h1 {
   color: var(--color-quaternary);
   font-family: var(--font-primary);
@@ -50,7 +45,6 @@
   letter-spacing: -0.96px;
   /* margin: 0; */
 }
-
 .hero .paragraphs {
   align-items: center;
   display: flex;
@@ -58,7 +52,6 @@
   justify-content: center;
   gap: 1rem;
 }
-
 .hero .paragraphs p {
   color: var(--color-quaternary);
   font-family: var(--font-secondary);
@@ -69,7 +62,6 @@
   align-self: stretch;
   margin: 0;
 }
-
 .buttons{
   display: flex;
   width: 750px;
@@ -77,7 +69,6 @@
   align-items: flex-start;
   gap: 32px;
 }
-
 .button {    
   display: flex;
   width: 182px;
@@ -100,9 +91,7 @@
 }
 .buttons a{
   text-decoration: none;
-
 }
-
 /* .button:hover{
   display: flex;
   width: 182px;
@@ -124,7 +113,6 @@
   cursor: pointer;    
   flex: 1 0 0;
 } */
-
 .button1:hover{
   display: flex;
   width: 182px;
@@ -143,12 +131,12 @@
   font-weight: 700;
   line-height: 150%;
   cursor: pointer;    
-  }
+  flex: 1 0 0;
+}
 
 .button1{
   display: flex;
-  /* width: 182px; */
-  width: 100%;
+  width: 182px;
   padding: 8px 16px;
   justify-content: space-between;
   align-items: center;
@@ -165,7 +153,7 @@
   font-weight: 700;
   line-height: 150%;
   cursor: pointer;    
-  
+  flex: 1 0 0;
 }
 
 .buttonFrame{
@@ -174,26 +162,21 @@
   align-items: center;
   gap: 1rem;
 }
-
 /* @media (min-width: 1250px) {
   .hero {
     flex-direction: row;
     padding-top: 4.3125rem;
     padding-inline: 0;
   }
-
   .video {
     right: 0;
   }
 } */
-
-
 @media screen and (max-width:790px) {
   .buttons{
     flex-direction: column;
     width: 100%;
   }
-
   .buttons a{
     width: fill;
     text-decoration: none;
