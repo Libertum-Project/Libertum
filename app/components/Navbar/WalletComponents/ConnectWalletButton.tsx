@@ -1,10 +1,8 @@
 "use client";
 import { useContext, type ReactElement } from "react";
-import { useEffect } from "react";
 import {
   useWeb3Modal,
   useWeb3ModalAccount,
-  useWeb3ModalState,
 } from "@web3modal/ethers/react";
 import Image from "next/image";
 import leftArrow from "./leftArrow.svg";
@@ -16,8 +14,7 @@ export function ConnectWalletButton({
   handleToggleOpenMenu,
 }: any): ReactElement {
   const { open } = useWeb3Modal();
-  const { isConnected, address, chainId } = useWeb3ModalAccount();
-  const { selectedNetworkId } = useWeb3ModalState();
+  const { isConnected, chainId } = useWeb3ModalAccount();
   const { switchToPolygonMainnet } = useContext(ContractContext);
 
   const handleCloseModal = () => {
@@ -25,18 +22,12 @@ export function ConnectWalletButton({
   };
 
   const handleConnectWallet = () => {
-    if (isConnected && chainId !== 137) {
-      switchToPolygonMainnet();
-    } else {
       open();
-    }
   };
 
-  useEffect(() => {
-    if (isConnected) {
-      switchToPolygonMainnet();
-    }
-  }, [isConnected, address, selectedNetworkId]);
+  if (isConnected && chainId !== 137) {
+    switchToPolygonMainnet();
+  }
 
   return (
     <div
@@ -61,7 +52,7 @@ export function ConnectWalletButton({
           />
         </button>
       ) : (
-        <div className={css.w3mBtn} onClick={handleConnectWallet}>
+        <div className={css.w3mBtn}>
           <w3m-account-button balance="hide" />
           <w3m-network-button />
         </div>
