@@ -143,12 +143,12 @@
   font-weight: 700;
   line-height: 150%;
   cursor: pointer;    
-  flex: 1 0 0;
-}
+  }
 
 .button1{
   display: flex;
-  width: 182px;
+  /* width: 182px; */
+  width: 100%;
   padding: 8px 16px;
   justify-content: space-between;
   align-items: center;
@@ -165,7 +165,7 @@
   font-weight: 700;
   line-height: 150%;
   cursor: pointer;    
-  flex: 1 0 0;
+  
 }
 
 .buttonFrame{
