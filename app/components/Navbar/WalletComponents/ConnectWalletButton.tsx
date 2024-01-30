@@ -1,5 +1,5 @@
 "use client";
-import { useContext, type ReactElement } from "react";
+import { useContext, useState, useEffect, type ReactElement } from "react";
 import { useWeb3Modal, useWeb3ModalAccount } from "@web3modal/ethers/react";
 import Image from "next/image";
 import leftArrow from "./leftArrow.svg";
@@ -10,9 +10,14 @@ import ContractContext from "@/context/ContractContext";
 export function ConnectWalletButton({
   handleToggleOpenMenu,
 }: any): ReactElement {
+  const [isUserConnected, setIsUserConnected] = useState(false);
   const { open } = useWeb3Modal();
   const { isConnected, chainId } = useWeb3ModalAccount();
   const { switchToPolygonMainnet } = useContext(ContractContext);
+
+  useEffect(() => {
+    setIsUserConnected(isConnected);
+  }, [isConnected]);
 
   const handleCloseModal = () => {
     handleToggleOpenMenu && handleToggleOpenMenu();
@@ -29,10 +34,9 @@ export function ConnectWalletButton({
   return (
     <div
       className={css.connectWalletButtonContainer}
-      suppressHydrationWarning
       onClick={handleCloseModal}
     >
-      {!isConnected ? (
+      {!isUserConnected ? (
         <button
           className={css.connectWalletButton}
           onClick={handleConnectWallet}
