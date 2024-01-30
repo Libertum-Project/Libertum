@@ -3,6 +3,7 @@ import { type ReactElement } from "react";
 import { useState, useEffect, ChangeEvent } from "react";
 import { BuyButton } from "./BuyButton";
 import Image from "next/image";
+import Link from "next/link";
 import css from "./TokenPurchaseSection.module.css";
 import info from "./info.svg";
 import libertum from "./libertum_input.svg";
@@ -71,10 +72,10 @@ export function TokenPurchaseSection(): ReactElement {
               1 Libertum (LBM) <b>= {LBM_PRICE}</b> <span>USD</span>
             </p>
           </div>
-          <div className={css.moreInfoSection}>
+          <Link href="#video" scroll className={css.moreInfoSection}>
             <Image src={info} alt="info" width={16} height={16} />
             <span>View instructions</span>
-          </div>
+          </Link>
         </div>
         <input
           className={css.inputRange}
@@ -91,30 +92,32 @@ export function TokenPurchaseSection(): ReactElement {
         <div className={css.inputContainer}>
           <input
             type="number"
+            id="lbmAmountInput"
             value={lbmAmount}
             onChange={handleLbmInputChange}
             onBlur={handleBlur}
           />
-          <div>
+          <label htmlFor="lbmAmountInput">
             <Image src={libertum} alt="Libertum" width={25} height={25} />
             <p>Libertum (LBM)</p>
-          </div>
+          </label>
         </div>
         <div className={css.inputContainer}>
           <input
             type="number"
+            id="usdAmountInput"
             value={usdAmount}
             onChange={handleUsdInputChange}
             onBlur={handleBlur}
           />
-          <div>
+          <label htmlFor="usdAmountInput">
             <Image src={usd} alt="USD" width={25} height={25} />
             <p>USDC.e</p>
-          </div>
+          </label>
         </div>
       </div>
       <div className={css.purchaseButtons}>
-        <BuyButton  lbmAmount={lbmAmount} usdAmount={usdAmount}/>
+        <BuyButton lbmAmount={lbmAmount} usdAmount={usdAmount} />
 
         <a href="#">Buy USDC.e</a>
       </div>
