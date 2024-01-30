@@ -14,11 +14,11 @@ const polygon = {
 
 const ethereum = {
   chainId: 1,
-  name: 'Ethereum',
-  currency: 'ETH',
-  explorerUrl: 'https://etherscan.io',
-  rpcUrl: 'https://cloudflare-eth.com'
-}
+  name: "Ethereum",
+  currency: "ETH",
+  explorerUrl: "https://etherscan.io",
+  rpcUrl: "https://cloudflare-eth.com",
+};
 
 const metadata = {
   name: "Libertum",
@@ -32,6 +32,14 @@ createWeb3Modal({
   chains: [polygon, ethereum],
   defaultChain: polygon,
   projectId,
+  themeVariables: {
+    "--w3m-font-family": "Space Grotesk",  // Base font family
+    "--w3m-accent":"#00b3b5", // Accent color for buttons, icons, labels, etc.
+    "--w3m-color-mix": " #00b3b5", // The color that blends in with the default colors   
+    "--w3m-color-mix-strength": 10,  // Percentage on how much "--w3m-color-mix" should blend in
+    "--w3m-font-size-master": "8px",  // Base pixel size for fonts
+    "--w3m-border-radius-master": "8px",  // Base border radius for fonts
+  },
 });
 
 export function Web3ModalProvider({ children }: { children: React.ReactNode }) {
