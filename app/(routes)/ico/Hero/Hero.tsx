@@ -4,6 +4,7 @@ import Image from "next/image";
 import css from "./Hero.module.css";
 import checkbox from "./checkbox.svg";
 import shield from "./shield.png";
+import Link from "next/link";
 
 export function Hero(): ReactElement {
   return (
@@ -39,11 +40,28 @@ export function Hero(): ReactElement {
               <p>Voting on Corporate Social Responsibility Projects</p>
             </div>
           </div>
+
+            <Link href="/subscribe" className={css.button1}>
+              <div className={css.buttonFrame}>
+                <p>
+                    Get Involved
+                </p>
+              </div>
+                
+                <Image
+                alt="left arrow"
+                src="/assets/leftArrow.svg"
+                width={13.207}
+                height={8.708}
+            />          
+            </Link>
+
           <div className={css.auditInfo}>
             <p>
               <span>Audit</span> and <span>KYC</span> powered by
             </p>
             <Image src={shield} alt="shield" width={124} height={31} />
+
           </div>
         </article>
         <TokenPurchaseSection />
