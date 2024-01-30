@@ -1,9 +1,6 @@
 "use client";
 import { useContext, type ReactElement } from "react";
-import {
-  useWeb3Modal,
-  useWeb3ModalAccount,
-} from "@web3modal/ethers/react";
+import { useWeb3Modal, useWeb3ModalAccount } from "@web3modal/ethers/react";
 import Image from "next/image";
 import leftArrow from "./leftArrow.svg";
 import wallet from "./wallet.svg";
@@ -22,7 +19,7 @@ export function ConnectWalletButton({
   };
 
   const handleConnectWallet = () => {
-      open();
+    open();
   };
 
   if (isConnected && chainId !== 137) {
