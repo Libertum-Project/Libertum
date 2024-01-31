@@ -1,4 +1,4 @@
-import { ethers } from "ethers";
+import { Contract, getDefaultProvider } from "ethers";
 import pLBM_ABI from "../ABI/pLBM.json";
 const pLBM_address = process.env.NEXT_PUBLIC_pLBM_address;
 const stageTextMap = {
@@ -13,10 +13,10 @@ const stageTextMap = {
 
 export async function getCurrentSaleStage() {
   try {
-    const provider = new ethers.providers.JsonRpcProvider(
+    const provider = new getDefaultProvider(
       "https://polygon-mainnet.g.alchemy.com/v2/eYoj2pyMsQV15pjd0WADpjpY5TRJmucG"
     );
-    const contract = new ethers.Contract(pLBM_address, pLBM_ABI.abi, provider);
+    const contract = new Contract(pLBM_address, pLBM_ABI.abi, provider);
 
     const currentStageNumber = await contract.currentStage();
     const currentStageText = stageTextMap[currentStageNumber];
