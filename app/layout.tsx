@@ -3,7 +3,9 @@ import Script from "next/script";
 import Footer from "./components/Footer/Footer";
 import { NavBar } from "./components/Navbar/NavBar";
 import ContractProvider from "../context/ContractProvider.js";
+import { GoogleTagManager } from "@next/third-parties/google";
 import MessageBox from "./components/MessageBox/MessageBox";
+
 
 export const metadata = {
   title: "Libertum",
@@ -20,6 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="preconnect" href="https://cdn.ad360.media" />
+        <GoogleTagManager gtmId="GTM-WBK9FF4T" />
       </head>
 
     <ContractProvider>
@@ -27,6 +30,7 @@ export default function RootLayout({
           <MessageBox />
           <NavBar />
           {children}
+          <GoogleTagManager gtmId="GTM-WBK9FF4T" />
           <Footer />
         </body>
     </ContractProvider>
