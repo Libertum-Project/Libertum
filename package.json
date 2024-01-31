@@ -10,10 +10,11 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.12.1",
+    "@next/third-parties": "^14.1.0",
     "@web3modal/ethers": "^3.5.7",
     "axios": "^1.6.7",
     "ethers": "^6.10.0",
-    "next": "14.0.4",
+    "next": "^14.1.0",
     "react": "^18",
     "react-dom": "^18",
     "react-tweet": "^3.2.0"
