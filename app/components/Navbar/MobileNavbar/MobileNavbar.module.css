@@ -32,7 +32,7 @@
   cursor: pointer;
 }
 
-@media (min-width: 950px) {
+@media (min-width: 1000px) {
   .mobileNavBarContainer {
     display: none;
   }

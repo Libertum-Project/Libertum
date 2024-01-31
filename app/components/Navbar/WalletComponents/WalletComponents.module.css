@@ -2,6 +2,15 @@
   width: 100%;
 }
 
+.w3mBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 8rem;
+}
+
 .connectWalletButton {
   display: flex;
   width: calc(100% - 2rem);
@@ -36,7 +45,7 @@
   padding: 0;
 }
 
-@media (min-width: 950px) {
+@media (min-width: 1000px) {
   .connectWalletButtonContainer {
     width: auto;
   }
@@ -69,5 +78,10 @@
   .connectWalletButton div {
     flex: 2;
     justify-content: space-between;
+  }
+
+  .w3mBtn {
+    position: unset;
+    gap: 1rem;
   }
 }
