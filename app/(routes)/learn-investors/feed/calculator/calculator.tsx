@@ -7,15 +7,14 @@ export function Calculator(): ReactElement {
   const [propertyType, setPropertyType] = useState("");
   const [propertyTerm, setPropertyTerm] = useState("10");
   const [investment, setInvestment] = useState("1");
-  const [selectedOption, setSelectedOption] = useState("Monthly");
-  const [activeOption, setActiveOption] = useState("Monthly");
+  // const [selectedOption, setSelectedOption] = useState("Monthly");
+  // const [activeOption, setActiveOption] = useState("Monthly");
 
 
   const rentalYields = [0.04, 0.05, 0.06, 0.07];
 
   const calculateResults = () => {
     const isValidInput = !isNaN(parseFloat(propertyTerm)) && !isNaN(parseFloat(investment));
-  
     if (!isValidInput) {
       return [];
     }
@@ -23,30 +22,22 @@ export function Calculator(): ReactElement {
     const investmentValue = parseFloat(investment);
   
     const results = rentalYields.map((yieldPercentage) => {
-      let periods = parseFloat(propertyTerm);
-  
-      if (selectedOption === "Annual") {
-        periods = 12;
-      } else if (selectedOption === "FullTerm") {
-        periods = parseFloat(propertyTerm) * 12;
-      }
+      const periods = parseFloat(propertyTerm) * 12;
   
       const rent = (investmentValue * yieldPercentage) / 12 / 100;
       const capitalRepayment = (investmentValue * (1 + yieldPercentage / 100)) / periods;
       const monthlyRepayment = (investmentValue + capitalRepayment) / periods / 12;
   
-      return { rent, capitalRepayment, monthlyRepayment };
+      const annualRepayment = monthlyRepayment * 12;
+      const fullTermRepayment = monthlyRepayment * periods;
+  
+      return { rent, capitalRepayment, monthlyRepayment, annualRepayment, fullTermRepayment };
     });
   
     return results;
   };
 
 
-  // Función para manejar el cambio de opción
-  const handleOptionChange = (option: string): void => {
-    setSelectedOption(option);
-    setActiveOption(option);
-  };
   
   const handlePropertyTermChange = (term: string): void => {
     setPropertyTerm(term);
@@ -122,43 +113,29 @@ export function Calculator(): ReactElement {
 
       <div className={css.calculatorResults}>
 
-      <div className={css.calculatorOptions}>
-        <h3
-          className={`${css.option} ${activeOption === "Monthly" ? css.activeOption : ""}`}
-          onClick={() => handleOptionChange("Monthly")}
-        >
-          Monthly
-        </h3>
-        <h3
-          className={`${css.option} ${activeOption === "Annual" ? css.activeOption : ""}`}
-          onClick={() => handleOptionChange("Annual")}
-        >
-          Annual
-        </h3>
-        <h3
-          className={`${css.option} ${activeOption === "FullTerm" ? css.activeOption : ""}`}
-          onClick={() => handleOptionChange("FullTerm")}
-        >
-          Full Term
-        </h3>
-      </div>
-
         <div>
           <table className={css.table}>
             <thead>
               <tr>
-                <th>Rental Yield</th> <th>Rent</th> <th>Capital Repayment</th> <th>Monthly Repayment</th>
+                <th>Rental Yield</th>
+                <th>Rent</th>
+                <th>Capital Repayment</th>
+                <th>Monthly Repayment</th>
+                <th>Annual Repayment</th>
+                <th>Full Term</th>
               </tr>
             </thead>
             <tbody>
             {calculateResults().map((result, index: number) => (
-            <tr key={index}>
-              <td>{(rentalYields[index] * 100).toFixed(2)}%</td>
-              <td>{result.rent.toFixed(2)}</td>
-              <td>{result.capitalRepayment.toFixed(2)}</td>
-              <td>{result.monthlyRepayment.toFixed(2)}</td>
-            </tr>
-          ))}
+              <tr key={index}>
+                <td>{(rentalYields[index] * 100).toFixed(2)}%</td>
+                <td>{result.rent.toFixed(2)}</td>
+                <td>{result.capitalRepayment.toFixed(2)}</td>
+                <td>{result.monthlyRepayment.toFixed(2)}</td>
+                <td>{result.annualRepayment.toFixed(2)}</td>
+                <td>{result.fullTermRepayment.toFixed(2)}</td>
+              </tr>
+            ))}
             </tbody>
            
           </table>
