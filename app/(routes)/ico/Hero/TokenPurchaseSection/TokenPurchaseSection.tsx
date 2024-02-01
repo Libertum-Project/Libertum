@@ -19,11 +19,11 @@ export function TokenPurchaseSection(): ReactElement {
 
   useEffect(() => {
     async function getInfo() {
-      console.log(await getRemainingTokens("seed"));
-      console.log(await getRemainingTokens("whitelist"));
-      console.log(await getRemainingTokens("public"));
+      //console.log(await getRemainingTokens("seed"));
+      //console.log(await getRemainingTokens("whitelist"));
+      //console.log(await getRemainingTokens("public"));
       
-      //console.log(await getCurrentSaleStage());
+     // console.log(await getCurrentSaleStage());
       //console.log(await isPaused());
       
       //console.log(await getPrice("seed"));
