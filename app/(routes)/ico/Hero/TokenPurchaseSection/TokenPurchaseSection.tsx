@@ -1,6 +1,6 @@
 "use client";
 import { type ReactElement } from "react";
-import { useState, useEffect, ChangeEvent } from "react";
+import { useState, useEffect, ChangeEvent, useContext } from "react";
 import { BuyButton } from "./BuyButton";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,8 +8,31 @@ import css from "./TokenPurchaseSection.module.css";
 import info from "./info.svg";
 import libertum from "./libertum_input.svg";
 import usd from "./USDC.svg";
+import ContractContext from "@/context/ContractContext";
+import { getRemainingTokens } from "@/utils/smartContracts/pLBM/getRemainingTokens";
+import { getCurrentSaleStage } from "@/utils/smartContracts/pLBM/getCurrentSaleStage";
+import { isPaused } from "@/utils/smartContracts/pLBM/paused";
+import { getPrice } from "@/utils/smartContracts/pLBM/price";
 
 export function TokenPurchaseSection(): ReactElement {
+  const { updateContractInfo } = useContext(ContractContext);
+
+  useEffect(() => {
+    async function getInfo() {
+      //console.log(await getRemainingTokens("seed"));
+      //console.log(await getRemainingTokens("whitelist"));
+      //console.log(await getRemainingTokens("public"));
+      
+     // console.log(await getCurrentSaleStage());
+      //console.log(await isPaused());
+      
+      //console.log(await getPrice("seed"));
+      //console.log(await getPrice("whitelist"));
+      //console.log(await getPrice("public"));
+    }
+    getInfo();
+  }, [updateContractInfo]);
+
   const LBM_PRICE: number = 0.066;
   const MIN_USD: number = 50;
   const MIN_LBM: number = parseFloat((MIN_USD / LBM_PRICE).toFixed(1));

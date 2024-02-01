@@ -35,7 +35,7 @@ export function BuyButton({
   const provider = new BrowserProvider(walletProvider);
 
   const handleBuyTokens = async () => {
-    if (usdAmount > 50) {
+    if (usdAmount >= 50) {
       await buyTokens(
         provider,
         lbmAmount,
@@ -56,9 +56,8 @@ export function BuyButton({
   return (
     <button
       onClick={handleBuyTokens}
-      disabled
       title={
-        usdAmount < 50
+        usdAmount <= 50
           ? "To participate, the USDC Amount must be at least $50. Please enter a valid amount."
           : undefined
       }

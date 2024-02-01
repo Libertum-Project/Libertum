@@ -5,6 +5,7 @@ const ContractContext = createContext({
   updateContractInfo: false,
   setUpdateContractInfo: () => {},
   switchToPolygonMainnet: () => {},
+  switchToPolygonTestnet: () => {},
 });
 
 export default ContractContext;

@@ -1,48 +1,54 @@
-import { ethers } from "ethers";
+import { Contract } from "ethers";
 import pLBM_ABI from "../ABI/pLBM.json";
 import USDC_ABI from "../ABI/USDC.json";
-const USDC_address = process.env.NEXT_PUBLIC_USDC_address;
-const pLBM_address = process.env.NEXT_PUBLIC_pLBM_address;
+
+const isTest: boolean = process.env.NEXT_PUBLIC_IS_TEST === "true" || false;
+
+let pLBM_address: string;
+let USDC_address: string;
+
+let correctChainId: number;
+
+if (isTest) {
+  USDC_address = process.env.NEXT_PUBLIC_TEST_USDC_address!;
+  pLBM_address = process.env.NEXT_PUBLIC_TEST_pLBM_address!;
+  correctChainId = 80001;
+} else {
+  USDC_address = process.env.NEXT_PUBLIC_USDC_address!;
+  pLBM_address = process.env.NEXT_PUBLIC_pLBM_address!;
+  correctChainId = 137;
+}
 
 async function buyTokens(
-  provider,
-  lbmAmount,
-  setIsLoading,
-  setShowPendingMessage,
-  setShowFailMessage,
-  setErrorMessage,
-  setPolyScanURL,
-  setShowSuccessMessage,
-  setUpdateContractInfo,
-  setShowConnectToPolygonMessage,
-  isConnected,
-  chainId,
-) {
+  provider: any,
+  lbmAmount: number,
+  setIsLoading: (value: boolean) => void,
+  setShowPendingMessage: (value: boolean) => void,
+  setShowFailMessage: (value: boolean) => void,
+  setErrorMessage: (value: string) => void,
+  setPolyScanURL: (value: string) => void,
+  setShowSuccessMessage: (value: boolean) => void,
+  setUpdateContractInfo: (value: boolean) => void,
+  setShowConnectToPolygonMessage: (value: boolean) => void,
+  isConnected: boolean,
+  chainId: number | undefined,
+): Promise<void> {
   let transactionHash;
-  setErrorMessage(null);
-  setPolyScanURL(null);
+  setErrorMessage("");
+  setPolyScanURL("");
   try {
-    if (isConnected && chainId !== 137) {
-      setShowConnectToPolygonMessage(true)
-      return
+    if (isConnected && chainId !== correctChainId) {
+      setShowConnectToPolygonMessage(true);
+      return;
     }
-
     setIsLoading(true);
 
-    const signer = await provider.getSigner();
-    const pLBM_contract = new ethers.Contract(
-      pLBM_address,
-      pLBM_ABI.abi,
-      signer,
-    );
-    const USDC_contract = new ethers.Contract(
-      USDC_address,
-      USDC_ABI.abi,
-      signer,
-    );
+    const signer: any = await provider.getSigner();
+    const pLBM_contract: any = new Contract(pLBM_address, pLBM_ABI.abi, signer);
+    const USDC_contract: any = new Contract(USDC_address, USDC_ABI.abi, signer);
 
     const currentStage = await pLBM_contract.currentStage();
-    let price = null;
+    let price: number = 0;
 
     if (currentStage == 1) {
       price = 60_000;
@@ -73,7 +79,7 @@ async function buyTokens(
     setShowPendingMessage(false);
     setShowSuccessMessage(true);
     setUpdateContractInfo(true);
-  } catch (error) {
+  } catch (error: any) {
     if (
       error.message.includes("user rejected action") ||
       error.message.includes("user rejected transaction")
@@ -94,6 +100,7 @@ async function buyTokens(
     setIsLoading(false);
     setShowPendingMessage(false);
     setShowFailMessage(true);
+    throw new Error(`Failed to buy pLBM: ${error}`);
   }
 }
 
