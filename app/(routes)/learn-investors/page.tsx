@@ -5,6 +5,12 @@ import { GetReady } from "./getReady/getReady";
 import css from "./page.module.css"
 
 export default function page()  {
+
+    const handleClose = () => {
+        // Implement the logic for closing the ContactForm
+        console.log("Closing the form");
+      };
+
 return(
     <div>
     <Hero />
@@ -13,7 +19,7 @@ return(
 
     <div className={css.ContactFormcontainer}>
         <div className={css.contactForm}>
-            <ContactForm />
+            <ContactForm   onClose={handleClose}/>
         </div>
     </div>
     
