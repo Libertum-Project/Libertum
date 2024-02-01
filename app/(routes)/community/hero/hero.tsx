@@ -7,6 +7,12 @@ import { ContactForm } from "./contactForm/contactFrom";
 
 
 export function Hero(): ReactElement {
+
+  const handleClose = () => {
+    // Implement the logic for closing the ContactForm
+    console.log("Closing the form");
+  };
+
   return (
     <div className={css.heroContainer}>
       <video autoPlay muted loop className={css.video}>
@@ -23,7 +29,7 @@ export function Hero(): ReactElement {
         </div>
 
         <div>
-        <ContactForm />
+        <ContactForm onClose={handleClose}/>
         </div>
       </div>
     </div>
