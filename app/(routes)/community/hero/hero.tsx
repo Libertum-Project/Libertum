@@ -23,7 +23,7 @@ export function Hero(): ReactElement {
         </div>
 
         <div>
-        <ContactForm />
+        <ContactForm/>
         </div>
       </div>
     </div>

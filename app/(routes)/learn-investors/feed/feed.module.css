@@ -8,6 +8,36 @@
   /* align-items: self-end; */
 }
 
+.button{
+  margin: auto;
+  display: flex;
+  width: 228.667px;
+  padding: 16px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid #00B3B5;
+  background: #00B3B5;
+  backdrop-filter: blur(5px);
+}
+
+.buttonFrame{
+  display: flex;
+justify-content: center;
+align-items: center;
+gap: 8px;
+}
+
+.buttonFrame p {
+  color: #FFF;
+text-align: center;
+font-family: var(--font-primary);
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 150%; /* 24px */
+margin: 0;
+}
 
   @media screen and (min-width: 790px){
     .container {

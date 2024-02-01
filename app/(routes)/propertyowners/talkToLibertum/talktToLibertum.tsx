@@ -36,7 +36,7 @@ export function TalkToLibertum(): ReactElement {
             />          
             </Link>
 
-            <Link href="/" className={css.button2}>            
+            <Link href="/community" className={css.button2}>            
                 <p>
                    Chat with  us
                 </p>

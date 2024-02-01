@@ -5,6 +5,8 @@ import { GetReady } from "./getReady/getReady";
 import css from "./page.module.css"
 
 export default function page()  {
+
+
 return(
     <div>
     <Hero />

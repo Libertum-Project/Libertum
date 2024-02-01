@@ -6,12 +6,12 @@ import { Tags } from "./Tags";
 
 export function TagComponent() {
     const [isMobile, setIsMobile] = useState(false);
-    console.log("isMobile:", isMobile);
+    // console.log("isMobile:", isMobile);
 
     useEffect(() => {
         const mediaQuery = window.matchMedia("(max-width: 1100px)");
         const handleResize = () => {
-            console.log("Window width:", window.innerWidth);
+            // console.log("Window width:", window.innerWidth);
             setIsMobile(window.innerWidth <= 1100);
             setIsMobile(mediaQuery.matches)
         };
