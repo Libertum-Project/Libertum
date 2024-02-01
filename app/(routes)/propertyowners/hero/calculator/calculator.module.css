@@ -9,6 +9,7 @@
     border-radius: 5px;
     background: #FFF;
     box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.50);
+    max-width: 635px;
 }
 
 .container h2{
@@ -126,7 +127,22 @@
             font-weight: 400;
             line-height: 150%; /* 24px */
             letter-spacing: -0.32px;
+            cursor: pointer;
         }
+
+        .activeOption {
+            background: var(--color-secondary);
+            border: 1px solid var(--color-secondary);
+            box-shadow: 0px 0px 8px 0px rgba(185, 255, 226, 0.50) inset, 0px 0px 12px 4px rgba(0, 0, 0, 0.15);
+
+            color: #FFF;
+            font-family: var(--font-secondary);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 150%; /* 24px */
+            letter-spacing: -0.32px;
+          }
     }
 }
 

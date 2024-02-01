@@ -1,7 +1,8 @@
+'use client'
+import { useState } from "react";
 import css from "./infoSection.module.css";
 import Link from "next/link";
 import Image from "next/image";
-
 
 export default function InfoSection() {
   return(
@@ -25,7 +26,7 @@ export default function InfoSection() {
         </div>
       </div>
 
-      <Link href="/" className={css.button}>            
+      <Link href="/community" className={css.button} >            
                 <p>
                    Get in touch
                 </p>

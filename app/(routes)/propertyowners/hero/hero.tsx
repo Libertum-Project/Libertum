@@ -1,11 +1,23 @@
-import { type ReactElement } from "react";
+'use client'
+import { type ReactElement, useState } from "react";
 import Image from "next/image";
 import css from "./hero.module.css";
 import Link from "next/link";
 import { Calculator } from "./calculator/calculator";
+import ContactModal from "@/app/components/Contact/ContactModal";
 
 
 export function Hero(): ReactElement {
+
+  const [modalVisible, setModalVisible] = useState(false);
+  const openModal = () => {
+    setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setModalVisible(false);
+  };
+
   return (
     <div className={css.heroContainer}>
       <video autoPlay muted loop className={css.video}>
@@ -20,16 +32,17 @@ export function Hero(): ReactElement {
             </p>        
             <div className={css.frameButton}>
               <p>Ready to Tokenize your property?</p>
-              <button className={css.buttonOwners}>
+              <button className={css.buttonOwners} onClick={openModal}>
                 Get in touch
               </button>
+              {modalVisible && <ContactModal onClose={closeModal} />}
             </div>
           </div>
         </div>
 
-{/*         <div>
-        <Calculator />
-        </div> */}
+        <div>
+        {/* <Calculator /> */}
+        </div>
       </div>
     </div>
   );

@@ -9,12 +9,12 @@ const Footer = () => {
   const navigation = [
     {
       name: "Property Owners",
-      href: "/comingsoon",
+      href: "/propertyowners",
       section: "Navigation",
     },
     {
       name: "Investors",
-      href: "/comingsoon",
+      href: "/learn-investors",
       section: "Navigation",
     },
     {
@@ -29,7 +29,7 @@ const Footer = () => {
     },
     {
       name: "Privacy Policy",
-      href: "/comingsoon",
+      href: "/comingsoonn",
       section: "Support",
     },
     {

@@ -1,7 +1,65 @@
-import { type ReactElement } from "react";
+import { type ReactElement, useState, Key } from "react";
 import css from "./calculator.module.css";
 
 export function Calculator(): ReactElement {
+
+  const [propertyType, setPropertyType] = useState("");
+  const [propertyTerm, setPropertyTerm] = useState("10");
+  const [investment, setInvestment] = useState("1");
+  const [selectedOption, setSelectedOption] = useState("Monthly");
+  const [activeOption, setActiveOption] = useState("Monthly");
+
+
+  const rentalYields = [0.04, 0.05, 0.06, 0.07];
+
+  const calculateResults = () => {
+    const isValidInput = !isNaN(parseFloat(propertyTerm)) && !isNaN(parseFloat(investment));
+  
+    if (!isValidInput) {
+      return [];
+    }
+  
+    const investmentValue = parseFloat(investment);
+  
+    const results = rentalYields.map((yieldPercentage) => {
+      let periods = parseFloat(propertyTerm);
+  
+      if (selectedOption === "Annual") {
+        periods = 12;
+      } else if (selectedOption === "FullTerm") {
+        periods = parseFloat(propertyTerm) * 12;
+      }
+  
+      const rent = (investmentValue * yieldPercentage) / 12 / 100;
+      const capitalRepayment = (investmentValue * (1 + yieldPercentage / 100)) / periods;
+      const monthlyRepayment = (investmentValue + capitalRepayment) / periods / 12;
+  
+      return { rent, capitalRepayment, monthlyRepayment };
+    });
+  
+    return results;
+  };
+
+
+  // Función para manejar el cambio de opción
+  const handleOptionChange = (option: string): void => {
+    setSelectedOption(option);
+    setActiveOption(option);
+  };
+  
+  const handlePropertyTermChange = (term: string): void => {
+    setPropertyTerm(term);
+  };
+  
+  const handleInvestmentChange = (amount: string): void => {
+    const parsedAmount = parseFloat(amount);
+    if (!isNaN(parsedAmount) && parsedAmount <= 90000000) {      
+      setInvestment(amount);
+    } else {
+      console.log("Please enter a valid number less than or equal to 90 million.");
+    }
+  };
+
   return(
     <div className={css.container}>
       <h2>Funding Requirement Calculator</h2>
@@ -12,15 +70,33 @@ export function Calculator(): ReactElement {
           <label htmlFor="">Property Type</label>
           <select name="" id="" className={css.calculatorInputsSelect}>
             <option value="">Select a property type</option>
-            <option value="">commercial</option>
+            <option value="">Commercial</option>
+            <option value="">Industrial</option>
+            <option value="">Farm House</option>
+            <option value="">Hotels</option>
+            <option value="">Agriculture</option>
+            <option value="">Popular</option>
+            <option value="">Residential</option>
+            <option value="">Green /Sustainable</option>
+            <option value="">Deparment</option>
+            <option value="">Boat House</option>
           </select>
         </div>
 
         <div className={css.inputFrame}>
           <label htmlFor="">Property Term</label>
-          <select name="" id="" className={css.calculatorInputsSelect}>
-            <option value="">10</option>
-            <option value="">commercial</option>
+          <select
+            name=""
+            id=""
+            className={css.calculatorInputsSelect}
+            onChange={(e) => handlePropertyTermChange(e.target.value)}
+            value={propertyTerm}
+          >
+            <option value="1">1</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
           </select>
         </div>
 
@@ -32,21 +108,40 @@ export function Calculator(): ReactElement {
             <option value="">USD</option>
           </select>
 
-          <input type="number" />            
+          <input
+              type="number"
+              onChange={(e) => handleInvestmentChange(e.target.value)}
+              value={investment}
+            />         
           </div>
           
         </div>
 
       </div>
 
-
       <div className={css.calculatorResults}>
 
-        <div className={css.calculatorOptions}>
-          <h3 className={css.option}>Monthly</h3>
-          <h3 className={css.option}>Annual</h3>
-          <h3 className={css.option}>Full Term</h3>
-        </div>
+      <div className={css.calculatorOptions}>
+        <h3
+          className={`${css.option} ${activeOption === "Monthly" ? css.activeOption : ""}`}
+          onClick={() => handleOptionChange("Monthly")}
+        >
+          Monthly
+        </h3>
+        <h3
+          className={`${css.option} ${activeOption === "Annual" ? css.activeOption : ""}`}
+          onClick={() => handleOptionChange("Annual")}
+        >
+          Annual
+        </h3>
+        <h3
+          className={`${css.option} ${activeOption === "FullTerm" ? css.activeOption : ""}`}
+          onClick={() => handleOptionChange("FullTerm")}
+        >
+          Full Term
+        </h3>
+      </div>
+
         <div>
           <table className={css.table}>
             <thead>
@@ -54,40 +149,23 @@ export function Calculator(): ReactElement {
                 <th>Rental Yield</th> <th>Rent</th> <th>Capital Repayment</th> <th>Monthly Repayment</th>
               </tr>
             </thead>
-            <tr>
-              <td>4%</td>
-              <td>33,3</td>
-              <td>83,33</td>
-              <td>116,67</td>
+            <tbody>
+            {calculateResults().map((result, index: number) => (
+            <tr key={index}>
+              <td>{(rentalYields[index] * 100).toFixed(2)}%</td>
+              <td>{result.rent.toFixed(2)}</td>
+              <td>{result.capitalRepayment.toFixed(2)}</td>
+              <td>{result.monthlyRepayment.toFixed(2)}</td>
             </tr>
-
-            <tr>
-              <td>5%</td>
-              <td>33,3</td>
-              <td>83,33</td>
-              <td>116,67</td>
-            </tr>
-
-            <tr>
-              <td>6%</td>
-              <td>33,3</td>
-              <td>83,33</td>
-              <td>116,67</td>
-            </tr>
-
-            <tr>
-              <td>7%</td>
-              <td>33,3</td>
-              <td>83,33</td>
-              <td>116,67</td>
-            </tr>
+          ))}
+            </tbody>
+           
           </table>
 
         </div>
 
-      </div>
-
-
     </div>
+    </div>
+
   )
 };
