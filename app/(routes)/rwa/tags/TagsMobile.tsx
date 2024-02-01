@@ -137,7 +137,7 @@ export function TagsMobile() {
 
   return (
     <div className={css.container}>
-    <h2 className={css.title}>Be part of the RWA Evolution. Today.</h2>
+    <h2 className={css.title}>Key Terms & Phrases</h2>
         <div className={css.options}>
           {options.map((option) => (
             <div key={option.id} className={css.tabPanel}>

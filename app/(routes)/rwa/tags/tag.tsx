@@ -11,7 +11,7 @@ export function TagComponent() {
     useEffect(() => {
         const mediaQuery = window.matchMedia("(max-width: 1100px)");
         const handleResize = () => {
-            console.log("Window width:", window.innerWidth);
+            // console.log("Window width:", window.innerWidth);
             setIsMobile(window.innerWidth <= 1100);
             setIsMobile(mediaQuery.matches)
         };

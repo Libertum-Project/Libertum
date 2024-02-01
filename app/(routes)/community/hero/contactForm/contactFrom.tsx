@@ -5,7 +5,12 @@ import css from "./contactForm.module.css"
 import emailjs from '@emailjs/browser';
 
 
-export function ContactForm(): ReactElement {
+interface ContactFormProps {
+  onClose: () => void;
+}
+
+
+export function ContactForm({ onClose }: ContactFormProps): ReactElement {
   const form = useRef<HTMLFormElement | null>(null);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
@@ -16,6 +21,7 @@ export function ContactForm(): ReactElement {
     .then((result) => {
         console.log(result.text);
         alert('Message sent successfully!');
+        onClose();
       }, (error) => {
         console.log(error.text);
         alert("Your message could not be sent. Please try again or email us at hello@libertum.io.")
