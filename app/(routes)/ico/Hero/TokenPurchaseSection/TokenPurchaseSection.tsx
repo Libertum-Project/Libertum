@@ -10,13 +10,15 @@ import libertum from "./libertum_input.svg";
 import usd from "./USDC.svg";
 import ContractContext from "@/context/ContractContext";
 import { getRemainingTokens } from "@/utils/smartContracts/pLBM/getRemainingTokens";
+import { getCurrentSaleStage } from "@/utils/smartContracts/pLBM/getCurrentSaleStage";
 
 export function TokenPurchaseSection(): ReactElement {
   const { updateContractInfo } = useContext(ContractContext);
 
   useEffect(() => {
     async function getInfo() {
-    console.log(await getRemainingTokens('seed'))
+      console.log(await getRemainingTokens("seed"));
+      console.log(await getCurrentSaleStage());
     }
     getInfo();
   }, [updateContractInfo]);
