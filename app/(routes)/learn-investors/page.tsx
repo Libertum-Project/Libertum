@@ -6,10 +6,6 @@ import css from "./page.module.css"
 
 export default function page()  {
 
-    const handleClose = () => {
-        // Implement the logic for closing the ContactForm
-        console.log("Closing the form");
-      };
 
 return(
     <div>
@@ -19,7 +15,7 @@ return(
 
     <div className={css.ContactFormcontainer}>
         <div className={css.contactForm}>
-            <ContactForm   onClose={handleClose}/>
+            <ContactForm />
         </div>
     </div>
     

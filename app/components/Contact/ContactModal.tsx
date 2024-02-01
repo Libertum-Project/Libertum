@@ -1,7 +1,7 @@
 'use client'
 import React, { useRef, useEffect } from 'react';
 import css from "./ContactModal.module.css"; 
-import { ContactForm } from "@/app/(routes)/community/hero/contactForm/contactFrom";
+import { ContactForm } from './contactForm';
 
 interface ContactModalProps {
     onClose: () => void;
