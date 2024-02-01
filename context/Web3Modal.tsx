@@ -1,5 +1,4 @@
 "use client";
-
 import { createWeb3Modal, defaultConfig } from "@web3modal/ethers/react";
 
 const projectId = process.env.NEXT_PUBLIC_PROJECT_ID || "";
