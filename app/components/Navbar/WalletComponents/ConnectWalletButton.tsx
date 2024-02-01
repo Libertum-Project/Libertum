@@ -7,13 +7,23 @@ import wallet from "./wallet.svg";
 import css from "./WalletComponents.module.css";
 import ContractContext from "@/context/ContractContext";
 
+const isTest: boolean = process.env.NEXT_PUBLIC_IS_TEST === "true" || false;
+let correctChainId: number;
+
+if (isTest) {
+  correctChainId = 80001;
+} else {
+  correctChainId = 137;
+}
+
 export function ConnectWalletButton({
   handleToggleOpenMenu,
 }: any): ReactElement {
   const [isUserConnected, setIsUserConnected] = useState(false);
   const { open } = useWeb3Modal();
   const { isConnected, chainId } = useWeb3ModalAccount();
-  const { switchToPolygonMainnet } = useContext(ContractContext);
+  const { switchToPolygonMainnet, switchToPolygonTestnet } =
+    useContext(ContractContext);
 
   useEffect(() => {
     setIsUserConnected(isConnected);
@@ -27,8 +37,12 @@ export function ConnectWalletButton({
     open();
   };
 
-  if (isConnected && chainId !== 137) {
-    switchToPolygonMainnet();
+  if (isConnected && chainId !== correctChainId) {
+    if (isTest) {
+      switchToPolygonTestnet();
+    } else {
+      switchToPolygonMainnet();
+    }
   }
 
   return (
