@@ -11,6 +11,7 @@ import usd from "./USDC.svg";
 import ContractContext from "@/context/ContractContext";
 import { getRemainingTokens } from "@/utils/smartContracts/pLBM/getRemainingTokens";
 import { getCurrentSaleStage } from "@/utils/smartContracts/pLBM/getCurrentSaleStage";
+import { isPaused } from "@/utils/smartContracts/pLBM/paused";
 
 export function TokenPurchaseSection(): ReactElement {
   const { updateContractInfo } = useContext(ContractContext);
@@ -19,6 +20,7 @@ export function TokenPurchaseSection(): ReactElement {
     async function getInfo() {
       console.log(await getRemainingTokens("seed"));
       console.log(await getCurrentSaleStage());
+      console.log(await isPaused())
     }
     getInfo();
   }, [updateContractInfo]);
