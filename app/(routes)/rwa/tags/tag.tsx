@@ -6,7 +6,7 @@ import { Tags } from "./Tags";
 
 export function TagComponent() {
     const [isMobile, setIsMobile] = useState(false);
-    console.log("isMobile:", isMobile);
+    // console.log("isMobile:", isMobile);
 
     useEffect(() => {
         const mediaQuery = window.matchMedia("(max-width: 1100px)");
