@@ -21,9 +21,9 @@ export function MobileModal({
         </Link>
         <div className={css.border}>
           <p>Learn</p>
-          <Link href="/comingsoon">→ Investors</Link>
-          <Link href="/comingsoon">→ Property Owners</Link>
-          <Link href="/comingsoon">→ RWA Tokenisation</Link>
+          <Link href="/learn-investors">→ Investors</Link>
+          <Link href="/propertyowners">→ Property Owners</Link>
+          <Link href="/rwa">→ RWA Tokenisation</Link>
         </div>
         <Link href="/community" className={css.border}>
           Community
