@@ -1,6 +1,7 @@
 "use client";
-import { type ReactElement, useContext } from "react";
+import { type ReactElement, useContext, useEffect, useState } from "react";
 import MessageBoxContext from "@/context/MessageBoxContext";
+import { arePurchaseRequirementsSatisfied } from "@/utils/smartContracts/pLBM/areConditionsMetForPurchase";
 import ContractContext from "@/context/ContractContext";
 import { buyTokens } from "@/utils/smartContracts/pLBM/buyTokens";
 import {
@@ -29,7 +30,8 @@ export function BuyButton({
   } = useContext(MessageBoxContext);
 
   const { setUpdateContractInfo } = useContext(ContractContext);
-
+  const [buttonReason, setButtonReason] = useState("");
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
   const { isConnected, chainId } = useWeb3ModalAccount();
   const { walletProvider }: any = useWeb3ModalProvider();
   const provider = new BrowserProvider(walletProvider);
@@ -53,14 +55,24 @@ export function BuyButton({
     }
   };
 
+  useEffect(() => {
+    const fetchRequirements = async () => {
+      const purchaseRequirementsResult =
+        await arePurchaseRequirementsSatisfied(usdAmount);
+      setButtonReason(purchaseRequirementsResult.reason);
+      setIsButtonDisabled(
+        !purchaseRequirementsResult.arePurchaseRequirementsSatisfied,
+      );
+    };
+
+    fetchRequirements();
+  }, []);
+
   return (
     <button
       onClick={handleBuyTokens}
-      title={
-        usdAmount <= 50
-          ? "To participate, the USDC Amount must be at least $50. Please enter a valid amount."
-          : undefined
-      }
+      title={buttonReason}
+      disabled={isButtonDisabled}
     >
       Buy Now
     </button>
