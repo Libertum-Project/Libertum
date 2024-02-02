@@ -7,9 +7,6 @@ export function Calculator(): ReactElement {
   const [propertyType, setPropertyType] = useState("");
   const [propertyTerm, setPropertyTerm] = useState("10");
   const [investment, setInvestment] = useState("1");
-  // const [selectedOption, setSelectedOption] = useState("Monthly");
-  // const [activeOption, setActiveOption] = useState("Monthly");
-
 
   const rentalYields = [0.04, 0.05, 0.06, 0.07];
 
@@ -24,12 +21,13 @@ export function Calculator(): ReactElement {
     const results = rentalYields.map((yieldPercentage) => {
       const periods = parseFloat(propertyTerm) * 12;
   
-      const rent = (investmentValue * yieldPercentage) / 12 / 100;
-      const capitalRepayment = (investmentValue * (1 + yieldPercentage / 100)) / periods;
-      const monthlyRepayment = (investmentValue + capitalRepayment) / periods / 12;
-  
+      const rent = ((investmentValue * yieldPercentage) / 12)*periods;      
+      const capitalRepayment = (investmentValue / parseFloat(propertyTerm) / 12)* periods;  
+
+      const monthlyRepayment = (rent + capitalRepayment) / periods;
       const annualRepayment = monthlyRepayment * 12;
       const fullTermRepayment = monthlyRepayment * periods;
+      
   
       return { rent, capitalRepayment, monthlyRepayment, annualRepayment, fullTermRepayment };
     });
@@ -116,14 +114,15 @@ export function Calculator(): ReactElement {
         <div>
           <table className={css.table}>
             <thead>
-              <tr>
-                <th>Rental Yield</th>
-                <th>Rent</th>
-                <th>Capital Repayment</th>
-                <th>Monthly Repayment</th>
-                <th>Annual Repayment</th>
-                <th>Full Term</th>
-              </tr>
+            <tr>
+              <th>Rental Yield</th>
+              <th>Rent</th>
+              <th>Capital Repayment</th>
+              <th>Monthly</th>
+              <th>Annual</th>
+              <th>Full Term</th>
+            </tr>
+
             </thead>
             <tbody>
             {calculateResults().map((result, index: number) => (

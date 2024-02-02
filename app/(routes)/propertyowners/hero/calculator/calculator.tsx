@@ -12,33 +12,35 @@ export function Calculator(): ReactElement {
 
   const rentalYields = [0.04, 0.05, 0.06, 0.07];
 
-  const calculateResults = () => {
-    const isValidInput = !isNaN(parseFloat(propertyTerm)) && !isNaN(parseFloat(investment));
-  
-    if (!isValidInput) {
-      return [];
+const calculateResults = () => {
+  const isValidInput = !isNaN(parseFloat(propertyTerm)) && !isNaN(parseFloat(investment));
+
+  if (!isValidInput) {
+    return [];
+  }
+
+  const investmentValue = parseFloat(investment);
+
+  const results = rentalYields.map((yieldPercentage) => {
+    let periods = parseFloat(propertyTerm);
+
+      if (selectedOption === "Monthly"){
+      periods = 1
+    } else if (selectedOption === "Annual") {
+      periods = 12;
+    } else if (selectedOption === "FullTerm") {
+      periods = parseFloat(propertyTerm) * 12;
     }
-  
-    const investmentValue = parseFloat(investment);
-  
-    const results = rentalYields.map((yieldPercentage) => {
-      let periods = parseFloat(propertyTerm);
-  
-      if (selectedOption === "Annual") {
-        periods = 12;
-      } else if (selectedOption === "FullTerm") {
-        periods = parseFloat(propertyTerm) * 12;
-      }
-  
-      const rent = (investmentValue * yieldPercentage) / 12 / 100;
-      const capitalRepayment = (investmentValue * (1 + yieldPercentage / 100)) / periods;
-      const monthlyRepayment = (investmentValue + capitalRepayment) / periods / 12;
-  
-      return { rent, capitalRepayment, monthlyRepayment };
-    });
-  
-    return results;
-  };
+
+    const rent = ((investmentValue * yieldPercentage) / 12)*periods;
+    const capitalRepayment = (investmentValue / parseFloat(propertyTerm) / 12)* periods; 
+    const totalRepayment = rent + capitalRepayment;
+
+    return { rent, capitalRepayment, totalRepayment };
+  });
+
+  return results;
+};
 
 
   // Función para manejar el cambio de opción
@@ -142,20 +144,23 @@ export function Calculator(): ReactElement {
         </h3>
       </div>
 
-        <div>
+        <div className={css.tableContainer}>
           <table className={css.table}>
             <thead>
               <tr>
-                <th>Rental Yield</th> <th>Rent</th> <th>Capital Repayment</th> <th>Monthly Repayment</th>
+                <th>Rental Yield</th> 
+                <th>Rent</th> 
+                <th>Capital Repayment</th> 
+                <th>{selectedOption !== "Monthly" ? 'Total Repayment' : 'Monthly Repayment'}</th>
               </tr>
             </thead>
             <tbody>
             {calculateResults().map((result, index: number) => (
             <tr key={index}>
-              <td>{(rentalYields[index] * 100).toFixed(2)}%</td>
+              <td>{(rentalYields[index] * 100).toFixed(0)}%</td>
               <td>{result.rent.toFixed(2)}</td>
               <td>{result.capitalRepayment.toFixed(2)}</td>
-              <td>{result.monthlyRepayment.toFixed(2)}</td>
+              <td>{result.totalRepayment.toFixed(2)}</td>
             </tr>
           ))}
             </tbody>
