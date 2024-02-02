@@ -1,10 +1,20 @@
 import { Contract, getDefaultProvider, Provider } from "ethers";
 import pLBM_ABI from "../ABI/pLBM.json";
 
-const pLBM_address: string = process.env.NEXT_PUBLIC_pLBM_address!;
-const provider: Provider = getDefaultProvider(
-  "https://polygon-mainnet.g.alchemy.com/v2/eYoj2pyMsQV15pjd0WADpjpY5TRJmucG",
-);
+const isTest: boolean = process.env.NEXT_PUBLIC_IS_TEST === "true" || false;
+
+let pLBM_address: string;
+let alchemy_node: string;
+
+if (isTest) {
+  pLBM_address = process.env.NEXT_PUBLIC_TEST_pLBM_address!;
+  alchemy_node = process.env.NEXT_PUBLIC_TEST_ALCHEMY_NODE!;
+} else {
+  pLBM_address = process.env.NEXT_PUBLIC_pLBM_address!;
+  alchemy_node = process.env.NEXT_PUBLIC_ALCHEMY_NODE!;
+}
+
+const provider: Provider = getDefaultProvider(alchemy_node);
 const stageTextMap: Record<number, string> = {
   0: "inactive",
   1: "seed",
@@ -15,7 +25,7 @@ const stageTextMap: Record<number, string> = {
   6: "ended",
 };
 
-export async function getCurrentSaleStage(): Promise<string | undefined> {
+export async function getCurrentSaleStage(): Promise<string> {
   try {
     const contract: Contract = new Contract(
       pLBM_address,
