@@ -41,7 +41,7 @@ export function Hero(): ReactElement {
         </div>
 
         <div>
-        {/* <Calculator /> */}
+        <Calculator />
         </div>
       </div>
     </div>

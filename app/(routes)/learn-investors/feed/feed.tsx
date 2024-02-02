@@ -9,9 +9,9 @@ export function Feed(): ReactElement {
 
   return(
     <div className={css.container}>      
-    {/* <Calculator /> */}
+    <Calculator />
 
-    {/* <Link href="/comingsoon" className={css.button}>
+    <Link href="/comingsoon" className={css.button}>
       <div className={css.buttonFrame}>
         <Image 
           src="/assets/marketIcon.svg"
@@ -27,7 +27,7 @@ export function Feed(): ReactElement {
           width="14"
           height="9"
         />
-    </Link> */}
+    </Link>
 
 
     <Cards />
