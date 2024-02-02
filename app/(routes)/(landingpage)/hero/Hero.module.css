@@ -12,7 +12,7 @@
   min-height: 100%;
 }
 .hero {
-  padding: 5rem 1rem;
+  padding: 6rem 0;
   max-width: 75.125rem;
   margin: 0 auto;
   display: flex;
@@ -29,7 +29,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 2rem;
+  gap: 3rem;
   align-self: flex-start;
   max-width: 44.375rem;
   box-sizing: border-box;
@@ -41,9 +41,9 @@
   font-size: 48px;
   font-style: normal;
   font-weight: 600;
-  line-height: normal;
+  line-height: 61.25px;
   letter-spacing: -0.96px;
-  /* margin: 0; */
+  margin: 0;
 }
 .hero .paragraphs {
   align-items: center;
@@ -62,14 +62,14 @@
   align-self: stretch;
   margin: 0;
 }
-.buttons{
+.buttons {
   display: flex;
   width: 750px;
   /* width: 100%; */
   align-items: flex-start;
   gap: 32px;
 }
-.button {    
+.button {
   display: flex;
   width: 182px;
   padding: 8px 16px;
@@ -86,10 +86,10 @@
   font-style: normal;
   font-weight: 700;
   line-height: 150%;
-  cursor: pointer;    
+  cursor: pointer;
   flex: 1 0 0;
 }
-.buttons a{
+.buttons a {
   text-decoration: none;
 }
 /* .button:hover{
@@ -113,7 +113,7 @@
   cursor: pointer;    
   flex: 1 0 0;
 } */
-.button1:hover{
+.button1:hover {
   display: flex;
   width: 182px;
   padding: 8px 16px;
@@ -130,11 +130,11 @@
   font-style: normal;
   font-weight: 700;
   line-height: 150%;
-  cursor: pointer;    
+  cursor: pointer;
   flex: 1 0 0;
 }
 
-.button1{
+.button1 {
   display: flex;
   width: 182px;
   padding: 8px 16px;
@@ -152,11 +152,11 @@
   font-style: normal;
   font-weight: 700;
   line-height: 150%;
-  cursor: pointer;    
+  cursor: pointer;
   flex: 1 0 0;
 }
 
-.buttonFrame{
+.buttonFrame {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -172,13 +172,27 @@
     right: 0;
   }
 } */
-@media screen and (max-width:790px) {
-  .buttons{
+@media screen and (max-width: 790px) {
+  .hero {
+    padding: 3rem 1rem;
+  }
+
+  .buttons {
     flex-direction: column;
     width: 100%;
   }
-  .buttons a{
-    width: fill;
+  .buttons a {
+    width: stretch;
     text-decoration: none;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .hero {
+    padding-inline: 1rem;
+  }
+
+  .hero h1 {
+    font-weight: 700;
   }
 }
