@@ -8,15 +8,14 @@ import css from "./TokenPurchaseSection.module.css";
 import info from "./info.svg";
 import libertum from "./libertum_input.svg";
 import usd from "./USDC.svg";
-import ContractContext from "@/context/ContractContext";
+/*
 import { getRemainingTokens } from "@/utils/smartContracts/pLBM/getRemainingTokens";
 import { getCurrentSaleStage } from "@/utils/smartContracts/pLBM/getCurrentSaleStage";
 import { isPaused } from "@/utils/smartContracts/pLBM/paused";
 import { getPrice } from "@/utils/smartContracts/pLBM/price";
-
+ */
 export function TokenPurchaseSection(): ReactElement {
-  const { updateContractInfo } = useContext(ContractContext);
-
+  /*
   useEffect(() => {
     async function getInfo() {
       console.log(await getRemainingTokens("seed"));
@@ -32,7 +31,7 @@ export function TokenPurchaseSection(): ReactElement {
     }
     getInfo();
   }, [updateContractInfo]);
-
+   */
   const LBM_PRICE: number = 0.066;
   const MIN_USD: number = 50;
   const MIN_LBM: number = parseFloat((MIN_USD / LBM_PRICE).toFixed(1));
