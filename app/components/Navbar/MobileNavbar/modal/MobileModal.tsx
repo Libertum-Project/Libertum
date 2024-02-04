@@ -11,7 +11,7 @@ export function MobileModal({
   handleToggleOpenMenu,
 }: MobileModalProp): ReactElement {
   return (
-    <div className={css.mobileModalContainer}>
+    <div className={css.mobileModalContainer} onClick={handleToggleOpenMenu}>
       <div className={css.mobileModal}>
         <Link href="./ico" className={css.border}>
           Buy LBM
@@ -34,7 +34,7 @@ export function MobileModal({
           <Link href="/whitepaperLibertum.pdf" target="_blank">→ White Paper</Link>
           <Link href= "/Libertum_Pitch.pdf" target="_blank">→ Pitch Deck</Link>
         </div>
-        <ConnectWalletButton handleToggleOpenMenu={handleToggleOpenMenu} />
+        <ConnectWalletButton />
       </div>
     </div>
   );
