@@ -29,7 +29,10 @@ export function MobileNavbar(): ReactElement {
     <>
       <nav className={css.mobileNavBarContainer}>
         <div className={css.mobileNavBar}>
-          <Link href={"./"}>
+          <Link
+            href={"./"}
+            onClick={isMenuOpen ? handleToggleOpenMenu : undefined}
+          >
             <Image src={logo} alt="libertum logo" width="140.727" height="18" />
           </Link>
           {isMenuOpen ? (

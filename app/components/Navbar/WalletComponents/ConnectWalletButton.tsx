@@ -16,9 +16,7 @@ if (isTest) {
   correctChainId = 137;
 }
 
-export function ConnectWalletButton({
-  handleToggleOpenMenu,
-}: any): ReactElement {
+export function ConnectWalletButton({}: any): ReactElement {
   const [isUserConnected, setIsUserConnected] = useState(false);
   const { open } = useWeb3Modal();
   const { isConnected, chainId } = useWeb3ModalAccount();
@@ -28,10 +26,6 @@ export function ConnectWalletButton({
   useEffect(() => {
     setIsUserConnected(isConnected);
   }, [isConnected]);
-
-  const handleCloseModal = () => {
-    handleToggleOpenMenu && handleToggleOpenMenu();
-  };
 
   const handleConnectWallet = () => {
     open();
@@ -46,10 +40,7 @@ export function ConnectWalletButton({
   }
 
   return (
-    <div
-      className={css.connectWalletButtonContainer}
-      onClick={handleCloseModal}
-    >
+    <div className={css.connectWalletButtonContainer}>
       {!isUserConnected ? (
         <button
           className={css.connectWalletButton}
