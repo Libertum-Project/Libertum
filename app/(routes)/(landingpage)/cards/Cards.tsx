@@ -42,7 +42,7 @@ export function Cards(): ReactElement {
             🔀 Diversification – Access Premium markets and properties
           </p>
 
-          <Link href="/comingsoon">
+          <Link href="/community">
             <button className={css.button}>
               Learn More
               <Image
@@ -89,7 +89,7 @@ export function Cards(): ReactElement {
             traditionally expensive bureaucratic real estate processes
           </p>
 
-          <Link href="/comingsoon">
+          <Link href="/community">
             <button className={css.button}>
               Learn More
               <Image
@@ -134,7 +134,7 @@ export function Cards(): ReactElement {
             your investment
           </p>
 
-          <Link href="/comingsoon">
+          <Link href="/community">
             <button className={css.button}>
               Early Access
               <Image
