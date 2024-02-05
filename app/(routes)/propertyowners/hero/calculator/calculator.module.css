@@ -62,6 +62,14 @@
     flex: 1 0 0;
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.10);
+
+    color: rgba(0, 0, 0, 0.80);
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+    letter-spacing: -0.32px;
 }
 
 .inputFrameInvestment {
@@ -77,6 +85,14 @@
 .inputFrameInvestment input {
     border: none;
     outline: none;
+
+    color: rgba(0, 0, 0, 0.80);
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+    letter-spacing: -0.32px;
   }
   
   
@@ -93,6 +109,14 @@
     background: #F6F8FA;
 
     border: none;
+
+    color: rgba(0, 0, 0, 0.80);
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 24px */
+    letter-spacing: -0.32px;
 }
 
 .calculatorResults{

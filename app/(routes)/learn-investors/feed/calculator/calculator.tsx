@@ -6,7 +6,7 @@ export function Calculator(): ReactElement {
 
   const [propertyType, setPropertyType] = useState("");
   const [propertyTerm, setPropertyTerm] = useState("10");
-  const [investment, setInvestment] = useState("1");
+  const [investment, setInvestment] = useState("1000");
 
   const rentalYields = [0.04, 0.05, 0.06, 0.07];
 
@@ -59,7 +59,7 @@ export function Calculator(): ReactElement {
         <div className={css.inputFrame}>
           <label htmlFor="">Property Type</label>
           <select name="" id="" className={css.calculatorInputsSelect}>
-            <option value="">Select a property type</option>
+            {/* <option value="">Select a property type</option> */}
             <option value="">Commercial</option>
             <option value="">Industrial</option>
             <option value="">Farm House</option>

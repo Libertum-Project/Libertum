@@ -23,7 +23,7 @@ export function Cards(): ReactElement {
           In the world of blockchain and cryptocurrencies, the idea of tokenization has proven to be revolutionary. Tokenization involves transforming tangible assets into digital tokens on a blockchain, signifying ownership or entitlements. This ground breaking technology is capable of representing a diverse range of assets, from entire properties to the right to the rental income they generate… enter Libertum! 
           </p>
           
-          <Link href="/comingsoon">
+          <Link href="/community">
           <button className={css.button}>
             Learn More
             <Image
@@ -67,7 +67,7 @@ export function Cards(): ReactElement {
           </p>
 
 
-          <Link href="/comingsoon">
+          <Link href="/community">
           <button className={css.button}>
             Learn More
             <Image

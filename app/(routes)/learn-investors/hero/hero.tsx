@@ -27,7 +27,7 @@ export function Hero(): ReactElement {
           Libertum&apos;s Rental Income Token (RIT) - Invest in real estate on the blockchain effortlessly with rental income tokens. Tokens give you regular monthly income and capital repayment, providing a hassle-free opportunity to grow your investment.
           </p>
 
-          <Link href="/comingsoon" className={css.whiteBoxButton}>
+          <Link href="/community" className={css.whiteBoxButton}>
           <p>Learn More</p>
           <Image
                 alt="left arrow"
