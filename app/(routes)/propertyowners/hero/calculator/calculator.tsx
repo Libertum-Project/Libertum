@@ -5,7 +5,7 @@ export function Calculator(): ReactElement {
 
   const [propertyType, setPropertyType] = useState("");
   const [propertyTerm, setPropertyTerm] = useState("10");
-  const [investment, setInvestment] = useState("1");
+  const [investment, setInvestment] = useState("1000");
   const [selectedOption, setSelectedOption] = useState("Monthly");
   const [activeOption, setActiveOption] = useState("Monthly");
 
@@ -71,7 +71,7 @@ const calculateResults = () => {
         <div className={css.inputFrame}>
           <label htmlFor="">Property Type</label>
           <select name="" id="" className={css.calculatorInputsSelect}>
-            <option value="">Select a property type</option>
+            {/* <option value="">Select a property type</option> */}
             <option value="">Commercial</option>
             <option value="">Industrial</option>
             <option value="">Farm House</option>

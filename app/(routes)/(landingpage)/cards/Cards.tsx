@@ -38,7 +38,7 @@ export function Cards(): ReactElement {
           🔀 Diversification – Access Premium markets and properties
           </p>
 
-          <Link href="/comingsoon">
+          <Link href="/community">
           <button className={css.button}>
             Learn More
             <Image
@@ -94,7 +94,7 @@ export function Cards(): ReactElement {
           ⚡ Speed to Market – List in weeks (not months), avoid traditionally expensive bureaucratic real estate processes
           </p>
 
-          <Link href="/comingsoon">
+          <Link href="/community">
           <button className={css.button}>
             Learn More
             <Image
@@ -133,7 +133,7 @@ export function Cards(): ReactElement {
           💰 Passive income – consistently earn rental income proportionate to your investment
           </p>
 
-          <Link href="/comingsoon">
+          <Link href="/community">
           <button className={css.button}>
             Early Access
             <Image

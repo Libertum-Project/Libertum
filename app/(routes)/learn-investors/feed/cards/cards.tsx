@@ -12,21 +12,21 @@ export default function Cards () {
             title: "Invest in RIT",
             text: "Premium Real estate are listed on a the Libertum market place. You choose which one to invest in. Each investment represents your right to the rental income from the property you choose.",
             button: "Learn More",
-            href: "/comingsoon"
+            href: "/community"
         },
         {
             image: secondImage,
             title: "Yield Generation",
             text: "Commercial properties have long leases and professionally managed, producing consistent cash flow while appreciating in value over time. The right to the rental income from these properties are passed on to the Rental Income Token (RIT) holders.",
             button: "Learn More",
-            href: "/comingsoon"
+            href: "/community"
         },
         {
             image: thirdImage,
             title: "Hold and Earn",
             text: "Premium Real estate are listed on a the Libertum market place. You choose which one to invest in. Each investment represents your right to the rental income from the property you choose.",
             button: "Learn More",
-            href: "/comingsoon"
+            href: "/community"
         },
 
     ]
