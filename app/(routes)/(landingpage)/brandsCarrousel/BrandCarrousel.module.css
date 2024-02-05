@@ -1,55 +1,53 @@
-.container{
-    display: inline-flex;
-    padding: 32px 0px 16px 0px;
-    flex-direction: column;
-    align-items: flex-start;
+.container {
+  display: inline-flex;
+  padding: 32px 0px 16px 0px;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
+  width: 100%;
+
+  .carrouselContainer {
+    display: flex;
+    width: 2032.993px;
+    justify-content: space-between;
     overflow: hidden;
-    width: 100%;
+    padding: 60px 0;
+    background: white;
+    white-space: nowrap;
+    position: relative;
+    scroll-snap-type: x mandatory;
+    gap: 3rem;
+  }
 
-    .carrouselContainer{
-        display: flex;
-       width: 2032.993px;       
-       justify-content: space-between;
-        overflow: hidden;
-        padding: 60px 0;
-        background: white;
-        white-space: nowrap;
-        position: relative;
-        scroll-snap-type: x mandatory;
-        gap: 3rem
+  .carrouselContainer::before,
+  .carrouselContainer::after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+  }
 
-    }
+  .carrouselContainer::before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+  }
 
-    .carrouselContainer::before,
-    .carrouselContainer::after {
-      position: absolute;
-      top: 0;
-      width: 250px;
-      height: 100%;
-      content: "";
-      z-index: 2;
-    }
+  .carrouselContainer::after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+  }
 
-    .carrouselContainer::before{
-      left: 0;
-      background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
-    }
+  .carrouselContainer:hover .carrouselContainer-slide {
+    animation-play-state: paused;
+  }
 
-    .carrouselContainer::after{
-      right: 0;
-      background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
-    }
-
-    .carrouselContainer:hover .carrouselContainer-slide{
-      animation-play-state: paused;
-    }
-
-    .slide{
-      display: inline-block;
-      animation: 15s slide infinite linear;
-    }
+  .slide {
+    display: inline-block;
+    animation: 15s slide infinite linear;
+  }
 }
-
 
 @keyframes slide {
   from {
