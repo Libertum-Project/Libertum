@@ -41,20 +41,25 @@ export function Hero(): ReactElement {
             </div>
           </div>
 
-            <Link href="/subscribe" className={css.button1}>
-              <div className={css.buttonFrame}>
-                <p>
-                    Get Involved
-                </p>
-              </div>
-                
-                <Image
-                alt="left arrow"
-                src="/assets/leftArrow.svg"
-                width={13.207}
-                height={8.708}
-            />          
-            </Link>
+          <Link href="/subscribe" className={css.button1}>
+            <div className={css.buttonFrame}>
+              <Image
+                src="/assets/rocket.svg"
+                alt="N"
+                width="13"
+                height="13"
+                className={css.logo}
+              />
+              <p>White List</p>
+            </div>
+
+            <Image
+              alt="left arrow"
+              src="/assets/leftArrow.svg"
+              width={13.207}
+              height={8.708}
+            />
+          </Link>
 
           <div className={css.auditInfo}>
             <p>
