@@ -46,8 +46,8 @@ export function Hero(): ReactElement {
               <Image
                 src="/assets/rocket.svg"
                 alt="N"
-                width="13"
-                height="13"
+                width="16"
+                height="16"
                 className={css.logo}
               />
               <p>White List</p>
@@ -56,8 +56,8 @@ export function Hero(): ReactElement {
             <Image
               alt="left arrow"
               src="/assets/leftArrow.svg"
-              width={13.207}
-              height={8.708}
+              width={16.207}
+              height={10.708}
             />
           </Link>
 
