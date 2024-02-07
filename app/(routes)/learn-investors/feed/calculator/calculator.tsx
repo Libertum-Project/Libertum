@@ -52,7 +52,7 @@ export function Calculator(): ReactElement {
 
   return(
     <div className={css.container}>
-      <h2>Funding Requirement Calculator</h2>
+      <h2>Investment Calculator</h2>
 
       <div className={css.calculatorInputs}>
 
