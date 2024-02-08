@@ -86,12 +86,35 @@ export function Roadmap(): ReactElement {
     };
   }, []);
 
+
+  // video 
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+  const mediaQuery = window.matchMedia("(max-width: 950px)");
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1250);
+      setIsMobile(mediaQuery.matches);
+    };
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", handleResize);
+      handleResize();
+
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
+  }, []);
+
   return (
     <section className={css.roadmapContainer}>
-      <video autoPlay muted loop className={css.video}>
-        <source src="./bg-video-1.mp4" type="video/mp4" />
-      </video>
-
+      {isMobile ? 
+        <div className={css.backgroundNoVideo}></div> 
+        : 
+        <video autoPlay muted loop className={css.video}>
+          <source src="./bg-video-1.mp4" type="video/mp4" />
+        </video> 
+      }
       <div className={css.roadmap}>
         <h3 style={padding}>Roadmap</h3>
         <div className={css.cardContainer} style={padding} ref={sliderRef}>

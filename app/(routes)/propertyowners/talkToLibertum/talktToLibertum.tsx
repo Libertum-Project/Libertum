@@ -1,15 +1,38 @@
-import { type ReactElement } from "react";
+'use client'
+import { type ReactElement, useState, useEffect } from "react";
 import css from "./talkToLibertum.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import image from "./image.svg"
 
 export function TalkToLibertum(): ReactElement {
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+  const mediaQuery = window.matchMedia("(max-width: 950px)");
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1250);
+      setIsMobile(mediaQuery.matches);
+    };
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", handleResize);
+      handleResize();
+
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
+  }, []);
+
   return (
     <section className={css.whyNowContainer}>
-      <video autoPlay muted loop className={css.video}>
-        <source src="./bg-video-2.mp4" type="video/mp4" />
-      </video>
+      {isMobile ? 
+        <div className={css.backgroundNoVideo}></div> 
+        : 
+        <video autoPlay muted loop className={css.video}>
+          <source src="./bg-video-1.mp4" type="video/mp4" />
+        </video> 
+      }
       <div className={css.whyNow} id="getPadding">
 
         <div className={css.frameText}>
