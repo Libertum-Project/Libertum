@@ -197,11 +197,11 @@
     width: 100%;
   }
 
-  .buttons:hover{
-    width: 100%;
-  }
-  
   .buttons a {
+    width: stretch;
+    text-decoration: none;
+  }
+  .buttons a:hover {
     width: stretch;
     text-decoration: none;
   }
