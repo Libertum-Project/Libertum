@@ -1,19 +1,8 @@
 import { Contract, getDefaultProvider, Provider } from "ethers";
 import pLBM_ABI from "../ABI/pLBM.json";
+import { getEnvironmentVariables } from "./getEnvironmentVariables";
 
-const isTest: boolean = process.env.NEXT_PUBLIC_IS_TEST === "true" || false;
-
-let pLBM_address: string;
-let alchemy_node: string;
-
-if (isTest) {
-  pLBM_address = process.env.NEXT_PUBLIC_TEST_pLBM_address!;
-  alchemy_node = process.env.NEXT_PUBLIC_TEST_ALCHEMY_NODE!;
-} else {
-  pLBM_address = process.env.NEXT_PUBLIC_pLBM_address!;
-  alchemy_node = process.env.NEXT_PUBLIC_ALCHEMY_NODE!;
-}
-
+const { pLBM_address, alchemy_node } = getEnvironmentVariables();
 const provider: Provider = getDefaultProvider(alchemy_node);
 const stageTextMap: Record<number, string> = {
   0: "inactive",

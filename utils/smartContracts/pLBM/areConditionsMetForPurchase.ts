@@ -5,20 +5,20 @@ export async function arePurchaseRequirementsSatisfied(
   usdAmount: number,
 ): Promise<{ reason: string; arePurchaseRequirementsSatisfied: boolean }> {
   try {
-    const isSalePaused = await isPaused();
-    if (isSalePaused) {
-      return {
-        reason:
-          "The sale is currently paused. Please check back later for updates.",
-        arePurchaseRequirementsSatisfied: false,
-      };
-    }
-
     const isCorrectAmount: boolean = usdAmount >= 50 && usdAmount < 10000;
     if (!isCorrectAmount) {
       return {
         reason:
           "To participate, the USDC Amount must be at least $50. Please enter a valid amount.",
+        arePurchaseRequirementsSatisfied: false,
+      };
+    }
+
+    const isSalePaused = await isPaused();
+    if (isSalePaused) {
+      return {
+        reason:
+          "The sale is currently paused. Please check back later for updates.",
         arePurchaseRequirementsSatisfied: false,
       };
     }
