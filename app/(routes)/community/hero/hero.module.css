@@ -92,5 +92,20 @@
   .paragraphsCommunity{
     padding: 1rem;
   }
+
+  .video{
+    display: none;
+  }
+
+  .backgroundNoVideo{
+    position: absolute;
+    /* right: -65rem; */
+    top: 0;
+    z-index: 9;
+    min-width: 100%;
+    min-height: 100%;
+    background: radial-gradient(80.5% 80.5% at 50% 103.87%, #000041 0%, #0E0E1E 100%);
+    background-blend-mode: multiply;
+  }
   }
 
