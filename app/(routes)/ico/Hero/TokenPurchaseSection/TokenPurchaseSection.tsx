@@ -1,6 +1,6 @@
 "use client";
 import { type ReactElement } from "react";
-import { useState, useEffect, ChangeEvent, useContext } from "react";
+import { useState, useEffect, ChangeEvent } from "react";
 import { BuyButton } from "./BuyButton";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,30 +8,27 @@ import css from "./TokenPurchaseSection.module.css";
 import info from "./info.svg";
 import libertum from "./libertum_input.svg";
 import usd from "./USDC.svg";
-/*
-import { getRemainingTokens } from "@/utils/smartContracts/pLBM/getRemainingTokens";
-import { getCurrentSaleStage } from "@/utils/smartContracts/pLBM/getCurrentSaleStage";
-import { isPaused } from "@/utils/smartContracts/pLBM/paused";
-import { getPrice } from "@/utils/smartContracts/pLBM/price";
- */
+
 export function TokenPurchaseSection(): ReactElement {
   /*
   useEffect(() => {
     async function getInfo() {
-      console.log(await getRemainingTokens("seed"));
-      console.log(await getRemainingTokens("whitelist"));
-      console.log(await getRemainingTokens("public"));
-
-      console.log(await getCurrentSaleStage());
-      console.log(await isPaused());
-
-      console.log(await getPrice("seed"));
-      console.log(await getPrice("whitelist"));
-      console.log(await getPrice("public"));
+      try {
+        const response = await fetch("/api/smartcontract?function=getPrice&stage=whitelist", {
+          method: "GET",
+        });
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.text();
+        console.log(data);
+      } catch (error) {
+        console.error("There was a problem with the fetch operation:", error);
+      }
     }
     getInfo();
-  }, [updateContractInfo]);
-   */
+  }, []);
+  */
   const LBM_PRICE: number = 0.066;
   const MIN_USD: number = 50;
   const MIN_LBM: number = parseFloat((MIN_USD / LBM_PRICE).toFixed(1));

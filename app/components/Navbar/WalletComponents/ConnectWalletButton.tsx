@@ -7,21 +7,36 @@ import wallet from "./wallet.svg";
 import css from "./WalletComponents.module.css";
 import ContractContext from "@/context/ContractContext";
 
-const isTest: boolean = process.env.NEXT_PUBLIC_IS_TEST === "true" || false;
-let correctChainId: number;
-
-if (isTest) {
-  correctChainId = 80001;
-} else {
-  correctChainId = 137;
-}
-
 export function ConnectWalletButton({}: any): ReactElement {
   const [isUserConnected, setIsUserConnected] = useState(false);
   const { open } = useWeb3Modal();
   const { isConnected, chainId } = useWeb3ModalAccount();
   const { switchToPolygonMainnet, switchToPolygonTestnet } =
     useContext(ContractContext);
+  const [isTest, setIsTest] = useState();
+
+  useEffect(() => {
+    const fetchEnvironmentVariables = async () => {
+      try {
+        const response = await fetch(
+          "/api/smartcontract?function=getEnvironmentVariables",
+          {
+            method: "GET",
+          },
+        );
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const result = await response.json();
+
+        setIsTest(result.isTest);
+      } catch (error) {
+        console.error("There was a problem with the fetch operation:", error);
+      }
+    };
+
+    fetchEnvironmentVariables();
+  }, []);
 
   useEffect(() => {
     setIsUserConnected(isConnected);
@@ -31,13 +46,15 @@ export function ConnectWalletButton({}: any): ReactElement {
     open();
   };
 
-  if (isConnected && chainId !== correctChainId) {
-    if (isTest) {
-      switchToPolygonTestnet();
-    } else {
-      switchToPolygonMainnet();
+  useEffect(() => {
+    if (isTest !== undefined) {
+      if (isTest) {
+        switchToPolygonTestnet();
+      } else {
+        switchToPolygonMainnet();
+      }
     }
-  }
+  }, [isTest]);
 
   return (
     <div className={css.connectWalletButtonContainer}>
