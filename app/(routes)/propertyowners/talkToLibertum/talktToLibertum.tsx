@@ -30,7 +30,7 @@ export function TalkToLibertum(): ReactElement {
         <div className={css.backgroundNoVideo}></div> 
         : 
         <video autoPlay muted loop className={css.video}>
-          <source src="./bg-video-1.mp4" type="video/mp4" />
+          <source src="./bg-video-2.mp4" type="video/mp4" />
         </video> 
       }
       <div className={css.whyNow} id="getPadding">
