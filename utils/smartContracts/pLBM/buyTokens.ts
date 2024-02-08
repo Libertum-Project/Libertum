@@ -2,24 +2,10 @@ import { Contract } from "ethers";
 import pLBM_ABI from "../ABI/pLBM.json";
 import USDC_ABI from "../ABI/USDC.json";
 
-const isTest: boolean = process.env.NEXT_PUBLIC_IS_TEST === "true" || false;
-
-let pLBM_address: string;
-let USDC_address: string;
-
-let correctChainId: number;
-
-if (isTest) {
-  USDC_address = process.env.NEXT_PUBLIC_TEST_USDC_address!;
-  pLBM_address = process.env.NEXT_PUBLIC_TEST_pLBM_address!;
-  correctChainId = 80001;
-} else {
-  USDC_address = process.env.NEXT_PUBLIC_USDC_address!;
-  pLBM_address = process.env.NEXT_PUBLIC_pLBM_address!;
-  correctChainId = 137;
-}
-
 async function buyTokens(
+  pLBM_address: string,
+  USDC_address: string,
+  correctChainId: number,
   provider: any,
   lbmAmount: number,
   setIsLoading: (value: boolean) => void,
