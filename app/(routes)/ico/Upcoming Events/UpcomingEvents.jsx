@@ -1,9 +1,10 @@
-import { type ReactElement } from "react";
+"use client";
+import dynamic from "next/dynamic";
 import css from "./UpcomingEvents.module.css";
-import { Video } from "./Video";
 
-export function UpcomingEvents(): ReactElement {
+const Video = dynamic(() => import("./Video").then((mod) => mod.Video));
 
+export function UpcomingEvents() {
   return (
     <div className={css.upcomingEventsContainer}>
       <section className={css.upcomingEvents}>
@@ -54,7 +55,7 @@ export function UpcomingEvents(): ReactElement {
             </div>
           </div>
         </div>
-        <Video /> 
+        <Video />
       </section>
     </div>
   );
