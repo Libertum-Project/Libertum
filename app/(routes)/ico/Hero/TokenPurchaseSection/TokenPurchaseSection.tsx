@@ -8,7 +8,7 @@ import Link from "next/link";
 import css from "./TokenPurchaseSection.module.css";
 import info from "./info.svg";
 import libertum from "./libertum_input.svg";
-import usd from "./USDC.svg";
+import usd from "./USDT.png";
 
 export function TokenPurchaseSection(): ReactElement {
   /*
@@ -132,7 +132,7 @@ export function TokenPurchaseSection(): ReactElement {
           />
           <label htmlFor="usdAmountInput">
             <Image src={usd} alt="USD" width={25} height={25} />
-            <p>USDC.e</p>
+            <p>USDT</p>
           </label>
         </div>
       </div>
@@ -145,7 +145,7 @@ export function TokenPurchaseSection(): ReactElement {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Buy USDC.e
+          Buy USDT
         </a>
       </div>
     </article>

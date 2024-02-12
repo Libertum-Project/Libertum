@@ -80,11 +80,11 @@ export const faqData = [
   {
     id: 9,
     question: "What is the maximum investment allowed?",
-    answer: `<p>Right now is 10.000 USDC. Feel free to contact us for a major investment.</p>`,
+    answer: `<p>Right now is 10.000 USDT. Feel free to contact us for a major investment.</p>`,
   },
   {
     id: 10,
     question: "What's the minumum investment allowed?",
-    answer: `<p>Right now minimum investment allowed is 50 USDC</p>`,
+    answer: `<p>Right now minimum investment allowed is 50 USDT</p>`,
   },
 ];
