@@ -1,10 +1,11 @@
 "use client";
-import { type ReactElement, useEffect } from "react";
+import { type ReactElement, useContext } from "react";
 import { TransakConfig, Transak } from "@transak/transak-sdk";
 import Pusher from "pusher-js";
 import { Interface } from "ethers";
 import { useWeb3ModalAccount } from "@web3modal/ethers/react";
 import { fetchEnvironmentVariables } from "@/utils/fetchEnvironmentVariables";
+import MessageBoxContext from "@/context/MessageBoxContext";
 
 let pusher = new Pusher("1d9ffac87de599c61283", { cluster: "ap2" });
 
@@ -17,19 +18,20 @@ export function BuyWithFiatButton({
   lbmAmount,
   usdAmount,
 }: BuyButtonProps): ReactElement {
-  const { address } = useWeb3ModalAccount();
-  let SMART_CONTRACT_ADDRESS: string;
-  let SOURCE_TOKEN: string;
+  const { setShowConnectToPolygonMessage } = useContext(MessageBoxContext);
+  const { address, isConnected } = useWeb3ModalAccount();
+  let SMART_CONTRACT_ADDRESS: string =
+    "0xcF6432C863D29E581e00d276C6558cE56Bb68077";
+  let SOURCE_TOKEN: string = "0x62Eb600B012DBFF2fF81e963e2F0707c050DA677";
   let USER_WALLET_ADDRESS: any = address;
   let TRANSAK_API_KEY: string;
 
   const getEnvironmentVariables = async () => {
     const { pLBM_address, USDC_address, transakApiKey } =
       await fetchEnvironmentVariables();
-    SMART_CONTRACT_ADDRESS = pLBM_address;
-    SOURCE_TOKEN = USDC_address;
+    //    SMART_CONTRACT_ADDRESS = pLBM_address;
+    //  SOURCE_TOKEN = USDC_address;
     TRANSAK_API_KEY = transakApiKey;
-    console.log(SMART_CONTRACT_ADDRESS);
   };
 
   const getSupplyCalldata = (lbmAmount: number | null) => {
@@ -57,6 +59,11 @@ export function BuyWithFiatButton({
   };
 
   const handleButtonClick = async () => {
+    if (!isConnected) {
+      setShowConnectToPolygonMessage(true);
+      return;
+    }
+
     await getEnvironmentVariables();
     if (usdAmount >= 50) {
       const calldata = getSupplyCalldata(lbmAmount);
