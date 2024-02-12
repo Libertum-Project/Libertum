@@ -197,6 +197,11 @@
   background: #159390;
 }
 
+.purchaseButtons p {
+  margin: 0;
+  font-size: 1rem;
+}
+
 .purchaseButtons a {
   color: #00b3b5;
   font-family: Space Grotesk;
@@ -239,7 +244,6 @@
   }
 
   .purchaseButtons button {
-    width: 161px;
     margin: 0 auto;
   }
 }

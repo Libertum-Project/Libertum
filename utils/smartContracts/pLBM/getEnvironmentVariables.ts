@@ -1,5 +1,6 @@
 export function getEnvironmentVariables() {
   const isTest: boolean = process.env.IS_TEST === "true" || false;
+  const transakApiKey: string = process.env.TRANSAK_API_KEY!;
 
   let pLBM_address: string;
   let USDC_address: string;
@@ -23,6 +24,7 @@ export function getEnvironmentVariables() {
     USDC_address,
     correctChainId,
     alchemy_node,
+    transakApiKey,
   };
 
   return variables;

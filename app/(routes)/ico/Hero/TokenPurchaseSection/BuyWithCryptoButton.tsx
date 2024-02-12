@@ -14,7 +14,7 @@ interface BuyButtonProps {
   usdAmount: number;
 }
 
-export function BuyButton({
+export function BuyWithCryptoButton({
   lbmAmount,
   usdAmount,
 }: BuyButtonProps): ReactElement {
@@ -111,7 +111,7 @@ export function BuyButton({
       title={buttonReason}
       disabled={isButtonDisabled}
     >
-      Buy Now
+      Buy With Crypto
     </button>
   );
 }

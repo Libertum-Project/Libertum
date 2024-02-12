@@ -1,7 +1,8 @@
 "use client";
 import { type ReactElement } from "react";
 import { useState, useEffect, ChangeEvent } from "react";
-import { BuyButton } from "./BuyButton";
+import { BuyWithCryptoButton } from "./BuyWithCryptoButton";
+import { BuyWithFiatButton } from "./BuyWithFiatButton";
 import Image from "next/image";
 import Link from "next/link";
 import css from "./TokenPurchaseSection.module.css";
@@ -136,8 +137,9 @@ export function TokenPurchaseSection(): ReactElement {
         </div>
       </div>
       <div className={css.purchaseButtons}>
-        <BuyButton lbmAmount={lbmAmount} usdAmount={usdAmount} />
-
+        <BuyWithCryptoButton lbmAmount={lbmAmount} usdAmount={usdAmount} />
+        <p>Or</p>
+        <BuyWithFiatButton lbmAmount={lbmAmount} usdAmount={usdAmount} />
         <a
           href="https://quickswap.exchange/#/swap?inputCurrency=ETH&outputCurrency=0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174&swapIndex=0"
           target="_blank"
