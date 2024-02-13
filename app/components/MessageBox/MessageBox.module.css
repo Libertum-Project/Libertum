@@ -19,12 +19,12 @@
 .successBox,
 .messageBox {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   gap: 1.5rem;
-  padding: 2rem;
-  border-radius: 1.59856rem;
+  padding: 1.5rem;
+  border-radius: 5px;
   background-color: #fff;
   -webkit-box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.5);
@@ -37,23 +37,26 @@
 
 .header {
   align-items: center;
-  flex-direction: column;
+  justify-content: flex-start;
+  flex-direction: row;
   display: flex;
-  gap: 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  gap: .5rem;
+  width: 100%;
 }
 
 .header img {
-  width: 3.94881rem;
-  height: 3.41031rem;
+  width: 3rem;
   flex-shrink: 0;
 }
 
 .header h2 {
   color: rgba(242, 30, 30, 0.93);
-  text-align: center;
-  font-size: 1.39513rem;
+  text-align: left;
+  font-size: 1.3rem;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 800;
   line-height: normal;
   font-family: var(--font-primary);
   margin: 0;
@@ -65,7 +68,7 @@
 .messageBox p {
   color: #4a4a4a;
   width: 18rem;
-  text-align: center;
+  text-align: left;
   font-size: 1.1305rem;
   font-style: normal;
   font-weight: 500;
@@ -83,7 +86,7 @@
   font-family: var(--font-primary);
   border: none;
   color: white;
-  width: 15.26169rem;
+  width: 100%;
   height: 2.907rem;
 }
 
@@ -111,13 +114,10 @@
   gap: 0.5rem;
 }
 
-.header {
-  gap: 2rem;
-}
-
 .pendingBox img {
-  width: 3rem;
+  width: 2.3rem;
   height: auto;
+  margin-right: 1rem;
 }
 
 .polyScanURL a {
