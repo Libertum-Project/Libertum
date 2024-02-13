@@ -69,8 +69,7 @@ const Subscribe = () => {
           name="email"
           
           /> 
-          <input type="hidden" name="sender" value="hello@libertum.io" />
-
+      <input type="hidden" name="sender" value="34d375e0-f3d7-4010-ac6d-2eae41659b9a" />
           <button 
           className={css.buttonSubmit}
           // type="button"        
