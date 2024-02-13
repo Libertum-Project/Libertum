@@ -138,7 +138,7 @@ export function BuyWithFiatButton({
 
   return (
     <>
-      <button onClick={handleButtonClick}>Buy With Credit Card</button>
+      <button onClick={handleButtonClick} disabled>Buy With Credit Card</button>
     </>
   );
 }
