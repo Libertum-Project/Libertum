@@ -19,8 +19,8 @@ const ConnectToPolygonMessage = ({ setShowConnectToPolygonMessage }) => {
     >
       <div className={css.messageBox}>
         <div className={css.header}>
-          <Image src={polygon} alt="polygon network" width={50} height={50} />
-          <h2>Connect To Polygon.</h2>
+          <Image src={polygon} alt="polygon network" width={48} height={48} />
+          <h2>Connect To Polygon</h2>
         </div>
         <div>
           <p>{message}</p>

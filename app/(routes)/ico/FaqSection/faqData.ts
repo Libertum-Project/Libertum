@@ -2,11 +2,11 @@ export const faqData = [
   {
     id: 1,
     question: "What are the $LBM token details?",
-    answer: `<span> $LBM is an ERC-20 token on the Polygon Smart Chain with a maximum supply of only 200,000,000 (200 million).</span>
+    answer: `<span> 
+    $LBM is an BEP-20 token on the BNB Smart Chain with a maximum supply of only 200,000,000 (200 million). The $LBM Token is the native token on the blockchain that is the backbone of the Libertum fractionalized rental income ecosystem. </span>
 
-    <span>The $LBM Token is the native token on the blockchain that is the backbone of the Libertum fractionalized rental income ecosystem.</span>
+    <p>The token contract address is <b>“0x5DDc25297D31A8546Eb52a691F73b2EAcAb37934”</b>. Please do not send any funds to this token contract address, as they cannot be recovered. $LBM can currently only be purchased through the official presale at <b>https://www.libertum.io/ico</b>.<p>`
 
-    <p>The token contract address is <b>0x8f097819978afacb8438350bf36bc0c29e5a8b10</b>. Please do not send any funds to this token contract address, as they cannot be recovered. $LBM can currently only be purchased through the official presale at <b>buy.libertum.io</b></p>`,
   },
   {
     id: 2,
@@ -16,8 +16,10 @@ export const faqData = [
   {
     id: 3,
     question: "When is the claim and launch of $LBM token?",
-    answer: `<p>Once the Token Generation Event (TGE) kicks off, eligible holders will receive tokens directly in their wallets. No delays here! As soon as the public sale starts, we'll airdrop the tokens to you. Just head over to the token dashboard to access your tokens during the TGE. And don't worry, we'll make sure the official airdrop is smooth sailing. Just make sure you have the right wallet set up to receive your tokens seamlessly. Need more info? Don't hesitate to reach out to our support team. We're here to support you every step of the way!
-    </p>`,
+    answer: `<span>Once the Token Generation Event (TGE) kicks off, eligible holders will receive tokens directly in their wallets. No delays here! As soon as the public sale ends, we'll airdrop the tokens to you. Just head over to the token dashboard to access your tokens during the TGE. And don't worry, we'll make sure the official airdrop is smooth sailing. Just make sure you have the right wallet set up to receive your tokens seamlessly. Need more info? Don't hesitate to reach out to our support team. We're here to support you every step of the way! 
+    </span>
+    <p>In the meantime, the pLBM token will be transferred straight on to your wallet for assurance.</p>
+      `,
   },
   {
     id: 4,
@@ -40,7 +42,7 @@ export const faqData = [
   {
     id: 5,
     question: "Where is the company located?",
-    answer: `<p>Libertum is located in The United Kingdom and The United Arab Emirates.</p>`,
+    answer: `<p>Libertum is located in The United Kingdom.</p>`,
   },
   {
     id: 6,
@@ -51,12 +53,26 @@ export const faqData = [
     id: 7,
     question: "How to buy?",
     answer: `
-  <span>
+    <span>Step 1 - 🔸Go to <b>https://www.libertum.io/ico</b></span>
+    <span>Step 2 - 🔸Connect your Wallet (BNB Smart Chain)</span>
+    <span>Step 3 - 🔸Ensure you have USDT available in your wallet. Simply swap to get USDT first</span>
+    <span>Step 3 - 🔸Selecting your desired number or amount of pLBM tokens</span>
+    <span>Step 4 - 🔸Purchase through USDT</span>
+    <br></br>
+
+    <span>A few important points:</span>
+
+    <p><b>1</b>. You must be on BNB Smart Chain </p>
+    <p><b>2</b>. Please ensure you have sufficient USDT in your wallet. If you do not, then kindly swap and get USDT before buying pLBM</p>
+    <span><b>3</b>. Connect to the latest version of the wallet app. Update, if required, first.</span>
+
+    <br></br>
+      <span>
 1. <b>REQUIREMENTS:</b> You will need to have a web3 compatible wallet such as Metamask connected to your browser, alternatively, you can also use other wallets supported by Wallet Connect, such as Trust Wallet. To ensure a smooth process for participating in the presale, we suggest using a desktop browser and Metamask. For mobile devices, we suggest using Trust Wallet for the smoothest user experience.
   </span>
 
   <span>
-  2. <b>WALLET CONNECTION:</b> Enter the amount you wish to purchase and click 'Connect Wallet' to choose your preferred payment option for acquiring $LBM tokens. Ensure your wallet has a sufficient balance in the desired currency to display available options or alternatively use pay by card or bank transfer for FIAT payment. After selecting your desired currency in our widget, you'll be redirected to your wallet or card payment gateway for completing the transaction.
+  2. <b>WALLET CONNECTION:</b> Enter the amount you wish to purchase and click 'Connect Wallet' to choose your preferred payment option for acquiring $LBM tokens. Ensure your wallet has a sufficient balance in the desired currency to display available options or alternatively use pay by card or bank transfer for FIAT payment. After selecting your desired currency in our widget, you'll be redirected to your wallet or card payment gateway for completing the transaction. 
   </span>
   <span>
       There will be 2 options to buy LBM:
@@ -68,8 +84,7 @@ export const faqData = [
       🔹 with CRYPTO
   </span>
   <p>
-3. <b>CLAIM:</b> You can claim your $LBM tokens at the end of the presale. Details will be released closer to the time. Once the presale period has concluded, you must visit our website and click the ‘Claim’ button.
-  </p>
+3. <b>CLAIM:</b> You can claim your $LBM tokens at the end of the presale. Details will be released closer to the time. Once the presale period has concluded, you must visit our website and click the ‘Claim’ button. </p>
     `,
   },
   {
@@ -80,11 +95,11 @@ export const faqData = [
   {
     id: 9,
     question: "What is the maximum investment allowed?",
-    answer: `<p>Right now is 10.000 USDC. Feel free to contact us for a major investment.</p>`,
+    answer: `<p>Right now is 10.000 USDT. Feel free to contact us for a major investment.</p>`,
   },
   {
     id: 10,
     question: "What's the minumum investment allowed?",
-    answer: `<p>Right now minimum investment allowed is 50 USDC</p>`,
+    answer: `<p>Right now minimum investment allowed is 50 USDT</p>`,
   },
 ];
