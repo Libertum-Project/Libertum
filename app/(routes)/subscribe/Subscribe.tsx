@@ -4,54 +4,84 @@ import axios from "axios";
 import css from "./Subscribe.module.css"
 import { group } from "console";
 
-const Subscribe = () => {
+// const Subscribe = () => {
 
-  const [email, setEmail] = useState("");
-  const [state, setState] = useState("IDLE");
-  const [errorMessage, setErrorMessage] = useState (null); 
+//   const [email, setEmail] = useState("");
+//   const [state, setState] = useState("IDLE");
+//   const [errorMessage, setErrorMessage] = useState (null); 
 
 
-  const subscribe = async () => {
-    setState("LOADING");
-    setErrorMessage(null);
-    try {
-      const response = await axios.post("/api/newsletter", { email });
-      setState("SUCCESS");
-    } catch (e: any) {
-      setErrorMessage(e.response?.data?.error || "An error occurred");
-      setState("ERROR");
-    }
-  };
+//   const subscribe = async () => {
+//     setState("LOADING");
+//     setErrorMessage(null);
+//     try {
+//       const response = await axios.post("/api/newsletter", { email });
+//       setState("SUCCESS");
+//     } catch (e: any) {
+//       setErrorMessage(e.response?.data?.error || "An error occurred");
+//       setState("ERROR");
+//     }
+//   };
   
-return(
-  <div>
-      <div className={css.inputGroup}>
-        <input 
-        className={css.input}
-        placeholder="Email" 
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        /> 
-        <button 
-        className={css.buttonSubmit}
-        type="button"
-        disabled={state === "LOADING"}
-        onClick={subscribe}
+// return(
+//   <div>
+//       <div className={css.inputGroup}>
+//         <input 
+//         className={css.input}
+//         placeholder="Email" 
+//         value={email}
+//         onChange={(e) => setEmail(e.target.value)}
+//         /> 
+//         <button 
+//         className={css.buttonSubmit}
+//         type="button"
+//         disabled={state === "LOADING"}
+//         onClick={subscribe}
         
-        >
-          Subscribe
-        </button>
-      </div>
-      {state === "ERROR" && (
-        <p className={css.errorMessage}>{errorMessage}</p>
-      )}
+//         >
+//           Subscribe
+//         </button>
+//       </div>
+//       {state === "ERROR" && (
+//         <p className={css.errorMessage}>{errorMessage}</p>
+//       )}
 
-      {state === "SUCCESS" && (
-        <p className={css.successMessage}>Success!</p>
-      )}
-  </div>
-)};
+//       {state === "SUCCESS" && (
+//         <p className={css.successMessage}>Success!</p>
+//       )}
+//   </div>
+// )};
 
 // Subscribe.displayName = 'Subscribe';
+
+
+const Subscribe = () => {
+  
+  return(
+<form action="https://login.sendpulse.com/forms/simple/u/eyJ1c2VyX2lkIjo4NTg1OTE3LCJhZGRyZXNzX2Jvb2tfaWQiOjU2NTYyNywibGFuZyI6ImVuIn0=" method="post">
+
+        <div className={css.inputGroup}>
+          <input 
+          className={css.input}
+          placeholder="Email" 
+          type="email" 
+          required 
+          name="email"
+          
+          /> 
+          <input type="hidden" name="sender" value="hello@libertum.io" />
+
+          <button 
+          className={css.buttonSubmit}
+          // type="button"        
+          >
+            Subscribe
+          </button>
+        </div>
+    </form>
+  )
+
+
+}
 
 export default Subscribe;
