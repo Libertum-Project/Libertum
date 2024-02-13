@@ -5,11 +5,7 @@ export const faqData = [
     answer: `<span> 
     $LBM is an BEP-20 token on the BNB Smart Chain with a maximum supply of only 200,000,000 (200 million). The $LBM Token is the native token on the blockchain that is the backbone of the Libertum fractionalized rental income ecosystem. </span>
 
-    <p>The token contract address is <b>“To follow”</b>. Please do not send any funds to this token contract address, as they cannot be recovered. $LBM can currently only be purchased through the official presale at <b>https://www.libertum.io/ico</b>.
-<br />
-    <span> The token contract address is 0x5DDc25297D31A8546Eb52a691F73b2EAcAb37934  </span>
-   
-   <p>`
+    <p>The token contract address is <b>“0x5DDc25297D31A8546Eb52a691F73b2EAcAb37934”</b>. Please do not send any funds to this token contract address, as they cannot be recovered. $LBM can currently only be purchased through the official presale at <b>https://www.libertum.io/ico</b>.<p>`
 
   },
   {
