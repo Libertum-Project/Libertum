@@ -5,26 +5,31 @@ export function getEnvironmentVariables() {
   let pLBM_address: string;
   let USDC_address: string;
   let correctChainId: number;
-  let alchemy_node: string;
+  let node: string;
+  let scanURL: string;
 
   if (isTest) {
     pLBM_address = process.env.TEST_pLBM_address!;
     USDC_address = process.env.TEST_USDC_address!;
-    correctChainId = 80001;
-    alchemy_node = process.env.TEST_ALCHEMY_NODE!;
+    correctChainId = 97;
+    node = process.env.TEST_BLOCKCHAIN_NODE!;
+    scanURL = "https://testnet.bscscan.com/tx/";
   } else {
     pLBM_address = process.env.pLBM_address!;
     USDC_address = process.env.USDC_address!;
-    correctChainId = 137;
-    alchemy_node = process.env.ALCHEMY_NODE!;
+    correctChainId = 56;
+    node = process.env.BLOCKCHAIN_NODE!;
+    scanURL = "https://bscscan.com";
   }
+
   const variables = {
     isTest,
     pLBM_address,
     USDC_address,
     correctChainId,
-    alchemy_node,
+    node,
     transakApiKey,
+    scanURL,
   };
 
   return variables;

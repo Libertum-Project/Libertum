@@ -25,9 +25,8 @@ export async function arePurchaseRequirementsSatisfied(
 
     const currentSaleStage: string = await getCurrentSaleStage();
     const isValidSaleStage: boolean =
-      currentSaleStage === "seed" ||
-      currentSaleStage === "whitelist" ||
-      currentSaleStage === "public";
+      currentSaleStage === "publicOne" ||
+      currentSaleStage === "publicTwo"
 
     if (!isValidSaleStage) {
       return {

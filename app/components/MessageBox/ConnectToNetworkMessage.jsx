@@ -1,15 +1,14 @@
 import css from "./MessageBox.module.css";
-import polygon from "./polygon.svg";
+import network from "./network.png";
 import Image from "next/image";
 
-const ConnectToPolygonMessage = ({ setShowConnectToPolygonMessage }) => {
+const ConnectToNetworkMessage = ({ setShowConnectToNetworkMessage }) => {
   const handleContinue = (event) => {
     event.preventDefault();
-    setShowConnectToPolygonMessage(false);
+    setShowConnectToNetworkMessage(false);
   };
   const message =
-    "Looks like you're not connected to Polygon yet! To buy $LBM, just connect your wallet to the Polygon network.";
-
+    "Seems like you haven't linked to Binance Smart Chain yet! To purchase $LBM, simply connect your wallet to the Binance Smart Chain network.";
   return (
     <div
       className={css.messageBoxContainer}
@@ -19,8 +18,8 @@ const ConnectToPolygonMessage = ({ setShowConnectToPolygonMessage }) => {
     >
       <div className={css.messageBox}>
         <div className={css.header}>
-          <Image src={polygon} alt="polygon network" width={48} height={48} />
-          <h2>Connect To Polygon</h2>
+          <Image src={network} alt="network" width={48} height={48} />
+          <h2>Connect To BSC</h2>
         </div>
         <div>
           <p>{message}</p>
@@ -31,4 +30,4 @@ const ConnectToPolygonMessage = ({ setShowConnectToPolygonMessage }) => {
   );
 };
 
-export default ConnectToPolygonMessage;
+export default ConnectToNetworkMessage;

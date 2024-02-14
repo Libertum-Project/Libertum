@@ -2,11 +2,11 @@ import { Contract, getDefaultProvider, Provider } from "ethers";
 import { getEnvironmentVariables } from "./getEnvironmentVariables";
 import pLBM_ABI from "../ABI/pLBM.json";
 
-const {pLBM_address, alchemy_node} = getEnvironmentVariables();
+const {pLBM_address, node} = getEnvironmentVariables();
 
 export async function isPaused(): Promise<boolean> {
   try {
-    const provider: Provider = getDefaultProvider(alchemy_node);
+    const provider: Provider = getDefaultProvider(node);
     const contract = new Contract(pLBM_address, pLBM_ABI.abi, provider);
     const isPaused = await contract.paused();
     return isPaused;

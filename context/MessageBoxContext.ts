@@ -7,16 +7,16 @@ interface MessageBoxContextProps {
   setShowFailMessage: (value: boolean) => void;
   errorMessage: string;
   setErrorMessage: (value: string) => void;
-  polyScanURL: string;
-  setPolyScanURL: (value: string) => void;
+  networkScanURL: string;
+  setNetworkScanURL: (value: string) => void;
   showPendingMessage: boolean;
   setShowPendingMessage: (value: boolean) => void;
   showSuccessMessage: boolean;
   setShowSuccessMessage: (value: boolean) => void;
   isLoading: boolean;
   setIsLoading: (value: boolean) => void;
-  showConnectToPolygonMessage: boolean;
-  setShowConnectToPolygonMessage: (value: boolean) => void;
+  showConnectToNetworkMessage: boolean;
+  setShowConnectToNetworkMessage: (value: boolean) => void;
 }
 
 const MessageBoxContext = createContext<MessageBoxContextProps>({
@@ -24,16 +24,16 @@ const MessageBoxContext = createContext<MessageBoxContextProps>({
   setShowFailMessage: () => {},
   errorMessage: "",
   setErrorMessage: () => {},
-  polyScanURL: "",
-  setPolyScanURL: () => {},
+  networkScanURL: "",
+  setNetworkScanURL: () => {},
   showPendingMessage: false,
   setShowPendingMessage: () => {},
   showSuccessMessage: false,
   setShowSuccessMessage: () => {},
   isLoading: false,
   setIsLoading: () => {},
-  showConnectToPolygonMessage: false,
-  setShowConnectToPolygonMessage: () => {},
+  showConnectToNetworkMessage: false,
+  setShowConnectToNetworkMessage: () => {},
 });
 
 export default MessageBoxContext;

@@ -2,16 +2,14 @@ import { Contract, getDefaultProvider, Provider } from "ethers";
 import pLBM_ABI from "../ABI/pLBM.json";
 import { getEnvironmentVariables } from "./getEnvironmentVariables";
 
-const { pLBM_address, alchemy_node } = getEnvironmentVariables();
-const provider: Provider = getDefaultProvider(alchemy_node);
+const { pLBM_address, node } = getEnvironmentVariables();
+const provider: Provider = getDefaultProvider(node);
 const stageTextMap: Record<number, string> = {
   0: "inactive",
-  1: "seed",
-  2: "postSeed",
-  3: "whitelist",
-  4: "postWhitelist",
-  5: "public",
-  6: "ended",
+  1: "publicOne",
+  2: "postPublicOne",
+  3: "publicTwo",
+  4: "Ended",
 };
 
 export async function getCurrentSaleStage(): Promise<string> {
