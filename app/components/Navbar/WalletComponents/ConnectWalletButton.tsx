@@ -10,8 +10,8 @@ import ContractContext from "@/context/ContractContext";
 export function ConnectWalletButton({}: any): ReactElement {
   const [isUserConnected, setIsUserConnected] = useState(false);
   const { open } = useWeb3Modal();
-  const { isConnected, chainId } = useWeb3ModalAccount();
-  const { switchToPolygonMainnet, switchToPolygonTestnet } =
+  const { isConnected } = useWeb3ModalAccount();
+  const { switchToMainnet, switchToTestnet } =
     useContext(ContractContext);
   const [isTest, setIsTest] = useState();
 
@@ -49,9 +49,9 @@ export function ConnectWalletButton({}: any): ReactElement {
   useEffect(() => {
     if (isTest !== undefined) {
       if (isTest) {
-        switchToPolygonTestnet();
+        switchToTestnet();
       } else {
-        switchToPolygonMainnet();
+        switchToMainnet();
       }
     }
   }, [isTest]);

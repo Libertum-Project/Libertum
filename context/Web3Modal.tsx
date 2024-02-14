@@ -3,12 +3,12 @@ import { createWeb3Modal, defaultConfig } from "@web3modal/ethers/react";
 
 const projectId = process.env.NEXT_PUBLIC_PROJECT_ID || "";
 
-const polygon = {
-  chainId: 137,
-  name: "Polygon",
-  currency: "MATIC",
-  explorerUrl: "https://polygonscan.com",
-  rpcUrl: "https://polygon-rpc.com",
+const BSC = {
+  chainId: 56,
+  name: "BNB Smart Chain Mainnet",
+  currency: "BNB",
+  explorerUrl: "https://bscscan.com",
+  rpcUrl: "https://bsc-dataseed1.binance.org/",
 };
 
 const ethereum = {
@@ -28,8 +28,8 @@ const metadata = {
 
 createWeb3Modal({
   ethersConfig: defaultConfig({ metadata }),
-  chains: [polygon, ethereum],
-  defaultChain: polygon,
+  chains: [BSC, ethereum],
+  defaultChain: BSC,
   projectId,
   themeVariables: {
     "--w3m-font-family": "Space Grotesk",  // Base font family

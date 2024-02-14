@@ -18,19 +18,18 @@ export function BuyWithFiatButton({
   lbmAmount,
   usdAmount,
 }: BuyButtonProps): ReactElement {
-  const { setShowConnectToPolygonMessage } = useContext(MessageBoxContext);
+  const { setShowConnectToNetworkMessage } = useContext(MessageBoxContext);
   const { address, isConnected } = useWeb3ModalAccount();
-  let SMART_CONTRACT_ADDRESS: string =
-    "0xcF6432C863D29E581e00d276C6558cE56Bb68077";
-  let SOURCE_TOKEN: string = "0x62Eb600B012DBFF2fF81e963e2F0707c050DA677";
+  let SMART_CONTRACT_ADDRESS: string;
+  let SOURCE_TOKEN: string;
   let USER_WALLET_ADDRESS: any = address;
   let TRANSAK_API_KEY: string;
 
   const getEnvironmentVariables = async () => {
     const { pLBM_address, USDC_address, transakApiKey } =
       await fetchEnvironmentVariables();
-    //    SMART_CONTRACT_ADDRESS = pLBM_address;
-    //  SOURCE_TOKEN = USDC_address;
+    SMART_CONTRACT_ADDRESS = pLBM_address;
+    SOURCE_TOKEN = USDC_address;
     TRANSAK_API_KEY = transakApiKey;
   };
 
@@ -60,7 +59,7 @@ export function BuyWithFiatButton({
 
   const handleButtonClick = async () => {
     if (!isConnected) {
-      setShowConnectToPolygonMessage(true);
+      setShowConnectToNetworkMessage(true);
       return;
     }
 
@@ -95,7 +94,7 @@ export function BuyWithFiatButton({
               "https://www.libertum.io/_next/static/media/libertum_input.cb17a477.svg",
           },
         ],
-        network: "polygon",
+        network: "BSC",
         isTransakOne: true,
       };
 

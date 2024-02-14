@@ -24,8 +24,8 @@ export function BuyWithCryptoButton({
     setShowSuccessMessage,
     setIsLoading,
     setErrorMessage,
-    setPolyScanURL,
-    setShowConnectToPolygonMessage,
+    setNetworkScanURL,
+    setShowConnectToNetworkMessage,
   } = useContext(MessageBoxContext);
 
   const { setUpdateContractInfo } = useContext(ContractContext);
@@ -57,7 +57,7 @@ export function BuyWithCryptoButton({
         }
       };
 
-      const { pLBM_address, USDC_address, correctChainId } =
+      const { pLBM_address, USDC_address, correctChainId, scanURL } =
         await fetchEnvironmentVariables();
 
       await buyTokens(
@@ -70,10 +70,11 @@ export function BuyWithCryptoButton({
         setShowPendingMessage,
         setShowFailMessage,
         setErrorMessage,
-        setPolyScanURL,
+        setNetworkScanURL,
+        scanURL,
         setShowSuccessMessage,
         setUpdateContractInfo,
-        setShowConnectToPolygonMessage,
+        setShowConnectToNetworkMessage,
         isConnected,
         chainId,
       );
