@@ -1,5 +1,5 @@
 export function getEnvironmentVariables() {
-  const isTest: boolean = process.env.IS_TEST === "true" || false;
+  const isTest: boolean = true; 
 
   let transakApiKey: string;
   let pLBM_address: string;
