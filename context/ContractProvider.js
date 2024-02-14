@@ -7,70 +7,70 @@ import { Web3ModalProvider } from "./Web3Modal.tsx";
 const ContractProvider = ({ children }) => {
   const [updateContractInfo, setUpdateContractInfo] = useState(false);
 
-  const switchToPolygonMainnet = async () => {
-    const polygonMainnetData = {
-      chainId: "0x89", // 137
-      chainName: "Polygon Mainnet",
+  const switchToMainnet = async () => {
+    const MainnetData = {
+      chainId: "0x38", // 56
+      chainName: "BNB Smart Chain Mainnet",
       nativeCurrency: {
-        name: "Matic",
-        symbol: "MATIC",
+        name: "BNB",
+        symbol: "BNB",
         decimals: 18,
       },
-      rpcUrls: ["https://rpc-mainnet.maticvigil.com/"],
-      blockExplorerUrls: ["https://polygonscan.com/"],
+      rpcUrls: ["https://bsc-dataseed1.binance.org/"],
+      blockExplorerUrls: ["https://bscscan.com"],
     };
 
     try {
       await window.ethereum.request({
         method: "wallet_switchEthereumChain",
-        params: [{ chainId: polygonMainnetData.chainId }],
+        params: [{ chainId: MainnetData.chainId }],
       });
     } catch (error) {
       if (error.code === 4902) {
         try {
           await window.ethereum.request({
             method: "wallet_addEthereumChain",
-            params: [polygonMainnetData],
+            params: [MainnetData],
           });
         } catch (addError) {
-          console.error("Error adding Polygon Mainnet:", addError);
+          console.error("Error adding Mainnet:", addError);
         }
       } else {
-        console.error("Error switching to Polygon Mainnet:", error);
+        console.error("Error switching to Mainnet:", error);
       }
     }
   };
 
-  const switchToPolygonTestnet = async () => {
-    const polygonTestnetData = {
-      chainId: "0x13881", //80001 
-      chainName: "Polygon Mumbai",
+  const switchToTestnet = async () => {
+    const TestnetData = {
+      chainId: "0x61", //97
+      chainName: "BNB Smart Chain Testnet",
       nativeCurrency: {
-        name: "Matic",
-        symbol: "MATIC",
+        name: "BNB",
+        symbol: "tBNB",
         decimals: 18,
       },
-      rpcUrls: ["https://polygon-mumbai.g.alchemy.com/v2/ePeu2ooFujhSUo_Pqf5NS2uVDnz6ZiOO"],
-      blockExplorerUrls: ["https://mumbai.polygonscan.com"],
+      rpcUrls: ["https://endpoints.omniatech.io/v1/bsc/testnet/public"],
+      blockExplorerUrls: ["https://testnet.bscscan.com"],
     };
 
     try {
       await window.ethereum.request({
         method: "wallet_switchEthereumChain",
-        params: [{ chainId: polygonTestnetData.chainId }],
+        params: [{ chainId: TestnetData.chainId }],
       });
     } catch (error) {
       if (error.code === 4902) {
         try {
           await window.ethereum.request({
             method: "wallet_addEthereumChain",
-            params: [polygonTestnetData],
+            params: [TestnetData],
           });
         } catch (addError) {
-          console.error("Error adding Polygon Testnet:", addError);
+          console.error("Error adding Testnet:", addError);
         }
       } else {
-        console.error("Error switching to Polygon Testnet:", error);
+        console.error("Error switching to Testnet:", error);
       }
     }
   };
@@ -78,8 +78,8 @@ const ContractProvider = ({ children }) => {
   const value = {
     updateContractInfo,
     setUpdateContractInfo,
-    switchToPolygonMainnet,
-    switchToPolygonTestnet,
+    switchToMainnet,
+    switchToTestnet,
   };
 
   return (

@@ -5,27 +5,27 @@ import MessageBoxContext from "./MessageBoxContext";
 const MessageBoxProvider = ({ children }) => {
   const [showFailMessage, setShowFailMessage] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const [polyScanURL, setPolyScanURL] = useState("");
+  const [networkScanURL, setNetworkScanURL] = useState("");
   const [showPendingMessage, setShowPendingMessage] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [showConnectToPolygonMessage, setShowConnectToPolygonMessage] = useState(false);
+  const [showConnectToNetworkMessage, setShowConnectToNetworkMessage] = useState(false);
 
   const value = {
     showFailMessage,
     setShowFailMessage,
     errorMessage,
     setErrorMessage,
-    polyScanURL,
-    setPolyScanURL,
+    networkScanURL,
+    setNetworkScanURL,
     showPendingMessage,
     setShowPendingMessage,
     showSuccessMessage,
     setShowSuccessMessage,
     isLoading,
     setIsLoading,
-    showConnectToPolygonMessage,
-    setShowConnectToPolygonMessage,
+    showConnectToNetworkMessage,
+    setShowConnectToNetworkMessage,
   };
 
   return (

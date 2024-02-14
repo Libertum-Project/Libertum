@@ -5,7 +5,7 @@ import Loading from "./Loading";
 import PendingMessage from "./PendingMessage";
 import FailMessage from "./FailMessage";
 import SuccessMessage from "./SuccessMessage";
-import ConnectToPolygonMessage from "./ConnectToPolygonMessage.jsx";
+import ConnectToNetworkMessage from "./ConnectToNetworkMessage.jsx";
 
 const MessageBox = () => {
   const {
@@ -13,12 +13,12 @@ const MessageBox = () => {
     showFailMessage,
     setShowFailMessage,
     errorMessage,
-    polyScanURL,
+    networkScanURL,
     showPendingMessage,
     showSuccessMessage,
     setShowSuccessMessage,
-    showConnectToPolygonMessage,
-    setShowConnectToPolygonMessage,
+    showConnectToNetworkMessage,
+    setShowConnectToNetworkMessage,
   } = useContext(MessageBoxContext);
 
   return (
@@ -28,13 +28,13 @@ const MessageBox = () => {
         <FailMessage
           setShowFailMessage={setShowFailMessage}
           message={errorMessage}
-          url={polyScanURL}
+          url={networkScanURL}
         />
       ) : null}
 
-      {showConnectToPolygonMessage ? (
-        <ConnectToPolygonMessage
-          setShowConnectToPolygonMessage={setShowConnectToPolygonMessage}
+      {showConnectToNetworkMessage ? (
+        <ConnectToNetworkMessage
+          setShowConnectToNetworkMessage={setShowConnectToNetworkMessage}
         />
       ) : null}
 

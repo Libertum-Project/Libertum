@@ -12,19 +12,20 @@ async function buyTokens(
   setShowPendingMessage: (value: boolean) => void,
   setShowFailMessage: (value: boolean) => void,
   setErrorMessage: (value: string) => void,
-  setPolyScanURL: (value: string) => void,
+  setNetworkScanURL: (value: string) => void,
+  scanURL:string,
   setShowSuccessMessage: (value: boolean) => void,
   setUpdateContractInfo: (value: boolean) => void,
-  setShowConnectToPolygonMessage: (value: boolean) => void,
+  setShowConnectToNetworkMessage: (value: boolean) => void,
   isConnected: boolean,
   chainId: number | undefined,
 ): Promise<void> {
   let transactionHash;
   setErrorMessage("");
-  setPolyScanURL("");
+  setNetworkScanURL("");
   try {
     if (isConnected && chainId !== correctChainId) {
-      setShowConnectToPolygonMessage(true);
+      setShowConnectToNetworkMessage(true);
       return;
     }
     setIsLoading(true);
@@ -37,11 +38,9 @@ async function buyTokens(
     let price: number = 0;
 
     if (currentStage == 1) {
-      price = 60_000;
+      price = 66_000;
     } else if (currentStage == 3) {
       price = 72_000;
-    } else if (currentStage == 5) {
-      price = 80_000;
     } else {
       console.error("Invalid current stage");
     }
@@ -73,9 +72,9 @@ async function buyTokens(
       setErrorMessage(
         "It looks like you rejected this transaction. Don't miss out on the opportunity to buy pLBM!",
       );
-      setPolyScanURL("");
+      setNetworkScanURL("");
     } else if (transactionHash) {
-      setPolyScanURL(`https://mumbai.polygonscan.com/tx/${transactionHash}`);
+      setNetworkScanURL(`${scanURL}${transactionHash}`);
       setErrorMessage("An error occurred while processing your request.");
       transactionHash = null;
     } else {

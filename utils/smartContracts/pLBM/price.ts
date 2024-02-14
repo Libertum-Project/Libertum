@@ -2,8 +2,8 @@ import { Contract, Provider, getDefaultProvider, formatUnits } from "ethers";
 import pLBM_ABI from "../ABI/pLBM.json";
 import { getEnvironmentVariables } from "./getEnvironmentVariables";
 
-const { pLBM_address, alchemy_node } = getEnvironmentVariables();
-const provider: Provider = getDefaultProvider(alchemy_node);
+const { pLBM_address, node} = getEnvironmentVariables();
+const provider: Provider = getDefaultProvider(node);
 
 const contract = new Contract(pLBM_address, pLBM_ABI.abi, provider);
 
