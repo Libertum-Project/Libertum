@@ -1,5 +1,8 @@
 "use client";
 import { type ReactElement, useContext } from "react";
+import Image from "next/image";
+import credit from "./assets/credit.svg";
+import arrow from "@/public/assets/leftArrow.svg";
 import { TransakConfig, Transak } from "@transak/transak-sdk";
 import Pusher from "pusher-js";
 import { Interface } from "ethers";
@@ -137,7 +140,13 @@ export function BuyWithFiatButton({
 
   return (
     <>
-      <button onClick={handleButtonClick} disabled>Buy With Credit Card</button>
+      <button onClick={handleButtonClick} disabled>
+        <div>
+          <Image src={credit} alt="wallet" width={24} height={24} />
+          <p>Buy With Credit Card</p>
+        </div>
+        <Image src={arrow} alt="wallet" width={24} height={24} />
+      </button>
     </>
   );
 }

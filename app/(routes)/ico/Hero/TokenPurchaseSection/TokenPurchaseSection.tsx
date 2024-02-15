@@ -1,35 +1,18 @@
 "use client";
 import { type ReactElement } from "react";
 import { useState, useEffect, ChangeEvent } from "react";
-import { BuyWithCryptoButton } from "./BuyWithCryptoButton";
-import { BuyWithFiatButton } from "./BuyWithFiatButton";
 import Image from "next/image";
 import Link from "next/link";
 import css from "./TokenPurchaseSection.module.css";
-import info from "./info.svg";
-import libertum from "./libertum_input.svg";
-import usd from "./USDT.png";
-
+import info from "./assets/info.svg";
+import libertum from "./assets/libertum_input.svg";
+import usd from "./assets/USDT.png";
+import { BuyNowModal } from "./BuyNowModal";
 export function TokenPurchaseSection(): ReactElement {
-  /*
-  useEffect(() => {
-    async function getInfo() {
-      try {
-        const response = await fetch("/api/smartcontract?function=getPrice&stage=whitelist", {
-          method: "GET",
-        });
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const data = await response.text();
-        console.log(data);
-      } catch (error) {
-        console.error("There was a problem with the fetch operation:", error);
-      }
-    }
-    getInfo();
-  }, []);
-  */
+  const [showBuyModal, setShowBuyModal] = useState(false);
+  const handleBuyModal = () => {
+    setShowBuyModal(!showBuyModal);
+  }
   const LBM_PRICE: number = 0.066;
   const MIN_USD: number = 50;
   const MIN_LBM: number = parseFloat((MIN_USD / LBM_PRICE).toFixed(1));
@@ -137,9 +120,8 @@ export function TokenPurchaseSection(): ReactElement {
         </div>
       </div>
       <div className={css.purchaseButtons}>
-        <BuyWithCryptoButton lbmAmount={lbmAmount} usdAmount={usdAmount} />
-        <p>Or</p>
-        <BuyWithFiatButton lbmAmount={lbmAmount} usdAmount={usdAmount} />
+        <button onClick={handleBuyModal}>Buy Now</button>
+        {showBuyModal && <BuyNowModal handleBuyModal={handleBuyModal} lbmAmount={lbmAmount} usdAmount={usdAmount} />}
         <a
           href="https://quickswap.exchange/#/swap?inputCurrency=ETH&outputCurrency=0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174&swapIndex=0"
           target="_blank"
