@@ -1,10 +1,20 @@
 "use client";
-import dynamic from "next/dynamic";
 import css from "./UpcomingEvents.module.css";
 
-// const Video = dynamic(() => import("./Video").then((mod) => mod.Video));
-
 export function UpcomingEvents() {
+  const scrollToTop = () => {
+    if (window.innerWidth > 1250) {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    } else {
+      const tokenPurchaseSection = document.getElementById("tokenPurchaseSection");
+      if (tokenPurchaseSection) {
+        tokenPurchaseSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
   return (
     <div className={css.upcomingEventsContainer}>
       <section className={css.upcomingEvents}>
@@ -30,7 +40,9 @@ export function UpcomingEvents() {
                   <span className={css.infoValue}>$264,000</span>
                 </div>
               </div>
-              <button className={css.buyButton}>Buy Now</button>
+              <button className={css.buyButton} onClick={scrollToTop}>
+                Buy Now
+              </button>
             </div>
             <div className={css.eventItem}>
               <div className={css.eventTitle}>
@@ -56,14 +68,10 @@ export function UpcomingEvents() {
           </div>
         </div>
         <div className={css.videoContainer}>
-          <video
-          controls
-          className={css.video}
-          poster="./howtobuyView.png"
-        >
-          <source src="./howtobuyVideo2.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+          <video controls className={css.video} poster="./howtobuyView.png">
+            <source src="./howtobuyVideo2.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </section>
     </div>
