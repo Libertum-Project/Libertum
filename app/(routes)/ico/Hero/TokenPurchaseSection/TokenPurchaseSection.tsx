@@ -57,7 +57,7 @@ export function TokenPurchaseSection(): ReactElement {
   };
 
   return (
-    <article className={css.tokenPurchaseSection}>
+    <article className={css.tokenPurchaseSection} id="tokenPurchaseSection">
       <div className={css.purchaseInfo}>
         <div>
           <p className={css.tittle}>Upcoming Public Round 1</p>

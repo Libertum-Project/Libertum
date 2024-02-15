@@ -153,6 +153,10 @@
   background: #159390;
 }
 
+.eventItem:last-child .buyButton:hover {
+  cursor: not-allowed;
+}
+
 @media (min-width: 750px) {
   .upcomingEvents {
     padding-inline: 0;
