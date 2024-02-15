@@ -61,7 +61,7 @@ export function UpcomingEvents() {
           className={css.video}
           poster="./howtobuyView.png"
         >
-          <source src="./howtobuyVideo.mp4" type="video/mp4" />
+          <source src="./howtobuyVideo2.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         </div>
