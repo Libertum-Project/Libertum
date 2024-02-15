@@ -10,6 +10,17 @@
   margin: 0 auto;
 }
 
+.videoContainer {
+
+}
+
+.video {
+  margin-top: 2rem;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
 .upcomingEvents img {
   min-width: 300px;
   width: 100%;
@@ -169,6 +180,16 @@
 
   .eventContainer {
     flex: 1;
+  }
+
+  .videoContainer{
+    flex: 1;
+  }
+
+  .video {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
   }
 
   .eventDetails {

@@ -2,7 +2,7 @@
 import dynamic from "next/dynamic";
 import css from "./UpcomingEvents.module.css";
 
-const Video = dynamic(() => import("./Video").then((mod) => mod.Video));
+// const Video = dynamic(() => import("./Video").then((mod) => mod.Video));
 
 export function UpcomingEvents() {
   return (
@@ -55,7 +55,16 @@ export function UpcomingEvents() {
             </div>
           </div>
         </div>
-        <Video />
+        <div className={css.videoContainer}>
+          <video
+          controls
+          className={css.video}
+          poster="./howtobuyView.png"
+        >
+          <source src="./howtobuyVideo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        </div>
       </section>
     </div>
   );
