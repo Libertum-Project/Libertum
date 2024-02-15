@@ -173,7 +173,6 @@
 
 .purchaseButtons button {
   align-items: center;
-  align-self: stretch;
   background: #00b3b5;
   border-radius: 5px;
   border: none;
@@ -217,6 +216,53 @@
   cursor: not-allowed;
 }
 
+.buyModalContainer {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: rgba(8, 9, 21, 0.7);
+  backdrop-filter: blur(3px);
+}
+
+.buyModal {
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-radius: 5px;
+  border: 1px solid #00b3b5;
+}
+
+.buyModal button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 1rem 2rem;
+}
+.buyModal button div {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+.buyModal button img {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
 @media (min-width: 1250px) {
   .tokenPurchaseSection {
     padding: 2.5rem;
@@ -245,5 +291,19 @@
 
   .purchaseButtons button {
     margin: 0 auto;
+  }
+
+  .buyModal {
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .buyModal button {
+    max-width: 350px;
+  }
+
+  .buyModal button img {
+    width: 1.2rem;
+    height: 1.2rem;
   }
 }
