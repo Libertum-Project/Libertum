@@ -232,6 +232,7 @@
 }
 
 .buyModal {
+  position: relative;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 1.5rem;
@@ -242,17 +243,25 @@
   border-radius: 5px;
 }
 
+.buyModal .closeImage {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  width: 9.48px;
+  height: 12px;
+  cursor: pointer;
+}
+
 .buyModal .imageContainer {
   align-items: center;
   display: flex;
- justify-content: center; 
+  justify-content: center;
   width: 124px;
   height: 124px;
   flex-shrink: 0;
   border-radius: 124px;
   background: rgba(0, 179, 181, 0.1);
 }
-
 
 .buyModal h3 {
   color: #080915;
@@ -318,10 +327,7 @@
   }
 
   .buyModal {
-    padding: 2rem;
+    padding: 2rem 4rem;
     gap: 2rem;
-  }
-
-  .buyModal button {
   }
 }
