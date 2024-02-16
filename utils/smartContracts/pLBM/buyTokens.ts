@@ -1,6 +1,29 @@
-import { Contract } from "ethers";
+import { Contract, formatUnits } from "ethers";
 import pLBM_ABI from "../ABI/pLBM.json";
 import USDC_ABI from "../ABI/USDC.json";
+import { getUserUSDTBalance } from "./getUserUSDTBalance";
+
+/**
+ * Function to facilitate the purchase of pLBM tokens with USDC.
+ * @param pLBM_address - The address of the pLBM token contract.
+ * @param USDC_address - The address of the USDC token contract.
+ * @param correctChainId - The correct chain ID for the network.
+ * @param provider - The ethers provider object.
+ * @param lbmAmount - The amount of pLBM tokens to buy.
+ * @param setIsLoading - Function to set loading state.
+ * @param setShowPendingMessage - Function to show pending transaction message.
+ * @param setShowFailMessage - Function to show failed transaction message.
+ * @param setErrorMessage - Function to set error message.
+ * @param setNetworkScanURL - Function to set URL for transaction scan.
+ * @param scanURL - The base URL for transaction scan.
+ * @param setShowSuccessMessage - Function to show success message.
+ * @param setUpdateContractInfo - Function to update contract information.
+ * @param setShowConnectToNetworkMessage - Function to show connect to correct network message.
+ * @param isConnected - Boolean indicating if the user is connected to a wallet.
+ * @param chainId - The current chain ID.
+ * @param setShowNotEnoughUSDT - Function to show message when user has insufficient USDT balance.
+ * @returns Promise<void>
+ */
 
 async function buyTokens(
   pLBM_address: string,
@@ -13,17 +36,19 @@ async function buyTokens(
   setShowFailMessage: (value: boolean) => void,
   setErrorMessage: (value: string) => void,
   setNetworkScanURL: (value: string) => void,
-  scanURL:string,
+  scanURL: string,
   setShowSuccessMessage: (value: boolean) => void,
   setUpdateContractInfo: (value: boolean) => void,
   setShowConnectToNetworkMessage: (value: boolean) => void,
   isConnected: boolean,
   chainId: number | undefined,
+  setShowNotEnoughUSDT: (value: boolean) => void,
 ): Promise<void> {
   let transactionHash;
   setErrorMessage("");
   setNetworkScanURL("");
   try {
+    // Check if user is connected to the correct Network.
     if (isConnected && chainId !== correctChainId) {
       setShowConnectToNetworkMessage(true);
       return;
@@ -34,6 +59,7 @@ async function buyTokens(
     const pLBM_contract: any = new Contract(pLBM_address, pLBM_ABI.abi, signer);
     const USDC_contract: any = new Contract(USDC_address, USDC_ABI.abi, signer);
 
+    // Determine price based on current stage.
     const currentStage = await pLBM_contract.currentStage();
     let price: number = 0;
 
@@ -45,11 +71,24 @@ async function buyTokens(
       console.error("Invalid current stage");
     }
 
+    // Check if the user has enough USDT balance to buy pLBM tokens.
+    const userAddress = signer.address;
+    const userUsdtBalance: number | null =
+      await getUserUSDTBalance(userAddress);
+    const usdAmount = parseFloat(formatUnits(lbmAmount * price, 6));
+    if (usdAmount > userUsdtBalance!) {
+      setShowNotEnoughUSDT(true);
+      setIsLoading(false);
+      return;
+    }
+
+    // Approve USDC transfer to pLBM contract.
     await USDC_contract.connect(signer).approve(
       pLBM_address,
       BigInt(lbmAmount * price),
     );
 
+    // Execute buy transaction for pLBM tokens.
     const tx = await pLBM_contract
       .connect(signer)
       .buy(BigInt(lbmAmount * 10 ** 18), { gasLimit: 2000000 });

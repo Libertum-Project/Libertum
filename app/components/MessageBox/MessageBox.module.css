@@ -1,4 +1,5 @@
 .errorBoxContainer,
+.notEnoughContainer,
 .pendingBoxContainer,
 .successBoxContainer,
 .messageBoxContainer {
@@ -15,6 +16,7 @@
 }
 
 .errorBox,
+.notEnough,
 .pendingBox,
 .successBox,
 .messageBox {
@@ -31,7 +33,8 @@
   box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.5);
 }
 
-.errorBox {
+.errorBox,
+.notEnough {
   gap: 2rem;
 }
 
@@ -52,7 +55,7 @@
 }
 
 .header h2 {
-  color: rgba(242, 30, 30, 0.93);
+  color: var(--color-primary);
   text-align: left;
   font-size: 1.3rem;
   font-style: normal;
@@ -63,10 +66,11 @@
 }
 
 .errorBox p,
+.notEnough p,
 .pendingBox p,
 .successBox p,
 .messageBox p {
-  color: #4a4a4a;
+  color: var(--color-primary);
   width: 18rem;
   text-align: left;
   font-size: 1.1305rem;
@@ -80,9 +84,10 @@
 
 .errorBox button,
 .successBox button,
+.notEnough button,
 .messageBox button {
   border-radius: 0.31rem;
-  background: var(--color-primary) !important;
+  background: var(--color-secondary);
   font-family: var(--font-primary);
   border: none;
   color: white;
@@ -91,6 +96,7 @@
 }
 
 .errorBox button:hover,
+.notEnough button:hover,
 .successBox button:hover,
 .messageBox button:hover {
   transition: all ease-in 0.3s;
@@ -98,20 +104,16 @@
 }
 
 .successBox h2 {
-  color: #009ed4;
-}
-
-.successBox button {
-  background: #009ed4;
+ color: var(--color-secondary);
 }
 
 .pendingBox h2,
 .messageBox h2 {
-  color: #374151;
+  color: var(--color-primary);
 }
 
 .pendingBox {
-  gap: 0.5rem;
+  gap: 1.5rem;
 }
 
 .pendingBox img {
@@ -120,15 +122,16 @@
   margin-right: 1rem;
 }
 
-.polyScanURL a {
+.URL a {
   font-size: 1rem;
   color: #374151;
   opacity: 0.8;
   text-decoration: underline;
-  transition: all ease-in-out 0.4s;
+  transition: all ease-in-out 0.2s;
+  font-family: var(--font-secondary);
 }
 
-.polyScanURL a:hover {
+.URL a:hover {
   opacity: 1;
 }
 
@@ -141,9 +144,19 @@
   line-height: 1.7;
 }
 
+.notEnough img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.notEnough .header h2 {
+  color: var(--color-primary);
+}
+
 @media (min-width: 750px) {
   .errorBox p,
-  .successBox p {
+  .successBox p,
+  .notEnough p {
     width: 31rem;
   }
 

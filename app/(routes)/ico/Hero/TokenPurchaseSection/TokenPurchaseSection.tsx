@@ -4,9 +4,9 @@ import { useState, useEffect, ChangeEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import css from "./TokenPurchaseSection.module.css";
-import info from "./assets/info.svg";
-import libertum from "./assets/libertum_input.svg";
-import usd from "./assets/USDT.png";
+import info from "@/public/assets/info.svg";
+import libertum from "@/public/assets/libertum_input.svg";
+import usd from "@/public/assets/USDT.png";
 import { BuyNowModal } from "./BuyNowModal";
 export function TokenPurchaseSection(): ReactElement {
   const [showBuyModal, setShowBuyModal] = useState(false);
