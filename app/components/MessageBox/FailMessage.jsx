@@ -22,7 +22,7 @@ const FailMessage = ({ setShowFailMessage, message, url }) => {
       <div className={css.errorBox} onClick={handleErrorBoxClick}>
         <div className={css.header}>
           <Image src={error} alt="error" />
-          <h2>Error!</h2>
+          <h2>Error</h2>
         </div>
         <div>
           <p>{message}</p>
