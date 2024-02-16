@@ -1,7 +1,6 @@
 "use client";
 import { type ReactElement, useContext, useEffect, useState } from "react";
 import Image from "next/image";
-import wallet from "./assets/wallet.svg";
 import coin from "@/public/assets/coin.svg";
 import arrow from "@/public/assets/leftArrow.svg";
 import MessageBoxContext from "@/context/MessageBoxContext";
@@ -30,6 +29,7 @@ export function BuyWithCryptoButton({
     setErrorMessage,
     setNetworkScanURL,
     setShowConnectToNetworkMessage,
+    setShowNotEnoughUSDT,
   } = useContext(MessageBoxContext);
 
   const { setUpdateContractInfo } = useContext(ContractContext);
@@ -81,6 +81,7 @@ export function BuyWithCryptoButton({
         setShowConnectToNetworkMessage,
         isConnected,
         chainId,
+        setShowNotEnoughUSDT,
       );
     }
   };

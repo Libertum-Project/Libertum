@@ -5,7 +5,7 @@ export async function arePurchaseRequirementsSatisfied(
   usdAmount: number,
 ): Promise<{ reason: string; arePurchaseRequirementsSatisfied: boolean }> {
   try {
-    const isCorrectAmount: boolean = usdAmount >= 50 && usdAmount < 10000;
+    const isCorrectAmount: boolean = usdAmount >= 50 && usdAmount <= 10000;
     if (!isCorrectAmount) {
       return {
         reason:

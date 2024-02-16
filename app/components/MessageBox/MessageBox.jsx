@@ -6,6 +6,7 @@ import PendingMessage from "./PendingMessage";
 import FailMessage from "./FailMessage";
 import SuccessMessage from "./SuccessMessage";
 import ConnectToNetworkMessage from "./ConnectToNetworkMessage.jsx";
+import NotEnoughUSDT from "./NotEnoughUSDT";
 
 const MessageBox = () => {
   const {
@@ -19,11 +20,16 @@ const MessageBox = () => {
     setShowSuccessMessage,
     showConnectToNetworkMessage,
     setShowConnectToNetworkMessage,
+    showNotEnoughUSDT,
+    setShowNotEnoughUSDT,
   } = useContext(MessageBoxContext);
 
   return (
     <>
       {isLoading ? <Loading /> : null}
+      {showNotEnoughUSDT ? (
+        <NotEnoughUSDT setShowNotEnoughUSDT={setShowNotEnoughUSDT} />
+      ) : null}
       {showFailMessage ? (
         <FailMessage
           setShowFailMessage={setShowFailMessage}

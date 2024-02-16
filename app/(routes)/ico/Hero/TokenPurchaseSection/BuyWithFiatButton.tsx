@@ -1,7 +1,7 @@
 "use client";
 import { type ReactElement, useContext } from "react";
 import Image from "next/image";
-import credit from "./assets/credit.svg";
+import credit from "@/public/assets/credit.svg";
 import arrow from "@/public/assets/leftArrow.svg";
 import { TransakConfig, Transak } from "@transak/transak-sdk";
 import Pusher from "pusher-js";
@@ -97,7 +97,7 @@ export function BuyWithFiatButton({
               "https://www.libertum.io/_next/static/media/libertum_input.cb17a477.svg",
           },
         ],
-        network: "BSC",
+        network: "bsc",
         isTransakOne: true,
       };
 
