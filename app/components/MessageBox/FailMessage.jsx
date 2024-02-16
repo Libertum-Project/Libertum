@@ -22,13 +22,13 @@ const FailMessage = ({ setShowFailMessage, message, url }) => {
       <div className={css.errorBox} onClick={handleErrorBoxClick}>
         <div className={css.header}>
           <Image src={error} alt="error" />
-          <h2>Error!</h2>
+          <h2>Error</h2>
         </div>
         <div>
           <p>{message}</p>
         </div>
         {url && (
-          <div className={css.polyScanURL}>
+          <div className={css.URL}>
             <a href={url} target="_blank">
               Click here to view Transaction Details on Block explorer
             </a>

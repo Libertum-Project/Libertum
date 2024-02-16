@@ -10,6 +10,7 @@ const MessageBoxProvider = ({ children }) => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [showConnectToNetworkMessage, setShowConnectToNetworkMessage] = useState(false);
+  const [showNotEnoughUSDT, setShowNotEnoughUSDT] = useState(false);
 
   const value = {
     showFailMessage,
@@ -26,6 +27,8 @@ const MessageBoxProvider = ({ children }) => {
     setIsLoading,
     showConnectToNetworkMessage,
     setShowConnectToNetworkMessage,
+    showNotEnoughUSDT,
+    setShowNotEnoughUSDT,
   };
 
   return (

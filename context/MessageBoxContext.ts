@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { createContext } from "react";
 
@@ -17,6 +17,8 @@ interface MessageBoxContextProps {
   setIsLoading: (value: boolean) => void;
   showConnectToNetworkMessage: boolean;
   setShowConnectToNetworkMessage: (value: boolean) => void;
+  showNotEnoughUSDT: boolean;
+  setShowNotEnoughUSDT: (value: boolean) => void;
 }
 
 const MessageBoxContext = createContext<MessageBoxContextProps>({
@@ -34,6 +36,8 @@ const MessageBoxContext = createContext<MessageBoxContextProps>({
   setIsLoading: () => {},
   showConnectToNetworkMessage: false,
   setShowConnectToNetworkMessage: () => {},
+  showNotEnoughUSDT: false,
+  setShowNotEnoughUSDT: () => {},
 });
 
 export default MessageBoxContext;
