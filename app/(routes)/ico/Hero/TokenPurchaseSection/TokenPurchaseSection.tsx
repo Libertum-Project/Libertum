@@ -7,12 +7,17 @@ import css from "./TokenPurchaseSection.module.css";
 import info from "@/public/assets/info.svg";
 import libertum from "@/public/assets/libertum_input.svg";
 import usd from "@/public/assets/USDT.png";
-import { BuyNowModal } from "./BuyNowModal";
+//import { BuyNowModal } from "./BuyNowModal";
+import { BuyWithCryptoButton } from "./BuyWithCryptoButton";
+
 export function TokenPurchaseSection(): ReactElement {
+  /*
   const [showBuyModal, setShowBuyModal] = useState(false);
+
   const handleBuyModal = () => {
     setShowBuyModal(!showBuyModal);
   }
+ */
   const LBM_PRICE: number = 0.066;
   const MIN_USD: number = 50;
   const MIN_LBM: number = parseFloat((MIN_USD / LBM_PRICE).toFixed(1));
@@ -120,10 +125,14 @@ export function TokenPurchaseSection(): ReactElement {
         </div>
       </div>
       <div className={css.purchaseButtons}>
+        <BuyWithCryptoButton lbmAmount={lbmAmount} usdAmount={usdAmount} />
+
+        {/*
         <button onClick={handleBuyModal}>Buy Now</button>
         {showBuyModal && <BuyNowModal handleBuyModal={handleBuyModal} lbmAmount={lbmAmount} usdAmount={usdAmount} />}
+          */}
         <a
-          href="https://quickswap.exchange/#/swap?inputCurrency=ETH&outputCurrency=0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174&swapIndex=0"
+          href="https://pancakeswap.finance/swap?outputCurrency=0x55d398326f99059fF775485246999027B3197955"
           target="_blank"
           rel="noopener noreferrer"
         >

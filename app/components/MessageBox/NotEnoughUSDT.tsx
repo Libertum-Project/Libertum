@@ -28,7 +28,11 @@ const NotEnoughUSDT = ({ setShowNotEnoughUSDT }: any) => {
           <p>You do not have enough USDT to complete this transaction.</p>
         </div>
         <div className={css.URL}>
-          <a href="#" target="_blank">
+          <a
+            href="https://pancakeswap.finance/swap?outputCurrency=0x55d398326f99059fF775485246999027B3197955"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             Click here to buy some USDT
           </a>
         </div>
