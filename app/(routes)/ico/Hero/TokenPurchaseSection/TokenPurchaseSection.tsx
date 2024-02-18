@@ -132,7 +132,7 @@ export function TokenPurchaseSection(): ReactElement {
         {showBuyModal && <BuyNowModal handleBuyModal={handleBuyModal} lbmAmount={lbmAmount} usdAmount={usdAmount} />}
           */}
         <a
-          href="https://quickswap.exchange/#/swap?inputCurrency=ETH&outputCurrency=0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174&swapIndex=0"
+          href="https://pancakeswap.finance/swap?outputCurrency=0x55d398326f99059fF775485246999027B3197955"
           target="_blank"
           rel="noopener noreferrer"
         >
