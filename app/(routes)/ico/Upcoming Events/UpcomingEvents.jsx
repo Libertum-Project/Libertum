@@ -23,7 +23,7 @@ export function UpcomingEvents() {
           <div className={css.eventDetails}>
             <div className={css.eventItem}>
               <div className={css.eventTitle}>
-                <p className={css.tittle}>Public Round 1</p>
+                <p className={css.tittle}> LIVE • Public Round 1</p>
                 <span>MONDAY 19 FEB 2024</span>
               </div>
               <div className={css.eventInfo}>
