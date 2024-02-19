@@ -64,9 +64,9 @@ async function buyTokens(
     let price: number = 0;
 
     if (currentStage == 1) {
-      price = 66_000;
+      price = (66 * 10 ** 18) / 1000;
     } else if (currentStage == 3) {
-      price = 72_000;
+      price = (72 * 10 ** 18) / 1000;
     } else {
       console.error("Invalid current stage");
     }
@@ -75,7 +75,7 @@ async function buyTokens(
     const userAddress = signer.address;
     const userUsdtBalance: number | null =
       await getUserUSDTBalance(userAddress);
-    const usdAmount = parseFloat(formatUnits(lbmAmount * price, 6));
+    const usdAmount = parseFloat(formatUnits(lbmAmount * price, 18));
     if (usdAmount > userUsdtBalance!) {
       setShowNotEnoughUSDT(true);
       setIsLoading(false);
