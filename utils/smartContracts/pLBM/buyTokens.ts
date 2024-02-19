@@ -1,4 +1,4 @@
-import { Contract, formatUnits } from "ethers";
+import { Contract } from "ethers";
 import pLBM_ABI from "../ABI/pLBM.json";
 import USDC_ABI from "../ABI/USDC.json";
 import { getUserUSDTBalance } from "./getUserUSDTBalance";
@@ -61,27 +61,27 @@ async function buyTokens(
 
     // Determine price based on current stage.
     const currentStage = await pLBM_contract.currentStage();
-    let price: any= 0;
+    let price: any = 0;
     if (currentStage == 1) {
-      price = ((66 * 10 ** 18) / 1000)
+      price = (66 * 10 ** 18) / 1000;
     } else if (currentStage == 3) {
-      price = ((72 * 10 ** 18) / 1000);
+      price = (72 * 10 ** 18) / 1000;
     } else {
       console.error("Invalid current stage");
     }
-/*
+
     // Check if the user has enough USDT balance to buy pLBM tokens.
     const userAddress = signer.address;
     const userUsdtBalance: number | null =
       await getUserUSDTBalance(userAddress);
-    const usdAmount = parseFloat(formatUnits(lbmAmount * price, 18));
+    const usdAmount = (lbmAmount * price) / 10 ** 18;
+    console.log(userUsdtBalance);
+    console.log(usdAmount);
     if (usdAmount > userUsdtBalance!) {
       setShowNotEnoughUSDT(true);
       setIsLoading(false);
       return;
     }
-*/
-
 
     // Approve USDC transfer to pLBM contract.
     await USDC_contract.connect(signer).approve(
