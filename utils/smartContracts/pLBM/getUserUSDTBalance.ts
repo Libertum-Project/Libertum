@@ -9,7 +9,7 @@ export async function getUserUSDTBalance(userAddress: string) {
     const usdcContract = new Contract(USDC_address, ABI.abi, provider);
 
     const balanceInWei = await usdcContract.balanceOf(userAddress);
-    const userFriendlyBalance = parseFloat(formatUnits(balanceInWei, 6));
+    const userFriendlyBalance = parseFloat(formatUnits(balanceInWei, 18));
     return userFriendlyBalance;
   } catch (error) {
     console.error("Error fetching user USDT balance:", error);
