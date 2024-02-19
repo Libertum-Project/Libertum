@@ -17,6 +17,10 @@ const FAQ = ({ question, answer }: FAQProps) => {
     setIsExpanded((prevExpanded) => !prevExpanded);
   };
 
+  const createMarkup = (htmlString: string) => {
+    return { __html: htmlString };
+  };
+
   return (
     <div className={css.faqItem}>
       <div className={css.question} onClick={handleToggle}>
@@ -36,7 +40,8 @@ const FAQ = ({ question, answer }: FAQProps) => {
       </div>
  <div className={`${css.answerContainer} ${isExpanded ? css.open : ""}`}>
         <div className={css.answer}>
-          <div dangerouslySetInnerHTML={{ __html: answer }} />
+          {/* <div dangerouslySetInnerHTML={{ __html: answer }} /> */}
+          <div dangerouslySetInnerHTML={createMarkup(answer)} />
         </div>
       </div>
     </div>

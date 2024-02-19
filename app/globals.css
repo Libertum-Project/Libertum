@@ -70,9 +70,17 @@ main {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 
+a {
+  color: #00b3b5;
+}
+
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
+}
+
+li {
+  font-family:  var(--font-secondary);
 }
 
 /* Grouping content
