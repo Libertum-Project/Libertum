@@ -5,7 +5,9 @@ export const faqData = [
     answer: `<span> 
     $LBM is an BEP-20 token on the BNB Smart Chain with a maximum supply of only 200,000,000 (200 million). The $LBM Token is the native token on the blockchain that is the backbone of the Libertum fractionalized rental income ecosystem. </span>
 
-    <p>The token contract address is <b>“0x5DDc25297D31A8546Eb52a691F73b2EAcAb37934”</b>. Please do not send any funds to this token contract address, as they cannot be recovered. $LBM can currently only be purchased through the official presale at <b>https://www.libertum.io/ico</b>.<p>`
+    <span> Audit $LBM - <b><a href="https://github.com/solidproof/projects/tree/main/2024/Libertum">  github.com/solidproof/projects/tree/main/2024/Libertum </a></b></span>
+
+    <p>The presale token contract address is <b>“0x28c79d4d03562b9d2b606bcb7c7fb23beff5e907”</b>. Please do not send any funds to this token contract address, as they cannot be recovered. $LBM can currently only be purchased through the official presale at <b> <a href="https://www.libertum.io/ico"> https://www.libertum.io/ico </a></b>.<p>`
 
   },
   {
@@ -47,13 +49,13 @@ export const faqData = [
   {
     id: 6,
     question: "How do I contact support?",
-    answer: `<p>Contact our support team at <b>hello@libertum.io</b> for any questions, concerns, or inquiries. Our dedicated support staff is ready to assist you promptly and ensure your experience with our project is smooth and enjoyable. Feel free to reach out to us anytime, and we are excited to provide you with excellent support and service. Thank you for choosing freedom with Libertum!</p>`,
+    answer: `<p>Contact our support team at <b><a href="mailto:hello@libertum.io">hello@libertum.io</a></b> for any questions, concerns, or inquiries. Our dedicated support staff is ready to assist you promptly and ensure your experience with our project is smooth and enjoyable. Feel free to reach out to us anytime, and we are excited to provide you with excellent support and service. Thank you for choosing freedom with Libertum!</p>`,
   },
   {
     id: 7,
     question: "How to buy?",
     answer: `
-    <span>Step 1 - 🔸Go to <b>https://www.libertum.io/ico</b></span>
+    <span>Step 1 - 🔸Go to <b><a href="https://www.libertum.io/ico">https://www.libertum.io/ico</a></b></span>
     <span>Step 2 - 🔸Connect your Wallet (BNB Smart Chain)</span>
     <span>Step 3 - 🔸Ensure you have USDT available in your wallet. Simply swap to get USDT first</span>
     <span>Step 3 - 🔸Selecting your desired number or amount of pLBM tokens</span>
