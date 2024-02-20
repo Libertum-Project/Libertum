@@ -7,6 +7,7 @@ import FailMessage from "./FailMessage";
 import SuccessMessage from "./SuccessMessage";
 import ConnectToNetworkMessage from "./ConnectToNetworkMessage.jsx";
 import NotEnoughUSDT from "./NotEnoughUSDT";
+import ConnectWallet from "./ConnectWallet";
 
 const MessageBox = () => {
   const {
@@ -22,6 +23,8 @@ const MessageBox = () => {
     setShowConnectToNetworkMessage,
     showNotEnoughUSDT,
     setShowNotEnoughUSDT,
+    showConnectWallet,
+    setShowConnectWallet,
   } = useContext(MessageBoxContext);
 
   return (
@@ -29,6 +32,10 @@ const MessageBox = () => {
       {isLoading ? <Loading /> : null}
       {showNotEnoughUSDT ? (
         <NotEnoughUSDT setShowNotEnoughUSDT={setShowNotEnoughUSDT} />
+      ) : null}
+
+      {showConnectWallet ? (
+        <ConnectWallet setShowConnectWallet={setShowConnectWallet} />
       ) : null}
       {showFailMessage ? (
         <FailMessage

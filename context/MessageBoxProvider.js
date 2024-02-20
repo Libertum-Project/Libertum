@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useState } from "react";
 import MessageBoxContext from "./MessageBoxContext";
 
@@ -9,8 +9,10 @@ const MessageBoxProvider = ({ children }) => {
   const [showPendingMessage, setShowPendingMessage] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [showConnectToNetworkMessage, setShowConnectToNetworkMessage] = useState(false);
+  const [showConnectToNetworkMessage, setShowConnectToNetworkMessage] =
+    useState(false);
   const [showNotEnoughUSDT, setShowNotEnoughUSDT] = useState(false);
+  const [showConnectWallet, setShowConnectWallet] = useState(false);
 
   const value = {
     showFailMessage,
@@ -29,6 +31,8 @@ const MessageBoxProvider = ({ children }) => {
     setShowConnectToNetworkMessage,
     showNotEnoughUSDT,
     setShowNotEnoughUSDT,
+    showConnectWallet,
+    setShowConnectWallet,
   };
 
   return (
