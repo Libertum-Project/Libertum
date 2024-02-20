@@ -32,6 +32,7 @@ export function BuyWithCryptoButton({
     setNetworkScanURL,
     setShowConnectToNetworkMessage,
     setShowNotEnoughUSDT,
+    setShowConnectWallet,
   } = useContext(MessageBoxContext);
 
   const { setUpdateContractInfo } = useContext(ContractContext);
@@ -84,6 +85,7 @@ export function BuyWithCryptoButton({
         isConnected,
         chainId,
         setShowNotEnoughUSDT,
+        setShowConnectWallet,
       );
     }
   };

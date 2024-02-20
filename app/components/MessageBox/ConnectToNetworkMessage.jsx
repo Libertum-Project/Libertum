@@ -18,7 +18,13 @@ const ConnectToNetworkMessage = ({ setShowConnectToNetworkMessage }) => {
     >
       <div className={css.messageBox}>
         <div className={css.header}>
-          <Image src={network} alt="network" width={48} height={48} />
+          <Image
+            className={css.networkImage}
+            src={network}
+            alt="network"
+            width={48}
+            height={48}
+          />
           <h2>Connect To BSC</h2>
         </div>
         <div>

@@ -19,6 +19,8 @@ interface MessageBoxContextProps {
   setShowConnectToNetworkMessage: (value: boolean) => void;
   showNotEnoughUSDT: boolean;
   setShowNotEnoughUSDT: (value: boolean) => void;
+  showConnectWallet: boolean;
+  setShowConnectWallet: (value: boolean) => void;
 }
 
 const MessageBoxContext = createContext<MessageBoxContextProps>({
@@ -38,6 +40,8 @@ const MessageBoxContext = createContext<MessageBoxContextProps>({
   setShowConnectToNetworkMessage: () => {},
   showNotEnoughUSDT: false,
   setShowNotEnoughUSDT: () => {},
+  showConnectWallet: false,
+  setShowConnectWallet: () => {},
 });
 
 export default MessageBoxContext;

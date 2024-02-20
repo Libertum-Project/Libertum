@@ -43,13 +43,19 @@ async function buyTokens(
   isConnected: boolean,
   chainId: number | undefined,
   setShowNotEnoughUSDT: (value: boolean) => void,
+  setShowConnectWallet: (value: boolean) => void,
 ): Promise<void> {
   let transactionHash;
   setErrorMessage("");
   setNetworkScanURL("");
   try {
+
+    if (!isConnected) {
+      setShowConnectWallet(true);
+      return
+    }
     // Check if user is connected to the correct Network.
-    if (isConnected && chainId !== correctChainId) {
+    if (chainId !== correctChainId) {
       setShowConnectToNetworkMessage(true);
       return;
     }
