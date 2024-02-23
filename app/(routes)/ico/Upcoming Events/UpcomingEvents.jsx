@@ -60,7 +60,7 @@ export function UpcomingEvents() {
                 </div>
                 <div className={css.infoItem}>
                   <p className={css.infoLabel}>Raise:</p>
-                  <span className={css.infoValue}>$432.000</span>
+                  <span className={css.infoValue}>$432,000</span>
                 </div>
               </div>
               <button className={css.buyButton}>Buy Now</button>
