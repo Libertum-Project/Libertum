@@ -83,7 +83,7 @@ const Footer = () => {
               England <br />
               RM16 2AP
             </p>
-            <p className={css.firstColContact}>hello@libertum.io</p>
+            <a href="mailto:hello@libertum.io" className={css.firstColContact}>hello@libertum.io</a>
             <p className={css.firstColContact}>14638562</p>
             <div>
               <SocialMedia />
