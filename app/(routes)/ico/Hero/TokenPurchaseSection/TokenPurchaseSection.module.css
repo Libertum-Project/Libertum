@@ -109,6 +109,7 @@
 .inputRange {
   width: 100%;
   cursor: pointer;
+  accent-color: var(--color-secondary);
 }
 
 .inputSection {
