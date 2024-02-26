@@ -9,6 +9,7 @@ import libertum from "@/public/assets/libertum_input.svg";
 import usd from "@/public/assets/USDT.png";
 //import { BuyNowModal } from "./BuyNowModal";
 import { BuyWithCryptoButton } from "./BuyWithCryptoButton";
+import VideoModal from "./VideoModal";
 
 export function TokenPurchaseSection(): ReactElement {
   /*
@@ -18,6 +19,18 @@ export function TokenPurchaseSection(): ReactElement {
     setShowBuyModal(!showBuyModal);
   }
  */
+
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => {
+    setModalOpen(true);
+    console.log("clicked")
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
   const LBM_PRICE: number = 0.066;
   const MIN_USD: number = 50;
   const MIN_LBM: number = parseFloat((MIN_USD / LBM_PRICE).toFixed(1));
@@ -80,10 +93,19 @@ export function TokenPurchaseSection(): ReactElement {
               1 Libertum (LBM) <b>= {LBM_PRICE}</b> <span>USD</span>
             </p>
           </div>
-          <Link href="#video" scroll className={css.moreInfoSection}>
+          {/* <Link href="#video" scroll className={css.moreInfoSection}>
             <Image src={info} alt="info" width={16} height={16} />
             <span>View instructions</span>
-          </Link>
+          </Link> */}
+
+    <div className={css.moreInfoSection}>
+      <button onClick={openModal} >
+        <Image src={info} alt="info" width={16} height={16} />
+        <span>View instructions</span>
+      </button>
+      {modalOpen && <VideoModal onClose={closeModal} />}
+    </div>
+
         </div>
         <input
           className={css.inputRange}
