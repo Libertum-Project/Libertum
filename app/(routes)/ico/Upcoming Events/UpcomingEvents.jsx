@@ -47,7 +47,7 @@ export function UpcomingEvents() {
             <div className={css.eventItem}>
               <div className={css.eventTitle}>
                 <p className={css.tittle}>Public Round 2</p>
-                <span>11th MARCH 2024</span>
+                <span>4th MARCH 2024</span>
               </div>
               <div className={css.eventInfo}>
                 <div className={css.infoItem}>
@@ -60,7 +60,7 @@ export function UpcomingEvents() {
                 </div>
                 <div className={css.infoItem}>
                   <p className={css.infoLabel}>Raise:</p>
-                  <span className={css.infoValue}>$432.000</span>
+                  <span className={css.infoValue}>$432,000</span>
                 </div>
               </div>
               <button className={css.buyButton}>Buy Now</button>
