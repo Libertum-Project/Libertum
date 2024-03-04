@@ -79,7 +79,7 @@ export function TokenPurchaseSection(): ReactElement {
       <div className={css.purchaseInfo}>
         <div>
           <p className={css.tittle}>Upcoming Public Round 2</p>
-          <span>MONDAY 19 FEB 2024</span>
+          {/* <span>MONDAY 19 FEB 2024</span> */}
         </div>
         <p>
           We do the math in real-time, simply input your amount in your desired

@@ -64,6 +64,7 @@
   background: rgba(255, 255, 255, 0.01);
   box-shadow: 0px 4px 32px 0px rgba(30, 93, 93, 0.25);
   backdrop-filter: blur(3px);
+  min-width: 200px;
 }
 
 .eventItem p {
@@ -103,6 +104,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 0.5rem;
+  width: 100%;
 }
 
 .infoItem {

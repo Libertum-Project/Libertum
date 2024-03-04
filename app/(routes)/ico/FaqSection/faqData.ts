@@ -104,4 +104,20 @@ export const faqData = [
     question: "What's the minumum investment allowed?",
     answer: `<p>Right now minimum investment allowed is 50 USDT</p>`,
   },
+  {
+    id: 11,
+    question: "Where is my pLBM?",
+    answer: `<span>
+    If you don't see the $pLBM in your wallet, you may need to import it.  This process is simple and only requires you to enter the token contract address into the token import section of your wallet. Once this is done, the tokens should appear in your balance automatically.
+    </span>
+    
+    <span>
+    Please ensure you are using the wallet you used to participate in the Launchpad presale. Once claimed, you can add the token into your wallet with the token address: <b>“0x28c79d4d03562b9d2b606bcb7c7fb23beff5e907”</b>    
+    </span>
+    <span>
+    Please do not send any funds to this token contract address, as they cannot be recovered. $LBM can currently only be purchased through the official presale a
+    <b> <a href="https://www.libertum.io/ico"> https://www.libertum.io/ico </a></b>
+    </span>    
+    `,
+  },
 ];

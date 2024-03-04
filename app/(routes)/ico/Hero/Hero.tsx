@@ -84,8 +84,19 @@ export function Hero(): ReactElement {
           
 
           <div className={css.auditInfo}>
-            <p>
-              <span>Audit</span> and <span>KYC</span> powered by
+            <p>            
+              <span>
+              <Link href="https://github.com/solidproof/projects/tree/main/2024/Libertum">
+                Audit
+              </Link>
+              </span> 
+              and 
+              <span>
+              <Link href="https://github.com/solidproof/projects/tree/main/2023/Libertum">
+                KYC
+              </Link>
+              </span> 
+              powered by
             </p>
             <Image src={shield} alt="shield" width={124} height={31} />
 
