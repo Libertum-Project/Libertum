@@ -49,10 +49,9 @@ async function buyTokens(
   setErrorMessage("");
   setNetworkScanURL("");
   try {
-
     if (!isConnected) {
       setShowConnectWallet(true);
-      return
+      return;
     }
     // Check if user is connected to the correct Network.
     if (chainId !== correctChainId) {
@@ -75,21 +74,19 @@ async function buyTokens(
     } else {
       console.error("Invalid current stage");
     }
-/*
+
     // Check if the user has enough USDT balance to buy pLBM tokens.
     const userAddress = signer.address;
     const userUsdtBalance: number | null =
       await getUserUSDTBalance(userAddress);
     const usdAmount = (lbmAmount * price) / 10 ** 18;
-    console.log(userUsdtBalance);
-    console.log(usdAmount);
+    console.log(`User USDT Balance: ${userUsdtBalance} USDT`);
+    console.log(`Required USD Amount to Buy pLBM Tokens: ${usdAmount} USD`);
     if (usdAmount > userUsdtBalance!) {
       setShowNotEnoughUSDT(true);
       setIsLoading(false);
       return;
     }
-
-    */
 
     // Approve USDC transfer to pLBM contract.
     await USDC_contract.connect(signer).approve(
