@@ -31,7 +31,7 @@ export function TokenPurchaseSection(): ReactElement {
     setModalOpen(false);
   };
 
-  const LBM_PRICE: number = 0.066;
+  const LBM_PRICE: number = 0.072;
   const MIN_USD: number = 50;
   const MIN_LBM: number = parseFloat((MIN_USD / LBM_PRICE).toFixed(1));
 
@@ -78,7 +78,7 @@ export function TokenPurchaseSection(): ReactElement {
     <article className={css.tokenPurchaseSection} id="tokenPurchaseSection">
       <div className={css.purchaseInfo}>
         <div>
-          <p className={css.tittle}>Upcoming Public Round 1</p>
+          <p className={css.tittle}>Upcoming Public Round 2</p>
           <span>MONDAY 19 FEB 2024</span>
         </div>
         <p>
