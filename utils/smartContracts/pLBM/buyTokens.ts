@@ -75,7 +75,7 @@ async function buyTokens(
     } else {
       console.error("Invalid current stage");
     }
-
+/*
     // Check if the user has enough USDT balance to buy pLBM tokens.
     const userAddress = signer.address;
     const userUsdtBalance: number | null =
@@ -88,6 +88,8 @@ async function buyTokens(
       setIsLoading(false);
       return;
     }
+
+    */
 
     // Approve USDC transfer to pLBM contract.
     await USDC_contract.connect(signer).approve(
