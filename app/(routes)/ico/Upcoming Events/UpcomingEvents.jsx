@@ -52,7 +52,7 @@ export function UpcomingEvents() {
               <div className={css.eventInfo}>
                 <div className={css.infoItem}>
                   <p className={css.infoLabel}>Tokens for sale:</p>
-                  <span className={css.infoValue}>6.000.000</span>
+                  <span className={css.infoValue}>6,000,000</span>
                 </div>
                 <div className={css.infoItem}>
                   <p className={css.infoLabel}>Starting price:</p>
@@ -73,7 +73,7 @@ export function UpcomingEvents() {
               </div>
               <div className={css.eventInfo}>
                 <div className={css.infoItem}>
-                  <p className={css.infoLabel}>Starting price:</p>
+                  <p className={css.infoLabel}>Price:</p>
                   <span className={css.infoValue}>$0.08</span>
                 </div>
                 <div className={css.infoItem}>
