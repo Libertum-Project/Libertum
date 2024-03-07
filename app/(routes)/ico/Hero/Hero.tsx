@@ -43,7 +43,7 @@ export function Hero(): ReactElement {
           <div className={css.paragraphs}>
             <p>
               We are committed that 5% net profit is used to buy back and burn
-              $LBM - reducing circulation and increase $LBM price.
+              $LBM.
             </p>
             <p>Plus the LBM Utility Token can be:</p>
           </div>
