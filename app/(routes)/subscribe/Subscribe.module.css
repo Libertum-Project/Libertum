@@ -31,6 +31,8 @@
     font-size: 15px;
     cursor: pointer;
     transition: background-color .3s ease-in-out;
+    justify-content: center;
+    align-items: center;
   }
   
   .buttonSubmit:hover {
