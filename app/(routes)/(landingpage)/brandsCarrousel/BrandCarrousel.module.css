@@ -8,7 +8,7 @@
 
   .carrouselContainer {
     display: flex;
-    width: 2032.993px;
+    width: 100%;
     justify-content: space-between;
     overflow: hidden;
     padding: 60px 0;
