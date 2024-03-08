@@ -39,7 +39,7 @@ const SocialMedia = () => {
   return(
     <div className={css.socialMediaContainer}>
        {socialLinks.map((link, index) => (
-        <Link href={link.href} key={index}>
+        <Link href={link.href} key={index} alt={link.label}>
             <p
               target="_blank"
               rel="noopener"
