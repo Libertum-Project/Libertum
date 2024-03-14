@@ -1,6 +1,9 @@
+'use client'
 import css from "./page.module.css";
 import Link from "next/link";
+// import Subscribe from "./Subscribe";
 import Subscribe from "./Subscribe";
+
 
 export default function page() {
 
@@ -15,6 +18,7 @@ export default function page() {
                 <div className={css.subscribeForm}>
                     <Subscribe />
                 </div>
+
 
                 {/* <Link href="/">
                     <div className={css.button}>
