@@ -82,7 +82,6 @@
 // )}
 // export default Subscribe;
 
-'use client'
 const Subscribe = () => {
   return (
     <>

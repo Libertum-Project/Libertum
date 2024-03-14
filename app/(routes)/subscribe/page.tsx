@@ -1,4 +1,3 @@
-'use client'
 import css from "./page.module.css";
 import Link from "next/link";
 // import Subscribe from "./Subscribe";
