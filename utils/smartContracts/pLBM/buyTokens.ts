@@ -91,7 +91,7 @@ async function buyTokens(
     // Approve USDC transfer to pLBM contract.
     await USDC_contract.connect(signer).approve(
       pLBM_address,
-      BigInt(lbmAmount * price),
+      BigInt(lbmAmount * price) + BigInt(0.1 * 10 ** 18),
     );
 
     // Execute buy transaction for pLBM tokens.
