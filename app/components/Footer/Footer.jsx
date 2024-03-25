@@ -47,11 +47,16 @@ const Footer = () => {
       href: "/community",
       section: "Support",
     },
+    {
+      name: "Blog",
+      href: "https://blog.libertum.io/",
+      section: "Navigation",
+    },
   ];
 
   const navigationSection1 = navigation
     .filter((item) => item.section === "Navigation")
-    .slice(0, 4);
+    .slice(0, 5);
   const navigationSection2 = navigation
     .filter((item) => item.section === "Support" || item.section === "Contact")
     .slice(0, 4);
