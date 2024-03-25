@@ -1,13 +1,13 @@
-"use client";
-import { type ReactElement } from "react";
-import { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import css from "./DesktopNavbar.module.css";
-import logo from "@/public/horizontal-logo.svg";
-import { LearnModal } from "./modals/LearnModal";
-import { DocsModal } from "./modals/DocsModal";
-import { ConnectWalletButton } from "../WalletComponents/ConnectWalletButton";
+'use client';
+import { type ReactElement } from 'react';
+import { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import css from './DesktopNavbar.module.css';
+import logo from '@/public/horizontal-logo.svg';
+import { LearnModal } from './modals/LearnModal';
+import { DocsModal } from './modals/DocsModal';
+import { ConnectWalletButton } from '../WalletComponents/ConnectWalletButton';
 
 export function DesktopNavbar(): ReactElement {
   const [isLearnModalVisible, setIsLearnModalVisible] = useState(false);
@@ -32,7 +32,7 @@ export function DesktopNavbar(): ReactElement {
     <>
       <nav className={css.desktopNavbar}>
         <Link
-          href={"./"}
+          href={'./'}
           onMouseEnter={handleHideModals}
           onTouchStart={handleHideModals}
         >
@@ -54,6 +54,9 @@ export function DesktopNavbar(): ReactElement {
           >
             Explore Properties
           </a>
+          <Link href="https://blog.libertum.io/" className={css.border}>
+            Blog
+          </Link>
           <a
             href="/comingsoon"
             onMouseEnter={handleShowLearnModal}
