@@ -13,7 +13,7 @@ export function ContactForm(): ReactElement {
     emailjs
       .sendForm(
         'service_o8ckx7h',
-        'template_r8p0gnq',
+        'template_7qw777z',
         form.current ?? '',
         'K3xhSEXO5y1bVyrXc'
       )
@@ -21,6 +21,7 @@ export function ContactForm(): ReactElement {
         (result) => {
           console.log(result.text);
           alert('Message sent successfully!');
+          form.current?.reset(); 
         },
         (error) => {
           console.log(error.text);
@@ -33,11 +34,6 @@ export function ContactForm(): ReactElement {
 
   return (
     <div className={css.formContainer}>
-      {/* <section>
-        <h2 className={css.title}> Get in touch </h2>
-        <p className={css.information}> We aim to respond to your messages within 48 hrs.</p>
-      </section> */}
-
       <form ref={form} onSubmit={sendEmail} className={css.inputsBox}>
         <input
           type="text"
@@ -62,8 +58,8 @@ export function ContactForm(): ReactElement {
           type="phone"
           placeholder="Phone number"
           className={css.input}
-          id="subject"
-          name="subject"
+          id="phone_number"
+          name="phone_number"
           required
           autoComplete="off"
         />
@@ -72,16 +68,16 @@ export function ContactForm(): ReactElement {
           type="text"
           placeholder="Company"
           className={css.input}
-          id="subject"
-          name="subject"
+          id="company_name"
+          name="company_name"
           required
           autoComplete="off"
         />
 
         <select
           className={css.input}
-          id="subject"
-          name="subject"
+          id="IDIQ"
+          name="IDIQ"
           required
           autoComplete="off"
         >

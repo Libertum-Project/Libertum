@@ -5,6 +5,7 @@ import css from "./Modal.module.css";
 import tokenUtility from "./tokenUtility.svg";
 import whitePaper from "./whitePaper.svg";
 import pitchDeck from "./pitchDeck.svg";
+import rfp from "./rfp.svg"
 
 interface DocsModalProps {
   handleHideModals: () => void;
@@ -63,6 +64,12 @@ export function DocsModal({
             <Link href= "/Libertum_Pitch.pdf" target="_blank">
               <Image src={pitchDeck} alt="Token" width={20} height={20} />
               Pitch Deck
+            </Link>
+          </div>
+          <div>
+            <Link href= "/rfp">
+              <Image src={rfp} alt="Token" width={20} height={20} />
+              RFP
             </Link>
           </div>
         </div>
