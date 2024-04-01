@@ -49,7 +49,7 @@ export function Tags() {
           'Libertum is currently seeking proposals for an <b>Indefinite Delivery/Indefinite Quantity</b> contract to provide engagement tools for our community. The solutionpartner will be required to develop and deploy sophisticated software Infrastructure for Decentralized Tokenized RWA real estate markets.',
           'The solution provider should have a proven ability to provide          community engagement solutions such as staking pools for both           liquidity and funding, and community engagement and transparency tools for Libertums LBM token and the subsequent Rental Income Token (RIT).',
           'Proposals will be evaluated using the best value trade-off method,    with non-price factors being significantly more important than price.',
-          '<b> Applications </b> are due by <i>April 5, 2024</i>, and <b>proposals</b> are due by <i>April 10, 2024</i>.',
+          '📅 <b> Applications </b> are due by <i>April 5, 2024</i>, and <b>proposals</b> are due by <i>April 10, 2024</i>.',
         ],
         buttonLabel: 'Contact Us',
       },
@@ -57,12 +57,15 @@ export function Tags() {
     },
     {
       id: 'ambassadors',
-      name: 'Other Proposal',
+      name: 'Interoperability Protocol (UIP)',
       information: {
-        title: 'Other Proposal',
+        title: ' Interoperability Protocol (UIP)',
         paragraphs: [
-          'Get rewarded by contributing to the growth of the LIbertum network.  Collaborate with Libertum to help drive global adoption.',
-          'We want to speak to influencers and marketers who understand the RWA landscape and want to contribute to the evolution happening in real estate tokenisation.  You will be eligible for various reward programmes designed to accelerate asset tokenisation globally ',
+          'Libertum is currently seeking proposals for an Indefinite Delivery contract to provide <b>Interoperability Protocol (UIP)</b> tools for our community.',
+          'The solution partner will be required to develop and deploy sophisticated software Infrastructure to compliment the Decentralized Tokenized #RWA real estate Market Libertum provides.',
+          'The solution provider should have a proven ability to provide Liquidity Distribution Mechanisms solutions to enable the Libertum community to navigate on-chain data across multiple blockchains seemlessly. Ultimately the solution should simplify the users ability to interact with $LBM.',
+          'As always proposals will be evaluated using the best value trade-off method, with non-price factors being significantly more important than price.',
+          '📅 <b>Applications</b> are due by  <i>April 5, 2024</i>, and <b>proposals</b> are due by <i>April 10, 2024.</i>'
         ],
         buttonLabel: 'Contact Us',
       },

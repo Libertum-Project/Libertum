@@ -82,7 +82,8 @@ export function ContactForm(): ReactElement {
           autoComplete="off"
         >
           <option value="">Select an option</option>
-          <option value="product">Indefinite Delivery/Indefinite Quantity (IDIQ)</option>
+          <option value="IDIQ">Indefinite Delivery/Indefinite Quantity (IDIQ)</option>
+          <option value="UIP">Interoperability Protocol (UIP)</option>
           {/* <option value="other">Otro</option> */}
         </select>
 
