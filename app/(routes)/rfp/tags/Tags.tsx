@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import css from './Tags.module.css';
 import inactiveArrow from './assets/inactiveArrow.svg';
@@ -23,6 +23,7 @@ export function Tags() {
   const [activeOption, setActiveOption] = useState('realEstate');
   const [showContactForm, setShowContactForm] = useState(false);
   const [contactButtonArrowDown, setContactButtonArrowDown] = useState(false); 
+  const contentRef = useRef<HTMLDivElement>(null);
 
   const handleOptionClick = (optionId: string) => {
     setActiveOption(optionId);
@@ -36,7 +37,7 @@ export function Tags() {
 
   const handleContactButtonClick = () => {
     setShowContactForm((prevState) => !prevState); 
-    setContactButtonArrowDown((prevState) => !prevState)
+    setContactButtonArrowDown((prevState) => !prevState);
   };
 
   const options: Option[] = [
@@ -112,7 +113,8 @@ export function Tags() {
         </section>
 
         <section className={css.information}>
-          <div>
+          <div className={showContactForm ? css.contentShifted : ''} ref={contentRef}>
+            <div>
             <h2>
               {
                 options.find((opt) => opt.id === activeOption)?.information
@@ -127,9 +129,8 @@ export function Tags() {
                   dangerouslySetInnerHTML={{ __html: paragraph }}
                 />
               ))}
-          </div>
-
-          <button
+            </div>
+            <button
             className={css.buttonInformation}
             onClick={handleContactButtonClick}
           >
@@ -144,8 +145,10 @@ export function Tags() {
               height={8.708}
             />
           </button>
-
-          {showContactForm && <ContactForm />}
+          <div className={css.contactFormDiv}>
+            {showContactForm && <ContactForm />}
+          </div>  
+          </div>
         </section>
       </div>
     </div>
