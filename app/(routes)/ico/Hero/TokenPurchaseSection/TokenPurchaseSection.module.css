@@ -1,4 +1,5 @@
 .tokenPurchaseSection {
+  position: relative;
   align-items: center;
   background: #fff;
   border-radius: 5px;
@@ -331,4 +332,53 @@
     padding: 2rem 4rem;
     gap: 2rem;
   }
+}
+
+
+
+.soldOut {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 9999;
+  }
+.soldOutSign{
+  display: flex;
+  width: 100%;
+  height: 182px;
+  padding: 10px 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 6rem;
+  gap: 10px;
+  background: #F9861E;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10);
+  }
+.soldOutSign > p {
+  color: #FFF;
+  text-align: center;
+  font-family: var(--font-primary);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 60px */
+  letter-spacing: -0.8px;
+  font-weight: 600;
+}
+.soldOutSign > span {
+  color: #FFF;
+text-align: center;
+font-family: var(--font-secondary);
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 24px */
+letter-spacing: -0.32px;
 }

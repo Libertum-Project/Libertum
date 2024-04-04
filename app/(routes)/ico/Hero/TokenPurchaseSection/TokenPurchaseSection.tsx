@@ -76,6 +76,12 @@ export function TokenPurchaseSection(): ReactElement {
 
   return (
     <article className={css.tokenPurchaseSection} id="tokenPurchaseSection">
+                    <div className={css.soldOut}>
+                <div className={css.soldOutSign}>
+                  <p>Sold Out</p>
+                  <span>Get ready for LBM token launch</span>
+                </div>
+              </div>
       <div className={css.purchaseInfo}>
         <div>
           <p className={css.tittle}>
