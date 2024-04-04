@@ -1,16 +1,16 @@
-"use client";
-import { type ReactElement } from "react";
-import { useEffect, useState, useRef } from "react";
-import Image from "next/image";
-import css from "./Roadmap.module.css";
-import leftArrow from "@/public/assets/vector.svg";
+'use client';
+import { type ReactElement } from 'react';
+import { useEffect, useState, useRef } from 'react';
+import Image from 'next/image';
+import css from './Roadmap.module.css';
+import leftArrow from '@/public/assets/vector.svg';
 
 export function Roadmap(): ReactElement {
   // Add Padding Inline
   const [paddingValue, setPaddingValue] = useState<number | null>(null);
 
   useEffect(() => {
-    const myDiv: HTMLElement | null = document.getElementById("getPadding");
+    const myDiv: HTMLElement | null = document.getElementById('getPadding');
 
     const updatePaddingLeft = () => {
       if (myDiv) {
@@ -21,10 +21,10 @@ export function Roadmap(): ReactElement {
 
     updatePaddingLeft();
 
-    window.addEventListener("resize", updatePaddingLeft);
+    window.addEventListener('resize', updatePaddingLeft);
 
     return () => {
-      window.removeEventListener("resize", updatePaddingLeft);
+      window.removeEventListener('resize', updatePaddingLeft);
     };
   }, []);
 
@@ -50,19 +50,19 @@ export function Roadmap(): ReactElement {
 
     const handleMouseDown = (e: any) => {
       isDown = true;
-      slider.classList.add("active");
+      slider.classList.add('active');
       startX = e.pageX - slider.offsetLeft;
       scrollLeft = slider.scrollLeft;
     };
 
     const handleMouseLeave = () => {
       isDown = false;
-      slider.classList.remove("active");
+      slider.classList.remove('active');
     };
 
     const handleMouseUp = () => {
       isDown = false;
-      slider.classList.remove("active");
+      slider.classList.remove('active');
     };
 
     const handleMouseMove = (e: any) => {
@@ -73,48 +73,47 @@ export function Roadmap(): ReactElement {
       slider.scrollLeft = scrollLeft - walk;
     };
 
-    slider.addEventListener("mousedown", handleMouseDown);
-    slider.addEventListener("mouseleave", handleMouseLeave);
-    slider.addEventListener("mouseup", handleMouseUp);
-    slider.addEventListener("mousemove", handleMouseMove);
+    slider.addEventListener('mousedown', handleMouseDown);
+    slider.addEventListener('mouseleave', handleMouseLeave);
+    slider.addEventListener('mouseup', handleMouseUp);
+    slider.addEventListener('mousemove', handleMouseMove);
 
     return () => {
-      slider.removeEventListener("mousedown", handleMouseDown);
-      slider.removeEventListener("mouseleave", handleMouseLeave);
-      slider.removeEventListener("mouseup", handleMouseUp);
-      slider.removeEventListener("mousemove", handleMouseMove);
+      slider.removeEventListener('mousedown', handleMouseDown);
+      slider.removeEventListener('mouseleave', handleMouseLeave);
+      slider.removeEventListener('mouseup', handleMouseUp);
+      slider.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
 
-
-  // video 
+  // video
   const [isMobile, setIsMobile] = useState(false);
-  
+
   useEffect(() => {
-  const mediaQuery = window.matchMedia("(max-width: 950px)");
+    const mediaQuery = window.matchMedia('(max-width: 950px)');
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 1250);
       setIsMobile(mediaQuery.matches);
     };
-    if (typeof window !== "undefined") {
-      window.addEventListener("resize", handleResize);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize);
       handleResize();
 
       return () => {
-        window.removeEventListener("resize", handleResize);
+        window.removeEventListener('resize', handleResize);
       };
     }
   }, []);
 
   return (
     <section className={css.roadmapContainer}>
-      {isMobile ? 
-        <div className={css.backgroundNoVideo}></div> 
-        : 
+      {isMobile ? (
+        <div className={css.backgroundNoVideo}></div>
+      ) : (
         <video autoPlay muted loop className={css.video}>
           <source src="./bg-video-2.mp4" type="video/mp4" />
-        </video> 
-      }
+        </video>
+      )}
       <div className={css.roadmap}>
         <h3 style={padding}>Roadmap</h3>
         <div className={css.cardContainer} style={padding} ref={sliderRef}>

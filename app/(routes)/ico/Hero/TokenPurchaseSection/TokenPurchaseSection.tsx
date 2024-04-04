@@ -1,15 +1,15 @@
-"use client";
-import { type ReactElement } from "react";
-import { useState, useEffect, ChangeEvent } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import css from "./TokenPurchaseSection.module.css";
-import info from "@/public/assets/info.svg";
-import libertum from "@/public/assets/libertum_input.svg";
-import usd from "@/public/assets/USDT.png";
+'use client';
+import { type ReactElement } from 'react';
+import { useState, useEffect, ChangeEvent } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import css from './TokenPurchaseSection.module.css';
+import info from '@/public/assets/info.svg';
+import libertum from '@/public/assets/libertum_input.svg';
+import usd from '@/public/assets/USDT.png';
 //import { BuyNowModal } from "./BuyNowModal";
-import { BuyWithCryptoButton } from "./BuyWithCryptoButton";
-import VideoModal from "./VideoModal";
+import { BuyWithCryptoButton } from './BuyWithCryptoButton';
+import VideoModal from './VideoModal';
 
 export function TokenPurchaseSection(): ReactElement {
   /*
@@ -24,7 +24,7 @@ export function TokenPurchaseSection(): ReactElement {
 
   const openModal = () => {
     setModalOpen(true);
-    console.log("clicked")
+    console.log('clicked');
   };
 
   const closeModal = () => {
@@ -78,7 +78,14 @@ export function TokenPurchaseSection(): ReactElement {
     <article className={css.tokenPurchaseSection} id="tokenPurchaseSection">
       <div className={css.purchaseInfo}>
         <div>
-          <p className={css.tittle}>Upcoming Public Round 2</p>
+          <p className={css.tittle}>
+            Public Round 2{' '}
+            <span
+              style={{ color: 'red', fontWeight: 'bold', fontSize: '20px' }}
+            >
+              Sold out
+            </span>
+          </p>
           {/* <span>MONDAY 19 FEB 2024</span> */}
         </div>
         <p>
@@ -98,14 +105,13 @@ export function TokenPurchaseSection(): ReactElement {
             <span>View instructions</span>
           </Link> */}
 
-    <div className={css.moreInfoSection}>
-      <button onClick={openModal} >
-        <Image src={info} alt="info" width={16} height={16} />
-        <span>View instructions</span>
-      </button>
-      {modalOpen && <VideoModal onClose={closeModal} />}
-    </div>
-
+          <div className={css.moreInfoSection}>
+            <button onClick={openModal}>
+              <Image src={info} alt="info" width={16} height={16} />
+              <span>View instructions</span>
+            </button>
+            {modalOpen && <VideoModal onClose={closeModal} />}
+          </div>
         </div>
         <input
           className={css.inputRange}

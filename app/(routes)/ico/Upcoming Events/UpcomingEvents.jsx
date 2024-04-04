@@ -1,17 +1,19 @@
-"use client";
-import css from "./UpcomingEvents.module.css";
+'use client';
+import css from './UpcomingEvents.module.css';
 
 export function UpcomingEvents() {
   const scrollToTop = () => {
     if (window.innerWidth > 1250) {
       window.scrollTo({
         top: 0,
-        behavior: "smooth"
+        behavior: 'smooth',
       });
     } else {
-      const tokenPurchaseSection = document.getElementById("tokenPurchaseSection");
+      const tokenPurchaseSection = document.getElementById(
+        'tokenPurchaseSection'
+      );
       if (tokenPurchaseSection) {
-        tokenPurchaseSection.scrollIntoView({ behavior: "smooth" });
+        tokenPurchaseSection.scrollIntoView({ behavior: 'smooth' });
       }
     }
   };
@@ -45,6 +47,9 @@ export function UpcomingEvents() {
               </button>
             </div> */}
             <div className={css.eventItem}>
+              <div className={css.soldOut}>
+                <span>Sold Out</span>
+              </div>
               <div className={css.eventTitle}>
                 <p className={css.tittle}>Public Round 2</p>
                 <span>4th MARCH 2024</span>
@@ -63,7 +68,9 @@ export function UpcomingEvents() {
                   <span className={css.infoValue}>$432,000</span>
                 </div>
               </div>
-              <button className={css.buyButton}>Buy Now</button>
+              <button className={css.buyButton} disabled>
+                Buy Now
+              </button>
             </div>
 
             <div className={css.eventItem}>
