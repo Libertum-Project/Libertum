@@ -50,7 +50,7 @@ export function UpcomingEvents() {
               <div className={css.soldOut}>
                 <div className={css.soldOutSign}>
                   <p>Sold Out</p>
-                  <span>Get ready for LBM token launch</span>
+                  {/* <span>Get ready for LBM token launch</span> */}
                 </div>
               </div>
               <div className={css.eventTitle}>
