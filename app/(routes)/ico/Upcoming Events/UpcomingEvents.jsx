@@ -47,17 +47,17 @@ export function UpcomingEvents() {
               </button>
             </div> */}
             <div className={css.eventItem}>
-              <div className={css.soldOut}>
+              {/* <div className={css.soldOut}>
                 <div className={css.soldOutSign}>
                   <p>Sold Out</p>
-                  {/* <span>Get ready for LBM token launch</span> */}
+                  <span>Get ready for LBM token launch</span>
                 </div>
-              </div>
+              </div> */}
               <div className={css.eventTitle}>
-                <p className={css.tittle}>Public Round 2</p>
-                <span>4th MARCH 2024</span>
+                <p className={css.tittle}>Fjord Listing</p>
+                <span>Wednesday 10th April to Friday 12th April</span>
               </div>
-              <div className={css.eventInfo}>
+              {/* <div className={css.eventInfo}>
                 <div className={css.infoItem}>
                   <p className={css.infoLabel}>Tokens for sale:</p>
                   <span className={css.infoValue}>6,000,000</span>
@@ -70,18 +70,18 @@ export function UpcomingEvents() {
                   <p className={css.infoLabel}>Raise:</p>
                   <span className={css.infoValue}>$432,000</span>
                 </div>
-              </div>
+              </div> */}
               <button className={css.buyButton} disabled>
-                Buy Now
+                Get ready!
               </button>
             </div>
 
             <div className={css.eventItem}>
               <div className={css.eventTitle}>
-                <p className={css.tittle}> Token Launch</p>
-                <span>APRIL 2024</span>
+                <p className={css.tittle}> Uniswap Listing</p>
+                <span>Monday 15th April</span>
               </div>
-              <div className={css.eventInfo}>
+              {/* <div className={css.eventInfo}>
                 <div className={css.infoItem}>
                   <p className={css.infoLabel}>Price:</p>
                   <span className={css.infoValue}>$0.08</span>
@@ -94,9 +94,9 @@ export function UpcomingEvents() {
                   <p className={css.infoLabel}>Market Capital:</p>
                   <span className={css.infoValue}>TBC</span>
                 </div>
-              </div>
+              </div> */}
               <button className={css.buyButton} onClick={scrollToTop}>
-                Buy Now
+                Get ready!
               </button>
             </div>
           </div>

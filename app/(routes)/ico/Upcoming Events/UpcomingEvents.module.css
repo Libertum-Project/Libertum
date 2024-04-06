@@ -206,6 +206,9 @@
 
   .eventItem {
     max-width: 280px;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 200px;
   }
   .upcomingEvents img {
     flex: 1;
