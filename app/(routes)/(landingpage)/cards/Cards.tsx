@@ -1,14 +1,22 @@
-import { ReactElement } from "react";
-import css from "./Cards.module.css";
-import firstImage from "./assets/firstImage.svg";
-import secondImage from "./assets/secondImage.svg";
-import thirdImage from "./assets/thirdImage.svg";
-import Image from "next/image";
-import Link from "next/link";
+import { ReactElement } from 'react';
+import css from './Cards.module.css';
+import firstImage from './assets/firstImage.svg';
+import secondImage from './assets/secondImage.svg';
+import thirdImage from './assets/thirdImage.svg';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export function Cards(): ReactElement {
   return (
     <div className={css.container}>
+      <div className={css.ecosystem}>
+        <Image
+          alt="left arrow"
+          src="/Ecosystem.svg"
+          width={400}
+          height={400}
+        />
+      </div>
       {/* first card */}
       <div className={css.cardContainer}>
         <div className={css.information}>
@@ -58,7 +66,6 @@ export function Cards(): ReactElement {
           <Image src={firstImage} width="394" height="437" alt="buildings" />
         </div>
       </div>
-
       {/* second card */}
       <div className={`${css.cardContainer} ${css.secondCard}`}>
         <div className={css.imageContainer}>
@@ -102,7 +109,6 @@ export function Cards(): ReactElement {
           </Link>
         </div>
       </div>
-
       {/* third card */}
       <div className={css.cardContainer}>
         <div className={css.information}>

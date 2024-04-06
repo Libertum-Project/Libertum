@@ -92,6 +92,19 @@
   background: rgba(0, 179, 181, 0.3);
 }
 
+.ecosystem{
+  width: 100%;
+  height: auto;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.ecosystem img{
+  width: 100%;
+  height: auto;
+}
+
 @media screen and (max-width: 790px) {
   .cardContainer {
     flex-direction: column-reverse;
