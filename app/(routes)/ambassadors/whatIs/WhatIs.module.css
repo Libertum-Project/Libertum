@@ -87,6 +87,7 @@
 
   .card {
     display: flex;
+    flex-direction: row;
     width: 1196px;
     padding: 24px 32px;
     justify-content: space-between;
