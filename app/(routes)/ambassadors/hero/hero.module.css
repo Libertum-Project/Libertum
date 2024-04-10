@@ -140,15 +140,19 @@ gap: 32px;
     flex-direction: column;
   }
   .heroAmbassadors h1 {
-    padding: 1rem;
     margin-top: 0;
     width: 90%;
   }
-  .paragraphsAmbassadors {
-    padding: 1rem;
-  }
-
   .textAmbassadors {
     width: 100%;
+  }
+
+  .applyButton{
+    width: auto;
+  }
+
+  .imageContainer img{
+    max-width: 100%;
+    max-height: auto ;
   }
 }
