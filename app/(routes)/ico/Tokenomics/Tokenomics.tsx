@@ -6,24 +6,9 @@ import graph from './graph.svg';
 export function Tokenomics(): ReactElement {
   const tokenomicsData = [
     {
-      color: '#CB61C7',
-      title: 'Token Sale',
-      percentage: '29%',
-    },
-    {
       color: '#FFA143',
       title: 'Team Token',
       percentage: '25%',
-    },
-    {
-      color: '#2840EA',
-      title: 'Ecosystem & Partners',
-      percentage: '15%',
-    },
-    {
-      color: '#FF5252',
-      title: 'Staking Reward',
-      percentage: '4%',
     },
     {
       color: '#00B3B5',
@@ -31,9 +16,24 @@ export function Tokenomics(): ReactElement {
       percentage: '25%',
     },
     {
-      color: '#87E12C',
-      title: 'Marketing & Advisory',
+      color: '#FF5252',
+      title: 'Staking Reward',
       percentage: '4%',
+    },
+    {
+      color: '#87E12C',
+      title: 'Marketing & Airdrop',
+      percentage: '3%',
+    },
+    {
+      color:  '#CB61C7',
+      title: 'Ecosystem & Partners',
+      percentage: '14%',
+    },
+    {
+      color:  '#2840EA',
+      title: 'Token Sale',
+      percentage: '29%',
     },
   ];
 
