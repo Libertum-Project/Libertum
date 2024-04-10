@@ -91,6 +91,14 @@
   font-weight: 700;
   line-height: normal;
 }
+
+.errorMessage {
+  color: red;
+  font-size: 14px;
+  font-family: var(--font-primary);
+
+}
+
 @media screen and (max-width: 1100px) {
   .formContainer {
     width: auto;

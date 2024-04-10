@@ -1,66 +1,90 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import css from './form.module.css';
 import Image from 'next/image';
+import emailjs from '@emailjs/browser';
 
 export function FormCandidates() {
+  const form = useRef();
   const [isChecked, setIsChecked] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleCheckboxChange = (e) => {
     setIsChecked(e.target.checked);
   };
 
-  const handleSubmit = async (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
   
     if (!isChecked) {
-      alert('Please consent to receiving additional communications from Libertum.');
+      setErrorMessage('Please consent to receiving additional communications from Libertum.');
       return;
     }
   
-    const formData = {
-      firstName: e.target.elements.firstName.value,
-      lastName: e.target.elements.lastName.value,
-      email: e.target.elements.email.value,
-      message: e.target.elements.message.value,
-    };
-  
-    try {
-      const response = await fetch('/api/ambassadors/route', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-  
-      if (response.ok) {
-        alert('Correo electrónico enviado exitosamente');
-      } else {
-        alert('Hubo un problema al enviar el correo electrónico');
-      }
-    } catch (error) {
-      console.error('Error al enviar la solicitud:', error);
-      alert('Hubo un problema al enviar la solicitud');
+    if (!form.current.checkValidity()) {
+      setErrorMessage('Please fill out all required fields.');
+      return;
     }
+  
+    emailjs
+      .sendForm(
+        'service_o8ckx7h',
+        'template_7qw777z',
+        form.current ?? '',
+        'K3xhSEXO5y1bVyrXc'
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert('Message sent successfully!');
+          form.current?.reset();
+        },
+        (error) => {
+          console.log(error.text);
+          alert(
+            'Your message could not be sent. Please try again or email us at hello@libertum.io.'
+          );
+        }
+      );
   };
-
+  
   return (
     <div className={css.formContainer}>
       <h2>Applications are now open!</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={sendEmail} ref={form}>
         <div className={css.formFrame}>
-          <input type="text" name="firstName" placeholder="First Name" />
-          <input type="text" name="lastName" placeholder="Last Name" />
-          <input type="email" name="email" placeholder="Email" />
+          <input
+            type="text"
+            name="user_name"
+            id="user_name"
+            required
+            placeholder="First Name"
+          />
+          <input
+            type="text"
+            name="user_lastname"
+            id="user_lastname"
+            required
+            placeholder="Last Name"
+          />
+          <input
+            type="email"
+            id="user_email"
+            name="user_email"
+            required
+            placeholder="Email"
+          />
           <textarea
             name="message"
+            id="message"
+            required
             cols="30"
             rows="10"
             placeholder="Leave a message..."
           ></textarea>
         </div>
+  
 
         <div className={css.formFooter}>
           <p>
@@ -86,9 +110,10 @@ export function FormCandidates() {
             process the provided personal data for the requested content.
           </p>
         </div>
+        {errorMessage && <p className={css.errorMessage}>{errorMessage}</p>}
 
         <button type="submit" className={css.buttonSubmit}>
-          Submit{' '}
+          Submit
           <Image
             src="/assets/arrowForm.svg"
             alt="submit"
