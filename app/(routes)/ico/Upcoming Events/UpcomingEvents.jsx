@@ -1,5 +1,6 @@
 'use client';
 import css from './UpcomingEvents.module.css';
+import Link from 'next/link';
 
 export function UpcomingEvents() {
   const scrollToTop = () => {
@@ -71,9 +72,12 @@ export function UpcomingEvents() {
                   <span className={css.infoValue}>$432,000</span>
                 </div>
               </div> */}
-              <button className={css.buyButton} disabled>
-                Get ready!
+              <Link href="https://app.v2.fjordfoundry.com/pools/0xa1E599f65bA9F2BFfA934B8b61e4086e3f4bCb1E" target='_blank'>
+              <button className={css.buyButton}>              
+                Fjord Foundry
               </button>
+              </Link>
+
             </div>
 
             <div className={css.eventItem}>

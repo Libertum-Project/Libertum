@@ -371,11 +371,12 @@
   line-height: 150%; /* 60px */
   letter-spacing: -0.8px;
   font-weight: 600;
+  margin: 0;
 }
 .soldOutSign > span {
   color: #FFF;
 text-align: center;
-font-family: var(--font-secondary);
+font-family: var(--font-primary);
 font-size: 16px;
 font-style: normal;
 font-weight: 400;
