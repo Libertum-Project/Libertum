@@ -49,7 +49,7 @@ export function Hero(): ReactElement {
             </p>
           </div>
 
-          <Link href="/community" className={css.applyButton}>
+          <Link href="#form" className={css.applyButton}>
             <p>Apply Now</p>
             <Image
               alt="left arrow"
