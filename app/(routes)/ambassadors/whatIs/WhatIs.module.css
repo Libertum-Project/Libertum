@@ -1,0 +1,118 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+  padding: 5rem 1rem;
+  max-width: 75.125rem;
+  margin: 0 auto;
+  /* align-items: self-end; */
+}
+
+.card {
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 48px;
+  align-self: stretch;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.01);
+  box-shadow: 0px 4px 32px 0px rgba(30, 93, 93, 0.1);
+  backdrop-filter: blur(3px);
+}
+
+.card h2 {
+  color: var(--color-primary);
+  font-family: var(--font-primary);
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.72px;
+}
+
+.card p {
+  color: rgba(0, 0, 0, 0.8);
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+  letter-spacing: -0.32px;
+}
+
+.applyButton {
+  display: flex;
+  padding: 10px 20px;
+  align-items: center;
+  gap: 16px;
+  border-radius: 5px;
+  border: 1px solid var(--color-secondary);
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(5px);
+  width: fit-content;
+}
+
+.applyButton p {
+  color: var(--color-primary);
+  text-align: center;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 24px */
+}
+
+@media screen and (min-width: 790px) {
+  .container {
+    position: relative;
+    /* grid-template-columns: repeat(1, 1fr); */
+  }
+
+  .container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('../../../../public/assets/Grid Background Pattern.svg');
+    background-clip: padding-box;
+    background-size: auto;
+    background-position: center;
+    opacity: 0.5;
+    z-index: -1;
+  }
+
+  .card {
+    display: flex;
+    width: 1196px;
+    padding: 24px 32px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.01);
+    box-shadow: 0px 4px 32px 0px rgba(30, 93, 93, 0.1);
+    backdrop-filter: blur(3px);
+    gap: 4rem;
+  }
+
+}
+
+@media screen and (max-width: 1100px) {
+  .container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 3rem;
+    justify-content: center;
+  }
+
+  .imageContainer img{
+    width: 100%;
+  }
+
+  .applyButton{
+    width: auto;
+  }
+}
