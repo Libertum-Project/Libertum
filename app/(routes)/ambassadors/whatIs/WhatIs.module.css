@@ -119,4 +119,9 @@
   .applyButton{
     width: auto;
   }
+
+  .card{
+    flex-direction: column;
+    width: auto;
+  }
 }
