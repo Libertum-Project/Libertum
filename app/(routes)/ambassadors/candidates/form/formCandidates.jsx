@@ -50,7 +50,7 @@ export function FormCandidates() {
   };
   
   return (
-    <div className={css.formContainer}>
+    <div className={css.formContainer} id='form'>
       <h2>Applications are now open!</h2>
       <form onSubmit={sendEmail} ref={form}>
         <div className={css.formFrame}>

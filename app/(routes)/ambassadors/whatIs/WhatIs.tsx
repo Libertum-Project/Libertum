@@ -17,7 +17,7 @@ export default function WhatIs() {
               content, and be part of the upcoming tokenisation wave.
             </p>
           </div>
-          <Link href="/community" className={css.applyButton}>
+          <Link href="#form" className={css.applyButton}>
             <p>Apply Now</p>
             <Image
               alt="left arrow"
