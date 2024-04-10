@@ -1,0 +1,154 @@
+.heroContainer {
+  position: relative;
+  padding-top: 5rem;
+  overflow: hidden;
+}
+
+.video {
+  position: absolute;
+  /* right: -65rem; */
+  top: 0;
+  z-index: 9;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.backgroundNoVideo {
+  position: absolute;
+  /* right: -65rem; */
+  top: 0;
+  z-index: 9;
+  min-width: 100%;
+  min-height: 100%;
+  background: radial-gradient(
+    80.5% 80.5% at 50% 103.87%,
+    #000041 0%,
+    #0e0e1e 100%
+  );
+  background-blend-mode: multiply;
+}
+
+.heroAmbassadors {
+  padding: 5rem 1rem;
+  max-width: 75.125rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 4rem;
+  position: relative;
+  z-index: 99;
+  box-sizing: border-box;
+  justify-content: space-between;
+  flex: 1 0 0;
+}
+
+.textAmbassadors {
+  /* align-items: flex-start; */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-start; */
+  gap: 2rem;
+  /* align-self: flex-start; */
+  width: 545px;
+  max-width: 42rem;
+  box-sizing: border-box;
+  /* margin: 0 auto; */
+}
+
+.heroAmbassadors h3 {
+  color: var(--color-tertiary);
+  font-family: var(--font-primary);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  margin: 0;
+}
+
+.heroAmbassadors h1 {
+  color: var(--color-quaternary);
+  font-family: var(--font-primary);
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.96px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.paragraphsAmbassadors {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.paragraphsAmbassadors p {
+  color: var(--color-quaternary);
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+  align-self: stretch;
+  margin: 0;
+}
+
+.applyButton {
+width: 170px;
+gap: 32px;
+  display: flex;
+  padding: 16px;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1 0 0;
+  border-radius: 5px;
+  border: 1px solid #00b3b5;
+  background: rgba(0, 179, 181, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+.applyButton p {
+  color: #fff;
+  text-align: center;
+  font-family: var(--font-primary);
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 24px */
+  margin: 0;
+}
+
+/* @media (min-width: 1250px) {
+    .hero {
+      flex-direction: row;
+      padding-top: 4.3125rem;
+      padding-inline: 0;
+    }
+  
+    .video {
+      right: 0;
+    }
+  } */
+
+@media screen and (max-width: 1100px) {
+  .heroAmbassadors {
+    flex-direction: column;
+  }
+  .heroAmbassadors h1 {
+    padding: 1rem;
+    margin-top: 0;
+    width: 90%;
+  }
+  .paragraphsAmbassadors {
+    padding: 1rem;
+  }
+
+  .textAmbassadors {
+    width: 100%;
+  }
+}
