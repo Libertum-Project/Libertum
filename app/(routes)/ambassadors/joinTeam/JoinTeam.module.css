@@ -141,3 +141,16 @@
   position: absolute;
   top: -15%;
 }
+
+
+@media screen and (max-width:1100px) {
+  .joinTeamFrame{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .cardsContainer{
+    grid-template-columns: 1fr;
+    gap: 5rem;
+
+  }
+}
