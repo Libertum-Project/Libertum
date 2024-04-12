@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { type ReactElement, useState, useEffect } from "react";
 import Image from "next/image";
 import css from "./Hero.module.css";
@@ -6,9 +6,9 @@ import Link from "next/link";
 
 export function Hero(): ReactElement {
   const [isMobile, setIsMobile] = useState(false);
-  
+
   useEffect(() => {
-  const mediaQuery = window.matchMedia("(max-width: 950px)");
+    const mediaQuery = window.matchMedia("(max-width: 950px)");
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 1250);
       setIsMobile(mediaQuery.matches);
@@ -23,15 +23,18 @@ export function Hero(): ReactElement {
     }
   }, []);
 
-
   return (
     <div className={css.heroContainer}>
       <div>
-        {isMobile ? <div className={css.backgroundNoVideo}></div> : <video autoPlay muted loop className={css.video}>
+        {isMobile ? (
+          <div className={css.backgroundNoVideo}></div>
+        ) : (
+          <video autoPlay muted loop className={css.video}>
             <source src="./bg-video-1.mp4" type="video/mp4" />
-          </video> }
+          </video>
+        )}
       </div>
-        
+
       <section className={css.hero}>
         <article className={css.text}>
           <h1>
@@ -69,6 +72,7 @@ export function Hero(): ReactElement {
             />
           </Link>
 
+          {/*
           <Link href="/subscribe" className={css.button1}>
             <div className={css.buttonFrame}>
               <Image
@@ -79,6 +83,27 @@ export function Hero(): ReactElement {
                 className={css.logo}
               />
               <p>Explore Properties</p>
+            </div>
+
+            <Image
+              alt="left arrow"
+              src="/assets/leftArrow.svg"
+              width={13.207}
+              height={8.708}
+            />
+          </Link>
+            */}
+
+          <Link href="/subscribe" className={css.button1}>
+            <div className={css.buttonFrame}>
+              <Image
+                src="/assets/earn.svg"
+                alt="N"
+                width={24}
+                height={24}
+                className={css.logo}
+              />
+              <p>Stake LBM</p>
             </div>
 
             <Image
