@@ -7,7 +7,7 @@ import css from './DesktopNavbar.module.css';
 import logo from '@/public/horizontal-logo.svg';
 import { LearnModal } from './modals/LearnModal';
 import { DocsModal } from './modals/DocsModal';
-import { ConnectWalletButton } from '../WalletComponents/ConnectWalletButton';
+import ConnectWalletButton from '../WalletComponents/ConnectWalletButton';
 
 export function DesktopNavbar(): ReactElement {
   const [isLearnModalVisible, setIsLearnModalVisible] = useState(false);
@@ -41,11 +41,11 @@ export function DesktopNavbar(): ReactElement {
 
         <div className={css.links}>
           <Link
-            href="./ico"
+            href="./get"
             onMouseEnter={handleHideModals}
             onTouchStart={handleHideModals}
           >
-            Buy LBM
+            Get LBM
           </Link>
           <a
             href="/comingsoon"

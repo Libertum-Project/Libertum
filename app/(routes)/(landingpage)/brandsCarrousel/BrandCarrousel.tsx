@@ -43,7 +43,7 @@ export function BrandCarrousel(): ReactElement {
       <div className={css.carrouselContainer}>
         {combinedBrands.map((brand, index) => (
           <div key={index} className={css.slide}>
-            <Image src={brand} alt={`Brand ${index}`} width="80" height="24" />
+            <Image src={brand} alt={`Brand ${index}`} width={80} height={24} />
           </div>
         ))}
       </div>

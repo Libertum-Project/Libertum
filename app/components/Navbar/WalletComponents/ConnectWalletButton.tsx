@@ -1,85 +1,69 @@
-"use client";
-import { useContext, useState, useEffect, type ReactElement } from "react";
-import { useWeb3Modal, useWeb3ModalAccount } from "@web3modal/ethers/react";
-import Image from "next/image";
-import leftArrow from "./leftArrow.svg";
-import wallet from "./wallet.svg";
-import css from "./WalletComponents.module.css";
-import ContractContext from "@/context/ContractContext";
+import leftArrow from './leftArrow.svg';
+import css from './WalletComponents.module.css';
+import Link from 'next/link';
+import { ConnectWallet, useAddress } from '@thirdweb-dev/react';
+import { ServerImage } from '../../ServerImage';
 
-export function ConnectWalletButton({}: any): ReactElement {
-  const [isUserConnected, setIsUserConnected] = useState(false);
-  const { open } = useWeb3Modal();
-  const { isConnected } = useWeb3ModalAccount();
-  const { switchToMainnet, switchToTestnet } =
-    useContext(ContractContext);
-  const [isTest, setIsTest] = useState();
-
-  useEffect(() => {
-    const fetchEnvironmentVariables = async () => {
-      try {
-        const response = await fetch(
-          "/api/smartcontract?function=getEnvironmentVariables",
-          {
-            method: "GET",
-          },
-        );
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const result = await response.json();
-
-        setIsTest(result.isTest);
-      } catch (error) {
-        console.error("There was a problem with the fetch operation:", error);
-      }
-    };
-
-    fetchEnvironmentVariables();
-  }, []);
-
-  useEffect(() => {
-    setIsUserConnected(isConnected);
-  }, [isConnected]);
-
-  const handleConnectWallet = () => {
-    open();
-  };
-
-  useEffect(() => {
-    if (isTest !== undefined) {
-      if (isTest) {
-        switchToTestnet();
-      } else {
-        switchToMainnet();
-      }
-    }
-  }, [isTest]);
+const ConnectWalletButton = () => {
+  const address = useAddress();
 
   return (
-    <div className={css.connectWalletButtonContainer}>
-      {!isUserConnected ? (
-        <button
+    <div>
+      {address ? (
+        <ConnectWallet
           className={css.connectWalletButton}
-          onClick={handleConnectWallet}
+          detailsBtn={() => {
+            return (
+              <button className="flex justify-between items-center px-4 py-2 bg-libertumGreen bg-opacity-30 rounded-[5px] border border-libertumGreen backdrop-blur-[10px] text-white gap-3 override-link text-sm">
+                <ServerImage
+                  alt="Wallet"
+                  src="/assets/wallet.svg"
+                  width={10}
+                  height={10}
+                />
+                {`${address?.substring(0, 4)}....${address?.substring(
+                  address?.length - 4
+                )}`}
+                <span>
+                  <ServerImage
+                    alt="left arrow"
+                    src={leftArrow}
+                    width={9.207}
+                    height={4.708}
+                  />
+                </span>
+              </button>
+            );
+          }}
+        />
+      ) : (
+        <Link
+          href="/login"
+          className="flex justify-between items-center px-4 py-2 bg-libertumGreen bg-opacity-30 rounded-[5px] border border-libertumGreen backdrop-blur-[10px] text-white gap-3 override-link"
         >
-          <div>
-            <Image alt="Wallet" src={wallet} width={16} height={16} />
-            <p>Connect Wallet</p>
-          </div>
-          <Image
+          <ServerImage
+            alt="Wallet"
+            src="/assets/wallet.svg"
+            width={10}
+            height={10}
+            style={{
+              marginLeft: 0,
+            }}
+          />
+          {address ? 'Wallet' : 'Connect Wallet'}
+          <ServerImage
             alt="left arrow"
             src={leftArrow}
-            width={13.207}
-            height={8.708}
+            width={9.207}
+            height={4.708}
+            style={{
+              marginLeft: 0,
+            }}
           />
-        </button>
-      ) : (
-        <div className={css.w3mBtn}>
-          <w3m-account-button balance="hide" />
-          <w3m-network-button />
-        </div>
+        </Link>
       )}
     </div>
   );
-}
+};
+
+export default ConnectWalletButton;
