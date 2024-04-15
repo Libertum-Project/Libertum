@@ -227,7 +227,9 @@ const Swap = () => {
   return (
     <>
       <section className="relative">
-        <Card className={`w-[360px] md:w-[480px] bg-[#fff] border-0 ${styles.swap}`}>
+        <Card
+          className={`w-[360px] md:w-[480px] bg-[#fff] border-0 ${styles.swap}`}
+        >
           <CardHeader className="border-b-2 mb-2 p-2">
             <CardTitle className="text-black flex justify-between">
               <Image
