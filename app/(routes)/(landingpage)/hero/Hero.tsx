@@ -94,7 +94,7 @@ export function Hero(): ReactElement {
           </Link>
             */}
 
-          <Link href="/subscribe" className={css.button1}>
+          <Link href="/https://earn.libertum.io/" className={css.button1}>
             <div className={css.buttonFrame}>
               <Image
                 src="/assets/earn.svg"
