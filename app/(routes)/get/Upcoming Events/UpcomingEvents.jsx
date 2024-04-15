@@ -106,8 +106,8 @@ export function UpcomingEvents() {
           </div>
         </div>
         <div className={css.videoContainer}>
-          <video controls className={css.video} poster="./howtobuyView.png">
-            <source src="./howtobuyVideo2.mp4" type="video/mp4" />
+          <video controls className={css.video} poster="./roadmapView.png">
+            <source src="./roadmap.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
