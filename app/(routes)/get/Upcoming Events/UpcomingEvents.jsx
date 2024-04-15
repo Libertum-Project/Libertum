@@ -83,7 +83,7 @@ export function UpcomingEvents() {
             <div className={css.eventItem}>
               <div className={css.eventTitle}>
                 <p className={css.tittle}> Uniswap Listing</p>
-                <span>Monday 15th April</span>
+                <span>Available Now</span>
               </div>
               {/* <div className={css.eventInfo}>
                 <div className={css.infoItem}>
@@ -105,7 +105,7 @@ export function UpcomingEvents() {
                 target="_blank"
               >
                 <button className={css.buyButton} onClick={scrollToTop}>
-                  Get ready!
+                  Trade Now!
                 </button>
               </Link>
             </div>
