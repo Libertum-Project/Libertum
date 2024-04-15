@@ -23,7 +23,7 @@ const Page = () => {
           <ConnectEmbed
             auth={{
               onLogin: () => {
-                redirect('/ico');
+                redirect('/get');
               },
             }}
             theme={lightTheme({
@@ -40,7 +40,7 @@ const Page = () => {
           />
         </div>
       ) : (
-        status == 'connected' && redirect('/ico')
+        status == 'connected' && redirect('/get')
       )}
     </>
   );
