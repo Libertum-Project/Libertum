@@ -208,7 +208,7 @@
     max-width: 280px;
     align-items: stretch;
     justify-content: space-between;
-    width: 200px;
+    width: 230px;
   }
   .upcomingEvents img {
     flex: 1;
@@ -228,8 +228,8 @@
   width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.5);
-  }
-.soldOutSign{
+}
+.soldOutSign {
   display: flex;
   width: 100%;
   height: 80px;
@@ -238,12 +238,12 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  background: #F9861E;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10);
+  background: #f9861e;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
   padding: 2rem;
-  }
+}
 .soldOutSign > p {
-  color: #FFF;
+  color: #fff;
   text-align: center;
   font-family: var(--font-primary);
   font-size: 32px;
@@ -254,12 +254,12 @@
   font-weight: 600;
 }
 .soldOutSign > span {
-  color: #FFF;
-text-align: center;
-font-family: var(--font-secondary);
-font-size: 12px;
-font-style: normal;
-font-weight: 400;
-line-height: 150%; /* 24px */
-letter-spacing: -0.32px;
+  color: #fff;
+  text-align: center;
+  font-family: var(--font-secondary);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+  letter-spacing: -0.32px;
 }
