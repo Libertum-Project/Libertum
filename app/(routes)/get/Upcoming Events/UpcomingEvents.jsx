@@ -1,20 +1,20 @@
-'use client';
-import css from './UpcomingEvents.module.css';
-import Link from 'next/link';
+"use client";
+import css from "./UpcomingEvents.module.css";
+import Link from "next/link";
 
 export function UpcomingEvents() {
   const scrollToTop = () => {
     if (window.innerWidth > 1250) {
       window.scrollTo({
         top: 0,
-        behavior: 'smooth',
+        behavior: "smooth",
       });
     } else {
       const tokenPurchaseSection = document.getElementById(
-        'tokenPurchaseSection'
+        "tokenPurchaseSection",
       );
       if (tokenPurchaseSection) {
-        tokenPurchaseSection.scrollIntoView({ behavior: 'smooth' });
+        tokenPurchaseSection.scrollIntoView({ behavior: "smooth" });
       }
     }
   };
@@ -56,7 +56,7 @@ export function UpcomingEvents() {
               </div> */}
               <div className={css.eventTitle}>
                 <p className={css.tittle}>Fjord Listing</p>
-                <span>Wednesday 10th April to Friday 12th April</span>
+                <span className={css.sold}>Sold out</span>
               </div>
               {/* <div className={css.eventInfo}>
                 <div className={css.infoItem}>
@@ -72,12 +72,12 @@ export function UpcomingEvents() {
                   <span className={css.infoValue}>$432,000</span>
                 </div>
               </div> */}
-              <Link href="https://app.v2.fjordfoundry.com/pools/0xa1E599f65bA9F2BFfA934B8b61e4086e3f4bCb1E" target='_blank'>
-              <button className={css.buyButton}>              
-                Fjord Foundry
-              </button>
+              <Link
+                href="https://app.v2.fjordfoundry.com/pools/0xa1E599f65bA9F2BFfA934B8b61e4086e3f4bCb1E"
+                target="_blank"
+              >
+                <button className={css.buyButton}>Fjord Foundry</button>
               </Link>
-
             </div>
 
             <div className={css.eventItem}>
@@ -99,9 +99,15 @@ export function UpcomingEvents() {
                   <span className={css.infoValue}>TBC</span>
                 </div>
               </div> */}
-              <button className={css.buyButton} onClick={scrollToTop}>
-                Get ready!
-              </button>
+
+              <Link
+                href="https://app.uniswap.org/swap?outputCurrency=0x56A38E7216304108E841579041249fEb236C887b&chain=base"
+                target="_blank"
+              >
+                <button className={css.buyButton} onClick={scrollToTop}>
+                  Get ready!
+                </button>
+              </Link>
             </div>
           </div>
         </div>

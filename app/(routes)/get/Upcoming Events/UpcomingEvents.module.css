@@ -10,9 +10,6 @@
   margin: 0 auto;
 }
 
-.videoContainer {
-}
-
 .video {
   margin-top: 2rem;
   width: 100%;
@@ -98,6 +95,10 @@
   letter-spacing: 0.4px;
 }
 
+.eventTitle .sold {
+  color: var(--color-secondary) !important; 
+}
+
 .eventInfo {
   align-items: center;
   display: flex;
@@ -153,10 +154,6 @@
 
 .buyButton:hover {
   background: #159390;
-}
-
-.eventItem:last-child .buyButton:hover {
-  cursor: not-allowed;
 }
 
 @media (min-width: 750px) {
