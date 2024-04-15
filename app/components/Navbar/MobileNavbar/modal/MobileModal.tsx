@@ -13,8 +13,8 @@ export function MobileModal({
   return (
     <div className={css.mobileModalContainer} onClick={handleToggleOpenMenu}>
       <div className={css.mobileModal}>
-        <Link href="./ico" className={css.border}>
-          Buy LBM
+        <Link href="./get" className={css.border}>
+          Get LBM
         </Link>
         <Link href="/comingsoon" className={css.border}>
           Explore Properties
