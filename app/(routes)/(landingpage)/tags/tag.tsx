@@ -22,5 +22,5 @@ export function TagComponent() {
     }
   }, []);
 
-  return <div>{isMobile ? <TagsMobile /> : <Tags />}</div>;
+  return <>{isMobile ? <TagsMobile /> : <Tags />}</>;
 }

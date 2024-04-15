@@ -57,8 +57,8 @@ export function Hero(): ReactElement {
               <Image
                 src="/assets/rocket.svg"
                 alt="N"
-                width="13"
-                height="13"
+                width={21}
+                height={21}
                 className={css.logo}
               />
               <p>Start Tokenizing</p>
@@ -103,8 +103,8 @@ export function Hero(): ReactElement {
               <Image
                 src="assets/earn.svg"
                 alt="N"
-                width={24}
-                height={24}
+                width={21}
+                height={21}
                 className={css.logo}
               />
               <p>Stake LBM</p>
@@ -118,14 +118,13 @@ export function Hero(): ReactElement {
             />
           </Link>
 
-          {/* <button className={css.button}> */}
           <Link href="/get" className={css.button}>
             <div className={css.buttonFrame}>
               <Image
                 src="/assets/coin.svg"
                 alt="N"
-                width="13"
-                height="13"
+                width={21}
+                height={21}
                 className={css.logo}
               />
               <p>Get LBM</p>
@@ -138,7 +137,6 @@ export function Hero(): ReactElement {
               height={8.708}
             />
           </Link>
-          {/* </button> */}
         </div>
       </section>
     </div>

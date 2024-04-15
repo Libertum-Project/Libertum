@@ -104,6 +104,7 @@
 .arrowContainer img {
   width: 100%;
   user-select: none;
+  height: 13px;
 }
 
 .card .content p {
