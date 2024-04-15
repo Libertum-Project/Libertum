@@ -1,24 +1,24 @@
-"use client";
-import { type ReactElement, useState, useEffect } from "react";
-import Image from "next/image";
-import css from "./Hero.module.css";
-import Link from "next/link";
+'use client';
+import { type ReactElement, useState, useEffect } from 'react';
+import Image from 'next/image';
+import css from './Hero.module.css';
+import Link from 'next/link';
 
 export function Hero(): ReactElement {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 950px)");
+    const mediaQuery = window.matchMedia('(max-width: 950px)');
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 1250);
       setIsMobile(mediaQuery.matches);
     };
-    if (typeof window !== "undefined") {
-      window.addEventListener("resize", handleResize);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize);
       handleResize();
 
       return () => {
-        window.removeEventListener("resize", handleResize);
+        window.removeEventListener('resize', handleResize);
       };
     }
   }, []);
@@ -94,7 +94,11 @@ export function Hero(): ReactElement {
           </Link>
             */}
 
-          <Link href="/https://earn.libertum.io/" className={css.button1}>
+          <Link
+            href="https://earn.libertum.io/"
+            target="_blank"
+            className={css.button1}
+          >
             <div className={css.buttonFrame}>
               <Image
                 src="assets/earn.svg"
