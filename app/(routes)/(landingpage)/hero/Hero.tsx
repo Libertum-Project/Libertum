@@ -115,7 +115,7 @@ export function Hero(): ReactElement {
           </Link>
 
           {/* <button className={css.button}> */}
-          <Link href="/ico" className={css.button}>
+          <Link href="/get" className={css.button}>
             <div className={css.buttonFrame}>
               <Image
                 src="/assets/coin.svg"
@@ -124,7 +124,7 @@ export function Hero(): ReactElement {
                 height="13"
                 className={css.logo}
               />
-              <p>Buy LBM</p>
+              <p>Get LBM</p>
             </div>
 
             <Image

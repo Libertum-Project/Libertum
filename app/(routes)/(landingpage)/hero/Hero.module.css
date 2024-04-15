@@ -101,6 +101,11 @@
   cursor: pointer;
   flex: 1 0 0;
 }
+
+.button, .button1 {
+  height: 60px;
+}
+
 .buttons a {
   text-decoration: none;
 }
