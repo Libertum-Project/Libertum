@@ -27,6 +27,7 @@ function withAuth(Component: any) {
 
     useEffect(() => {
       saveUser();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [address]);
 
     if (status == 'connecting') return <LoadingPage />;

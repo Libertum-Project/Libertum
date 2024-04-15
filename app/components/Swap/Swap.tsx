@@ -171,6 +171,7 @@ const Swap = () => {
     if (sellTokenAmount.length == 0) {
       setBuyTokenAmount('0.0');
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sellToken, buyToken, sellTokenAmount]);
 
   const { mutateAsync: approveTokenSpending } = useContractWrite(
