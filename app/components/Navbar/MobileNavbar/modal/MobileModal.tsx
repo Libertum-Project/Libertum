@@ -1,7 +1,7 @@
 import { type ReactElement } from 'react';
 import Link from 'next/link';
 import css from './MobileModal.module.css';
-import { ConnectWalletButton } from '../../WalletComponents/ConnectWalletButton';
+import ConnectWalletButton from '../../WalletComponents/ConnectWalletButton';
 
 interface MobileModalProp {
   handleToggleOpenMenu: () => void;
