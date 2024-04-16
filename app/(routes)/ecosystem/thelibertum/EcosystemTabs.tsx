@@ -64,7 +64,7 @@ export default function EcosystemTabs() {
   ];
   return (
     <div>
-      <div className="my-20 flex justify-center">
+      <div className="hidden lg:flex my-20 justify-center">
         <Tabs defaultValue="tokenise" className="w-full gap-52">
           <TabsList className="w-full flex justify-between">
             {ecosystem.map((tab) => (
@@ -108,6 +108,23 @@ export default function EcosystemTabs() {
             </TabsContent>
           ))}
         </Tabs>
+      </div>
+
+      <div className="lg:hidden  flex flex-col my-4 px-2 gap-4">
+        {ecosystem.map((tab) => (
+          <div key={tab.name} className=' border rounded-[5px]'>
+            <Image
+              src={tab.logo}
+              alt={tab.name}
+              width={120}
+              height={80}
+              className="h-[60px] w-auto"
+            />
+            <div className="py-6 px-4 flex flex-col justify-center items-center font-ubuntu">
+              {tab.description}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

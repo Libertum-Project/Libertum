@@ -1,54 +1,50 @@
-import React from "react";
-import Image from "next/image";
-import libertumLogo from "./assets/libertumLogo.svg";
-import css from "./theLibertumEcosystem.module.css";
-import ecosystem from "./assets/ecosystem.svg"
-import Link from "next/link";
-import EcosystemTabs from "./EcosystemTabs";
-import Partners from "../partners/Partners";
+import React from 'react';
+import Image from 'next/image';
+import libertumLogo from './assets/libertumLogo.svg';
+import css from './theLibertumEcosystem.module.css';
+import ecosystem from './assets/ecosystem.svg';
+import Link from 'next/link';
+import EcosystemTabs from './EcosystemTabs';
+import Partners from '../partners/Partners';
 
-export default function LibertumEcosystem () {
-  return(
+export default function LibertumEcosystem() {
+  return (
     <div className={css.container}>
       <div className={css.title}>
         <section>
           <Image
-          src={libertumLogo}
-          alt="Libertum Logo"
-          width={60}
-          height={60}
-          />    
+            src={libertumLogo}
+            alt="Libertum Logo"
+            width={60}
+            height={60}
+          />
           <h2>The Libertum Ecosystem</h2>
-          </section>
-          <p className=" font-black text-9xl">
-          The Libertum  platform is designed with the user at its core. We have partnered with leading technology providers to deliver an experience like no other in the RWA space. Our entire platform is being developed with a single purpose in mind; to create liquidity for every single member of our community. You’re welcome!!
-          </p>
-          <Link href="#form" className={css.applyButton}>
-            <p >JOIN US ON THIS TRANSFORMATIVE JOURNEY</p>
-            <Image
-              alt="left arrow"
-              src="/assets/leftArrowBLACK.svg"
-              width={13.207}
-              height={8.708}
-            />
-          </Link>
-
-          <EcosystemTabs />
-
-
+        </section>
+        <p className=" font-black text-9xl">
+          The Libertum  platform is designed with the user at its core. We have
+          partnered with leading technology providers to deliver an experience
+          like no other in the RWA space. Our entire platform is being developed
+          with a single purpose in mind; to create liquidity for every single
+          member of our community. You’re welcome!!
+        </p>
+        <Link href="#form" className={css.applyButton}>
+          <p>JOIN US ON THIS TRANSFORMATIVE JOURNEY</p>
+          <Image
+            alt="left arrow"
+            src="/assets/leftArrowBLACK.svg"
+            width={13.207}
+            height={8.708}
+          />
+        </Link>
       </div>
 
-<Partners />
+      <EcosystemTabs />
 
-<div className={css.ecosystemGraph}>
-<Image
-src={ecosystem}
-alt="ecosystem graph"
-width={100}
-height={100}
+      <Partners />
 
-/>
-</div>
+      <div className={css.ecosystemGraph}>
+        <Image src={ecosystem} alt="ecosystem graph" width={100} height={100} />
+      </div>
     </div>
-  )
-}; 
+  );
+}
