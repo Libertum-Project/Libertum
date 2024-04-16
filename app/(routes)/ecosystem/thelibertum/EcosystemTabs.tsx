@@ -65,26 +65,22 @@ export default function EcosystemTabs() {
   return (
     <div>
       <div className="my-20 flex justify-center">
-        <Tabs defaultValue="tokenise" className="w-full">
+        <Tabs defaultValue="tokenise" className="w-full gap-52">
           <TabsList className="w-full flex justify-between">
             {ecosystem.map((tab) => (
               <TabsTrigger key={tab.name} value={tab.name}>
-                <div className="flex items-center justify-between space-x-2 rounded-[5px]  bg-white px-4">
-                  <div className="flex items-center">
-                    <div className="flex items-center justify-center">
-                      <Image
-                        src={tab.logo}
-                        alt={tab.name}
-                        width={80}
-                        height={80}
-                        className="object-cover"
-                      />
-                    </div>
-                  </div>
-                  <span className="uppercase font-[#000041] text-lg">
-                    {tab.name}
-                  </span>
+                <div className="flex items-center justify-between space-x-2 rounded-[5px] bg-white data-[state=active]:border-none">
+                  <Image
+                    src={tab.logo}
+                    alt={tab.name}
+                    width={120}
+                    height={80}
+                    className="h-[50px] w-auto"
+                  />
                 </div>
+                {/* <span className="uppercase font-[#000041] text-lg">
+                    {tab.name}
+                  </span> */}
               </TabsTrigger>
             ))}
           </TabsList>
@@ -92,9 +88,9 @@ export default function EcosystemTabs() {
             <TabsContent
               key={tab.name}
               value={tab.name}
-              className="bg-white border rounded-[5px]"
+              className="bg-white border rounded-[5px] mt-6"
             >
-              <div className="py-6 px-4 flex flex-col justify-center items-center">
+              <div className="py-6 px-4 flex flex-col justify-center items-center font-ubuntu">
                 {tab.description}
 
                 <div className="mt-6">
