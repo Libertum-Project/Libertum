@@ -3,11 +3,11 @@ export const faqData = [
     id: 1,
     question: "What are the $LBM token details?",
     answer: `<span> 
-    $LBM is an BEP-20 token on the BNB Smart Chain with a maximum supply of only 200,000,000 (200 million). The $LBM Token is the native token on the blockchain that is the backbone of the Libertum fractionalized rental income ecosystem. </span>
+    $LBM is an ERC-20 token on the Base Chain with a maximum supply of only 200,000,000 (200 million). The $LBM Token is the native token on the blockchain that is the backbone of the Libertum fractionalized rental income ecosystem. </span>
 
-    <span> Audit $LBM - <b><a href="https://github.com/solidproof/projects/tree/main/2024/Libertum">  github.com/solidproof/projects/tree/main/2024/Libertum </a></b></span>
+    <span> Audit $LBM - <b><a target="_blank" href="https://github.com/solidproof/projects/blob/main/2024/Libertum/EVM_Audit_SolidProof_LibertumV2.pdf"> https://github.com/solidproof/projects/blob/main/2024/Libertum/EVM_Audit_SolidProof_LibertumV2.pdf </a></b></span>
 
-    <p>The presale token contract address is <b>“0x28c79d4d03562b9d2b606bcb7c7fb23beff5e907”</b>. Please do not send any funds to this token contract address, as they cannot be recovered. $LBM can currently only be purchased through the official presale at <b> <a href="https://www.libertum.io/ico"> https://www.libertum.io/ico </a></b>.<p>`
+    <p>The presale token contract address is <b>“0x56A38E7216304108E841579041249fEb236C887b”</b>. Please do not send any funds to this token contract address, as they cannot be recovered. $LBM can currently only be purchased on Uniswap <b> <a target="_blank" href="https://app.uniswap.org/swap?outputCurrency=0x56A38E7216304108E841579041249fEb236C887b&chain=base"> Uniswap</a></b>.<p>`
 
   },
   {
