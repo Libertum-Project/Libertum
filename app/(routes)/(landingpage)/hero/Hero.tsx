@@ -102,9 +102,9 @@ export function Hero(): ReactElement {
             <div className={css.buttonFrame}>
               <Image
                 src="assets/earn.svg"
-                alt="N"
-                width={21}
-                height={21}
+                alt="earn"
+                width={36}
+                height={36}
                 className={css.logo}
               />
               <p>Stake LBM</p>
@@ -121,10 +121,10 @@ export function Hero(): ReactElement {
           <Link href="/get" className={css.button}>
             <div className={css.buttonFrame}>
               <Image
-                src="/assets/coin.svg"
-                alt="N"
-                width={21}
-                height={21}
+                src="/assets/get.svg"
+                alt="get"
+                width={48}
+                height={48}
                 className={css.logo}
               />
               <p>Get LBM</p>
