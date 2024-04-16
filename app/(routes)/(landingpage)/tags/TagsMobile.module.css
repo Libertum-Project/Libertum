@@ -5,6 +5,7 @@
   margin: 0 auto;
   padding: 0px 15px;
   gap: 16px;
+  margin-bottom: 35rem;
 }
 .title {
   color: #080915;
@@ -77,6 +78,8 @@
   align-items: flex-start;
   gap: 16px;
   align-self: stretch;
+  position: relative;
+  z-index: 9999;
 }
 
 .information h2 {

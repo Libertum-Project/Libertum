@@ -84,7 +84,7 @@
 .button {
   display: flex;
   width: 182px;
-  padding: 8px 16px;
+  padding: 12px 16px;
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
@@ -101,6 +101,11 @@
   cursor: pointer;
   flex: 1 0 0;
 }
+
+.button, .button1 {
+  height: 60px;
+}
+
 .buttons a {
   text-decoration: none;
 }
@@ -127,8 +132,6 @@
 } */
 .button1:hover {
   display: flex;
-  width: 182px;
-  padding: 8px 16px;
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
@@ -149,7 +152,7 @@
 .button1 {
   display: flex;
   width: 182px;
-  padding: 8px 16px;
+  padding: 12px 16px;
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;

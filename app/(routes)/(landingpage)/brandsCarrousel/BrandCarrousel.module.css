@@ -46,6 +46,13 @@
   .slide {
     display: inline-block;
     animation: 15s slide infinite linear;
+    height: 60px;
+  }
+
+  .slide img {
+    width: 80px;
+    height: 24px;
+    max-width: none;
   }
 }
 

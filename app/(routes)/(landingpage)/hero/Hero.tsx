@@ -1,37 +1,40 @@
-'use client'
-import { type ReactElement, useState, useEffect } from "react";
-import Image from "next/image";
-import css from "./Hero.module.css";
-import Link from "next/link";
+'use client';
+import { type ReactElement, useState, useEffect } from 'react';
+import Image from 'next/image';
+import css from './Hero.module.css';
+import Link from 'next/link';
 
 export function Hero(): ReactElement {
   const [isMobile, setIsMobile] = useState(false);
-  
+
   useEffect(() => {
-  const mediaQuery = window.matchMedia("(max-width: 950px)");
+    const mediaQuery = window.matchMedia('(max-width: 950px)');
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 1250);
       setIsMobile(mediaQuery.matches);
     };
-    if (typeof window !== "undefined") {
-      window.addEventListener("resize", handleResize);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize);
       handleResize();
 
       return () => {
-        window.removeEventListener("resize", handleResize);
+        window.removeEventListener('resize', handleResize);
       };
     }
   }, []);
 
-
   return (
     <div className={css.heroContainer}>
       <div>
-        {isMobile ? <div className={css.backgroundNoVideo}></div> : <video autoPlay muted loop className={css.video}>
+        {isMobile ? (
+          <div className={css.backgroundNoVideo}></div>
+        ) : (
+          <video autoPlay muted loop className={css.video}>
             <source src="./bg-video-1.mp4" type="video/mp4" />
-          </video> }
+          </video>
+        )}
       </div>
-        
+
       <section className={css.hero}>
         <article className={css.text}>
           <h1>
@@ -54,8 +57,8 @@ export function Hero(): ReactElement {
               <Image
                 src="/assets/rocket.svg"
                 alt="N"
-                width="13"
-                height="13"
+                width={21}
+                height={21}
                 className={css.logo}
               />
               <p>Start Tokenizing</p>
@@ -69,6 +72,7 @@ export function Hero(): ReactElement {
             />
           </Link>
 
+          {/*
           <Link href="/subscribe" className={css.button1}>
             <div className={css.buttonFrame}>
               <Image
@@ -88,18 +92,22 @@ export function Hero(): ReactElement {
               height={8.708}
             />
           </Link>
+            */}
 
-          {/* <button className={css.button}> */}
-          <Link href="/ico" className={css.button}>
+          <Link
+            href="https://earn.libertum.io/"
+            target="_blank"
+            className={css.button1}
+          >
             <div className={css.buttonFrame}>
               <Image
-                src="/assets/coin.svg"
+                src="assets/earn.svg"
                 alt="N"
-                width="13"
-                height="13"
+                width={21}
+                height={21}
                 className={css.logo}
               />
-              <p>Buy LBM</p>
+              <p>Stake LBM</p>
             </div>
 
             <Image
@@ -109,7 +117,26 @@ export function Hero(): ReactElement {
               height={8.708}
             />
           </Link>
-          {/* </button> */}
+
+          <Link href="/get" className={css.button}>
+            <div className={css.buttonFrame}>
+              <Image
+                src="/assets/coin.svg"
+                alt="N"
+                width={21}
+                height={21}
+                className={css.logo}
+              />
+              <p>Get LBM</p>
+            </div>
+
+            <Image
+              alt="left arrow"
+              src="/assets/leftArrow.svg"
+              width={13.207}
+              height={8.708}
+            />
+          </Link>
         </div>
       </section>
     </div>
