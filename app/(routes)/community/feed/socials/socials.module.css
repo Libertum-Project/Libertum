@@ -63,13 +63,17 @@
 }
 
 .dexToolsSocial {
-  gap: 0.5rem;
-  max-height: 336px;
-  padding-top: 0;
+  height: 336px;
+  gap: 1rem;
 }
 
 .dexToolsSocial .frameTitle {
-  transform: translateY(0.5rem);
+  transform: translateY(-14px);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .dexToolsSocial .socialCardName {
@@ -82,10 +86,12 @@
   }
   .frameTitle {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 24px;
   }
   .socialCard {
     width: auto;
   }
+
 }

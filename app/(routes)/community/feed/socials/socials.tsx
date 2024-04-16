@@ -19,7 +19,7 @@ export function Socials(): ReactElement {
     {
       name: 'DEXTools',
       icon: DEXTools,
-      info: 'Track the performance and liquidity of Libertum on DEXTools.',
+      info: 'Track LBM on DEXTools',
       buttonLink:
         'https://www.dextools.io/app/en/base/pair-explorer/0xf3c7b93db3f28580b0fd10365e619eedceb40e76?t=1713266817940',
       className: 'dexToolsSocial'
