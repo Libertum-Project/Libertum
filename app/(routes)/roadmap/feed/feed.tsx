@@ -13,8 +13,8 @@ interface Props {
 
 const TimelineItem: React.FC<Item> = ({ title, date, paragraphs }) => {
   return (
-    <div className="flex space-x-24 mb-24">
-      <div className="flex flex-col mr-4">
+    <div className="flex flex-col lg:flex-row space-x-24 mb-24">
+      <div className="hidden lg:flex flex-col mr-4">
         {/* <div className="h-12 w-12 bg-gray-500 rounded-full flex items-center justify-center">
 
         </div> */}
@@ -28,11 +28,20 @@ const TimelineItem: React.FC<Item> = ({ title, date, paragraphs }) => {
         </div>
       </div>
       <div className="flex-1 ml-4 w-[20rem]">
-        <ul className="w-fit space-y-4">
+        <div className='flex lg:hidden'>
+        <p className="text-lg font-bold font-space_grotesk text-libertumGreen">
+            {title}
+          </p>
+          <p className="text-black font-bold text-xl font-space_grotesk">
+            {date}
+          </p>
+        </div>
+
+        <ul className="w-fit space-y-4 mt-8 lg:mt-0">
           {paragraphs.map((paragraph, index) => (
             <li
               key={index}
-              className="mb-2 w-fit font-semibold flex justify-center items-center"
+              className="mb-2 w-fit font-semibold flex justify-center "
             >
               <svg
                 width="12"
@@ -48,7 +57,7 @@ const TimelineItem: React.FC<Item> = ({ title, date, paragraphs }) => {
                 />
               </svg>
 
-              <p className="ml-2 whitespace-nowrap">{paragraph}</p>
+              <p className="ml-2 lg:whitespace-nowrap">{paragraph}</p>
             </li>
           ))}
         </ul>
@@ -61,7 +70,7 @@ export function Feed({ items }: Props): ReactElement {
   return (
     <div className={css.container}>
       <div className="relative">
-        <div className="absolute h-full w-2 bg-gray-200 top-0 left-[140px] rounded"></div>
+        <div className="absolute h-full w-2 bg-gray-200 top-0 left-10 lg:left-[140px] rounded"></div>
         {items.map((item, index) => (
           <TimelineItem key={index} {...item} />
         ))}
