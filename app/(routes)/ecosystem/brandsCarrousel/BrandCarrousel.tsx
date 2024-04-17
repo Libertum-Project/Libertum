@@ -25,15 +25,15 @@ export function BrandCarrousel(): ReactElement {
 
   return (
     <div className={css.container}>
-      <Marquee speed={35}>
+      <Marquee speed={50}>
         {combinedBrands.map((brand, index) => (
           <div key={index} className={css.slide}>
             <Image
               src={brand}
               alt={`Brand ${index}`}
-              width="110"
-              height="110"
-              className="w-[110px] h-[110px]"
+              width="130"
+              height="130"
+              className="w-[130px] h-[130px]"
             />
           </div>
         ))}
