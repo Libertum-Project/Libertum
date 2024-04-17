@@ -1,5 +1,5 @@
 'use client';
-
+import Marquee from 'react-fast-marquee';
 import { ReactElement, useMemo } from 'react';
 import Image from 'next/image';
 import css from './BrandCarrousel.module.css';
@@ -14,24 +14,7 @@ import trade from './brands/trade.svg';
 
 export function BrandCarrousel(): ReactElement {
   const brands = useMemo(
-    () => [
-      borrow,
-      chose,
-      earn,
-      get,
-      market,
-      stay,
-      tokens,
-      trade,
-      borrow,
-      chose,
-      earn,
-      get,
-      market,
-      stay,
-      tokens,
-      trade,
-    ],
+    () => [borrow, chose, earn, get, market, stay, tokens, trade],
     []
   );
 
@@ -42,18 +25,19 @@ export function BrandCarrousel(): ReactElement {
 
   return (
     <div className={css.container}>
-      <div className={css.carrouselContainer}>
+      <Marquee speed={35}>
         {combinedBrands.map((brand, index) => (
           <div key={index} className={css.slide}>
             <Image
               src={brand}
               alt={`Brand ${index}`}
-              width="132"
-              height="132"
+              width="110"
+              height="110"
+              className="w-[110px] h-[110px]"
             />
           </div>
         ))}
-      </div>
+      </Marquee>
     </div>
   );
 }
