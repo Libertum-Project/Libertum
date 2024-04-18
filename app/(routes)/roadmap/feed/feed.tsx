@@ -19,6 +19,17 @@ const TimelineItem: React.FC<Item> = ({ title, date, paragraphs }) => {
 
         </div> */}
         <div className="flex w-24">
+          <div className="absolute h-full w-2 left-10 lg:left-[137px]">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="17"
+              viewBox="0 0 16 17"
+              fill="none"
+            >
+              <circle cx="8" cy="8.81836" r="8" fill="#00B3B5" />
+            </svg>
+          </div>
           <p className="text-lg font-bold font-space_grotesk text-libertumGreen">
             {title}
           </p>
@@ -28,8 +39,19 @@ const TimelineItem: React.FC<Item> = ({ title, date, paragraphs }) => {
         </div>
       </div>
       <div className="flex-1 ml-4 w-[20rem]">
-        <div className='flex lg:hidden'>
-        <p className="text-lg font-bold font-space_grotesk text-libertumGreen">
+        <div className="flex lg:hidden">
+          <div className="absolute h-full w-2 left-[37px] lg:left-[137px]">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="17"
+              viewBox="0 0 16 17"
+              fill="none"
+            >
+              <circle cx="8" cy="8.81836" r="8" fill="#00B3B5" />
+            </svg>
+          </div>
+          <p className="text-lg font-bold font-space_grotesk text-libertumGreen">
             {title}
           </p>
           <p className="text-black font-bold text-xl font-space_grotesk">
