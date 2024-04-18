@@ -36,7 +36,7 @@ const TimelineItem: React.FC<Item> = ({ title, date, paragraphs }) => (
     </div>
     <div className="flex-1 ml-4 w-[20rem]">
       <div className="flex lg:hidden">
-        <div className="absolute h-full w-2 left-[37px] lg:left-[137px]">
+        <div className="absolute w-2 left-[37px] lg:left-[137px]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -86,7 +86,7 @@ export function Feed({ items }: Props) {
   return (
     <div className={css.container}>
       <div className="relative">
-        <div className="absolute h-[81rem] max-h-[81rem] w-2 bg-gray-200 top-0 left-10 lg:left-[140px] rounded"></div>
+        <div className="absolute h-[110.5rem] lg:h-[81rem] lg:max-h-[81rem] w-2 bg-gray-200 top-0 left-10 lg:left-[140px] rounded"></div>
         {items.map((item, index) => (
           <TimelineItem key={index} {...item} />
         ))}
