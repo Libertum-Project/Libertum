@@ -86,7 +86,7 @@ export function Feed({ items }: Props) {
   return (
     <div className={css.container}>
       <div className="relative">
-        <div className="absolute h-[80rem] max-h-[80rem] w-2 bg-gray-200 top-0 left-10 lg:left-[140px] rounded"></div>
+        <div className="absolute h-[81rem] max-h-[81rem] w-2 bg-gray-200 top-0 left-10 lg:left-[140px] rounded"></div>
         {items.map((item, index) => (
           <TimelineItem key={index} {...item} />
         ))}
