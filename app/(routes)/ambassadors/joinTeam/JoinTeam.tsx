@@ -3,6 +3,9 @@ import { useState, useEffect } from 'react';
 import css from './JoinTeam.module.css';
 import alanPhoto from './assets/alan.svg';
 import javvadPhoto from './assets/javvad.svg';
+import brondon from './assets/brondon.jpg'; 
+import profile from './assets/profile.svg'
+import fab from './assets/fab.jpg'
 import discord from './assets/socialsIcons/discord.svg';
 import linkedin from './assets/socialsIcons/linkedin.svg';
 import telegram from './assets/socialsIcons/telegram.svg';
@@ -13,11 +16,11 @@ import Link from 'next/link';
 export function JoinTeam() {
   const ambassadors = [
     {
-      name: 'Alan Gormley',
-      image: alanPhoto,
-      summary: 'Lorem ipsum dolor sit amet',
+      name: 'Mr Brondor',
+      image: brondon,
+      summary: 'Meet Mr. Brondor',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non nulla nisi. Curabitur interdum velit eu condimentum laoreet. Nulla gravida congue ultricies. Sed feugiat eu ipsum in feugiat. Cras sed fringilla est. Morbi velit torto.',
+        'A crypto analyst and content creator with a passionate community on X, with a background in economics and finance. As a community leader and visual artist, he brings a unique perspective to the evolving world of Web3, Blockchain, Fin-Tech products and RWA',
       socials: {
         linkedin: '/',
         discord: '/',
@@ -26,11 +29,11 @@ export function JoinTeam() {
       },
     },
     {
-      name: 'Javvad Azam',
-      image: javvadPhoto,
-      summary: 'Lorem ipsum dolor sit amet',
+      name: 'Fabinacci',
+      image: fab,
+      summary: 'Web3 & blockchain enthusiast since 2018.',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non nulla nisi. Curabitur interdum velit eu condimentum laoreet. Nulla gravida congue ultricies. Sed feugiat eu ipsum in feugiat. Cras sed fringilla est. Morbi velit torto.',
+        'Fascinated by rapidly evolving technologies and passionate about projects that bridge the gap between web 2 and 3, providing real-world utility to people within the strongest narratives of the decade: RWA, AI and GameFi. People-connector and advisor.',
       socials: {
         linkedin: '/',
         discord: '/',
@@ -39,11 +42,11 @@ export function JoinTeam() {
       },
     },
     {
-      name: 'Alan Gormley',
-      image: alanPhoto,
-      summary: 'Lorem ipsum dolor sit amet',
+      name: 'It could be you',
+      image: profile,
+      summary: 'Join now!',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non nulla nisi. Curabitur interdum velit eu condimentum laoreet. Nulla gravida congue ultricies. Sed feugiat eu ipsum in feugiat. Cras sed fringilla est. Morbi velit torto.',
+        '',
       socials: {
         linkedin: '/',
         discord: '/',
