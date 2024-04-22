@@ -9,9 +9,9 @@ export function Hero(): ReactElement {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 950px)');
+    const mediaQuery = window.matchMedia('(max-width: 1380px)');
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 950);
+      setIsMobile(window.innerWidth <= 1380);
       setIsMobile(mediaQuery.matches);
     };
     if (typeof window !== 'undefined') {
