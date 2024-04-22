@@ -1,11 +1,11 @@
 'use client';
 import { useState, useEffect } from 'react';
 import css from './JoinTeam.module.css';
-import alanPhoto from './assets/alan.svg';
-import javvadPhoto from './assets/javvad.svg';
-import brondon from './assets/brondon.jpg'; 
-import profile from './assets/profile.svg'
-import fab from './assets/fab.jpg'
+//import alanPhoto from './assets/alan.svg';
+//import javvadPhoto from './assets/javvad.svg';
+import brondon from './assets/brondon.jpg';
+import profile from './assets/profile.svg';
+import fab from './assets/fab.jpg';
 import discord from './assets/socialsIcons/discord.svg';
 import linkedin from './assets/socialsIcons/linkedin.svg';
 import telegram from './assets/socialsIcons/telegram.svg';
@@ -25,8 +25,8 @@ export function JoinTeam() {
         linkedin: '/',
         discord: '/',
         telegram: '/',
-        twitter: '/',
-      },
+        twitter: '/'
+      }
     },
     {
       name: 'Fabinacci',
@@ -38,29 +38,28 @@ export function JoinTeam() {
         linkedin: '/',
         discord: '/',
         telegram: '/',
-        twitter: '/',
-      },
+        twitter: '/'
+      }
     },
     {
       name: 'It could be you',
       image: profile,
       summary: 'Join now!',
-      description:
-        '',
+      description: '',
       socials: {
         linkedin: '/',
         discord: '/',
         telegram: '/',
-        twitter: '/',
-      },
-    },
+        twitter: '/'
+      }
+    }
   ];
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 950px)');
+    const mediaQuery = window.matchMedia('(max-width: 1380px)');
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 1250);
+      setIsMobile(window.innerWidth <= 1380);
       setIsMobile(mediaQuery.matches);
     };
     if (typeof window !== 'undefined') {
@@ -111,33 +110,44 @@ export function JoinTeam() {
               </div>
 
               <p>{ambassador.description}</p>
-
-              <div className={css.socialMediaFrame}>
-                <Link
-                  href={ambassador.socials.linkedin}
-                  className={css.socialMediaIcon}
-                >
-                  <Image alt="LinkedIn" src={linkedin} width={18} height={18} />
-                </Link>
-                <Link
-                  href={ambassador.socials.discord}
-                  className={css.socialMediaIcon}
-                >
-                  <Image alt="Discord" src={discord} width={18} height={18} />
-                </Link>
-                <Link
-                  href={ambassador.socials.telegram}
-                  className={css.socialMediaIcon}
-                >
-                  <Image alt="Telegram" src={telegram} width={18} height={18} />
-                </Link>
-                <Link
-                  href={ambassador.socials.twitter}
-                  className={css.socialMediaIcon}
-                >
-                  <Image alt="Twitter" src={twitter} width={18} height={18} />
-                </Link>
-              </div>
+              {ambassador.name !== 'It could be you' && (
+                <div className={css.socialMediaFrame}>
+                  <Link
+                    href={ambassador.socials.linkedin}
+                    className={css.socialMediaIcon}
+                  >
+                    <Image
+                      alt="LinkedIn"
+                      src={linkedin}
+                      width={18}
+                      height={18}
+                    />
+                  </Link>
+                  <Link
+                    href={ambassador.socials.discord}
+                    className={css.socialMediaIcon}
+                  >
+                    <Image alt="Discord" src={discord} width={18} height={18} />
+                  </Link>
+                  <Link
+                    href={ambassador.socials.telegram}
+                    className={css.socialMediaIcon}
+                  >
+                    <Image
+                      alt="Telegram"
+                      src={telegram}
+                      width={18}
+                      height={18}
+                    />
+                  </Link>
+                  <Link
+                    href={ambassador.socials.twitter}
+                    className={css.socialMediaIcon}
+                  >
+                    <Image alt="Twitter" src={twitter} width={18} height={18} />
+                  </Link>
+                </div>
+              )}
             </div>
           ))}
         </div>
