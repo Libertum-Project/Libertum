@@ -10,7 +10,7 @@ export default function WhatIs() {
         <div>
           <div>
             <h2>What is an Ambassador?</h2>
-            <p>
+            <p className={css.paragraph}>
               By becoming an Ambassador, you will assist us in spreading the
               word about RWA tokenisation and our efforts in the Libertum
               Ecosystem. Ambassadors have the power to host events, craft
