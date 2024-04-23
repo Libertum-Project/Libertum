@@ -17,6 +17,7 @@ export default function LibertumEcosystem() {
             alt="Libertum Logo"
             width={60}
             height={60}
+            className='w-auto xl:w-[60px]'
           />
           <h2>The Libertum Ecosystem</h2>
         </section>
