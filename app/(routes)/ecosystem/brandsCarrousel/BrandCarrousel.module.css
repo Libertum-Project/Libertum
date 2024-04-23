@@ -47,11 +47,6 @@
   .carrouselContainer:hover .carrouselContainer-slide {
     animation-play-state: paused;
   }
-
-  .slide {
-    display: inline-block;
-    animation: 15s slide infinite linear;
-  }
 }
 
 @keyframes slide {
