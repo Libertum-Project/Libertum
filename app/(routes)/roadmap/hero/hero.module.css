@@ -39,7 +39,7 @@
   position: relative;
   z-index: 99;
   box-sizing: border-box;
-  justify-content:center;
+  justify-content: center;
   flex: 1 0 0;
   background-image: url('./background.svg');
   background-repeat: no-repeat;
@@ -54,7 +54,7 @@
   justify-content: center;
   gap: 2rem;
   align-self: center;
-  width: 545px;
+  width: 639px;
   /* max-width: 42rem; */
   box-sizing: border-box;
   /* margin: 0 auto; */
@@ -100,13 +100,13 @@
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 24px */
-text-align: center;  
-margin: 0;
+  text-align: center;
+  margin: 0;
 }
 
 .applyButton {
-width: fit-content;
-gap: 32px;
+  width: fit-content;
+  gap: 32px;
   display: flex;
   padding: 16px;
   justify-content: space-between;
@@ -129,7 +129,6 @@ gap: 32px;
   margin: 0;
   text-transform: capitalize;
   white-space: nowrap;
-
 }
 
 /* @media (min-width: 1250px) {
@@ -147,6 +146,7 @@ gap: 32px;
 @media screen and (max-width: 1100px) {
   .heroAmbassadors {
     flex-direction: column;
+    background: none;
   }
   .heroAmbassadors h1 {
     margin-top: 0;
@@ -156,12 +156,12 @@ gap: 32px;
     width: 100%;
   }
 
-  .applyButton{
+  .applyButton {
     width: auto;
   }
 
-  .imageContainer img{
+  .imageContainer img {
     max-width: 100%;
-    max-height: auto ;
+    max-height: auto;
   }
 }

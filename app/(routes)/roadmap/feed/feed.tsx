@@ -67,6 +67,7 @@ const TimelineItem: React.FC<Item> = ({ title, date, paragraphs }) => (
               height="12"
               viewBox="0 0 12 12"
               fill="none"
+              className='w-[12px]'
             >
               <path
                 d="M6 0L4.93875 1.06125L9.1275 5.25H0V6.75H9.1275L4.93875 10.9387L6 12L12 6L6 0Z"
