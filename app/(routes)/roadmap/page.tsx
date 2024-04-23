@@ -78,7 +78,7 @@ export default function Roadmap() {
           controls
           width="600"
           className="rounded-[15px] mt-6"
-          poster="/RoadmapScreenshot.svg"
+          poster="./roadmapView.png"
         >
           <source src="/LBMRoadmap.mp4" type="video/mp4" />
           Your browser does not support the video tag.
