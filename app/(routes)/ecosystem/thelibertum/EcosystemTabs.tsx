@@ -68,19 +68,16 @@ export default function EcosystemTabs() {
         <Tabs defaultValue="tokenise" className="w-full gap-52">
           <TabsList className="w-full flex justify-between">
             {ecosystem.map((tab) => (
-              <TabsTrigger key={tab.name} value={tab.name}>
-                <div className="flex items-center justify-between space-x-2 rounded-[5px] bg-white data-[state=active]:border-none">
+              <TabsTrigger key={tab.name} value={tab.name} className={css.tab} tabIndex={1}>
+                <div className="flex items-center justify-between space-x-2 rounded-[5px] bg-white ">
                   <Image
                     src={tab.logo}
                     alt={tab.name}
                     width={120}
                     height={80}
-                    className="h-[50px] w-auto"
+                    className={`h-[50px] w-auto ${css.tabImage}`}
                   />
                 </div>
-                {/* <span className="uppercase font-[#000041] text-lg">
-                    {tab.name}
-                  </span> */}
               </TabsTrigger>
             ))}
           </TabsList>
@@ -90,8 +87,8 @@ export default function EcosystemTabs() {
               value={tab.name}
               className="bg-white border rounded-[5px] mt-6"
             >
-              <div className="py-6 px-4 flex flex-col justify-center items-center font-ubuntu">
-                {tab.description}
+              <div className="p-[32px] flex flex-col justify-center items-center">
+                <p className={css.tabPara}>{tab.description}</p>
 
                 <div className="mt-6">
                   <Link href="#form" className={css.applyButton}>
@@ -112,7 +109,7 @@ export default function EcosystemTabs() {
 
       <div className="lg:hidden  flex flex-col my-4 px-2 gap-4">
         {ecosystem.map((tab) => (
-          <div key={tab.name} className=' border rounded-[5px]'>
+          <div key={tab.name} className=" border rounded-[5px]">
             <Image
               src={tab.logo}
               alt={tab.name}
@@ -120,8 +117,8 @@ export default function EcosystemTabs() {
               height={80}
               className="h-[60px] w-auto"
             />
-            <div className="py-6 px-4 flex flex-col justify-center items-center font-ubuntu">
-              {tab.description}
+            <div className="py-6 px-4 flex flex-col justify-center items-center ">
+              <p className={css.tabPara}>{tab.description}</p>
             </div>
           </div>
         ))}
