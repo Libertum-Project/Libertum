@@ -25,7 +25,7 @@ export function BrandCarrousel(): ReactElement {
 
   return (
     <div className={css.container}>
-      <Marquee speed={50}>
+      <Marquee speed={75}>
         {combinedBrands.map((brand, index) => (
           <div key={index} className={css.slide}>
             <Image

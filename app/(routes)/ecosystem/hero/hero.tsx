@@ -39,7 +39,9 @@ export function Hero(): ReactElement {
           <h1>Libertum Technology</h1>
           <div className={css.paragraphsAmbassadors}>
             <p>
-            Libertum is an entire ecosystem designed to break down the barriers of traditional real estate and cater to a new generation of investors.
+              Libertum is an entire ecosystem designed to break down the
+              barriers of traditional real estate and cater to a new generation
+              of investors.
             </p>
           </div>
 
@@ -52,7 +54,7 @@ export function Hero(): ReactElement {
               height={8.708}
             />
           </Link>
-        </div>        
+        </div>
       </div>
     </div>
   );
