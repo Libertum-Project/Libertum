@@ -33,7 +33,7 @@ export function MobileModal({
         </Link>
         <div>
           <p>Docs</p>
-          <Link href="/Libertum_Tokenomics.pdf" target="_blank">
+          <Link href="/Libertum_Pitch.pdf" target="_blank">
             → Token Utility
           </Link>
           <Link href="/whitepaperLibertum.pdf" target="_blank">

@@ -14,7 +14,7 @@ const ConnectWalletButton = () => {
           className={css.connectWalletButton}
           detailsBtn={() => {
             return (
-              <button className="flex justify-between items-center px-4 py-2 bg-libertumGreen bg-opacity-30 rounded-[5px] border border-libertumGreen backdrop-blur-[10px] text-white gap-3 override-link text-sm">
+              <button className="flex justify-between items-center px-4 py-2 bg-libertumGreen bg-opacity-30 rounded-[5px] border border-libertumGreen backdrop-blur-[10px] text-white gap-3 override-link text-sm" style={{border: "1px solid rgb(0, 179, 181)"}}>
                 <ServerImage
                   alt="Wallet"
                   src="/assets/wallet.svg"

@@ -39,7 +39,7 @@ export function DocsModal({
         </div>
         <div className={css.modalLinks}>
           <div>
-            <Link href= "/Libertum_Tokenomics.pdf" target="_blank">
+            <Link href= "/Libertum_Pitch.pdf" target="_blank">
               <Image
                 src={tokenUtility}
                 alt="Investors"
