@@ -3,8 +3,49 @@ import { type ReactElement, useState, useEffect } from 'react';
 import Image from 'next/image';
 import css from './hero.module.css';
 import Link from 'next/link';
+import alan from '../assets/alan.svg';
+import { Card } from '../cards/Card';
 
 export function Hero(): ReactElement {
+  const members = [
+    {
+      id: 1,
+      image: alan,
+      name: 'Alan Gormley',
+      position: 'COO & Co-Founder',
+      description:
+        'Digital marketing expert with 10+ years of experience in advertising technologies and machine learning, a crypto enthusiast, and the founder of Ad360, an AI advertising platform.',
+      linkedin: '/linkedin.com'
+    },
+    {
+      id: 2,
+      image: alan,
+      name: 'Alan Gormley',
+      position: 'COO & Co-Founder',
+      description:
+        'Digital marketing expert with 10+ years of experience in advertising technologies and machine learning, a crypto enthusiast, and the founder of Ad360, an AI advertising platform.',
+      linkedin: '/linkedin.com'
+    },
+    {
+      id: 3,
+      image: alan,
+      name: 'Alan Gormley',
+      position: 'COO & Co-Founder',
+      description:
+        'Digital marketing expert with 10+ years of experience in advertising technologies and machine learning, a crypto enthusiast, and the founder of Ad360, an AI advertising platform.',
+      linkedin: '/linkedin.com'
+    },
+    {
+      id: 4,
+      image: alan,
+      name: 'Alan Gormley',
+      position: 'COO & Co-Founder',
+      description:
+        'Digital marketing expert with 10+ years of experience in advertising technologies and machine learning, a crypto enthusiast, and the founder of Ad360, an AI advertising platform.',
+      linkedin: '/linkedin.com'
+    }
+  ];
+
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -44,11 +85,22 @@ export function Hero(): ReactElement {
               numeranda nec me ab illo inventore verita...
             </p>
           </div>
-
-          <div>
-            <h2>Leadership Team</h2>
-          </div>
         </div>
+        <div className={css.leadershipTeam}>
+            <h2>Leadership Team</h2>
+            <div className={css.members}>
+              {members.map((member) => (
+                <Card
+                  key={member.id}
+                  image={member.image}
+                  name={member.name}
+                  position={member.position}
+                  description={member.description}
+                  linkedin={member.linkedin}
+                />
+              ))}
+            </div>
+          </div>
       </div>
     </div>
   );

@@ -11,6 +11,7 @@
   z-index: 8;
   min-width: 100%;
   min-height: 100%;
+  object-fit: cover;
 }
 
 .backgroundNoVideo {
@@ -33,6 +34,7 @@
   max-width: 75.125rem;
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
   /* justify-content: center; */
   gap: 4rem;
@@ -127,6 +129,29 @@
   white-space: nowrap;
 }
 
+.leadershipTeam{
+  display: flex;
+  flex-direction: column;   
+}
+
+.leadershipTeam h2 {
+  color: #FFF;
+text-align: center;
+font-family: var(--font-primary);
+font-size: 36px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+letter-spacing: -0.72px;
+margin-bottom: 3rem;
+}
+
+.members{
+  display: flex;
+  width: 75.125rem;
+  justify-content: space-between;
+}
+
 /* @media (min-width: 1250px) {
     .hero {
       flex-direction: row;
@@ -158,5 +183,12 @@
   .imageContainer img {
     max-width: 100%;
     max-height: auto;
+  }
+
+  .members{
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    height: 110rem;
   }
 }

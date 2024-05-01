@@ -1,34 +1,25 @@
 import css from './Card.module.css';
 import Image from 'next/image';
-import alan from '../assets/alan.svg';
-import linkedin from '../assets/linkedin.svg';
+import linkedinLogo from '../assets/linkedin.svg';
 import Link from 'next/link';
 
-export function Card() {
+export function Card({ image, name, position, description, linkedin }) {
   return (
     <div className={css.card}>
       <div className={css.removeWhenUse}>
-        <Image alt="image of Alan" src={alan} width={257} height={257} />
+        <Image alt={`image of ${name}`} src={image} width={257} height={257} />
       </div>
       <div className={css.details}>
-        <div className={css.title}> 
-        <h2>Alan Gormley</h2>
-        <h3>COO & Co-Founder</h3>
+        <div className={css.title}>
+          <h2 className={css.titleh2}>{name}</h2>
+          <h4 className={css.titleh3}>{position}</h4>
         </div>
-
-        <p>
-          Business transformation expert, aiming to disrupt legacy thinking,
-          drive strategy development, and increase creativity. With expertise in
-          Web3 technologies and real estate, his goal is setting new standards
-          for Web3 engagement and valuing creation while bridging the
-          traditional Web2 world.
-        </p>
+        <p>{description}</p>
         <div className={css.linkedin}>
-<Link href='/'>
-<Image alt="linkedin" src={linkedin} width={18} height={18} />
-</Link>
+          <Link href={linkedin}>
+            <Image alt="linkedin" src={linkedinLogo} width={18} height={18} />
+          </Link>
         </div>
-
       </div>
     </div>
   );

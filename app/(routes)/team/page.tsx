@@ -6,7 +6,6 @@ export default function Team() {
   return (
     <div>
       <Hero />
-      <Card /> 
     </div>
   );
 }
