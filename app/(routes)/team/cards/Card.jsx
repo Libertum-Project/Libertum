@@ -1,6 +1,8 @@
 import css from './Card.module.css';
 import Image from 'next/image';
 import alan from '../assets/alan.svg';
+import linkedin from '../assets/linkedin.svg';
+import Link from 'next/link';
 
 export function Card() {
   return (
@@ -21,7 +23,12 @@ export function Card() {
           for Web3 engagement and valuing creation while bridging the
           traditional Web2 world.
         </p>
-        <p>in</p>
+        <div className={css.linkedin}>
+<Link href='/'>
+<Image alt="linkedin" src={linkedin} width={18} height={18} />
+</Link>
+        </div>
+
       </div>
     </div>
   );
