@@ -31,20 +31,21 @@
 }
 
 
-.titleh2 {
-  color: #000;
-  text-align: center;
+.title h2 {
+  color: #000 !important;
   font-family: var(--font-primary);
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
   letter-spacing: -0.48px;
+  margin-bottom: 0 !important;
+  text-align: left !important;
 }
 
-.titleh3 {
-  color: rgba(0, 0, 0, 0.6);
-  text-align: center;
+.title h4 {
+  color: rgba(0, 0, 0, 0.6) !important;
+  text-align: left;
   font-family: var(--font-secondary);
   font-size: 18px;
   font-style: normal;
@@ -55,7 +56,7 @@
 
 .title{
   display: flex;
-  padding: 29px;
+  padding: 25px 8px;
   flex-direction: column;
   align-items: flex-start;
   gap: 4px;
@@ -79,7 +80,8 @@
 }
 .card:hover .title h2,
 .card:hover .title h4 {
-  color: white; 
+  color: white !important;
+
 }
 
 .card:hover .details p {
@@ -94,6 +96,7 @@
   height: 382px;
   display: flex;
   flex-direction: column;
+  align-items: flex-start !important;
   justify-content: center;
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.2);

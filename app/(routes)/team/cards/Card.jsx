@@ -11,8 +11,8 @@ export function Card({ image, name, position, description, linkedin }) {
       </div>
       <div className={css.details}>
         <div className={css.title}>
-          <h2 className={css.titleh2}>{name}</h2>
-          <h4 className={css.titleh3}>{position}</h4>
+          <h2 >{name}</h2>
+          <h4 >{position}</h4>
         </div>
         <p>{description}</p>
         <div className={css.linkedin}>
