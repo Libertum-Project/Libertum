@@ -44,7 +44,17 @@
   background-image: url('./background.svg');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: 60%;
+  animation: expandBackground 2s ease-in-out forwards;
+}
+
+@keyframes expandBackground {
+  from {
+    background-size: 60%; 
+  }
+  to {
+    background-size: 105%;
+  }
 }
 
 .textAmbassadors {
