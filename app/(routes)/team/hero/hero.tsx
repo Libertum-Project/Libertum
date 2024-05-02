@@ -3,8 +3,11 @@ import { type ReactElement, useState, useEffect } from 'react';
 import Image from 'next/image';
 import css from './hero.module.css';
 import Link from 'next/link';
-import alan from '../assets/alan.svg';
 import { Card } from '../cards/Card';
+import alan from '../assets/alan.svg';
+import javvad from '../assets/javvad.svg';
+import xavier from '../assets/xavier.svg';
+import none from '../assets/none.svg';
 
 export function Hero(): ReactElement {
   const members = [
@@ -14,34 +17,34 @@ export function Hero(): ReactElement {
       name: 'Alan Gormley',
       position: 'COO & Co-Founder',
       description:
-        'Digital marketing expert with 10+ years of experience in advertising technologies and machine learning, a crypto enthusiast, and the founder of Ad360, an AI advertising platform.',
+        'Business transformation expert, aiming to disrupt legacy thinking, drive strategy development, and increase creativity. With expertise in Web3 technologies and real estate, his goal is setting new standards for Web3 engagement and valuing creation while bridging the traditional Web2 world.',
       linkedin: '/linkedin.com'
     },
     {
       id: 2,
-      image: alan,
-      name: 'Alan Gormley',
-      position: 'COO & Co-Founder',
+      image: javvad,
+      name: 'Javvad Azam',
+      position: 'CEO & Co-Founder​',
       description:
-        'Digital marketing expert with 10+ years of experience in advertising technologies and machine learning, a crypto enthusiast, and the founder of Ad360, an AI advertising platform.',
+        "Chartered accountant with +20 years of experience in real estate and hospitality investments, with a passion for Web3 technologies. He is deeply committed to leading transformative projects in real-world asset tokenization to leverage blockchain's potential for global impact.",
       linkedin: '/linkedin.com'
     },
     {
       id: 3,
-      image: alan,
-      name: 'Alan Gormley',
-      position: 'COO & Co-Founder',
+      image: xavier,
+      name: 'Xavier Litt',
+      position: 'CMO',
       description:
         'Digital marketing expert with 10+ years of experience in advertising technologies and machine learning, a crypto enthusiast, and the founder of Ad360, an AI advertising platform.',
       linkedin: '/linkedin.com'
     },
     {
       id: 4,
-      image: alan,
-      name: 'Alan Gormley',
-      position: 'COO & Co-Founder',
+      image: none,
+      name: 'Łukasz Rżanek',
+      position: 'CTO',
       description:
-        'Digital marketing expert with 10+ years of experience in advertising technologies and machine learning, a crypto enthusiast, and the founder of Ad360, an AI advertising platform.',
+        "With over 25 years of industry experience and 15 as a CTO, a pioneer in Web3 technologies, known for developing decentralized market protocols and innovative NFT protocols on Ethereum networks.",
       linkedin: '/linkedin.com'
     }
   ];
