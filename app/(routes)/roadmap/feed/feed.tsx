@@ -1,4 +1,5 @@
-import React from 'react';
+'use client'
+import React, { useState, useEffect } from 'react';
 import css from './feed.module.css';
 
 interface Item {
@@ -11,12 +12,40 @@ interface Props {
   items: Item[];
 }
 
+const ProgressBar = () => {
+  const [scrollPercentage, setScrollPercentage] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const winScroll = document.documentElement.scrollTop;
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 112;
+      setScrollPercentage(scrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);  
+
+  const barColor = 'bg-libertumGreen';  
+
+  return (
+    <div
+      className={`absolute h-[110.5rem] lg:h-[81rem] lg:max-h-[81rem] w-2 top-0 left-10 lg:left-[140px] rounded ${barColor}`}
+      style={{ height: `${scrollPercentage}%`, transition: 'height 1.2s ease-in-out' }}
+    />
+  );
+};
+
 const TimelineItem: React.FC<Item> = ({ title, date, paragraphs }) => (
   <div className="flex flex-col lg:flex-row space-x-24 mb-24 last:mb-0">
     <div className="hidden lg:flex flex-col mr-4">
       <div className="flex w-24">
         <div className="absolute w-2 left-10 lg:left-[137px]">
-          <svg
+          {/* <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
             height="17"
@@ -24,7 +53,7 @@ const TimelineItem: React.FC<Item> = ({ title, date, paragraphs }) => (
             fill="none"
           >
             <circle cx="8" cy="8.81836" r="8" fill="#00B3B5" />
-          </svg>
+          </svg> */}
         </div>
         <p className="text-lg font-bold font-space_grotesk text-libertumGreen">
           {title}
@@ -36,7 +65,7 @@ const TimelineItem: React.FC<Item> = ({ title, date, paragraphs }) => (
     </div>
     <div className="flex-1 ml-4 w-[20rem]">
       <div className="flex lg:hidden">
-        <div className="absolute w-2 left-[37px] lg:left-[137px]">
+        {/* <div className="absolute w-2 left-[37px] lg:left-[137px]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -46,7 +75,7 @@ const TimelineItem: React.FC<Item> = ({ title, date, paragraphs }) => (
           >
             <circle cx="8" cy="8.81836" r="8" fill="#00B3B5" />
           </svg>
-        </div>
+        </div> */}
         <p className="text-lg font-bold font-space_grotesk text-libertumGreen">
           {title}
         </p>
@@ -88,6 +117,7 @@ export function Feed({ items }: Props) {
     <div className={css.container}>
       <div className="relative">
         <div className="absolute h-[110.5rem] lg:h-[81rem] lg:max-h-[81rem] w-2 bg-gray-200 top-0 left-10 lg:left-[140px] rounded"></div>
+        <ProgressBar />
         {items.map((item, index) => (
           <TimelineItem key={index} {...item} />
         ))}
