@@ -19,7 +19,7 @@ export function TeamMembers(){
       position: 'Software Engineer',
       description:
         'A Bay Area software engineer with 5+ years in web3, developing the smart contracts and blockchain infrastructure crucial to democratizing real estate.',
-      linkedin: '/linkedin.com'
+      linkedin: 'https://www.linkedin.com/in/chrswt/'
     },
     {
       id: 2,
@@ -28,7 +28,7 @@ export function TeamMembers(){
       position: 'Front End Developer',
       description:
         'Front End developer specializing in UX/UI design, known for her strong technical skills and passion for creating engaging digital experiences within the blockchain technology field.',
-      linkedin: '/linkedin.com'
+      linkedin: 'https://www.linkedin.com/in/nikiburgos/'
     },
     {
       id: 3,
@@ -37,7 +37,7 @@ export function TeamMembers(){
       position: 'Full-Stack Engineer',
       description:
         'Full-Stack engineer specializing in blockchain and smart contracts, continually enhancing his front-end and back-end development skills with cutting-edge technologies.',
-      linkedin: '/linkedin.com'
+      linkedin: 'https://www.linkedin.com/in/guillermo-galarza/'
     },
     {
       id: 4,
@@ -46,7 +46,7 @@ export function TeamMembers(){
       position: 'Full Stack Developer',
       description:
         'Full-stack developer with deep expertise in blockchain technologies, focusing on DEXs and NFT marketplaces across various platforms, committed to driving innovation in decentralized applications.',
-      linkedin: '/linkedin.com'
+      linkedin: 'https://www.linkedin.com/in/amishra91/'
     }
   ];
 
@@ -76,7 +76,7 @@ export function TeamMembers(){
       position: 'Community Growth Strategist',
       description:
         "Community Growth Strategist specializing in blockchain and cryptocurrency, focused on expanding Libertum's global community through strategic engagement and innovative campaigns.",
-      linkedin: '/linkedin.com'
+      linkedin: 'https://www.linkedin.com/in/simply-ephraim-372152222/'
     },
   ];
  

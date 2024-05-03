@@ -8,6 +8,7 @@ import alan from '../assets/alan.svg';
 import javvad from '../assets/javvad.svg';
 import xavier from '../assets/xavier.svg';
 import none from '../assets/none.svg';
+import lucas from '../assets/lucas.svg'
 
 export function Hero(): ReactElement {
   const members = [
@@ -18,7 +19,7 @@ export function Hero(): ReactElement {
       position: 'COO & Co-Founder',
       description:
         'Business transformation expert, aiming to disrupt legacy thinking, drive strategy development, and increase creativity. With expertise in Web3 technologies and real estate, his goal is setting new standards for Web3 engagement and valuing creation while bridging the traditional Web2 world.',
-      linkedin: '/linkedin.com'
+      linkedin: 'https://www.linkedin.com/in/alan-gormley-b8ba0aa/'
     },
     {
       id: 2,
@@ -27,7 +28,7 @@ export function Hero(): ReactElement {
       position: 'CEO & Co-Founder​',
       description:
         "Chartered accountant with +20 years of experience in real estate and hospitality investments, with a passion for Web3 technologies. He is deeply committed to leading transformative projects in real-world asset tokenization to leverage blockchain's potential for global impact.",
-      linkedin: '/linkedin.com'
+      linkedin: 'https://www.linkedin.com/in/javvadazam/'
     },
     {
       id: 3,
@@ -40,12 +41,12 @@ export function Hero(): ReactElement {
     },
     {
       id: 4,
-      image: none,
+      image: lucas,
       name: 'Łukasz Rżanek',
       position: 'CTO',
       description:
         "With over 25 years of industry experience and 15 as a CTO, a pioneer in Web3 technologies, known for developing decentralized market protocols and innovative NFT protocols on Ethereum networks.",
-      linkedin: '/linkedin.com'
+      linkedin: 'https://www.linkedin.com/in/lukaszrzanek/'
     }
   ];
 

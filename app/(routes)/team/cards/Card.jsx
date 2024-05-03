@@ -16,7 +16,7 @@ export function Card({ image, name, position, description, linkedin }) {
         </div>
         <p>{description}</p>
         <div className={css.linkedin}>
-          <Link href={linkedin}>
+          <Link href={linkedin} target='_blank'>
             <Image alt="linkedin" src={linkedinLogo} width={18} height={18} />
           </Link>
         </div>
