@@ -66,16 +66,16 @@ export default function EcosystemTabs() {
     <div>
       <div className="hidden lg:flex my-20 justify-center">
         <Tabs defaultValue="tokenise" className="w-full gap-52">
-          <TabsList className="w-full flex justify-between">
+          <TabsList className="w-full flex justify-between max-h-[50px]">
             {ecosystem.map((tab) => (
               <TabsTrigger key={tab.name} value={tab.name} className={css.tab} tabIndex={1}>
-                <div className="flex items-center justify-between space-x-2 rounded-[5px] bg-white ">
+                <div className="flex items-center justify-between space-x-2 rounded-[5px]">
                   <Image
                     src={tab.logo}
                     alt={tab.name}
                     width={120}
                     height={80}
-                    className={`h-[50px] w-auto ${css.tabImage}`}
+                    className={`h-[40px] w-auto ${css.tabImage}`}
                   />
                 </div>
               </TabsTrigger>
