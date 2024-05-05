@@ -17,7 +17,7 @@
     "@thirdweb-dev/react": "^4.6.1",
     "@thirdweb-dev/sdk": "^4.0.62",
     "@transak/transak-sdk": "2.1.2",
-    "axios": "^1.6.7",
+    "axios": "^1.6.8",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "ethers": "^5.7.2",
