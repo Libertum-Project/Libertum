@@ -13,11 +13,11 @@ function Item({ title, date, paragraphs }) {
 
   return (
     <section className={css.section}>
-      <div ref={ref} className="flex">
+      <div ref={ref} className="flex flex-col lg:flex-row">
         <article className={css.progress} id="progress">
-          <p className="text-lg font-bold font-space_grotesk text-libertumGreen">
+          <p className="text-xl lg:text-lg font-bold font-space_grotesk text-libertumGreen">
             {title}{' '}
-            <span className="text-black font-bold text-xl font-space_grotesk">
+            <span className="text-black font-bold text-xl lg:text-lg font-space_grotesk">
               {date}
             </span>
           </p>
