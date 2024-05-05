@@ -49,11 +49,12 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 6rem;
-
 }
-
+.section:last-child {
+  margin-bottom: 0; 
+}
 .section div {
-  width: 35rem;
+  width: 38rem;
   max-width: 100%;
   height: fit-content;
   /* border: 2px dotted rgb(255, 0, 183); */
