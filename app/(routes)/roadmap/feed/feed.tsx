@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import css from './feed.module.css';
+import FeedTimeLine from '../feedTimeline/FeedTimeline';
 
 interface Item {
   title: string;
@@ -115,13 +116,15 @@ const TimelineItem: React.FC<Item> = ({ title, date, paragraphs }) => (
 export function Feed({ items }: Props) {
   return (
     <div className={css.container}>
-      <div className="relative">
+      {/* <div className="relative">
         <div className="absolute h-[110.5rem] lg:h-[81rem] lg:max-h-[81rem] w-2 bg-gray-200 top-0 left-10 lg:left-[140px] rounded"></div>
         <ProgressBar />
         {items.map((item, index) => (
           <TimelineItem key={index} {...item} />
         ))}
-      </div>
+      </div> */}
+            <FeedTimeLine /> 
+
     </div>
   );
 }

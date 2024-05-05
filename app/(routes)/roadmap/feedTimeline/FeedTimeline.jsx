@@ -1,8 +1,58 @@
-import React from 'react';
-import { Hero } from './hero/hero';
-import { Feed } from './feed/feed';
+import { motion, useScroll } from "framer-motion";
+import css from "./FeedTimeline.module.css";
+import { useRef } from "react";
 
-export default function Roadmap() {
+
+function Item({ title, date, paragraphs }) {
+
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["end end", "start start"]
+  });
+  
+
+  return (
+    <section className={css.section}>
+      <div ref={ref} className="flex">
+        <article className={css.progress} id="progress">
+          <p className="text-lg font-bold font-space_grotesk text-libertumGreen">{title} <span
+        className="text-black font-bold text-xl font-space_grotesk">
+        {date}</span>
+        </p> 
+        </article>
+
+        <ul className="w-fit space-y-4 mt-8 lg:mt-0 ml-[4rem] ">
+        {paragraphs.map((paragraph, index) => (
+          <li
+            key={index}
+            className="mb-2 w-fit font-semibold flex justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="12"
+              height="12"
+              viewBox="0 0 12 12"
+              fill="none"
+              className='w-[12px]'
+            >
+              <path
+                d="M6 0L4.93875 1.06125L9.1275 5.25H0V6.75H9.1275L4.93875 10.9387L6 12L12 6L6 0Z"
+                fill="#00B3B5"
+                fillOpacity="0.8"
+              />
+            </svg>
+            <p className="ml-2">{paragraph}</p>
+          </li>
+        ))}
+      </ul>      
+      </div>
+    </section>
+  );
+}
+
+const FeedTimeLine = () => {
+  
   const items = [
     {
       title: 'Q1',
@@ -68,25 +118,16 @@ export default function Roadmap() {
     }
   ];
 
-  return (
-    <>
-      <Hero />
-      <div className="container  max-w-[75rem] m-auto flex flex-col justify-center items-center mt-12">
-        <p className="font-space_grotesk font-semibold text-4xl ">Roadmap</p>
+  return(
+    <div className="flex flex-col">
+              <div className="absolute h-[110.5rem] lg:h-[81rem] lg:max-h-[81rem] w-2 bg-gray-200 top-0 left-10 lg:left-[140px] rounded"></div>
 
-        <video
-          controls
-          width="600"
-          className="rounded-[15px] mt-6"
-          poster="./roadmapView.png"
-        >
-          <source src="/LBMRoadmap.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
+{ items.map((item, index) => (
+  <Item key={index} {...item  } />
+))}
+    </div>
+  )
+}; 
 
-      <Feed items={items} />
+export default FeedTimeLine; 
 
-    </>
-  );
-}
