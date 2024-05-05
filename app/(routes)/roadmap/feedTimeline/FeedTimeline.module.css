@@ -61,3 +61,31 @@
   position: relative;
 }
 
+.container {
+  position: relative;
+}
+
+.progressBar{
+  position:absolute;
+  top: 0;
+  left: 7rem;
+  border-radius: 5px;
+  background-color: rgb(175, 173, 173);
+  height: 100%;
+  width: .5rem;
+}
+
+.imageContainer {
+  position: sticky;
+  left: 7rem;
+  top: 20px; 
+  /* top: 0; */
+  z-index: 1;
+  /* overflow: hidden; */
+}
+
+.image {
+  position:absolute;
+  top: -9rem;  
+  left: 5.6rem;
+}
