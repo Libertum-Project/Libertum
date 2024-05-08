@@ -5,10 +5,13 @@ export async function POST(req: NextRequest) {
     const url = new URL(req.url);
     const reqBody = await req.json();
 
-    console.log(reqBody);
+    const chainId = url.searchParams.get('chainId');
+    const crossChain = url.searchParams.get('crossChain');
 
     const response = await fetch(
-      `https://api.zcx.com/trade/v1/8453/swap/single`,
+      `https://api.zcx.com/trade/v1/${chainId}/swap/${
+        crossChain ? 'cross' : 'single'
+      }`,
       {
         method: 'POST',
         headers: {

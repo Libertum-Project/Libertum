@@ -36,7 +36,6 @@ export default function RootLayout({
             __html: `window.intercomSettings = {
     api_base: "https://api-iam.intercom.io",
     app_id: "za6uwxwg",
-    
   };`,
           }}
         />

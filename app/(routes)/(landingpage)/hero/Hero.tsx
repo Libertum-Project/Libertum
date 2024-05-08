@@ -122,7 +122,7 @@ export function Hero(): ReactElement {
           <Link href="/get" className={css.button}>
             <div className={css.buttonFrame}>
               <Image
-                src="/assets/coin.svg"
+                src="/assets/get-icon-light.png"
                 alt="N"
                 width="13"
                 height="13"
