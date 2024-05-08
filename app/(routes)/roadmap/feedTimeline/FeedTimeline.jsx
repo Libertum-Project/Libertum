@@ -1,14 +1,15 @@
 import { motion, useScroll } from 'framer-motion';
-import css from './FeedTimeline.module.css';
 import { useRef } from 'react';
-import thumb from './thumb.svg';
 import Image from 'next/image';
+
+import css from './FeedTimeline.module.css';
+import thumb from './thumb.svg';
 
 function Item({ title, date, paragraphs }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['end end', 'start start']
+    offset: ['end end', 'start start'],
   });
 
   return (
@@ -16,19 +17,13 @@ function Item({ title, date, paragraphs }) {
       <div ref={ref} className="flex flex-col lg:flex-row">
         <article className={css.progress} id="progress">
           <p className="text-xl lg:text-lg font-bold font-space_grotesk text-libertumGreen">
-            {title}{' '}
-            <span className="text-black font-bold text-xl lg:text-lg font-space_grotesk">
-              {date}
-            </span>
+            {title} <span className="text-black font-bold text-xl lg:text-lg font-space_grotesk">{date}</span>
           </p>
         </article>
 
         <ul className="w-fit space-y-4 mt-8 lg:mt-0 ml-[4rem] ">
           {paragraphs.map((paragraph, index) => (
-            <li
-              key={index}
-              className="mb-2 w-fit font-semibold flex justify-center"
-            >
+            <li key={index} className="mb-2 w-fit font-semibold flex justify-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="12"
@@ -65,8 +60,8 @@ const FeedTimeLine = () => {
         'Introduce Social Login and Account Abstraction',
         'Regulatory Compliance',
         '$LBM Public Sale',
-        ' Solid Proof Audits'
-      ]
+        ' Solid Proof Audits',
+      ],
     },
     {
       title: 'Q2',
@@ -78,8 +73,8 @@ const FeedTimeLine = () => {
         'Launch “View” Libertums Token Analytics and Staking Poolsl',
         ' Launch on CoinWeb Cross Chain Test  Infrastructure',
         '2xDEX listings',
-        ' Launch of “Get” Liquidity and Swap Tool'
-      ]
+        ' Launch of “Get” Liquidity and Swap Tool',
+      ],
     },
     {
       title: 'Q3',
@@ -91,8 +86,8 @@ const FeedTimeLine = () => {
         'Secondary Market Supports 3rd Party Properties',
         ' STO Licence x 2',
         'Tokenization of Parking Lots',
-        ' Introduction of “Stay” - On-chain AirBnB for Token Holders'
-      ]
+        ' Introduction of “Stay” - On-chain AirBnB for Token Holders',
+      ],
     },
     {
       title: 'Q4',
@@ -103,8 +98,8 @@ const FeedTimeLine = () => {
         ' Community Owned Digital Nomad Properties ',
         'Expand Blockchain Networks',
         ' Gamification of Marketplace',
-        'White Labelled Solution for Real Estate Companies and RWA Partners'
-      ]
+        'White Labelled Solution for Real Estate Companies and RWA Partners',
+      ],
     },
     {
       title: '2025',
@@ -113,9 +108,9 @@ const FeedTimeLine = () => {
         'Enhanced Token Utilities',
         'Launch Libertums Grant Scheme',
         'Dubai Property for Events and Remote Office for Token Holders',
-        ' Libertums AI investment Strategy Tool'
-      ]
-    }
+        ' Libertums AI investment Strategy Tool',
+      ],
+    },
   ];
 
   return (
@@ -123,14 +118,8 @@ const FeedTimeLine = () => {
       {/* <div className="absolute h-[110.5rem] lg:h-[81rem] lg:max-h-[81rem] w-2 bg-gray-200 top-0 left-40  rounded"></div> */}
       <div className={css.progressBar}></div>
       <div className={css.imageContainer}>
-    <Image 
-      src={thumb}
-      alt='thumb'
-      height={180}
-      width={52}
-      className={css.image}
-    />
-  </div>
+        <Image src={thumb} alt="thumb" height={180} width={52} className={css.image} />
+      </div>
 
       {items.map((item, index) => (
         <Item key={index} {...item} />

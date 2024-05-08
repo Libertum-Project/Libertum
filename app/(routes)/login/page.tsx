@@ -1,10 +1,5 @@
 'use client';
-import {
-  ConnectEmbed,
-  lightTheme,
-  useShowConnectEmbed,
-  useConnectionStatus,
-} from '@thirdweb-dev/react';
+import { ConnectEmbed, lightTheme, useShowConnectEmbed, useConnectionStatus } from '@thirdweb-dev/react';
 import Image from 'next/image';
 import { redirect } from 'next/navigation';
 import React, { useLayoutEffect } from 'react';

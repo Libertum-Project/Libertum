@@ -1,8 +1,10 @@
 import React from 'react';
+
 import { Hero } from './hero/hero';
 import { Feed } from './feed/feed';
 
-export default function Roadmap() {7
+export default function Roadmap() {
+  7;
   const items = [
     {
       title: 'Q1',
@@ -15,8 +17,8 @@ export default function Roadmap() {7
         'Introduce Social Login and Account Abstraction',
         'Regulatory Compliance',
         '$LBM Public Sale',
-        ' Solid Proof Audits'
-      ]
+        ' Solid Proof Audits',
+      ],
     },
     {
       title: 'Q2',
@@ -28,8 +30,8 @@ export default function Roadmap() {7
         'Launch “View” Libertums Token Analytics and Staking Poolsl',
         ' Launch on CoinWeb Cross Chain Test  Infrastructure',
         '2xDEX listings',
-        ' Launch of “Get” Liquidity and Swap Tool'
-      ]
+        ' Launch of “Get” Liquidity and Swap Tool',
+      ],
     },
     {
       title: 'Q3',
@@ -41,8 +43,8 @@ export default function Roadmap() {7
         'Secondary Market Supports 3rd Party Properties',
         ' STO Licence x 2',
         'Tokenization of Parking Lots',
-        ' Introduction of “Stay” - On-chain AirBnB for Token Holders'
-      ]
+        ' Introduction of “Stay” - On-chain AirBnB for Token Holders',
+      ],
     },
     {
       title: 'Q4',
@@ -53,8 +55,8 @@ export default function Roadmap() {7
         ' Community Owned Digital Nomad Properties ',
         'Expand Blockchain Networks',
         ' Gamification of Marketplace',
-        'White Labelled Solution for Real Estate Companies and RWA Partners'
-      ]
+        'White Labelled Solution for Real Estate Companies and RWA Partners',
+      ],
     },
     {
       title: '2025',
@@ -63,9 +65,9 @@ export default function Roadmap() {7
         'Enhanced Token Utilities',
         'Launch Libertums Grant Scheme',
         'Dubai Property for Events and Remote Office for Token Holders',
-        ' Libertums AI investment Strategy Tool'
-      ]
-    }
+        ' Libertums AI investment Strategy Tool',
+      ],
+    },
   ];
   return (
     <>
@@ -73,12 +75,7 @@ export default function Roadmap() {7
       <div className="container  max-w-[75rem] m-auto flex flex-col justify-center items-center mt-12">
         <p className="font-space_grotesk font-semibold text-4xl ">Roadmap</p>
 
-        <video
-          controls
-          width="600"
-          className="rounded-[15px] mt-6"
-          poster="./roadmapView.png"
-        >
+        <video controls width="600" className="rounded-[15px] mt-6" poster="./roadmapView.png">
           <source src="/LBMRoadmap.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>

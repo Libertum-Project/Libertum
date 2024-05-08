@@ -1,6 +1,7 @@
+import Image from 'next/image';
+
 import css from './MessageBox.module.css';
 import error from './alertIcon.svg';
-import Image from 'next/image';
 
 const FailMessage = ({ setShowFailMessage, message, url }) => {
   const handleContinue = (event) => {

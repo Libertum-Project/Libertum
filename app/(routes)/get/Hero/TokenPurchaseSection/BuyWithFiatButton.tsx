@@ -1,15 +1,15 @@
 'use client';
 import { type ReactElement, useContext } from 'react';
 import Image from 'next/image';
-import credit from '@/public/assets/credit.svg';
-import arrow from '@/public/assets/leftArrow.svg';
 import { TransakConfig, Transak } from '@transak/transak-sdk';
 import Pusher from 'pusher-js';
 
+import credit from '@/public/assets/credit.svg';
+import arrow from '@/public/assets/leftArrow.svg';
 import { fetchEnvironmentVariables } from '@/utils/fetchEnvironmentVariables';
 import MessageBoxContext from '@/context/MessageBoxContext';
 
-let pusher = new Pusher('1d9ffac87de599c61283', { cluster: 'ap2' });
+const pusher = new Pusher('1d9ffac87de599c61283', { cluster: 'ap2' });
 
 interface BuyButtonProps {
   lbmAmount: number;
@@ -25,8 +25,7 @@ export const BuyWithFiatButton = ({ lbmAmount, usdAmount }: BuyButtonProps) => {
   let TRANSAK_API_KEY: string;
 
   const getEnvironmentVariables = async () => {
-    const { pLBM_address, USDC_address, transakApiKey } =
-      await fetchEnvironmentVariables();
+    const { pLBM_address, USDC_address, transakApiKey } = await fetchEnvironmentVariables();
     SMART_CONTRACT_ADDRESS = pLBM_address;
     SOURCE_TOKEN = USDC_address;
     TRANSAK_API_KEY = transakApiKey;

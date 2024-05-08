@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import css from './partners.module.css';
 
+import css from './partners.module.css';
 import ad360 from './assets/ad360.svg';
 import coinweb from './assets/coinweb.svg';
 import defactor from './assets/defactor.svg';
@@ -12,16 +12,7 @@ import thirdweb from './assets/thirdweb.svg';
 import unizen from './assets/unizen.svg';
 
 export default function Partners() {
-  const partners = [
-    plume,
-    thirdweb,
-    microsoft,
-    coinweb,
-    defactor,
-    nd,
-    ad360,
-    unizen,
-  ];
+  const partners = [plume, thirdweb, microsoft, coinweb, defactor, nd, ad360, unizen];
 
   return (
     <div className={css.container}>

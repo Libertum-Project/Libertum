@@ -1,6 +1,7 @@
-import css from "./MessageBox.module.css";
-import Image from "next/image";
-import success from "./checkIcon.svg";
+import Image from 'next/image';
+
+import css from './MessageBox.module.css';
+import success from './checkIcon.svg';
 
 const SuccessMessage = ({ setShowSuccessMessage, messagge, textBtn }) => {
   const handleContinue = (event) => {

@@ -1,9 +1,11 @@
 'use client';
 import { type ReactElement, useState } from 'react';
 import Image from 'next/image';
-import css from './TagsMobile.module.css';
 import Link from 'next/link';
+
 import { ContactForm } from '../contactForm/contactFrom';
+
+import css from './TagsMobile.module.css';
 
 interface Option {
   id: string;
@@ -43,7 +45,7 @@ export function TagsMobile() {
           'The solution partner will be required to develop and deploy sophisticated software Infrastructure to compliment the Decentralized Tokenized #RWA real estate Market Libertum provides.',
           'The solution provider should have a proven ability to provide Liquidity Distribution Mechanisms solutions to enable the Libertum community to navigate on-chain data across multiple blockchains seemlessly. Ultimately the solution should simplify the users ability to interact with $LBM.',
           'As always proposals will be evaluated using the best value trade-off method, with non-price factors being significantly more important than price.',
-          '📅 <b>Applications</b> are due by  <i>April 5, 2024</i>, and <b>proposals</b> are due by <i>April 10, 2024.</i>'
+          '📅 <b>Applications</b> are due by  <i>April 5, 2024</i>, and <b>proposals</b> are due by <i>April 10, 2024.</i>',
         ],
         buttonLabel: 'Contact Us',
       },
@@ -76,9 +78,7 @@ export function TagsMobile() {
         {options.map((option) => (
           <div key={option.id} className={css.tabPanel}>
             <div
-              className={`${css.frameTitle} ${
-                expandedOptions.includes(option.id) ? css.active : css.inactive
-              }`}
+              className={`${css.frameTitle} ${expandedOptions.includes(option.id) ? css.active : css.inactive}`}
               onClick={() => handleOptionClick(option.id)}
             >
               <h2>{option.name}</h2>
@@ -89,18 +89,13 @@ export function TagsMobile() {
                 <div>
                   <h2>{option.information.title}</h2>
                   {option.information.paragraphs.map((paragraph, index) => (
-                    <p
-                      key={index}
-                      dangerouslySetInnerHTML={{ __html: paragraph }}
-                    />
+                    <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
                   ))}
                 </div>
 
-                <button
-                  className={css.buttonInformation}
-                  onClick={() => handleContactButtonClick(option.id)}
-                >
-                  {option.id === activeContactForm ? 'Close' : option.information.buttonLabel} {/* Cambiar la etiqueta del botón si el formulario está activo */}
+                <button className={css.buttonInformation} onClick={() => handleContactButtonClick(option.id)}>
+                  {option.id === activeContactForm ? 'Close' : option.information.buttonLabel}{' '}
+                  {/* Cambiar la etiqueta del botón si el formulario está activo */}
                   <Image
                     alt="left arrow"
                     src={
@@ -112,7 +107,7 @@ export function TagsMobile() {
                     height={8.708}
                   />
                 </button>
-                {option.id === activeContactForm && <ContactForm />} 
+                {option.id === activeContactForm && <ContactForm />}
               </div>
             )}
           </div>

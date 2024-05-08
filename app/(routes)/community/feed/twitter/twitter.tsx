@@ -1,11 +1,10 @@
-import { type ReactElement } from "react";
-import css from "./twitter.module.css";
-import { Tweet } from 'react-tweet'
+import { type ReactElement } from 'react';
+import { Tweet } from 'react-tweet';
 
+import css from './twitter.module.css';
 
 export function TwitterFeed(): ReactElement {
-
-  return(
+  return (
     <div className={css.twitterContainer}>
       <section>
         <h2 className={css.twitterTitle}> X (Twitter) Feed </h2>
@@ -13,13 +12,8 @@ export function TwitterFeed(): ReactElement {
       </section>
 
       <section data-theme="light">
-      <Tweet id="1734547701440884874" />
+        <Tweet id="1734547701440884874" />
       </section>
-
-
-  
-
     </div>
-
-  )
+  );
 }

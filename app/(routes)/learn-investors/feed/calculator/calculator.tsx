@@ -1,12 +1,12 @@
-'use client'
-import { type ReactElement, useState, Key } from "react";
-import css from "./calculator.module.css";
+'use client';
+import { type ReactElement, useState, Key } from 'react';
+
+import css from './calculator.module.css';
 
 export function Calculator(): ReactElement {
-
-  const [propertyType, setPropertyType] = useState("");
-  const [propertyTerm, setPropertyTerm] = useState("10");
-  const [investment, setInvestment] = useState("1000");
+  const [propertyType, setPropertyType] = useState('');
+  const [propertyTerm, setPropertyTerm] = useState('10');
+  const [investment, setInvestment] = useState('1000');
 
   const rentalYields = [0.04, 0.05, 0.06, 0.07];
 
@@ -15,47 +15,43 @@ export function Calculator(): ReactElement {
     if (!isValidInput) {
       return [];
     }
-  
+
     const investmentValue = parseFloat(investment);
-  
+
     const results = rentalYields.map((yieldPercentage) => {
       const periods = parseFloat(propertyTerm) * 12;
-  
-      const rent = ((investmentValue * yieldPercentage) / 12)*periods;      
-      const capitalRepayment = (investmentValue / parseFloat(propertyTerm) / 12)* periods;  
+
+      const rent = ((investmentValue * yieldPercentage) / 12) * periods;
+      const capitalRepayment = (investmentValue / parseFloat(propertyTerm) / 12) * periods;
 
       const monthlyRepayment = (rent + capitalRepayment) / periods;
       const annualRepayment = monthlyRepayment * 12;
       const fullTermRepayment = monthlyRepayment * periods;
-      
-  
+
       return { rent, capitalRepayment, monthlyRepayment, annualRepayment, fullTermRepayment };
     });
-  
+
     return results;
   };
 
-
-  
   const handlePropertyTermChange = (term: string): void => {
     setPropertyTerm(term);
   };
-  
+
   const handleInvestmentChange = (amount: string): void => {
     const parsedAmount = parseFloat(amount);
-    if (!isNaN(parsedAmount) && parsedAmount <= 90000000) {      
+    if (!isNaN(parsedAmount) && parsedAmount <= 90000000) {
       setInvestment(amount);
     } else {
-      console.log("Please enter a valid number less than or equal to 90 million.");
+      console.log('Please enter a valid number less than or equal to 90 million.');
     }
   };
 
-  return(
+  return (
     <div className={css.container}>
       <h2>Investment Calculator</h2>
 
       <div className={css.calculatorInputs}>
-
         <div className={css.inputFrame}>
           <label htmlFor="">Property Type</label>
           <select name="" id="" className={css.calculatorInputsSelect}>
@@ -94,55 +90,43 @@ export function Calculator(): ReactElement {
           <label htmlFor="">Investment</label>
 
           <div className={css.inputFrameInvestment}>
-          <select name="" id="" className={css.selectCurrency}>
-            <option value="">USD</option>
-          </select>
+            <select name="" id="" className={css.selectCurrency}>
+              <option value="">USD</option>
+            </select>
 
-          <input
-              type="number"
-              onChange={(e) => handleInvestmentChange(e.target.value)}
-              value={investment}
-            />         
+            <input type="number" onChange={(e) => handleInvestmentChange(e.target.value)} value={investment} />
           </div>
-          
         </div>
-
       </div>
 
       <div className={css.calculatorResults}>
-
         <div>
           <table className={css.table}>
             <thead>
-            <tr>
-              <th>Rental Yield</th>
-              <th>Rent</th>
-              <th>Capital Repayment</th>
-              <th>Monthly</th>
-              <th>Annual</th>
-              <th>Full Term</th>
-            </tr>
-
+              <tr>
+                <th>Rental Yield</th>
+                <th>Rent</th>
+                <th>Capital Repayment</th>
+                <th>Monthly</th>
+                <th>Annual</th>
+                <th>Full Term</th>
+              </tr>
             </thead>
             <tbody>
-            {calculateResults().map((result, index: number) => (
-              <tr key={index}>
-                <td>{(rentalYields[index] * 100).toFixed(2)}%</td>
-                <td>{result.rent.toFixed(2)}</td>
-                <td>{result.capitalRepayment.toFixed(2)}</td>
-                <td>{result.monthlyRepayment.toFixed(2)}</td>
-                <td>{result.annualRepayment.toFixed(2)}</td>
-                <td>{result.fullTermRepayment.toFixed(2)}</td>
-              </tr>
-            ))}
+              {calculateResults().map((result, index: number) => (
+                <tr key={index}>
+                  <td>{(rentalYields[index] * 100).toFixed(2)}%</td>
+                  <td>{result.rent.toFixed(2)}</td>
+                  <td>{result.capitalRepayment.toFixed(2)}</td>
+                  <td>{result.monthlyRepayment.toFixed(2)}</td>
+                  <td>{result.annualRepayment.toFixed(2)}</td>
+                  <td>{result.fullTermRepayment.toFixed(2)}</td>
+                </tr>
+              ))}
             </tbody>
-           
           </table>
-
         </div>
-
+      </div>
     </div>
-    </div>
-
-  )
-};
+  );
+}
