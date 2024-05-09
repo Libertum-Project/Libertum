@@ -1,23 +1,22 @@
 export const faqData = [
   {
     id: 1,
-    question: "What are the $LBM token details?",
+    question: 'What are the $LBM token details?',
     answer: `<span> 
     $LBM is an ERC-20 token on the Base Chain with a maximum supply of only 200,000,000 (200 million). The $LBM Token is the native token on the blockchain that is the backbone of the Libertum fractionalized rental income ecosystem. </span>
 
     <span> Audit $LBM - <b><a target="_blank" href="https://github.com/solidproof/projects/blob/main/2024/Libertum/EVM_Audit_SolidProof_LibertumV2.pdf"> https://github.com/solidproof/projects/blob/main/2024/Libertum/EVM_Audit_SolidProof_LibertumV2.pdf </a></b></span>
 
-    <p>The presale token contract address is <b>“0x56A38E7216304108E841579041249fEb236C887b”</b>. Please do not send any funds to this token contract address, as they cannot be recovered. $LBM can currently only be purchased on Uniswap <b> <a target="_blank" href="https://app.uniswap.org/swap?outputCurrency=0x56A38E7216304108E841579041249fEb236C887b&chain=base"> Uniswap</a></b>.<p>`
-
+    <p>The presale token contract address is <b>“0x56A38E7216304108E841579041249fEb236C887b”</b>. Please do not send any funds to this token contract address, as they cannot be recovered. $LBM can currently only be purchased on Uniswap <b> <a target="_blank" href="https://app.uniswap.org/swap?outputCurrency=0x56A38E7216304108E841579041249fEb236C887b&chain=base"> Uniswap</a></b>.<p>`,
   },
   {
     id: 2,
-    question: "Why the $LBM token?",
+    question: 'Why the $LBM token?',
     answer: `<p>The $LBM token will be fueling the vibrant Libertum rental income ecosystem. The $LBM token will provide long term rewards for holders of the $LBM token in the form of revenue share through the staking pool. It will generate a 10% return to the $LBM token holders annually. Moreover, it may form a payment overlay network alongside fiat transactions that will ease the barrier to entry into the Libertum ecosystem for those among the unbanked (i.e. no access to traditional financial services).</p>`,
   },
   {
     id: 3,
-    question: "When is the claim and launch of $LBM token?",
+    question: 'When is the claim and launch of $LBM token?',
     answer: `<span>Once the Token Generation Event (TGE) kicks off, eligible holders will receive tokens directly in their wallets. No delays here! As soon as the public sale ends, we'll airdrop the tokens to you. Just head over to the token dashboard to access your tokens during the TGE. And don't worry, we'll make sure the official airdrop is smooth sailing. Just make sure you have the right wallet set up to receive your tokens seamlessly. Need more info? Don't hesitate to reach out to our support team. We're here to support you every step of the way! 
     </span>
     <p>In the meantime, the pLBM token will be transferred straight on to your wallet for assurance.</p>
@@ -25,7 +24,7 @@ export const faqData = [
   },
   {
     id: 4,
-    question: "How do I claim my $LBM tokens?",
+    question: 'How do I claim my $LBM tokens?',
     answer: `<p>To claim your tokens, please follow the steps below:</p>
     <ul>
       <li> Ensure that you participated in the public sale and are eligible to receive tokens during the Token Generation Event (TGE).</li>
@@ -43,17 +42,17 @@ export const faqData = [
   },
   {
     id: 5,
-    question: "Where is the company located?",
+    question: 'Where is the company located?',
     answer: `<p>Libertum is located in The United Kingdom.</p>`,
   },
   {
     id: 6,
-    question: "How do I contact support?",
+    question: 'How do I contact support?',
     answer: `<p>Contact our support team at <b><a href="mailto:hello@libertum.io">hello@libertum.io</a></b> for any questions, concerns, or inquiries. Our dedicated support staff is ready to assist you promptly and ensure your experience with our project is smooth and enjoyable. Feel free to reach out to us anytime, and we are excited to provide you with excellent support and service. Thank you for choosing freedom with Libertum!</p>`,
   },
   {
     id: 7,
-    question: "How to buy?",
+    question: 'How to buy?',
     answer: `
     <span>Step 1 - 🔸Go to <b><a href="https://www.libertum.io/ico">https://www.libertum.io/ico</a></b></span>
     <span>Step 2 - 🔸Connect your Wallet (BNB Smart Chain)</span>
@@ -91,12 +90,12 @@ export const faqData = [
   },
   {
     id: 8,
-    question: "How to claim?",
+    question: 'How to claim?',
     answer: `<p>As we complete all funding rounds, you'll gain the opportunity to claim your $LBM tokens effortlessly! Stay tuned for comprehensive instructions on how to claim, which will be revealed closer to the scheduled time. When the claiming process is ready, simply visit our main page at libertum.io and click on the 'Claim' button. We've got you covered, and claiming your $LBM tokens will be as seamless as our investing in our fractionalized rental income model.</p>`,
   },
   {
     id: 9,
-    question: "What is the maximum investment allowed?",
+    question: 'What is the maximum investment allowed?',
     answer: `<p>Right now is 10.000 USDT. Feel free to contact us for a major investment.</p>`,
   },
   {
@@ -106,7 +105,7 @@ export const faqData = [
   },
   {
     id: 11,
-    question: "Where is my pLBM?",
+    question: 'Where is my pLBM?',
     answer: `<span>
     If you don't see the $pLBM in your wallet, you may need to import it.  This process is simple and only requires you to enter the token contract address into the token import section of your wallet. Once this is done, the tokens should appear in your balance automatically.
     </span>

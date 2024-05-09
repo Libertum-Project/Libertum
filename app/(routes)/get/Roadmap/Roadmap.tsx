@@ -2,8 +2,10 @@
 import { type ReactElement } from 'react';
 import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
-import css from './Roadmap.module.css';
+
 import leftArrow from '@/public/assets/vector.svg';
+
+import css from './Roadmap.module.css';
 
 export function Roadmap(): ReactElement {
   // Add Padding Inline
@@ -29,10 +31,7 @@ export function Roadmap(): ReactElement {
   }, []);
 
   const padding = {
-    paddingInline:
-      paddingValue && window.innerWidth >= 1250
-        ? `${paddingValue}px`
-        : undefined,
+    paddingInline: paddingValue && window.innerWidth >= 1250 ? `${paddingValue}px` : undefined,
   };
 
   // Add Slider Functionality
@@ -121,12 +120,7 @@ export function Roadmap(): ReactElement {
             <div className={css.header}>
               <p>Phase 01</p>
               <div className={css.arrowContainer}>
-                <Image
-                  src={leftArrow}
-                  alt="left arrow"
-                  width={20}
-                  height={13}
-                />
+                <Image src={leftArrow} alt="left arrow" width={20} height={13} />
               </div>
             </div>
             <div className={css.content}>
@@ -153,12 +147,7 @@ export function Roadmap(): ReactElement {
             <div className={css.header}>
               <p>Phase 02</p>
               <div className={css.arrowContainer}>
-                <Image
-                  src={leftArrow}
-                  alt="left arrow"
-                  width={20}
-                  height={13}
-                />
+                <Image src={leftArrow} alt="left arrow" width={20} height={13} />
               </div>
             </div>
             <div className={css.content}>
@@ -185,12 +174,7 @@ export function Roadmap(): ReactElement {
             <div className={css.header}>
               <p>Phase 03</p>
               <div className={css.arrowContainer}>
-                <Image
-                  src={leftArrow}
-                  alt="left arrow"
-                  width={20}
-                  height={13}
-                />
+                <Image src={leftArrow} alt="left arrow" width={20} height={13} />
               </div>
             </div>
             <div className={css.content}>
@@ -213,12 +197,7 @@ export function Roadmap(): ReactElement {
             <div className={css.header}>
               <p>Phase 04</p>
               <div className={css.arrowContainer}>
-                <Image
-                  src={leftArrow}
-                  alt="left arrow"
-                  width={20}
-                  height={13}
-                />
+                <Image src={leftArrow} alt="left arrow" width={20} height={13} />
               </div>
             </div>
             <div className={css.content}>

@@ -1,22 +1,19 @@
 import './globals.css';
 import Script from 'next/script';
+import { GoogleTagManager } from '@next/third-parties/google';
+
+import { Toaster } from '@/components/ui/toaster';
+
 import Footer from './components/Footer/Footer';
 import { NavBar } from './components/Navbar/NavBar';
-import { GoogleTagManager } from '@next/third-parties/google';
 import { ThirdwebContextProvider } from './providers/ThirdWebContextProvider';
-import { Toaster } from '@/components/ui/toaster';
 
 export const metadata = {
   title: 'Libertum',
-  description:
-    'Exploring freedom, technology, and innovation in our journey to a brighter future.',
+  description: 'Exploring freedom, technology, and innovation in our journey to a brighter future.',
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>

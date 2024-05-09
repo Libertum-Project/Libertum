@@ -1,5 +1,6 @@
 'use client';
 import { type ReactElement, useState, useEffect } from 'react';
+
 import css from './hero.module.css';
 import SocialMedia from './socials/SocialMedia';
 import { ContactForm } from './contactForm/contactFrom';
@@ -37,9 +38,8 @@ export function Hero(): ReactElement {
           <h1>Community</h1>
           <div className={css.paragraphsCommunity}>
             <p>
-              Connect, engage, and grow with us on platforms like Discord and
-              Telegram, where vibrant discussions and valuable insights bring
-              our web3 real estate vision to life.{' '}
+              Connect, engage, and grow with us on platforms like Discord and Telegram, where vibrant discussions and
+              valuable insights bring our web3 real estate vision to life.{' '}
             </p>
           </div>
           <SocialMedia />

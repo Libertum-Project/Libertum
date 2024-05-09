@@ -1,18 +1,17 @@
 'use client';
-import css from './UpcomingEvents.module.css';
 import Link from 'next/link';
+
+import css from './UpcomingEvents.module.css';
 
 export function UpcomingEvents() {
   const scrollToTop = () => {
     if (window.innerWidth > 1250) {
       window.scrollTo({
         top: 0,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
     } else {
-      const tokenPurchaseSection = document.getElementById(
-        'tokenPurchaseSection'
-      );
+      const tokenPurchaseSection = document.getElementById('tokenPurchaseSection');
       if (tokenPurchaseSection) {
         tokenPurchaseSection.scrollIntoView({ behavior: 'smooth' });
       }

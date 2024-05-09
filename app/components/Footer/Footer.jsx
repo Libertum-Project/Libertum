@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+
 import SocialMedia from './SocialMedia';
 import css from './Footer.module.css';
 import background from './background.svg';
@@ -9,53 +10,51 @@ const Footer = () => {
     {
       name: 'Property Owners',
       href: '/propertyowners',
-      section: 'Navigation'
+      section: 'Navigation',
     },
     {
       name: 'Investors',
       href: '/learn-investors',
-      section: 'Navigation'
+      section: 'Navigation',
     },
     {
       name: 'Explore Properties',
       href: '/comingsoon',
-      section: 'Navigation'
+      section: 'Navigation',
     },
     {
       name: 'Token',
       href: '/ico',
-      section: 'Navigation'
+      section: 'Navigation',
     },
     {
       name: 'Privacy Policy',
       href: '/comingsoonn',
-      section: 'Support'
+      section: 'Support',
     },
     {
       name: 'Terms & Conditions',
       href: '/comingsoon',
-      section: 'Support'
+      section: 'Support',
     },
     {
       name: 'Docs',
       href: '/',
-      section: 'Support'
+      section: 'Support',
     },
     {
       name: 'Community',
       href: '/community',
-      section: 'Support'
+      section: 'Support',
     },
     {
       name: 'Blog',
       href: 'https://blog.libertum.io/',
-      section: 'Navigation'
-    }
+      section: 'Navigation',
+    },
   ];
 
-  const navigationSection1 = navigation
-    .filter((item) => item.section === 'Navigation')
-    .slice(0, 5);
+  const navigationSection1 = navigation.filter((item) => item.section === 'Navigation').slice(0, 5);
   const navigationSection2 = navigation
     .filter((item) => item.section === 'Support' || item.section === 'Contact')
     .slice(0, 4);
@@ -73,13 +72,7 @@ const Footer = () => {
         <div className={css.footerContainer}>
           <div className={css.footerFirstCol}>
             <Link href="/">
-              <Image
-                src="/assets/horizontalLogo.svg"
-                alt="N"
-                width="200"
-                height="80"
-                className={css.logo}
-              />
+              <Image src="/assets/horizontalLogo.svg" alt="N" width="200" height="80" className={css.logo} />
             </Link>
             <p className={css.firstColInformation}>
               {/* 15 Crammavill Street<br />
@@ -114,9 +107,7 @@ const Footer = () => {
               </div>
             </section>
             <Link href="/subscribe">
-              <div className={css.footerButton}>
-                Explore More Investment Opportunities Now
-              </div>
+              <div className={css.footerButton}>Explore More Investment Opportunities Now</div>
             </Link>
           </div>
         </div>

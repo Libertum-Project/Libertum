@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 function getRequestParams(email) {
   // Obtener variables de entorno
@@ -6,8 +6,8 @@ function getRequestParams(email) {
   const LIST_ID = process.env.MAILCHIMP_LIST_ID;
 
   // Necesitamos la parte "us6"
-  const DATACENTER = process.env.MAILCHIMP_API_KEY.split("-")[1];
-  console.log(DATACENTER)
+  const DATACENTER = process.env.MAILCHIMP_API_KEY.split('-')[1];
+  console.log(DATACENTER);
 
   const url = `https://${DATACENTER}.api.mailchimp.com/3.0/lists/${LIST_ID}/members`;
 
@@ -15,13 +15,13 @@ function getRequestParams(email) {
   // https://mailchimp.com/developer/reference/lists/list-members/
   const data = {
     email_address: email,
-    status: "subscribed",
+    status: 'subscribed',
   };
 
   // La clave de la API debe estar codificada en formato base 64
-  const base64ApiKey = Buffer.from(`anystring:${API_KEY}`).toString("base64");
+  const base64ApiKey = Buffer.from(`anystring:${API_KEY}`).toString('base64');
   const headers = {
-    "Content-Type": "application/json",
+    'Content-Type': 'application/json',
     Authorization: `Basic ${base64ApiKey}`,
   };
 
@@ -36,14 +36,17 @@ export async function POST(req) {
   try {
     const { email } = await req.json();
 
-    console.log("Email received:", email);
+    console.log('Email received:', email);
 
     if (!email || !email.length) {
-      console.log("Email is missing");
+      console.log('Email is missing');
 
-      return new Response(JSON.stringify({
-        error: "Forgot to add your email?",
-      }), { status: 400, headers: { 'Content-Type': 'application/json' } });
+      return new Response(
+        JSON.stringify({
+          error: 'Forgot to add your email?',
+        }),
+        { status: 400, headers: { 'Content-Type': 'application/json' } },
+      );
     }
 
     const { url, data, headers } = getRequestParams(email);
@@ -54,33 +57,42 @@ export async function POST(req) {
     // Verificamos el estado de la respuesta de Mailchimp
     if (response.status === 200) {
       // Éxito
-      console.log("Mailchimp API success:", response.data);
-      return new Response(JSON.stringify({ error: null }), { status: 201, headers: { 'Content-Type': 'application/json' } });
+      console.log('Mailchimp API success:', response.data);
+      return new Response(JSON.stringify({ error: null }), {
+        status: 201,
+        headers: { 'Content-Type': 'application/json' },
+      });
     } else {
       // Error en la respuesta de Mailchimp
-      console.error("Mailchimp API error:", response.data);
-      throw new Error("Mailchimp API error");
+      console.error('Mailchimp API error:', response.data);
+      throw new Error('Mailchimp API error');
     }
   } catch (error) {
-    console.error("Error in catch block:", error);
-  
+    console.error('Error in catch block:', error);
+
     let errorMessage;
-  
+
     if (error.response && error.response.status === 400) {
       if (error.response.data.title === 'Member Exists') {
         errorMessage = 'This email is already registered.';
       } else if (error.response.data.title === 'Invalid Resource') {
-        errorMessage = 'The email address appears to be fake or invalid. Please enter a real email address or contact us at hello@libertum.io.';
+        errorMessage =
+          'The email address appears to be fake or invalid. Please enter a real email address or contact us at hello@libertum.io.';
       } else {
-        errorMessage = 'Oops, something went wrong... Please send an email at hello@libertum.io and you\'ll be added to the list.';
+        errorMessage =
+          "Oops, something went wrong... Please send an email at hello@libertum.io and you'll be added to the list.";
       }
     } else {
-      errorMessage = 'Oops, something went wrong... Please send an email at hello@libertum.io and you\'ll be added to the list.';
+      errorMessage =
+        "Oops, something went wrong... Please send an email at hello@libertum.io and you'll be added to the list.";
     }
-  
-    return new Response(JSON.stringify({
-      error: errorMessage,
-      errorMessage: error.message,
-    }), { status: 400, headers: { 'Content-Type': 'application/json' } });
+
+    return new Response(
+      JSON.stringify({
+        error: errorMessage,
+        errorMessage: error.message,
+      }),
+      { status: 400, headers: { 'Content-Type': 'application/json' } },
+    );
   }
 }

@@ -1,4 +1,5 @@
 'use client';
+'use client';
 import React, { useRef, useEffect } from 'react';
 import css from './ContactModal.module.css';
 import { ContactForm } from './contactForm';
@@ -7,7 +8,12 @@ interface ContactModalProps {
   onClose: () => void;
 }
 
+  onClose: () => void;
+}
+
 const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
+  const modalRef = useRef<HTMLDivElement | null>(null);
+
   const modalRef = useRef<HTMLDivElement | null>(null);
 
   const handleOutsideClick = (event: MouseEvent) => {
@@ -26,11 +32,14 @@ const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
       }
     };
 
+
     document.addEventListener('mousedown', handleOutsideClick);
+
 
     return () => {
       document.removeEventListener('mousedown', handleOutsideClick);
     };
+  }, [onClose]);
   }, [onClose]);
 
   return (
@@ -46,5 +55,6 @@ const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
     </div>
   );
 };
+export default ContactModal;
 
 export default ContactModal;

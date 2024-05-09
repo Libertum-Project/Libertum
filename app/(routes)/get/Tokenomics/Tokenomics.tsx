@@ -1,5 +1,6 @@
 import { type ReactElement } from 'react';
 import Image from 'next/image';
+
 import css from './Tokenomics.module.css';
 import graph from './graph.svg';
 
@@ -26,12 +27,12 @@ export function Tokenomics(): ReactElement {
       percentage: '3%',
     },
     {
-      color:  '#CB61C7',
+      color: '#CB61C7',
       title: 'Ecosystem & Partners',
       percentage: '14%',
     },
     {
-      color:  '#2840EA',
+      color: '#2840EA',
       title: 'Token Sale',
       percentage: '29%',
     },
@@ -45,23 +46,16 @@ export function Tokenomics(): ReactElement {
             <div className={css.text}>
               <h3>Tokenomics</h3>
               <p className={css.bodyText}>
-                We believe in a conservative approach to ensure price stability.
-                Only a small - but significant - percentage of $LBM will be
-                unlocked at the token generation event. This means that $LBM
-                will enjoy stability and reputational excellence.
+                We believe in a conservative approach to ensure price stability. Only a small - but significant -
+                percentage of $LBM will be unlocked at the token generation event. This means that $LBM will enjoy
+                stability and reputational excellence.
               </p>
             </div>
 
             <div className={css.graphDescription}>
               {tokenomicsData.map((item, index) => (
                 <div className={css.tokenomicsItem} key={index}>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="17"
-                    viewBox="0 0 16 17"
-                    fill="none"
-                  >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
                     <circle cx="8" cy="8.81836" r="8" fill={item.color} />
                   </svg>
                   <p>{item.title}</p>

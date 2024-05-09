@@ -1,5 +1,6 @@
 'use client';
 import { type ReactElement, useContext, useEffect, useState } from 'react';
+
 /*
 import Image from "next/image";
 import coin from "@/public/assets/coin.svg";
@@ -14,10 +15,7 @@ interface BuyButtonProps {
   usdAmount: number;
 }
 
-export function BuyWithCryptoButton({
-  lbmAmount,
-  usdAmount,
-}: BuyButtonProps): ReactElement {
+export function BuyWithCryptoButton({ lbmAmount, usdAmount }: BuyButtonProps): ReactElement {
   const {
     setShowPendingMessage,
     setShowFailMessage,

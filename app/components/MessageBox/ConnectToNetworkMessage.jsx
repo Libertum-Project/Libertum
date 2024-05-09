@@ -1,6 +1,7 @@
-import css from "./MessageBox.module.css";
-import network from "./network.png";
-import Image from "next/image";
+import Image from 'next/image';
+
+import css from './MessageBox.module.css';
+import network from './network.png';
 
 const ConnectToNetworkMessage = ({ setShowConnectToNetworkMessage }) => {
   const handleContinue = (event) => {
@@ -18,13 +19,7 @@ const ConnectToNetworkMessage = ({ setShowConnectToNetworkMessage }) => {
     >
       <div className={css.messageBox}>
         <div className={css.header}>
-          <Image
-            className={css.networkImage}
-            src={network}
-            alt="network"
-            width={48}
-            height={48}
-          />
+          <Image className={css.networkImage} src={network} alt="network" width={48} height={48} />
           <h2>Connect To BSC</h2>
         </div>
         <div>
