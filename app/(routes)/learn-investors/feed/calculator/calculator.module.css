@@ -85,6 +85,10 @@
 .inputFrameInvestment input {
     border: none;
     outline: none;
+    display: flex;
+    padding: 12px 16px;
+    justify-content: space-between;
+    align-items: center;
 
     color: rgba(0, 0, 0, 0.80);
     font-family: var(--font-primary);
