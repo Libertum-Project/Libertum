@@ -13,7 +13,7 @@ export function TwitterFeed(): ReactElement {
       </section>
 
       <section data-theme="light">
-      <Tweet id="1734547701440884874" />
+      <Tweet id="1785957532306915647" />
       </section>
 
 
