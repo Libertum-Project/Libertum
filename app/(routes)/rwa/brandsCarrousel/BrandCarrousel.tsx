@@ -1,4 +1,3 @@
-'use client';
 import Marquee from 'react-fast-marquee';
 
 import { ReactElement } from 'react';
@@ -19,18 +18,18 @@ import realestateAgency from './brands/realstateagency.svg';
 
 export function BrandCarrousel(): ReactElement {
   const brands = [
-      aptos,
-      aws,
-      coinFluence,
-      googleForStartups,
-      hotelCollection,
-      hubspot,
-      leonmisk,
-      microsoft,
-      plume,
-      polygon,
-      realestateAgency
-    ];
+    { name: 'Aptos', src: aptos },
+    { name: 'AWS', src: aws },
+    { name: 'Coinfluence', src: coinFluence },
+    { name: 'Google For Startups', src: googleForStartups },
+    { name: 'Hotel Collection', src: hotelCollection },
+    { name: 'Hubspot', src: hubspot },
+    { name: 'Leonmisk', src: leonmisk },
+    { name: 'Microsoft', src: microsoft },
+    { name: 'Plume', src: plume },
+    { name: 'Polygon', src: polygon },
+    { name: 'Real Estate Agency', src: realestateAgency },
+  ];
 
   return (
     <div className={css.container}>
@@ -38,11 +37,11 @@ export function BrandCarrousel(): ReactElement {
         {brands.map((brand, index) => (
           <div key={index} className={css.slide}>
             <Image
-              src={brand}
-              alt={`Brand ${index}`}
+              src={brand.src}
+              alt={`Brand: ${brand.name}`}
               width="80"
               height="24"
-              className="w-[60px] h-auto mx-[4rem]"
+              className="w-[4rem] h-auto mx-[4rem]"
             />
           </div>
         ))}
