@@ -1,8 +1,9 @@
 'use client';
 import { type ReactElement, useState, useEffect } from 'react';
 import Image from 'next/image';
-import css from './hero.module.css';
 import Link from 'next/link';
+
+import css from './hero.module.css';
 
 export function Hero(): ReactElement {
   const [isMobile, setIsMobile] = useState(false);
@@ -39,20 +40,14 @@ export function Hero(): ReactElement {
           <h1>Libertum Technology</h1>
           <div className={css.paragraphsAmbassadors}>
             <p>
-              Libertum is an entire ecosystem designed to break down the
-              barriers of traditional real estate and cater to a new generation
-              of investors.
+              Libertum is an entire ecosystem designed to break down the barriers of traditional real estate and cater
+              to a new generation of investors.
             </p>
           </div>
 
           <Link href="#form" className={css.applyButton}>
             <p>JOIN OUR WAITLIST NOW</p>
-            <Image
-              alt="left arrow"
-              src="/assets/leftArrow.svg"
-              width={13.207}
-              height={8.708}
-            />
+            <Image alt="left arrow" src="/assets/leftArrow.svg" width={13.207} height={8.708} />
           </Link>
         </div>
       </div>

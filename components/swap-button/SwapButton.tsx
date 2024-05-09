@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  ConnectWallet,
   Web3Button,
   useAddress,
   useContract,
@@ -22,22 +21,15 @@ interface Props {
   selectedToken?: string;
 }
 
-const SwapButton = ({
-  sellTokenAmount,
-  sellToken,
-  quote,
-  selectedToken,
-}: Props) => {
+const SwapButton = ({ sellTokenAmount, sellToken, quote, selectedToken }: Props) => {
   const walletAddress = useAddress();
-  const { data: balance, isLoading: balanceLoading } = useBalance(
-    sellToken.address
-  );
+  const { data: balance, isLoading: balanceLoading } = useBalance(sellToken.address);
   const { contract: sellTokenContract } = useContract(sellToken.address);
-  const { data: tokenAllowance, isLoading: contractReadLoading } =
-    useContractRead(sellTokenContract as any, 'allowance', [
-      walletAddress,
-      exchangeProxy,
-    ]);
+  const { data: tokenAllowance, isLoading: contractReadLoading } = useContractRead(
+    sellTokenContract as any,
+    'allowance',
+    [walletAddress, exchangeProxy],
+  );
 
   const { mutateAsync } = useContractWrite(sellTokenContract as any, 'approve');
   const signer = useSigner();
@@ -73,7 +65,7 @@ const SwapButton = ({
               title: 'Success',
               description: 'Transaction Completed!',
               className: cn(
-                'top-[50px] right-0 flex fixed md:max-w-[420px] md:top-[120px] md:right-4 border-0 bg-[#05844a] sm:top-0 text-white'
+                'top-[50px] right-0 flex fixed md:max-w-[420px] md:top-[120px] md:right-4 border-0 bg-[#05844a] sm:top-0 text-white',
               ),
             })
           }
@@ -82,13 +74,11 @@ const SwapButton = ({
               title: 'Error',
               description: 'There was an error, please try again!',
               variant: 'destructive',
-              className: cn(
-                'top-[50px] right-0 flex fixed md:max-w-[420px] md:top-[120px] md:right-4 border-0'
-              ),
+              className: cn('top-[50px] right-0 flex fixed md:max-w-[420px] md:top-[120px] md:right-4 border-0'),
             })
           }
         >
-          {balance?.displayValue && +balance?.displayValue > 0
+          {balance?.displayValue && +balance.displayValue > 0
             ? tokenAllowance && tokenAllowance._hex == '0x00'
               ? `Approve ${selectedToken} Allowance`
               : 'Swap'

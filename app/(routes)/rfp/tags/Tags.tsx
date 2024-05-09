@@ -2,11 +2,13 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+
+import { ContactForm } from '../contactForm/contactFrom';
+
 import css from './Tags.module.css';
 import inactiveArrow from './assets/inactiveArrow.svg';
 import activeArrow from './assets/activeArrow.svg';
-import Link from 'next/link';
-import { ContactForm } from '../contactForm/contactFrom';
 
 interface Option {
   id: string;
@@ -22,7 +24,7 @@ interface Option {
 export function Tags() {
   const [activeOption, setActiveOption] = useState('realEstate');
   const [showContactForm, setShowContactForm] = useState(false);
-  const [contactButtonArrowDown, setContactButtonArrowDown] = useState(false); 
+  const [contactButtonArrowDown, setContactButtonArrowDown] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
 
   const handleOptionClick = (optionId: string) => {
@@ -36,7 +38,7 @@ export function Tags() {
   };
 
   const handleContactButtonClick = () => {
-    setShowContactForm((prevState) => !prevState); 
+    setShowContactForm((prevState) => !prevState);
     setContactButtonArrowDown((prevState) => !prevState);
   };
 
@@ -66,7 +68,7 @@ export function Tags() {
           'The solution partner will be required to develop and deploy sophisticated software Infrastructure to compliment the Decentralized Tokenized #RWA real estate Market Libertum provides.',
           'The solution provider should have a proven ability to provide Liquidity Distribution Mechanisms solutions to enable the Libertum community to navigate on-chain data across multiple blockchains seemlessly. Ultimately the solution should simplify the users ability to interact with $LBM.',
           'As always proposals will be evaluated using the best value trade-off method, with non-price factors being significantly more important than price.',
-          '📅 <b>Applications</b> are due by  <i>April 5, 2024</i>, and <b>proposals</b> are due by <i>April 10, 2024.</i>'
+          '📅 <b>Applications</b> are due by  <i>April 5, 2024</i>, and <b>proposals</b> are due by <i>April 10, 2024.</i>',
         ],
         buttonLabel: 'Contact Us',
       },
@@ -80,8 +82,8 @@ export function Tags() {
         Request For Proposal:
         <span className={css.paragraph}>
           <br />
-          Libertum is currently seeking proposals. Check them out, fill the form
-          below, and we will get in touch with you!
+          Libertum is currently seeking proposals. Check them out, fill the form below, and we will get in touch with
+          you!
         </span>
       </h2>
       <div className={css.tabAccordion}>
@@ -89,17 +91,11 @@ export function Tags() {
           {options.map((option) => (
             <div
               key={option.id}
-              className={`${css.tabPanel} ${
-                activeOption === option.id ? css.active : ''
-              }`}
+              className={`${css.tabPanel} ${activeOption === option.id ? css.active : ''}`}
               onClick={() => handleOptionClick(option.id)}
               onMouseEnter={() => handleOptionHover(option.id)}
             >
-              <div
-                className={`${css.frameTitle} ${
-                  activeOption !== option.id ? css.inactive : ''
-                }`}
-              >
+              <div className={`${css.frameTitle} ${activeOption !== option.id ? css.inactive : ''}`}>
                 <h2>{option.name}</h2>
                 <Image
                   alt="left arrow"
@@ -115,39 +111,23 @@ export function Tags() {
         <section className={css.information}>
           <div className={showContactForm ? css.contentShifted : ''} ref={contentRef}>
             <div>
-            <h2>
-              {
-                options.find((opt) => opt.id === activeOption)?.information
-                  .title
-              }
-            </h2>
-            {options
-              .find((opt) => opt.id === activeOption)
-              ?.information.paragraphs.map((paragraph, index) => (
-                <p
-                  key={index}
-                  dangerouslySetInnerHTML={{ __html: paragraph }}
-                />
-              ))}
+              <h2>{options.find((opt) => opt.id === activeOption)?.information.title}</h2>
+              {options
+                .find((opt) => opt.id === activeOption)
+                ?.information.paragraphs.map((paragraph, index) => (
+                  <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
+                ))}
             </div>
-            <button
-            className={css.buttonInformation}
-            onClick={handleContactButtonClick}
-          >
-            {
-              options.find((opt) => opt.id === activeOption)?.information
-                .buttonLabel
-            }
-            <Image
-              alt="left arrow"
-              src={contactButtonArrowDown ? "/assets/arrowDown.svg" : "/assets/leftArrowBLACK.svg"} 
-              width={13.207}
-              height={8.708}
-            />
-          </button>
-          <div className={css.contactFormDiv}>
-            {showContactForm && <ContactForm />}
-          </div>  
+            <button className={css.buttonInformation} onClick={handleContactButtonClick}>
+              {options.find((opt) => opt.id === activeOption)?.information.buttonLabel}
+              <Image
+                alt="left arrow"
+                src={contactButtonArrowDown ? '/assets/arrowDown.svg' : '/assets/leftArrowBLACK.svg'}
+                width={13.207}
+                height={8.708}
+              />
+            </button>
+            <div className={css.contactFormDiv}>{showContactForm && <ContactForm />}</div>
           </div>
         </section>
       </div>

@@ -1,6 +1,7 @@
-import css from "./MessageBox.module.css";
-import Image from "next/image";
-import pending from "./timeIcon.svg";
+import Image from 'next/image';
+
+import css from './MessageBox.module.css';
+import pending from './timeIcon.svg';
 
 const PendingMessage = ({ messagge }) => {
   return (

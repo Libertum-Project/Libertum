@@ -26,9 +26,9 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
     ".next/types/**/*.ts",
-    "app/**/*.tsx",
-    "app/(routes)/ambassadors/candidates/form/formCandidates.jsx"
   ],
   "exclude": ["node_modules"]
 }

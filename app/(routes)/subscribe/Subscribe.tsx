@@ -1,15 +1,15 @@
-'use client'
-import { useState } from "react";
-import axios from "axios";
-import css from "./Subscribe.module.css"
-import { group } from "console";
+'use client';
+import { useState } from 'react';
+import axios from 'axios';
+import { group } from 'console';
+
+import css from './Subscribe.module.css';
 
 // const Subscribe = () => {
 
 //   const [email, setEmail] = useState("");
 //   const [state, setState] = useState("IDLE");
-//   const [errorMessage, setErrorMessage] = useState (null); 
-
+//   const [errorMessage, setErrorMessage] = useState (null);
 
 //   const subscribe = async () => {
 //     setState("LOADING");
@@ -22,22 +22,22 @@ import { group } from "console";
 //       setState("ERROR");
 //     }
 //   };
-  
+
 // return(
 //   <div>
 //       <div className={css.inputGroup}>
-//         <input 
+//         <input
 //         className={css.input}
-//         placeholder="Email" 
+//         placeholder="Email"
 //         value={email}
 //         onChange={(e) => setEmail(e.target.value)}
-//         /> 
-//         <button 
+//         />
+//         <button
 //         className={css.buttonSubmit}
 //         type="button"
 //         disabled={state === "LOADING"}
 //         onClick={subscribe}
-        
+
 //         >
 //           Subscribe
 //         </button>
@@ -54,33 +54,24 @@ import { group } from "console";
 
 // Subscribe.displayName = 'Subscribe';
 
-
 const Subscribe = () => {
-  
-  return(
-<form action="https://login.sendpulse.com/forms/simple/u/eyJ1c2VyX2lkIjo4NTg1OTE3LCJhZGRyZXNzX2Jvb2tfaWQiOjU2NTYyNywibGFuZyI6ImVuIn0=" method="post">
-
-        <div className={css.inputGroup}>
-          <input 
-          className={css.input}
-          placeholder="Email" 
-          type="email" 
-          required 
-          name="email"
-          
-          /> 
-      <input type="hidden" name="sender" value="34d375e0-f3d7-4010-ac6d-2eae41659b9a" />
-          <button 
+  return (
+    <form
+      action="https://login.sendpulse.com/forms/simple/u/eyJ1c2VyX2lkIjo4NTg1OTE3LCJhZGRyZXNzX2Jvb2tfaWQiOjU2NTYyNywibGFuZyI6ImVuIn0="
+      method="post"
+    >
+      <div className={css.inputGroup}>
+        <input className={css.input} placeholder="Email" type="email" required name="email" />
+        <input type="hidden" name="sender" value="34d375e0-f3d7-4010-ac6d-2eae41659b9a" />
+        <button
           className={css.buttonSubmit}
-          // type="button"        
-          >
-            Subscribe
-          </button>
-        </div>
+          // type="button"
+        >
+          Subscribe
+        </button>
+      </div>
     </form>
-  )
-
-
-}
+  );
+};
 
 export default Subscribe;

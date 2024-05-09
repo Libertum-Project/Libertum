@@ -1,7 +1,9 @@
-'use client'
+'use client';
 import React, { useState, useEffect } from 'react';
+
+import FeedTimeline from '../feedTimeline/FeedTimeline';
+
 import css from './feed.module.css';
-import FeedTimeline from "../feedTimeline/FeedTimeline"; 
 
 interface Item {
   title: string;
@@ -19,9 +21,7 @@ const ProgressBar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const winScroll = document.documentElement.scrollTop;
-      const height =
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       const scrolled = (winScroll / height) * 112;
       setScrollPercentage(scrolled);
     };
@@ -29,9 +29,9 @@ const ProgressBar = () => {
     window.addEventListener('scroll', handleScroll);
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);  
+  }, []);
 
-  const barColor = 'bg-libertumGreen';  
+  const barColor = 'bg-libertumGreen';
 
   return (
     <div
@@ -56,12 +56,8 @@ const TimelineItem: React.FC<Item> = ({ title, date, paragraphs }) => (
             <circle cx="8" cy="8.81836" r="8" fill="#00B3B5" />
           </svg> */}
         </div>
-        <p className="text-lg font-bold font-space_grotesk text-libertumGreen">
-          {title}
-        </p>
-        <p className="text-black font-bold text-xl font-space_grotesk">
-          {date}
-        </p>
+        <p className="text-lg font-bold font-space_grotesk text-libertumGreen">{title}</p>
+        <p className="text-black font-bold text-xl font-space_grotesk">{date}</p>
       </div>
     </div>
     <div className="flex-1 ml-4 w-[20rem]">
@@ -77,27 +73,20 @@ const TimelineItem: React.FC<Item> = ({ title, date, paragraphs }) => (
             <circle cx="8" cy="8.81836" r="8" fill="#00B3B5" />
           </svg>
         </div> */}
-        <p className="text-lg font-bold font-space_grotesk text-libertumGreen">
-          {title}
-        </p>
-        <p className="text-black font-bold text-xl font-space_grotesk">
-          {date}
-        </p>
+        <p className="text-lg font-bold font-space_grotesk text-libertumGreen">{title}</p>
+        <p className="text-black font-bold text-xl font-space_grotesk">{date}</p>
       </div>
 
       <ul className="w-fit space-y-4 mt-8 lg:mt-0">
         {paragraphs.map((paragraph, index) => (
-          <li
-            key={index}
-            className="mb-2 w-fit font-semibold flex justify-center"
-          >
+          <li key={index} className="mb-2 w-fit font-semibold flex justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="12"
               height="12"
               viewBox="0 0 12 12"
               fill="none"
-              className='w-[12px]'
+              className="w-[12px]"
             >
               <path
                 d="M6 0L4.93875 1.06125L9.1275 5.25H0V6.75H9.1275L4.93875 10.9387L6 12L12 6L6 0Z"

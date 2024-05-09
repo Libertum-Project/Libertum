@@ -1,7 +1,9 @@
-import css from './Card.module.css';
 import Image from 'next/image';
-import linkedinLogo from '../assets/linkedin.svg';
 import Link from 'next/link';
+
+import linkedinLogo from '../assets/linkedin.svg';
+
+import css from './Card.module.css';
 
 export function Card({ image, name, position, description, linkedin }) {
   return (
@@ -11,12 +13,12 @@ export function Card({ image, name, position, description, linkedin }) {
       </div>
       <div className={css.details}>
         <div className={css.title}>
-          <h2 >{name}</h2>
-          <h4 >{position}</h4>
+          <h2>{name}</h2>
+          <h4>{position}</h4>
         </div>
         <p>{description}</p>
         <div className={css.linkedin}>
-          <Link href={linkedin} target='_blank'>
+          <Link href={linkedin} target="_blank">
             <Image alt="linkedin" src={linkedinLogo} width={18} height={18} />
           </Link>
         </div>
