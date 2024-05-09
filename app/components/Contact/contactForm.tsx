@@ -33,7 +33,7 @@ export function ContactForm({ onClose }: ContactFormProps): ReactElement {
     <div className={css.formContainer}>
       <section>
         <h2 className={css.title}> Get in touch </h2>
-        <p className={css.information}> We aim to respond to your messages within 48 hrs.</p>
+        <p className={css.subtitle}> We aim to respond to your messages within 48 hrs.</p>
       </section>
 
     <form ref={form} onSubmit={sendEmail}  className={css.inputsBox}>
