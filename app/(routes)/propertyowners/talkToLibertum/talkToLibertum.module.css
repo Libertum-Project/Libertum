@@ -1,7 +1,7 @@
 .whyNowContainer {
     position: relative;
     overflow: hidden;
-    padding: 0 1rem;
+    /* padding: 0 1rem; */
     box-sizing: border-box;
   }
   
@@ -28,7 +28,7 @@
   .whyNow {
     display: flex;
     width: 100%;
-    padding: 4rem 0rem;
+    padding: 4rem 1rem;
     /* flex-direction: column; */
     gap: 2rem;
     box-sizing: border-box;
