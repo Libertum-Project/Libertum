@@ -86,8 +86,7 @@ export function Hero(): ReactElement {
           <h1>Meet The Team Behind Libertum</h1>
           <div className={css.paragraphsAmbassadors}>
             <p>
-              At vero eos et iusto odio dignissimos ducimus, qui haec putat, ut ipsi auctori huius disciplinae placet:
-              constituam, quid sit numeranda nec me ab illo inventore verita...
+              We facilitate connections between real estate owners and millions of investors worldwide, harnessing the power of Web3 and blockchain technology to unlock the true value of real estate. With a proven track record of building cutting-edge tech platforms globally, we've been leading the charge in disrupting the real estate industry.
             </p>
           </div>
         </div>
