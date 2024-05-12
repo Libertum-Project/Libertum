@@ -1,8 +1,6 @@
 import React from 'react';
-
-import { Hero } from './hero/hero';
-import { Card } from './cards/Card';
-import { TeamMembers } from './teamMembers/TeamMembers';
+import Hero from './Hero';
+import TeamMembers from './TeamMembersFeed';
 
 export default function Team() {
   return (

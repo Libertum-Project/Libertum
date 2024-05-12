@@ -3,10 +3,10 @@ import type { Config } from 'tailwindcss';
 const config = {
   // darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    './pages/**/*.{ts,tsx,jsx}',
+    './components/**/*.{ts,tsx,jsx}',
+    './app/**/*.{ts,tsx,jsx}',
+    './src/**/*.{ts,tsx,jsx}',
   ],
   prefix: '',
   theme: {
@@ -81,14 +81,15 @@ const config = {
         montserrat: ['Montserrat', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
-        'primary-gradient':
-          'radial-gradient(80.5% 80.5% at 50% 103.87%, #000041 0%, #0E0E1E 100%)',
-        'wallet-card-gradient':
-          'linear-gradient(230deg, #00062F -0.79%, rgba(0, 6, 47, 0.75) 73%)',
+        'primary-gradient': 'radial-gradient(80.5% 80.5% at 50% 103.87%, #000041 0%, #0E0E1E 100%)',
+        'wallet-card-gradient': 'linear-gradient(230deg, #00062F -0.79%, rgba(0, 6, 47, 0.75) 73%)',
       },
       boxShadow: {
         'main-shadow':
           '0px 16px 24px 0px rgba(0, 0, 0, 0.06), 0px 2px 6px 0px rgba(0, 0, 0, 0.04), 0px 0px 1px 0px rgba(0, 0, 0, 0.04)',
+      },
+      width: {
+        containerWidth: '75.125rem',
       },
     },
   },

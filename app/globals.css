@@ -426,3 +426,56 @@ template {
 .connetWalletButton > button {
   background-color: #00b3b5;
 }
+
+
+@layer components {
+
+  .heroTitle{
+    color: var(--color-quaternary);
+    font-family: var(--font-primary);
+    font-size: 48px;
+    font-style: normal;
+    text-align: center;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.96px;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  .heroOvertitle{
+    color: var(--color-tertiary);
+    font-family: var(--font-primary);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    text-align: center;
+    line-height: normal;
+    letter-spacing: -0.4px;
+    margin: 0;
+  }
+
+  .heroVideo{
+    position: absolute;
+    /* right: -65rem; */
+    top: 0;
+    z-index: 8;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+  }
+
+  .heroGradient{
+    position: absolute;
+    /* right: -65rem; */
+    top: 0;
+    z-index: 9;
+    min-width: 100%;
+    min-height: 100%;
+    background: radial-gradient(
+      80.5% 80.5% at 50% 103.87%,
+      #000041 0%,
+      #0e0e1e 100%
+    );
+    background-blend-mode: multiply;
+  }
+}
