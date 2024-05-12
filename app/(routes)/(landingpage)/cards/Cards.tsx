@@ -1,3 +1,4 @@
+'use client';
 import { ReactElement } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -6,6 +7,8 @@ import css from './Cards.module.css';
 import firstImage from './assets/firstImage.svg';
 import secondImage from './assets/secondImage.svg';
 import thirdImage from './assets/thirdImage.svg';
+import { motion } from 'framer-motion';
+import { staggerContainer, fadeIn, slideIn } from '@/utils/motion';
 
 export function Cards(): ReactElement {
   return (
@@ -14,8 +17,14 @@ export function Cards(): ReactElement {
         <Image alt="left arrow" src="/Ecosystem.svg" width={400} height={400} />
       </div>
       {/* first card */}
-      <div className={css.cardContainer}>
-        <div className={css.information}>
+      <motion.div
+        className={css.cardContainer}
+        variants={staggerContainer()}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }}
+      >
+        <motion.div className={css.information} variants={slideIn('left', 'tween', 0.2, 1)}>
           <div className={css.informationTitle}>
             <h2>RWA Tokenization</h2>
             <h3>Unlock the Revenues of any Real Estate Property</h3>
@@ -51,17 +60,23 @@ export function Cards(): ReactElement {
               <Image alt="left arrow" src="/assets/leftArrowBLACK.svg" width={13.207} height={8.708} />
             </button>
           </Link>
-        </div>
-        <div className={css.imageContainer}>
+        </motion.div>
+        <motion.div className={css.imageContainer} variants={slideIn('right', 'tween', 0.2, 1)}>
           <Image src={firstImage} width="394" height="437" alt="buildings" />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
       {/* second card */}
-      <div className={`${css.cardContainer} ${css.secondCard}`}>
-        <div className={css.imageContainer}>
+      <motion.div
+        className={`${css.cardContainer} ${css.secondCard}`}
+        variants={staggerContainer()}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }}
+      >
+        <motion.div variants={slideIn('left', 'tween', 0.2, 1)} className={css.imageContainer}>
           <Image src={secondImage} width={394} height={437} alt="buildings" />
-        </div>
-        <div className={css.information}>
+        </motion.div>
+        <motion.div className={css.information} variants={slideIn('right', 'tween', 0.2, 1)}>
           <div className={css.informationTitle}>
             <h2>Property Owners </h2>
             <h3>Access Interest free capital for your next Investment</h3>
@@ -91,11 +106,17 @@ export function Cards(): ReactElement {
               <Image alt="left arrow" src="/assets/leftArrowBLACK.svg" width={13.207} height={8.708} />
             </button>
           </Link>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
       {/* third card */}
-      <div className={css.cardContainer}>
-        <div className={css.information}>
+      <motion.div
+        variants={staggerContainer()}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }}
+        className={css.cardContainer}
+      >
+        <motion.div className={css.information} variants={slideIn('left', 'tween', 0.2, 1)}>
           <div className={css.informationTitle}>
             <h2>Retail Investors </h2>
             <h3>Unlimited access to a Global Pool of premium Properties</h3>
@@ -126,12 +147,12 @@ export function Cards(): ReactElement {
               <Image alt="left arrow" src="/assets/leftArrowBLACK.svg" width={13.207} height={8.708} />
             </button>
           </Link>
-        </div>
+        </motion.div>
 
-        <div className={css.imageContainer}>
+        <motion.div className={css.imageContainer} variants={slideIn('right', 'tween', 0.2, 1)}>
           <Image src={thirdImage} width="394" height="437" alt="buildings" />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }

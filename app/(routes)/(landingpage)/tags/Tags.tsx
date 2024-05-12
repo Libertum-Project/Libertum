@@ -3,6 +3,9 @@ import { type ReactElement, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { motion } from 'framer-motion';
+import { staggerContainer, fadeIn } from '@/utils/motion';
+
 import css from './Tags.module.css';
 import inactiveArrow from './assets/inactiveArrow.svg';
 import activeArrow from './assets/activeArrow.svg';
@@ -101,10 +104,18 @@ export function Tags() {
   ];
 
   return (
-    <div className={css.container}>
-      <h2 className={css.title}>Be part of the RWA Evolution. Today.</h2>
+    <motion.div
+      className={css.container}
+      variants={staggerContainer()}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.25 }}
+    >
+      <motion.h2 variants={fadeIn('up', 'tween', 0.2, 1)} className={css.title}>
+        Be part of the RWA Evolution. Today.
+      </motion.h2>
 
-      <div className={css.tabAccordion}>
+      <motion.div variants={fadeIn('up', 'tween', 0.6, 1)} className={css.tabAccordion}>
         <section className={css.options}>
           {options.map((option) => (
             <div
@@ -140,7 +151,9 @@ export function Tags() {
             <h2>{options.find((opt) => opt.id === activeOption)?.information.title}</h2>
             {options
               .find((opt) => opt.id === activeOption)
-              ?.information.paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
+              ?.information.paragraphs.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
           </div>
 
           <Link href={options.find((opt) => opt.id === activeOption)?.href || '/'} className={css.buttonInformation}>
@@ -148,7 +161,7 @@ export function Tags() {
             <Image alt="left arrow" src="/assets/leftArrowBLACK.svg" width={13.207} height={8.708} />
           </Link>
         </section>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

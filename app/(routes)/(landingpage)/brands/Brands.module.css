@@ -21,6 +21,10 @@
   max-height: 66px;
 }
 
+.brandContainer img:hover{
+  transform: scale(110%);
+}
+
 @media screen and (max-width: 790px) {
   .container {
     flex-wrap: wrap;

@@ -41,9 +41,9 @@ function Hero(): ReactElement {
           <TitleText title="Meet The Team Behind Libertum" textStyles="heroTitle" />
           <div>
             <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 1, duration: 2 }}
+initial={{ opacity: 0 }}
+whileInView={{ opacity: 1 }}
+transition={{ delay: 1, duration: 2 }}
               className="text-white font-montserrat lg:text-center font-normal"
             >
               We facilitate connections between real estate owners and millions of investors worldwide, harnessing the
