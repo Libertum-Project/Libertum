@@ -3,7 +3,6 @@ import { type ReactElement, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Card } from './cards/Card';
 
-import css from './hero.module.css';
 import { TypingText, TitleText } from '@/app/components/CustomTexts';
 import { leaderMembers } from './teamMembers';
 
