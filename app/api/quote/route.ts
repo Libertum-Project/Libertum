@@ -9,15 +9,6 @@ export async function GET(req: NextRequest) {
     const chainId = url.searchParams.get('chainId');
     const destChainId = url.searchParams.get('destChainId');
     const sender = url.searchParams.get('sender');
-
-    console.log('chainId=', chainId);
-    console.log('destChainId=', destChainId);
-
-    console.log('sellToken=', sellToken);
-    console.log('buyToken=', buyToken);
-
-    console.log('sender=', sender);
-
     let quoteUrl;
 
     if (chainId === destChainId) {

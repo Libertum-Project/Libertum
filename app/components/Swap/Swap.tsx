@@ -36,6 +36,8 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { useBlockchainSelection } from '../../providers/ThirdWebContextProvider';
 
+import { BigNumber } from '@ethersproject/bignumber';
+
 const DEX_AGGREGATORS: any = {
   1: '0xd3f64BAa732061F8B3626ee44bab354f854877AC',
   56: '0x880E0cE34F48c0cbC68BF3E745F17175BA8c650e',
@@ -90,7 +92,7 @@ const Swap = () => {
     setLoading(true);
     try {
       const formattedAmount = ethers.utils
-        .parseUnits(sellTokenAmount, 18)
+        .parseUnits(sellTokenAmount, sellToken.tokenDecimals)
         .toString();
 
       const response = await fetch(
@@ -113,14 +115,16 @@ const Swap = () => {
       if (data.length > 0) {
         if (buyToken.chainId == sellToken.chainId) {
           setBuyTokenAmount(
-            ethers.utils.formatUnits(data[0].toTokenAmount, 18)
+            ethers.utils.formatUnits(data[0].toTokenAmount, buyToken.decimals)
           );
         } else {
           setBuyTokenAmount(
-            ethers.utils.formatUnits(data[0].srcTrade.toTokenAmount, 18)
+            ethers.utils.formatUnits(
+              data[0].srcTrade.toTokenAmount,
+              buyToken.decimals
+            )
           );
         }
-
         setQuote(data[0]);
       }
     } catch (error) {
@@ -132,26 +136,32 @@ const Swap = () => {
 
   const executeSwap = async () => {
     setLoading(true);
-    let crossChainTransaction = false;
-    if (sellToken.chainId == buyToken.chainId) {
-      crossChainTransaction = true;
-    }
     try {
+      let body;
+      if (sellToken.chainId !== buyToken.chainId) {
+        body = {
+          transactionData: quote?.transactionData,
+          nativeValue: quote?.nativeValue,
+          account: walletAddress,
+        };
+      } else {
+        body = {
+          transactionData: quote?.transactionData,
+          nativeValue: quote?.nativeValue,
+          account: walletAddress,
+          receiver: walletAddress,
+          tradeType: quote?.tradeType,
+        };
+      }
       const response = await fetch(
-        `/api/swap?chainId=${chainId}&crossChain=${crossChainTransaction}`,
+        `/api/swap?chainId=${chainId}&destChainId=${buyToken.chainId}&contractVersion=${quote?.contractVersion}`,
         {
           method: 'POST',
           headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({
-            transactionData: quote?.transactionData,
-            nativeValue: quote?.nativeValue,
-            account: walletAddress,
-            receiver: walletAddress,
-            tradeType: quote?.tradeType,
-          }),
+          body: JSON.stringify(body),
         }
       );
       const data = await response.json();
@@ -160,7 +170,7 @@ const Swap = () => {
         from: walletAddress,
         to: exchangeProxy,
         data: data.data,
-        gasPrice: data.gasPrice,
+        gasPrice: data.estimateGas,
       });
       const transaction = await tx?.wait();
 
@@ -227,18 +237,31 @@ const Swap = () => {
     let action = '';
     let isDisabled = true;
 
+    if (!sellTokenAmount) {
+      return {
+        action: 'Set an amount',
+        isDisabled: true,
+      };
+    }
+
     if (sellTokenAmount > +sellTokenBalance?.displayValue) {
       action = `Insufficient ${sellToken.symbol} balance`;
       isDisabled = true;
-    } else if (tokenAllowance && tokenAllowance?._hex == '0x00') {
-      action = `Approve ${sellToken.symbol} Allowance`;
+    } else if (
+      tokenAllowance &&
+      (tokenAllowance as BigNumber).gte(BigNumber.from(sellTokenAmount))
+    ) {
+      action = 'Swap';
+      isDisabled = false;
+    } else if (
+      tokenAllowance == undefined ||
+      (tokenAllowance as BigNumber).lt(BigNumber.from(sellTokenAmount))
+    ) {
+      action = `Approve ${sellToken.symbol}`;
       isDisabled = false;
     } else if (!sellTokenAmount) {
       action = 'Swap';
       isDisabled = true;
-    } else {
-      action = 'Swap';
-      isDisabled = false;
     }
 
     return { action, isDisabled };
@@ -253,9 +276,9 @@ const Swap = () => {
   );
 
   const handleAction = () => {
-    if (action === 'Approve ' + sellToken.symbol + ' Allowance') {
+    if (action === `Approve ${sellToken.symbol}`) {
       return approveTokenSpending({
-        args: [sellToken.address, MAX_ALLOWANCE],
+        args: [exchangeProxy, MAX_ALLOWANCE],
       });
     } else if (action === 'Swap') {
       return executeSwap();
@@ -392,6 +415,8 @@ const Swap = () => {
                                 );
                                 const sellTokenData = {
                                   ...token,
+                                  tokenDecimals:
+                                    matchedContract && matchedContract.decimals,
                                   chainId:
                                     matchedContract && matchedContract.chain_id,
                                   address: matchedContract
@@ -532,6 +557,8 @@ const Swap = () => {
                                   ...token,
                                   chainId:
                                     matchedContract && matchedContract.chain_id,
+                                  tokenDecimals:
+                                    matchedContract && matchedContract.decimals,
                                   address: matchedContract
                                     ? matchedContract.contract_address
                                     : 'No address found',

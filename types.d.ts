@@ -3,6 +3,7 @@ interface Token {
   address: string;
   name: string;
   symbol: string;
-  decimals: number;
+  tokenDecimals?: number;
+  decimals?: number;
   logo: string;
 }
