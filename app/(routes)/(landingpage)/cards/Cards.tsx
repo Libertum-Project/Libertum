@@ -24,7 +24,7 @@ export function Cards(): ReactElement {
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
       >
-        <motion.div className={css.information} variants={slideIn('left', 'tween', 0.2, 1)}>
+        <motion.div className={css.information} variants={fadeIn('up', 'tween', 0.2, 1)}>
           <div className={css.informationTitle}>
             <h2>RWA Tokenization</h2>
             <h3>Unlock the Revenues of any Real Estate Property</h3>
@@ -61,7 +61,7 @@ export function Cards(): ReactElement {
             </button>
           </Link>
         </motion.div>
-        <motion.div className={css.imageContainer} variants={slideIn('right', 'tween', 0.2, 1)}>
+        <motion.div className={css.imageContainer} variants={fadeIn('up', 'tween', 0.2, 2)}>
           <Image src={firstImage} width="394" height="437" alt="buildings" />
         </motion.div>
       </motion.div>
@@ -73,10 +73,10 @@ export function Cards(): ReactElement {
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
       >
-        <motion.div variants={slideIn('left', 'tween', 0.2, 1)} className={css.imageContainer}>
+        <motion.div variants={fadeIn('up', 'tween', 0.2, 2)} className={css.imageContainer}>
           <Image src={secondImage} width={394} height={437} alt="buildings" />
         </motion.div>
-        <motion.div className={css.information} variants={slideIn('right', 'tween', 0.2, 1)}>
+        <motion.div className={css.information} variants={fadeIn('up', 'tween', 0.2, 1)}>
           <div className={css.informationTitle}>
             <h2>Property Owners </h2>
             <h3>Access Interest free capital for your next Investment</h3>
@@ -116,7 +116,7 @@ export function Cards(): ReactElement {
         viewport={{ once: false, amount: 0.25 }}
         className={css.cardContainer}
       >
-        <motion.div className={css.information} variants={slideIn('left', 'tween', 0.2, 1)}>
+        <motion.div className={css.information} variants={fadeIn('up', 'tween', 0.2, 1)}>
           <div className={css.informationTitle}>
             <h2>Retail Investors </h2>
             <h3>Unlimited access to a Global Pool of premium Properties</h3>
@@ -149,7 +149,7 @@ export function Cards(): ReactElement {
           </Link>
         </motion.div>
 
-        <motion.div className={css.imageContainer} variants={slideIn('right', 'tween', 0.2, 1)}>
+        <motion.div className={css.imageContainer} variants={fadeIn('up', 'tween', 0.2, 2)}>
           <Image src={thirdImage} width="394" height="437" alt="buildings" />
         </motion.div>
       </motion.div>

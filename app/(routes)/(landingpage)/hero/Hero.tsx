@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { TypingText, TitleText } from '@/app/components/CustomTexts';
+import HeroSplineLanding from '../HeroSpline';
 
 import css from './Hero.module.css';
 
@@ -37,7 +38,7 @@ export function Hero(): ReactElement {
           </video>
         )}
       </div>
-
+      
       <section className={css.hero}>
         <article className={css.text}>
           <div>
@@ -91,6 +92,7 @@ export function Hero(): ReactElement {
           </Link>
         </motion.div>
       </section>
+      
     </div>
   );
 }
