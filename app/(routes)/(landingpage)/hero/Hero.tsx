@@ -85,13 +85,7 @@ export function Hero(): ReactElement {
 
           <Link href="https://earn.libertum.io/" target="_blank" className={css.button1}>
             <div className={css.buttonFrame}>
-              <Image
-                src="/assets/icons/earn.png"
-                alt="earn"
-                width={36}
-                height={36}
-                className={css.logo}
-              />
+              <Image src="/assets/icons/earn.png" alt="earn" width={36} height={36} className={css.logo} />
               <p>Stake LBM</p>
             </div>
 
@@ -100,13 +94,7 @@ export function Hero(): ReactElement {
 
           <Link href="/get" className={css.button}>
             <div className={css.buttonFrame}>
-              <Image
-                src="/assets/icons/get.png"
-                alt="get"
-                width={36}
-                height={36}
-                className={css.logo}
-              />
+              <Image src="/assets/icons/get.png" alt="get" width={36} height={36} className={css.logo} />
               <p>Get LBM</p>
             </div>
 

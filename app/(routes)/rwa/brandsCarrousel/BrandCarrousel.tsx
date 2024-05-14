@@ -1,8 +1,9 @@
-import Marquee from 'react-fast-marquee';
-
 import { ReactElement } from 'react';
+import Marquee from 'react-fast-marquee';
 import Image from 'next/image';
+
 import css from './BrandCarrousel.module.css';
+
 import aptos from './brands/aptos.svg';
 import aws from './brands/aws.svg';
 import coinFluence from './brands/coinFluence.svg';

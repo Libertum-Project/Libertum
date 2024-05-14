@@ -86,7 +86,10 @@ export function Hero(): ReactElement {
           <h1>Meet The Team Behind Libertum</h1>
           <div className={css.paragraphsAmbassadors}>
             <p>
-              We facilitate connections between real estate owners and millions of investors worldwide, harnessing the power of Web3 and blockchain technology to unlock the true value of real estate. With a proven track record of building cutting-edge tech platforms globally, we've been leading the charge in disrupting the real estate industry.
+              Explore the future of real estate with us. Our leadership team has over 80 years of collective experience
+              in disrupting legacy thinking. Experts in blockchain innovation, Web3, SAAS products, and global
+              marketplaces, we've been reshaping industry since 2010. Join us in revolutionizing real estate for
+              tomorrow.
             </p>
           </div>
         </div>
