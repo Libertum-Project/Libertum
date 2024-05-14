@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import css from './Modal.module.css';
-
 import socials from './socials.svg';
 import ambassadors from './ambassadors.svg';
 

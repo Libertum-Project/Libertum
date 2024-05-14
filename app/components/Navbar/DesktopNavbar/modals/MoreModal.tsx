@@ -5,11 +5,9 @@ import Image from 'next/image';
 import css from './Modal.module.css';
 import tokenUtility from './tokenUtility.svg';
 import whitePaper from './whitePaper.svg';
-
-import roadmap from "./roadmap.svg"
-import team from "./team.svg"
-import ecosystem from "./ecosystem.svg"
-
+import roadmap from './roadmap.svg';
+import team from './team.svg';
+import ecosystem from './ecosystem.svg';
 
 interface MoreModalProps {
   handleHideModals: () => void;
@@ -49,7 +47,6 @@ export function MoreModal({ handleHideModals }: MoreModalProps): ReactElement {
               Ecosystem
             </Link>
           </div>
-
         </div>
       </div>
     </div>

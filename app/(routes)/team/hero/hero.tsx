@@ -85,7 +85,12 @@ export function Hero(): ReactElement {
           <h3>OUR TEAM</h3>
           <h1>Meet The Team Behind Libertum</h1>
           <div className={css.paragraphsAmbassadors}>
-            <p>Explore the future of real estate with us. Our leadership team has over 80 years of collective experience in disrupting legacy thinking. Experts in blockchain innovation, Web3, SAAS products, and global marketplaces, we have been reshaping industry since 2010. Join us in revolutionizing real estate for tomorrow.</p>
+            <p>
+              Explore the future of real estate with us. Our leadership team has over 80 years of collective experience
+              in disrupting legacy thinking. Experts in blockchain innovation, Web3, SAAS products, and global
+              marketplaces, we have been reshaping industry since 2010. Join us in revolutionizing real estate for
+              tomorrow.
+            </p>
           </div>
         </div>
         <div className={css.leadershipTeam}>

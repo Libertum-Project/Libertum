@@ -37,12 +37,9 @@ export function MobileModal({ handleToggleOpenMenu }: MobileModalProp): ReactEle
             → Pitch Deck
           </Link>
           <Link href="/rfp">→ RFP</Link>
-          <Link href="https://blog.libertum.io/">
-          →Blog
-        </Link>
+          <Link href="https://blog.libertum.io/">→Blog</Link>
         </div>
         <div>
-
           <p>Community</p>
           <Link href="/community" target="_blank">
             → Socials
@@ -51,7 +48,6 @@ export function MobileModal({ handleToggleOpenMenu }: MobileModalProp): ReactEle
             → Ambassadors
           </Link>
         </div>
-
 
         <div>
           <p>More</p>
@@ -65,7 +61,6 @@ export function MobileModal({ handleToggleOpenMenu }: MobileModalProp): ReactEle
             → Ecosystem
           </Link>
         </div>
-
 
         <ConnectWalletButton />
       </div>

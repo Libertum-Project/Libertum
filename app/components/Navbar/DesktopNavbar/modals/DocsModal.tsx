@@ -7,7 +7,7 @@ import tokenUtility from './tokenUtility.svg';
 import whitePaper from './whitePaper.svg';
 import pitchDeck from './pitchDeck.svg';
 import rfp from './rfp.svg';
-import blog from "./blog.svg"
+import blog from './blog.svg';
 
 interface DocsModalProps {
   handleHideModals: () => void;
