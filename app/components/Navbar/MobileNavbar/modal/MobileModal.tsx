@@ -19,18 +19,12 @@ export function MobileModal({ handleToggleOpenMenu }: MobileModalProp): ReactEle
         <Link href="/comingsoon" className={css.border}>
           Explore Properties
         </Link>
-        <Link href="https://blog.libertum.io/" className={css.border}>
-          Blog
-        </Link>
         <div className={css.border}>
           <p>Learn</p>
           <Link href="/learn-investors">→ Investors</Link>
           <Link href="/propertyowners">→ Property Owners</Link>
           <Link href="/rwa">→ RWA Tokenisation</Link>
         </div>
-        <Link href="/community" className={css.border}>
-          Community
-        </Link>
         <div>
           <p>Docs</p>
           <Link href="/Libertum_Pitch.pdf" target="_blank">
@@ -43,7 +37,36 @@ export function MobileModal({ handleToggleOpenMenu }: MobileModalProp): ReactEle
             → Pitch Deck
           </Link>
           <Link href="/rfp">→ RFP</Link>
+          <Link href="https://blog.libertum.io/">
+          →Blog
+        </Link>
         </div>
+        <div>
+
+          <p>Community</p>
+          <Link href="/community" target="_blank">
+            → Socials
+          </Link>
+          <Link href="/ambassadors" target="_blank">
+            → Ambassadors
+          </Link>
+        </div>
+
+
+        <div>
+          <p>More</p>
+          <Link href="/roadmap" target="_blank">
+            → Roadmap
+          </Link>
+          <Link href="/team" target="_blank">
+            → Libertum Team
+          </Link>
+          <Link href="/ecosystem" target="_blank">
+            → Ecosystem
+          </Link>
+        </div>
+
+
         <ConnectWalletButton />
       </div>
     </div>
