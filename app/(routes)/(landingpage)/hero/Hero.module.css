@@ -216,4 +216,20 @@
   .hero h1 {
     font-weight: 700;
   }
+
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .buttons a {
+    width: stretch;
+    text-decoration: none;
+    min-height: 4rem;
+
+  }
+  .buttons a:hover {
+    width: stretch;
+    text-decoration: none;
+  }
 }

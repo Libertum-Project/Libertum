@@ -125,6 +125,10 @@ align-items: center;
   .imageContainer img {
     height: 252.687px !important;
   }
+
+  .ecosystem img{
+    width: 100%;
+  }
 }
 
 @media screen and (min-width: 790px) {
