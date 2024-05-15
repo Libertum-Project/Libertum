@@ -50,9 +50,7 @@ const Swap = () => {
   const [loading, setLoading] = useState(false);
   const [txnHash, setHash] = useState('');
 
-  const [exchangeProxy, setExchangeProxy] = useState<any>(
-    DEX_AGGREGATORS[8453]
-  );
+  const [exchangeProxy, setExchangeProxy] = useState<any>(DEX_AGGREGATORS[8453]);
 
   const [tokensToSet, setTokens] = useState([]);
   const [filteredTokens, setFilteredTokens] = useState([]);
@@ -66,15 +64,16 @@ const Swap = () => {
   const { contract: sellTokenContract } = useContract(sellToken?.address);
   const { contract: buyTokenContract } = useContract(buyToken?.address);
   const { contract: dexContract } = useContract(exchangeProxy);
-  const { data: sellTokenBalance, isLoading: sellTokenBalanceLoading } =
-    useTokenBalance(sellTokenContract, walletAddress);
-  const { data: buyTokenBalance, isLoading: buyTokenBalanceLoading } =
-    useTokenBalance(buyTokenContract, walletAddress);
-  const { data: tokenAllowance, isLoading: contractReadLoading } =
-    useContractRead(sellTokenContract as any, 'allowance', [
-      walletAddress,
-      exchangeProxy,
-    ]);
+  const { data: sellTokenBalance, isLoading: sellTokenBalanceLoading } = useTokenBalance(
+    sellTokenContract,
+    walletAddress,
+  );
+  const { data: buyTokenBalance, isLoading: buyTokenBalanceLoading } = useTokenBalance(buyTokenContract, walletAddress);
+  const { data: tokenAllowance, isLoading: contractReadLoading } = useContractRead(
+    sellTokenContract as any,
+    'allowance',
+    [walletAddress, exchangeProxy],
+  );
 
   const [chainId, setChainId] = useState(8453);
   const [selectedChainId, setSelectedChainId] = useState(8453);
@@ -82,12 +81,10 @@ const Swap = () => {
   const fetchPriceData = async () => {
     setLoading(true);
     try {
-      const formattedAmount = ethers.utils
-        .parseUnits(sellTokenAmount, sellToken.tokenDecimals)
-        .toString();
+      const formattedAmount = ethers.utils.parseUnits(sellTokenAmount, sellToken.tokenDecimals).toString();
 
       const response = await fetch(
-        `/api/quote?srcToken=${sellToken.address}&destToken=${buyToken.address}&sellAmount=${formattedAmount}&chainId=${sellToken.chainId}&destChainId=${buyToken.chainId}&sender=${walletAddress}`
+        `/api/quote?srcToken=${sellToken.address}&destToken=${buyToken.address}&sellAmount=${formattedAmount}&chainId=${sellToken.chainId}&destChainId=${buyToken.chainId}&sender=${walletAddress}`,
       );
       const data = await response.json();
 
@@ -105,16 +102,9 @@ const Swap = () => {
 
       if (data.length > 0) {
         if (buyToken.chainId == sellToken.chainId) {
-          setBuyTokenAmount(
-            ethers.utils.formatUnits(data[0].toTokenAmount, buyToken.decimals)
-          );
+          setBuyTokenAmount(ethers.utils.formatUnits(data[0].toTokenAmount, buyToken.decimals));
         } else {
-          setBuyTokenAmount(
-            ethers.utils.formatUnits(
-              data[0].srcTrade.toTokenAmount,
-              buyToken.decimals
-            )
-          );
+          setBuyTokenAmount(ethers.utils.formatUnits(data[0].srcTrade.toTokenAmount, buyToken.decimals));
         }
         setQuote(data[0]);
       }
@@ -153,7 +143,7 @@ const Swap = () => {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(body),
-        }
+        },
       );
       const data = await response.json();
 
@@ -235,16 +225,10 @@ const Swap = () => {
     if (sellTokenAmount > +sellTokenBalance?.displayValue) {
       action = `Insufficient ${sellToken.symbol} balance`;
       isDisabled = true;
-    } else if (
-      tokenAllowance &&
-      (tokenAllowance as BigNumber).gte(BigNumber.from(sellTokenAmount))
-    ) {
+    } else if (tokenAllowance && (tokenAllowance as BigNumber).gte(BigNumber.from(sellTokenAmount))) {
       action = 'Swap';
       isDisabled = false;
-    } else if (
-      tokenAllowance == undefined ||
-      (tokenAllowance as BigNumber).lt(BigNumber.from(sellTokenAmount))
-    ) {
+    } else if (tokenAllowance == undefined || (tokenAllowance as BigNumber).lt(BigNumber.from(sellTokenAmount))) {
       action = `Approve ${sellToken.symbol}`;
       isDisabled = false;
     } else if (!sellTokenAmount) {
@@ -281,7 +265,7 @@ const Swap = () => {
           headers: {
             'X-Api-Key': process.env.NEXT_PUBLIC_UNIZEN_API_KEY as string,
           },
-        }
+        },
       );
       if (response.ok) {
         const data = await response.json();
@@ -295,7 +279,7 @@ const Swap = () => {
   };
   const filterTokens = (chainId: any) => {
     const filtered = tokensToSet.filter((token: any) =>
-      token.contracts.some((contract: any) => contract.chain_id === chainId)
+      token.contracts.some((contract: any) => contract.chain_id === chainId),
     );
     setFilteredTokens(filtered);
   };
@@ -314,7 +298,7 @@ const Swap = () => {
   return (
     <>
       <section className="relative">
-        <Card className={`w-[360px] md:w-[480px] bg-[#fff] border-0 ${styles.swap}`}>
+        <Card className={`w-[360px] md:w-[480px] bg-[#fff] border-0`}>
           <CardHeader className="border-b-2 mb-2 p-2">
             <CardTitle className="text-black flex justify-between">
               <Image src="/assets/get-icon.png" alt="Get" width={150} height={150} />
@@ -330,12 +314,7 @@ const Swap = () => {
                       className="assetOne text-white bg-[#00b3b5] cursor-pointer text-sm assetTwo p-2 rounded-full shadow flex gap-3 items-center font-semibold"
                       onClick={() => filterTokens(chainId)}
                     >
-                      <Image
-                        src={sellToken?.logo}
-                        width={20}
-                        height={20}
-                        alt="Token image"
-                      />
+                      <Image src={sellToken?.logo} width={20} height={20} alt="Token image" />
                       {sellToken?.symbol}
 
                       <ChevronDownIcon className="font-semibold" />
@@ -366,17 +345,10 @@ const Swap = () => {
                         >
                           <span
                             className={`shadow-md rounded-[5px] w-[30px] h-[30px] flex justify-center items-center ${
-                              selectedChainId === blockchain.id
-                                ? 'bg-[#00b3b5]'
-                                : 'bg-white'
+                              selectedChainId === blockchain.id ? 'bg-[#00b3b5]' : 'bg-white'
                             }`}
                           >
-                            <Image
-                              src={blockchain.icon}
-                              width={20}
-                              height={20}
-                              alt="chain"
-                            />
+                            <Image src={blockchain.icon} width={20} height={20} alt="chain" />
                           </span>
                         </Button>
                       ))}
@@ -384,38 +356,25 @@ const Swap = () => {
 
                     <div className="overflow-auto max-h-[500px]">
                       {filteredTokens
-                        .filter(
-                          (token: any) => token?.symbol !== buyToken?.symbol
-                        )
+                        .filter((token: any) => token?.symbol !== buyToken?.symbol)
                         .map((token: any) => {
                           return (
                             <button
                               key={token?.name}
                               className="text-black px-2 py-4 cursor-pointer text-left flex items-center gap-2 hover:bg-[#e4e7eb] rounded-[5px] w-full"
                               onClick={() => {
-                                const matchedContract = token.contracts.find(
-                                  (c: any) => c.chain_id === chainId
-                                );
+                                const matchedContract = token.contracts.find((c: any) => c.chain_id === chainId);
                                 const sellTokenData = {
                                   ...token,
-                                  tokenDecimals:
-                                    matchedContract && matchedContract.decimals,
-                                  chainId:
-                                    matchedContract && matchedContract.chain_id,
-                                  address: matchedContract
-                                    ? matchedContract.contract_address
-                                    : 'No address found',
+                                  tokenDecimals: matchedContract && matchedContract.decimals,
+                                  chainId: matchedContract && matchedContract.chain_id,
+                                  address: matchedContract ? matchedContract.contract_address : 'No address found',
                                 };
                                 setSellToken(sellTokenData);
                                 setOpenSell(false);
                               }}
                             >
-                              <Image
-                                src={token?.logo}
-                                width={20}
-                                height={20}
-                                alt="Token"
-                              />
+                              <Image src={token?.logo} width={20} height={20} alt="Token" />
                               {token?.symbol}
                             </button>
                           );
@@ -466,12 +425,7 @@ const Swap = () => {
                 <Dialog open={openBuy} onOpenChange={setOpenBuy}>
                   <DialogTrigger asChild>
                     <div className="assetOne text-white bg-[#00b3b5] cursor-pointer text-sm assetTwo p-2 rounded-full shadow flex gap-3 items-center font-semibold">
-                      <Image
-                        src={buyToken?.logo}
-                        width={20}
-                        height={20}
-                        alt="Token image"
-                      />
+                      <Image src={buyToken?.logo} width={20} height={20} alt="Token image" />
                       {buyToken?.symbol}
 
                       <ChevronDownIcon className="font-semibold" />
@@ -502,55 +456,35 @@ const Swap = () => {
                         >
                           <span
                             className={`shadow-md rounded-[5px] w-[30px] h-[30px] flex justify-center items-center ${
-                              selectedChainId === blockchain.id
-                                ? 'bg-[#00b3b5]'
-                                : 'bg-white'
+                              selectedChainId === blockchain.id ? 'bg-[#00b3b5]' : 'bg-white'
                             }`}
                           >
-                            <Image
-                              src={blockchain.icon}
-                              width={20}
-                              height={20}
-                              alt="chain"
-                            />
+                            <Image src={blockchain.icon} width={20} height={20} alt="chain" />
                           </span>
                         </Button>
                       ))}
                     </div>
                     <div className="overflow-auto max-h-[400px]">
                       {filteredTokens
-                        .filter(
-                          (token: any) => token?.symbol !== sellToken?.symbol
-                        )
+                        .filter((token: any) => token?.symbol !== sellToken?.symbol)
                         .map((token: any) => {
                           return (
                             <button
                               key={token?.name}
                               className="text-black px-2 py-4 cursor-pointer text-left flex items-center gap-2 hover:bg-[#e4e7eb] rounded-[5px] w-full"
                               onClick={() => {
-                                const matchedContract = token.contracts.find(
-                                  (c: any) => c.chain_id === chainId
-                                );
+                                const matchedContract = token.contracts.find((c: any) => c.chain_id === chainId);
                                 const buyTokenData = {
                                   ...token,
-                                  chainId:
-                                    matchedContract && matchedContract.chain_id,
-                                  tokenDecimals:
-                                    matchedContract && matchedContract.decimals,
-                                  address: matchedContract
-                                    ? matchedContract.contract_address
-                                    : 'No address found',
+                                  chainId: matchedContract && matchedContract.chain_id,
+                                  tokenDecimals: matchedContract && matchedContract.decimals,
+                                  address: matchedContract ? matchedContract.contract_address : 'No address found',
                                 };
                                 setBuyToken(buyTokenData);
                                 setOpenBuy(false);
                               }}
                             >
-                              <Image
-                                src={token?.logo}
-                                width={20}
-                                height={20}
-                                alt="Token"
-                              />
+                              <Image src={token?.logo} width={20} height={20} alt="Token" />
                               {token?.symbol}
                             </button>
                           );
