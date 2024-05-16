@@ -9,17 +9,7 @@ import {
   metamaskWallet,
   walletConnect,
 } from '@thirdweb-dev/react';
-
-import {
-  Ethereum,
-  Base,
-  Polygon,
-  Optimism,
-  Binance,
-  Fantom,
-  Arbitrum,
-  Avalanche,
-} from '@thirdweb-dev/chains';
+import { Ethereum, Base, Polygon, Optimism, Binance, Fantom, Arbitrum, Avalanche } from '@thirdweb-dev/chains';
 
 const ThirdwebContext = createContext<any>(undefined);
 
@@ -48,16 +38,7 @@ export function ThirdwebContextProvider({ children }: { children: React.ReactNod
         theme="light"
         activeChain={activeChain}
         clientId={clientId}
-        supportedChains={[
-          Ethereum,
-          Base,
-          Optimism,
-          Binance,
-          Polygon,
-          Fantom,
-          Arbitrum,
-          Avalanche,
-        ]}
+        supportedChains={[Ethereum, Base, Optimism, Binance, Polygon, Fantom, Arbitrum, Avalanche]}
         supportedWallets={[
           metamaskWallet({ recommended: true }),
           coinbaseWallet(),
@@ -79,9 +60,7 @@ export function ThirdwebContextProvider({ children }: { children: React.ReactNod
 export const useBlockchainSelection = () => {
   const context = React.useContext(ThirdwebContext);
   if (!context) {
-    throw new Error(
-      'useBlockchainSelection must be used within a ThirdwebContextProvider'
-    );
+    throw new Error('useBlockchainSelection must be used within a ThirdwebContextProvider');
   }
   return context.selectBlockchain;
 };

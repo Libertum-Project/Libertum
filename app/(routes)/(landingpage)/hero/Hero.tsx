@@ -94,13 +94,7 @@ export function Hero(): ReactElement {
 
           <Link href="/get" className={css.button}>
             <div className={css.buttonFrame}>
-              <Image
-                src="/assets/get-icon-light.png"
-                alt="N"
-                width="13"
-                height="13"
-                className={css.logo}
-              />
+              <Image src="/assets/get-icon-light.png" alt="N" width="13" height="13" className={css.logo} />
               <p>Get LBM</p>
             </div>
 
