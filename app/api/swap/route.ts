@@ -4,10 +4,18 @@ export async function POST(req: NextRequest) {
   try {
     const url = new URL(req.url);
     const reqBody = await req.json();
+    const chainId = url.searchParams.get('chainId');
+    const destChainId = url.searchParams.get('destChainId');
+    const contractVersion = url.searchParams.get('contractVersion');
+    let swapUrl;
 
-    console.log(reqBody);
+    if (chainId === destChainId) {
+      swapUrl = `https://api.zcx.com/trade/v1/${chainId}/swap/single`;
+    } else {
+      swapUrl = `https://api.zcx.com/trade/v1/${chainId}/swap/cross`;
+    }
 
-    const response = await fetch(`https://api.zcx.com/trade/v1/8453/swap/single`, {
+    const response = await fetch(swapUrl, {
       method: 'POST',
       headers: {
         'X-Api-Key': process.env.NEXT_PUBLIC_UNIZEN_API_KEY as string,
