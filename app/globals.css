@@ -478,4 +478,19 @@ template {
     );
     background-blend-mode: multiply;
   }
+
+  .gridContainerFeed{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('/assets/Grid Background Pattern.svg');
+    background-clip: padding-box;
+    background-size: auto;
+    background-position: center;
+    opacity: 0.5;
+    z-index: -1;
+  }
 }
