@@ -3,10 +3,10 @@ import type { Config } from 'tailwindcss';
 const config = {
   // darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    './pages/**/*.{ts,tsx,js,jsx}',
+    './components/**/*.{ts,tsx,js,jsx}',
+    './app/**/*.{ts,tsx,js,jsx}',
+    './src/**/*.{ts,tsx,js,jsx}',
   ],
   prefix: '',
   theme: {
@@ -89,6 +89,9 @@ const config = {
       boxShadow: {
         'main-shadow':
           '0px 16px 24px 0px rgba(0, 0, 0, 0.06), 0px 2px 6px 0px rgba(0, 0, 0, 0.04), 0px 0px 1px 0px rgba(0, 0, 0, 0.04)',
+      },
+      width: {
+        containerWidth: '75.125rem',
       },
     },
   },
