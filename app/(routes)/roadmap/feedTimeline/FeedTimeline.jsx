@@ -1,27 +1,17 @@
-import { motion, useScroll } from 'framer-motion';
-import { useRef } from 'react';
 import Image from 'next/image';
 
-import css from './FeedTimeline.module.css';
 import thumb from './thumb.svg';
 
 function Item({ title, date, paragraphs }) {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['end end', 'start start'],
-  });
-
   return (
-    <section className={css.section}>
-      <div ref={ref} className="flex flex-col lg:flex-row">
-        <article className={css.progress} id="progress">
-          <p className="text-xl lg:text-lg font-bold font-space_grotesk text-libertumGreen">
+    <section className="flex justify-end lg:justify-center items-center mb-24 last:mb-0 lg:ml-0 ml-16">
+      <div className="flex relative flex-col lg:flex-row max-w-full lg:w-[38rem] h-fit lg:justify-between">
+        <article className="relative lg:sticky top-5 lg:w-20 h-20 m-0 p-0 mr-4" id="progress">
+          <p className="text-xl lg:text-lg font-bold font-space_grotesk text-libertumGreen lg:whitespace-nowrap">
             {title} <span className="text-black font-bold text-xl lg:text-lg font-space_grotesk">{date}</span>
           </p>
         </article>
-
-        <ul className="w-fit space-y-4 mt-8 lg:mt-0 ml-[4rem] ">
+        <ul className="lg:w-[23rem] space-y-4 mt-8 lg:mt-0 lg:ml-16">
           {paragraphs.map((paragraph, index) => (
             <li key={index} className="mb-2 w-fit font-semibold flex justify-center">
               <svg
@@ -114,16 +104,22 @@ const FeedTimeLine = () => {
   ];
 
   return (
-    <div className="flex flex-col relative">
-      {/* <div className="absolute h-[110.5rem] lg:h-[81rem] lg:max-h-[81rem] w-2 bg-gray-200 top-0 left-40  rounded"></div> */}
-      <div className={css.progressBar}></div>
-      <div className={css.imageContainer}>
-        <Image src={thumb} alt="thumb" height={180} width={52} className={css.image} />
+    <div className="relative after:gridContainerFeed">
+      <div className="flex flex-col relative lg:w-fit mx-auto pt-32 lg:pt-60 px-4 justify-center">
+        <div className="absolute top-40 left-[2.4rem] h-[140rem] lg:top-60 lg:left-40 rounded bg-slate-300 lg:h-[100rem] w-2"></div>
+        <div className="sticky left-28 top-7">
+          <Image
+            src={thumb}
+            alt="thumb"
+            height={180}
+            width={52}
+            className="absolute lg:top-[-9.5rem] lg:left-[7.6rem] left-0 top-[-7.6rem] "
+          />
+        </div>
+        {items.map((item, index) => (
+          <Item key={index} {...item} />
+        ))}
       </div>
-
-      {items.map((item, index) => (
-        <Item key={index} {...item} />
-      ))}
     </div>
   );
 };
