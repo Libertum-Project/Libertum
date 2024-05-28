@@ -1,7 +1,5 @@
 'use client';
 import { type ReactElement, useState, useEffect } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
 
 import ContactModal from '@/app/components/Contact/ContactModal';
 
@@ -9,15 +7,15 @@ import css from './hero.module.css';
 import { Calculator } from './calculator/calculator';
 
 export function Hero(): ReactElement {
-  const [modalVisible, setModalVisible] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   const openModal = () => {
-    setModalVisible(true);
+    setIsModalVisible(true);
   };
 
   const closeModal = () => {
-    setModalVisible(false);
+    setIsModalVisible(false);
   };
 
   useEffect(() => {
@@ -60,7 +58,7 @@ export function Hero(): ReactElement {
               <button className={css.buttonOwners} onClick={openModal}>
                 Get in touch
               </button>
-              {modalVisible && <ContactModal onClose={closeModal} />}
+              {isModalVisible && <ContactModal onClose={closeModal} />}
             </div>
           </div>
         </div>

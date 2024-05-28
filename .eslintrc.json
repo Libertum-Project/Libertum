@@ -25,7 +25,7 @@
     "@typescript-eslint/no-unsafe-member-access": "warn", // "error"
     "@typescript-eslint/no-unsafe-assignment": "warn", // "error"
     "@typescript-eslint/naming-convention": [
-      "warn", // "error"
+      "error",
       {
         "selector": "variable",
         "types": ["boolean"],

@@ -43,10 +43,10 @@ const Swap = () => {
   const walletAddress = useAddress();
   const signer = useSigner();
 
-  const [openSell, setOpenSell] = useState(false);
-  const [openBuy, setOpenBuy] = useState(false);
+  const [isOpenSell, setIsOpenSell] = useState(false);
+  const [isOpenBuy, setIsOpenBuy] = useState(false);
   const [quote, setQuote] = useState<any>('');
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [txnHash, setHash] = useState('');
 
   const [exchangeProxy, setExchangeProxy] = useState<any>(DEX_AGGREGATORS[8453]);
@@ -63,12 +63,15 @@ const Swap = () => {
   const { contract: sellTokenContract } = useContract(sellToken?.address);
   const { contract: buyTokenContract } = useContract(buyToken?.address);
   const { contract: dexContract } = useContract(exchangeProxy);
-  const { data: sellTokenBalance, isLoading: sellTokenBalanceLoading } = useTokenBalance(
+  const { data: sellTokenBalance, isLoading: isSellTokenBalanceLoading } = useTokenBalance(
     sellTokenContract,
     walletAddress,
   );
-  const { data: buyTokenBalance, isLoading: buyTokenBalanceLoading } = useTokenBalance(buyTokenContract, walletAddress);
-  const { data: tokenAllowance, isLoading: contractReadLoading } = useContractRead(
+  const { data: buyTokenBalance, isLoading: isBuyTokenBalanceLoading } = useTokenBalance(
+    buyTokenContract,
+    walletAddress,
+  );
+  const { data: tokenAllowance, isLoading: isContractReadLoading } = useContractRead(
     sellTokenContract as any,
     'allowance',
     [walletAddress, exchangeProxy],
@@ -78,7 +81,7 @@ const Swap = () => {
   const [selectedChainId, setSelectedChainId] = useState(8453);
 
   const fetchPriceData = async () => {
-    setLoading(true);
+    setIsLoading(true);
     try {
       const formattedAmount = ethers.utils.parseUnits(sellTokenAmount, sellToken.tokenDecimals).toString();
 
@@ -110,12 +113,12 @@ const Swap = () => {
     } catch (error) {
       console.error(error);
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   };
 
   const executeSwap = async () => {
-    setLoading(true);
+    setIsLoading(true);
     try {
       let body;
       if (sellToken.chainId !== buyToken.chainId) {
@@ -173,7 +176,7 @@ const Swap = () => {
         ),
       });
     } finally {
-      setLoading(false);
+      setIsLoading(false);
       setSellTokenAmount('');
       setBuyTokenAmount('');
     }
@@ -209,7 +212,7 @@ const Swap = () => {
     sellTokenAmount: any,
     sellTokenBalance: any,
     tokenAllowance: any,
-    contractReadLoading: any,
+    isContractReadLoading: any,
   ) {
     let action = '';
     let isDisabled = true;
@@ -243,7 +246,7 @@ const Swap = () => {
     sellTokenAmount,
     sellTokenBalance,
     tokenAllowance,
-    contractReadLoading,
+    isContractReadLoading,
   );
 
   const handleAction = () => {
@@ -307,7 +310,7 @@ const Swap = () => {
             <div className="flex justify-between">
               <div className="flex flex-col">
                 <p className="text-sm font-montserrat mb-2">Sell</p>
-                <Dialog open={openSell} onOpenChange={setOpenSell}>
+                <Dialog open={isOpenSell} onOpenChange={setIsOpenSell}>
                   <DialogTrigger asChild>
                     <div
                       className="assetOne text-white bg-[#00b3b5] cursor-pointer text-sm assetTwo p-2 rounded-full shadow flex gap-3 items-center font-semibold"
@@ -324,7 +327,7 @@ const Swap = () => {
                     style={{
                       zIndex: 99,
                     }}
-                    onEscapeKeyDown={() => setOpenSell(false)}
+                    onEscapeKeyDown={() => setIsOpenSell(false)}
                   >
                     <div className="flex justify-between border-b-2 pb-3">
                       {[
@@ -370,7 +373,7 @@ const Swap = () => {
                                   address: matchedContract ? matchedContract.contract_address : 'No address found',
                                 };
                                 setSellToken(sellTokenData);
-                                setOpenSell(false);
+                                setIsOpenSell(false);
                               }}
                             >
                               <Image src={token?.logo} width={20} height={20} alt="Token" />
@@ -386,7 +389,7 @@ const Swap = () => {
               <div className="flex flex-col">
                 <div className="text-sm font-montserrat text-[#9299a6] flex items-center">
                   Balance:-{' '}
-                  {sellTokenBalanceLoading ? (
+                  {isSellTokenBalanceLoading ? (
                     <Skeleton className="h-3 w-[50px] bg-black bg-opacity-5 rounded-[48px]" />
                   ) : (
                     sellTokenBalance?.displayValue.slice(0, 10)
@@ -421,7 +424,7 @@ const Swap = () => {
             <div className="flex justify-between">
               <div className="flex flex-col">
                 <p className="text-sm font-montserrat mb-2 mt-2">Buy</p>
-                <Dialog open={openBuy} onOpenChange={setOpenBuy}>
+                <Dialog open={isOpenBuy} onOpenChange={setIsOpenBuy}>
                   <DialogTrigger asChild>
                     <div className="assetOne text-white bg-[#00b3b5] cursor-pointer text-sm assetTwo p-2 rounded-full shadow flex gap-3 items-center font-semibold">
                       <Image src={buyToken?.logo} width={20} height={20} alt="Token image" />
@@ -435,7 +438,7 @@ const Swap = () => {
                     style={{
                       zIndex: 99,
                     }}
-                    onEscapeKeyDown={() => setOpenBuy(false)}
+                    onEscapeKeyDown={() => setIsOpenBuy(false)}
                   >
                     <div className="flex justify-between border-b-2 pb-3">
                       {[
@@ -480,7 +483,7 @@ const Swap = () => {
                                   address: matchedContract ? matchedContract.contract_address : 'No address found',
                                 };
                                 setBuyToken(buyTokenData);
-                                setOpenBuy(false);
+                                setIsOpenBuy(false);
                               }}
                             >
                               <Image src={token?.logo} width={20} height={20} alt="Token" />
@@ -496,7 +499,7 @@ const Swap = () => {
               <div className="flex flex-col">
                 <div className="text-sm font-montserrat text-[#9299a6] mb-2 mt-2 flex items-center">
                   Balance:-{' '}
-                  {buyTokenBalanceLoading ? (
+                  {isBuyTokenBalanceLoading ? (
                     <Skeleton className="h-3 w-[50px] bg-black bg-opacity-5 rounded-[48px]" />
                   ) : (
                     buyTokenBalance?.displayValue.slice(0, 10)
@@ -506,7 +509,7 @@ const Swap = () => {
             </div>
 
             <div className="inputs">
-              {loading ? (
+              {isLoading ? (
                 <div className="h-10 w-full mt-3 mb-3 flex items-center">
                   <Skeleton className="h-5 w-[50%] bg-black bg-opacity-5 rounded-[48px]" />
                 </div>
