@@ -51,7 +51,7 @@
         }
       }
     ],
-    "no-duplicate-imports": "warn", // "error"
+    "no-duplicate-imports": "error",
     "import/no-cycle": "off",
     "import/namespace": "off",
     "import/no-named-as-default": "off",
