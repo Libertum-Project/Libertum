@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 import css from './page.module.css';
 import Subscribe from './Subscribe';
 
@@ -22,12 +20,6 @@ export default function page() {
         <div className={css.subscribeForm}>
           <Subscribe />
         </div>
-
-        {/* <Link href="/">
-                    <div className={css.button}>
-                        <p>Return to home</p>
-                    </div>
-                </Link> */}
       </div>
     </div>
   );

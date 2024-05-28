@@ -39,7 +39,7 @@ const SwapButton = ({ sellTokenAmount, sellToken, quote, selectedToken }: Props)
       to: quote?.to,
       data: quote?.data,
     });
-    const transaction = await tx?.wait();
+    await tx?.wait();
   };
 
   return (

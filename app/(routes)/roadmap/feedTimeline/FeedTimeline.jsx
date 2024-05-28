@@ -1,4 +1,3 @@
-import { motion, useScroll } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
 
@@ -7,10 +6,6 @@ import thumb from './thumb.svg';
 
 function Item({ title, date, paragraphs }) {
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['end end', 'start start'],
-  });
 
   return (
     <section className={css.section}>

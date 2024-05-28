@@ -1,7 +1,6 @@
 'use client';
 import { useState } from 'react';
 import axios from 'axios';
-import { group } from 'console';
 
 import css from './Subscribe.module.css';
 
@@ -14,7 +13,7 @@ const Subscribe = () => {
     setState('LOADING');
     setErrorMessage(null);
     try {
-      const response = await axios.post('/api/newsletter', { email });
+      await axios.post('/api/newsletter', { email });
       setState('SUCCESS');
     } catch (e: any) {
       setErrorMessage(e.response?.data?.error || 'An error occurred');

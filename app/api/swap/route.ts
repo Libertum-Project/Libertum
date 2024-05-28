@@ -6,7 +6,6 @@ export async function POST(req: NextRequest) {
     const reqBody = await req.json();
     const chainId = url.searchParams.get('chainId');
     const destChainId = url.searchParams.get('destChainId');
-    const contractVersion = url.searchParams.get('contractVersion');
     let swapUrl;
 
     if (chainId === destChainId) {
