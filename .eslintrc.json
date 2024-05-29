@@ -12,7 +12,7 @@
   "rules": {
     "@next/next/no-page-custom-font": "off",
     "prefer-const": "error",
-    "no-use-before-define": "warn", // "error"
+    "no-use-before-define": "error",
     "no-nested-ternary": "warn", // "error"
     "sonarjs/no-duplicate-string": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",

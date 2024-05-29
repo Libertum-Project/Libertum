@@ -2,64 +2,6 @@ import Link from 'next/link';
 
 import css from './SocialMedia.module.css';
 
-const SocialMedia = () => {
-  const socialLinks = [
-    {
-      href: 'https://www.linkedin.com/company/libertum1',
-      icon: <Linkedin />,
-      label: 'Linkedin',
-    },
-    {
-      href: 'https://discord.gg/AyGNmQx3KB',
-      icon: <Discord />,
-      label: 'Discord',
-    },
-    {
-      href: 'https://t.me/libertum1',
-      icon: <Telegram />,
-      label: 'Telegram',
-    },
-    {
-      href: 'https://twitter.com/libertum_token',
-      icon: <Twitter />,
-      label: 'Twitter',
-    },
-    {
-      href: 'https://facebook.com/libertum1',
-      icon: <Facebook />,
-      label: 'Facebook',
-    },
-    {
-      href: 'https://www.instagram.com/libertum.io/',
-      icon: <Instagram />,
-      label: 'Instagram',
-    },
-    {
-      href: 'https://www.instagram.com/libertum.io/',
-      icon: <TikTok />,
-      label: 'Tik Tok',
-    },
-  ];
-
-  return (
-    <div className={css.socialMediaContainer}>
-      {socialLinks.map((link, index) => (
-        <Link href={link.href} key={index}>
-          <p
-            target="_blank"
-            rel="noopener"
-            // className="hover:scale-105 duration-200"
-            className={css.socialMediaLinks}
-            aria-label={link.label}
-          >
-            {link.icon}
-          </p>
-        </Link>
-      ))}
-    </div>
-  );
-};
-
 const Twitter = ({ size = 24 }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="39" height="38" viewBox="0 0 19 18" fill="none">
     <path
@@ -130,4 +72,61 @@ const TikTok = ({ size = 24 }) => (
   </svg>
 );
 
+const SocialMedia = () => {
+  const socialLinks = [
+    {
+      href: 'https://www.linkedin.com/company/libertum1',
+      icon: <Linkedin />,
+      label: 'Linkedin',
+    },
+    {
+      href: 'https://discord.gg/AyGNmQx3KB',
+      icon: <Discord />,
+      label: 'Discord',
+    },
+    {
+      href: 'https://t.me/libertum1',
+      icon: <Telegram />,
+      label: 'Telegram',
+    },
+    {
+      href: 'https://twitter.com/libertum_token',
+      icon: <Twitter />,
+      label: 'Twitter',
+    },
+    {
+      href: 'https://facebook.com/libertum1',
+      icon: <Facebook />,
+      label: 'Facebook',
+    },
+    {
+      href: 'https://www.instagram.com/libertum.io/',
+      icon: <Instagram />,
+      label: 'Instagram',
+    },
+    {
+      href: 'https://www.instagram.com/libertum.io/',
+      icon: <TikTok />,
+      label: 'Tik Tok',
+    },
+  ];
+
+  return (
+    <div className={css.socialMediaContainer}>
+      {socialLinks.map((link, index) => (
+        <Link href={link.href} key={index}>
+          <p
+            target="_blank"
+            rel="noopener"
+            // className="hover:scale-105 duration-200"
+            className={css.socialMediaLinks}
+            aria-label={link.label}
+          >
+            {link.icon}
+          </p>
+        </Link>
+      ))}
+    </div>
+  );
+};
 export default SocialMedia;

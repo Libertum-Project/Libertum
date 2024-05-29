@@ -2,82 +2,12 @@ import Link from 'next/link';
 
 import css from './SocialMedia.module.css';
 
-const SocialMedia = () => {
-  const socialLinks = [
-    {
-      href: 'https://www.linkedin.com/company/libertum1',
-      icon: <Linkedin />,
-      label: 'Linkedin',
-    },
-    {
-      href: 'https://discord.gg/AyGNmQx3KB',
-      icon: <Discord />,
-      label: 'Discord',
-    },
-    {
-      href: 'https://t.me/libertum1',
-      icon: <Telegram />,
-      label: 'Telegram',
-    },
-    {
-      href: 'https://twitter.com/libertum_token',
-      icon: <Twitter />,
-      label: 'Twitter',
-    },
-    // {
-    //   href: "https://facebook.com/libertum1",
-    //   icon: <Facebook />,
-    //   label: "Facebook",
-    // },
-    // {
-    //   href: "https://www.instagram.com/libertum.io/",
-    //   icon: <Instagram />,
-    //   label: "Instagram",
-    // },
-  ];
-
-  return (
-    <div className={css.socialMediaContainer}>
-      {socialLinks.map((link, index) => (
-        <Link href={link.href} key={index} alt={link.label}>
-          <p
-            target="_blank"
-            rel="noopener"
-            // className="hover:scale-105 duration-200"
-            className={css.socialMediaLinks}
-            aria-label={link.label}
-          >
-            {link.icon}
-          </p>
-        </Link>
-      ))}
-    </div>
-  );
-};
-
 const Twitter = ({ size = 24 }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
     <path
       fillRule="evenodd"
       clipRule="evenodd"
       d="M9.86328 18C14.8338 18 18.8633 13.9706 18.8633 9C18.8633 4.02944 14.8338 0 9.86328 0C4.89272 0 0.863281 4.02944 0.863281 9C0.863281 13.9706 4.89272 18 9.86328 18ZM14.3982 4.28571H12.821L10.2216 7.29851L7.97449 4.28571H4.72042L8.60862 9.44242L4.92306 13.7143H6.50122L9.34573 10.4182L11.8317 13.7143H15.0061L10.9525 8.27956L14.3982 4.28571ZM13.1414 12.7569H12.2675L6.56225 5.19279H7.50009L13.1414 12.7569Z"
-      fill="#00B3B5"
-    />
-  </svg>
-);
-
-const Facebook = ({ size = 24 }) => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M22 12.0607C22 6.504 17.5233 2 12 2C6.47667 2 2 6.504 2 12.0607C2 17.0833 5.656 21.2453 10.4373 22V14.9693H7.89867V12.06H10.4373V9.844C10.4373 7.32267 11.93 5.92933 14.2147 5.92933C15.308 5.92933 16.4533 6.126 16.4533 6.126V8.602H15.1913C13.9493 8.602 13.5627 9.378 13.5627 10.174V12.0607H16.336L15.8927 14.9687H13.5627V22C18.344 21.2453 22 17.0833 22 12.0607Z"
-      fill="black"
-    />
-  </svg>
-);
-const Instagram = ({ size = 24 }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
-    <path
-      d="M9.86328 0C4.89266 0 0.863281 4.02938 0.863281 9C0.863281 13.9706 4.89266 18 9.86328 18C14.8339 18 18.8633 13.9706 18.8633 9C18.8633 4.02938 14.8339 0 9.86328 0ZM7.66016 12.7303H5.83766V6.86531H7.66016V12.7303ZM6.73766 6.14531C6.16203 6.14531 5.78984 5.7375 5.78984 5.23312C5.78984 4.71844 6.17328 4.32281 6.76109 4.32281C7.34891 4.32281 7.70891 4.71844 7.72016 5.23312C7.72016 5.7375 7.34891 6.14531 6.73766 6.14531ZM14.3164 12.7303H12.4939V9.48C12.4939 8.72344 12.2295 8.20969 11.5705 8.20969C11.067 8.20969 10.768 8.5575 10.6358 8.89219C10.587 9.01125 10.5748 9.18 10.5748 9.34781V12.7294H8.75141V8.73563C8.75141 8.00344 8.72797 7.39125 8.70359 6.86437H10.287L10.3705 7.67906H10.407C10.647 7.29656 11.2348 6.73219 12.2183 6.73219C13.4173 6.73219 14.3164 7.53562 14.3164 9.2625V12.7303Z"
       fill="#00B3B5"
     />
   </svg>
@@ -112,4 +42,40 @@ const Telegram = ({ size = 24 }) => (
   </svg>
 );
 
+const SocialMedia = () => {
+  const socialLinks = [
+    {
+      href: 'https://www.linkedin.com/company/libertum1',
+      icon: <Linkedin />,
+      label: 'Linkedin',
+    },
+    {
+      href: 'https://discord.gg/AyGNmQx3KB',
+      icon: <Discord />,
+      label: 'Discord',
+    },
+    {
+      href: 'https://t.me/libertum1',
+      icon: <Telegram />,
+      label: 'Telegram',
+    },
+    {
+      href: 'https://twitter.com/libertum_token',
+      icon: <Twitter />,
+      label: 'Twitter',
+    },
+  ];
+
+  return (
+    <div className={css.socialMediaContainer}>
+      {socialLinks.map((link, index) => (
+        <Link href={link.href} key={index} alt={link.label}>
+          <p target="_blank" rel="noopener" className={css.socialMediaLinks} aria-label={link.label}>
+            {link.icon}
+          </p>
+        </Link>
+      ))}
+    </div>
+  );
+};
 export default SocialMedia;
