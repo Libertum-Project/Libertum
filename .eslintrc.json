@@ -42,7 +42,7 @@
       }
     ],
     "@typescript-eslint/ban-types": [
-      "warn", // "error"
+      "error",
       {
         "types": {
           "Array": {
