@@ -81,7 +81,7 @@ export default function Roadmap() {
         </video>
       </div>
 
-      <Feed items={items} />
+      <Feed />
     </>
   );
 }

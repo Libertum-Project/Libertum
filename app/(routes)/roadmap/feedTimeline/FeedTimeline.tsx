@@ -1,10 +1,18 @@
+'use client';
+
 import { useRef } from 'react';
 import Image from 'next/image';
 
 import css from './FeedTimeline.module.css';
 import thumb from './thumb.svg';
 
-function Item({ title, date, paragraphs }) {
+interface ItemProps {
+  title: string;
+  date?: string;
+  paragraphs: string[];
+}
+
+function Item({ title, date, paragraphs }: ItemProps) {
   const ref = useRef(null);
 
   return (
@@ -16,7 +24,7 @@ function Item({ title, date, paragraphs }) {
           </p>
         </article>
 
-        <ul className="w-fit space-y-4 mt-8 lg:mt-0 ml-[4rem] ">
+        <ul className="w-fit space-y-4 mt-8 lg:mt-0 lg:ml-[4rem] ">
           {paragraphs.map((paragraph, index) => (
             <li key={index} className="mb-2 w-fit font-semibold flex justify-center">
               <svg
@@ -110,7 +118,6 @@ const FeedTimeLine = () => {
 
   return (
     <div className="flex flex-col relative">
-      {/* <div className="absolute h-[110.5rem] lg:h-[81rem] lg:max-h-[81rem] w-2 bg-gray-200 top-0 left-40  rounded"></div> */}
       <div className={css.progressBar}></div>
       <div className={css.imageContainer}>
         <Image src={thumb} alt="thumb" height={180} width={52} className={css.image} />
