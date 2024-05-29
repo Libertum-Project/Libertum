@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client';
 
 import React, { useEffect, useState } from 'react';
@@ -20,8 +19,7 @@ import { BigNumber } from '@ethersproject/bignumber';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
-import { exchangeProxy, MAX_ALLOWANCE } from '@/constants';
-import { createLookup } from '@/utils';
+import { MAX_ALLOWANCE } from '@/constants';
 import { toast } from '@/components/ui/use-toast';
 import { cn } from '@/lib/utils';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -48,22 +46,19 @@ const Swap = () => {
   const [isOpenBuy, setIsOpenBuy] = useState(false);
   const [quote, setQuote] = useState<any>('');
   const [isLoading, setIsLoading] = useState(false);
-  const [txnHash, setHash] = useState('');
 
   const [exchangeProxy, setExchangeProxy] = useState<any>(DEX_AGGREGATORS[8453]);
 
   const [tokensToSet, setTokens] = useState([]);
   const [filteredTokens, setFilteredTokens] = useState([]);
-  const { TOKENS_BY_SYMBOL } = createLookup(tokensToSet);
   const [sellToken, setSellToken] = useState(tokens[0]);
   const [sellTokenAmount, setSellTokenAmount] = useState('');
   const [buyToken, setBuyToken] = useState(tokens[1]);
   const [buyTokenAmount, setBuyTokenAmount] = useState('');
   const selectBlockchain = useBlockchainSelection();
 
-  const { contract: sellTokenContract } = useContract(sellToken?.address);
-  const { contract: buyTokenContract } = useContract(buyToken?.address);
-  const { contract: dexContract } = useContract(exchangeProxy);
+  const { contract: sellTokenContract } = useContract(sellToken.address);
+  const { contract: buyTokenContract } = useContract(buyToken.address);
   const { data: sellTokenBalance, isLoading: isSellTokenBalanceLoading } = useTokenBalance(
     sellTokenContract,
     walletAddress,
@@ -72,11 +67,10 @@ const Swap = () => {
     buyTokenContract,
     walletAddress,
   );
-  const { data: tokenAllowance, isLoading: isContractReadLoading } = useContractRead(
-    sellTokenContract as any,
-    'allowance',
-    [walletAddress, exchangeProxy],
-  );
+  const { data: tokenAllowance } = useContractRead(sellTokenContract as any, 'allowance', [
+    walletAddress,
+    exchangeProxy,
+  ]);
 
   const [chainId, setChainId] = useState(8453);
   const [selectedChainId, setSelectedChainId] = useState(8453);
@@ -159,7 +153,6 @@ const Swap = () => {
       const transaction = await tx?.wait();
 
       if (transaction?.transactionHash) {
-        setHash(transaction.transactionHash);
         toast({
           title: 'Success',
           description: 'Your transaction was successful',
@@ -208,13 +201,7 @@ const Swap = () => {
 
   const { mutateAsync: approveTokenSpending } = useContractWrite(sellTokenContract, 'approve');
 
-  function determineButtonState(
-    sellToken: any,
-    sellTokenAmount: any,
-    sellTokenBalance: any,
-    tokenAllowance: any,
-    isContractReadLoading: any,
-  ) {
+  function determineButtonState(sellToken: any, sellTokenAmount: any, sellTokenBalance: any, tokenAllowance: any) {
     let action = '';
     let isDisabled = true;
 
@@ -242,13 +229,7 @@ const Swap = () => {
     return { action, isDisabled };
   }
 
-  const { action, isDisabled } = determineButtonState(
-    sellToken,
-    sellTokenAmount,
-    sellTokenBalance,
-    tokenAllowance,
-    isContractReadLoading,
-  );
+  const { action, isDisabled } = determineButtonState(sellToken, sellTokenAmount, sellTokenBalance, tokenAllowance);
 
   const handleAction = () => {
     if (action === `Approve ${sellToken.symbol}`) {
@@ -317,8 +298,8 @@ const Swap = () => {
                       className="assetOne text-white bg-[#00b3b5] cursor-pointer text-sm assetTwo p-2 rounded-full shadow flex gap-3 items-center font-semibold"
                       onClick={() => filterTokens(chainId)}
                     >
-                      <Image src={sellToken?.logo} width={20} height={20} alt="Token image" />
-                      {sellToken?.symbol}
+                      <Image src={sellToken.logo} width={20} height={20} alt="Token image" />
+                      {sellToken.symbol}
 
                       <ChevronDownIcon className="font-semibold" />
                     </div>
@@ -359,7 +340,7 @@ const Swap = () => {
 
                     <div className="overflow-auto max-h-[500px]">
                       {filteredTokens
-                        .filter((token: any) => token?.symbol !== buyToken?.symbol)
+                        .filter((token: any) => token?.symbol !== buyToken.symbol)
                         .map((token: any) => {
                           return (
                             <button
@@ -428,8 +409,8 @@ const Swap = () => {
                 <Dialog open={isOpenBuy} onOpenChange={setIsOpenBuy}>
                   <DialogTrigger asChild>
                     <div className="assetOne text-white bg-[#00b3b5] cursor-pointer text-sm assetTwo p-2 rounded-full shadow flex gap-3 items-center font-semibold">
-                      <Image src={buyToken?.logo} width={20} height={20} alt="Token image" />
-                      {buyToken?.symbol}
+                      <Image src={buyToken.logo} width={20} height={20} alt="Token image" />
+                      {buyToken.symbol}
 
                       <ChevronDownIcon className="font-semibold" />
                     </div>
@@ -469,7 +450,7 @@ const Swap = () => {
                     </div>
                     <div className="overflow-auto max-h-[400px]">
                       {filteredTokens
-                        .filter((token: any) => token?.symbol !== sellToken?.symbol)
+                        .filter((token: any) => token?.symbol !== sellToken.symbol)
                         .map((token: any) => {
                           return (
                             <button
@@ -531,7 +512,7 @@ const Swap = () => {
                 <Web3Button
                   isDisabled={isDisabled}
                   className="bg-[#00b3b5] hover:bg-[#00b3b5] w-full text-white uppercase rounded-[30px] disabled:pointer-events-none disabled:opacity-50"
-                  contractAddress={sellToken?.address}
+                  contractAddress={sellToken.address}
                   action={handleAction}
                   style={{ width: '100%' }}
                 >
