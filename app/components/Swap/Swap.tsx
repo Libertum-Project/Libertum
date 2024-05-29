@@ -60,8 +60,8 @@ const Swap = () => {
   const [buyTokenAmount, setBuyTokenAmount] = useState('');
   const selectBlockchain = useBlockchainSelection();
 
-  const { contract: sellTokenContract } = useContract(sellToken?.address);
-  const { contract: buyTokenContract } = useContract(buyToken?.address);
+  const { contract: sellTokenContract } = useContract(sellToken.address);
+  const { contract: buyTokenContract } = useContract(buyToken.address);
   const { contract: dexContract } = useContract(exchangeProxy);
   const { data: sellTokenBalance, isLoading: sellTokenBalanceLoading } = useTokenBalance(
     sellTokenContract,
@@ -258,14 +258,11 @@ const Swap = () => {
 
   const fetchTokens = async (chainId: any) => {
     try {
-      const response = await fetch(
-        `https://api.zcx.com/trade/v1/info/token/popular?from=0&to=100&chain_id=${chainId}`,
-        {
-          headers: {
-            'X-Api-Key': process.env.NEXT_PUBLIC_UNIZEN_API_KEY as string,
-          },
+      const response = await fetch(`/api/tokens?chainId=${chainId}`, {
+        headers: {
+          'X-Api-Key': process.env.NEXT_PUBLIC_UNIZEN_API_KEY as string,
         },
-      );
+      });
       if (response.ok) {
         const data = await response.json();
         setTokens(data.tokens);
@@ -313,8 +310,8 @@ const Swap = () => {
                       className="assetOne text-white bg-[#00b3b5] cursor-pointer text-sm assetTwo p-2 rounded-full shadow flex gap-3 items-center font-semibold"
                       onClick={() => filterTokens(chainId)}
                     >
-                      <Image src={sellToken?.logo} width={20} height={20} alt="Token image" />
-                      {sellToken?.symbol}
+                      <Image src={sellToken.logo} width={20} height={20} alt="Token image" />
+                      {sellToken.symbol}
 
                       <ChevronDownIcon className="font-semibold" />
                     </div>
@@ -355,7 +352,7 @@ const Swap = () => {
 
                     <div className="overflow-auto max-h-[500px]">
                       {filteredTokens
-                        .filter((token: any) => token?.symbol !== buyToken?.symbol)
+                        .filter((token: any) => token?.symbol !== buyToken.symbol)
                         .map((token: any) => {
                           return (
                             <button
@@ -424,8 +421,8 @@ const Swap = () => {
                 <Dialog open={openBuy} onOpenChange={setOpenBuy}>
                   <DialogTrigger asChild>
                     <div className="assetOne text-white bg-[#00b3b5] cursor-pointer text-sm assetTwo p-2 rounded-full shadow flex gap-3 items-center font-semibold">
-                      <Image src={buyToken?.logo} width={20} height={20} alt="Token image" />
-                      {buyToken?.symbol}
+                      <Image src={buyToken.logo} width={20} height={20} alt="Token image" />
+                      {buyToken.symbol}
 
                       <ChevronDownIcon className="font-semibold" />
                     </div>
@@ -465,7 +462,7 @@ const Swap = () => {
                     </div>
                     <div className="overflow-auto max-h-[400px]">
                       {filteredTokens
-                        .filter((token: any) => token?.symbol !== sellToken?.symbol)
+                        .filter((token: any) => token?.symbol !== sellToken.symbol)
                         .map((token: any) => {
                           return (
                             <button
@@ -527,7 +524,7 @@ const Swap = () => {
                 <Web3Button
                   isDisabled={isDisabled}
                   className="bg-[#00b3b5] hover:bg-[#00b3b5] w-full text-white uppercase rounded-[30px] disabled:pointer-events-none disabled:opacity-50"
-                  contractAddress={sellToken?.address}
+                  contractAddress={sellToken.address}
                   action={handleAction}
                   style={{ width: '100%' }}
                 >
