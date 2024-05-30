@@ -14,14 +14,13 @@ import tokens from './brands/tokens.svg';
 import trade from './brands/trade.svg';
 
 export function BrandCarrousel(): ReactElement {
-  const brands = useMemo(() => [borrow, chose, earn, get, market, stay, tokens, trade], []);
-
+  const brands: string[] = [borrow, chose, earn, get, market, stay, tokens, trade];
   const combinedBrands = useMemo(() => [...brands, ...brands, ...brands], [brands]);
 
   return (
     <div className={css.container}>
       <Marquee speed={75}>
-        {combinedBrands.map((brand, index) => (
+        {combinedBrands.map((brand: string, index: number) => (
           <div key={index} className={css.slide}>
             <Image src={brand} alt={`Brand ${index}`} width="130" height="130" className="w-[130px] h-[130px]" />
           </div>

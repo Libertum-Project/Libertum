@@ -17,29 +17,26 @@ import polygon from './brands/polygon.svg';
 import realestateAgency from './brands/realstateagency.svg';
 
 export function BrandCarrousel(): ReactElement {
-  const brands = useMemo(
-    () => [
-      aptos,
-      aws,
-      coinFluence,
-      googleForStartups,
-      hotelCollection,
-      hubspot,
-      leonmisk,
-      microsoft,
-      plume,
-      polygon,
-      realestateAgency,
-    ],
-    [],
-  );
+  const brands: string[] = [
+    aptos,
+    aws,
+    coinFluence,
+    googleForStartups,
+    hotelCollection,
+    hubspot,
+    leonmisk,
+    microsoft,
+    plume,
+    polygon,
+    realestateAgency,
+  ];
 
-  const combinedBrands = useMemo(() => [...brands, ...brands, ...brands], [brands]);
+  const combinedBrands: string[] = useMemo(() => [...brands, ...brands, ...brands], [brands]);
 
   return (
     <div className={css.container}>
       <div className={css.carrouselContainer}>
-        {combinedBrands.map((brand, index) => (
+        {combinedBrands.map((brand: string, index: number) => (
           <div key={index} className={css.slide}>
             <Image src={brand} alt={`Brand ${index}`} width={80} height={24} />
           </div>

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, ReactNode, useContext, ReactElement, FC } from 'react';
 import {
   ThirdwebProvider,
   coinbaseWallet,
@@ -11,16 +11,24 @@ import {
 } from '@thirdweb-dev/react';
 import { Ethereum, Base, Polygon, Optimism, Binance, Fantom, Arbitrum, Avalanche } from '@thirdweb-dev/chains';
 
-const ThirdwebContext = createContext<any>(undefined);
+type ThirdwebContextType = {
+  selectBlockchain: (chainId: string | number) => void;
+};
 
-export function ThirdwebContextProvider({ children }: { children: React.ReactNode }) {
+const ThirdwebContext = createContext<ThirdwebContextType | undefined>(undefined);
+
+interface ThirdwebContextProviderProps {
+  children: ReactNode;
+}
+
+export const ThirdwebContextProvider: FC<ThirdwebContextProviderProps> = ({ children }): ReactElement => {
   const clientId = process.env.NEXT_PUBLIC_THIRD_WEB_CLIENT_ID;
   // State to manage the active blockchain
   const [activeChain, setActiveChain] = useState(Base);
 
   // Function to update the active blockchain
   const selectBlockchain = (chainId: string | number) => {
-    const chainMap: any = {
+    const chainMap: { [key: string]: any } = {
       1: Ethereum,
       10: Optimism,
       56: Binance,
@@ -32,6 +40,7 @@ export function ThirdwebContextProvider({ children }: { children: React.ReactNod
     };
     setActiveChain(chainMap[chainId] || Base);
   };
+
   return (
     <ThirdwebContext.Provider value={{ selectBlockchain }}>
       <ThirdwebProvider
@@ -55,10 +64,10 @@ export function ThirdwebContextProvider({ children }: { children: React.ReactNod
       </ThirdwebProvider>
     </ThirdwebContext.Provider>
   );
-}
+};
 
-export const useBlockchainSelection = () => {
-  const context = React.useContext(ThirdwebContext);
+export const useBlockchainSelection = (): ((chainId: string | number) => void) => {
+  const context = useContext(ThirdwebContext);
   if (!context) {
     throw new Error('useBlockchainSelection must be used within a ThirdwebContextProvider');
   }
