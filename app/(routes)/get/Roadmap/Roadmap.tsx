@@ -1,6 +1,5 @@
 'use client';
-import { type ReactElement } from 'react';
-import { useEffect, useState, useRef } from 'react';
+import React, { type ReactElement, useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 
 import leftArrow from '@/public/assets/vector.svg';
@@ -47,7 +46,7 @@ export function Roadmap(): ReactElement {
     let startX: number;
     let scrollLeft: number;
 
-    const handleMouseDown = (e: any) => {
+    const handleMouseDown = (e: globalThis.MouseEvent) => {
       isDown = true;
       slider.classList.add('active');
       startX = e.pageX - slider.offsetLeft;
@@ -64,7 +63,7 @@ export function Roadmap(): ReactElement {
       slider.classList.remove('active');
     };
 
-    const handleMouseMove = (e: any) => {
+    const handleMouseMove = (e: globalThis.MouseEvent) => {
       if (!isDown) return;
       e.preventDefault();
       const x = e.pageX - slider.offsetLeft;
