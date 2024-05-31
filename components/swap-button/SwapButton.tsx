@@ -42,6 +42,16 @@ const SwapButton = ({ sellTokenAmount, sellToken, quote, selectedToken }: Props)
     const transaction = await tx?.wait();
   };
 
+  const getButtonText = () => {
+    if (balance?.displayValue && +balance.displayValue > 0) {
+      if (tokenAllowance && tokenAllowance._hex === '0x00') {
+        return `Approve ${selectedToken} Allowance`;
+      }
+      return 'Swap';
+    }
+    return `Insufficient ${selectedToken} balance`;
+  };
+
   return (
     <div className="connetWalletButton w-full">
       {walletAddress ? (
@@ -78,11 +88,7 @@ const SwapButton = ({ sellTokenAmount, sellToken, quote, selectedToken }: Props)
             })
           }
         >
-          {balance?.displayValue && +balance.displayValue > 0
-            ? tokenAllowance && tokenAllowance._hex == '0x00'
-              ? `Approve ${selectedToken} Allowance`
-              : 'Swap'
-            : `Insufficient ${selectedToken} balance`}
+          {getButtonText()}
         </Web3Button>
       ) : (
         <ConnectWalletButton />
