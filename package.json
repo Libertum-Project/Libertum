@@ -2,28 +2,22 @@
   "name": "libertum-new-design",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
+    "lint:errors": "next lint --quiet",
     "prepare": "npx husky install",
     "type-check": "tsc --pretty --noEmit"
   },
   "lint-staged": {
-    "!(*config).{js,jsx,ts,tsx}": [
-      "eslint --fix"
-    ],
-    "src/**/*.{ts,tsx}": [
-      "bash -c 'npm run type-check'"
-    ],
-    "*.json": [
-      "prettier --write"
-    ],
-    "*.{css,pcss,scss}": [
-      "prettier --write"
-    ]
+    "!(*config).{js,jsx,ts,tsx}": ["eslint --fix"],
+    "src/**/*.{ts,tsx}": ["bash -c 'npm run type-check'"],
+    "*.json": ["prettier --write"],
+    "*.{css,pcss,scss}": ["prettier --write"]
   },
   "dependencies": {
     "@commitlint/config-conventional": "^19.2.2",

@@ -13,7 +13,7 @@
     "@next/next/no-page-custom-font": "off",
     "prefer-const": "error",
     "no-use-before-define": "warn", // "error"
-    "no-nested-ternary": "warn", // "error"
+    "no-nested-ternary": "error",
     "sonarjs/no-duplicate-string": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-explicit-any": "warn", // "error"
@@ -42,7 +42,7 @@
       }
     ],
     "@typescript-eslint/ban-types": [
-      "warn", // "error"
+      "error",
       {
         "types": {
           "Array": {
