@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+
 import { resend } from '@/lib/resend';
 
 interface Props {
