@@ -66,7 +66,7 @@ const Subscribe = () => {
       <button
         type="submit"
         disabled={loading}
-        className="px-6 py-[1.12rem] border-libertumGreen  bg-libertumGreen w-fit text-white rounded hover:bg-teal-600 ml-[-.5rem] transition duration-300 flex items-center justify-center font-space_grotesk"
+        className="px-6 py-[1.12rem] border-libertumGreen bg-libertumGreen w-fit text-white rounded-tr-[.5rem] rounded-br-[.5rem] hover:bg-teal-600 ml-[-.5rem] transition duration-300 flex items-center justify-center font-space_grotesk"
       >
         {getButtonSubscribeText()}
       </button>
