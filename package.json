@@ -43,6 +43,7 @@
     "react-dom": "^18",
     "react-fast-marquee": "^1.6.4",
     "react-tweet": "^3.2.0",
+    "resend": "^3.2.0",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7"
   },
