@@ -19,7 +19,7 @@ import { BigNumber } from '@ethersproject/bignumber';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
-import { exchangeProxy, MAX_ALLOWANCE } from '@/constants';
+import { MAX_ALLOWANCE } from '@/constants';
 import { createLookup } from '@/utils';
 import { toast } from '@/components/ui/use-toast';
 import { cn } from '@/lib/utils';
