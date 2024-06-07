@@ -17,8 +17,12 @@ export function MobileNavbar(): ReactElement {
     setIsMenuOpen(!isMenuOpen);
     const bodyElement = document.getElementById('body');
     if (bodyElement) {
-      const shouldAllowScroll = window.innerHeight < 700;
-      bodyElement.style.overflow = isMenuOpen ? 'auto' : shouldAllowScroll ? 'auto' : 'hidden';
+      if (isMenuOpen) {
+        bodyElement.style.overflow = 'auto';
+      } else {
+        const shouldAllowScroll = window.innerHeight < 700;
+        bodyElement.style.overflow = shouldAllowScroll ? 'auto' : 'hidden';
+      }
     }
   };
 
