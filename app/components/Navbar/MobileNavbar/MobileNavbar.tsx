@@ -29,15 +29,14 @@ export function MobileNavbar(): ReactElement {
           <Link href={'./'} onClick={isMenuOpen ? handleToggleOpenMenu : undefined}>
             <Image src={logo} alt="libertum logo" width="140.727" height="18" />
           </Link>
-          {isMenuOpen ? (
-            <button className={css.menuBtn} onClick={handleToggleOpenMenu}>
-              <Image src={close} alt="close" width={24} height={24} />
-            </button>
-          ) : (
-            <button className={css.menuBtn} onClick={handleToggleOpenMenu}>
-              <Image src={menuBtn} alt="Menu" />
-            </button>
-          )}
+          <button className={css.menuBtn} onClick={handleToggleOpenMenu}>
+            <Image
+              src={isMenuOpen ? close : menuBtn}
+              alt={isMenuOpen ? 'close' : 'Menu'}
+              width={isMenuOpen ? 24 : undefined}
+              height={isMenuOpen ? 24 : undefined}
+            />
+          </button>
         </div>
       </nav>
       {isMenuOpen && <MobileModal handleToggleOpenMenu={handleToggleOpenMenu} />}
