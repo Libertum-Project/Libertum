@@ -1,7 +1,4 @@
-import Link from 'next/link';
-
 import css from './Rfp.module.css';
-import { ContactForm } from './contactForm/contactFrom';
 import { TagComponent } from './tags/tag';
 
 export default function Rfp() {

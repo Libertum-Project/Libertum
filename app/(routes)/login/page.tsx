@@ -1,19 +1,19 @@
 'use client';
 import { ConnectEmbed, lightTheme, useShowConnectEmbed, useConnectionStatus } from '@thirdweb-dev/react';
-import Image from 'next/image';
 import { redirect } from 'next/navigation';
 import React, { useLayoutEffect } from 'react';
 
 const Page = () => {
-  const showConnectEmbed = useShowConnectEmbed();
+  const shouldShowConnectEmbed = useShowConnectEmbed();
   const status = useConnectionStatus();
 
   useLayoutEffect(() => {
     if (status == 'connected') redirect('/profile');
   });
+
   return (
     <>
-      {showConnectEmbed ? (
+      {shouldShowConnectEmbed ? (
         <div className="w-full min-h-screen flex flex-col justify-center items-center bg-primary-gradient gap-10">
           <ConnectEmbed
             auth={{

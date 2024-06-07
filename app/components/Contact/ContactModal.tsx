@@ -11,12 +11,6 @@ interface ContactModalProps {
 const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
   const modalRef = useRef<HTMLDivElement | null>(null);
 
-  const handleOutsideClick = (event: MouseEvent) => {
-    if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
-      onClose();
-    }
-  };
-
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
       if (modalRef.current && !modalRef.current.contains(event.target as Node)) {

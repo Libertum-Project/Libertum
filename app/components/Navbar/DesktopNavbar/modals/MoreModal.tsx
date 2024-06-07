@@ -3,8 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import css from './Modal.module.css';
-import tokenUtility from './tokenUtility.svg';
-import whitePaper from './whitePaper.svg';
 import roadmap from './roadmap.svg';
 import team from './team.svg';
 import ecosystem from './ecosystem.svg';

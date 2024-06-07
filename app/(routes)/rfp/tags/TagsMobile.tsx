@@ -1,7 +1,6 @@
 'use client';
-import { type ReactElement, useState } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 
 import { ContactForm } from '../contactForm/contactFrom';
 
@@ -53,7 +52,6 @@ export function TagsMobile() {
     },
   ];
 
-  const [activeOption, setActiveOption] = useState('realEstate');
   const [expandedOptions, setExpandedOptions] = useState<string[]>([options[0].id]);
   const [activeContactForm, setActiveContactForm] = useState<string | null>(null);
 
@@ -62,7 +60,6 @@ export function TagsMobile() {
       ? expandedOptions.filter((id) => id !== optionId)
       : [...expandedOptions, optionId];
 
-    setActiveOption(optionId);
     setExpandedOptions(newExpandedOptions);
     setActiveContactForm(null); // Cerrar el formulario de contacto cuando se cambia de panel
   };

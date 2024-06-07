@@ -1,5 +1,5 @@
 'use client';
-import { type ReactElement, useState } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -116,7 +116,6 @@ export function TagsMobile() {
     },
   ];
 
-  const [activeOption, setActiveOption] = useState('realEstate');
   const [expandedOptions, setExpandedOptions] = useState<string[]>([options[0].id]);
 
   const handleOptionClick = (optionId: string) => {
@@ -125,7 +124,6 @@ export function TagsMobile() {
       ? expandedOptions.filter((id) => id !== optionId)
       : [...expandedOptions, optionId];
 
-    setActiveOption(optionId);
     setExpandedOptions(newExpandedOptions);
   };
 
