@@ -21,7 +21,7 @@ interface ThirdwebContextProviderProps {
   children: ReactNode;
 }
 
-export const ThirdwebContextProvider: FC<ThirdwebContextProviderProps> = ({ children }): ReactElement => {
+export const ThirdwebContextProvider: FC<ThirdwebContextProviderProps> = ({ children }) => {
   const clientId = process.env.NEXT_PUBLIC_THIRD_WEB_CLIENT_ID;
   // State to manage the active blockchain
   const [activeChain, setActiveChain] = useState(Base);
@@ -66,7 +66,7 @@ export const ThirdwebContextProvider: FC<ThirdwebContextProviderProps> = ({ chil
   );
 };
 
-export const useBlockchainSelection = (): ((chainId: string | number) => void) => {
+export const useBlockchainSelection = () => {
   const context = useContext(ThirdwebContext);
   if (!context) {
     throw new Error('useBlockchainSelection must be used within a ThirdwebContextProvider');

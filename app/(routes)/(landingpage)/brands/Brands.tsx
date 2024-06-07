@@ -1,4 +1,4 @@
-import { type ReactElement, useMemo } from 'react';
+import { type ReactElement } from 'react';
 import Image from 'next/image';
 
 import css from './Brands.module.css';
@@ -12,12 +12,10 @@ import yahoo from './assets/yahoo.svg';
 const brands: string[] = [ap, benziga, bloomberg, coinmarket, marketwatch, yahoo];
 
 export function Brands(): ReactElement {
-  const memoizedBrands = useMemo(() => brands, []);
-
   return (
     <div className={css.container}>
       <div className={css.brandContainer}>
-        {memoizedBrands.map((brand, index) => (
+        {brands.map((brand, index) => (
           <div key={index} className={css.slide}>
             <Image src={brand} alt={`Brand ${index}`} width="99" height="36" />
           </div>
