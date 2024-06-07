@@ -3,14 +3,14 @@ import React, { useState, FormEvent, ChangeEvent } from 'react';
 
 const Subscribe = () => {
   const [email, setEmail] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [subscribeSuccess, setSubscribeSuccess] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSubscribeSuccess, setIsSubscribeSuccess] = useState(false);
 
-  const audience: string | undefined = process.env.NEXT_PUBLIC_RESEND_AUDIENCE_ID;
+  const audience = process.env.NEXT_PUBLIC_RESEND_AUDIENCE_ID;
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setLoading(true);
+    setIsLoading(true);
 
     try {
       const response = await fetch('/api/subscribe', {
@@ -20,7 +20,7 @@ const Subscribe = () => {
         },
         body: JSON.stringify({
           email,
-          unsubscribed: false,
+          isUnsubscribed: false,
           audienceId: audience,
         }),
       });
@@ -28,7 +28,7 @@ const Subscribe = () => {
       if (response.ok) {
         console.log('Contact successfully added');
         setEmail('');
-        setSubscribeSuccess(true);
+        setIsSubscribeSuccess(true);
       } else {
         console.error('Error adding contact to Resend:', response.statusText);
         alert('Oops, there was a problem. Please try again.');
@@ -37,7 +37,7 @@ const Subscribe = () => {
       console.error('Error making the request:', error);
       alert('Oops, there was a problem. Please try again.');
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   };
 
@@ -46,8 +46,8 @@ const Subscribe = () => {
   };
 
   const getButtonSubscribeText = () => {
-    if (loading) return 'Sending...';
-    if (subscribeSuccess) return 'Subscribed ✔️';
+    if (isLoading) return 'Sending...';
+    if (isSubscribeSuccess) return 'Subscribed ✔️';
     return 'Subscribe';
   };
 
@@ -65,7 +65,7 @@ const Subscribe = () => {
       </div>
       <button
         type="submit"
-        disabled={loading}
+        disabled={isLoading}
         className="px-6 py-[1.12rem] border-libertumGreen bg-libertumGreen w-fit text-white rounded-tr-[.5rem] rounded-br-[.5rem] hover:bg-teal-600 ml-[-.5rem] transition duration-300 flex items-center justify-center font-space_grotesk"
       >
         {getButtonSubscribeText()}

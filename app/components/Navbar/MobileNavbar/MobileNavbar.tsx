@@ -1,6 +1,5 @@
 'use client';
-import { type ReactElement } from 'react';
-import { useState } from 'react';
+import { type ReactElement, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -18,11 +17,11 @@ export function MobileNavbar(): ReactElement {
     setIsMenuOpen(!isMenuOpen);
     const bodyElement = document.getElementById('body');
     if (bodyElement) {
-      const allowScroll = window.innerHeight < 700;
-      if (isMenuOpen || allowScroll) {
+      if (isMenuOpen) {
         bodyElement.style.overflow = 'auto';
       } else {
-        bodyElement.style.overflow = 'hidden';
+        const shouldAllowScroll = window.innerHeight < 700;
+        bodyElement.style.overflow = shouldAllowScroll ? 'auto' : 'hidden';
       }
     }
   };

@@ -15,18 +15,10 @@
     "preinstall": "npx only-allow pnpm"
   },
   "lint-staged": {
-    "!(*config).{js,jsx,ts,tsx}": [
-      "eslint --fix"
-    ],
-    "src/**/*.{ts,tsx}": [
-      "bash -c 'npm run type-check'"
-    ],
-    "*.json": [
-      "prettier --write"
-    ],
-    "*.{css,pcss,scss}": [
-      "prettier --write"
-    ]
+    "!(*config).{js,jsx,ts,tsx}": ["eslint --fix"],
+    "src/**/*.{ts,tsx}": ["bash -c 'npm run type-check'"],
+    "*.json": ["prettier --write"],
+    "*.{css,pcss,scss}": ["prettier --write"]
   },
   "engines": {
     "node": ">=20.0.0"

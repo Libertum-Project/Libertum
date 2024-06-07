@@ -1,5 +1,3 @@
-import MessageBox from '../../components/MessageBox/MessageBox';
-
 import css from './ico.module.css';
 import { Hero } from './Hero/Hero';
 import { UpcomingEvents } from './Upcoming Events/UpcomingEvents';
@@ -11,7 +9,6 @@ import { FaqSection } from './FaqSection/FaqSection';
 export default function page() {
   return (
     <div className={css.ico}>
-      <MessageBox />
       <Hero />
       <UpcomingEvents />
       <WhyNow />

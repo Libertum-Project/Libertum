@@ -1,6 +1,5 @@
 'use client';
-import { type ReactElement } from 'react';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, type ReactElement } from 'react';
 import Image from 'next/image';
 
 import leftArrow from '@/public/assets/vector.svg';

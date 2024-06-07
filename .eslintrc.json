@@ -25,7 +25,7 @@
     "@typescript-eslint/no-unsafe-member-access": "warn", // "error"
     "@typescript-eslint/no-unsafe-assignment": "warn", // "error"
     "@typescript-eslint/naming-convention": [
-      "warn", // "error"
+      "error",
       {
         "selector": "variable",
         "types": ["boolean"],
@@ -34,7 +34,7 @@
       }
     ],
     "@typescript-eslint/no-unused-vars": [
-      "warn", // "error"
+      "error",
       {
         "argsIgnorePattern": "^_",
         "varsIgnorePattern": "^_",
@@ -51,7 +51,7 @@
         }
       }
     ],
-    "no-duplicate-imports": "warn", // "error"
+    "no-duplicate-imports": "error",
     "import/no-cycle": "off",
     "import/namespace": "off",
     "import/no-named-as-default": "off",

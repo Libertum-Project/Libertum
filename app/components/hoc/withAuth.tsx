@@ -1,7 +1,7 @@
 'use client';
 import { useAddress, useConnectionStatus } from '@thirdweb-dev/react';
 import { redirect } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import LoadingPage from '../Loading/Loading';
 
