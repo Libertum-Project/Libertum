@@ -98,15 +98,15 @@ export function Cards(): ReactElement {
         <div className={css.information}>
           <div className={css.informationTitle}>
             <h2>Retail Investors </h2>
-            <h3>Unlimited access to a Global Pool of premium Properties</h3>
+            <h3>Unlimited access to a Global Pool of Premium Assets</h3>
           </div>
           <br />
           <p>
-            Real Estate remains the most sought after investments. Diversify your portfolio and begin your journey in
-            real estate investment. Libertum is a simple and intuitive platform that allows you to invest in premium
-            properties to immediately enjoy rental income. Unlike alternative solutions that establish complex and
-            costly ownership infrastructures, the Libertum investor community enjoy the profit generated from the
-            property not the cost of ownership.
+            Real-World Assets remains the most sought after investments. Diversify your portfolio and begin your journey
+            in real estate investment. Libertum simplifies the issuance, licensing, transfer, and oversight of tradable
+            digital assets and security tokens. These tokens represent various assets such as real estate, precious
+            metals, commodities, local produce, royalties, securities and many more. Our intuitive solutions empower
+            users to interact securely with blockchain technology, even without technical expertise.
           </p>
           <br />
           <br />

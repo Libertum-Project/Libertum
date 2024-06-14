@@ -44,7 +44,7 @@ export function Tags() {
     {
       id: 'realEstate',
       icon: { active: realEstateACTIVE, inactive: realEstateINACTIVE },
-      name: 'Real estate agencies and owners',
+      name: 'Real-World Asset Owners',
       information: {
         title: 'Tokenize your Assets',
         paragraphs: [
