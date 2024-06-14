@@ -11,7 +11,7 @@ export function Cards(): ReactElement {
   return (
     <div className={css.container}>
       <div className={css.ecosystem}>
-        <Image alt="left arrow" src="/Ecosystem.svg" width={400} height={400} />
+        <Image alt="left arrow" src="/ecosystem-libertum.png" width={1300} height={1200} />
       </div>
       {/* first card */}
       <div className={css.cardContainer}>
