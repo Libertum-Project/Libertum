@@ -18,7 +18,7 @@ export function Cards(): ReactElement {
         <div className={css.information}>
           <div className={css.informationTitle}>
             <h2>RWA Tokenization</h2>
-            <h3>Unlock the Revenues of any Real Estate Property</h3>
+            <h3>Unlock the Revenues of any Real World Asset</h3>
           </div>
           <br />
           <p>
@@ -63,14 +63,14 @@ export function Cards(): ReactElement {
         </div>
         <div className={css.information}>
           <div className={css.informationTitle}>
-            <h2>Property Owners </h2>
+            <h2>Asset owners </h2>
             <h3>Access Interest free capital for your next Investment</h3>
           </div>
           <br />
           <p>
-            Libertum’s solution offers property owners a compelling advantage over traditional finance rates. Simply
-            list your property on the Libertum Marketplace to unlock your properties potential. Access global pool of
-            investors and benefit from affordable capital, improved liquidity and connect to global investors.
+            We are the next stage in the evolution of RWA: real estate, commodities, precious metals and gems,
+            royalties, art, securities... Libertum will reduce the need for intermediaries, making RWA investment
+            cost-effective and efficient.
           </p>
           <br />
           <br />
@@ -81,8 +81,8 @@ export function Cards(): ReactElement {
             🕹️ Control Your Asset — unlike costly complicated and expensive alternatives, you maintain ownership of your
             property
             <br />
-            <br />⚡ Speed to Market – List in weeks (not months), avoid traditionally expensive bureaucratic real
-            estate processes
+            <br />⚡ Speed to market - List in weeks (not months), avoid traditionally expensive bureaucratic processes
+            for real estate and other assets.
           </p>
           <br />
           <Link href="/community">

@@ -46,7 +46,7 @@ export function Tags() {
       icon: { active: realEstateACTIVE, inactive: realEstateINACTIVE },
       name: 'Real estate agencies and owners',
       information: {
-        title: 'Real Estate Information',
+        title: 'Tokenize your Assets',
         paragraphs: [
           'Forward thinking real estate owners and agencies can be part of the Libertum evolution.',
           '$35 trillion worth of assets will be tokenized within the next decade according to the World Economic Forum.',
