@@ -1,13 +1,10 @@
 'use client';
 import { type ReactElement, useState, useEffect } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
 
 import { Card } from '../cards/Card';
 import alan from '../assets/alan.svg';
 import javvad from '../assets/javvad.svg';
 import xavier from '../assets/xavier.svg';
-import none from '../assets/none.svg';
 import lucas from '../assets/lucas.svg';
 
 import css from './hero.module.css';

@@ -1,5 +1,4 @@
 import { Card } from '../cards/Card';
-import alan from '../assets/alan.svg';
 import nicole from '../assets/nicole.svg';
 import guillermo from '../assets/guillermo.svg';
 import chris from '../assets/chris.svg';

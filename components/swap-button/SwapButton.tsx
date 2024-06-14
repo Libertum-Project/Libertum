@@ -23,9 +23,9 @@ interface Props {
 
 const SwapButton = ({ sellTokenAmount, sellToken, quote, selectedToken }: Props) => {
   const walletAddress = useAddress();
-  const { data: balance, isLoading: balanceLoading } = useBalance(sellToken.address);
+  const { data: balance, isLoading: isBalanceLoading } = useBalance(sellToken.address);
   const { contract: sellTokenContract } = useContract(sellToken.address);
-  const { data: tokenAllowance, isLoading: contractReadLoading } = useContractRead(
+  const { data: tokenAllowance, isLoading: isContractReadLoading } = useContractRead(
     sellTokenContract as any,
     'allowance',
     [walletAddress, exchangeProxy],
@@ -39,7 +39,7 @@ const SwapButton = ({ sellTokenAmount, sellToken, quote, selectedToken }: Props)
       to: quote?.to,
       data: quote?.data,
     });
-    const transaction = await tx?.wait();
+    await tx?.wait();
   };
 
   const getButtonText = () => {
@@ -56,7 +56,7 @@ const SwapButton = ({ sellTokenAmount, sellToken, quote, selectedToken }: Props)
     <div className="connetWalletButton w-full">
       {walletAddress ? (
         <Web3Button
-          isDisabled={!sellTokenAmount || contractReadLoading || balanceLoading}
+          isDisabled={!sellTokenAmount || isContractReadLoading || isBalanceLoading}
           className="bg-[#7E54E8] hover:bg-[#7E54E8] w-full text-white uppercase rounded-[30px] disabled:pointer-events-none disabled:opacity-50"
           contractAddress={sellToken.address as any}
           action={

@@ -1,10 +1,9 @@
 'use client';
-import { type ReactElement, useState, Key } from 'react';
+import { type ReactElement, useState } from 'react';
 
 import css from './calculator.module.css';
 
 export function Calculator(): ReactElement {
-  const [propertyType, setPropertyType] = useState('');
   const [propertyTerm, setPropertyTerm] = useState('10');
   const [investment, setInvestment] = useState('1000');
 

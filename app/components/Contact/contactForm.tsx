@@ -1,6 +1,5 @@
 'use client';
-import React, { useState, useRef } from 'react';
-import { type ReactElement } from 'react';
+import React, { useRef, type ReactElement } from 'react';
 import emailjs from '@emailjs/browser';
 
 import css from './contactForm.module.css';

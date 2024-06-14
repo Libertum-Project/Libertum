@@ -1,8 +1,6 @@
 'use client';
-
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 
 import { ContactForm } from '../contactForm/contactFrom';
 
@@ -23,8 +21,8 @@ interface Option {
 
 export function Tags() {
   const [activeOption, setActiveOption] = useState('realEstate');
-  const [showContactForm, setShowContactForm] = useState(false);
-  const [contactButtonArrowDown, setContactButtonArrowDown] = useState(false);
+  const [shouldShowContactForm, setShouldShowContactForm] = useState(false);
+  const [isContactButtonArrowDown, setIsContactButtonArrowDown] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
 
   const handleOptionClick = (optionId: string) => {
@@ -38,8 +36,8 @@ export function Tags() {
   };
 
   const handleContactButtonClick = () => {
-    setShowContactForm((prevState) => !prevState);
-    setContactButtonArrowDown((prevState) => !prevState);
+    setShouldShowContactForm((prevState) => !prevState);
+    setIsContactButtonArrowDown((prevState) => !prevState);
   };
 
   const options: Option[] = [
@@ -109,7 +107,7 @@ export function Tags() {
         </section>
 
         <section className={css.information}>
-          <div className={showContactForm ? css.contentShifted : ''} ref={contentRef}>
+          <div className={shouldShowContactForm ? css.contentShifted : ''} ref={contentRef}>
             <div>
               <h2>{options.find((opt) => opt.id === activeOption)?.information.title}</h2>
               {options
@@ -122,12 +120,12 @@ export function Tags() {
               {options.find((opt) => opt.id === activeOption)?.information.buttonLabel}
               <Image
                 alt="left arrow"
-                src={contactButtonArrowDown ? '/assets/arrowDown.svg' : '/assets/leftArrowBLACK.svg'}
+                src={isContactButtonArrowDown ? '/assets/arrowDown.svg' : '/assets/leftArrowBLACK.svg'}
                 width={13.207}
                 height={8.708}
               />
             </button>
-            <div className={css.contactFormDiv}>{showContactForm && <ContactForm />}</div>
+            <div className={css.contactFormDiv}>{shouldShowContactForm && <ContactForm />}</div>
           </div>
         </section>
       </div>

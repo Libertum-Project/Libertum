@@ -39,15 +39,19 @@ export function Hero(): ReactElement {
       <section className={css.hero}>
         <article className={css.text}>
           <h1>
-            Real Estate Accessible
+            Tokenization Technology
             <br />
-            To Everyone
+            for Real World Assets
           </h1>
           <div className={css.paragraphs}>
             <p>
-              Libertum is more than an investment platform; it is a catalyst for positive change in the world of real
-              estate finance. We connect Real Estate Owners and millions of Investors across the globe, collaborating to
-              unlock the true value of real estate.
+              Libertum is the all-in-one tokenization technology, marketplace, and community. Libertum enables anyone to
+              tokenize, trade and access liquidity with any Real World Asset.
+            </p>
+            <p>
+              We’re more than an investment platform. Our end-to-end technology allows millions of investors to connect,
+              buy and sell, lend and borrow, leveraging assets such as real estate, commodities, precious metals and
+              gems, royalties, art, securities and more, all across the globe.
             </p>
           </div>
         </article>
