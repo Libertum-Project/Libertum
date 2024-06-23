@@ -15,10 +15,18 @@
     "preinstall": "npx only-allow pnpm"
   },
   "lint-staged": {
-    "!(*config).{js,jsx,ts,tsx}": ["eslint --fix"],
-    "src/**/*.{ts,tsx}": ["bash -c 'npm run type-check'"],
-    "*.json": ["prettier --write"],
-    "*.{css,pcss,scss}": ["prettier --write"]
+    "!(*config).{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "src/**/*.{ts,tsx}": [
+      "bash -c 'npm run type-check'"
+    ],
+    "*.json": [
+      "prettier --write"
+    ],
+    "*.{css,pcss,scss}": [
+      "prettier --write"
+    ]
   },
   "engines": {
     "node": ">=20.0.0"
@@ -33,6 +41,7 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-tabs": "^1.0.4",
     "@radix-ui/react-toast": "^1.1.5",
+    "@splinetool/react-spline": "^4.0.0",
     "@thirdweb-dev/chains": "^0.1.116",
     "@thirdweb-dev/react": "^4.6.1",
     "@thirdweb-dev/sdk": "^4.0.62",
