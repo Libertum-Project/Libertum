@@ -46,7 +46,7 @@ export function Hero(): ReactElement {
             for Real World Assets
           </h1>
 
-          <article className="flex flex-col items-center justify-center gap-4 text-white font-montserrat font-normal self-stretch">
+          <article className="flex flex-col items-center justify-center gap-4 text-white font-helvetica font-normal self-stretch">
             <p>
               Libertum is the all-in-one tokenization technology, marketplace, and community. Libertum enables anyone to
               tokenize, trade and access liquidity with any Real World Asset.
