@@ -77,7 +77,7 @@ export function Hero(): ReactElement {
               className="flex px-4 py-3 justify-between items-center border border-libertumGreen rounded-[.3rem] bg-[#ffffff03] backdrop-filter backdrop-blur-sm text-white font-space_grotesk font-bold cursor-pointer whitespace-nowrap text-xs hover:bg-[#00b3b54d] h-[3rem] w-full"
             >
               <div className="flex justify-center items-center gap-4">
-                <Image src="/assets/icons/earn.png" alt="earn" width={36} height={36} />
+                <Image src="/assets/icons/earn.svg" alt="earn" width={36} height={36} />
                 <p>Stake LBM</p>
               </div>
 
@@ -89,7 +89,7 @@ export function Hero(): ReactElement {
               className="flex px-4 py-3 justify-between items-center border border-libertumGreen rounded-[.3rem] bg-[#ffffff03] backdrop-filter backdrop-blur-sm text-white font-space_grotesk font-bold cursor-pointer whitespace-nowrap text-xs hover:bg-[#00b3b54d] h-[3rem] w-full"
             >
               <div className="flex justify-center items-center gap-4">
-                <Image src="/assets/icons/get.png" alt="N" width={36} height={36} />
+                <Image src="/assets/icons/get.svg" alt="N" width={36} height={36} />
                 <p>Get LBM</p>
               </div>
 
