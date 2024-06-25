@@ -16,7 +16,7 @@ export function MobileModal({ handleToggleOpenMenu }: MobileModalProp): ReactEle
         <Link href="./get" className={css.border}>
           Get LBM
         </Link>
-        <Link href="/comingsoon" className={css.border}>
+        <Link href="https://www.marketplace.libertum.io/login" className={css.border}>
           Explore Properties
         </Link>
         <div className={css.border}>
