@@ -3,9 +3,9 @@ import nicole from '../assets/nicole.svg';
 import guillermo from '../assets/guillermo.svg';
 import chris from '../assets/chris.svg';
 import abhishek from '../assets/abhishek.svg';
-import mona from '../assets/mona.svg';
 import daniel from '../assets/daniel.svg';
 import ephraim from '../assets/ephraim.svg';
+import aavy from '../assets/Aavy.jpeg';
 
 import css from './TeamMembers.module.css';
 
@@ -52,12 +52,12 @@ export function TeamMembers() {
   const marketingMembers = [
     {
       id: 1,
-      image: mona,
-      name: 'Mona',
-      position: 'Digital PR',
+      image: aavy,
+      name: 'Aavy',
+      position: 'Business Development Executive',
       description:
-        'Fiction and non-fiction author with a methodical and creative approach, to enhance brand-audience connections and boost visibility and strategic positioning for both Web3 and Web2 markets.',
-      linkedin: '/linkedin.com',
+        "Aavy's exceptional skills in communication, problem-solving, sales, and bilingualism fuel her growth. Her creativity, dedication to continuous learning, and kind perspective drive her to excel in all endeavors.",
+      linkedin: 'https://www.linkedin.com/in/aavysuarez/',
     },
     {
       id: 2,
