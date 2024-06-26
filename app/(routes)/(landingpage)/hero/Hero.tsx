@@ -36,7 +36,7 @@ export function Hero(): ReactElement {
       )}
 
       <div className="py-12 px-4 lg:px-0 lg:py-24 max-w-[75.125rem] mx-auto flex items-center justify-start gap-12 relative box-border z-20 overflow-visible">
-        <section className="hidden lg:block absolute top-0 left-0 z-20">
+        <section className="hidden lg:block absolute top-0 right-0 z-20">
           <HeroSplineLanding />
         </section>
         <section className="flex items-start flex-col justify-start gap-8 lg:max-w-2xl box-border z-30">
