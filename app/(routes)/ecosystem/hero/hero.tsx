@@ -25,7 +25,7 @@ export function Hero(): ReactElement {
   }, []);
 
   return (
-    <div className={`${css.heroContainer} z-0`}>
+    <div className={css.heroContainer}>
       {isMobile ? (
         <div className={css.backgroundNoVideo}></div>
       ) : (
