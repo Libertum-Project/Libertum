@@ -1,27 +1,31 @@
 import Image from 'next/image';
 import Marquee from 'react-fast-marquee';
 
-interface Brand {
+type Brand = {
   name: string;
   url: string;
-}
+};
 
-interface BrandCarouselProps {
+type BrandCarouselProps = {
   brands: Brand[];
   speed: number;
   gradient: boolean;
   width: number;
   height: number;
-}
+};
 
-export function BrandCarrousel({ brands, speed, width, height, gradient }: BrandCarouselProps) {
+const BrandCarrousel = ({ brands, speed, width, height, gradient }: BrandCarouselProps) => {
+  const doubledBrands = [...brands, ...brands];
+
   return (
     <Marquee speed={speed} gradient={gradient} gradientWidth={100}>
-      <div className={'flex items-center gap-12 py-10 overflow-hidden'}>
-        {brands.map((brand, index) => (
+      <div className={'flex items-center gap-12 py-10 pl-12 overflow-hidden'}>
+        {doubledBrands.map((brand, index) => (
           <Image src={brand.url} key={index} alt={`Brand ${brand.name}`} width={width} height={height} />
         ))}
       </div>
     </Marquee>
   );
-}
+};
+
+export default BrandCarrousel;
