@@ -19,12 +19,12 @@ const Footer = () => {
     },
     {
       name: 'Explore Properties',
-      href: '/comingsoon',
+      href: 'https://www.marketplace.libertum.io/login',
       section: 'Navigation',
     },
     {
       name: 'Token',
-      href: '/ico',
+      href: '/get',
       section: 'Navigation',
     },
     {
