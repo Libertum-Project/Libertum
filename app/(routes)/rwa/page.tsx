@@ -9,7 +9,7 @@ export default function Rwa() {
   return (
     <>
       <Hero />
-      <BrandCarrousel brands={brandsCarrousel} speed={75} gradient={true} width={75} height={75} />
+      <BrandCarrousel brands={brandsCarrousel} speed={18} gradientWidth={500} width={75} height={75} />
       <Cards />
       <TagComponent />
     </>

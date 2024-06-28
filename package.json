@@ -15,10 +15,18 @@
     "preinstall": "npx only-allow pnpm"
   },
   "lint-staged": {
-    "!(*config).{js,jsx,ts,tsx}": ["eslint --fix"],
-    "src/**/*.{ts,tsx}": ["bash -c 'npm run type-check'"],
-    "*.json": ["prettier --write"],
-    "*.{css,pcss,scss}": ["prettier --write"]
+    "!(*config).{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "src/**/*.{ts,tsx}": [
+      "bash -c 'npm run type-check'"
+    ],
+    "*.json": [
+      "prettier --write"
+    ],
+    "*.{css,pcss,scss}": [
+      "prettier --write"
+    ]
   },
   "engines": {
     "node": ">=20.0.0"
@@ -48,7 +56,6 @@
     "pusher-js": "8.4.0-rc2",
     "react": "^18",
     "react-dom": "^18",
-    "react-fast-marquee": "^1.6.4",
     "react-tweet": "^3.2.0",
     "resend": "^3.2.0",
     "tailwind-merge": "^2.2.2",

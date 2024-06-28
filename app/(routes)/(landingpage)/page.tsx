@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <BrandCarrousel brands={brandsCarrousel} speed={75} gradient={true} width={65} height={24} />
+      <BrandCarrousel brands={brandsCarrousel} speed={18} gradientWidth={500} width={65} height={24} />
       <Cards />
       <TagComponent />
       <Brands />
