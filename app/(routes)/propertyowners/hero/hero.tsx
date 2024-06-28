@@ -1,7 +1,7 @@
 'use client';
 import { type ReactElement, useState, useEffect } from 'react';
 
-import ContactModal from '@/app/components/Contact/ContactModal';
+import ContactModal from '@/components/Contact/ContactModal';
 
 import css from './hero.module.css';
 import { Calculator } from './calculator/calculator';

@@ -1,14 +1,13 @@
-.socialMediaContainer{
+.socialMediaContainer {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
   /* height: 1.125rem; */
-  
 }
-.socialMediaLinks{
-justify-content: space-between;
+.socialMediaLinks {
+  justify-content: space-between;
 }
-.socialMediaLinks :hover{
+.socialMediaLinks :hover {
   transform: scale(105%);
   transition-duration: 200ms;
   color: blue;

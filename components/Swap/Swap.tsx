@@ -25,8 +25,8 @@ import { toast } from '@/components/ui/use-toast';
 import { cn } from '@/lib/utils';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
-import { tokens } from '../../../constants/tokens';
-import { useBlockchainSelection } from '../../providers/ThirdWebContextProvider';
+import { tokens } from '@/constants/tokens';
+import { useBlockchainSelection } from '@/app/providers/ThirdWebContextProvider';
 
 const DEX_AGGREGATORS: any = {
   1: '0xd3f64BAa732061F8B3626ee44bab354f854877AC',
