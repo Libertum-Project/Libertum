@@ -16,7 +16,7 @@ type BrandCarouselProps = {
 const BrandCarrousel = ({ brands, speed, gradientWidth, width, height }: BrandCarouselProps) => {
   const animationSpeed = `marquee ${speed}s linear infinite`;
 
-  const doubledBrands = [...brands, ...brands, ...brands];
+  const doubledBrands = [...brands, ...brands, ...brands, ...brands];
   return (
     <div className="relative overflow-hidden">
       <div
@@ -27,7 +27,7 @@ const BrandCarrousel = ({ brands, speed, gradientWidth, width, height }: BrandCa
         className="absolute top-0 right-0 h-full z-10 bg-gradient-to-l from-white to-transparent"
         style={{ width: `${gradientWidth}px` }}
       />
-      <div className="flex items-center gap-12 py-14 pl-12 animate-marquee" style={{ animation: animationSpeed }}>
+      <div className="flex items-center gap-14 py-14 pl-14 animate-marquee" style={{ animation: animationSpeed }}>
         {doubledBrands.map((brand, index) => (
           <Image src={brand.url} key={index} alt={`Brand ${brand.name}`} width={width} height={height} />
         ))}
