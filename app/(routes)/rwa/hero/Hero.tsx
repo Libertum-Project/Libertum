@@ -1,11 +1,11 @@
 'use client';
-import { type ReactElement, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import css from './Hero.module.css';
 
-export function Hero(): ReactElement {
+const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -62,4 +62,6 @@ export function Hero(): ReactElement {
       </section>
     </div>
   );
-}
+};
+
+export default Hero;

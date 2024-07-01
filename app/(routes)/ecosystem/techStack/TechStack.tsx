@@ -1,4 +1,3 @@
-import { type ReactElement, useMemo } from 'react';
 import Image from 'next/image';
 
 import css from './techStack.module.css';
@@ -9,8 +8,8 @@ import next from './assets/next.svg';
 import postgres from './assets/postgres.svg';
 import solidity from './assets/solidity.svg';
 
-export function TechStack(): ReactElement {
-  const brands = useMemo(() => [azure, docker, kubernetes, next, postgres, solidity], []);
+const TechStack = () => {
+  const brands = [azure, docker, kubernetes, next, postgres, solidity];
 
   return (
     <div className={css.container}>
@@ -24,4 +23,6 @@ export function TechStack(): ReactElement {
       </div>
     </div>
   );
-}
+};
+
+export default TechStack;

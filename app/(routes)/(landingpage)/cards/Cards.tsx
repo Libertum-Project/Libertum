@@ -1,4 +1,3 @@
-import { ReactElement } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -7,7 +6,7 @@ import firstImage from './assets/firstImage.svg';
 import secondImage from './assets/secondImage.svg';
 import thirdImage from './assets/thirdImage.svg';
 
-export function Cards(): ReactElement {
+const Cards = () => {
   return (
     <div className={css.container}>
       <div className={css.ecosystem}>
@@ -134,4 +133,6 @@ export function Cards(): ReactElement {
       </div>
     </div>
   );
-}
+};
+
+export default Cards;

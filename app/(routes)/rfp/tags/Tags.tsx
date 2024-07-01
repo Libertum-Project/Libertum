@@ -1,8 +1,8 @@
 'use client';
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import Image from 'next/image';
 
-import { ContactForm } from '../contactForm/contactFrom';
+import ContactForm from '../contactForm/contactFrom';
 
 import css from './Tags.module.css';
 import inactiveArrow from './assets/inactiveArrow.svg';
@@ -19,7 +19,7 @@ interface Option {
   href: string;
 }
 
-export function Tags() {
+const Tags = () => {
   const [activeOption, setActiveOption] = useState('realEstate');
   const [shouldShowContactForm, setShouldShowContactForm] = useState(false);
   const [isContactButtonArrowDown, setIsContactButtonArrowDown] = useState(false);
@@ -131,4 +131,6 @@ export function Tags() {
       </div>
     </div>
   );
-}
+};
+
+export default Tags;

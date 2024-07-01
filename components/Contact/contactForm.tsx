@@ -1,5 +1,5 @@
 'use client';
-import React, { useRef, type ReactElement } from 'react';
+import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
 import css from './contactForm.module.css';
@@ -8,7 +8,7 @@ interface ContactFormProps {
   onClose: () => void;
 }
 
-export function ContactForm({ onClose }: ContactFormProps): ReactElement {
+const ContactForm = ({ onClose }: ContactFormProps) => {
   const form = useRef<HTMLFormElement | null>(null);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
@@ -77,4 +77,6 @@ export function ContactForm({ onClose }: ContactFormProps): ReactElement {
       </form>
     </div>
   );
-}
+};
+
+export default ContactForm;

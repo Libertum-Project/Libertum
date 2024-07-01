@@ -1,10 +1,10 @@
-import BrandCarrousel from '@/app/components/BrandCarrousel';
+import BrandCarrousel from '@/components/BrandCarrousel';
 import { brandsCarrousel } from '@/constants/carrousel';
 
-import { Hero } from './hero/Hero';
-import { Cards } from './cards/Cards';
-import { TagComponent } from './tags/tag';
-import { Brands } from './brands/Brands';
+import Hero from './hero/Hero';
+import Cards from './cards/Cards';
+import TagComponent from './tags/tag';
+import Brands from './brands/Brands';
 
 export default function Home() {
   return (

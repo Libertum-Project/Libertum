@@ -1,13 +1,12 @@
 'use client';
-import { useEffect, useState, useRef, type ReactElement } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 
 import leftArrow from '@/public/assets/vector.svg';
 
 import css from './Roadmap.module.css';
 
-export function Roadmap(): ReactElement {
-  // Add Padding Inline
+const Roadmap = () => {
   const [paddingValue, setPaddingValue] = useState<number | null>(null);
 
   useEffect(() => {
@@ -218,4 +217,6 @@ export function Roadmap(): ReactElement {
       </div>
     </section>
   );
-}
+};
+
+export default Roadmap;

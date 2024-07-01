@@ -1,12 +1,11 @@
-import { type ReactElement } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import css from './feed.module.css';
 import Cards from './cards/cards';
-import { Calculator } from './calculator/calculator';
+import Calculator from './calculator/calculator';
 
-export function Feed(): ReactElement {
+const Feed = () => {
   return (
     <div className={css.container}>
       <Calculator />
@@ -22,4 +21,6 @@ export function Feed(): ReactElement {
       <Cards />
     </div>
   );
-}
+};
+
+export default Feed;

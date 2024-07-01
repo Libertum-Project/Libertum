@@ -1,4 +1,4 @@
-import { Card } from '../cards/Card';
+import Card from '../cards/Card';
 import nicole from '../assets/nicole.svg';
 import guillermo from '../assets/guillermo.svg';
 import chris from '../assets/chris.svg';
@@ -9,7 +9,7 @@ import aavy from '../assets/Aavy.jpeg';
 
 import css from './TeamMembers.module.css';
 
-export function TeamMembers() {
+const TeamMembers = () => {
   const techMembers = [
     {
       id: 1,
@@ -113,4 +113,6 @@ export function TeamMembers() {
       </div>
     </div>
   );
-}
+};
+
+export default TeamMembers;

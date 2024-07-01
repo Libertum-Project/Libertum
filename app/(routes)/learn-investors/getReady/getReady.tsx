@@ -1,9 +1,9 @@
 'use client';
-import { type ReactElement, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 import css from './getReady.module.css';
 
-export function GetReady(): ReactElement {
+const GetReady = () => {
   const data = [
     {
       title: 'Fractional Rental Income',
@@ -69,4 +69,6 @@ export function GetReady(): ReactElement {
       </div>
     </section>
   );
-}
+};
+
+export default GetReady;

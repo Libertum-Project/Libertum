@@ -1,5 +1,4 @@
 'use client';
-
 import { useRef } from 'react';
 import Image from 'next/image';
 
@@ -12,7 +11,7 @@ interface ItemProps {
   paragraphs: string[];
 }
 
-function Item({ title, date, paragraphs }: ItemProps) {
+const Item = ({ title, date, paragraphs }: ItemProps) => {
   const ref = useRef(null);
 
   return (
@@ -48,7 +47,7 @@ function Item({ title, date, paragraphs }: ItemProps) {
       </div>
     </section>
   );
-}
+};
 
 const FeedTimeLine = () => {
   const items = [

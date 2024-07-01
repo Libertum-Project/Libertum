@@ -6,7 +6,7 @@ import emailjs from '@emailjs/browser';
 
 import css from './form.module.css';
 
-export function FormCandidates() {
+const FormCandidates = () => {
   const form = useRef();
   const [isChecked, setIsChecked] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -84,4 +84,6 @@ export function FormCandidates() {
       </form>
     </div>
   );
-}
+};
+
+export default FormCandidates;

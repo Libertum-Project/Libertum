@@ -1,13 +1,13 @@
-import React from 'react';
-
 import FeedTimeline from '../feedTimeline/FeedTimeline';
 
 import css from './feed.module.css';
 
-export function Feed() {
+const Feed = () => {
   return (
     <div className={css.container}>
       <FeedTimeline />
     </div>
   );
-}
+};
+
+export default Feed;

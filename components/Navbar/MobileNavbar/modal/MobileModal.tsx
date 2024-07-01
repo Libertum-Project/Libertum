@@ -1,4 +1,3 @@
-import { type ReactElement } from 'react';
 import Link from 'next/link';
 
 import ConnectWalletButton from '../../WalletComponents/ConnectWalletButton';
@@ -9,7 +8,7 @@ interface MobileModalProp {
   handleToggleOpenMenu: () => void;
 }
 
-export function MobileModal({ handleToggleOpenMenu }: MobileModalProp): ReactElement {
+const MobileModal = ({ handleToggleOpenMenu }: MobileModalProp) => {
   return (
     <div className={css.mobileModalContainer} onClick={handleToggleOpenMenu}>
       <div className={css.mobileModal}>
@@ -66,4 +65,6 @@ export function MobileModal({ handleToggleOpenMenu }: MobileModalProp): ReactEle
       </div>
     </div>
   );
-}
+};
+
+export default MobileModal;

@@ -16,7 +16,7 @@ interface Option {
   href: string;
 }
 
-export function TagsMobile() {
+const TagsMobile = () => {
   const options: Option[] = [
     {
       id: 'realEstate',
@@ -117,4 +117,6 @@ export function TagsMobile() {
       </div>
     </div>
   );
-}
+};
+
+export default TagsMobile;

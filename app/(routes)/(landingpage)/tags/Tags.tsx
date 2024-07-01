@@ -27,7 +27,7 @@ interface Option {
   href: string;
 }
 
-export function Tags() {
+const Tags = () => {
   const [activeOption, setActiveOption] = useState('realEstate');
 
   const handleOptionClick = (optionId: string) => {
@@ -151,4 +151,6 @@ export function Tags() {
       </div>
     </div>
   );
-}
+};
+
+export default Tags;

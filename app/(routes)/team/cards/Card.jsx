@@ -5,7 +5,7 @@ import linkedinLogo from '../assets/linkedin.svg';
 
 import css from './Card.module.css';
 
-export function Card({ image, name, position, description, linkedin }) {
+const Card = ({ image, name, position, description, linkedin }) => {
   return (
     <div className={css.card}>
       <div className={css.removeWhenUse}>
@@ -25,4 +25,6 @@ export function Card({ image, name, position, description, linkedin }) {
       </div>
     </div>
   );
-}
+};
+
+export default Card;

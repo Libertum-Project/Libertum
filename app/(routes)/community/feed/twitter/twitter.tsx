@@ -1,9 +1,8 @@
-import { type ReactElement } from 'react';
 import { Tweet } from 'react-tweet';
 
 import css from './twitter.module.css';
 
-export function TwitterFeed(): ReactElement {
+const TwitterFeed = () => {
   return (
     <div className={css.twitterContainer}>
       <section>
@@ -16,4 +15,6 @@ export function TwitterFeed(): ReactElement {
       </section>
     </div>
   );
-}
+};
+
+export default TwitterFeed;

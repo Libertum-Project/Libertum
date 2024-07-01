@@ -1,7 +1,5 @@
-import React from 'react';
-
-import { Hero } from './hero/hero';
-import { TeamMembers } from './teamMembers/TeamMembers';
+import Hero from './hero/hero';
+import TeamMembers from './teamMembers/TeamMembers';
 
 export default function Team() {
   return (

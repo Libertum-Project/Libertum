@@ -1,4 +1,3 @@
-import { type ReactElement } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -11,7 +10,7 @@ interface MoreModalProps {
   handleHideModals: () => void;
 }
 
-export function MoreModal({ handleHideModals }: MoreModalProps): ReactElement {
+const MoreModal = ({ handleHideModals }: MoreModalProps) => {
   return (
     <div className={css.navModalContainer} onMouseLeave={handleHideModals} onTouchEnd={handleHideModals}>
       <div className={css.navModal}>
@@ -49,4 +48,6 @@ export function MoreModal({ handleHideModals }: MoreModalProps): ReactElement {
       </div>
     </div>
   );
-}
+};
+
+export default MoreModal;

@@ -1,14 +1,14 @@
-import { type ReactElement } from 'react';
-
 import css from './feed.module.css';
-import { Socials } from './socials/socials';
-import { TwitterFeed } from './twitter/twitter';
+import Socials from './socials/socials';
+import TwitterFeed from './twitter/twitter';
 
-export function Feed(): ReactElement {
+const Feed = () => {
   return (
     <div className={css.container}>
       <Socials />
       <TwitterFeed />
     </div>
   );
-}
+};
+
+export default Feed;

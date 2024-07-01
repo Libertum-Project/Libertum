@@ -2,9 +2,9 @@ import './globals.css';
 import Script from 'next/script';
 import { GoogleTagManager } from '@next/third-parties/google';
 
-import { Toaster } from '@/components/ui/toaster';
+import Toaster from '@/components/ui/toaster';
 import Footer from '@/components/Footer/Footer';
-import { NavBar } from '@/components/Navbar/NavBar';
+import NavBar from '@/components/Navbar/NavBar';
 
 import { ThirdwebContextProvider } from './providers/ThirdWebContextProvider';
 

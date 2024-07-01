@@ -1,10 +1,9 @@
-import { type ReactElement } from 'react';
 import Image from 'next/image';
 
 import css from './Tokenomics.module.css';
 import graph from './graph.svg';
 
-export function Tokenomics(): ReactElement {
+const Tokenomics = () => {
   const tokenomicsData = [
     {
       color: '#FFA143',
@@ -70,4 +69,6 @@ export function Tokenomics(): ReactElement {
       </div>
     </section>
   );
-}
+};
+
+export default Tokenomics;

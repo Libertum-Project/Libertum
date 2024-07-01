@@ -1,9 +1,9 @@
 'use client';
-import { type ReactElement, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 import css from './WhyNow.module.css';
 
-export function WhyNow(): ReactElement {
+const WhyNow = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -73,4 +73,6 @@ export function WhyNow(): ReactElement {
       </div>
     </section>
   );
-}
+};
+
+export default WhyNow;
