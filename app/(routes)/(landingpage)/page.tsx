@@ -1,5 +1,7 @@
+import BrandCarrousel from '@/app/components/BrandCarrousel';
+import { brandsCarrousel } from '@/constants/carrousel';
+
 import { Hero } from './hero/Hero';
-import { BrandCarrousel } from './brandsCarrousel/BrandCarrousel';
 import { Cards } from './cards/Cards';
 import { TagComponent } from './tags/tag';
 import { Brands } from './brands/Brands';
@@ -8,7 +10,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <BrandCarrousel />
+      <BrandCarrousel brands={brandsCarrousel} speed={18} gradientWidth={500} width={65} height={24} />
       <Cards />
       <TagComponent />
       <Brands />

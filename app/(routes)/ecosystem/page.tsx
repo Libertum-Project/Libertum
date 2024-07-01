@@ -1,19 +1,18 @@
-import React from 'react';
+import { ecosystemCarrousel } from '@/constants/carrousel';
+import BrandCarrousel from '@/app/components/BrandCarrousel';
 
 import { Hero } from './hero/hero';
-import { BrandCarrousel } from './brandsCarrousel/BrandCarrousel';
-//import Partners from './partners/Partners';
-import LibertumEcosystem from './thelibertum/theLibertumEcosystem';
 import { TechStack } from './techStack/TechStack';
+import LibertumEcosystem from './thelibertum/theLibertumEcosystem';
 
 export default function Ecosystem() {
   return (
     <div>
       <Hero />
-      <BrandCarrousel />
+      <div className="mt-[-6rem] z-10">
+        <BrandCarrousel brands={ecosystemCarrousel} speed={25} gradientWidth={0} width={115} height={115} />
+      </div>
       <LibertumEcosystem />
-
-      {/* <Partners /> */}
 
       <TechStack />
     </div>

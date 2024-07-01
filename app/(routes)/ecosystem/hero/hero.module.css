@@ -2,6 +2,7 @@
   position: relative;
   padding-top: 5rem;
   overflow: hidden;
+  z-index: 0;
 }
 
 .video {
@@ -20,11 +21,7 @@
   z-index: 9;
   min-width: 100%;
   min-height: 100%;
-  background: radial-gradient(
-    80.5% 80.5% at 50% 103.87%,
-    #000041 0%,
-    #0e0e1e 100%
-  );
+  background: radial-gradient(80.5% 80.5% at 50% 103.87%, #000041 0%, #0e0e1e 100%);
   background-blend-mode: multiply;
 }
 
