@@ -12,7 +12,7 @@ import {
 import { exchangeProxy, MAX_ALLOWANCE } from '@/constants';
 import { toast } from '../ui/use-toast';
 import { cn } from '@/lib/utils';
-import ConnectWalletButton from '@/app/components/Navbar/WalletComponents/ConnectWalletButton';
+import ConnectWalletButton from '@/components/Navbar/WalletComponents/ConnectWalletButton';
 
 interface Props {
   sellTokenAmount?: string;
