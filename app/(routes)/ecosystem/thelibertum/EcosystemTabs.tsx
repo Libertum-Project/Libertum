@@ -13,7 +13,7 @@ import choose from './assets/choose.svg';
 import get from './assets/get.svg';
 import css from './theLibertumEcosystem.module.css';
 
-export default function EcosystemTabs() {
+export const EcosystemTabs = () => {
   const ecosystem = [
     {
       logo: tokenise,
@@ -112,4 +112,4 @@ export default function EcosystemTabs() {
       </div>
     </div>
   );
-}
+};

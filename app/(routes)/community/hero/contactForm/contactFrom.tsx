@@ -1,10 +1,10 @@
 'use client';
-import React, { useRef, type ReactElement } from 'react';
+import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
 import css from './contactForm.module.css';
 
-export function ContactForm(): ReactElement {
+export const ContactForm = () => {
   const form = useRef<HTMLFormElement | null>(null);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
@@ -72,4 +72,4 @@ export function ContactForm(): ReactElement {
       </form>
     </div>
   );
-}
+};

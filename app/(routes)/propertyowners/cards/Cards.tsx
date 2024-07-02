@@ -1,11 +1,10 @@
-import { ReactElement } from 'react';
 import Image from 'next/image';
 
 import css from './Cards.module.css';
 import firstImage from './assets/firstImage.svg';
 import checkbox from './assets/checkbox.svg';
 
-export function Cards(): ReactElement {
+export const Cards = () => {
   const litleCards = [
     {
       title: 'Tokenization',
@@ -79,4 +78,4 @@ export function Cards(): ReactElement {
       </div>
     </div>
   );
-}
+};

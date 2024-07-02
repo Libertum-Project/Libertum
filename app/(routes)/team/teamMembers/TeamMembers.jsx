@@ -9,7 +9,7 @@ import aavy from '../assets/Aavy.jpeg';
 
 import css from './TeamMembers.module.css';
 
-export function TeamMembers() {
+export const TeamMembers = () => {
   const techMembers = [
     {
       id: 1,
@@ -113,4 +113,4 @@ export function TeamMembers() {
       </div>
     </div>
   );
-}
+};

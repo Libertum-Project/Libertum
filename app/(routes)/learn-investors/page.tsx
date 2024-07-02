@@ -11,7 +11,6 @@ export default function page() {
       <Hero />
       <Feed />
       <GetReady />
-
       <div className={css.ContactFormcontainer}>
         <div className={css.contactForm}>
           <ContactForm />

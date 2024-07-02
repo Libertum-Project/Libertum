@@ -1,7 +1,7 @@
 'use client';
-import React, { useState, FormEvent, ChangeEvent } from 'react';
+import { useState, FormEvent, ChangeEvent } from 'react';
 
-const Subscribe = () => {
+export const Subscribe = () => {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isSubscribeSuccess, setIsSubscribeSuccess] = useState(false);
@@ -73,5 +73,3 @@ const Subscribe = () => {
     </form>
   );
 };
-
-export default Subscribe;

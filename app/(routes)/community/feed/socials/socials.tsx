@@ -1,4 +1,3 @@
-import { type ReactElement } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -9,7 +8,7 @@ import twitter from './icons/twitter.svg';
 import DEXTools from './icons/DEXTools.png';
 import css from './socials.module.css';
 
-export function Socials(): ReactElement {
+export const Socials = () => {
   const socials = [
     {
       name: 'X (Twitter)',
@@ -70,4 +69,4 @@ export function Socials(): ReactElement {
       ))}
     </div>
   );
-}
+};

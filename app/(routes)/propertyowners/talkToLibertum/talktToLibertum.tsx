@@ -1,12 +1,12 @@
 'use client';
-import { type ReactElement, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import css from './talkToLibertum.module.css';
 import image from './image.svg';
 
-export function TalkToLibertum(): ReactElement {
+export const TalkToLibertum = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -64,4 +64,4 @@ export function TalkToLibertum(): ReactElement {
       </div>
     </section>
   );
-}
+};

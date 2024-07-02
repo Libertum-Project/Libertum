@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import Image from 'next/image';
 
 import { ContactForm } from '../contactForm/contactFrom';
@@ -19,7 +19,7 @@ interface Option {
   href: string;
 }
 
-export function Tags() {
+export const Tags = () => {
   const [activeOption, setActiveOption] = useState('realEstate');
   const [shouldShowContactForm, setShouldShowContactForm] = useState(false);
   const [isContactButtonArrowDown, setIsContactButtonArrowDown] = useState(false);
@@ -131,4 +131,4 @@ export function Tags() {
       </div>
     </div>
   );
-}
+};

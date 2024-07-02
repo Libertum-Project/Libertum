@@ -1,10 +1,8 @@
-import { type ReactElement } from 'react';
-
 import css from './FaqSection.module.css';
-import FAQ from './FaqItem';
+import { FAQ } from './FaqItem';
 import { faqData } from './faqData';
 
-export function FaqSection(): ReactElement {
+export const FaqSection = () => {
   return (
     <section className={css.faqSectionContainer}>
       <div className={css.faqSection}>
@@ -17,4 +15,4 @@ export function FaqSection(): ReactElement {
       </div>
     </section>
   );
-}
+};

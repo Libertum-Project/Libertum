@@ -1,4 +1,3 @@
-import { type ReactElement, useMemo } from 'react';
 import Image from 'next/image';
 
 import css from './Brands.module.css';
@@ -9,8 +8,8 @@ import coinmarket from './assets/coinmarket.svg';
 import marketwatch from './assets/marketwatch.svg';
 import yahoo from './assets/yahoo.svg';
 
-export function Brands(): ReactElement {
-  const brands = useMemo(() => [ap, benziga, bloomberg, coinmarket, marketwatch, yahoo], []);
+export const Brands = () => {
+  const brands = [ap, benziga, bloomberg, coinmarket, marketwatch, yahoo];
 
   return (
     <div className={css.container}>
@@ -23,4 +22,4 @@ export function Brands(): ReactElement {
       </div>
     </div>
   );
-}
+};

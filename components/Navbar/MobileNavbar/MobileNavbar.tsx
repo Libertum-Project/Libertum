@@ -1,5 +1,5 @@
 'use client';
-import { type ReactElement, useState } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -10,7 +10,7 @@ import menuBtn from './menu.svg';
 import close from './close.svg';
 import { MobileModal } from './modal/MobileModal';
 
-export function MobileNavbar(): ReactElement {
+export const MobileNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleToggleOpenMenu = () => {
@@ -46,4 +46,4 @@ export function MobileNavbar(): ReactElement {
       {isMenuOpen && <MobileModal handleToggleOpenMenu={handleToggleOpenMenu} />}
     </>
   );
-}
+};

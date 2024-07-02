@@ -1,4 +1,3 @@
-import { type ReactElement } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -10,7 +9,7 @@ interface CommunityModalProps {
   handleHideModals: () => void;
 }
 
-export function CommunityModal({ handleHideModals }: CommunityModalProps): ReactElement {
+export const CommunityModal = ({ handleHideModals }: CommunityModalProps) => {
   return (
     <div className={css.navModalContainer} onMouseLeave={handleHideModals} onTouchEnd={handleHideModals}>
       <div className={css.navModal}>
@@ -41,4 +40,4 @@ export function CommunityModal({ handleHideModals }: CommunityModalProps): React
       </div>
     </div>
   );
-}
+};

@@ -1,8 +1,8 @@
 'use client';
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import Spline from '@splinetool/react-spline';
 
-export function HeroSplineLanding() {
+export const HeroSplineLanding = () => {
   const splineRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -27,4 +27,4 @@ export function HeroSplineLanding() {
       <Spline scene="https://prod.spline.design/1YVyhj7Fm5h7mO5Y/scene.splinecode" />
     </div>
   );
-}
+};

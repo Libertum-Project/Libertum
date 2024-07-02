@@ -1,6 +1,5 @@
 'use client';
-
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { ethers } from 'ethers';
 import {
@@ -39,7 +38,7 @@ const DEX_AGGREGATORS: any = {
   8453: '0x4F68248ecB782647D1E5981a181bBe1bfFee1040',
 };
 
-const Swap = () => {
+export const Swap = () => {
   const walletAddress = useAddress();
   const signer = useSigner();
 
@@ -535,5 +534,3 @@ const Swap = () => {
     </>
   );
 };
-
-export default Swap;

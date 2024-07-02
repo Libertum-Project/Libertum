@@ -6,7 +6,7 @@ import { ServerImage } from '../../ServerImage';
 import css from './WalletComponents.module.css';
 import leftArrow from './leftArrow.svg';
 
-const ConnectWalletButton = () => {
+export const ConnectWalletButton = () => {
   const address = useAddress();
 
   return (
@@ -58,5 +58,3 @@ const ConnectWalletButton = () => {
     </div>
   );
 };
-
-export default ConnectWalletButton;

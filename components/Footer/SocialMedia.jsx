@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import css from './SocialMedia.module.css';
 
-const SocialMedia = () => {
+export const SocialMedia = () => {
   const socialLinks = [
     {
       href: 'https://www.linkedin.com/company/libertum1',
@@ -78,5 +78,3 @@ const Telegram = () => (
     />
   </svg>
 );
-
-export default SocialMedia;

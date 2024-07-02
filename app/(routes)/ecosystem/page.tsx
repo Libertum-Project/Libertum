@@ -1,9 +1,9 @@
 import { ecosystemCarrousel } from '@/constants/carrousel';
-import BrandCarrousel from '@/app/components/BrandCarrousel';
+import { BrandCarrousel } from '@/components/BrandCarrousel';
 
 import { Hero } from './hero/hero';
 import { TechStack } from './techStack/TechStack';
-import LibertumEcosystem from './thelibertum/theLibertumEcosystem';
+import { LibertumEcosystem } from './thelibertum/theLibertumEcosystem';
 
 export default function Ecosystem() {
   return (

@@ -1,5 +1,5 @@
 'use client';
-import { type ReactElement, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 import { Card } from '../cards/Card';
 import alan from '../assets/alan.svg';
@@ -9,7 +9,7 @@ import lucas from '../assets/lucas.svg';
 
 import css from './hero.module.css';
 
-export function Hero(): ReactElement {
+export const Hero = () => {
   const members = [
     {
       id: 1,
@@ -108,4 +108,4 @@ export function Hero(): ReactElement {
       </div>
     </div>
   );
-}
+};

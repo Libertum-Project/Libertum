@@ -1,7 +1,7 @@
 'use client';
 import { ConnectEmbed, lightTheme, useShowConnectEmbed, useConnectionStatus } from '@thirdweb-dev/react';
 import { redirect } from 'next/navigation';
-import React, { useLayoutEffect } from 'react';
+import { useLayoutEffect } from 'react';
 
 const Page = () => {
   const shouldShowConnectEmbed = useShowConnectEmbed();

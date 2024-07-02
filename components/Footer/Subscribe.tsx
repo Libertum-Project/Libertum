@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import css from './Subscribe.module.css';
 
-const Subscribe = () => {
+export const Subscribe = () => {
   const [email, setEmail] = useState('');
   const [state, setState] = useState('IDLE');
   const [errorMessage, setErrorMessage] = useState(null);
@@ -35,7 +35,3 @@ const Subscribe = () => {
     </div>
   );
 };
-
-// Subscribe.displayName = 'Subscribe';
-
-export default Subscribe;

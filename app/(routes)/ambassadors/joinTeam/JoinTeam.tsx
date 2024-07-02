@@ -4,8 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import css from './JoinTeam.module.css';
-//import alanPhoto from './assets/alan.svg';
-//import javvadPhoto from './assets/javvad.svg';
 import brondon from './assets/brondon.jpg';
 import profile from './assets/profile.svg';
 import fab from './assets/fab.jpg';
@@ -14,7 +12,7 @@ import linkedin from './assets/socialsIcons/linkedin.svg';
 import telegram from './assets/socialsIcons/telegram.svg';
 import twitter from './assets/socialsIcons/twitter.svg';
 
-export function JoinTeam() {
+export const JoinTeam = () => {
   const ambassadors = [
     {
       name: 'Mr Brondor',
@@ -126,4 +124,4 @@ export function JoinTeam() {
       </div>
     </section>
   );
-}
+};

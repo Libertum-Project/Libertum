@@ -1,10 +1,10 @@
 'use client';
-import { type ReactElement, useState } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
 import logo from '@/public/horizontal-logo.svg';
-import ConnectWalletButton from '../WalletComponents/ConnectWalletButton';
+import { ConnectWalletButton } from '../WalletComponents/ConnectWalletButton';
 
 import css from './DesktopNavbar.module.css';
 import { LearnModal } from './modals/LearnModal';
@@ -12,7 +12,7 @@ import { DocsModal } from './modals/DocsModal';
 import { MoreModal } from './modals/MoreModal';
 import { CommunityModal } from './modals/CommunityModal';
 
-export function DesktopNavbar(): ReactElement {
+export const DesktopNavbar = () => {
   const [isLearnModalVisible, setIsLearnModalVisible] = useState(false);
   const [isDocsModalVisible, setIsDocsModalVisible] = useState(false);
   const [isMoreModalVisible, setIsMoreModalVisible] = useState(false);
@@ -100,4 +100,4 @@ export function DesktopNavbar(): ReactElement {
       {isCommunityModalVisible && <CommunityModal handleHideModals={handleHideModals} />}
     </>
   );
-}
+};

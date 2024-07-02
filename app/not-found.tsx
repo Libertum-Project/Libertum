@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import css from './not-found.module.css';
 
-export default function NotFound() {
+const NotFound = () => {
   return (
     <div className={css.container}>
       <div className={css.background}></div>
@@ -21,4 +21,6 @@ export default function NotFound() {
       </div>
     </div>
   );
-}
+};
+
+export default NotFound;

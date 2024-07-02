@@ -1,5 +1,5 @@
 'use client';
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 
 import css from './ContactModal.module.css';
 import { ContactForm } from './contactForm';
@@ -8,7 +8,7 @@ interface ContactModalProps {
   onClose: () => void;
 }
 
-const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
+export const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
   const modalRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -36,5 +36,3 @@ const ContactModal: React.FC<ContactModalProps> = ({ onClose }) => {
     </div>
   );
 };
-
-export default ContactModal;

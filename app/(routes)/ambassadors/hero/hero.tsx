@@ -1,5 +1,5 @@
 'use client';
-import { type ReactElement, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -7,7 +7,7 @@ import ambassadorsImage from '../assets/ambassadorsHero.svg';
 
 import css from './hero.module.css';
 
-export function Hero(): ReactElement {
+export const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -61,4 +61,4 @@ export function Hero(): ReactElement {
       </div>
     </div>
   );
-}
+};

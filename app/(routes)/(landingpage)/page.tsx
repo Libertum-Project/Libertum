@@ -1,4 +1,4 @@
-import BrandCarrousel from '@/app/components/BrandCarrousel';
+import { BrandCarrousel } from '@/components/BrandCarrousel';
 import { brandsCarrousel } from '@/constants/carrousel';
 
 import { Hero } from './hero/Hero';

@@ -6,7 +6,7 @@ import firstImage from './assets/firstImage.svg';
 import secondImage from './assets/secondImage.svg';
 import thirdImage from './assets/thirdImage.svg';
 
-export default function Cards() {
+export const Cards = () => {
   const cards = [
     {
       image: firstImage,
@@ -48,4 +48,4 @@ export default function Cards() {
       ))}
     </div>
   );
-}
+};

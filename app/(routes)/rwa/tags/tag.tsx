@@ -1,10 +1,10 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { TagsMobile } from './TagsMobile';
 import { Tags } from './Tags';
 
-export function TagComponent() {
+export const TagComponent = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -24,4 +24,4 @@ export function TagComponent() {
   }, []);
 
   return <div>{isMobile ? <TagsMobile /> : <Tags />}</div>;
-}
+};

@@ -3,7 +3,7 @@ import { useAddress, useConnectionStatus } from '@thirdweb-dev/react';
 import { redirect } from 'next/navigation';
 import { useEffect } from 'react';
 
-import LoadingPage from '../Loading/Loading';
+import { LoadingPage } from '../Loading/Loading';
 
 function withAuth(Component: any) {
   return function WithAuth(props: any) {

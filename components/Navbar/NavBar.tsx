@@ -1,13 +1,11 @@
-import { type ReactElement } from 'react';
-
 import { MobileNavbar } from './MobileNavbar/MobileNavbar';
 import { DesktopNavbar } from './DesktopNavbar/DesktopNavbar';
 
-export function NavBar(): ReactElement {
+export const NavBar = () => {
   return (
     <>
       <MobileNavbar />
       <DesktopNavbar />
     </>
   );
-}
+};

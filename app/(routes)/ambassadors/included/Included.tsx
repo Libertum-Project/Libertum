@@ -8,7 +8,7 @@ import remuneration from '../assets/remuneration.svg';
 
 import css from './Included.module.css';
 
-export function Included() {
+export const Included = () => {
   const cards = [
     {
       title: 'Exclusive access to special events',
@@ -47,4 +47,4 @@ export function Included() {
       </div>
     </div>
   );
-}
+};
