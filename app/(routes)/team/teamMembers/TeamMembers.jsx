@@ -1,4 +1,4 @@
-import Card from '../cards/Card';
+import { Card } from '../cards/Card';
 import nicole from '../assets/nicole.svg';
 import guillermo from '../assets/guillermo.svg';
 import chris from '../assets/chris.svg';
