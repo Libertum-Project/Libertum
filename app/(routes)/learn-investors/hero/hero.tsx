@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 import css from './hero.module.css';
 
-const Hero = () => {
+export const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -62,5 +62,3 @@ const Hero = () => {
     </div>
   );
 };
-
-export default Hero;

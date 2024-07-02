@@ -3,7 +3,7 @@ import Image from 'next/image';
 import css from './Tokenomics.module.css';
 import graph from './graph.svg';
 
-const Tokenomics = () => {
+export const Tokenomics = () => {
   const tokenomicsData = [
     {
       color: '#FFA143',
@@ -70,5 +70,3 @@ const Tokenomics = () => {
     </section>
   );
 };
-
-export default Tokenomics;

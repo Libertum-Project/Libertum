@@ -1,12 +1,12 @@
 'use client';
 import { useState, useEffect } from 'react';
 
-import ContactModal from '@/components/Contact/ContactModal';
+import { ContactModal } from '@/components/Contact/ContactModal';
 
 import css from './hero.module.css';
-import Calculator from './calculator/calculator';
+import { Calculator } from './calculator/calculator';
 
-const Hero = () => {
+export const Hero = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -70,5 +70,3 @@ const Hero = () => {
     </div>
   );
 };
-
-export default Hero;

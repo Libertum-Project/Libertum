@@ -3,7 +3,7 @@ import { useRef } from 'react';
 
 import css from './contactForm.module.css';
 
-const ContactForm = () => {
+export const ContactForm = () => {
   const form = useRef<HTMLFormElement | null>(null);
 
   const simulateSendEmail = (e: React.FormEvent<HTMLFormElement>) => {
@@ -69,5 +69,3 @@ const ContactForm = () => {
     </div>
   );
 };
-
-export default ContactForm;

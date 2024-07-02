@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import ConnectWalletButton from '../../WalletComponents/ConnectWalletButton';
+import { ConnectWalletButton } from '../../WalletComponents/ConnectWalletButton';
 
 import css from './MobileModal.module.css';
 
@@ -8,7 +8,7 @@ interface MobileModalProp {
   handleToggleOpenMenu: () => void;
 }
 
-const MobileModal = ({ handleToggleOpenMenu }: MobileModalProp) => {
+export const MobileModal = ({ handleToggleOpenMenu }: MobileModalProp) => {
   return (
     <div className={css.mobileModalContainer} onClick={handleToggleOpenMenu}>
       <div className={css.mobileModal}>
@@ -66,5 +66,3 @@ const MobileModal = ({ handleToggleOpenMenu }: MobileModalProp) => {
     </div>
   );
 };
-
-export default MobileModal;

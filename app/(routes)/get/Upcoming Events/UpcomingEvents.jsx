@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import css from './UpcomingEvents.module.css';
 
-const UpcomingEvents = () => {
+export const UpcomingEvents = () => {
   const scrollToTop = () => {
     if (window.innerWidth > 1250) {
       window.scrollTo({
@@ -62,5 +62,3 @@ const UpcomingEvents = () => {
     </div>
   );
 };
-
-export default UpcomingEvents;

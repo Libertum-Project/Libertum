@@ -1,10 +1,10 @@
 'use client';
 import { useEffect, useState } from 'react';
 
-import TagsMobile from './TagsMobile';
-import Tags from './Tags';
+import { TagsMobile } from './TagsMobile';
+import { Tags } from './Tags';
 
-const TagComponent = () => {
+export const TagComponent = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -25,5 +25,3 @@ const TagComponent = () => {
 
   return <div>{isMobile ? <TagsMobile /> : <Tags />}</div>;
 };
-
-export default TagComponent;

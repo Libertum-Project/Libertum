@@ -2,10 +2,10 @@
 import { useState, useEffect } from 'react';
 
 import css from './hero.module.css';
-import SocialMedia from './socials/SocialMedia';
-import ContactForm from './contactForm/contactFrom';
+import { SocialMedia } from './socials/SocialMedia';
+import { ContactForm } from './contactForm/contactFrom';
 
-const Hero = () => {
+export const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -52,5 +52,3 @@ const Hero = () => {
     </div>
   );
 };
-
-export default Hero;

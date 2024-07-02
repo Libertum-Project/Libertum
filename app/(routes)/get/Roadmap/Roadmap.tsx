@@ -6,7 +6,7 @@ import leftArrow from '@/public/assets/vector.svg';
 
 import css from './Roadmap.module.css';
 
-const Roadmap = () => {
+export const Roadmap = () => {
   const [paddingValue, setPaddingValue] = useState<number | null>(null);
 
   useEffect(() => {
@@ -218,5 +218,3 @@ const Roadmap = () => {
     </section>
   );
 };
-
-export default Roadmap;

@@ -1,7 +1,7 @@
-import MobileNavbar from './MobileNavbar/MobileNavbar';
-import DesktopNavbar from './DesktopNavbar/DesktopNavbar';
+import { MobileNavbar } from './MobileNavbar/MobileNavbar';
+import { DesktopNavbar } from './DesktopNavbar/DesktopNavbar';
 
-const NavBar = () => {
+export const NavBar = () => {
   return (
     <>
       <MobileNavbar />
@@ -9,5 +9,3 @@ const NavBar = () => {
     </>
   );
 };
-
-export default NavBar;

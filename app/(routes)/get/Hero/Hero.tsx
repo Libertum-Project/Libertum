@@ -8,7 +8,7 @@ import css from './Hero.module.css';
 import checkbox from './checkbox.svg';
 import shield from './shield.png';
 
-const Hero = () => {
+export const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -82,5 +82,3 @@ const Hero = () => {
     </div>
   );
 };
-
-export default Hero;

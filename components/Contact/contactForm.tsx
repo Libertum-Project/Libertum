@@ -8,7 +8,7 @@ interface ContactFormProps {
   onClose: () => void;
 }
 
-const ContactForm = ({ onClose }: ContactFormProps) => {
+export const ContactForm = ({ onClose }: ContactFormProps) => {
   const form = useRef<HTMLFormElement | null>(null);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
@@ -78,5 +78,3 @@ const ContactForm = ({ onClose }: ContactFormProps) => {
     </div>
   );
 };
-
-export default ContactForm;

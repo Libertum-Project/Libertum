@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import SocialMedia from './SocialMedia';
+import { SocialMedia } from './SocialMedia';
 import css from './Footer.module.css';
 import background from './background.svg';
 
-const Footer = () => {
+export const Footer = () => {
   const navigation = [
     {
       name: 'Property Owners',
@@ -118,5 +118,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 import { HeroSplineLanding } from '../HeroSpline';
 
-const Hero = () => {
+export const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -101,5 +101,3 @@ const Hero = () => {
     </div>
   );
 };
-
-export default Hero;

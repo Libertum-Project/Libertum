@@ -11,7 +11,7 @@ interface ItemProps {
   paragraphs: string[];
 }
 
-const Item = ({ title, date, paragraphs }: ItemProps) => {
+export const Item = ({ title, date, paragraphs }: ItemProps) => {
   const ref = useRef(null);
 
   return (
@@ -49,7 +49,7 @@ const Item = ({ title, date, paragraphs }: ItemProps) => {
   );
 };
 
-const FeedTimeLine = () => {
+export const FeedTimeLine = () => {
   const items = [
     {
       title: 'Q1',
@@ -128,5 +128,3 @@ const FeedTimeLine = () => {
     </div>
   );
 };
-
-export default FeedTimeLine;

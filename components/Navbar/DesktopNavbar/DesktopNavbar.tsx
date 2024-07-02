@@ -4,15 +4,15 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import logo from '@/public/horizontal-logo.svg';
-import ConnectWalletButton from '../WalletComponents/ConnectWalletButton';
+import { ConnectWalletButton } from '../WalletComponents/ConnectWalletButton';
 
 import css from './DesktopNavbar.module.css';
-import LearnModal from './modals/LearnModal';
-import DocsModal from './modals/DocsModal';
-import MoreModal from './modals/MoreModal';
-import CommunityModal from './modals/CommunityModal';
+import { LearnModal } from './modals/LearnModal';
+import { DocsModal } from './modals/DocsModal';
+import { MoreModal } from './modals/MoreModal';
+import { CommunityModal } from './modals/CommunityModal';
 
-const DesktopNavbar = () => {
+export const DesktopNavbar = () => {
   const [isLearnModalVisible, setIsLearnModalVisible] = useState(false);
   const [isDocsModalVisible, setIsDocsModalVisible] = useState(false);
   const [isMoreModalVisible, setIsMoreModalVisible] = useState(false);
@@ -101,5 +101,3 @@ const DesktopNavbar = () => {
     </>
   );
 };
-
-export default DesktopNavbar;

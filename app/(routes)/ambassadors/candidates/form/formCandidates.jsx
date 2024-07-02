@@ -1,12 +1,11 @@
 'use client';
-
 import { useState, useRef } from 'react';
 import Image from 'next/image';
 import emailjs from '@emailjs/browser';
 
 import css from './form.module.css';
 
-const FormCandidates = () => {
+export const FormCandidates = () => {
   const form = useRef();
   const [isChecked, setIsChecked] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -85,5 +84,3 @@ const FormCandidates = () => {
     </div>
   );
 };
-
-export default FormCandidates;

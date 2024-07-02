@@ -1,8 +1,8 @@
 import css from './feed.module.css';
-import Socials from './socials/socials';
-import TwitterFeed from './twitter/twitter';
+import { Socials } from './socials/socials';
+import { TwitterFeed } from './twitter/twitter';
 
-const Feed = () => {
+export const Feed = () => {
   return (
     <div className={css.container}>
       <Socials />
@@ -10,5 +10,3 @@ const Feed = () => {
     </div>
   );
 };
-
-export default Feed;

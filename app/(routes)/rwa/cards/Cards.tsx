@@ -5,7 +5,7 @@ import css from './Cards.module.css';
 import firstImage from './assets/firstImage.svg';
 import secondImage from './assets/secondImage.svg';
 
-const Cards = () => {
+export const Cards = () => {
   return (
     <div className={css.container}>
       {/* first card */}
@@ -64,5 +64,3 @@ const Cards = () => {
     </div>
   );
 };
-
-export default Cards;

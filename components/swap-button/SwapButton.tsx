@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Web3Button,
   useAddress,
@@ -12,7 +11,7 @@ import {
 import { exchangeProxy, MAX_ALLOWANCE } from '@/constants';
 import { toast } from '../ui/use-toast';
 import { cn } from '@/lib/utils';
-import ConnectWalletButton from '@/components/Navbar/WalletComponents/ConnectWalletButton';
+import { ConnectWalletButton } from '@/components/Navbar/WalletComponents/ConnectWalletButton';
 
 interface Props {
   sellTokenAmount?: string;
@@ -21,7 +20,7 @@ interface Props {
   selectedToken?: string;
 }
 
-const SwapButton = ({ sellTokenAmount, sellToken, quote, selectedToken }: Props) => {
+export const SwapButton = ({ sellTokenAmount, sellToken, quote, selectedToken }: Props) => {
   const walletAddress = useAddress();
   const { data: balance, isLoading: isBalanceLoading } = useBalance(sellToken.address);
   const { contract: sellTokenContract } = useContract(sellToken.address);
@@ -96,5 +95,3 @@ const SwapButton = ({ sellTokenAmount, sellToken, quote, selectedToken }: Props)
     </div>
   );
 };
-
-export default SwapButton;

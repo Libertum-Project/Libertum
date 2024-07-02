@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import css from './infoSection.module.css';
 
-const InfoSection = () => {
+export const InfoSection = () => {
   return (
     <div className={css.container}>
       <h2>
@@ -44,5 +44,3 @@ const InfoSection = () => {
     </div>
   );
 };
-
-export default InfoSection;

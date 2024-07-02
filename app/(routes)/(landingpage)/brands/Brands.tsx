@@ -8,7 +8,7 @@ import coinmarket from './assets/coinmarket.svg';
 import marketwatch from './assets/marketwatch.svg';
 import yahoo from './assets/yahoo.svg';
 
-const Brands = () => {
+export const Brands = () => {
   const brands = [ap, benziga, bloomberg, coinmarket, marketwatch, yahoo];
 
   return (
@@ -23,5 +23,3 @@ const Brands = () => {
     </div>
   );
 };
-
-export default Brands;

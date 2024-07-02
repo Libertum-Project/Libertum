@@ -2,14 +2,14 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import Partners from '../partners/Partners';
+import { Partners } from '../partners/Partners';
 
 import libertumLogo from './assets/libertumLogo.svg';
 import css from './theLibertumEcosystem.module.css';
 import ecosystem from './assets/ecosystem.svg';
-import EcosystemTabs from './EcosystemTabs';
+import { EcosystemTabs } from './EcosystemTabs';
 
-export default function LibertumEcosystem() {
+export const LibertumEcosystem = () => {
   return (
     <div className={css.container}>
       <div className={css.title}>
@@ -37,4 +37,4 @@ export default function LibertumEcosystem() {
       </div>
     </div>
   );
-}
+};

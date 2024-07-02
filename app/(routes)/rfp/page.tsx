@@ -1,5 +1,5 @@
 import css from './Rfp.module.css';
-import TagComponent from './tags/tag';
+import { TagComponent } from './tags/tag';
 
 export default function Rfp() {
   return (

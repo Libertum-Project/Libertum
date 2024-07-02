@@ -8,7 +8,7 @@ import twitter from './icons/twitter.svg';
 import DEXTools from './icons/DEXTools.png';
 import css from './socials.module.css';
 
-const Socials = () => {
+export const Socials = () => {
   const socials = [
     {
       name: 'X (Twitter)',
@@ -70,5 +70,3 @@ const Socials = () => {
     </div>
   );
 };
-
-export default Socials;

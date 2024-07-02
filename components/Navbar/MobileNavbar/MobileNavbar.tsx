@@ -8,9 +8,9 @@ import logo from '@/public/horizontal-logo.svg';
 import css from './MobileNavbar.module.css';
 import menuBtn from './menu.svg';
 import close from './close.svg';
-import MobileModal from './modal/MobileModal';
+import { MobileModal } from './modal/MobileModal';
 
-const MobileNavbar = () => {
+export const MobileNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleToggleOpenMenu = () => {
@@ -47,5 +47,3 @@ const MobileNavbar = () => {
     </>
   );
 };
-
-export default MobileNavbar;

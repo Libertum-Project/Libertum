@@ -1,7 +1,7 @@
 import css from './candidates.module.css';
-import FormCandidates from './form/formCandidates';
+import { FormCandidates } from './form/formCandidates';
 
-const Candidates = () => {
+export const Candidates = () => {
   return (
     <div className={css.container}>
       <div className={css.textFrame}>
@@ -39,5 +39,3 @@ const Candidates = () => {
     </div>
   );
 };
-
-export default Candidates;

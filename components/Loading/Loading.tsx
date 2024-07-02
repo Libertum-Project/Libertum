@@ -1,8 +1,6 @@
-import React from 'react';
-
 import css from './Loading.module.css';
 
-const LoadingPage = () => {
+export const LoadingPage = () => {
   return (
     <div className={css.loading}>
       <div className={css['three-body']}>
@@ -13,5 +11,3 @@ const LoadingPage = () => {
     </div>
   );
 };
-
-export default LoadingPage;

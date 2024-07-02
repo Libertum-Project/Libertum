@@ -1,8 +1,8 @@
 import css from './FaqSection.module.css';
-import FAQ from './FaqItem';
+import { FAQ } from './FaqItem';
 import { faqData } from './faqData';
 
-const FaqSection = () => {
+export const FaqSection = () => {
   return (
     <section className={css.faqSectionContainer}>
       <div className={css.faqSection}>
@@ -16,5 +16,3 @@ const FaqSection = () => {
     </section>
   );
 };
-
-export default FaqSection;

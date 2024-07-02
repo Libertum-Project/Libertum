@@ -12,7 +12,7 @@ import linkedin from './assets/socialsIcons/linkedin.svg';
 import telegram from './assets/socialsIcons/telegram.svg';
 import twitter from './assets/socialsIcons/twitter.svg';
 
-const JoinTeam = () => {
+export const JoinTeam = () => {
   const ambassadors = [
     {
       name: 'Mr Brondor',
@@ -125,5 +125,3 @@ const JoinTeam = () => {
     </section>
   );
 };
-
-export default JoinTeam;

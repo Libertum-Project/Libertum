@@ -12,7 +12,7 @@ interface DocsModalProps {
   handleHideModals: () => void;
 }
 
-const DocsModal = ({ handleHideModals }: DocsModalProps) => {
+export const DocsModal = ({ handleHideModals }: DocsModalProps) => {
   return (
     <div className={css.navModalContainer} onMouseLeave={handleHideModals} onTouchEnd={handleHideModals}>
       <div className={css.navModal}>
@@ -62,5 +62,3 @@ const DocsModal = ({ handleHideModals }: DocsModalProps) => {
     </div>
   );
 };
-
-export default DocsModal;

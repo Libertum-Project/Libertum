@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 
-import ContactForm from '../contactForm/contactFrom';
+import { ContactForm } from '../contactForm/contactFrom';
 
 import css from './TagsMobile.module.css';
 
@@ -17,7 +17,7 @@ interface Option {
   href: string;
 }
 
-const TagsMobile = () => {
+export const TagsMobile = () => {
   const options: Option[] = [
     {
       id: 'realEstate',
@@ -113,5 +113,3 @@ const TagsMobile = () => {
     </div>
   );
 };
-
-export default TagsMobile;

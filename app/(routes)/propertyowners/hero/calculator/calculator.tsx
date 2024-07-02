@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import css from './calculator.module.css';
 
-const Calculator = () => {
+export const Calculator = () => {
   const [propertyTerm, setPropertyTerm] = useState('10');
   const [investment, setInvestment] = useState('1000');
   const [selectedOption, setSelectedOption] = useState('Monthly');
@@ -159,5 +159,3 @@ const Calculator = () => {
     </div>
   );
 };
-
-export default Calculator;

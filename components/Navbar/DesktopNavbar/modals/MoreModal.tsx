@@ -10,7 +10,7 @@ interface MoreModalProps {
   handleHideModals: () => void;
 }
 
-const MoreModal = ({ handleHideModals }: MoreModalProps) => {
+export const MoreModal = ({ handleHideModals }: MoreModalProps) => {
   return (
     <div className={css.navModalContainer} onMouseLeave={handleHideModals} onTouchEnd={handleHideModals}>
       <div className={css.navModal}>
@@ -49,5 +49,3 @@ const MoreModal = ({ handleHideModals }: MoreModalProps) => {
     </div>
   );
 };
-
-export default MoreModal;

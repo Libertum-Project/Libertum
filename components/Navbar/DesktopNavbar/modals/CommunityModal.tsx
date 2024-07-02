@@ -9,7 +9,7 @@ interface CommunityModalProps {
   handleHideModals: () => void;
 }
 
-const CommunityModal = ({ handleHideModals }: CommunityModalProps) => {
+export const CommunityModal = ({ handleHideModals }: CommunityModalProps) => {
   return (
     <div className={css.navModalContainer} onMouseLeave={handleHideModals} onTouchEnd={handleHideModals}>
       <div className={css.navModal}>
@@ -41,5 +41,3 @@ const CommunityModal = ({ handleHideModals }: CommunityModalProps) => {
     </div>
   );
 };
-
-export default CommunityModal;

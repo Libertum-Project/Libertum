@@ -11,7 +11,7 @@ import plume from './assets/plume.svg';
 import thirdweb from './assets/thirdweb.svg';
 import unizen from './assets/unizen.svg';
 
-export default function Partners() {
+export const Partners = () => {
   const partners = [plume, thirdweb, microsoft, coinweb, defactor, nd, ad360, unizen];
 
   return (
@@ -27,4 +27,4 @@ export default function Partners() {
       </div>
     </div>
   );
-}
+};

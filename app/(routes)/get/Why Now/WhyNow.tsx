@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 import css from './WhyNow.module.css';
 
-const WhyNow = () => {
+export const WhyNow = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -74,5 +74,3 @@ const WhyNow = () => {
     </section>
   );
 };
-
-export default WhyNow;

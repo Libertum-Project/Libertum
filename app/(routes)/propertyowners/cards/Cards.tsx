@@ -4,7 +4,7 @@ import css from './Cards.module.css';
 import firstImage from './assets/firstImage.svg';
 import checkbox from './assets/checkbox.svg';
 
-const Cards = () => {
+export const Cards = () => {
   const litleCards = [
     {
       title: 'Tokenization',
@@ -79,5 +79,3 @@ const Cards = () => {
     </div>
   );
 };
-
-export default Cards;

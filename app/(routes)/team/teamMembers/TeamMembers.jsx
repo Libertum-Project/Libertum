@@ -9,7 +9,7 @@ import aavy from '../assets/Aavy.jpeg';
 
 import css from './TeamMembers.module.css';
 
-const TeamMembers = () => {
+export const TeamMembers = () => {
   const techMembers = [
     {
       id: 1,
@@ -114,5 +114,3 @@ const TeamMembers = () => {
     </div>
   );
 };
-
-export default TeamMembers;

@@ -6,7 +6,7 @@ import Link from 'next/link';
 import css from './talkToLibertum.module.css';
 import image from './image.svg';
 
-const TalkToLibertum = () => {
+export const TalkToLibertum = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -65,5 +65,3 @@ const TalkToLibertum = () => {
     </section>
   );
 };
-
-export default TalkToLibertum;

@@ -13,7 +13,7 @@ type BrandCarouselProps = {
   height: number;
 };
 
-const BrandCarrousel = ({ brands, speed, gradientWidth, width, height }: BrandCarouselProps) => {
+export const BrandCarrousel = ({ brands, speed, gradientWidth, width, height }: BrandCarouselProps) => {
   const animationSpeed = `marquee ${speed}s linear infinite`;
 
   const doubledBrands = [...brands, ...brands, ...brands, ...brands];
@@ -35,5 +35,3 @@ const BrandCarrousel = ({ brands, speed, gradientWidth, width, height }: BrandCa
     </div>
   );
 };
-
-export default BrandCarrousel;

@@ -8,7 +8,7 @@ import next from './assets/next.svg';
 import postgres from './assets/postgres.svg';
 import solidity from './assets/solidity.svg';
 
-const TechStack = () => {
+export const TechStack = () => {
   const brands = [azure, docker, kubernetes, next, postgres, solidity];
 
   return (
@@ -24,5 +24,3 @@ const TechStack = () => {
     </div>
   );
 };
-
-export default TechStack;

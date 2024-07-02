@@ -4,7 +4,7 @@ import Link from 'next/link';
 import css from './WhatIs.module.css';
 import image from './assets/image.svg';
 
-export default function WhatIs() {
+export const WhatIs = () => {
   return (
     <div className={css.container}>
       <div className={css.card}>
@@ -29,4 +29,4 @@ export default function WhatIs() {
       </div>
     </div>
   );
-}
+};

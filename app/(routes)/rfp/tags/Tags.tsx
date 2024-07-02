@@ -2,7 +2,7 @@
 import { useState, useRef } from 'react';
 import Image from 'next/image';
 
-import ContactForm from '../contactForm/contactFrom';
+import { ContactForm } from '../contactForm/contactFrom';
 
 import css from './Tags.module.css';
 import inactiveArrow from './assets/inactiveArrow.svg';
@@ -19,7 +19,7 @@ interface Option {
   href: string;
 }
 
-const Tags = () => {
+export const Tags = () => {
   const [activeOption, setActiveOption] = useState('realEstate');
   const [shouldShowContactForm, setShouldShowContactForm] = useState(false);
   const [isContactButtonArrowDown, setIsContactButtonArrowDown] = useState(false);
@@ -132,5 +132,3 @@ const Tags = () => {
     </div>
   );
 };
-
-export default Tags;

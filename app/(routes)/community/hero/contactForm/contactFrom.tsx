@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser';
 
 import css from './contactForm.module.css';
 
-const ContactForm = () => {
+export const ContactForm = () => {
   const form = useRef<HTMLFormElement | null>(null);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
@@ -73,5 +73,3 @@ const ContactForm = () => {
     </div>
   );
 };
-
-export default ContactForm;

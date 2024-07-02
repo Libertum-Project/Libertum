@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 import css from './getReady.module.css';
 
-const GetReady = () => {
+export const GetReady = () => {
   const data = [
     {
       title: 'Fractional Rental Income',
@@ -70,5 +70,3 @@ const GetReady = () => {
     </section>
   );
 };
-
-export default GetReady;

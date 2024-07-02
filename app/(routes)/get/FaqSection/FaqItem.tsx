@@ -12,7 +12,7 @@ interface FAQProps {
   answer: string;
 }
 
-const FAQ = ({ question, answer }: FAQProps) => {
+export const FAQ = ({ question, answer }: FAQProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const handleToggle = () => {
@@ -45,5 +45,3 @@ const FAQ = ({ question, answer }: FAQProps) => {
     </div>
   );
 };
-
-export default FAQ;
